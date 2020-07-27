@@ -3,21 +3,25 @@ package com.mvc2BBS.Controller;
 
 
 import java.io.IOException;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import com.mvc2BBS.Action.Action;
 import com.mvc2BBS.Action.BoardDeleteProAction;
 import com.mvc2BBS.Action.BoardDetailAction;
 import com.mvc2BBS.Action.BoardListAction;
+import com.mvc2BBS.Action.BoardLoginAction;
 import com.mvc2BBS.Action.BoardModifyFormAction;
 import com.mvc2BBS.Action.BoardModifyProAction;
 import com.mvc2BBS.Action.BoardReplyFormAction;
 import com.mvc2BBS.Action.BoardReplyProAction;
-import com.mvc2BBS.Action.BoardWriteProAction;
+import com.mvc2BBS.Action.MyhomeWriteProAction;
 import com.mvc2BBS.Vo.ActionForward;
+
 
 @WebServlet("*.bo") //어노테이션
 
@@ -37,8 +41,12 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		if(command.equals("/boardWriteForm.bo")){
 			forward=new ActionForward();
 			forward.setPath("/qna_board_write.jsp");
-		}else if(command.equals("/boardWritePro.bo")){
-			action  = new BoardWriteProAction();
+		}else if(command.equals("/Myhome_WriteForm.bo")){
+			forward=new ActionForward();
+			forward.setPath("/Myhome_board_write.jsp");
+		}
+		else if(command.equals("/Myhome_WritePro.bo")){
+			action  = new MyhomeWriteProAction();
 			try {
 				forward=action.execute(request, response );
 			} catch (Exception e) {
@@ -46,7 +54,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			}
 		}
 		else if(command.equals("/boardList.bo")){
-			
+			System.out.println("체크2");	
 			action = new BoardListAction();
 			try{
 				forward=action.execute(request, response);
@@ -54,8 +62,27 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
+        else if(command.equals("/boardLoginPro.bo")){
+			System.out.println("체크1");
+			action = new BoardLoginAction();
+			try{
+				System.out.println("체크3");
+				forward=action.execute(request, response);
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		}
 		else if(command.equals("/boardDetail.bo")){
 			action = new BoardDetailAction();
+			try{
+				forward=action.execute(request, response);
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/qna_file_down.bo")){
+			forward=new ActionForward();
+			forward.setPath("/qna_file_down.jsp");
 			try{
 				forward=action.execute(request, response);
 			}catch(Exception e){
@@ -112,6 +139,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		if(forward != null){
 			
 			if(forward.isRedirect()){
+				System.out.println(forward.getPath());
 				response.sendRedirect(forward.getPath());
 			}else{
 				RequestDispatcher dispatcher=

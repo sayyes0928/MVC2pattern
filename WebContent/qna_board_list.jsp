@@ -59,9 +59,22 @@ table {
 	<!-- 게시판 리스트 -->
 
 	<section id="listForm">
-		<h2>
-			글 목록<a href="boardWriteForm.bo">게시판글쓰기</a>
-		</h2>
+		    <h2>
+			글 목록<a href="Myhome_WriteForm.bo">게시판글쓰기</a>
+			</h2>
+			<%
+			String userID = (String)session.getAttribute("userID");
+			  if(userID != null){
+			%>
+			<input type="text" value=<%= userID%> readonly>
+			<input type="button" value="로그아웃" onclick="location.href='qna_board_logout.jsp'"/>
+		    <% 
+			  }else{
+		    %>
+		    <input type="button" value="로그인" onclick="location.href='qna_board_login.jsp'"/>
+		    <%
+			  }
+		    %>
 		<table>
 			<%
 if(articleList != null && listCount > 0){
@@ -85,7 +98,7 @@ if(articleList != null && listCount > 0){
 				<td>
 					<%if(articleList.get(i).getBOARD_RE_LEV()!=0){ %> <%for(int a=0;a<=articleList.get(i).getBOARD_RE_LEV()*2;a++){ %>
 					&nbsp; <%} %> ▶ <%}else{ %> ▶ <%} %> <a
-					href="boardDetail.bo?board_num=<%=articleList.get(i).getBOARD_NUM()%>&page=<%=nowPage%>">
+					href="boardDetail.bo?board_num=<%=articleList.get(i).getBOARD_NUM()%>&page=<%=nowPage%>&userName=<%=articleList.get(i).getBOARD_NAME() %>">
 						<%=articleList.get(i).getBOARD_SUBJECT()%>
 				</a>
 				</td>

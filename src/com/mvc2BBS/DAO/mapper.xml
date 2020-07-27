@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="SqlData">
+<select id="select_list" resultType="Integer">
+select count(*) from board;
+</select>
+
+<select id="select_qnaList_all" resultType="com.mvc2BBS.Vo.BoardBean" parameterType="Integer">
+select * from board order by BOARD_RE_REF desc,BOARD_RE_SEQ asc limit #{startrow},10;
+</select>
+
+<insert id="insert_qna_board" parameterType="com.mvc2BBS.Vo.BoardBean">
+ insert into board values(#{BOARD_NUM},#{BOARD_NAME},#{BOARD_PASS},#{BOARD_SUBJECT},#{BOARD_CONTENT},#{BOARD_FILE},#{BOARD_RE_REF},#{BOARD_RE_LEV},#{BOARD_RE_SEQ},#{BOARD_READCOUNT},#{BOARD_DATE});
+</insert>
+
+</mapper>

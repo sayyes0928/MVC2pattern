@@ -11,6 +11,15 @@
 </head>
 <body>
 	<!-- 게시판 등록 -->
+	<%
+	 String userID = (String)session.getAttribute("userID");
+	if(userID == null){
+		out.println("<script>");
+		out.println("alert('로그인이 필요한 작업입니다.');");
+		out.println("history.back();");
+		out.println("</script>");
+	}
+	%>
 
 	<section id="writeForm">
 		<h2>게시판글등록</h2>
@@ -19,8 +28,8 @@
 			<table>
 				<tr>
 					<td class="td_left"><label for="BOARD_NAME">글쓴이</label></td>
-					<td class="td_right"><input type="text" name="BOARD_NAME"
-						id="BOARD_NAME" required="required" /></td>
+					<td class="td_right"><input type="text" name="BOARD_NAME" readonly
+						id="BOARD_NAME" required="required" value=<%= session.getAttribute("userID") %> /></td>
 				</tr>
 				<tr>
 					<td class="td_left"><label for="BOARD_PASS">비밀번호</label></td>

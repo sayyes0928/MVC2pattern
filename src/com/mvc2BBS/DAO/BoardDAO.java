@@ -3,6 +3,8 @@ package com.mvc2BBS.DAO;
 import static com.mvc2BBS.ConnectionDB.JdbcUtil.close;
 import static com.mvc2BBS.ConnectionDB.JdbcUtil.commit;
 
+import java.io.IOException;
+import java.io.Reader;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,9 +13,17 @@ import java.util.ArrayList;
 
 import javax.sql.DataSource;
 
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
 import com.mvc2BBS.Vo.BoardBean;
 
+
+
 public class BoardDAO {
+	
+	private static SqlSessionFactory sqlfactory;
 
 	DataSource ds;
 	Connection con;
@@ -55,6 +65,20 @@ public class BoardDAO {
 
 		return listCount;
 
+	}
+	
+	public static SqlSessionFactory getConn() { // xml 읽는 생성자
+		//연결
+		try {
+			//sqlfactory 인스턴스를 사용하기 위해 SqlSessionFactoryBuilder() 를 통해 빌드한다.
+			//이때, mybatis-config.xml 의 설정 파일에서 sqlfactory 를 빌드한다
+			Reader reader = Resources.getResourceAsReader("com/mvc2BBS/DAO/mybatis-config.xml"); //xml 파일(mybatis.xml 파일)
+			sqlfactory = new SqlSessionFactoryBuilder().build(reader);
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+		return sqlfactory;
 	}
 
 	public ArrayList<BoardBean> selectArticleList(int page,int limit){
@@ -315,6 +339,32 @@ public class BoardDAO {
 		}
 
 		return isWriter;
+
+	}
+	
+	public boolean checkUserLoginBoard(String userID, String userPW){
+
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String board_sql="select * from mvc2logintest where userID=?";
+		boolean checkUser = false;
+
+		try{
+			pstmt=con.prepareStatement(board_sql);
+			pstmt.setString(1, userID);
+			rs=pstmt.executeQuery();
+			rs.next();
+
+			if(userPW.equals(rs.getString("userPW"))){
+				checkUser = true;
+			}
+		}catch(SQLException ex){
+		}
+		finally{
+			close(pstmt);
+		}
+		
+		return checkUser;
 
 	}
 

@@ -2,8 +2,10 @@
 <%@page language="java" contentType="text/html; charset=UTF-8"%>
 
 <%
+    String userID = (String)session.getAttribute("userID");
 	BoardBean article = (BoardBean)request.getAttribute("article");
     String nowPage = (String)request.getAttribute("page");
+    String userName = request.getParameter("userName");
     System.out.println("nowpage"+nowPage);
 %>
 
@@ -54,7 +56,7 @@ h2 {
 			<%=article.getBOARD_SUBJECT()%>
 			첨부파일 :
 			<%if(!(article.getBOARD_FILE()==null)){ %>
-			<a href="file_down?downFile=<%=article.getBOARD_FILE()%>"> <%=article.getBOARD_FILE() %>
+			<a href="qna_file_down.bo?downFile=<%=article.getBOARD_FILE()%>"> <%=article.getBOARD_FILE() %>
 			</a>
 			<%} %>
 		</section>
@@ -66,10 +68,19 @@ h2 {
 		<a href="boardReplyForm.bo?board_num=<%=article.getBOARD_NUM() %>&page=<%=nowPage%>">
 			[답변] </a>
 			 <a  href="boardModifyForm.bo?board_num=<%=article.getBOARD_NUM() %>">
+			 <%
+			 if(userID != null){
+			  if(userID.equals(userName)){
+			 %>
 			[수정] </a> 
 			<a  href="boardDeleteForm.bo?board_num=<%=article.getBOARD_NUM() %>&page=<%=nowPage%>">
 			[삭제] </a>
+			 <%
+			  }
+			 }
+			 %>
 			 <a href="boardList.bo?page=<%=nowPage%>">[목록]</a>&nbsp;&nbsp;
+			
 	</section>
 </body>
 </html>

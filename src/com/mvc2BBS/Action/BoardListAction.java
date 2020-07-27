@@ -3,7 +3,12 @@ package com.mvc2BBS.Action;
 import java.util.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+
 import com.mvc2BBS.svc.BoardListService;
+import com.mvc2BBS.DAO.BoardDAO;
 import com.mvc2BBS.Vo.ActionForward;
 import com.mvc2BBS.Vo.BoardBean;
 import com.mvc2BBS.Vo.PageInfo;
@@ -12,7 +17,7 @@ import com.mvc2BBS.Vo.PageInfo;
 	 
 	 public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception{
 		 
-		ArrayList<BoardBean> articleList=new ArrayList<BoardBean>();
+		List<BoardBean> articleList=new ArrayList<BoardBean>();
 	  	int page=1;
 		int limit=10;
 		
@@ -24,6 +29,7 @@ import com.mvc2BBS.Vo.PageInfo;
 		BoardListService boardListService = new BoardListService();
 		int listCount=boardListService.getListCount();
 		articleList = boardListService.getArticleList(page,limit);
+		
 		//총 페이지 수.
    		int maxPage=(int)((double)listCount/limit+0.95); //0.95를 더해서 올림 처리.
    		//현재 페이지에 보여줄 시작 페이지 수(1, 11, 21 등...)
