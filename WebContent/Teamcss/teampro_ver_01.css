@@ -1,0 +1,604 @@
+@font-face {
+  src: url("../fonts/BMJUA_ttf.ttf");
+  font-family: "jua";
+}
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.topnav li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+ul.topnav {
+  width:140px;
+  padding-right: 28px;
+  padding-top: 7px;
+  margin: 0;
+  font-size: 1em;
+  line-height: 0.5em;
+  list-style: none;
+}
+
+ul.topnav span {
+  opacity: 0;
+}
+
+ul.topnav li {
+  padding-top:5px;
+}
+
+ul.topnav li a {
+  line-height: 10px;
+  font-size: 20px;
+  padding: 10px 5px;
+  color: #000;
+  display: block;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+ul.topnav ul {
+  margin: 0;
+  padding: 0;
+  display: none;
+  list-style: none;
+}
+
+ul.topnav ul li {
+  margin: 0;
+  padding-bottom: 0;
+  clear: both;
+}
+
+ul.topnav ul li a {
+  padding-left: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  outline: 0;
+  color:rgb(46, 97, 110);
+}
+
+ul.topnav ul li a:hover {
+  background-color: #D3C99C;
+  color: #675C7C;
+}
+
+ul.topnav ul ul li a {
+  color: rgb(88, 94, 83);
+  padding-left: 28px;
+}
+
+ul.topnav ul ul li a:hover {
+  background-color: #D3CEB8;
+  color: #675C7C;
+}
+
+
+
+/* =================================================
+여기까지 메뉴라인
+================================================= */
+
+#m_wrap {
+  width: 1082px;
+  height: 1660px;
+  margin: 0 auto;
+  font-family: "jua";
+
+}
+
+#m_wrap aside {
+  float: left;
+  margin-top: 30px;
+}
+
+#as_size {
+  float: left;
+  width: 120px;
+  height: 1000px;
+  position: sticky;
+  top:185px;
+}
+
+.as_mar {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.as_mar2 {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.as_mar ul li {
+  list-style: none;
+  font-size: 12px;
+  padding-bottom: 9px;
+}
+
+.as_mar2 ul li {
+  list-style: none;
+  font-size: 15px;
+  padding-bottom: 8px;
+
+}
+
+.m_best {
+  height: 360px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.m_best ul li {
+  list-style: none;
+  display: inline;
+}
+
+.m_img {
+  height: 330px;
+}
+
+.m_img ul {
+  width: 920px;
+  height: 330px;
+
+}
+
+.m_img ul li {
+  height: 280px;
+  width: 215px;
+  padding-right: 15px;
+  float: left;
+}
+
+.m_img ul div {
+  padding-bottom: 5px;
+}
+
+.m_imgsize {
+  width: 215px;
+  height: 215px;
+  border-radius: 10px;
+}
+
+#com_right {
+  float: right;
+  padding-bottom: 10px;
+}
+
+.clear {
+  clear: both;
+}
+
+.m_mar {
+  margin-bottom: 30px;
+
+}
+
+.m_mar span {
+  font-family: "jua";
+  font-size: 16px;
+}
+
+.m_mar hr {
+  width: 12%;
+  margin-top: 4px;
+}
+.effect1 a{
+  text-decoration: none;
+}
+
+.m_pname {
+  font-size: 23px;
+  font-family: "jua";
+  color: black;
+  text-decoration: none;
+}
+
+.m_pindex {
+  font-size: 17px;
+  font-family: "jua";
+  color:gray;
+  text-decoration: none;
+}
+.m_pindex2 {
+  font-size: 18px;
+  font-family: "jua";
+  color:rgb(40, 146, 177);
+  text-decoration: none;
+}
+
+#cate_main {
+  float: left;
+  width: 920px;
+  margin-left: 40px;
+}
+
+
+
+/*===============================================================
+    아래부터 BX슬라이더부분
+=================================================================*/
+.bx-wrapper {
+  margin-left: 30px;
+  border: 0;
+  width: 840px;
+  height: 240px;
+}
+
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
+  margin-bottom: 45px;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a {
+  background: rgb(255, 255, 255);
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active,
+.bx-wrapper .bx-pager.bx-default-pager a:focus {
+  background: rgb(217, 218, 216);
+}
+
+.bx-controls-direction a {
+  opacity: 0;
+}
+element.style {
+  max-width: 850px;
+}
+
+
+
+
+.m_mar span{
+  font-size:22px;
+  color:rgb(29, 109, 154);
+}
+
+
+
+/* =======================================
+test해볼거임
+======================================= */
+
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display+SC:900);
+
+figure {
+	position: relative;
+	overflow: hidden;
+	width: 215px;
+  height: 215px;
+	cursor: pointer;
+	text-align: center;
+	/* float: left; */
+	margin: 0;
+}
+figure p {
+	margin: 0;
+	font-size: 1.3rem;
+}
+figure figcaption {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 215px;
+	height: 215px;
+	color: #fff;
+}
+figure figcaption::before,
+figure figcaption::after {
+	pointer-events: none;
+}
+
+.row {
+	width: 100%;
+	overflow: hidden;
+  text-decoration: none;
+}
+
+/*
+* effect1
+*/
+.m_img ul a{
+  text-decoration: none;
+}
+
+figure.effect1 figcaption::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 215px;
+	height: 215px;
+	content: '';
+	opacity: 0;
+	background: linear-gradient(to bottom, rgba(72,76,97,0) 0%, rgba(72,76,97,0.8) 75%);
+	transform: translate3d(0, 50%, 0);
+}
+figure.effect1 figcaption h2 {
+	position: absolute;
+	letter-spacing: 1px;
+	top: 50%;
+	left: 0;
+	width: 215px;
+	color: #fff;
+	transition: transform 0.35s, color 0.35s;
+	transform: translate3d(0, -50%, 0);
+}
+figure.effect1 figcaption::before,
+figure.effect1 p {
+	transition: opacity 0.35s, transform 0.35s;
+}
+
+figure.effect1 p {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding-left: 0;
+  padding-bottom: 80px;
+	width: 100%;
+	opacity: 0;
+	transform: translate3d(0, 10px, 0);
+}
+figure.effect1:hover h2 {
+	color: #fff;
+	transform: translate3d(0, -50%, 0) translate3d(0, -40px, 0);
+}
+figure.effect1:hover figcaption::before,
+figure.effect1:hover p {
+	opacity: 1;
+	transform: translate3d(0, 0, 0);
+}
+
+/*
+* effect2
+*/
+figure.effect2 {
+	background: linear-gradient(45deg, #22682a 0%,#9b4a1b 40%,#3a342a 100%);
+}
+figure.effect2 figcaption {
+	padding: 3rem;
+	background-color: rgba(81,81,79,0.7);
+	transition: background-color .35s;
+}
+figure.effect2 figcaption::before,
+figure.effect2 p {
+	opacity: 0;
+	transition: transform .35s, opacity .35s;
+	transform: scale(0);
+}
+figure.effect2 figcaption::before {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	bottom: 30px;
+	left: 30px;
+	border: 1px solid #fff;
+	content: '';
+}
+figure.effect2 h2 {
+	margin: 10% 0 10px 0;
+	transition: transform .35s;
+	transform: translate3d(0, 100%, 0);
+}
+figure.effect2 p {
+	opacity: 0;
+	transition: opacity .35s, transform .35s;
+	transform: scale(0);
+}
+figure.effect2:hover h2 {
+	transform: translate3d(0, 0, 0);
+}
+figure.effect2:hover figcaption::before,
+figure.effect2:hover p {
+	opacity: 1;
+	transform: scale(1);
+}
+figure.effect2:hover figcaption {
+	background-color: rgba(81,81,79,0);
+}
+figure.effect2:hover img {
+	opacity: .7;
+}
+/*
+* effect3
+*/
+figure.effect3 {
+	background: #2f3238;
+}
+figure.effect3 img {
+	transition: opacity 1s, transform 1s;
+}
+figure.effect3 figcaption {
+	text-align: left;
+	padding: 2rem;
+}
+figure.effect3 h2 {
+	position: relative;
+}
+figure.effect3 p {
+	display: inline-block;
+	margin: 0 0 .25em;
+	padding: .4em 1em;
+	background: rgba(255, 255, 255, .9);
+	color: #2f3238;
+	transition: opacity .35s, transform .35s;
+	transform: translate3d(-360px, 0, 0);
+}
+figure.effect3 p:first-child {
+	transition-delay: .15s;
+}
+figure.effect3 p:nth-of-type(2) {
+	transition-delay: .1s;
+}
+figure.effect p:nth-of-type(3) {
+	transition-delay: .05s;
+}
+figure.effect3:hover p:first-child {
+	transition-delay: 0s;
+}
+figure.effect3:hover p:nth-of-type(2) {
+	transition-delay: .05s;
+}
+figure.effect3:hover p:nth-of-type(3) {
+	transition-delay: .1s;
+}
+figure.effect3:hover img {
+	opacity: .4;
+	transform: scale3d(1.1, 1.1, 1);
+}
+figure.effect3:hover p {
+	opacity: 1;
+	transform: translate3d(0, 0, 0);
+}
+/*
+* effect4
+*/
+figure.effect4 {
+	background: linear-gradient(45deg, #22682a 0%,#9b4a1b 40%,#3a342a 100%);
+}
+figure.effect4 img {
+	opacity: .95;
+	transition: opacity .35s, transform .35s;
+	transform: scale3d(1.05, 1.05, 1);
+}
+figure.effect4 h2 {
+	text-align: left;
+}
+figure.effect4 figcaption {
+	padding: 2rem;
+}
+figure.effect4 figcaption::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 255, 255, .5);
+	content: '';
+	transition: transform .6s;
+	transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -100%, 0);
+}
+figure.effect4 p {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	margin: 3rem;
+	padding: 0 1rem;
+	max-width: 150px;
+	border-right: 4px solid #fff;
+	text-align: right;
+	opacity: 0;
+	transition: opacity .35s;
+}
+figure.effect4:hover img {
+	opacity: 0.6;
+	transform: scale3d(1, 1, 1);
+}
+figure.effect4:hover figcaption::before {
+	transform: scale3d(2, 2, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
+}
+figure.effect4:hover p {
+	opacity: 1;
+	transition-delay: .1s;
+}
+/*
+*effect5
+*/
+figure.effect5 {
+	background: #fff;
+}
+figure.effect5 img {
+	opacity: .95;
+	transition: transform .35s;
+	transform-origin: 50% 50%;
+}
+figure.effect5 h2 {
+	transition: transform .35s;
+	transform: translate3d(0, 20px, 0);
+}
+figure.effect5 p {
+	opacity: 0;
+	transition: opacity .35s, transform .35s;
+	transform: perspective(1000px) rotate3d(1, 0, 0, 90deg);
+}
+figure.effect5 figcaption {
+	padding: 2rem;
+}
+figure.effect5:hover img {
+	transform: scale3d(.95, .95, 1);
+}
+figure.effect5:hover h2 {
+	transform: translate3d(0, 0, 0);
+}
+figure.effect5:hover p {
+	opacity: 1;
+	transform: perspective(1000px) rotate3d(1, 0, 0, 0);
+}
+/*
+* effect6
+*/
+figure.effect6 {
+	perspective: 1000px;
+	background: #B2858A;
+}
+figure.effect6 img {
+	transition: opacity .35s, transform .35s;
+	transform: translate3d(0, 0, 150px);
+	opacity: .8;
+}
+figure.effect6 figcaption::before,
+figure.effect6 figcaption::after {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 80%;
+	height: 1px;
+	background: #fff;
+	content: '';
+	transition: opacity .35s, transform .35s;
+	transform: translate3d(-50%, -50%, 0);
+}
+figure.effect6 h2 {
+	transform: translate3d(0, -50%, 0) translate3d(0, -150%, 0);
+}
+figure.effect6 h2,
+figure.effect6 p {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	transition: transform .35s;
+}
+figure.effect6 p {
+	padding: .2rem 2rem;
+	transform: translate3d(0, -50%, 0) translate3d(0, 150%, 0);
+}
+figure.effect6:hover img {
+	opacity: .6;
+	transform: translate3d(0, 0, 0);
+}
+figure.effect6:hover figcaption::before {
+	opacity: .5;
+	transform: translate3d(-50%, -50%, 0) rotate(45deg);
+}
+figure.effect6:hover figcaption::after {
+	opacity: .5;
+	transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+}
+figure.effect6:hover h2 {
+	transform: translate3d(0, -50%, 0) translate3d(0, -100%, 0);
+}
+figure.effect6:hover p {
+	transform: translate3d(0, -50%, 0) translate3d(0, 100%, 0);
+}
