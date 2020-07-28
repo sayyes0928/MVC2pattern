@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<!DOCTYPE mapper
+
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="SqlData">
+
+ <select id="m_select" resultType="mybatis.javatable.DTO.DTO">
+   select * from javatable;
+ </select>
+ 
+ <select id="qna_select" resultType="mybatis.javatable.DTO.QnaDTO">
+   select * from qna;
+ </select>
+ 
+ <select id="us_id_select" parameterType="String" resultType="String">
+  select us_id from userinfo where us_id=#{us_id};
+ </select>
+ 
+ <select id="us_nkname_select" parameterType="String" resultType="String">
+  select us_nkname from userinfo where us_nkname=#{us_nkname};
+ </select>
+ 
+ <insert id="m_insert" parameterType="mybatis.javatable.DTO.DTO">
+   insert into javatable values(#{java_num},#{java_name},#{java_phone});
+ </insert>
+ 
+ <insert id="qna_insert" parameterType="mybatis.javatable.DTO.QnaDTO">
+   insert into qna(qna_post, qna_num, qna_title) values( #{qna_post}, default, #{qna_title} );
+ </insert>
+ 
+ <insert id="userinfo_insert" parameterType="mybatis.javatable.DTO.UserDTO">
+   insert into userinfo values(#{us_id}, #{us_pw}, #{us_name}, #{us_nkname}, #{us_birth}, #{us_tel}, #{us_telagr}, #{us_mail}, #{us_mailagr}, #{us_adr}, #{us_pic});
+ </insert>
+ 
+ <update id="m_update" parameterType="mybatis.javatable.DTO.DTO">
+   update javatable set java_name = #{java_name}, java_phone = #{java_phone}  where java_num = #{java_num};
+ </update>
+ 
+ <delete id="m_delete" parameterType="mybatis.javatable.DTO.DTO">
+   delete from javatable where java_num = #{java_num};
+ </delete>
+</mapper>
+

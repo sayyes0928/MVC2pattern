@@ -1,0 +1,260 @@
+/* ===========================================
+                 HEADER
+============================================== */
+
+@charset "UTF-8";
+@font-face {
+  font-family: "Okbe";
+  src: url("Okbe_ttf.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+ a span{
+	  text-decoration:none;
+	  color:black;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Okbe";
+  text-decoration:none;
+}
+body {
+  font-family: "Okbe";
+}
+
+header {
+	padding-top:30px;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  height: 250px;
+
+  background-color: white;
+}
+
+#h_wrap {
+  width: 1600px;
+  height: 150px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+/* #h_wrap header {
+  height: 200px;
+} */
+
+#main_nav{
+  
+  clear: both;
+  height: 70px;
+  /*�닔�젙�젣�쓽 80-->60*/
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  
+}
+#main_nav ul{
+	width:1400px;
+	height:70px;
+	 margin: 0px auto;
+	
+}
+#sub_menu {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  background-color: white;
+  overflow: hidden;
+      width: 100%;
+      margin: 0 auto;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      
+      
+}
+#sub {
+      width: 100%;
+      position: absolute;
+      z-index: 1;
+      text-decoration:none;
+      color:black;
+      /* top: 130px; */
+      
+    }
+
+    #sub_menu .s_menu {
+      width: 150px;
+      float: left;
+    }
+
+    #sub_menu .s_menu li {
+      padding-bottom: 8px;
+
+    }
+    #sub_menu .s_menu li a {
+      color: rgb(219, 219, 217);
+      font-size: 12px;
+    }
+
+.h_div {
+  width: 1000px;
+  height: 150px;
+  float: left;
+}
+.h_div_side{
+  width: 300px;
+  height: 150px;
+  float: left;
+}
+.h_div ul{
+	margin:0px 200px 0px 100px;
+	height:150px;
+}
+.login_go span{
+	color:black;
+	font-size:20px;
+	font-weight:800;
+}
+
+.h_div ul li {
+	text-align: center;
+  display: list-item;
+  float: left;
+  list-style: none;
+  font-size: 9pt;
+}
+
+.h_div_side ul {
+  text-align: left;
+}
+
+.h_div h1 {
+  font-weight: 900;
+  line-height: 90px;
+  text-align: left;
+  font-size: 70px;
+  font-family: "Okbe";
+  margin: 0;
+}
+
+#main_nav li{
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: "Okbe";
+  font-size: 30px;
+  font-weight: 800;
+  list-style: none;
+  position: relative;
+  float:left;
+  padding: 0px 80px;
+  margin-left:20px;
+}
+
+.main_navov {
+      background-color: #bbe1fa;
+      color:white;
+    }
+.m_line li:hover {
+  color: gray;
+  transition: all 0.5s ease;
+}
+
+
+
+
+#main_nav li ::after {
+  content: "";
+  width: 0%;
+  left: 0%;
+  height: 1px;
+  display: block;
+  text-decoration:none;
+  position: absolute;
+  margin-top: 3px;
+  border-bottom: 3px solid #234f9a;
+  transition: all 0.5s ease;
+}
+
+#main_nav li:hover ::after {
+  content: "";
+  width: 100%;
+  left: 0px;
+  height: 1px;
+  display: block;
+  position: absolute;
+  margin-top: 3px;
+  border-bottom: 3px solid #234f9a;
+  text-decoration:none;
+  transition: all 0.5s ease;
+}
+
+.serch {
+  margin-top: 76px;
+  text-align: right;
+}
+.login_go{
+	margin-left:120px;
+	list-style: none;
+	float:left;
+	margin:100px auto;
+	border:2px solid black;
+	border-radius:10px;
+}
+.login_go li{
+	float:left;
+	list-style: none;
+}
+.login_go > li *{
+	list-style: none;
+	margin: 0px 5px;
+	font-size: 20px;
+	font-weight:800;
+	color:#3282b8;
+	text-decoration:none;
+}
+.primary-navigation {
+  margin: 0 auto;
+  font-size: 22px;
+  font-weight:700;
+}
+.primary-navigation ul{
+  clear:both;
+  padding:0px 60px 0px 60px;
+  list-style: none;
+  margin: 0 auto;
+  text-decoration: none;
+  text-align: center;
+}
+.primary-navigation > ul > li{
+	float:left;
+
+	
+}
+
+.nav_container_div{
+	width:1400px;
+	margin:0px auto;
+	padding-left:0px;
+}
+.nav_container li ul{
+	margin:0px 100px 0 -50px;
+}
+
+
+
+
+/* ===========================================
+                 HEADER
+============================================== */
+
+/* ===========================================
+                 FOOTER
+============================================== */
+footer {
+  height: 100px;
+  border-top: 1px solid black;
+  background-color: #f6f6f6;
+}
+/* ===========================================
+                 FOOTER
+============================================== */
