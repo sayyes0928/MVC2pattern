@@ -98,19 +98,19 @@
             <div class="h_div_side"></div>
             <div class="h_div">
             <ul>
-            <li style="padding-top:110px"><img src="grass2icon.svg" width="30" height="30"/></li>
-            <li style="padding-top:80px"><img src="truck2.svg" width="70" height="70"/></li>
-            <li><img src="sunicon.svg" width="60" height="60"/></li>
-            <li style="padding-top:110px"><img src="grass2icon.svg" width="30" height="30"/></li>
-            <li style="padding-top:100px"><img src="grassicon.svg" width="40" height="40"/></li> 
+            <li style="padding-top:110px"><img src="img/grass2icon.svg" width="30" height="30"/></li>
+            <li style="padding-top:80px"><img src="img/truck2.svg" width="70" height="70"/></li>
+            <li><img src="img/sunicon.svg" width="60" height="60"/></li>
+            <li style="padding-top:110px"><img src="img/grass2icon.svg" width="30" height="30"/></li>
+            <li style="padding-top:100px"><img src="img/grassicon.svg" width="40" height="40"/></li> 
             
             <li><h1>자취해보자</h1></li>
             <li style="padding-top:20px">
-             <img src="houseiconcolor.svg" width="100" height="100" onmouseover="this.src='houseicon.svg'" onmouseout="this.src='houseiconcolor.svg'"/>
+             <img src="img/houseiconcolor.svg" width="100" height="100" onmouseover="this.src='houseicon.svg'" onmouseout="this.src='houseiconcolor.svg'"/>
              </li>
-             <li style="padding-top:100px"><img src="grassicon.svg" width="40" height="40"/></li>
-             <li style="padding-top:100px"><img src="grassicon.svg" width="40" height="40"/></li> 
-             <li style="padding-top:110px"><img src="grass2icon.svg" width="30" height="30"/></li>
+             <li style="padding-top:100px"><img src="img/grassicon.svg" width="40" height="40"/></li>
+             <li style="padding-top:100px"><img src="img/grassicon.svg" width="40" height="40"/></li> 
+             <li style="padding-top:110px"><img src="img/grass2icon.svg" width="30" height="30"/></li>
             </ul>
             </div>
             <div class="h_div_side">    
@@ -176,7 +176,7 @@
               <li><a href="teampro_ver_01_1.html"><span>홈</span></a>
               <li><a href="teampro_ver_01_1.html"><span>스토어</span></a>
               <li><a href="teampro_myhome.html"><span>자취에대한 모든것</span></a>
-              <li><a href="teampro_myhome.html"><img src="jachievery.PNG" width="55" height="55"
+              <li><a href="teampro_myhome.html"><img src="img/jachievery.PNG" width="55" height="55"
               onmouseover="this.src='everyicon.svg'" onmouseout="this.src='jachievery.PNG'"></a>
               <li><a href="teampro_myhome.html"><span>고객센터</span></a>
             </ul>
