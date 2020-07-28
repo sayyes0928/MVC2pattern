@@ -98,7 +98,7 @@ int insert = sqlsession.insert("insert_productinfo",productinfoDTO);
 	sqlsession.commit();
 	sqlsession.close();
 	
-	response.sendRedirect("QnA_wirte_bbs.jsp");
+
 		
 		
 	}catch(Exception e){
