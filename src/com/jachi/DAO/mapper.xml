@@ -8,5 +8,4 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 
 <insert id="insert_productinfo" parameterType="com.jachi.DTO.ProductinfoDTO">insert into productinfo values(#{pro_code},#{pro_name},#{pro_price},#{pro_mainimg},#{pro_subimg},#{pro_option1},#{pro_option2},#{pro_option3},#{pro_catecode1},#{pro_catecode2},#{pro_catecode3}); </insert>
-<select id="" resultType="">select * from ?</select>
 </mapper>
