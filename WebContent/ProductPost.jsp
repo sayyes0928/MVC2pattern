@@ -3,7 +3,7 @@
 <%@ page import="java.util.*"%>
 <%@ page import="com.jachi.DTO.ProductinfoDTO"%>
     <%
-    List<ProductinfoDTO> article = request.getParameter("article");
+    ProductinfoDTO article = (ProductinfoDTO)request.getParameter("article");
     out.print(article);
     %>
 <!DOCTYPE html>
