@@ -3,8 +3,8 @@ pageEncoding="UTF-8"%>
 <%@page import="java.util.List" %>
 <%@page import="org.apache.ibatis.session.SqlSessionFactory"%>
 <%@page import="org.apache.ibatis.session.SqlSession"%>
-<%@page import="mybatis.java.dao.UserDAO" %>
-<%@page import="mybatis.java.dto.QnABBS" %>
+<%@page import="com.jachi.DAO.BoardDAO" %>
+<%@page import="com.jachi.DTO.QnABBS" %>
 <% request.setCharacterEncoding("UTF-8");%>
 
 <!DOCTYPE html>
@@ -21,7 +21,7 @@ pageEncoding="UTF-8"%>
   <body>
   <% 
  String us_id = (String)session.getAttribute("us_id");
- SqlSessionFactory sqlfactory = UserDAO.getConn();
+ SqlSessionFactory sqlfactory = BoardDAO.getConn();
  SqlSession sqlsession = sqlfactory.openSession();
  List<QnABBS> selectList = sqlsession.selectList("select_QnA");
 
