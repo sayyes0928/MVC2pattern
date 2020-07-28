@@ -1,4 +1,4 @@
-<%@page import="com.mvc2BBS.Vo.BoardBean"%>
+<%@page import="com.jachi.Dto.BoardBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%
 	BoardBean article = (BoardBean)request.getAttribute("article");

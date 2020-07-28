@@ -3,11 +3,11 @@
 		name="MySQ"
 		auth="Container"
 		type="javax.sql.DataSource"
-		username="root"
-		password="root"
+		username="nkj"
+		password="919293"
 		driverClassName="com.mysql.jdbc.Driver"
 		factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"
-		url="jdbc:mysql://localhost:3306/mydb"
+		url="jdbc:mysql://localhost:3306/jachi"
 		maxActive="500"
 	/>
 </Context>
