@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/* ////////////header ///////////////*/
+
+/* ////////////main ///////////////*/
+main {
+  width: 1080px;
+  height: 1000px;
+  margin: 30px auto 0px auto;
+}
+.product_container {
+  width: 95%;
+  height: 95%;
+  border: 1px solid black;
+}
+.product_container_pannel {
+  width: 85%;
+  height: 85%;
+  border: 1px solid black;
+  margin: 30px auto;
+}
+.product_container_pannel_list {
+  border: 1px solid black;
+  margin: 30px auto;
+  list-style: none;
+}
