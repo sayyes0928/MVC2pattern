@@ -53,6 +53,10 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
+		else if(command.equals("/Product_add_Write.bo")){
+			forward=new ActionForward();
+			forward.setPath("/fileUpload.jsp");
+		}
 		else if(command.equals("/boardList.bo")){
 			System.out.println("üũ2");	
 			action = new BoardListAction();

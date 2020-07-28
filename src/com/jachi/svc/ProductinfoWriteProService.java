@@ -8,15 +8,15 @@ import com.jachi.DTO.ProductinfoDTO;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-public class BoardWriteProService {
+public class ProductinfoWriteProService {
 
-	public boolean registArticle(BoardBean boardBean) throws Exception{
+	public boolean registArticle(ProductinfoDTO productinfoDTO) throws Exception{
 		
 		boolean isWriteSuccess = false;
 		
 		 SqlSessionFactory sqlfactory = BoardDAO.getConn();
 		 SqlSession sqlsession = sqlfactory.openSession();
-		 int insert = sqlsession.insert("insert_qna_board",boardBean);
+		 int insert = sqlsession.insert("insert_productinfo",productinfoDTO);
 				
 		
 		if(insert > 0){
