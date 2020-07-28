@@ -3,8 +3,8 @@ pageEncoding="UTF-8"%>
 <%@page import="java.util.List" %>
 <%@page import="org.apache.ibatis.session.SqlSessionFactory"%>
 <%@page import="org.apache.ibatis.session.SqlSession"%>
-<%@page import="mybatis.java.dao.UserDAO" %>
-<%@page import="mybatis.java.dto.QnABBS" %>
+<%@page import="com.jachi.DAO.BoardDAO" %>
+<%@page import="com.jachi.DTO.QnABBS" %>
 <%@ page import="java.io.PrintWriter"%>
 <% request.setCharacterEncoding("UTF-8");%>
 

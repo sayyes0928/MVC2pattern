@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@page import="org.apache.ibatis.session.SqlSessionFactory"%>
 <%@page import="org.apache.ibatis.session.SqlSession"%>
-<%@page import="mybatis.java.dao.UserDAO" %>
-<%@page import="mybatis.java.dto.ProductAddDAO" %>
+<%@page import="com.jachi.DAO.BoardDAO" %>
+<%@page import="com.jachi.DTO.ProductinfoDTO" %>
 <%@ page import="com.oreilly.servlet.MultipartRequest" %>
 <%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
 <%@ page import="java.util.*" %>
@@ -36,10 +36,10 @@
 		
 		
 		MultipartRequest multi=new MultipartRequest(request,
-							uploadPath,
-							size, 
-							"UTF-8",
-				new DefaultFileRenamePolicy());
+					uploadPath,
+					size, 
+					"UTF-8",
+		new DefaultFileRenamePolicy());
 
 		
 		 //파일첨부 페이지로부터 요소를 받아온다.
@@ -76,7 +76,7 @@ String pro_option1 = optionCate1+","+pro_option_1;
 String pro_option2 = optionCate2+","+pro_option_2;
 String pro_option3 = optionCate3+","+pro_option_3;
 
-ProductAddDAO proDAO = new ProductAddDAO();
+ProductinfoDTO proDAO = new ProductinfoDTO();
 
 int pro_price = Integer.parseInt(pro_price_string);
 
@@ -92,7 +92,7 @@ proDAO.setPro_catecode1(pro_catecode1);
 proDAO.setPro_catecode2(pro_catecode2);
 proDAO.setPro_catecode3(pro_catecode3);
 
-SqlSessionFactory sqlfactory = UserDAO.getConn();
+SqlSessionFactory sqlfactory = BoardDAO.getConn();
 SqlSession sqlsession = sqlfactory.openSession();
 int insert = sqlsession.insert("insert_productinfo",proDAO);
 	sqlsession.commit();

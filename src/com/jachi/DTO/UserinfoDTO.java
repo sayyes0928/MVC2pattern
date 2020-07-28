@@ -1,6 +1,6 @@
 package com.jachi.DTO;
 
-public class UserDTO {
+public class UserinfoDTO {
 String us_id = null;
 public String getUs_id() {
 	return us_id;

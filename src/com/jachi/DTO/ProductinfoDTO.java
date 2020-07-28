@@ -1,6 +1,6 @@
 package com.jachi.DTO;
 
-public class ProductAddDAO {
+public class ProductinfoDTO {
  public String getPro_code() {
 		return pro_code;
 	}

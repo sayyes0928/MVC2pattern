@@ -13,13 +13,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<% 
- String ex001 = request.getParameter("ex01");
+<%
+	String ex001 = request.getParameter("ex01");
  String ex02 = request.getParameter("ex02");
  String ex03 = request.getParameter("ex03");
  
  int ex01 = Integer.parseInt(ex001);
- UserDTO userDTO = new UserDTO();
+ UserinfoDTO userDTO = new UserinfoDTO();
 
  userDTO.setEx01(ex01);
  userDTO.setEx02(ex02);

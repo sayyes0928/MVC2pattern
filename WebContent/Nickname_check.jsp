@@ -2,15 +2,15 @@
     pageEncoding="UTF-8"%>
 <%@page import="org.apache.ibatis.session.SqlSessionFactory"%>
 <%@page import="org.apache.ibatis.session.SqlSession"%>
-<%@page import="mybatis.java.dao.UserDAO" %>
-<%@page import="mybatis.java.dto.UserDTO" %>
+<%@page import="com.jachi.DAO.BoardDAO" %>
+<%@page import="com.jachi.DTO.UserinfoDTO" %>
 <%@ page trimDirectiveWhitespaces="true" %>
 
 <%
   String us_nkname = request.getParameter("NICK");
 
-  UserDAO userDAO = UserDAO.getinstance();
-  SqlSessionFactory factory = UserDAO.getConn();
+  BoardDAO userDAO = BoardDAO.getInstance();
+  SqlSessionFactory factory = BoardDAO.getConn();
   SqlSession sqlsession = factory.openSession();
   String nickname_se = sqlsession.selectOne("us_nkname_select", us_nkname);
   sqlsession.close();
