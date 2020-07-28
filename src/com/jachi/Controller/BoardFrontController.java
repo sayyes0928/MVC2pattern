@@ -2,7 +2,7 @@ package com.jachi.Controller;
 
 
 
-import java.io.IOException;
+import java.io.IOException; 
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,6 +20,7 @@ import com.jachi.Action.BoardModifyProAction;
 import com.jachi.Action.BoardReplyFormAction;
 import com.jachi.Action.BoardReplyProAction;
 import com.jachi.Action.MyhomeWriteProAction;
+import com.jachi.Action.ProductPostViewAction;
 import com.jachi.DTO.ActionForward;
 
 
@@ -133,6 +134,13 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		}
 		else if(command.equals("/boardDeletePro.bo")){
 			action = new BoardDeleteProAction();
+			try{
+				forward=action.execute(request, response);
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		}else if(command.equals("/korea.bo")){
+			action = new ProductPostViewAction();
 			try{
 				forward=action.execute(request, response);
 			}catch(Exception e){
