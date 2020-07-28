@@ -20,7 +20,7 @@ public class ProductPostViewAction implements Action{
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		System.out.println(request.getParameter("pro_num"));
 		String pro_code=request.getParameter("pro_num");
-
+//
 		ProductPostViewService PostViewService = new ProductPostViewService();
 		List<ProductinfoDTO> article = PostViewService.getArticle(pro_code);
 		
