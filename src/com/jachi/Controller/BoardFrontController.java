@@ -20,7 +20,7 @@ import com.jachi.Action.BoardModifyProAction;
 import com.jachi.Action.BoardReplyFormAction;
 import com.jachi.Action.BoardReplyProAction;
 import com.jachi.Action.MyhomeWriteProAction;
-import com.jachi.Dto.ActionForward;
+import com.jachi.DTO.ActionForward;
 
 
 @WebServlet("*.bo") //어노테이션

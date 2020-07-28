@@ -5,7 +5,7 @@ import static com.jachi.ConnectionDB.JdbcUtil.*;
 import java.sql.Connection;
 
 import com.jachi.DAO.BoardDAO;
-import com.jachi.Dto.BoardBean;
+import com.jachi.DTO.BoardBean;
 
 public class BoardModifyProService {
 

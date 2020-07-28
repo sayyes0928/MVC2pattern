@@ -1,4 +1,4 @@
-package com.jachi.Dto;
+package com.jachi.DTO;
 
 public class ActionForward {
 	private boolean isRedirect=false;

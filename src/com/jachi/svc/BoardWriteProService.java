@@ -2,7 +2,7 @@ package com.jachi.svc;
 
 
 import com.jachi.DAO.BoardDAO;
-import com.jachi.Dto.BoardBean;
+import com.jachi.DTO.BoardBean;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;

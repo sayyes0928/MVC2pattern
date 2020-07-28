@@ -17,7 +17,7 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import com.jachi.Dto.BoardBean;
+import com.jachi.DTO.BoardBean;
 
 
 

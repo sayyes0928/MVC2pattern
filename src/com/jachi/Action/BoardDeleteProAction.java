@@ -4,7 +4,7 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.jachi.Dto.ActionForward;
+import com.jachi.DTO.ActionForward;
 import com.jachi.svc.BoardDeleteProService;
 
 public class BoardDeleteProAction implements Action {

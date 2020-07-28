@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
-import com.jachi.Dto.ActionForward;
-import com.jachi.Dto.BoardBean;
+import com.jachi.DTO.ActionForward;
+import com.jachi.DTO.BoardBean;
 import com.jachi.svc.BoardWriteProService;
 
 public class MyhomeWriteProAction implements Action {

@@ -8,9 +8,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.jachi.DAO.BoardDAO;
-import com.jachi.Dto.ActionForward;
-import com.jachi.Dto.BoardBean;
-import com.jachi.Dto.PageInfo;
+import com.jachi.DTO.ActionForward;
+import com.jachi.DTO.BoardBean;
+import com.jachi.DTO.PageInfo;
 import com.jachi.svc.BoardListService;
 
  public class BoardListAction implements Action {

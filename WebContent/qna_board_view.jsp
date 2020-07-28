@@ -1,4 +1,4 @@
-<%@page import="com.jachi.Dto.BoardBean"%>
+<%@page import="com.jachi.DTO.BoardBean"%>
 <%@page language="java" contentType="text/html; charset=UTF-8"%>
 
 <%
