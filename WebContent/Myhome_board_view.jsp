@@ -106,7 +106,7 @@
             
             <li><h1>자취해보자</h1></li>
             <li style="padding-top:20px">
-             <img src="img/houseiconcolor.svg" width="100" height="100" onmouseover="this.src='houseicon.svg'" onmouseout="this.src='houseiconcolor.svg'"/>
+             <img src="img/houseiconcolor.svg" width="100" height="100" onmouseover="this.src='img/houseicon.svg'" onmouseout="this.src='img/houseiconcolor.svg'"/>
              </li>
              <li style="padding-top:100px"><img src="img/grassicon.svg" width="40" height="40"/></li>
              <li style="padding-top:100px"><img src="img/grassicon.svg" width="40" height="40"/></li> 
@@ -177,7 +177,7 @@
               <li><a href="teampro_ver_01_1.html"><span>스토어</span></a>
               <li><a href="teampro_myhome.html"><span>자취에대한 모든것</span></a>
               <li><a href="teampro_myhome.html"><img src="img/jachievery.PNG" width="55" height="55"
-              onmouseover="this.src='everyicon.svg'" onmouseout="this.src='jachievery.PNG'"></a>
+              onmouseover="this.src='img/everyicon.svg'" onmouseout="this.src='img/jachievery.PNG'"></a>
               <li><a href="teampro_myhome.html"><span>고객센터</span></a>
             </ul>
           </div>
