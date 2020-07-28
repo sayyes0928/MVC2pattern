@@ -72,7 +72,7 @@ public class BoardDAO {
 		try {
 			//sqlfactory 인스턴스를 사용하기 위해 SqlSessionFactoryBuilder() 를 통해 빌드한다.
 			//이때, mybatis-config.xml 의 설정 파일에서 sqlfactory 를 빌드한다
-			Reader reader = Resources.getResourceAsReader("com/mvc2BBS/DAO/mybatis-config.xml"); //xml 파일(mybatis.xml 파일)
+			Reader reader = Resources.getResourceAsReader("com/jachi/DAO/mybatis-config.xml"); //xml 파일(mybatis.xml 파일)
 			sqlfactory = new SqlSessionFactoryBuilder().build(reader);
 		} catch (IOException e) {
 			

@@ -21,7 +21,7 @@
 	</environments>
 
 	<mappers>
-		<mapper resource="com/mvc2BBS/DAO/mapper.xml" />
+		<mapper resource="com/jachi/DAO/mapper.xml" />
 	</mappers>
 
 

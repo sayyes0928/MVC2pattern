@@ -48,7 +48,7 @@
 		//subject=multi.getParameter("subject");
 		 
 		 
-		 Enumeration files=multi.getFileNames();
+		Enumeration files=multi.getFileNames();
 		
 		pro_mainimg_name =(String)files.nextElement();
 		pro_mainimg=multi.getFilesystemName(pro_mainimg_name);
@@ -76,29 +76,29 @@ String pro_option1 = optionCate1+","+pro_option_1;
 String pro_option2 = optionCate2+","+pro_option_2;
 String pro_option3 = optionCate3+","+pro_option_3;
 
-ProductinfoDTO proDAO = new ProductinfoDTO();
+ProductinfoDTO productinfoDTO = new ProductinfoDTO();
 
 int pro_price = Integer.parseInt(pro_price_string);
 
-proDAO.setPro_code(pro_code);
-proDAO.setPro_name(pro_name);
-proDAO.setPro_price(pro_price);
-proDAO.setPro_mainimg(pro_mainimg);
-proDAO.setPro_subimg(pro_subimg);
-proDAO.setPro_option1(pro_option1);
-proDAO.setPro_option2(pro_option2);
-proDAO.setPro_option3(pro_option3);
-proDAO.setPro_catecode1(pro_catecode1);
-proDAO.setPro_catecode2(pro_catecode2);
-proDAO.setPro_catecode3(pro_catecode3);
+productinfoDTO.setPro_code(pro_code);
+productinfoDTO.setPro_name(pro_name);
+productinfoDTO.setPro_price(pro_price);
+productinfoDTO.setPro_mainimg(pro_mainimg);
+productinfoDTO.setPro_subimg(pro_subimg);
+productinfoDTO.setPro_option1(pro_option1);
+productinfoDTO.setPro_option2(pro_option2);
+productinfoDTO.setPro_option3(pro_option3);
+productinfoDTO.setPro_catecode1(pro_catecode1);
+productinfoDTO.setPro_catecode2(pro_catecode2);
+productinfoDTO.setPro_catecode3(pro_catecode3);
 
 SqlSessionFactory sqlfactory = BoardDAO.getConn();
 SqlSession sqlsession = sqlfactory.openSession();
-int insert = sqlsession.insert("insert_productinfo",proDAO);
+int insert = sqlsession.insert("insert_productinfo",productinfoDTO);
 	sqlsession.commit();
 	sqlsession.close();
 	
-	response.sendRedirect("QnA_view_bbs.jsp");
+	response.sendRedirect("QnA_wirte_bbs.jsp");
 		
 		
 	}catch(Exception e){
