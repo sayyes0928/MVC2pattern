@@ -24,7 +24,7 @@ import com.jachi.Action.MyhomeWriteProAction;
 import com.jachi.Action.PLSelectAction;
 
 import com.jachi.Action.ProductPostViewAction;
-
+import com.jachi.Action.UserLogin;
 import com.jachi.DTO.ActionForward;
 
 
@@ -154,6 +154,15 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		
 		else if(command.equals("/storeList.bo")) {
 			action = new PLSelectAction();
+			try {
+				forward=action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		else if(command.equals("/login.bo")) {
+			action = new UserLogin();
 			try {
 				forward=action.execute(request, response);
 			}catch(Exception e) {

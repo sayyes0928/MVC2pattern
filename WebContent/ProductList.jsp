@@ -5,7 +5,7 @@
 
 <%
 	ArrayList<ProductinfoDTO> article = (ArrayList<ProductinfoDTO>) request.getAttribute("article");
-
+	
 %>
 <!DOCTYPE html>
 <html>
@@ -69,7 +69,21 @@
 				</div>
 				<div class="h_div">
 					<ul style="margin: 25px 30px 0 0">
-
+						
+						
+			<%
+			String US_ID = (String)session.getAttribute("US_ID");
+			  if(US_ID != null){
+			%>
+			<input type="text" value=<%= US_ID%> readonly>님 환영합니다!
+			<input type="button" value="로그아웃" onclick="location.href='logoutActionPage.jsp'"/>
+		    <% 
+			  }else{
+		    %>
+		    <input type="button" value="로그인" onclick="location.href='teamlogin.jsp'"/>
+		    <%
+			  }
+		    %>			
 						<!-- <li>로그인</li>
             <li>|</li>
             <li>회원가입</li> -->
