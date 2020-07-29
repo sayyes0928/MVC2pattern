@@ -1,6 +1,9 @@
+@charset "UTF-8";
 @font-face {
-  src: url("./Teamcss/Okbe_ttf.ttf");
-  font-family: "jua";
+  font-family: "Okbe";
+  src: url("Okbe_ttf.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
 }
 a:-webkit-any-link {
   color: -webkit-link;

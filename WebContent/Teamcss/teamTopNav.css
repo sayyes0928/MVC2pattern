@@ -7,10 +7,11 @@
   font-family: "jua";
 }
 @font-face {
-  src: url("./../fonts/Okbe_ttf.ttf");
   font-family: "jua";
+  src: url("Okbe_ttf.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
 }
-
 header {
   position: sticky;
   top: 0;
@@ -45,7 +46,7 @@ header {
 /* #h_wrap header nav {
   clear: both;
   height: 60px;
-  /*수정제의 80-->60*/
+  /*�닔�젙�젣�쓽 80-->60*/
   /* border-top: 1px solid;
   border-bottom: 1px solid; */
   /* margin: 0 auto;
@@ -122,7 +123,7 @@ header {
 #m_line li > a > span::after {
   content: "";
   width: 0%;
-  left: 0%; /*이값 변경하면 밑줄 위치변경*/
+  left: 0%; /*�씠媛� 蹂�寃쏀븯硫� 諛묒쨪 �쐞移섎�寃�*/
   height: 1px;
   display: block;
   position: absolute;
