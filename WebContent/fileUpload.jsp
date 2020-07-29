@@ -98,7 +98,7 @@ int insert = sqlsession.insert("insert_productinfo",productinfoDTO);
 	sqlsession.commit();
 	sqlsession.close();
 	
-
+response.sendRedirect("ProductList.jsp");
 		
 		
 	}catch(Exception e){

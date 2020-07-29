@@ -20,6 +20,7 @@ import com.jachi.Action.BoardModifyProAction;
 import com.jachi.Action.BoardReplyFormAction;
 import com.jachi.Action.BoardReplyProAction;
 import com.jachi.Action.MyhomeWriteProAction;
+import com.jachi.Action.PLSelectAction;
 import com.jachi.DTO.ActionForward;
 
 
@@ -139,6 +140,17 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
+		
+		else if(command.equals("/PLListPro.bo")) {
+			action = new PLSelectAction();
+			try {
+				forward=action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		
 		
 		if(forward != null){
 			
