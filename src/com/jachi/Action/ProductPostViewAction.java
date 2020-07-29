@@ -21,7 +21,7 @@ public class ProductPostViewAction implements Action{
 		System.out.println(request.getParameter("pro_num"));
 		String pro_code=request.getParameter("pro_num");
 		
-		List<ProductinfoDTO> article=new ArrayList<ProductinfoDTO>();
+		List<ProductinfoDTO> article = new ArrayList<ProductinfoDTO>();
 
 		ProductPostViewService PostViewService = new ProductPostViewService();
 		article = PostViewService.getArticle(pro_code);

@@ -4,7 +4,8 @@
 <%@ page import="com.jachi.DTO.ProductinfoDTO"%>
     <%
     ArrayList<ProductinfoDTO> article = (ArrayList<ProductinfoDTO>)request.getAttribute("article");
-    out.print(article);
+  
+    
     %>
 <!DOCTYPE html>
 <html>
@@ -147,7 +148,25 @@
           </div> 
         </div>
         </header>
-
+       <% 
+       String option = null;
+       String [] optionsp = null;
+       for(int i=0; i<article.size(); i++ ){
+    	    option = article.get(i).getPro_option1();
+    	    optionsp = option.split(",");
+    
+    	%>    
+       	<%= article.get(i).getPro_code()+article.get(i).getPro_name()+article.get(i).getPro_mainimg() %>
+       	<img src="<%=request.getContextPath()%>/upload/<%=article.get(i).getPro_mainimg()%>" >
+        <% }
+         for(int x=0; x<optionsp.length; x++){
+         %>
+         <% out.print(optionsp[x]); %><br>
+         <%
+         }
+        %>
+             
+          
     <div id="s_wrap">
       <section>
         <div id="s_menusize">
