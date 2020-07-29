@@ -216,8 +216,8 @@
                     <%} %>     
                  <li>
                   <select>
-                        <option selected disabled hidden>크기</option>
-                   <%   for(int x=1; x < optionsp.length; x++){%>  
+                        
+                   <%   for(int x=0; x < optionsp.length; x++){%>  
                          <option><%=optionsp[x]%></option>
                     <%} %>  
                   </select>
@@ -228,13 +228,12 @@
                       String option = null;
                       String [] optionsp = null;
                       for(int i=0; i<article.size(); i++ ){
-        	                option = article.get(i).getPro_option1();
+        	                option = article.get(i).getPro_option2();
         	                optionsp = option.split(",");%>
                     <%} %>     
                  <li>
                   <select>
-                  <option selected disabled hidden>옵션2</option>
-                  <%   for(int x=1; x < optionsp.length; x++){%>  
+                  <%   for(int x=0; x < optionsp.length; x++){%>  
                          <option><%=optionsp[x]%></option>
                     <%} %>  
                   </select>
@@ -245,12 +244,11 @@
                       String option = null;
                       String [] optionsp = null;
                       for(int i=0; i<article.size(); i++ ){
-        	                option = article.get(i).getPro_option1();
+        	                option = article.get(i).getPro_option3();
         	                optionsp = option.split(",");%>
                     <%} %>     
                  <li>
                   <select>
-                  <option selected disabled hidden>옵션3</option>
                   <%   for(int x=1; x < optionsp.length; x++){%>  
                          <option><%=optionsp[x]%></option>
                     <%} %>  
