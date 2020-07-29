@@ -148,23 +148,7 @@
           </div> 
         </div>
         </header>
-       <% 
-       String option = null;
-       String [] optionsp = null;
-       for(int i=0; i<article.size(); i++ ){
-    	    option = article.get(i).getPro_option1();
-    	    optionsp = option.split(",");
-    
-    	%>    
-       	<%= article.get(i).getPro_code()+article.get(i).getPro_name()+article.get(i).getPro_mainimg() %>
-       	<img src="<%=request.getContextPath()%>/upload/<%=article.get(i).getPro_mainimg()%>" >
-        <% }
-         for(int x=0; x < optionsp.length; x++){
-         %>
-         <% out.print(optionsp[x]); %><br>
-         <%
-         }
-        %>
+     
              
           
     <div id="s_wrap">
@@ -196,7 +180,7 @@
         <div id="mainsize">
           <div class="s_subimg">
             <ul id="pr_imgs">
-              <li><img class="s_imgborder" src="img/ProductPost/chair01.webp"></li>
+              <li><img class="s_imgborder" src="<%=request.getContextPath()%>/upload/<%=article.get(0).getPro_mainimg()%>"></li>
               <li><img class="s_imgborder" src="img/ProductPost/chair02.webp"></li>
               <li><img class="s_imgborder" src="img/ProductPost/chair03.webp"></li>
               <li><img class="s_imgborder" src="img/ProductPost/chair04.webp"></li>
@@ -207,31 +191,73 @@
             </ul>
           </div>
           <div id="showimg" class="s_mainimg">
-            <img src="img/ProductPost/chair01.webp">
+            <img src="<%=request.getContextPath()%>/upload/<%=article.get(0).getPro_mainimg()%>">
           </div>
           <div class="s_maintitle">
             <div class="s_mainproduct">
               <ul>
                 <li class="s_maintitlefont01">의자왕</li>
-                <li class="s_maintitlefont02">사무용/컴퓨터 메쉬의자 9종</li>
+                <li class="s_maintitlefont02"><%= article.get(0).getPro_name()%></li>
                 <li class="s_maintitlefont01"> 3개 리뷰</li>
                 <li class="s_maintitlefont03">54%</li>
-                <li class="s_li_inline">489000원</li>
+                <li class="s_li_inline"><%= article.get(0).getPro_price()%> 원</li>
               </ul>
             </div>
             <hr class="clear">
             <div class="s_combobox">
               <ul>
-                <li>
+                
+                 <% if(article.get(0).getPro_option1()!=null){
+                      String option = null;
+                      String [] optionsp = null;
+                      for(int i=0; i<article.size(); i++ ){
+        	                option = article.get(i).getPro_option1();
+        	                optionsp = option.split(",");%>
+                    <%} %>     
+                 <li>
                   <select>
-                    <option>색상</option>
+                        <option selected disabled hidden>크기</option>
+                   <%   for(int x=1; x < optionsp.length; x++){%>  
+                         <option><%=optionsp[x]%></option>
+                    <%} %>  
                   </select>
-                </li>
-                <li>
+                  </li>
+                  <%} %>
+                 
+                 <% if(article.get(0).getPro_option2()!=null){
+                      String option = null;
+                      String [] optionsp = null;
+                      for(int i=0; i<article.size(); i++ ){
+        	                option = article.get(i).getPro_option1();
+        	                optionsp = option.split(",");%>
+                    <%} %>     
+                 <li>
                   <select>
-                    <option>추가상품을 선택해주세요.</option>
+                  <option selected disabled hidden>옵션2</option>
+                  <%   for(int x=1; x < optionsp.length; x++){%>  
+                         <option><%=optionsp[x]%></option>
+                    <%} %>  
                   </select>
-                </li>
+                  </li>
+                 <% }%>
+                
+                    <% if(article.get(0).getPro_option3()!=null){
+                      String option = null;
+                      String [] optionsp = null;
+                      for(int i=0; i<article.size(); i++ ){
+        	                option = article.get(i).getPro_option1();
+        	                optionsp = option.split(",");%>
+                    <%} %>     
+                 <li>
+                  <select>
+                  <option selected disabled hidden>옵션3</option>
+                  <%   for(int x=1; x < optionsp.length; x++){%>  
+                         <option><%=optionsp[x]%></option>
+                    <%} %>  
+                  </select>
+                  </li>
+                 <% }%>
+              
               </ul>
             </div>
             <div class="s_price">
