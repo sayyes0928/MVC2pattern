@@ -11,7 +11,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </select>
 
 <select id="select_listall" parameterType="String" resultType="com.jachi.DTO.ProductinfoDTO">
-	select pro_name,pro_price,pro_mainimg from productinfo;
+	select pro_code,pro_name,pro_price,pro_mainimg from productinfo;
 </select>
 
 

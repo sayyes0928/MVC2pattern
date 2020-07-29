@@ -612,23 +612,26 @@
 
 					<div class="m_img">
 						<ul>
-							<li>
-								<div class="row">
-									<figure class="effect1">
-										
-										<a href="ProductPost.jsp?codenum="+<%=article.get(0).getPro_code()%>></a><img class="m_imgsize"
+						<a href="korea.bo?pro_num=<%=article.get(0).getPro_code()%>" >
+							<li>										
+							
+								<div class="row">					
+									<figure class="effect1">							
+										<img class="m_imgsize"
 											src="<%=request.getContextPath()%>/upload/<%=article.get(0).getPro_mainimg()%>">
 											<figcaption>
 												<p>제품 상세 정보</p>
 											</figcaption>
 									</figure>
-								</div>
+								</div>	
+										
 								<div class="m_pname"><%=article.get(0).getPro_name() %></div>
 								<div class="m_pindex">2clolors</div>
 								<div class="m_pindex2"><%=article.get(0).getPro_price() %></div>
-								</a>
+				
 
-							</li>
+							</li>	
+							</a>
 							<li>
 								<div class="row">
 									<figure class="effect1">
