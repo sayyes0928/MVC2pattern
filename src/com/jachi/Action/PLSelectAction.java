@@ -13,15 +13,17 @@ import com.jachi.DTO.BoardBean;
 import com.jachi.DTO.PageInfo;
 import com.jachi.DTO.ProductinfoDTO;
 import com.jachi.svc.BoardListService;
+import com.jachi.svc.PLSelectService;
 
 public class PLSelectAction implements Action {
 
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
+		PLSelectService plSelectService = new PLSelectService();
 		
 		
 		
-		return forward;
+		return null;
 	}
 
 }
