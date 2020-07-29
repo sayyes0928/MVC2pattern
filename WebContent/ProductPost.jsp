@@ -159,7 +159,7 @@
        	<%= article.get(i).getPro_code()+article.get(i).getPro_name()+article.get(i).getPro_mainimg() %>
        	<img src="<%=request.getContextPath()%>/upload/<%=article.get(i).getPro_mainimg()%>" >
         <% }
-         for(int x=0; x<optionsp.length; x++){
+         for(int x=0; x < optionsp.length; x++){
          %>
          <% out.print(optionsp[x]); %><br>
          <%
