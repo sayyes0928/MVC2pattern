@@ -18,12 +18,16 @@ import com.jachi.svc.PLSelectService;
 public class PLSelectAction implements Action {
 
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		
+		System.out.println("들어왔나?");
+		List<ProductinfoDTO> article = new ArrayList<ProductinfoDTO>();
 		PLSelectService plSelectService = new PLSelectService();
+		article = plSelectService.getproinfo();
 		
-		
-		
-		return null;
+		ActionForward forward = new ActionForward();
+		request.setAttribute("article", article);
+		System.out.println("다시액션으로 전달됐니?");
+		forward.setPath("/ProductList.jsp");
+		return forward;
 	}
 
 }
