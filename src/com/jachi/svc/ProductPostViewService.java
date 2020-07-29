@@ -11,7 +11,7 @@ import com.jachi.DTO.ProductinfoDTO;
 public class ProductPostViewService {
         public List<ProductinfoDTO> getArticle(String pro_code) {
         	
-    		//
+    		
    		 SqlSessionFactory sqlfactory = BoardDAO.getConn();
    		 SqlSession sqlsession = sqlfactory.openSession();
    		 System.out.println(pro_code);

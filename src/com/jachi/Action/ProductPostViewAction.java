@@ -22,7 +22,7 @@ public class ProductPostViewAction implements Action{
 		String pro_code=request.getParameter("pro_num");
 		
 		List<ProductinfoDTO> article=new ArrayList<ProductinfoDTO>();
-//
+
 		ProductPostViewService PostViewService = new ProductPostViewService();
 		article = PostViewService.getArticle(pro_code);
 		
