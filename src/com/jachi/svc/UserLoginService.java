@@ -11,17 +11,17 @@ import com.jachi.DTO.UserinfoDTO;
 
 public class UserLoginService {
 
-	public Boolean logingo(String us_id, String us_pw) {
+	public Boolean logingo(String us_id, String us_pw) throws Exception {
 		
-		Boolean userlogininfo = false;
+		boolean userlogininfo = false;
 		SqlSessionFactory sqlfactory = BoardDAO.getConn();
 		SqlSession sqlsession = sqlfactory.openSession();
 		
-		List<UserinfoDTO> sllogininfo = sqlsession.selectList("select_logininfo");
+		UserinfoDTO sllogininfo = sqlsession.selectOne("select_logininfo");
+		System.out.println(sllogininfo+"¼¿·º°ªÀº ¶ß´Ï?");
 		
-		if(us_pw.equals(sllogininfo.get(0).getUs_pw())) {
-			userlogininfo = true;
-		};
+		System.out.println(userlogininfo+"¶°Áà¶óÁ»");
+		
 		
 		return userlogininfo;
 		

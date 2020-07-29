@@ -36,7 +36,7 @@ public class UserLogin implements Action {
 			out.println("history.back();");
 			out.println("</script>");
 		}else {
-			HttpSession session = request.getSession(false);
+			HttpSession session = request.getSession(true);
 			session.setAttribute("US_ID", us_id);
 			forward = new ActionForward();	
 			forward.setRedirect(true);
