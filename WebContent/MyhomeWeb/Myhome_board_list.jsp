@@ -81,7 +81,6 @@
 	<form id="contentPage">
          <header>
         <div id="h_wrap">
-            <div class="h_div_side"></div>
             <div class="h_div">
             <ul>
             <li style="padding-top:110px"><img src="./../img/grass2icon.svg" width="30" height="30"/></li>
@@ -98,8 +97,6 @@
              <li style="padding-top:100px"><img src="./../img/grassicon.svg" width="40" height="40"/></li> 
              <li style="padding-top:110px"><img src="./../img/grass2icon.svg" width="30" height="30"/></li>
             </ul>
-            </div>
-            <div class="h_div_side">    
              <%
                // if(us_id == null){
               %>

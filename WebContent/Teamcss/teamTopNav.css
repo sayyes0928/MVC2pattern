@@ -60,7 +60,7 @@ header {
 }
 
 .h_div {
-  width: 360px;
+  width: 10780px;
   height: 120px;
   float: left;
 }
@@ -71,9 +71,7 @@ header {
   font-size: 9pt;
 }
 
-.h_div ul {
-  text-align: right;
-}
+
 
 .h_div h1 {
   margin: 0;

@@ -96,18 +96,13 @@ header {
     }
 
 .h_div {
-  width: 1000px;
+  width: 1078px;
   height: 150px;
   float: left;
 }
-.h_div_side{
-  width: 300px;
-  height: 150px;
-  float: left;
-}
+
 .h_div ul{
-	margin:0px 200px 0px 100px;
-	height:150px;
+
 }
 .login_go span{
 	color:black;
@@ -193,10 +188,9 @@ header {
   text-align: right;
 }
 .login_go{
-	margin-left:120px;
 	list-style: none;
 	float:left;
-	margin:100px auto;
+
 	border:2px solid black;
 	border-radius:10px;
 }
