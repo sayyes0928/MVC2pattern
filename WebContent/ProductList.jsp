@@ -5,7 +5,7 @@
 
 <%
 	ArrayList<ProductinfoDTO> article = (ArrayList<ProductinfoDTO>) request.getAttribute("article");
-	out.print(article.get(2));
+
 %>
 <!DOCTYPE html>
 <html>
@@ -615,8 +615,8 @@
 							<li>
 								<div class="row">
 									<figure class="effect1">
-
-										<a href="teampro_store.html"><img class="m_imgsize"
+										
+										<a href="ProductPost.jsp?codenum="+<%=article.get(0).getPro_code()%>></a><img class="m_imgsize"
 											src="<%=request.getContextPath()%>/upload/<%=article.get(0).getPro_mainimg()%>">
 											<figcaption>
 												<p>제품 상세 정보</p>
