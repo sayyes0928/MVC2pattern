@@ -1,5 +1,10 @@
 @charset "UTF-8";
-
+@font-face {
+  font-family: "jua";
+  src: url("Okbe_ttf.woff") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
 #m_wrap {
   width: 1082px;
   height: 1660px;

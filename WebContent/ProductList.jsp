@@ -5,7 +5,7 @@
 
 <%
 	ArrayList<ProductinfoDTO> article = (ArrayList<ProductinfoDTO>) request.getAttribute("article");
-	
+
 %>
 <!DOCTYPE html>
 <html>
@@ -20,7 +20,8 @@
 
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-<link rel="stylesheet" href="./Teamcss/teampro_ver_01.css" type="text/css">
+<link rel="stylesheet" href="./Teamcss/teampro_ver_01.css"
+	type="text/css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script
@@ -608,12 +609,14 @@
 						<span>Best 상품</span><br>
 						<hr>
 					</div>
+
 					<div class="m_img">
 						<ul>
 							<li>
 								<div class="row">
 									<figure class="effect1">
-										<a href="teampro_store.html"><img class="m_imgsize"
+										
+										<a href="ProductPost.jsp?codenum="+<%=article.get(0).getPro_code()%>></a><img class="m_imgsize"
 											src="<%=request.getContextPath()%>/upload/<%=article.get(0).getPro_mainimg()%>">
 											<figcaption>
 												<p>제품 상세 정보</p>
@@ -622,7 +625,8 @@
 								</div>
 								<div class="m_pname"><%=article.get(0).getPro_name() %></div>
 								<div class="m_pindex">2clolors</div>
-								<div class="m_pindex2"><%=article.get(0).getPro_price() %></div> </a>
+								<div class="m_pindex2"><%=article.get(0).getPro_price() %></div>
+								</a>
 
 							</li>
 							<li>
@@ -630,40 +634,40 @@
 									<figure class="effect1">
 
 										<a href="teampro_store.html"><img class="m_imgsize"
-											src="img/page_store/p_2.png">
+											src="<%=request.getContextPath()%>/upload/<%=article.get(1).getPro_mainimg()%>">
 											<figcaption>
 												<p>제품 상세 정보</p>
 											</figcaption>
 									</figure>
 								</div>
-								<div class="m_pname">코펜하겐 거실장</div>
+								<div class="m_pname"><%=article.get(1).getPro_name()%></div>
 								<div class="m_pindex">4colors</div>
-								<div class="m_pindex2">175,000</div> </a>
+								<div class="m_pindex2"><%=article.get(1).getPro_price()%></div> </a>
 							</li>
 							<li><div class="row">
 									<figure class="effect1">
 										<a href="teampro_store.html"><img class="m_imgsize"
-											src="img/page_store/p_3.png">
+											src="<%=request.getContextPath()%>/upload/<%=article.get(2).getPro_mainimg()%>">
 											<figcaption>
 												<p>제품 상세 정보</p>
 											</figcaption>
 									</figure>
 								</div>
-								<div class="m_pname">스트라이프 파티션</div>
+								<div class="m_pname"><%=article.get(2).getPro_name() %></div>
 								<div class="m_pindex">4size 5colors</div>
-								<div class="m_pindex2">68,900</div> </a></li>
+								<div class="m_pindex2"><%=article.get(2).getPro_price() %></div> </a></li>
 							<li>
 								<div class="row">
 									<figure class="effect1">
-										<img class="m_imgsize" src="img/page_store/p_4.png">
+										<img class="m_imgsize" src="<%=request.getContextPath()%>/upload/<%=article.get(3).getPro_mainimg()%>">
 										<figcaption>
 											<p>제품 상세 정보</p>
 										</figcaption>
 									</figure>
 								</div>
-								<div class="m_pname">캐더린 LED 수납침대</div>
+								<div class="m_pname"><%=article.get(3).getPro_name() %></div>
 								<div class="m_pindex">슈퍼싱글/퀸</div>
-								<div class="m_pindex2">154,900</div>
+								<div class="m_pindex2"><%=article.get(3).getPro_price() %></div>
 							</li>
 						</ul>
 					</div>
@@ -681,54 +685,54 @@
 							<li>
 								<div class="row">
 									<figure class="effect1">
-										<img class="m_imgsize" src="img/page_store/p_5.png">
+										<img class="m_imgsize" src="<%=request.getContextPath()%>/upload/<%=article.get(4).getPro_mainimg()%>">
 										<figcaption>
 											<p>제품 상세 정보</p>
 										</figcaption>
 									</figure>
 								</div>
-								<div class="m_pname">풀커버 패브릭소파</div>
+								<div class="m_pname"><%=article.get(4).getPro_name() %></div>
 								<div class="m_pindex">Gray color</div>
-								<div class="m_pindex2">288,900</div>
+								<div class="m_pindex2"><%=article.get(4).getPro_price() %></div>
 							</li>
 							<li>
 								<div class="row">
 									<figure class="effect1">
-										<img class="m_imgsize" src="img/page_store/p_6.png">
+										<img class="m_imgsize" src="<%=request.getContextPath()%>/upload/<%=article.get(5).getPro_mainimg()%>">
 										<figcaption>
 											<p>제품 상세 정보</p>
 										</figcaption>
 									</figure>
 								</div>
-								<div class="m_pname">패브릭 접이식 소파</div>
+								<div class="m_pname"><%=article.get(5).getPro_name() %></div>
 								<div class="m_pindex">3colors</div>
-								<div class="m_pindex2">89,000</div>
+								<div class="m_pindex2"><%=article.get(5).getPro_price() %></div>
 							</li>
 							<li>
 								<div class="row">
 									<figure class="effect1">
-										<img class="m_imgsize" src="img/page_store/p_7.png">
+										<img class="m_imgsize" src="<%=request.getContextPath()%>/upload/<%=article.get(6).getPro_mainimg()%>">
 										<figcaption>
 											<p>제품 상세 정보</p>
 										</figcaption>
 									</figure>
 								</div>
-								<div class="m_pname">노르마니 거실장</div>
+								<div class="m_pname"><%=article.get(6).getPro_name() %></div>
 								<div class="m_pindex">일반/LED</div>
-								<div class="m_pindex2">165,000</div>
+								<div class="m_pindex2"><%=article.get(6).getPro_price() %></div>
 							</li>
 							<li>
 								<div class="row">
 									<figure class="effect1">
-										<img class="m_imgsize" src="img/page_store/p_8.png">
+										<img class="m_imgsize" src="<%=request.getContextPath()%>/upload/<%=article.get(7).getPro_mainimg()%>">
 										<figcaption>
 											<p>제품 상세 정보</p>
 										</figcaption>
 									</figure>
 								</div>
-								<div class="m_pname">엘스카르 패브릭소파</div>
+								<div class="m_pname"><%=article.get(7).getPro_name() %></div>
 								<div class="m_pindex">2colors</div>
-								<div class="m_pindex2">148,900</div>
+								<div class="m_pindex2"><%=article.get(7).getPro_price() %></div>
 							</li>
 						</ul>
 					</div>
@@ -751,54 +755,54 @@
 							<li>
 								<div class="row">
 									<figure class="effect1">
-										<img class="m_imgsize" src="img/page_store/p_9.png">
+										<img class="m_imgsize" src="<%=request.getContextPath()%>/upload/<%=article.get(8).getPro_mainimg()%>">
 										<figcaption>
 											<p>제품 상세 정보</p>
 										</figcaption>
 									</figure>
 								</div>
-								<div class="m_pname">리움엔젤 식탁/벤치</div>
+								<div class="m_pname"><%=article.get(8).getPro_name() %></div>
 								<div class="m_pindex">white/7size</div>
-								<div class="m_pindex2">239,900</div>
+								<div class="m_pindex2"><%=article.get(8).getPro_price() %></div>
 							</li>
 							<li>
 								<div class="row">
 									<figure class="effect1">
-										<img class="m_imgsize" src="img/page_store/p_10.png">
+										<img class="m_imgsize" src="<%=request.getContextPath()%>/upload/<%=article.get(9).getPro_mainimg()%>">
 										<figcaption>
 											<p>제품 상세 정보</p>
 										</figcaption>
 									</figure>
 								</div>
-								<div class="m_pname">다이닝테이블</div>
+								<div class="m_pname"><%=article.get(9).getPro_name() %></div>
 								<div class="m_pindex">4인/6인 2colors</div>
-								<div class="m_pindex2">399,900</div>
+								<div class="m_pindex2"><%=article.get(9).getPro_price() %></div>
 							</li>
 							<li>
 								<div class="row">
 									<figure class="effect1">
-										<img class="m_imgsize" src="img/page_store/p_11.png">
+										<img class="m_imgsize" src="<%=request.getContextPath()%>/upload/<%=article.get(10).getPro_mainimg()%>">
 										<figcaption>
 											<p>제품 상세 정보</p>
 										</figcaption>
 									</figure>
 								</div>
-								<div class="m_pname">모던클래식 원목침대</div>
+								<div class="m_pname"><%=article.get(10).getPro_name() %></div>
 								<div class="m_pindex">슈퍼싱글/퀸</div>
-								<div class="m_pindex2">148,900</div>
+								<div class="m_pindex2"><%=article.get(10).getPro_price() %></div>
 							</li>
 							<li>
 								<div class="row">
 									<figure class="effect1">
-										<img class="m_imgsize" src="img/page_store/p_12.png">
+										<img class="m_imgsize" src="<%=request.getContextPath()%>/upload/<%=article.get(11).getPro_mainimg()%>">
 										<figcaption>
 											<p>제품 상세 정보</p>
 										</figcaption>
 									</figure>
 								</div>
-								<div class="m_pname">우드콘솔/벤치의자</div>
+								<div class="m_pname"><%=article.get(11).getPro_name() %></div>
 								<div class="m_pindex">2종1택</div>
-								<div class="m_pindex2">54,900</div>
+								<div class="m_pindex2"><%=article.get(11).getPro_price() %></div>
 							</li>
 						</ul>
 					</div>
