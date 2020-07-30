@@ -9,7 +9,7 @@
       });
     })
   
-  
+               
     $(document).ready(function() {
       $('#pr_imgs li img').hover(
         function() {
@@ -21,8 +21,20 @@
         }
       );
     });
-
-
+    
+    
+  //////////// 주문목록 리스트 
+    $(document).ready(function(){
+        $('#Option1').on('change', function() {
+        	var $pro_name = $('#product_name').text();
+            var $optiongroup = $('#Option1 option:first').val();
+            var $option = $('#Option1 option:selected').val();
+            
+            $("#buylist_section").css("display", "block");
+            $("#buylist").html( $pro_name+" / "+$optiongroup+" : "+$option);           
+        });
+     });
+   
     function createRow() {
 
       var ta = document.getElementById("review_list");

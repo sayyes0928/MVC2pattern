@@ -9,9 +9,16 @@
   font-style: normal;
   font-weight: normal;
 }
+<<<<<<< HEAD
 a span {
   text-decoration: none;
   color: black;
+=======
+
+ a span{
+	  text-decoration:none;
+	  color:black;
+>>>>>>> refs/remotes/nohjooyounh/master
 }
 * {
   margin: 0;
@@ -44,7 +51,18 @@ header {
   height: 200px;
 } */
 
+<<<<<<< HEAD
 #main_nav {
+=======
+.top_menu , a:link, a:visited{
+	text-decoration : none!important;
+	cursor: pointer;
+	
+}
+
+#main_nav{
+  
+>>>>>>> refs/remotes/nohjooyounh/master
   clear: both;
   height: 70px;
   /*�닔�젙�젣�쓽 80-->60*/
@@ -75,9 +93,30 @@ header {
   /* top: 130px; */
 }
 
+<<<<<<< HEAD
 #sub_menu .s_menu {
   width: 150px;
   float: left;
+=======
+    #sub_menu .s_menu {
+      width: 150px;
+      float: left;
+    }
+
+    #sub_menu .s_menu li {
+      padding-bottom: 8px;
+
+    }
+    #sub_menu .s_menu li a {
+      color: rgb(219, 219, 217);
+      font-size: 12px;
+    }
+
+.h_div {
+  width: 1078px;
+  height: 150px;
+  margin:0 auto;
+>>>>>>> refs/remotes/nohjooyounh/master
 }
 
 #sub_menu .s_menu li {

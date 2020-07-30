@@ -3,8 +3,8 @@ pageEncoding="UTF-8"%>
 <%@page import="java.util.List" %>
 <%@page import="org.apache.ibatis.session.SqlSessionFactory"%>
 <%@page import="org.apache.ibatis.session.SqlSession"%>
-<%@page import="mybatis.java.dao.UserDAO" %>
-<%@page import="mybatis.java.dto.UserDTO" %>
+<%@page import="com.jachi.DAO.BoardDAO" %>
+<%@page import="com.jachi.DTO.UserinfoDTO" %>
 <%@ page import="java.io.PrintWriter"%>
 
 <!DOCTYPE html>
@@ -33,7 +33,7 @@ pageEncoding="UTF-8"%>
     String us_id =  request.getParameter("us_id");
     String us_pw = request.getParameter("us_pw");
     
-    UserDAO userDAO = UserDAO.getinstance();
+    BoardDAO userDAO = BoardDAO.getinstance();
    SqlSessionFactory sqlfactory = UserDAO.getConn();
    SqlSession sqlsession = sqlfactory.openSession();
    String getPassword_userinfo = sqlsession.selectOne("login",us_id);
