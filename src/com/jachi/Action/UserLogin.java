@@ -24,7 +24,7 @@ public class UserLogin implements Action {
 		System.out.println(us_pw);
 		
 		UserLoginService userLoginService = new UserLoginService();
-		userlogininfo = userLoginService.logingo(us_id,us_pw);
+		userlogininfo = userLoginService.logingo(us_id);
 		
 		System.out.println(userlogininfo);
 		

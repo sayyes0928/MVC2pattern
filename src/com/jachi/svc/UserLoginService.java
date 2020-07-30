@@ -11,13 +11,13 @@ import com.jachi.DTO.UserinfoDTO;
 
 public class UserLoginService {
 
-	public Boolean logingo(String us_id, String us_pw) throws Exception {
+	public String logingo(String us_id, String us_pw) throws Exception {
 		
 		boolean userlogininfo = false;
 		SqlSessionFactory sqlfactory = BoardDAO.getConn();
 		SqlSession sqlsession = sqlfactory.openSession();
 		
-		UserinfoDTO sllogininfo = sqlsession.selectOne("select_logininfo");
+		UserinfoDTO sllogininfo = sqlsession.selectOne("select_logininfo",us_id);
 		System.out.println(sllogininfo+"¼¿·º°ªÀº ¶ß´Ï?");
 		
 		System.out.println(userlogininfo+"¶°Áà¶óÁ»");
