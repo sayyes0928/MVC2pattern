@@ -59,10 +59,9 @@
 </head>
 
 <body>
-	<form>
-		 <header>
+	<form id="contentPage">
+         <header>
         <div id="h_wrap">
-            <div class="h_div_side"></div>
             <div class="h_div">
             <ul>
             <li style="padding-top:110px"><img src="img/grass2icon.svg" width="30" height="30"/></li>
@@ -79,10 +78,9 @@
              <li style="padding-top:100px"><img src="img/grassicon.svg" width="40" height="40"/></li> 
              <li style="padding-top:110px"><img src="img/grass2icon.svg" width="30" height="30"/></li>
             </ul>
-            </div>
-            <div class="h_div_side">    
+        
              <%
-             	String us_id = (String)session.getAttribute("US_ID");
+             String us_id = (String)session.getAttribute("US_ID");
                if(us_id == null){
               %>
               <ul class="login_go">
@@ -92,16 +90,16 @@
               </ul>
 
               <%
-            }else{
+             }else{
               %>
               
              <ul class="login_go">
-             <li><span><%=us_id %>님 환영합니다!</span></li>
+             <li><span></span></li>
              <li><span> | </span></li>
              <li><a href="logoutActionPage.jsp" >로그아웃</a></li>
               </ul>
               <%
-              }
+              //  }
               %>
             </div>
         </div>
@@ -146,7 +144,7 @@
               <li><a href="teampro_myhome.html"><span>자취에대한 모든것</span></a>
               <li><a href="teampro_myhome.html"><img src="img/jachievery.PNG" width="55" height="55"
               onmouseover="this.src='img/everyicon.svg'" onmouseout="this.src='img/jachievery.PNG'"></a>
-              <li><a class="top_menu" href="teampro_myhome.html"><span>고객센터</span></a>
+              <li><a href="teampro_myhome.html"><span>고객센터</span></a>
             </ul>
           </div>
        <div id="sub">  
