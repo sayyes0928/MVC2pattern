@@ -98,7 +98,7 @@ header {
 .h_div {
   width: 1078px;
   height: 150px;
-  float: left;
+  margin:0 auto;
 }
 
 .h_div ul{

@@ -18,28 +18,26 @@
 <script type="text/javascript" src ="./myhome.web.js/ProductPost.js"></script>
 </head>
 <body>
-<form>
-    <header>
+<form id="contentPage">
+         <header>
         <div id="h_wrap">
-            <div class="h_div_side"></div>
             <div class="h_div">
             <ul>
             <li style="padding-top:110px"><img src="img/grass2icon.svg" width="30" height="30"/></li>
-            <li style="padding-top:80px"><img src="truck2.svg" width="70" height="70"/></li>
-            <li><img src="sunicon.svg" width="60" height="60"/></li>
-            <li style="padding-top:110px"><img src="grass2icon.svg" width="30" height="30"/></li>
-            <li style="padding-top:100px"><img src="grassicon.svg" width="40" height="40"/></li> 
+            <li style="padding-top:80px"><img src="img/truck2.svg" width="70" height="70"/></li>
+            <li><img src="img/sunicon.svg" width="60" height="60"/></li>
+            <li style="padding-top:110px"><img src="img/grass2icon.svg" width="30" height="30"/></li>
+            <li style="padding-top:100px"><img src="img/grassicon.svg" width="40" height="40"/></li> 
             
             <li><h1>자취해보자</h1></li>
             <li style="padding-top:20px">
-             <img src="houseiconcolor.svg" width="100" height="100" onmouseover="this.src='houseicon.svg'" onmouseout="this.src='houseiconcolor.svg'"/>
+             <img src="img/houseiconcolor.svg" width="100" height="100" onmouseover="this.src='img/houseicon.svg'" onmouseout="this.src='img/houseiconcolor.svg'"/>
              </li>
-             <li style="padding-top:100px"><img src="grassicon.svg" width="40" height="40"/></li>
-             <li style="padding-top:100px"><img src="grassicon.svg" width="40" height="40"/></li> 
-             <li style="padding-top:110px"><img src="grass2icon.svg" width="30" height="30"/></li>
+             <li style="padding-top:100px"><img src="img/grassicon.svg" width="40" height="40"/></li>
+             <li style="padding-top:100px"><img src="img/grassicon.svg" width="40" height="40"/></li> 
+             <li style="padding-top:110px"><img src="img/grass2icon.svg" width="30" height="30"/></li>
             </ul>
-            </div>
-            <div class="h_div_side">    
+        
              <%
                // if(us_id == null){
               %>
@@ -102,8 +100,8 @@
               <li><a href="teampro_ver_01_1.html"><span>홈</span></a>
               <li><a href="teampro_ver_01_1.html"><span>스토어</span></a>
               <li><a href="teampro_myhome.html"><span>자취에대한 모든것</span></a>
-              <li><a href="teampro_myhome.html"><img src="jachievery.PNG" width="55" height="55"
-              onmouseover="this.src='everyicon.svg'" onmouseout="this.src='jachievery.PNG'"></a>
+              <li><a href="teampro_myhome.html"><img src="img/jachievery.PNG" width="55" height="55"
+              onmouseover="this.src='img/everyicon.svg'" onmouseout="this.src='img/jachievery.PNG'"></a>
               <li><a href="teampro_myhome.html"><span>고객센터</span></a>
             </ul>
           </div>
@@ -148,6 +146,7 @@
           </div> 
         </div>
         </header>
+
      
              
           
@@ -215,7 +214,7 @@
         	                optionsp = option.split(",");%>
                     <%} %>     
                  <li>
-                  <select>
+                  <select id="Option1">
                   	
                         
                    <%   for(int x=0; x < optionsp.length; x++){%>  
@@ -259,6 +258,7 @@
                  <% }%>
               
               </ul>
+              <div onchange="buylist()"> 주문주문 수량수량 주문주문 수량수량</div>
             </div>
             <div class="s_price">
               <ul>
@@ -309,7 +309,7 @@
                 </tr>
                 <tr>
                   <td class="table_hr" colspan="2">
-                    <hr>rgb(224, 61, 40)
+                    <hr>
                   </td>
                 </tr>
                 <tr>
@@ -516,16 +516,57 @@
             <div class="selling01">
               <div class="selling_select">
                 <ul>
-                  <li>
-                    <select class="" name="">
-                      <option value="">색상</option>
-                    </select>
+                  <% if(article.get(0).getPro_option1()!=null){
+                      String option = null;
+                      String [] optionsp = null;
+                      for(int i=0; i<article.size(); i++ ){
+        	                option = article.get(i).getPro_option1();
+        	                optionsp = option.split(",");%>
+                    <%} %>     
+                 <li>
+                  <select>
+                  	
+                        
+                   <%   for(int x=0; x < optionsp.length; x++){%>  
+                         <option><%=optionsp[x]%></option>
+                    <%} %>  
+                
+                  </select>
                   </li>
-                  <li>
-                    <select class="" name="">
-                      <option value="">추가상품을 선택해주세요</option>
-                    </select>
+                  <%} %>
+                 
+                 <% if(article.get(0).getPro_option2()!=null){
+                      String option = null;
+                      String [] optionsp = null;
+                      for(int i=0; i<article.size(); i++ ){
+        	                option = article.get(i).getPro_option2();
+        	                optionsp = option.split(",");%>
+                    <%} %>     
+                 <li>
+                  <select>
+                  <%   for(int x=0; x < optionsp.length; x++){%>  
+                         <option><%=optionsp[x]%></option>
+                    <%} %>  
+                  </select>
                   </li>
+                 <% }%>
+                
+                    <% if(article.get(0).getPro_option3()!=null){
+                      String option = null;
+                      String [] optionsp = null;
+                      for(int i=0; i<article.size(); i++ ){
+        	                option = article.get(i).getPro_option3();
+        	                optionsp = option.split(",");%>
+                    <%} %>     
+                 <li>
+                  <select>
+                  <%   for(int x=1; x < optionsp.length; x++){%>  
+                         <option><%=optionsp[x]%></option>
+                    <%} %>  
+                  </select>
+                  </li>
+                 <% }%>
+              
                 </ul>
               </div>
               <div class="pr_contents">

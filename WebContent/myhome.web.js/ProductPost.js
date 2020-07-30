@@ -22,7 +22,14 @@
       );
     });
 
+    
+    function buylist(){
+    	alert("option1");
 
+      
+      
+    }
+    
     function createRow() {
 
       var ta = document.getElementById("review_list");
