@@ -65,15 +65,7 @@
         theInterval();
       });
     </script>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css"
-    />
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  
 <title>MVC 게시판</title>
 <style type="text/css">
 
@@ -95,7 +87,6 @@
 	<form id="contentPage">
          <header>
         <div id="h_wrap">
-            <div class="h_div_side"></div>
             <div class="h_div">
             <ul>
             <li style="padding-top:110px"><img src="img/grass2icon.svg" width="30" height="30"/></li>
@@ -113,7 +104,7 @@
              <li style="padding-top:110px"><img src="img/grass2icon.svg" width="30" height="30"/></li>
             </ul>
             </div>
-            <div class="h_div_side">    
+  
              <%
                // if(us_id == null){
               %>
