@@ -25,7 +25,7 @@
     
     function buylist(){
     	alert("option1");
-
+//
       
       
     }
