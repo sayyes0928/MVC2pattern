@@ -99,7 +99,7 @@
              <li><a href="logoutActionPage.jsp" >로그아웃</a></li>
               </ul>
               <%
-              //  }
+               }
               %>
             </div>
         </div>
@@ -197,9 +197,9 @@
 			<div id="m_wrap">
 				<aside id="as_size">
 					<ul class="topnav">
-						<li><a href="#?ctae=" 12"/>가구</a>
+						<li><a href="#">가구</a>
 							<ul>
-								<li><a href="#?ctae1=" 12" &cate2='34'>소파/거실가구</a>
+								<li><a href="#">소파/거실가구</a>
 									<ul>
 										<li><a href="#">소파</a></li>
 										<li><a href="#">거실/TV장</a></li>
@@ -881,6 +881,7 @@
 								<div class="m_pname"><%=article.get(11).getPro_name() %></div>
 								<div class="m_pindex">2종1택</div>
 								<div class="m_pindex2"><%=article.get(11).getPro_price() %></div>
+								
 							</li>
 						</ul>
 					</div>
