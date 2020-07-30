@@ -8,8 +8,8 @@
     <link rel="stylesheet" type="text/css" href="./myhome.web.css/myhome_write_css.css" />
     <link rel="stylesheet" type="text/css" href="./myhome.web.css/page_myhome/heartbtn.css" />
     <link rel="stylesheet" type="text/css" href="./myhome.web.css/page_myhome/bookmark.css" />
-
     <link rel="stylesheet" type="text/css"  href="./myhome.web.css/teamTopNav.css" />
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./myhome.web.css//styleSlider.css" />
 
