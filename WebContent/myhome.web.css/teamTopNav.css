@@ -9,6 +9,7 @@
   font-style: normal;
   font-weight: normal;
 }
+
  a span{
 	  text-decoration:none;
 	  color:black;
@@ -43,6 +44,12 @@ header {
 /* #h_wrap header {
   height: 200px;
 } */
+
+.top_menu , a:link, a:visited{
+	text-decoration : none!important;
+	cursor: pointer;
+	
+}
 
 #main_nav{
   
