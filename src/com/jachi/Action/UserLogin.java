@@ -14,7 +14,7 @@ public class UserLogin implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		Boolean userlogininfo=false;
+		String userlogininfo=null;
 		ActionForward forward = new ActionForward();
 		
 		String us_id = request.getParameter("us_id");
@@ -28,14 +28,17 @@ public class UserLogin implements Action {
 		
 		System.out.println(userlogininfo);
 		
-		if(!userlogininfo) {
+		if(!userlogininfo.equals(us_pw)) {
 			response.setContentType("text/html;charset=UTF-8");
 			PrintWriter out=response.getWriter();
 			out.println("<script>");
 			out.println("alert('아이디 또는 비밀번호가 틀렸습니다.');");
 			out.println("history.back();");
 			out.println("</script>");
-		}else {
+		}else if(userlogininfo == null) {
+			
+		}
+			else {
 			HttpSession session = request.getSession(true);
 			session.setAttribute("US_ID", us_id);
 			forward = new ActionForward();	

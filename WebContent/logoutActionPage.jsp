@@ -11,7 +11,7 @@
 	session.invalidate(); //현재 이 페이지의 회원이 세션을 빼앗기도록 만들어준다.
 	%>
 <script>
-location.href = 'ProductList.jsp';
+location.href = 'storeList.bo';
 </script>
 </body>
 </html>

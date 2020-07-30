@@ -14,7 +14,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	select pro_code,pro_name,pro_price,pro_mainimg from productinfo;
 </select>
 
-<select id="select_logininfo" parameterType="String" resultType="com.jachi.DTO.UserinfoDTO">
+<select id="select_logininfo" parameterType="String" resultType="String">
 	select us_pw from userinfo where us_id = #{us_id};
 </select>
 
