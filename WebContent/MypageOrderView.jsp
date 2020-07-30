@@ -1,21 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.*"%>
+<%@ page import="com.jachi.DTO.DeliveryDTO"%>
+<%
+    ArrayList<Integer> articleCount = (ArrayList<Integer>)request.getAttribute("articleCount");
+  
+    
+    %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="./../myhome.web.css/teamTopNav.css" />
-    <link rel="stylesheet" type="text/css" href="./../myhome.web.css/teamMypage.css" />
+    <link rel="stylesheet" type="text/css" href="./myhome.web.css/teamTopNav.css" />
+    <link rel="stylesheet" type="text/css" href="./myhome.web.css/teamMypage.css" />
     <link rel="stylesheet" type="text/css" href="styleSlider.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script type="text/javascript" src="./../myhome.web.js/jquery-easing-1.3.pack.js"></script>
+    <script type="text/javascript" src="./myhome.web.js/jquery-easing-1.3.pack.js"></script>
     <script
       type="text/javascript"
-      src="./../myhome.web.js/jquery-easing-compatibility.1.2.pack.js"
+      src="./myhome.web.js/jquery-easing-compatibility.1.2.pack.js"
     ></script>
-    <script type="text/javascript" src="./../myhome.web.js/coda-slider.1.1.1.pack.js"></script>
+    <script type="text/javascript" src="./myhome.web.js/coda-slider.1.1.1.pack.js"></script>
 
     <script type="text/javascript">
       var theInt = null;
@@ -67,37 +74,37 @@
           <div class="h_div">
             <ul>
               <li style="padding-top: 110px;">
-                <img src="./../img/grass2icon.svg" width="30" height="30" />
+                <img src="./img/grass2icon.svg" width="30" height="30" />
               </li>
               <li style="padding-top: 80px;">
-                <img src="./../img/truck2.svg" width="70" height="70" />
+                <img src="./img/truck2.svg" width="70" height="70" />
               </li>
-              <li><img src="./../img/sunicon.svg" width="60" height="60" /></li>
+              <li><img src="./img/sunicon.svg" width="60" height="60" /></li>
               <li style="padding-top: 110px;">
-                <img src="./../img/grass2icon.svg" width="30" height="30" />
+                <img src="./img/grass2icon.svg" width="30" height="30" />
               </li>
               <li style="padding-top: 100px;">
-                <img src="./../img/grassicon.svg" width="40" height="40" />
+                <img src="./img/grassicon.svg" width="40" height="40" />
               </li>
 
               <li><h1>자취해보자</h1></li>
               <li style="padding-top: 20px;">
                 <img
-                  src="./../img/houseiconcolor.svg"
+                  src="./img/houseiconcolor.svg"
                   width="100"
                   height="100"
-                  onmouseover="this.src='./../img/houseicon.svg'"
-                  onmouseout="this.src='./../img/houseiconcolor.svg'"
+                  onmouseover="this.src='./img/houseicon.svg'"
+                  onmouseout="this.src='./img/houseiconcolor.svg'"
                 />
               </li>
               <li style="padding-top: 100px;">
-                <img src="./../img/grassicon.svg" width="40" height="40" />
+                <img src="./img/grassicon.svg" width="40" height="40" />
               </li>
               <li style="padding-top: 100px;">
-                <img src="./../img/grassicon.svg" width="40" height="40" />
+                <img src="./img/grassicon.svg" width="40" height="40" />
               </li>
               <li style="padding-top: 110px;">
-                <img src="./../img/grass2icon.svg" width="30" height="30" />
+                <img src="./img/grass2icon.svg" width="30" height="30" />
               </li>
             </ul>
 
@@ -255,37 +262,37 @@
               <a class="order-list__menu__list" href="#">
                 <div class="order-list__menu__list__wrap">
                   <div class="order-list__menu__list__title">입금대기</div>
-                  <div class="order-list__menu__list__value">0</div>
+                  <div class="order-list__menu__list__value"><%= articleCount.get(0) %></div>
                 </div>
               </a>
               <a class="order-list__menu__list" href="#">
                 <div class="order-list__menu__list__wrap">
                   <div class="order-list__menu__list__title">결제완료</div>
-                  <div class="order-list__menu__list__value">0</div>
+                  <div class="order-list__menu__list__value"><%= articleCount.get(1) %></div>
                 </div>
               </a>
               <a class="order-list__menu__list" href="#">
                 <div class="order-list__menu__list__wrap">
                   <div class="order-list__menu__list__title">배송준비</div>
-                  <div class="order-list__menu__list__value">0</div>
+                  <div class="order-list__menu__list__value"><%= articleCount.get(2) %></div>
                 </div>
               </a>
               <a class="order-list__menu__list" href="#">
                 <div class="order-list__menu__list__wrap">
                   <div class="order-list__menu__list__title">배송중</div>
-                  <div class="order-list__menu__list__value">0</div>
+                  <div class="order-list__menu__list__value"><%= articleCount.get(3) %></div>
                 </div>
               </a>
               <a class="order-list__menu__list" href="#">
                 <div class="order-list__menu__list__wrap">
                   <div class="order-list__menu__list__title">배송완료</div>
-                  <div class="order-list__menu__list__value">0</div>
+                  <div class="order-list__menu__list__value"><%= articleCount.get(4) %></div>
                 </div>
               </a>
               <a class="order-list__menu__list" href="#">
                 <div class="order-list__menu__list__wrap">
                   <div class="order-list__menu__list__title">구매확정</div>
-                  <div class="order-list__menu__list__value">0</div>
+                  <div class="order-list__menu__list__value"><%= articleCount.get(5) %></div>
                 </div>
               </a>
             </div>

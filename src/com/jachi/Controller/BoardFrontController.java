@@ -20,7 +20,7 @@ import com.jachi.Action.BoardModifyProAction;
 import com.jachi.Action.BoardReplyFormAction;
 import com.jachi.Action.BoardReplyProAction;
 import com.jachi.Action.MyhomeWriteProAction;
-
+import com.jachi.Action.MypageOrderViewAction;
 import com.jachi.Action.PLSelectAction;
 
 import com.jachi.Action.ProductPostViewAction;
@@ -52,6 +52,15 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		}
 		else if(command.equals("/Myhome_WritePro.bo")){
 			action  = new MyhomeWriteProAction();
+			try {
+				forward=action.execute(request, response );
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/MypageOrderList.bo")){
+			System.out.println("dd");
+			action  = new MypageOrderViewAction();
 			try {
 				forward=action.execute(request, response );
 			} catch (Exception e) {
