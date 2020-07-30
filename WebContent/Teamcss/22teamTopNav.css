@@ -7,11 +7,10 @@
   font-family: "jua";
 }
 @font-face {
+  src: url("./../fonts/Okbe_ttf.ttf");
   font-family: "jua";
-  src: url("Okbe_ttf.ttf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
 }
+
 header {
   position: sticky;
   top: 0;
@@ -60,7 +59,7 @@ header {
 }
 
 .h_div {
-  width: 10780px;
+  width: 1080px;
   height: 120px;
   float: left;
 }
@@ -71,7 +70,9 @@ header {
   font-size: 9pt;
 }
 
-
+.h_div ul {
+  text-align: right;
+}
 
 .h_div h1 {
   margin: 0;

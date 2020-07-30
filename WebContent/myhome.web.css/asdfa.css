@@ -9,7 +9,6 @@
   font-style: normal;
   font-weight: normal;
 }
-
  a span{
 	  text-decoration:none;
 	  color:black;
@@ -44,12 +43,6 @@ header {
 /* #h_wrap header {
   height: 200px;
 } */
-
-.top_menu , a:link, a:visited{
-	text-decoration : none!important;
-	cursor: pointer;
-	
-}
 
 #main_nav{
   
@@ -103,11 +96,10 @@ header {
     }
 
 .h_div {
-  width: 1078px;
+  width: 1000px;
   height: 150px;
   float: left;
 }
-
 .h_div ul{
 
 }
@@ -197,7 +189,6 @@ header {
 .login_go{
 	list-style: none;
 	float:left;
-
 	border:2px solid black;
 	border-radius:10px;
 }

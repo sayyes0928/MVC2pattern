@@ -6,10 +6,9 @@
 
 
    <!--   <link rel="stylesheet" type="text/css" href="./myhome.web.css/myhome_write_css.css" /> -->
-    <link rel="stylesheet" type="text/css" href="./myhome.web.css/page_myhome/heartbtn.css" />
-    <link rel="stylesheet" type="text/css" href="./myhome.web.css/page_myhome/bookmark.css" />
-    <link rel="stylesheet" type="text/css" href="./myhome.web.css/myhome_write_Form.css" />
-    <link rel="stylesheet" type="text/css" href="./myhome.web.css/teamTopNav.css" />
+    <link rel="stylesheet" type="text/css" href="./../myhome.web.css/page_myhome/heartbtn.css" />
+    <link rel="stylesheet" type="text/css" href="./../myhome.web.css/myhome_write_Form.css" />
+    <link rel="stylesheet" type="text/css" href="./../myhome.web.css/teamTopNav.css" />
     
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,15 +17,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script
       type="text/javascript"
-      src="./myhome.web.js/jquery-easing-1.3.pack.js"
+      src="./../myhome.web.js/jquery-easing-1.3.pack.js"
     ></script>
     <script
       type="text/javascript"
-      src="./myhome.web.js/jquery-easing-compatibility.1.2.pack.js"
+      src="./../myhome.web.js/jquery-easing-compatibility.1.2.pack.js"
     ></script>
     <script
       type="text/javascript"
-      src="./myhome.web.js/coda-slider.1.1.1.pack.js"
+      src="./../myhome.web.js/coda-slider.1.1.1.pack.js"
     ></script>
 
     <script type="text/javascript">
@@ -77,32 +76,32 @@
 <body>
 	<!-- 게시판 등록 -->
 	<%
-	 String userID = (String)session.getAttribute("userID");
+	/* String userID = (String)session.getAttribute("userID");
 	if(userID == null){
 		out.println("<script>");
 		out.println("alert('로그인이 필요한 작업입니다.');");
 		out.println("history.back();");
 		out.println("</script>");
-	}
+	}*/
 	%>
       <header>
         <div id="h_wrap">
             <div class="h_div_side"></div>
             <div class="h_div">
             <ul>
-            <li style="padding-top:110px"><img src="grass2icon.svg" width="30" height="30"/></li>
-            <li style="padding-top:80px"><img src="truck2.svg" width="70" height="70"/></li>
-            <li><img src="sunicon.svg" width="60" height="60"/></li>
-            <li style="padding-top:110px"><img src="grass2icon.svg" width="30" height="30"/></li>
-            <li style="padding-top:100px"><img src="grassicon.svg" width="40" height="40"/></li> 
+            <li style="padding-top:110px"><img src="./../img/grass2icon.svg" width="30" height="30"/></li>
+            <li style="padding-top:80px"><img src="./../img/truck2.svg" width="70" height="70"/></li>
+            <li><img src="./../img/sunicon.svg" width="60" height="60"/></li>
+            <li style="padding-top:110px"><img src="./../img/grass2icon.svg" width="30" height="30"/></li>
+            <li style="padding-top:100px"><img src="./../img/grassicon.svg" width="40" height="40"/></li> 
             
             <li><h1>자취해보자</h1></li>
             <li style="padding-top:20px">
-             <img src="houseiconcolor.svg" width="100" height="100" onmouseover="this.src='houseicon.svg'" onmouseout="this.src='houseiconcolor.svg'"/>
+             <img src="./../img/houseiconcolor.svg" width="100" height="100" onmouseover="this.src='./../img/houseicon.svg'" onmouseout="this.src='./../img/houseiconcolor.svg'"/>
              </li>
-             <li style="padding-top:100px"><img src="grassicon.svg" width="40" height="40"/></li>
-             <li style="padding-top:100px"><img src="grassicon.svg" width="40" height="40"/></li> 
-             <li style="padding-top:110px"><img src="grass2icon.svg" width="30" height="30"/></li>
+             <li style="padding-top:100px"><img src="./../img/grassicon.svg" width="40" height="40"/></li>
+             <li style="padding-top:100px"><img src="./../img/grassicon.svg" width="40" height="40"/></li> 
+             <li style="padding-top:110px"><img src="./../img/grass2icon.svg" width="30" height="30"/></li>
             </ul>
             </div>
             <div class="h_div_side">    
@@ -222,7 +221,7 @@
 			<table>
 			    <tr>
 			     <td>
-			      <input type="hidden" value=<%= userID%> name="BOARD_NAME"/>
+			 <input type="hidden" value="userID" name="BOARD_NAME"/>
 			     </td>
 			    </tr>
 				<tr class="BOARD_SUBJECT">
