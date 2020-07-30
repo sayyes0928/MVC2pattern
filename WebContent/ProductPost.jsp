@@ -216,10 +216,12 @@
                     <%} %>     
                  <li>
                   <select>
+                  	
                         
                    <%   for(int x=0; x < optionsp.length; x++){%>  
                          <option><%=optionsp[x]%></option>
                     <%} %>  
+                
                   </select>
                   </li>
                   <%} %>
