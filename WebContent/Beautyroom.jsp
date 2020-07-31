@@ -195,15 +195,15 @@
 					</div>
 
 				</div>
-				<div class="card__img" style="background-image: URL(./Cardimg/Test2.jpg);"></div>
+				<div class="card__img" style="background-image: URL(<%=request.getContextPath()%>/upload/<%=userpost.get(0).getPost_pic()%>);"></div>
 				<a href="#" class="card_link">
-					<div class="card__img--hover" style="background-image: URL(./Cardimg/Test2.jpg);"></div>
+					<div class="card__img--hover" style="background-image: URL(<%=request.getContextPath()%>/upload/<%=userpost.get(0).getPost_pic()%>);"></div>
 				</a>
 				<div class="card__info">
 					<span class="card__category"><%=userpost.get(0).getPost_title() %></span>
 					<h3 class="card__title"><%=userpost.get(0).getPost_posting() %></h3>
 					<span class="card__by">by <a href="#" class="card__author"
-						title="author"><%=userpost.get(0).getPost_nicknmae() %></a></span>
+						title="author"><%=userpost.get(0).getPost_nickname() %></a></span>
 				</div>
 			</article>
 
