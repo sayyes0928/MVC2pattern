@@ -19,7 +19,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </select>
 
 <select id="select_beautyall" parameterType="String" resultType="com.jachi.DTO.BeautyRoomDTO">
-	select post_num,post_title,post_posting,post_pic,post_nickname from posting;
+	select post_num,post_title,post_posting,post_pic,us_nkname from posting join userinfo  on userinfo.us_id=posting.post_nickname;
 </select>
 <insert id="insert_productinfo" parameterType="com.jachi.DTO.ProductinfoDTO">insert into productinfo values(#{pro_code},#{pro_name},#{pro_price},#{pro_mainimg},#{pro_subimg},#{pro_option1},#{pro_option2},#{pro_option3},#{pro_catecode1},#{pro_catecode2},#{pro_catecode3}); </insert>
 </mapper>
