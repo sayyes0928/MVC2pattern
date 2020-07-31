@@ -23,7 +23,7 @@
     });
     
     
-  //////////// 주문목록 리스트 
+  //////////// 주문 목록 리스트 
     $(document).ready(function(){
         $('#Option1').on('change', function() {
         	var $pro_name = $('#product_name').text();
@@ -31,9 +31,38 @@
             var $option = $('#Option1 option:selected').val();
             
             $("#buylist_section").css("display", "block");
-            $("#buylist").html( $pro_name+" / "+$optiongroup+" : "+$option);           
+            $("#buylist").html( $pro_name+" / "+$optiongroup+" : "+$option);
+        
         });
      });
+    
+    $(document).ready(function(){
+        $('#Option1').on('change', function() {
+        	var $pro_name = $('#product_name').text();
+            var $optiongroup = $('#Option1 option:first').val();
+            var $option = $('#Option1 option:selected').val();
+            var $selectbox_size = $('#Option1 option').size();
+            var $buylist_cell = $("#buylist_cell").html();
+       
+                    
+            $("#buylist_section").css("display", "block");
+            $("#buylist").html( $pro_name+" / "+$optiongroup+" : "+$option);
+            $("#buylist_cell").append($buylist_cell);
+          
+            
+        });
+     });
+    
+   ////////// 주문 목록 삭제버튼
+    $(document).ready(function(){
+        $('#buylist_section input[type="button"]').on('click', function() {
+        	
+            $("#buylist_section").css("display", "none");
+            $("#buylist_cell").remove();
+        });
+     });
+    
+   
    
     function createRow() {
 

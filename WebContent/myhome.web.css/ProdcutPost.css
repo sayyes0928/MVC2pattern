@@ -654,23 +654,26 @@
    border:1px solid black;
    border-radius: 7px;
    margin-left: 15px;
+   margin-top: 10px;
   
   }
 
   #buylist{
    /* display: none;*/
-    margin:0 auto 0 auto;
+    float:left;
+    margin-top: 10px;
     padding-left: 10px;  
-    width:300px;
+    width:200px;
     box-sizing: border-box;
     font-size: 25px;
     font-weight: bold;
     text-align: left;
+   
   }
   
   #product_count{
-  float: left;
-  margin :5px 0 0 10px;
+  float:left;
+  margin :8px 0 0 10px;
   width: 100px;
   height: 25px;
   box-sizing: border-box;
@@ -682,16 +685,27 @@
   
   }
 
-  #buylist_section > button{
+  #buylist_section > input[type="button"]{
      float:right;
      background-color: rgb(18, 74, 133);
      color: white;
      width: 25px;
      height: 25px;
      box-sizing: border-box;
-     margin: 5px 10px 0 0;
+     margin: 10px 10px 0 0;
      border: 1px solid rgb(18, 74, 133);
      border-radius: 7px;
      font-size: 16px;
      font-weight: bold;
+ 
   }
+  
+  #proudctlist_price{
+   
+   float:right;
+   margin-top: 10px;
+   margin-right: 10px;'
+   font-size: 16px;
+   font-weight: bold;
+  }
+  

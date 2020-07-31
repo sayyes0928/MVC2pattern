@@ -274,9 +274,10 @@
 								</select></li>
 								<% }%>
 							</ul>
-						
-							<div id="buylist_section">
+						<div id="buylist_cell">
+							<div id="buylist_section">							    
 							    <div id="buylist"></div>
+							    <input id="#buylist_delete" type="button" value="X">
 								<select id="product_count">
 									<option>1</option>
 									<option>2</option>
@@ -289,9 +290,9 @@
 									<option>9</option>
 									<option>10+</option>
 								</select>
-								<button>X</button>
+								<div id="proudctlist_price"><%= article.get(0).getPro_price()%> 원</div>
 							</div>
-							
+							</div>
 						</div>
 						<div class="s_price">
 							<ul>
