@@ -20,6 +20,7 @@ import com.jachi.Action.BoardModifyProAction;
 import com.jachi.Action.BoardReplyFormAction;
 import com.jachi.Action.BoardReplyProAction;
 import com.jachi.Action.MyhomeWriteProAction;
+import com.jachi.Action.MypageOrderListViewAction;
 import com.jachi.Action.MypageOrderViewAction;
 import com.jachi.Action.PLSelectAction;
 
@@ -57,9 +58,8 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}else if(command.equals("MypageOrderListView.bo")){
-			System.out.println("üũ1");
-			action  = new MypageOrderViewAction();
+		}else if(command.equals("/MypageOrderListView.bo")){
+			action  = new MypageOrderListViewAction();
 			try {
 				forward=action.execute(request, response );
 			} catch (Exception e) {
@@ -67,8 +67,10 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			}
 		}
 		else if(command.equals("/MypageOrderList.bo")){
+			System.out.println("üũ1");
 			action  = new MypageOrderViewAction();
 			try {
+				System.out.println("üũ3");
 				forward=action.execute(request, response );
 			} catch (Exception e) {
 				e.printStackTrace();

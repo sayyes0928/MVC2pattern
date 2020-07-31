@@ -22,15 +22,14 @@ public class MypageOrderViewService {
         
         }
         
-        public List<Object> getOrderList_status(String us_id, String status) {
+        public List<OrderListDTO> getOrderList_status(String us_id, String status) {
         	
         	OrderListDTO orderListDTO = new OrderListDTO();
         	orderListDTO.setOr_id(us_id);
-        	orderListDTO.setStatus(status);
+        	orderListDTO.setList_delStatus(status);
       		 SqlSessionFactory sqlfactory = BoardDAO.getConn();
       		 SqlSession sqlsession = sqlfactory.openSession();
-      		 List<Object> OrderList_status = sqlsession.selectList("orderList_status", orderListDTO);
-      		
+      		 List<OrderListDTO> OrderList_status = sqlsession.selectList("orderList_status", orderListDTO);
       		sqlsession.close();
       		
       		return OrderList_status;

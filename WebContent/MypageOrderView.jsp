@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
 <%@ page import="com.jachi.DTO.DeliveryDTO"%>
-
+<%@ page import="com.jachi.DTO.OrderListDTO"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -66,9 +66,10 @@
   </head>
   <body>
     <%
-    ArrayList<Integer> articleCount = (ArrayList<Integer>)request.getAttribute("articleCount");
-    ArrayList<Object> orderList = (ArrayList<Object>)request.getAttribute("orderList");
-    
+ 
+    ArrayList<Integer> articleCount = null;
+    articleCount= (ArrayList<Integer>)request.getAttribute("articleCount");
+   
     %>
     <!-- 게시판 등록 -->
 
@@ -262,31 +263,31 @@
                   <div class="order-list__menu__list__value"><%= articleCount.get(0) %></div>
                 </div>
               </a>
-              <a class="order-list__menu__list" href="MypageOrderListView.bo?status=결제완료">
+              <a class="order-list__menu__list" href="MypageOrderListView.bo?status=2">
                 <div class="order-list__menu__list__wrap">
                   <div class="order-list__menu__list__title">결제완료</div>
                   <div class="order-list__menu__list__value"><%= articleCount.get(1) %></div>
                 </div>
               </a>
-              <a class="order-list__menu__list" href="MypageOrderListView.bo?status=배송준비">
+              <a class="order-list__menu__list" href="MypageOrderListView.bo?status=3">
                 <div class="order-list__menu__list__wrap">
                   <div class="order-list__menu__list__title">배송준비</div>
                   <div class="order-list__menu__list__value"><%= articleCount.get(2) %></div>
                 </div>
               </a>
-              <a class="order-list__menu__list" href="MypageOrderListView.bo?status=배송중">
+              <a class="order-list__menu__list" href="MypageOrderListView.bo?status=4">
                 <div class="order-list__menu__list__wrap">
                   <div class="order-list__menu__list__title">배송중</div>
                   <div class="order-list__menu__list__value"><%= articleCount.get(3) %></div>
                 </div>
               </a>
-              <a class="order-list__menu__list" href="MypageOrderListView.bo?status=배송완료">
+              <a class="order-list__menu__list" href="MypageOrderListView.bo?status=5">
                 <div class="order-list__menu__list__wrap">
                   <div class="order-list__menu__list__title">배송완료</div>
                   <div class="order-list__menu__list__value"><%= articleCount.get(4) %></div>
                 </div>
               </a>
-              <a class="order-list__menu__list" href="MypageOrderListView.bo?status=구매확정">
+              <a class="order-list__menu__list" href="MypageOrderListView.bo?status=6">
                 <div class="order-list__menu__list__wrap">
                   <div class="order-list__menu__list__title">구매확정</div>
                   <div class="order-list__menu__list__value"><%= articleCount.get(5) %></div>
@@ -308,16 +309,20 @@
               </td>
               </tr>
               <%
-               if(orderList != null){
+              ArrayList<OrderListDTO> orderList = (ArrayList<OrderListDTO>)request.getAttribute("orderList_status");
+              if(orderList != null){
+              for(int i=0; i<orderList.size(); i++){
+               
               %>
               <tr>
-               <td><%= orderList.get(0) %></td>
-               <td>제품명</td>
-               <td>송장번호</td>
-               <td>택배사</td>
-               <td>가격</td>
+               <td><%= orderList.get(i).getList_date() %></td>
+               <td><%= orderList.get(i).getList_delStatus() %></td>
+               <td><%= orderList.get(i).getList_delNum() %></td>
+               <td><%= orderList.get(i).getList_company() %></td>
+               <td><%= orderList.get(i).getCal_price() %></td>
               </tr>
               <%
+               }
                }
               %>
              </table>
@@ -330,5 +335,6 @@
         <div></div>
       </footer>
     </form>
+  
   </body>
 </html>

@@ -21,8 +21,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </select>
 
 
-<select id="orderList_status" parameterType="com.jachi.DTO.OrderListDTO" resultType="Object" >
- SELECT a.or_date,a.or_count,b.pro_name,c.dlv_num,c.dlv_status,(a.or_count*b.pro_price) as "총합" FROM jachi.order a join productinfo b join delivery c on a.or_procode = b.pro_code and a.or_code=c.dlv_code and c.dlv_status=#{dlv_status} and a.or_id=#{or_id};
+<select id="orderList_status" parameterType="com.jachi.DTO.OrderListDTO" resultType="com.jachi.DTO.OrderListDTO" >
+SELECT DISTINCT list_date,list_name,dlv_status as 'list_delStatus',cal_price,list_amount,
+a.dlv_comp as 'list_company',a.dlv_num as 'list_delNum' FROM jachi.delivery a 
+join (select b.pro_name as 'list_name',a.or_count as 'list_amount',a.or_date as 'list_date',(a.or_count*b.pro_price) as 'cal_price',a.or_id 
+FROM jachi.order a join productinfo b on a.or_procode = b.pro_code
+ and a.or_id=#{or_id}) k where a.dlv_status=#{list_delStatus};
 
 </select>
 
