@@ -11,7 +11,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </select>
 
 <select id="select_orderview_count" parameterType="String" resultType="String">
-  SELECT case when count(*) is null then '0' when count(*) is not null then count(*) end FROM delivery where us_id = #{us_id} and dlv_status='입금대기' union SELECT case when count(*) is null then '0' when count(*) is not null then count(*) end  FROM jachi.delivery where us_id = #{us_id} and dlv_status='결제완료' union SELECT case when count(*) is null then '0' when count(*) is not null then count(*) end  FROM jachi.delivery where us_id = #{us_id} and dlv_status='배송준비' union SELECT case when count(*) is null then '0' when count(*) is not null then count(*) end  FROM jachi.delivery where us_id = #{us_id} and dlv_status='배송중' union SELECT case when count(*) is null then '0' when count(*) is not null then count(*) end  FROM jachi.delivery where us_id = #{us_id} and dlv_status='배송완료' union SELECT case when count(*) is null then '0' when count(*) is not null then count(*) end  FROM jachi.delivery where us_id = #{us_id} and dlv_status='구매확정';
+  SELECT ifnull(count(*),'0') FROM delivery where us_id = #{us_id} and dlv_status='입금대기'
+  union all (SELECT ifnull(count(*),'0') FROM delivery where us_id = #{us_id} and dlv_status='결제완료')
+  union all(SELECT ifnull(count(*),'0') FROM delivery where us_id = #{us_id} and dlv_status='배송준비')
+  union all (SELECT ifnull(count(*),'0') FROM delivery where us_id = #{us_id} and dlv_status='배송중')
+  union all(SELECT ifnull(count(*),'0') FROM delivery where us_id = #{us_id} and dlv_status='배송완료')
+  union all (SELECT ifnull(count(*),'0') FROM delivery where us_id = #{us_id} and dlv_status='구매확정');
+
 </select>
 
 <select id="select_listall" parameterType="String" resultType="com.jachi.DTO.ProductinfoDTO">

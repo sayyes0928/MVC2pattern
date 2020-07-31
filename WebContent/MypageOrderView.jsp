@@ -2,18 +2,15 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
 <%@ page import="com.jachi.DTO.DeliveryDTO"%>
-<%
-    ArrayList<Integer> articleCount = (ArrayList<Integer>)request.getAttribute("articleCount");
-  
-    
-    %>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
     <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" href="./myhome.web.css/teamTopNav.css" />
     <link rel="stylesheet" type="text/css" href="./myhome.web.css/teamMypage.css" />
-    <link rel="stylesheet" type="text/css" href="styleSlider.css" />
+    <link rel="stylesheet" type="text/css" href="./styleSlider.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -66,6 +63,10 @@
     <title>MYpage</title>
   </head>
   <body>
+    <%
+    ArrayList<Integer> articleCount = (ArrayList<Integer>)request.getAttribute("articleCount");
+    
+    %>
     <!-- 게시판 등록 -->
 
     <form id="contentPage">
@@ -168,17 +169,10 @@
               <a href="teampro_ver_01_1.html"><span>스토어</span></a>
             </li>
             <li>
-              <a href="teampro_myhome.html"><span>자취에대한 모든것</span></a>
+              <a href="teampro_myhome.html"><span>커뮤니티</span></a>
             </li>
             <li>
-              <a href="teampro_myhome.html"
-                ><img
-                  src="img/jachievery.PNG"
-                  width="55"
-                  height="55"
-                  onmouseover="this.src='img/everyicon.svg'"
-                  onmouseout="this.src='img/jachievery.PNG'"
-              /></a>
+              <a href="teampro_myhome.html"><span>자취에대한 모든것</span></a>
             </li>
 
             <li>
@@ -299,7 +293,18 @@
 
             <!-- ///////////////////////////////////조회내역///////////////////////////////// -->
             <div class="MyPage_container_selectlist">
-
+             <table>
+              <tr>
+              <td colspan="5">조회</td>
+              </tr>
+              <tr>
+               <td>주문일</td>
+               <td>제품명</td>
+               <td>송장번호</td>
+               <td>택배사</td>
+               <td>가격</td>
+              </tr>
+             </table>
                 
             </div>
           </div>

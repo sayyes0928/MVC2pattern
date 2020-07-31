@@ -17,16 +17,20 @@ public class MypageOrderViewAction implements Action{
 		
 		String userID=request.getParameter("userID");
 		System.out.println(userID+"sdfasdfasdf");
-		List<Integer> articleCount = new ArrayList<Integer>();
+		List<Integer> articleCount = new ArrayList<Integer>(6);
 
 		MypageOrderViewService PostViewService = new MypageOrderViewService();
 		articleCount = PostViewService.getDeliveryCount(userID);
 		
 		ActionForward forward = new ActionForward();
 		for (int i = 0; i < articleCount.size(); i++) {
-			
+			if(articleCount.get(i)!=null) {
+			System.out.println(articleCount.get(i));
+			}else if(articleCount.get(i)==null){
+                  System.out.println("0");
+			}
 		}
-      System.out.println(articleCount.get(0));
+      
 
 	   	request.setAttribute("articleCount", articleCount);
    		forward.setPath("/MypageOrderView.jsp");
