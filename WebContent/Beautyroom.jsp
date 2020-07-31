@@ -191,9 +191,9 @@
 					</div>
 
 				</div>
-				<div class="card__img"></div>
+				<div class="card__img" style="background-image: URL(./Cardimg/Test2.jpg);"></div>
 				<a href="#" class="card_link">
-					<div class="card__img--hover"></div>
+					<div class="card__img--hover" style="background-image: URL(./Cardimg/Test2.jpg);"></div>
 				</a>
 				<div class="card__info">
 					<span class="card__category"> 오늘 이사했어요!</span>
@@ -204,7 +204,7 @@
 			</article>
 
 
-			<article class="card card--2">
+			<article class="card card--1">
 				<div class="card__info-hover">
 					<svg class="card__like" viewBox="0 0 24 24">
     <path fill="#000000"
@@ -215,27 +215,25 @@
 							<path
 								d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z" />
         </svg>
-						<span class="card__time">5 min</span>
+						<span class="card__time">방금전</span>
 					</div>
 
 				</div>
-				<div class="card__img"
-					style="background-image: URL(./Cardimg/Test1.webp);"></div>
+				<div class="card__img" style="background-image: URL(./Cardimg/Test1.webp);"></div>
 				<a href="#" class="card_link">
-					<div class="card__img--hover"
-						style="background-image: URL(./Cardimg/Test1.webp);"></div>
+					<div class="card__img--hover" style="background-image: URL(./Cardimg/Test1.webp);"></div>
 				</a>
 				<div class="card__info">
-					<span class="card__category"> 집샀다</span>
+					<span class="card__category"> 집 산 썰 푼다</span>
 					<h3 class="card__title">10년간 참치잡이하면서 열심히 돈벌었다. 질문받는다</h3>
 					<span class="card__by">by <a href="#" class="card__author"
-						title="author">바보같은 재성이</a></span>
+						title="author">불꽃주먹 전재성</a></span>
 				</div>
 			</article>
 			
 			
 			
-			<article class="card card--2">
+			<article class="card card--1">
 				<div class="card__info-hover">
 					<svg class="card__like" viewBox="0 0 24 24">
     <path fill="#000000"
@@ -246,25 +244,23 @@
 							<path
 								d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z" />
         </svg>
-						<span class="card__time">5 min</span>
+						<span class="card__time">방금전</span>
 					</div>
 
 				</div>
-				<div class="card__img"
-					style="background-image: URL(./Cardimg/Test1.webp);"></div>
+				<div class="card__img" style="background-image: URL(./Cardimg/Test3.webp);"></div>
 				<a href="#" class="card_link">
-					<div class="card__img--hover"
-						style="background-image: URL(./Cardimg/Test1.webp);"></div>
+					<div class="card__img--hover" style="background-image: URL(./Cardimg/Test3.webp);"></div>
 				</a>
 				<div class="card__info">
-					<span class="card__category"> 집샀다</span>
-					<h3 class="card__title">10년간 참치잡이하면서 열심히 돈벌었다. 질문받는다</h3>
+					<span class="card__category"> 내꿈은 자취왕</span>
+					<h3 class="card__title">앗냥 우리집이얌 놀러오세영</h3>
 					<span class="card__by">by <a href="#" class="card__author"
-						title="author">바보같은 재성이</a></span>
+						title="author">윤지윤지</a></span>
 				</div>
 			</article>
 			
-			<article class="card card--2">
+			<article class="card card--1">
 				<div class="card__info-hover">
 					<svg class="card__like" viewBox="0 0 24 24">
     <path fill="#000000"
@@ -275,25 +271,23 @@
 							<path
 								d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z" />
         </svg>
-						<span class="card__time">5 min</span>
+						<span class="card__time">방금전</span>
 					</div>
 
 				</div>
-				<div class="card__img"
-					style="background-image: URL(./Cardimg/Test1.webp);"></div>
+				<div class="card__img" style="background-image: URL(./Cardimg/Test4.jpeg);"></div>
 				<a href="#" class="card_link">
-					<div class="card__img--hover"
-						style="background-image: URL(./Cardimg/Test1.webp);"></div>
+					<div class="card__img--hover" style="background-image: URL(./Cardimg/Test4.jpeg);"></div>
 				</a>
 				<div class="card__info">
-					<span class="card__category"> 집샀다</span>
-					<h3 class="card__title">10년간 참치잡이하면서 열심히 돈벌었다. 질문받는다</h3>
+					<span class="card__category"> 먹또죽</span>
+					<h3 class="card__title">술먹으러 오세여 ㅎㅎ</h3>
 					<span class="card__by">by <a href="#" class="card__author"
-						title="author">바보같은 재성이</a></span>
+						title="author">매일술먹자</a></span>
 				</div>
 			</article>
 			
-			<article class="card card--2">
+			<article class="card card--1">
 				<div class="card__info-hover">
 					<svg class="card__like" viewBox="0 0 24 24">
     <path fill="#000000"
@@ -304,21 +298,19 @@
 							<path
 								d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z" />
         </svg>
-						<span class="card__time">5 min</span>
+						<span class="card__time">방금전</span>
 					</div>
 
 				</div>
-				<div class="card__img"
-					style="background-image: URL(./Cardimg/Test1.webp);"></div>
+				<div class="card__img" style="background-image: URL(./Cardimg/Test5.jpeg);"></div>
 				<a href="#" class="card_link">
-					<div class="card__img--hover"
-						style="background-image: URL(./Cardimg/Test1.webp);"></div>
+					<div class="card__img--hover" style="background-image: URL(./Cardimg/Test5.jpeg);"></div>
 				</a>
 				<div class="card__info">
-					<span class="card__category"> 집샀다</span>
-					<h3 class="card__title">10년간 참치잡이하면서 열심히 돈벌었다. 질문받는다</h3>
+					<span class="card__category"> 술배뜨실분?</span>
+					<h3 class="card__title">보현바에 어서오셈</h3>
 					<span class="card__by">by <a href="#" class="card__author"
-						title="author">바보같은 재성이</a></span>
+						title="author">봉천알콜왕</a></span>
 				</div>
 			</article>
 

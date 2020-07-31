@@ -14,8 +14,8 @@
 main {
   font-family: "jua", serif;
   margin: 0 auto;
-  width: 1082px;
-  height: 100%;
+  width: 1200px;
+  height: 1000px;
   padding: 0;
 }
 
@@ -23,32 +23,20 @@ main {
 
 
 .cards {
-  width: 80%;
-  display: flex;
-  display: -webkit-flex;
+  width: 1200px;
+
   justify-content: center;
   -webkit-justify-content: center;
  /* max-width: 1820px;*/
 
 }
-.card {
-	float : left;
-}
-.card:nth-of-type(4n) {
-	clear: both;
-}
+
 
 .card--1 .card__img,
 .card--1 .card__img--hover {
-  background-image: url("https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots1555488545_GClCV.jpeg?gif=1&w=320&h=320&c=c&webp=1");
-  width:400px;
+  width:270px;
 }
 
-.card--2 .card__img,
-.card--2 .card__img--hover {
-	width:400px;	
-
-}
 
 .card__like {
   width: 18px;
@@ -75,7 +63,7 @@ main {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  width: 100%;
+  width: 270px;
   height: 235px;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
@@ -84,7 +72,7 @@ main {
 .card__info-hover {
   position: absolute;
   padding: 16px;
-  width: 100%;
+  width: 270px;
   opacity: 0;
   top: 0;
 }
@@ -94,7 +82,7 @@ main {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  width: 100%;
+  width: 270px;
   position: absolute;
   height: 235px;
   border-top-left-radius: 12px;
@@ -103,13 +91,14 @@ main {
 }
 .card {
   margin-right: 25px;
+  margin-bottom: 30px;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
   background-color: #fff;
-  width: 33.3%;
+  width: 270px;
   position: relative;
   border-radius: 12px;
   overflow:inherit;
-  
+  float : left;
   box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
 }
 .card:hover {
@@ -117,12 +106,18 @@ main {
   transform: scale(1.1, 1.1);
 }
 
+.card:nth-of-type(4n+1) {
+	clear: both;
+}
+
+
 .card__info {
   z-index: 2;
   background-color: #fff;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
   padding: 16px 24px 24px 24px;
+  width:270px;
 }
 
 .card__category {
@@ -175,7 +170,7 @@ main {
 
 
 #Beauty_banner{
-	width: 1082px;
+	width: 1200px;
 	height: 150px;
 	margin: 0 auto;
 }
