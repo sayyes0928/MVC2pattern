@@ -57,9 +57,16 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		}else if(command.equals("MypageOrderListView.bo")){
+			System.out.println("üũ1");
+			action  = new MypageOrderViewAction();
+			try {
+				forward=action.execute(request, response );
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 		else if(command.equals("/MypageOrderList.bo")){
-			System.out.println("dd");
 			action  = new MypageOrderViewAction();
 			try {
 				forward=action.execute(request, response );
@@ -81,7 +88,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			}
 		}
         else if(command.equals("/boardLoginPro.bo")){
-			System.out.println("üũ1");
+
 			action = new BoardLoginAction();
 			try{
 				System.out.println("üũ3");

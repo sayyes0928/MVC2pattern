@@ -20,6 +20,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 </select>
 
+
+<select id="orderList_status" parameterType="com.jachi.DTO.OrderListDTO" resultType="Object" >
+ SELECT a.or_date,a.or_count,b.pro_name,c.dlv_num,c.dlv_status,(a.or_count*b.pro_price) as "총합" FROM jachi.order a join productinfo b join delivery c on a.or_procode = b.pro_code and a.or_code=c.dlv_code and c.dlv_status=#{dlv_status} and a.or_id=#{or_id};
+
+</select>
+
+
 <select id="select_listall" parameterType="String" resultType="com.jachi.DTO.ProductinfoDTO">
 	select pro_code,pro_name,pro_price,pro_mainimg from productinfo;
 </select>

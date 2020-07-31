@@ -11,6 +11,8 @@
     <link rel="stylesheet" type="text/css" href="./myhome.web.css/teamTopNav.css" />
     <link rel="stylesheet" type="text/css" href="./myhome.web.css/teamMypage.css" />
     <link rel="stylesheet" type="text/css" href="./styleSlider.css" />
+    
+    <script type="text/javascript" src="./myhome.web.js/MypageOrder.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -65,6 +67,7 @@
   <body>
     <%
     ArrayList<Integer> articleCount = (ArrayList<Integer>)request.getAttribute("articleCount");
+    ArrayList<Object> orderList = (ArrayList<Object>)request.getAttribute("orderList");
     
     %>
     <!-- 게시판 등록 -->
@@ -253,37 +256,37 @@
 
             <!--                            ////////////////////////////// -->
             <div class="order-list__menu">
-              <a class="order-list__menu__list" href="#">
+              <a class="order-list__menu__list" href="MypageOrderListView.bo?status=1">
                 <div class="order-list__menu__list__wrap">
                   <div class="order-list__menu__list__title">입금대기</div>
                   <div class="order-list__menu__list__value"><%= articleCount.get(0) %></div>
                 </div>
               </a>
-              <a class="order-list__menu__list" href="#">
+              <a class="order-list__menu__list" href="MypageOrderListView.bo?status=결제완료">
                 <div class="order-list__menu__list__wrap">
                   <div class="order-list__menu__list__title">결제완료</div>
                   <div class="order-list__menu__list__value"><%= articleCount.get(1) %></div>
                 </div>
               </a>
-              <a class="order-list__menu__list" href="#">
+              <a class="order-list__menu__list" href="MypageOrderListView.bo?status=배송준비">
                 <div class="order-list__menu__list__wrap">
                   <div class="order-list__menu__list__title">배송준비</div>
                   <div class="order-list__menu__list__value"><%= articleCount.get(2) %></div>
                 </div>
               </a>
-              <a class="order-list__menu__list" href="#">
+              <a class="order-list__menu__list" href="MypageOrderListView.bo?status=배송중">
                 <div class="order-list__menu__list__wrap">
                   <div class="order-list__menu__list__title">배송중</div>
                   <div class="order-list__menu__list__value"><%= articleCount.get(3) %></div>
                 </div>
               </a>
-              <a class="order-list__menu__list" href="#">
+              <a class="order-list__menu__list" href="MypageOrderListView.bo?status=배송완료">
                 <div class="order-list__menu__list__wrap">
                   <div class="order-list__menu__list__title">배송완료</div>
                   <div class="order-list__menu__list__value"><%= articleCount.get(4) %></div>
                 </div>
               </a>
-              <a class="order-list__menu__list" href="#">
+              <a class="order-list__menu__list" href="MypageOrderListView.bo?status=구매확정">
                 <div class="order-list__menu__list__wrap">
                   <div class="order-list__menu__list__title">구매확정</div>
                   <div class="order-list__menu__list__value"><%= articleCount.get(5) %></div>
@@ -295,15 +298,28 @@
             <div class="MyPage_container_selectlist">
              <table>
               <tr>
-              <td colspan="5">조회</td>
-              </tr>
-              <tr>
                <td>주문일</td>
                <td>제품명</td>
                <td>송장번호</td>
                <td>택배사</td>
                <td>가격</td>
+              <td>
+               
+              </td>
               </tr>
+              <%
+               if(orderList != null){
+              %>
+              <tr>
+               <td><%= orderList.get(0) %></td>
+               <td>제품명</td>
+               <td>송장번호</td>
+               <td>택배사</td>
+               <td>가격</td>
+              </tr>
+              <%
+               }
+              %>
              </table>
                 
             </div>
