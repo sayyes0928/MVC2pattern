@@ -1,7 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
-<%@ page import="com.jachi.DTO.ProductinfoDTO"%>
+<%@ page import="com.jachi.DTO.BeautyRoomDTO"%>
+
+<%
+	ArrayList<BeautyRoomDTO> userpost = (ArrayList<BeautyRoomDTO>)request.getAttribute("article");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -196,10 +200,10 @@
 					<div class="card__img--hover" style="background-image: URL(./Cardimg/Test2.jpg);"></div>
 				</a>
 				<div class="card__info">
-					<span class="card__category"> 오늘 이사했어요!</span>
-					<h3 class="card__title">드디어 원하는 곳으로 이사했어요! 이제 꾸밀일만 남았네요 ㅎㅎ</h3>
+					<span class="card__category"><%=userpost.get(0).getPost_title() %></span>
+					<h3 class="card__title"><%=userpost.get(0).getPost_posting() %></h3>
 					<span class="card__by">by <a href="#" class="card__author"
-						title="author">은다민</a></span>
+						title="author"><%=userpost.get(0).getPost_nicknmae() %></a></span>
 				</div>
 			</article>
 

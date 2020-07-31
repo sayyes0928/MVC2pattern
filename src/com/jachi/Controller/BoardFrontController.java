@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.jachi.Action.Action;
+import com.jachi.Action.BTSelectAction;
 import com.jachi.Action.BoardDeleteProAction;
 import com.jachi.Action.BoardDetailAction;
 import com.jachi.Action.BoardListAction;
@@ -163,6 +164,15 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		
 		else if(command.equals("/login.bo")) {
 			action = new UserLogin();
+			try {
+				forward=action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		else if(command.equals("/beauty.bo")) {
+			action = new BTSelectAction();
 			try {
 				forward=action.execute(request, response);
 			}catch(Exception e) {
