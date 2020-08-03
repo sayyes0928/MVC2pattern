@@ -10,6 +10,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   select * from productinfo where pro_code=#{pro_code};
 </select>
 
+<select id="select_orderview_count" parameterType="String" resultType="String">
+  SELECT ifnull(count(*),'0') FROM delivery where us_id = #{us_id} and dlv_status='입금대기'
+  union all (SELECT ifnull(count(*),'0') FROM delivery where us_id = #{us_id} and dlv_status='결제완료')
+  union all(SELECT ifnull(count(*),'0') FROM delivery where us_id = #{us_id} and dlv_status='배송준비')
+  union all (SELECT ifnull(count(*),'0') FROM delivery where us_id = #{us_id} and dlv_status='배송중')
+  union all(SELECT ifnull(count(*),'0') FROM delivery where us_id = #{us_id} and dlv_status='배송완료')
+  union all (SELECT ifnull(count(*),'0') FROM delivery where us_id = #{us_id} and dlv_status='구매확정');
+
+</select>
+
 <select id="select_listall" parameterType="String" resultType="com.jachi.DTO.ProductinfoDTO">
 	select pro_code,pro_name,pro_price,pro_mainimg from productinfo;
 </select>
