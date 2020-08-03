@@ -4,7 +4,7 @@
 <%@ page import="com.jachi.DTO.BeautyRoomDTO"%>
 
 <%
-	ArrayList<BeautyRoomDTO> userpost = (ArrayList<BeautyRoomDTO>)request.getAttribute("article");
+	ArrayList<BeautyRoomDTO> userpost = (ArrayList<BeautyRoomDTO>) request.getAttribute("article");
 %>
 <!DOCTYPE html>
 <html>
@@ -22,6 +22,12 @@
 <script
 	src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 </head>
+
+<script>
+ function btn(){
+	 alert('로그인이 필요합니다');
+ }
+</script>
 <body>
 	<form id="contentPage">
 		<header>
@@ -52,9 +58,9 @@
 					</ul>
 
 					<%
-             String us_id = (String)session.getAttribute("US_ID");
-               if(us_id == null){
-              %>
+						String us_id = (String) session.getAttribute("US_ID");
+						if (us_id == null) {
+					%>
 					<ul class="login_go">
 						<li><a href="teamlogin.jsp">로그인</a></li>
 						<li><span> | </span></li>
@@ -62,8 +68,8 @@
 					</ul>
 
 					<%
-             }else{
-              %>
+						} else {
+					%>
 
 					<ul class="login_go">
 						<li><span></span></li>
@@ -71,8 +77,8 @@
 						<li><a href="logoutActionPage.jsp">로그아웃</a></li>
 					</ul>
 					<%
-               }
-              %>
+						}
+					%>
 				</div>
 			</div>
 			<script>
@@ -165,22 +171,38 @@
 
 
 		<main>
-		
+
 		<div id="Beauty_banner">
-			<div id="Beauty_title">
-				나만의 방 자랑하기
+			<div id="Beauty_title">나만의 방 자랑하기</div>
+			<%
+				if (us_id != null) {
+			%>
+			<div id="wrtie_btsize">
+				<a href="Beautyroom_write.jsp"><input type="button" value="자랑하기"
+					id="BT_Writebt"></a>
 			</div>
+			<%
+				} else {
+			%>
+			<div id="wrtie_btsize">
+				<a href="teamlogin.jsp"><input type="button" value="자랑하기"
+					id="BT_Writebt" onclick="javascript:btn()"></a>
+			</div>
+			<%
+				}
+			%>
 			<hr id="Beauty_hr">
-			<div id="Beauty_subtitle">
-				어서오세요, 천천히 둘러보고 가세요 :D
-			</div>
+			<div id="Beauty_subtitle">어서오세요, 천천히 둘러보고 가세요 :D</div>
+
 		</div>
-		
-		
-		
+
+
+
 		<section class="cards">
-		<%if(userpost != null){
-			for(int i=0; i < userpost.size(); i++){%>
+			<%
+				if (userpost != null) {
+					for (int i = 0; i < userpost.size(); i++) {
+			%>
 			<article class="card card--1">
 				<div class="card__info-hover">
 					<svg class="card__like" viewBox="0 0 24 24">
@@ -196,22 +218,31 @@
 					</div>
 
 				</div>
-				<div class="card__img" style="background-image: URL(<%=request.getContextPath()%>/upload/<%=userpost.get(i).getPost_pic()%>);"></div>
+				<div class="card__img"
+					style="background-image: URL(<%=request.getContextPath()%>/upload/<%=userpost.get(i).getPost_pic()%>);"></div>
 				<a href="#" class="card_link">
-					<div class="card__img--hover" style="background-image: URL(<%=request.getContextPath()%>/upload/<%=userpost.get(i).getPost_pic()%>);"></div>
+					<div class="card__img--hover"
+						style="background-image: URL(<%=request.getContextPath()%>/upload/<%=userpost.get(i).getPost_pic()%>);"></div>
 				</a>
 				<div class="card__info">
-					<span class="card__category"><%=userpost.get(i).getPost_title() %></span>
-					<h3 class="card__title"><%=userpost.get(i).getPost_posting() %></h3>
+					<input type="hidden" value="<%=userpost.get(i).getPost_num()%>">
+					<span class="card__category"><%=userpost.get(i).getPost_title()%></span>
+					<h3 class="card__title"><%=userpost.get(i).getPost_posting()%></h3>
 					<span class="card__by">by <a href="#" class="card__author"
 						title="author"><%=userpost.get(i).getUs_nkname()%></a></span>
 				</div>
 			</article>
-			<%} %>
-<%}else{ %>
-<span>등록된 글이 없습니다</span>
-<%} %>
-			
+			<%
+				}
+			%>
+			<%
+				} else {
+			%>
+			<span>등록된 글이 없습니다</span>
+			<%
+				}
+			%>
+
 
 		</section>
 
