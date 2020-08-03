@@ -20,13 +20,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 </select>
 
+<select id="select_login_user" resultType="String">
+select us_pw from userinfo where us_id =#{us_id};
+</select>
+
+<select id="us_id_select" parameterType="String" resultType="String">
+select us_pw from userinfo where us_id=#{us_id};
+</select>
+
+<select id="us_Nickname_select" parameterType="String" resultType="String">
+select us_id from userinfo where us_nkname=#{us_nkname};
+</select>
+
 
 <select id="orderList_status" parameterType="com.jachi.DTO.OrderListDTO" resultType="com.jachi.DTO.OrderListDTO" >
 SELECT DISTINCT list_date,list_name,dlv_status as 'list_delStatus',cal_price,list_amount,
-a.dlv_comp as 'list_company',a.dlv_num as 'list_delNum' FROM jachi.delivery a 
-join (select b.pro_name as 'list_name',a.or_count as 'list_amount',a.or_date as 'list_date',(a.or_count*b.pro_price) as 'cal_price',a.or_id 
-FROM jachi.order a join productinfo b on a.or_procode = b.pro_code
- and a.or_id=#{or_id}) k where a.dlv_status=#{list_delStatus};
+a.dlv_comp as 'list_company',a.dlv_num as 'list_delNum' 
+FROM jachi.delivery a 
+join 
+(select b.pro_name as 'list_name',a.or_count as 'list_amount',a.or_date as 'list_date',(a.or_count*b.pro_price) as 'cal_price',a.or_id 
+FROM jachi.order a join productinfo b on a.or_procode = b.pro_code and a.or_id=#{or_id} ) k where a.dlv_status=#{list_delStatus} group by a.dlv_code;
 
 </select>
 
@@ -40,5 +53,11 @@ FROM jachi.order a join productinfo b on a.or_procode = b.pro_code
 </select>
 
 
-<insert id="insert_productinfo" parameterType="com.jachi.DTO.ProductinfoDTO">insert into productinfo values(#{pro_code},#{pro_name},#{pro_price},#{pro_mainimg},#{pro_subimg},#{pro_option1},#{pro_option2},#{pro_option3},#{pro_catecode1},#{pro_catecode2},#{pro_catecode3}); </insert>
+<insert id="insert_productinfo" parameterType="com.jachi.DTO.ProductinfoDTO">
+insert into productinfo values(#{pro_code},#{pro_name},#{pro_price},#{pro_mainimg},#{pro_subimg},#{pro_option1},#{pro_option2},
+#{pro_option3},#{pro_catecode1},#{pro_catecode2},#{pro_catecode3}); </insert>
+
+<insert id="insert_join_userinfo" parameterType="com.jachi.DTO.UserinfoDTO">
+insert into userinfo values(#{us_id},#{us_pw},#{us_name},#{us_nkname},#{us_birth},#{us_tel},#{us_telagr},#{us_mail},#{us_mailagr},#{us_adr},null);
+</insert>
 </mapper>

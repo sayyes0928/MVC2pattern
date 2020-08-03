@@ -1,11 +1,32 @@
 
+     $(document).ready(function () {
+          $("#nick_check").change(function () {
+        	  alert("dfdf");
+            var inid2 = document.myform.nick.value;
+            $.ajax({
+              url: 'NickName_check.bo',
+              data: {
+                'NICK': inid2
+              },
+ 
+              success: function (req) {
+                if (req == "중복된 닉네임이 있습니다.") {
+                  $("#ok2").html(req);
+                } else {
+                  $("#ok2").html(req);
+                }
+              }
+
+            });
+          });
+        });
   
-$(document).ready(function () {
+     $(document).ready(function () {
           $("#id_check").change(function () {
         	
             var inid = document.myform.id.value;
             $.ajax({
-              url: 'ID_check.jsp',
+              url: 'ID_check.bo',
               data: {
                 'ID': inid
               },
@@ -25,26 +46,6 @@ $(document).ready(function () {
           });
         });
 
-        $(document).ready(function () {
-          $("#nick_check").change(function () {
-            var inid2 = document.myform.nick.value;
-            $.ajax({
-              url: 'Nickname_check.jsp',
-              data: {
-                'NICK': inid2
-              },
- 
-              success: function (req) {
-                if (req == "중복된 닉네임이 있습니다.") {
-                  $("#ok2").html(req);
-                } else {
-                  $("#ok2").html(req);
-                }
-              }
-
-            });
-          });
-        });
       
         function password_check() {
         	  var pw = myform.pw.value;

@@ -2,7 +2,8 @@ package com.jachi.Controller;
 
 
 
-import java.io.IOException;  
+import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -19,11 +20,13 @@ import com.jachi.Action.BoardModifyFormAction;
 import com.jachi.Action.BoardModifyProAction;
 import com.jachi.Action.BoardReplyFormAction;
 import com.jachi.Action.BoardReplyProAction;
+import com.jachi.Action.JoinIdcheckUserinfoAction;
+import com.jachi.Action.JoinInsertUserInfoAction;
+import com.jachi.Action.JoinNickNamecheckUserinfoAction;
+import com.jachi.Action.LoginUserAction;
 import com.jachi.Action.MyhomeWriteProAction;
 import com.jachi.Action.MypageOrderListViewAction;
-import com.jachi.Action.MypageOrderViewAction;
 import com.jachi.Action.PLSelectAction;
-
 import com.jachi.Action.ProductPostViewAction;
 import com.jachi.Action.UserLogin;
 import com.jachi.DTO.ActionForward;
@@ -47,16 +50,57 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		if(command.equals("/boardWriteForm.bo")){
 			forward=new ActionForward();
 			forward.setPath("/qna_board_write.jsp");
-		}else if(command.equals("/Myhome_WriteForm.bo")){
+		}else if(command.equals("/Index.bo")){
+			forward=new ActionForward();
+			forward.setPath("/Index.jsp");
+		}
+		else if(command.equals("/Myhome_WriteForm.bo")){
 			forward=new ActionForward();
 			forward.setPath("/Myhome_board_write.jsp");
 		}
-		else if(command.equals("/Myhome_WritePro.bo")){
-			action  = new MyhomeWriteProAction();
+		else if(command.equals("/LoginFormpage.bo")){
 			try {
-				forward=action.execute(request, response );
+				forward=new ActionForward();
+				forward.setPath("/loginFormPage.jsp");
+			} catch (Exception e) {
+				System.out.println(" 로그인오류");
+			}
+			
+		}
+		else if(command.equals("/join.bo")){
+			forward=new ActionForward();
+			forward.setPath("/join.jsp");
+		}
+		else if(command.equals("/join_Insert.bo")){
+			action  = new JoinInsertUserInfoAction();
+			try {
+				forward =action.execute(request, response );
 			} catch (Exception e) {
 				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/NickName_check.bo")){
+			action  = new JoinNickNamecheckUserinfoAction();
+			try {
+				ActionForward forward3 =action.execute(request, response );
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/ID_check.bo")){
+			action  = new JoinIdcheckUserinfoAction();
+			try {
+				ActionForward forward2 =action.execute(request, response );
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	    else if(command.equals("/Myhome_WritePro.bo")){
+				action  = new MyhomeWriteProAction();
+				try {
+					forward=action.execute(request, response );
+				} catch (Exception e) {
+					e.printStackTrace();
 			}
 		}else if(command.equals("/MypageOrderListView.bo")){
 			action  = new MypageOrderListViewAction();
@@ -66,14 +110,21 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
-		else if(command.equals("/MypageOrderList.bo")){
-			System.out.println("체크1");
-			action  = new MypageOrderViewAction();
+		else if(command.equals("/MypageOrderListView.bo")){
+			action  = new MypageOrderListViewAction();
 			try {
-				System.out.println("체크3");
 				forward=action.execute(request, response );
 			} catch (Exception e) {
 				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/loginAction.bo")){
+			action  = new LoginUserAction();
+			try {
+				forward=action.execute(request, response );
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println("로그인 오류");
 			}
 		}
 		else if(command.equals("/Product_add_Write.bo")){
@@ -193,14 +244,17 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		if(forward != null){
 			
 			if(forward.isRedirect()){
-				System.out.println(forward.getPath());
 				response.sendRedirect(forward.getPath());
 			}else{
 				RequestDispatcher dispatcher=
 						request.getRequestDispatcher(forward.getPath());
 				dispatcher.forward(request, response);
+				return;
 			}
 			
+		}
+		else {
+			return;
 		}
 		
 	}
@@ -208,11 +262,13 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		doProcess(request,response);
+		return;
 	}  	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		doProcess(request,response);
+		return;
 	}   
 	
 }

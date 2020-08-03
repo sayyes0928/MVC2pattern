@@ -12,7 +12,7 @@
 
 </head>
 <body>
-	<form name="myform" action="join_Insert.jsp" method="get" autocomplete="off">
+	<form name="myform" action="join_Insert.bo" method="post" autocomplete="off">
 		<header>
 			<div id="h_wrap">
 				<div class="h_div"></div>

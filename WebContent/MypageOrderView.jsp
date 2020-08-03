@@ -11,6 +11,8 @@
     <link rel="stylesheet" type="text/css" href="./myhome.web.css/teamTopNav.css" />
     <link rel="stylesheet" type="text/css" href="./myhome.web.css/teamMypage.css" />
     <link rel="stylesheet" type="text/css" href="./styleSlider.css" />
+     
+    
     
     <script type="text/javascript" src="./myhome.web.js/MypageOrder.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -299,14 +301,11 @@
             <div class="MyPage_container_selectlist">
              <table>
               <tr>
-               <td>주문일</td>
-               <td>제품명</td>
-               <td>송장번호</td>
-               <td>택배사</td>
-               <td>가격</td>
-              <td>
-               
-              </td>
+               <td class="MyPage_container_selectlist_orderDate">주문일</td>
+               <td class="MyPage_container_selectlist_productName">제품명</td>
+               <td class="MyPage_container_selectlist_deliveryNumber">송장번호</td>
+               <td class="MyPage_container_selectlist_deliveryCompany">택배사</td>
+               <td class="MyPage_container_selectlist_productPrice">가격</td>
               </tr>
               <%
               ArrayList<OrderListDTO> orderList = (ArrayList<OrderListDTO>)request.getAttribute("orderList_status");

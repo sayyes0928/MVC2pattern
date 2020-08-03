@@ -23,7 +23,7 @@
 <body>
   
   <div class="wrapper">
-    <form class="form-signin" action="loginActionPage.jsp" method="post">       
+    <form class="form-signin" action="loginAction.bo" method="post">       
       <h1 class="form-signin-heading">로그인</h1>
       <input type="text" class="form-control" name="us_id" placeholder="아이디를 입력해주세요"  />
       <input type="password" class="form-control" name="us_pw" placeholder="비밀번호를 입력해주세요" />      
