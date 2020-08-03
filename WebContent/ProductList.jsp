@@ -181,7 +181,7 @@
               <li>
                 <ul class="m_line">
                   
-                  <li><a href="#">내방자랑</a></li>
+                  <li><a href="beauty.bo">내방자랑</a></li>
                   <li><a href="#">내집자랑</a></li>
                   <li><a href="#">전문가집들이</a></li>
                 </ul>
