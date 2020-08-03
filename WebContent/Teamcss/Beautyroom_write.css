@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "jua";
+  src: url("Okbe_ttf.woff") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+body{
+	font-family:"jua";
+}
+
+#BT_writebannersize{
+	width:100%;
+	height:100px;
+	margin: 40px 0 0 40px;
+}
+
+#BT_writebanner{
+	font-size:45pt;
+	color:black;
+	text-decoration:none;
+	font-weight: bold;
+}
+
+#BT_writemainsize{
+	width:1080px;
+	height:1000px;
+	margin: 0 auto;
+
+}
+
+
+
+
+
+.upload-box {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 50px auto;
+  overflow: hidden;
+  border: 1px dashed #ccc;
+  text-align: center;
+}
+.upload-box::after {
+  display: inline-block;
+  margin-top: -8px;
+  content: "+";
+  line-height: 200px;
+  font-size: 90px;
+  color: #ccc;
+}
+.upload-box [type="file"] {
+  display: none;
+}
+.upload-box .upload-action {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.upload-box .preview-box {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.upload-box .preview-box img {
+  min-width: 100%;
+  width: 100%;
+  min-height: 100%;
+}
+.hide {
+  display: none;
+}
+
+

@@ -73,7 +73,7 @@
 
 					<ul class="login_go">
 						<li><span></span></li>
-						<li><span> | </span></li>
+						<li><span>  </span></li>
 						<li><a href="logoutActionPage.jsp">로그아웃</a></li>
 					</ul>
 					<%
