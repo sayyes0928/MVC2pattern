@@ -26,7 +26,7 @@ public class MypageOrderViewAction implements Action{
 		
 		}
 
-		String userID=(String) session.getAttribute("userID");
+		String userID=(String) session.getAttribute("us_id");
 
 		List<Integer> articleCount = new ArrayList<Integer>(6);
 

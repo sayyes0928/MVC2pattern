@@ -115,17 +115,29 @@
               </li>
             </ul>
 
+            <%
+       String us_id = (String)session.getAttribute("us_id"); //로그인 유무 확인
+       if(us_id==null){
+     %>
             <ul class="login_go">
-              <li><a href="loginPage.jsp">로그인</a></li>
+              <li><a href="LoginFormpage.bo">로그인</a></li>
               <li><span> | </span></li>
-              <li><a href="join.jsp">회원가입</a></li>
+              <li><a href="join.bo">회원가입</a></li>
             </ul>
 
+     <%
+       }else{
+     %>
             <ul class="login_go">
               <li><span></span></li>
+              <li><a href="MypageOrderView.bo">마이페이지</a></li>
               <li><span> | </span></li>
               <li><a href="logoutActionPage.jsp">로그아웃</a></li>
+              
             </ul>
+     <%
+       }
+     %>
           </div>
         </div>
         <script>

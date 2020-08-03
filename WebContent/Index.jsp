@@ -81,8 +81,10 @@
      %>
             <ul class="login_go">
               <li><span></span></li>
+              <li><a href="MypageOrderView.bo">마이페이지</a></li>
               <li><span> | </span></li>
               <li><a href="logoutActionPage.jsp">로그아웃</a></li>
+              
             </ul>
      <%
        }
@@ -136,7 +138,7 @@
               <a href="storeList.bo"><span>스토어</span></a>
             </li>
             <li>
-              <a href="teampro_myhome.html"><span>커뮤니티</span></a>
+              <a href="beauty.bo"><span>커뮤니티</span></a>
             </li>
             <li>
               <a href="teampro_myhome.html"><span>자취에대한 모든것</span></a>

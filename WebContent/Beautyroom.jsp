@@ -4,7 +4,7 @@
 <%@ page import="com.jachi.DTO.BeautyRoomDTO"%>
 
 <%
-	ArrayList<BeautyRoomDTO> userpost = (ArrayList<BeautyRoomDTO>) request.getAttribute("article");
+	ArrayList<BeautyRoomDTO> userpost = (ArrayList<BeautyRoomDTO>) request.getAttribute("beautyList");
 %>
 <!DOCTYPE html>
 <html>
@@ -24,8 +24,9 @@
 </head>
 
 <script>
- function btn(){
+ function alertLogin(){
 	 alert('로그인이 필요합니다');
+	 location.href='LoginFormpage.bo'
  }
 </script>
 <body>
@@ -57,28 +58,27 @@
 							width="30" height="30" /></li>
 					</ul>
 
-					<%
-						String us_id = (String) session.getAttribute("US_ID");
-						if (us_id == null) {
-					%>
-					<ul class="login_go">
-						<li><a href="teamlogin.jsp">로그인</a></li>
-						<li><span> | </span></li>
-						<li><a href="join.jsp">회원가입</a></li>
-					</ul>
+					 <%
+       String us_id = (String)session.getAttribute("us_id"); //로그인 유무 확인
+       if(us_id==null){
+     %>
+            <ul class="login_go">
+              <li><a href="LoginFormpage.bo">로그인</a></li>
+              <li><span> | </span></li>
+              <li><a href="join.bo">회원가입</a></li>
+            </ul>
 
-					<%
-						} else {
-					%>
-
-					<ul class="login_go">
-						<li><span></span></li>
-						<li><span>  </span></li>
-						<li><a href="logoutActionPage.jsp">로그아웃</a></li>
-					</ul>
-					<%
-						}
-					%>
+     <%
+       }else{
+     %>
+            <ul class="login_go">
+              <li><span></span></li>
+              <li><span> | </span></li>
+              <li><a href="logoutActionPage.jsp">로그아웃</a></li>
+            </ul>
+     <%
+       }
+     %>
 				</div>
 			</div>
 			<script>
@@ -178,15 +178,14 @@
 				if (us_id != null) {
 			%>
 			<div id="wrtie_btsize">
-				<a href="Beautyroom_write.jsp"><input type="button" value="자랑하기"
+				<a href="Beautyroom_write.bo"><input type="button" value="자랑하기"
 					id="BT_Writebt"></a>
 			</div>
 			<%
 				} else {
 			%>
 			<div id="wrtie_btsize">
-				<a href="teamlogin.jsp"><input type="button" value="자랑하기"
-					id="BT_Writebt" onclick="javascript:btn()"></a>
+				<input type="button" value="자랑하기" id="BT_Writebt" onclick="alertLogin()">
 			</div>
 			<%
 				}

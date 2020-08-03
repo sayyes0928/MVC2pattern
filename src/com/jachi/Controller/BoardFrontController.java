@@ -3,7 +3,6 @@ package com.jachi.Controller;
 
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -27,6 +26,7 @@ import com.jachi.Action.JoinNickNamecheckUserinfoAction;
 import com.jachi.Action.LoginUserAction;
 import com.jachi.Action.MyhomeWriteProAction;
 import com.jachi.Action.MypageOrderListViewAction;
+import com.jachi.Action.MypageOrderViewAction;
 import com.jachi.Action.PLSelectAction;
 import com.jachi.Action.ProductPostViewAction;
 import com.jachi.Action.UserLogin;
@@ -111,8 +111,8 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
-		else if(command.equals("/MypageOrderListView.bo")){
-			action  = new MypageOrderListViewAction();
+		else if(command.equals("/MypageOrderView.bo")){
+			action  = new MypageOrderViewAction();
 			try {
 				forward=action.execute(request, response );
 			} catch (Exception e) {
@@ -131,6 +131,10 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		else if(command.equals("/Product_add_Write.bo")){
 			forward=new ActionForward();
 			forward.setPath("/fileUpload.jsp");
+		}
+		else if(command.equals("/Beautyroom_write.bo")){
+			forward=new ActionForward();
+			forward.setPath("/Beautyroom_write.jsp");
 		}
 		else if(command.equals("/boardList.bo")){
 			System.out.println("üũ2");	

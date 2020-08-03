@@ -21,7 +21,7 @@ public class MypageOrderListViewAction implements Action{
 		
 		HttpSession session = request.getSession(false);
 		String status=request.getParameter("status");
-		String us_id=(String) session.getAttribute("userID");
+		String us_id=(String) session.getAttribute("us_id");
 		List<OrderListDTO> orderList = new ArrayList<OrderListDTO>();
 		System.out.println(status);
 		switch (status) {
@@ -65,7 +65,7 @@ public class MypageOrderListViewAction implements Action{
       
 
 	   	request.setAttribute("orderList", orderList);
-   		forward.setPath("/MypageOrderList.bo");
+   		forward.setPath("/MypageOrderView.bo");
    		return forward;
 	}
    
