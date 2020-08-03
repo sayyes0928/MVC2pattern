@@ -1168,3 +1168,27 @@
   margin: 0 auto;
   margin-top: 30px;
 }
+.MyPage_container_selectlist table {
+	width:100%;
+	
+}
+.MyPage_container_selectlist table *{
+	border: 1px solid black;
+	
+}
+
+.MyPage_container_selectlist_orderDate{
+	width:15%;
+}
+.MyPage_container_selectlist_productName{
+	width:25%;
+}
+.MyPage_container_selectlist_deliveryNumber{
+	width:20%;
+}
+.MyPage_container_selectlist_deliveryCompany{
+	width:20%;
+}
+.MyPage_container_selectlist_productPrice{
+	width:20%;
+}

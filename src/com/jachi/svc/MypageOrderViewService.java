@@ -6,7 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.jachi.DAO.BoardDAO;
-import com.jachi.DTO.DeliveryDTO;
+import com.jachi.DTO.OrderListDTO;
 
 public class MypageOrderViewService {
         public List<Integer> getDeliveryCount(String userID) {
@@ -21,6 +21,20 @@ public class MypageOrderViewService {
    		return deliveryCount;
         
         }
+        
+        public List<OrderListDTO> getOrderList_status(String us_id, String status) {
+        	
+        	OrderListDTO orderListDTO = new OrderListDTO();
+        	orderListDTO.setOr_id(us_id);
+        	orderListDTO.setList_delStatus(status);
+      		 SqlSessionFactory sqlfactory = BoardDAO.getConn();
+      		 SqlSession sqlsession = sqlfactory.openSession();
+      		 List<OrderListDTO> OrderList_status = sqlsession.selectList("orderList_status", orderListDTO);
+      		sqlsession.close();
+      		
+      		return OrderList_status;
+           
+           }
         
 
 

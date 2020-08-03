@@ -3,8 +3,8 @@
 <!DOCTYPE html>
 <%@page import="org.apache.ibatis.session.SqlSessionFactory"%>
 <%@page import="org.apache.ibatis.session.SqlSession"%>
-<%@page import="mybatis.java.dao.*" %>
-<%@page import="mybatis.java.dto.*" %>
+<%@page import="com.jachi.DAO.*" %>
+<%@page import="com.jachi.DTO.*" %>
 <%request.setCharacterEncoding("UTF-8");%>
 
 <html>
@@ -14,7 +14,7 @@
 </head>
 <body>
  <%
- 	String us_id = request.getParameter("id");
+  String us_id = request.getParameter("id");
   String us_pw = request.getParameter("pw");
   String us_name = request.getParameter("name");
   String us_nkname = request.getParameter("nick");

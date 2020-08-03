@@ -31,10 +31,10 @@ import com.jachi.svc.BoardLoginService;
 		if(!articleList) {
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out=response.getWriter();
-		out.println("<script>");
+		out.println("<html><body><script>");
 		out.println("alert('아이디 또는 비밀번호가 틀렸습니다.');");
 		out.println("history.back();");
-		out.println("</script>");
+		out.println("</script></body></html>");
 		
 		}else {
 		HttpSession session = request.getSession(false);
