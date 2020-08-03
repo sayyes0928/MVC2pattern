@@ -60,47 +60,65 @@
 
 <body>
 	<form id="contentPage">
-         <header>
+      <header>
         <div id="h_wrap">
-            <div class="h_div">
+          <div class="h_div">
             <ul>
-            <li style="padding-top:110px"><img src="img/grass2icon.svg" width="30" height="30"/></li>
-            <li style="padding-top:80px"><img src="img/truck2.svg" width="70" height="70"/></li>
-            <li><img src="img/sunicon.svg" width="60" height="60"/></li>
-            <li style="padding-top:110px"><img src="img/grass2icon.svg" width="30" height="30"/></li>
-            <li style="padding-top:100px"><img src="img/grassicon.svg" width="40" height="40"/></li> 
-            
-            <li><h1>자취해보자</h1></li>
-            <li style="padding-top:20px">
-             <img src="img/houseiconcolor.svg" width="100" height="100" onmouseover="this.src='img/houseicon.svg'" onmouseout="this.src='img/houseiconcolor.svg'"/>
-             </li>
-             <li style="padding-top:100px"><img src="img/grassicon.svg" width="40" height="40"/></li>
-             <li style="padding-top:100px"><img src="img/grassicon.svg" width="40" height="40"/></li> 
-             <li style="padding-top:110px"><img src="img/grass2icon.svg" width="30" height="30"/></li>
-            </ul>
-        
-             <%
-             String us_id = (String)session.getAttribute("US_ID");
-               if(us_id == null){
-              %>
-              <ul class="login_go">
-              <li><a href="teamlogin.jsp" >로그인</a></li>
-              <li><span> | </span></li>
-              <li><a href="join.jsp">회원가입</a></li>
-              </ul>
+              <li style="padding-top: 110px;">
+                <img src="./img/grass2icon.svg" width="30" height="30" />
+              </li>
+              <li style="padding-top: 80px;">
+                <img src="./img/truck2.svg" width="70" height="70" />
+              </li>
+              <li><img src="./img/sunicon.svg" width="60" height="60" /></li>
+              <li style="padding-top: 110px;">
+                <img src="./img/grass2icon.svg" width="30" height="30" />
+              </li>
+              <li style="padding-top: 100px;">
+                <img src="./img/grassicon.svg" width="40" height="40" />
+              </li>
 
-              <%
-             }else{
-              %>
-              
-             <ul class="login_go">
-             <li><span></span></li>
-             <li><span> | </span></li>
-             <li><a href="logoutActionPage.jsp" >로그아웃</a></li>
-              </ul>
-              <%
-               }
-              %>
+              <li><h1>자취해보자</h1></li>
+              <li style="padding-top: 20px;">
+                <img
+                  src="./img/houseiconcolor.svg"
+                  width="100"
+                  height="100"
+                  onmouseover="this.src='./img/houseicon.svg'"
+                  onmouseout="this.src='./img/houseiconcolor.svg'"
+                />
+              </li>
+              <li style="padding-top: 100px;">
+                <img src="./img/grassicon.svg" width="40" height="40" />
+              </li>
+              <li style="padding-top: 100px;">
+                <img src="./img/grassicon.svg" width="40" height="40" />
+              </li>
+              <li style="padding-top: 110px;">
+                <img src="./img/grass2icon.svg" width="30" height="30" />
+              </li>
+            </ul>
+     <%
+       String us_id = (String)session.getAttribute("us_id"); //로그인 유무 확인
+       if(us_id==null){
+     %>
+            <ul class="login_go">
+              <li><a href="LoginFormpage.bo">로그인</a></li>
+              <li><span> | </span></li>
+              <li><a href="join.bo">회원가입</a></li>
+            </ul>
+
+     <%
+       }else{
+     %>
+            <ul class="login_go">
+              <li><span></span></li>
+              <li><span> | </span></li>
+              <li><a href="logoutActionPage.jsp">로그아웃</a></li>
+            </ul>
+     <%
+       }
+     %>
             </div>
         </div>
         <script>
@@ -689,64 +707,29 @@
 						<ul>
 						<a href="korea.bo?pro_num=<%=article.get(0).getPro_code()%>" >
 							<li>										
-							
+							<%
+							 for(int i =0; i <article.size(); i++ ){
+							%>
 								<div class="row">					
 									<figure class="effect1">							
 										<img class="m_imgsize"
-											src="<%=request.getContextPath()%>/upload/<%=article.get(0).getPro_mainimg()%>">
+											src="<%=request.getContextPath()%>/upload/<%=article.get(i).getPro_mainimg()%>">
 											<figcaption>
 												<p>제품 상세 정보</p>
 											</figcaption>
 									</figure>
 								</div>	
 										
-								<div class="m_pname"><%=article.get(0).getPro_name() %></div>
+								<div class="m_pname"><%=article.get(i).getPro_name() %></div>
 								<div class="m_pindex">2clolors</div>
-								<div class="m_pindex2"><%=article.get(0).getPro_price() %></div>
+								<div class="m_pindex2"><%=article.get(i).getPro_price() %></div>
 				
 
 							</li>	
 							</a>
-							<li>
-								<div class="row">
-									<figure class="effect1">
-
-										<a href="teampro_store.html"><img class="m_imgsize"
-											src="<%=request.getContextPath()%>/upload/<%=article.get(1).getPro_mainimg()%>">
-											<figcaption>
-												<p>제품 상세 정보</p>
-											</figcaption>
-									</figure>
-								</div>
-								<div class="m_pname"><%=article.get(1).getPro_name()%></div>
-								<div class="m_pindex">4colors</div>
-								<div class="m_pindex2"><%=article.get(1).getPro_price()%></div> </a>
-							</li>
-							<li><div class="row">
-									<figure class="effect1">
-										<a href="teampro_store.html"><img class="m_imgsize"
-											src="<%=request.getContextPath()%>/upload/<%=article.get(2).getPro_mainimg()%>">
-											<figcaption>
-												<p>제품 상세 정보</p>
-											</figcaption>
-									</figure>
-								</div>
-								<div class="m_pname"><%=article.get(2).getPro_name() %></div>
-								<div class="m_pindex">4size 5colors</div>
-								<div class="m_pindex2"><%=article.get(2).getPro_price() %></div> </a></li>
-							<li>
-								<div class="row">
-									<figure class="effect1">
-										<img class="m_imgsize" src="<%=request.getContextPath()%>/upload/<%=article.get(3).getPro_mainimg()%>">
-										<figcaption>
-											<p>제품 상세 정보</p>
-										</figcaption>
-									</figure>
-								</div>
-								<div class="m_pname"><%=article.get(3).getPro_name() %></div>
-								<div class="m_pindex">슈퍼싱글/퀸</div>
-								<div class="m_pindex2"><%=article.get(3).getPro_price() %></div>
-							</li>
+						<% 
+						}
+						%>
 						</ul>
 					</div>
 				</div>
@@ -773,7 +756,7 @@
 								<div class="m_pindex">Gray color</div>
 								<div class="m_pindex2"><%=article.get(4).getPro_price() %></div>
 							</li>
-							<li>
+						<li>
 								<div class="row">
 									<figure class="effect1">
 										<img class="m_imgsize" src="<%=request.getContextPath()%>/upload/<%=article.get(5).getPro_mainimg()%>">
@@ -882,7 +865,7 @@
 								<div class="m_pindex">2종1택</div>
 								<div class="m_pindex2"><%=article.get(11).getPro_price() %></div>
 								
-							</li>
+							</li> 
 						</ul>
 					</div>
 				</div>

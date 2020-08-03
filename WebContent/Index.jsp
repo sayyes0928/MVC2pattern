@@ -133,7 +133,7 @@
               <a href="teampro_ver_01_1.html"><span>홈</span></a>
             </li>
             <li>
-              <a href="teampro_ver_01_1.html"><span>스토어</span></a>
+              <a href="storeList.bo"><span>스토어</span></a>
             </li>
             <li>
               <a href="teampro_myhome.html"><span>커뮤니티</span></a>
@@ -153,6 +153,7 @@
               <nav role="navigation" class="primary-navigation">
                 <ul class="nav_container">
                   <li>
+                  
                     <ul class="m_line">
                       <li><a href="#">카테고리</a></li>
                       <li><a href="#">베스트</a></li>
