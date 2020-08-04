@@ -84,8 +84,17 @@
               <li><a href="MypageOrderView.bo">마이페이지</a></li>
               <li><span> | </span></li>
               <li><a href="logoutActionPage.jsp">로그아웃</a></li>
+              <li><a href="Index.jsp" onclick="signOut();">Sign out</a></li>
               
             </ul>
+            <script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
      <%
        }
      %>
@@ -132,7 +141,7 @@
         <div id="main_nav">
           <ul>
             <li>
-              <a href="teampro_ver_01_1.html"><span>홈</span></a>
+              <a href="Index.jsp"><span>홈</span></a>
             </li>
             <li>
               <a href="storeList.bo"><span>스토어</span></a>

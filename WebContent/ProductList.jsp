@@ -14,14 +14,23 @@
 <meta charset="utf-8">
 <title>자취해보자 스토어</title>
 
+    <link rel="stylesheet" type="text/css" href="./myhome.web.css/teamTopNav.css" />
+    <link rel="stylesheet" type="text/css" href="./styleSlider.css" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="./myhome.web.js/jquery-easing-1.3.pack.js"></script>
+    <script type="text/javascript" src="./myhome.web.js/jquery-easing-compatibility.1.2.pack.js"></script>
+    <script type="text/javascript" src="./myhome.web.js/coda-slider.1.1.1.pack.js"></script>
+
+
+
 <link rel="stylesheet" href="./Teamcss/ProductList.css" type="text/css">
-<link rel="stylesheet" href="./myhome.web.css/teamTopNav.css" type="text/css">
 <link rel="stylesheet" href="./Teamjs/team_catemenu.js">
 
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-<link rel="stylesheet" href="./Teamcss/teampro_ver_01.css"
-	type="text/css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<link rel="stylesheet" href="./Teamcss/teampro_ver_01.css" type="text/css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script
@@ -60,7 +69,7 @@
 
 <body>
 	<form id="contentPage">
-      <header>
+       <header>
         <div id="h_wrap">
           <div class="h_div">
             <ul>
@@ -113,99 +122,122 @@
      %>
             <ul class="login_go">
               <li><span></span></li>
+              <li><a href="MypageOrderView.bo">마이페이지</a></li>
               <li><span> | </span></li>
               <li><a href="logoutActionPage.jsp">로그아웃</a></li>
+              <li><a href="Index.jsp" onclick="signOut();">Sign out</a></li>
+              
             </ul>
+            <script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
      <%
        }
      %>
-            </div>
+          </div>
         </div>
         <script>
-  $(function() {
-    $('#main_nav ul li').hover(
-      function() {
-        $(this).addClass('main_navov');
-      },
-      function() {
-        $(this).removeClass('main_navov');
-      });
-  });
-</script>
-<script>
-  $(function() {
-    $('#sub').hide();
-    $('#main_nav').hover(function() {
-      $(this).parent().find('#sub').slideDown();
-      $(this).parent().hover(function() {
+          $(function () {
+            $("#main_nav ul li").hover(
+              function () {
+                $(this).addClass("main_navov");
+              },
+              function () {
+                $(this).removeClass("main_navov");
+              }
+            );
+          });
+        </script>
+        <script>
+          $(function () {
+            $("#sub").hide();
+            $("#main_nav").hover(function () {
+              $(this).parent().find("#sub").slideDown();
+              $(this)
+                .parent()
+                .hover(
+                  function () {},
+                  function () {
+                    $(this).parent().find("#sub").slideUp(900);
+                  }
+                );
+            });
+          });
+        </script>
+        <script>
+          $(document).ready(function () {
+            $(".slider").bxSlider({
+              mode: "horizontal",
+              auto: true,
+              speed: 600,
+              pause: 4000,
+            });
+          });
+        </script>
+        <div id="main_nav">
+          <ul>
+            <li>
+              <a href="Index.jsp"><span>홈</span></a>
+            </li>
+            <li>
+              <a href="storeList.bo"><span>스토어</span></a>
+            </li>
+            <li>
+              <a href="beauty.bo"><span>커뮤니티</span></a>
+            </li>
+            <li>
+              <a href="teampro_myhome.html"><span>자취에대한 모든것</span></a>
+            </li>
 
-      }, function() {
-        $(this).parent().find('#sub').slideUp(900);
-      });
-    });
-  });
-</script>
-<script>
-  $(document).ready(function() {
-    $('.slider').bxSlider({
-     mode:'horizontal',
-     auto: true,
-     speed: 600,
-     pause: 4000
-    });
-  });
-</script>
-         <div id="main_nav">
-            <ul>
-              <li><a href="teampro_ver_01_1.html"><span>홈</span></a>
-              <li><a href="teampro_ver_01_1.html"><span>스토어</span></a>
-              <li><a href="teampro_myhome.html"><span>자취에대한 모든것</span></a>
-              <li><a href="teampro_myhome.html"><img src="img/jachievery.PNG" width="55" height="55"
-              onmouseover="this.src='img/everyicon.svg'" onmouseout="this.src='img/jachievery.PNG'"></a>
-              <li><a href="teampro_myhome.html"><span>고객센터</span></a>
-            </ul>
-          </div>
-       <div id="sub">  
-        <div id="sub_menu">
-        <div class="nav_container_div">
-          <nav role="navigation" class="primary-navigation">
-          
-          <ul class="nav_container">
-          <li>
-                <ul class="m_line">       
-                  <li><a href="#">카테고리</a></li>
-                  <li><a href="#">베스트</a></li>
-                  <li><a href="#">특가</a></li>
-                </ul>
-              </li>
-              <li>
-                <ul class="m_line">
-                  
-                  <li><a href="beauty.bo">내방자랑</a></li>
-                  <li><a href="#">내집자랑</a></li>
-                  <li><a href="#">전문가집들이</a></li>
-                </ul>
-               </li>
-               <li>
-                <ul class="m_line">
-                  
-                  <li><a href="#">자취생TIP</a></li>
-                  <li><a href="#">자취생QnA</a></li>
-                  <li><a href="#">혼밥레시피</a></li>
-                </ul>
-              </li>
-              <li>
-                <ul class="m_line">
-                  <li><a href="#">질문과답변</a></li>
-                  <li><a href="#">공지사항</a></li>
-                </ul>
-                </li>
-            </ul>
-          </nav>
-          </div>
-          </div> 
+            <li>
+              <a href="teampro_myhome.html"><span>고객센터</span></a>
+            </li>
+          </ul>
         </div>
-        </header>
+        <div id="sub">
+          <div id="sub_menu">
+            <div class="nav_container_div">
+              <nav role="navigation" class="primary-navigation">
+                <ul class="nav_container">
+                  <li>
+                  
+                    <ul class="m_line">
+                      <li><a href="#">카테고리</a></li>
+                      <li><a href="#">베스트</a></li>
+                      <li><a href="#">특가</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <ul class="m_line">
+                      <li><a href="#">내방자랑</a></li>
+                      <li><a href="#">내집자랑</a></li>
+                      <li><a href="#">전문가집들이</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <ul class="m_line">
+                      <li><a href="#">자취생TIP</a></li>
+                      <li><a href="#">자취생QnA</a></li>
+                      <li><a href="#">혼밥레시피</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <ul class="m_line">
+                      <li><a href="#">질문과답변</a></li>
+                      <li><a href="#">공지사항</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </header>
 
 
 

@@ -3,7 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css"href="loginPage.css" />
+<meta name = "google-signin-client_id"content = "718028943374-g1388634jglvhvrqeo1h6a781q2jmac2.apps.googleusercontent.com">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<link rel="stylesheet" type="text/css"href="loginPage.css" />
     <!-- <link rel="stylesheet" type="text/css"href="teamTopNav.css" /> --> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -30,6 +32,7 @@
       <label class="checkbox">
         <input type="checkbox" value="아이디 기억하기" id="rememberMe" name="rememberMe" class="join_go"> 아이디 기억하기
       </label>
+      <div class="g-signin2" data-onsuccess="onSignIn"></div>
       <a href="join.jsp" class="join_go">회원가입</a>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
     </form>

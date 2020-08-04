@@ -76,7 +76,7 @@
     <!-- 게시판 등록 -->
 
     <form id="contentPage">
-      <header>
+        <header>
         <div id="h_wrap">
           <div class="h_div">
             <ul>
@@ -114,8 +114,7 @@
                 <img src="./img/grass2icon.svg" width="30" height="30" />
               </li>
             </ul>
-
-            <%
+     <%
        String us_id = (String)session.getAttribute("us_id"); //로그인 유무 확인
        if(us_id==null){
      %>
@@ -133,8 +132,17 @@
               <li><a href="MypageOrderView.bo">마이페이지</a></li>
               <li><span> | </span></li>
               <li><a href="logoutActionPage.jsp">로그아웃</a></li>
+              <li><a href="Index.jsp" onclick="signOut();">Sign out</a></li>
               
             </ul>
+            <script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
      <%
        }
      %>
@@ -181,13 +189,13 @@
         <div id="main_nav">
           <ul>
             <li>
-              <a href="teampro_ver_01_1.html"><span>홈</span></a>
+              <a href="Index.jsp"><span>홈</span></a>
             </li>
             <li>
-              <a href="teampro_ver_01_1.html"><span>스토어</span></a>
+              <a href="storeList.bo"><span>스토어</span></a>
             </li>
             <li>
-              <a href="teampro_myhome.html"><span>커뮤니티</span></a>
+              <a href="beauty.bo"><span>커뮤니티</span></a>
             </li>
             <li>
               <a href="teampro_myhome.html"><span>자취에대한 모든것</span></a>
@@ -204,6 +212,7 @@
               <nav role="navigation" class="primary-navigation">
                 <ul class="nav_container">
                   <li>
+                  
                     <ul class="m_line">
                       <li><a href="#">카테고리</a></li>
                       <li><a href="#">베스트</a></li>
@@ -321,6 +330,7 @@
               </tr>
               <%
               ArrayList<OrderListDTO> orderList = (ArrayList<OrderListDTO>)request.getAttribute("orderList_status");
+              
               if(orderList != null){
               for(int i=0; i<orderList.size(); i++){
                

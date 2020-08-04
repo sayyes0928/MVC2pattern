@@ -36,7 +36,6 @@ select us_pw from userinfo where us_id=#{us_id};
 select us_id from userinfo where us_nkname=#{us_nkname};
 </select>
 
-
 <select id="orderList_status" parameterType="com.jachi.DTO.OrderListDTO" resultType="com.jachi.DTO.OrderListDTO" >
 SELECT DISTINCT list_date,list_name,dlv_status as 'list_delStatus',cal_price,list_amount,
 a.dlv_comp as 'list_company',a.dlv_num as 'list_delNum' 
@@ -46,7 +45,6 @@ join
 FROM jachi.order a join productinfo b on a.or_procode = b.pro_code and a.or_id=#{or_id} ) k where a.dlv_status=#{list_delStatus} group by a.dlv_code;
 
 </select>
-
 
 <select id="select_listall" parameterType="String" resultType="com.jachi.DTO.ProductinfoDTO">
 	select pro_code,pro_name,pro_price,pro_mainimg from productinfo;
