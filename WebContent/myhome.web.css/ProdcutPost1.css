@@ -135,6 +135,7 @@
     margin-top: 30px;
     width: 330px;
     text-align: center;
+    
   }
 
   .s_combobox ul li {
@@ -644,13 +645,15 @@
   .delivery_title02 li:last-child{
     /* margin-left:5px; */
   }
-  #buylist_section{
+  #buylist_cell1{
+  /* 	display: none;*/
+  }
+  #buylist_section1{
    display: none;
-   border:1px solid 2px;
+   border:1px solid black;
    width:300px;
    height: 80px;
    box-sizing: border-box;
-   background-color: #e7e7e7;
    border:1px solid black;
    border-radius: 7px;
    margin-left: 15px;
@@ -658,7 +661,7 @@
   
   }
 
-  #buylist{
+  #buylist1{
    /* display: none;*/
     float:left;
     margin-top: 10px;
@@ -671,7 +674,7 @@
    
   }
   
-  #product_count{
+  #product_count1{
   float:left;
   margin :8px 0 0 10px;
   width: 100px;
@@ -685,7 +688,7 @@
   
   }
 
-  #buylist_section > input[type="button"]{
+  #buylist_section1 > input[type="button"]{
      float:right;
      background-color: rgb(18, 74, 133);
      color: white;
@@ -700,7 +703,7 @@
  
   }
   
-  #proudctlist_price{
+  #proudctlist_price1{
    
    float:right;
    margin-top: 10px;
@@ -708,4 +711,70 @@
    font-size: 16px;
    font-weight: bold;
   }
+  
+  #buylist_section2{
+   display: none;
+   border:1px solid black;
+   width:300px;
+   height: 80px;
+   box-sizing: border-box;
+   background-color: #e7e7e7;
+   border:1px solid black;
+   border-radius: 7px;
+   margin-left: 15px;
+   margin-top: 10px;
+  
+  }
+
+  #buylist2{
+   /* display: none;*/
+    float:left;
+    margin-top: 10px;
+    padding-left: 10px;  
+    width:200px;
+    box-sizing: border-box;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: left;
+   
+  }
+  
+  #product_count2{
+  float:left;
+  margin :8px 0 0 10px;
+  width: 100px;
+  height: 25px;
+  box-sizing: border-box;
+  padding: 0px 0px 0px 10px;
+  font-weight: bold;
+  font-size: 16px;
+  border:1px solid  #c8c8c8;
+  border-radius:7px;
+  
+  }
+
+  #buylist_section2 > input[type="button"]{
+     float:right;
+     background-color: rgb(18, 74, 133);
+     color: white;
+     width: 25px;
+     height: 25px;
+     box-sizing: border-box;
+     margin: 10px 10px 0 0;
+     border: 1px solid rgb(18, 74, 133);
+     border-radius: 7px;
+     font-size: 16px;
+     font-weight: bold;
+ 
+  }
+  
+  #proudctlist_price2{
+   
+   float:right;
+   margin-top: 10px;
+   margin-right: 10px;'
+   font-size: 16px;
+   font-weight: bold;
+  } 
+  
   
