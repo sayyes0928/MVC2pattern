@@ -36,6 +36,10 @@ select us_pw from userinfo where us_id=#{us_id};
 select us_id from userinfo where us_nkname=#{us_nkname};
 </select>
 
+<insert id="insert_join_userinfo" parameterType="com.jachi.DTO.UserinfoDTO">
+insert into userinfo values(#{us_mail},#{us_adr},#{us_id},#{us_nkname},#{us_pw},#{us_tel},#{us_birth},#{us_name},#{us_mailagr},#{us_pic},#{us_telagr});
+</insert>
+
 <select id="orderList_status" parameterType="com.jachi.DTO.OrderListDTO" resultType="com.jachi.DTO.OrderListDTO" >
 SELECT DISTINCT list_date,list_name,dlv_status as 'list_delStatus',cal_price,list_amount,
 a.dlv_comp as 'list_company',a.dlv_num as 'list_delNum' 
@@ -53,13 +57,6 @@ FROM jachi.order a join productinfo b on a.or_procode = b.pro_code and a.or_id=#
 <select id="select_logininfo" parameterType="String" resultType="String">
 	select us_pw from userinfo where us_id = #{us_id};
 </select>
-
-
-
-<insert id="insert_join_userinfo" parameterType="com.jachi.DTO.UserinfoDTO">
-insert into userinfo values(#{us_id},#{us_pw},#{us_name},#{us_nkname},#{us_birth},
-#{us_tel},#{us_telagr},#{us_mail},#{us_mailagr},#{us_adr},null);
-</insert>
 
 
 <insert id="insert_productinfo" parameterType="com.jachi.DTO.ProductinfoDTO">

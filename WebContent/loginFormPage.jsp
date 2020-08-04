@@ -33,6 +33,15 @@
         <input type="checkbox" value="아이디 기억하기" id="rememberMe" name="rememberMe" class="join_go"> 아이디 기억하기
       </label>
       <div class="g-signin2" data-onsuccess="onSignIn"></div>
+      <script>
+function onSignIn(googleUser) {
+	  var profile = googleUser.getBasicProfile();
+	  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+	  console.log('Name: ' + profile.getName());
+	  console.log('Image URL: ' + profile.getImageUrl());
+	  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+	}
+</script>
       <a href="join.jsp" class="join_go">회원가입</a>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
     </form>

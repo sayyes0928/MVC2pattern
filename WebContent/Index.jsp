@@ -18,7 +18,7 @@
     <script type="text/javascript" src="./myhome.web.js/jquery-easing-compatibility.1.2.pack.js"></script>
     <script type="text/javascript" src="./myhome.web.js/coda-slider.1.1.1.pack.js"></script>
 
-    
+
 
     <title>Index</title>
     
