@@ -24,48 +24,34 @@
     
     
   //////////// 주문 목록 리스트 
-//    $(document).ready(function(){
-//        $('#Option1').on('change', function() {
-//        	var $pro_name = $('#product_name').text();
-//            var $optiongroup = $('#Option1 option:first').val();
-//            var $option = $('#Option1 option:selected').val();
-//            
-//            $("#buylist_section").css("display", "block");
-//            $("#buylist").html( $pro_name+" / "+$optiongroup+" : "+$option);
-//        
-//        });
-//     });
     $(function() {
-  	  $('#Option1').on('change', function() { 
-  		
-  		    
+  	  $('#Option1').on('change', function() {   		    
 		 	 var pro_name = $('#product_name').text();
 		     var optiongroup = $('#Option1 option:first').val();
-		     var option = $('#Option1 option:selected').val();  		     
-	
+		     var option = $('#Option1 option:selected').val();  		     	
 		     var buylist_cell1 = $("#buylist_cell1").html();
  		     var item_size = $("#Option1 option").size(); 
   		     var idx = $("#Option1 option").index($("#Option1 option:selected"));
   		     var item_text = $("#Option1 option:selected").text();
- 		
-  		     alert(buylist_cell1);
+ 		     var option2 = $("#buylist_section1 #buy_option").text();
+  		     alert(option2);
+//  		     if(){
+//  		    	 
+//  		     };
   		     $("#buylist_section1").css("display", "block");
-  		     $("#buylist1").text( pro_name+" / "+optiongroup+" : "+option);		         
+  		     $("#buylist1").text( pro_name+" / "+optiongroup+" : ");	
+  		   $("#buy_option").text(option);	
   		     $("#buylist_cell2").append(buylist_cell1);
-		
+		       		     
   		 });
     });
     
    ////////// 주문 목록 삭제버튼
-    $(document).ready(function(){
-        $("#buylist_cell2 input[type='button']").on('click', function() {
-        	alert("ㅎㅇㅎㅇ");
-            $("#buylist_cell1").css("display", "none");
-        	//$(this).parent().remove();	
-        });
-     });
+    $(document).on("click","#buylist_delete1",function(){
+        $(this, '#buylist_delete1').parent().css("display", "none");
+    });
     
-   
+
    
     function createRow() {
 
