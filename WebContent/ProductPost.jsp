@@ -14,11 +14,11 @@
 <title>상품 구매페이지</title>
 <link rel="stylesheet" href="./myhome.web.css/teamTopNav.css"
 	type="text/css">
-<link rel="stylesheet" href="./myhome.web.css/ProdcutPost1.css"
+<link rel="stylesheet" href="./myhome.web.css/ProdcutPost.css"
 	type="text/css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script type="text/javascript" src="./myhome.web.js/ProductPost1.js"></script>
+<script type="text/javascript" src="./myhome.web.js/ProductPost.js"></script>
 </head>
 <body>
 	<form id="contentPage">
@@ -280,6 +280,7 @@
 						<div id="buylist_cell1">
 							<div id="buylist_section1">							    
 							    <div id="buylist1"></div>
+							    <span id="buy_option"></span>
 							    <input id="buylist_delete1" type="button" value="X">
 								<select id="product_count1">
 									<option>1</option>
