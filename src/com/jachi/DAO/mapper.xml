@@ -52,19 +52,18 @@ FROM jachi.order a join productinfo b on a.or_procode = b.pro_code and a.or_id=#
 	select us_pw from userinfo where us_id = #{us_id};
 </select>
 
-<<<<<<< HEAD
+
 <select id="select_beautyall" parameterType="String" resultType="com.jachi.DTO.BeautyRoomDTO">
 	select post_num,post_title,post_posting,post_pic,us_nkname from posting join userinfo  on userinfo.us_id=posting.post_nickname;
 </select>
-<insert id="insert_productinfo" parameterType="com.jachi.DTO.ProductinfoDTO">insert into productinfo values(#{pro_code},#{pro_name},#{pro_price},#{pro_mainimg},#{pro_subimg},#{pro_option1},#{pro_option2},#{pro_option3},#{pro_catecode1},#{pro_catecode2},#{pro_catecode3}); </insert>
-=======
-
 <insert id="insert_productinfo" parameterType="com.jachi.DTO.ProductinfoDTO">
-insert into productinfo values(#{pro_code},#{pro_name},#{pro_price},#{pro_mainimg},#{pro_subimg},#{pro_option1},#{pro_option2},
-#{pro_option3},#{pro_catecode1},#{pro_catecode2},#{pro_catecode3}); </insert>
+insert into productinfo values(#{pro_code},#{pro_name},#{pro_price},#{pro_mainimg},
+#{pro_subimg},#{pro_option1},#{pro_option2},#{pro_option3},#{pro_catecode1},#{pro_catecode2},#{pro_catecode3});
+ </insert>
+
 
 <insert id="insert_join_userinfo" parameterType="com.jachi.DTO.UserinfoDTO">
 insert into userinfo values(#{us_id},#{us_pw},#{us_name},#{us_nkname},#{us_birth},#{us_tel},#{us_telagr},#{us_mail},#{us_mailagr},#{us_adr},null);
 </insert>
->>>>>>> refs/remotes/origin/master
+
 </mapper>

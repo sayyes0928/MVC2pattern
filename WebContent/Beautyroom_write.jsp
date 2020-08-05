@@ -17,32 +17,20 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script
-	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script>
-
-$(".upload-action").click(function () {
-	  $(".upload-input").click();
-	  $(".upload-input").change(function () {
-	    preview(this, $(".preview-box"));
-	  });
-	});
-
-	function preview(file, previewBox) {
-	  if (file.files && file.files[0]) {
-	    var reader = new FileReader();
-	    reader.onload = function (e) {
-	      previewBox.html('<img src="' + e.target.result + '" />');
-	    };
-	    reader.readAsDataURL(file.files[0]);
-	  } else {
-	    previewBox.html(
-	      '<div class="img" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + file.value + "'\"></div>'
-	    );
-	  }
+	function getThumbnailPrivew(html, $target) {
+		if (html.files && html.files[0]) {
+			var reader = new FileReader();
+			reader.onload = function(e) {
+				$target.css('display', '');
+				//$target.css('background-image', 'url(\"' + e.target.result + '\")'); // 배경으로 지정시
+				$target
+						.html('<img src="' + e.target.result + '" border="0" width="400px" height="400px" alt="" />');
+			}
+			reader.readAsDataURL(html.files[0]);
+		}
 	}
-
-
 </script>
 
 
@@ -55,14 +43,28 @@ $(".upload-action").click(function () {
 
 	</header>
 	<main>
-	<div id="BT_writemainsize">
-		<div class="upload-box">
-			<input type="file" accept="image/png,image/jpeg,image/jpg"
-				class="upload-input" />
-			<div class="upload-action"></div>
-			<div class="preview-box"></div>
+	<form name="form" id="form" action="" method="post"
+		enctype="multipart/form-data" autocomplete="off">
+		<div id="BT_writemainsize">
+			<div id="file_upsize">
+				<div class="filebox">
+					<label for="cma_file">내 방사진 자랑하기</label> <input type="file"
+						name="cma_file" id="cma_file" accept="image/*" capture="camera"
+						onchange="getThumbnailPrivew(this,$('#cma_image'))" /> <br /> <br />
+					<div id="cma_image"></div>
+				</div>
+				
+				<div class="form__group field">
+  <input type="input" class="form__field" placeholder="제목을 입력해주세요" name="name" id='name' required />
+  <label for="name" class="form__label">제목</label>
+</div>
+				
+				
+				<input type="text" id="BT_wirtepost" autocomplete="off" placeholder="내용을 입력해주세요">
+			</div>
+			<input type="submit" value="등록완료" id="write_submit">
 		</div>
-	</div>
+	</form>
 	</main>
 </body>
 </html>
