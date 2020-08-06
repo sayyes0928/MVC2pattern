@@ -58,7 +58,7 @@ FROM jachi.order a join productinfo b on a.or_procode = b.pro_code and a.or_id=#
 
 
 <select id="select_beautyall" parameterType="String" resultType="com.jachi.DTO.BeautyRoomDTO">
-	select post_num,post_title,post_posting,post_pic,us_nkname from posting join userinfo  on userinfo.us_id=posting.post_nickname;
+	select post_num,post_title,post_posting,post_pic,us_nkname as 'post_nkname' from posting join userinfo on userinfo.us_id=posting.post_nickname order by post_num desc;
 </select>
 
 

@@ -5,7 +5,7 @@
 
 <%
 	ArrayList<BeautyRoomDTO> userpost = (ArrayList<BeautyRoomDTO>) request.getAttribute("article");
-session.setAttribute("US_ID", "likim0829");
+session.setAttribute("US_ID", "ljkim0829");
 String us_id = (String) session.getAttribute("US_ID");
 %>
 
@@ -60,9 +60,9 @@ function existingTag(text)
 
 $(function(){
   $(".tags-new input").focus();
-  
+  	
   $(".tags-new input").keyup(function(){
-
+      
 		var tag = $(this).val().trim(),
 		length = tag.length;
 
@@ -72,23 +72,40 @@ $(function(){
 
 			if(!existingTag(tag))
 			{
-				$('<li class="tags"><span>' + tag + '</span><i class="fa fa-times"></i></i></li>').insertBefore($(".tags-new"));
+				$('<li class="tags" ><span name="tagtest">' + tag + '</span><i class="fa fa-times" ></i></i></li>').insertBefore($(".tags-new"));
 				$(this).val("");	
+				
 			}
 			else
 			{
 				$(this).val(tag);
 			}
-		}
+	         
+			 
+			}
+		
+
 	});
   
   $(document).on("click", ".tags i", function(){
     $(this).parent("li").remove();
+    
   });
 
 });
-                                
-
+            function test(aaa){
+            	var tagAll = "";
+            	var tagList = document.getElementsByName("tagtest");    
+				 for (var i = 0; i < tagList.length; i++) {
+					 tagAll += tagList[i].innerHTML;
+			}
+				
+				 document.getElementById('myField').value = tagAll;
+				 alert(tagAll);
+				 aaa.submit();
+				 
+            }
+ 
 </script>
 </head>
 <body>
@@ -99,7 +116,7 @@ $(function(){
 
 	</header>
 	<main>
-	<form name="form" id="form" action="beauty_write.bo" method="post"
+	<form name="aaa" id="aaa" action="Beautyroom.jsp" method="post"
 		enctype="multipart/form-data" autocomplete="off">
 		<div id="BT_writemainsize">
 			<div id="file_upsize">
@@ -122,6 +139,7 @@ $(function(){
 					<textarea class="form__field2" id="BT_writepost" autocomplete="off"
 						placeholder="내용을 입력해주세요" name="post_posting"></textarea>
 					<label for="name" class="form__label2">내용을 입력해주세요 :D</label>
+			
 				</div>
 			</div>
 
@@ -130,11 +148,12 @@ $(function(){
 					<p>내 맘대로 태그</p>
 					<ul class="tags-input">
 						<li class="tags">자취해보자<i class="fa fa-times"></i></li>
-						<li class="tags-new"><input type="text"></li>
+						<li class="tags-new" ><input type="text"></li>
 					</ul>
 				</div>
 			</div>
-			<input type="submit" value="등록완료" id="write_submit">
+			<input type="text"  name="tagtest2" id="myField">
+			<input type="button" value="등록완료" id="write_submit" onclick="test(aaa)">
 		</div>
 	</form>
 	</main>
