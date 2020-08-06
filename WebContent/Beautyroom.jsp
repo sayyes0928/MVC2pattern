@@ -229,7 +229,7 @@
 					<span class="card__category"><%=userpost.get(i).getPost_title()%></span>
 					<h3 class="card__title"><%=userpost.get(i).getPost_posting()%></h3>
 					<span class="card__by">by <a href="#" class="card__author"
-						title="author"><%=userpost.get(i).getUs_nkname()%></a></span>
+						title="author"><%=userpost.get(i).getPost_nkname()%></a></span>
 				</div>
 			</article>
 			<%

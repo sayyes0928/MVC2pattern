@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.jachi.Action.Action;
+import com.jachi.Action.BTListAction;
 import com.jachi.Action.BTSelectAction;
+import com.jachi.Action.BTWriteAction;
 import com.jachi.Action.BoardDeleteProAction;
 import com.jachi.Action.BoardDetailAction;
 import com.jachi.Action.BoardListAction;
@@ -249,6 +251,24 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			}
 		}
 		
+		else if(command.equals("/beauty_write.bo")) {
+			System.out.println("³ª¿À´Ï?");
+			action = new BTWriteAction();
+			try {
+				forward=action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		else if(command.equals("/btList.bo")) {
+			action = new BTListAction();
+			try {
+				forward=action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
 		
 		
 		if(forward != null){

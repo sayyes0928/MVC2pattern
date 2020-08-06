@@ -66,4 +66,9 @@ insert into productinfo values(#{pro_code},#{pro_name},#{pro_price},#{pro_mainim
 insert into userinfo values(#{us_id},#{us_pw},#{us_name},#{us_nkname},#{us_birth},#{us_tel},#{us_telagr},#{us_mail},#{us_mailagr},#{us_adr},null);
 </insert>
 
+
+<insert id="insert_bt" parameterType="com.jachi.DTO.BeautyRoomDTO">
+	insert into posting values(#{post_nkname},#{post_pic},#{post_posting},#{post_pw},default,#{post_tag},#{post_title});
+</insert>
+
 </mapper>

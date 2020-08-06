@@ -5,6 +5,8 @@
 
 <%
 	ArrayList<BeautyRoomDTO> userpost = (ArrayList<BeautyRoomDTO>) request.getAttribute("article");
+session.setAttribute("US_ID", "likim0829");
+String us_id = (String) session.getAttribute("US_ID");
 %>
 
 <!DOCTYPE html>
@@ -14,10 +16,15 @@
 <title>내방을 자랑해주세요</title>
 <link rel="stylesheet" href="./Teamcss/Beautyroom_write.css"
 	type="text/css">
+<link
+	href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
+	rel="stylesheet">
+
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
 <script>
 	function getThumbnailPrivew(html, $target) {
 		if (html.files && html.files[0]) {
@@ -33,7 +40,56 @@
 	}
 </script>
 
+<script>
 
+function existingTag(text)
+{
+	var existing = false,
+		text = text.toLowerCase();
+
+	$(".tags").each(function(){
+		if ($(this).text().toLowerCase() == text) 
+		{
+			existing = true;
+			return "";
+		}
+	});
+
+	return existing;
+}
+
+$(function(){
+  $(".tags-new input").focus();
+  
+  $(".tags-new input").keyup(function(){
+
+		var tag = $(this).val().trim(),
+		length = tag.length;
+
+		if((tag.charAt(length - 1) == ',') && (tag != ","))
+		{
+			tag = tag.substring(0, length - 1);
+
+			if(!existingTag(tag))
+			{
+				$('<li class="tags"><span>' + tag + '</span><i class="fa fa-times"></i></i></li>').insertBefore($(".tags-new"));
+				$(this).val("");	
+			}
+			else
+			{
+				$(this).val(tag);
+			}
+		}
+	});
+  
+  $(document).on("click", ".tags i", function(){
+    $(this).parent("li").remove();
+  });
+
+});
+                                
+
+</script>
 </head>
 <body>
 	<header>
@@ -43,24 +99,40 @@
 
 	</header>
 	<main>
-	<form name="form" id="form" action="" method="post"
+	<form name="form" id="form" action="beauty_write.bo" method="post"
 		enctype="multipart/form-data" autocomplete="off">
 		<div id="BT_writemainsize">
 			<div id="file_upsize">
 				<div class="filebox">
 					<label for="cma_file">내 방사진 자랑하기</label> <input type="file"
-						name="cma_file" id="cma_file" accept="image/*" capture="camera"
+						name="post_pic" id="cma_file" accept="image/*" capture="camera"
 						onchange="getThumbnailPrivew(this,$('#cma_image'))" /> <br /> <br />
 					<div id="cma_image"></div>
 				</div>
-				
+				<%=us_id %>
 				<div class="form__group field">
-  <input type="input" class="form__field" placeholder="제목을 입력해주세요" name="name" id='name' required />
-  <label for="name" class="form__label">제목</label>
-</div>
-				
-				
-				<input type="text" id="BT_wirtepost" autocomplete="off" placeholder="내용을 입력해주세요">
+					<input type="input" class="form__field" placeholder="제목을 입력해주세요"
+						name="post_title" id='name' required /> <label for="name"
+						class="form__label">제목을 입력해주세요 :D</label>
+				</div>
+				<input type="hidden" value="<%=us_id%>" name="post_nickname">
+
+
+				<div class="form__group2 field2">
+					<textarea class="form__field2" id="BT_writepost" autocomplete="off"
+						placeholder="내용을 입력해주세요"></textarea>
+					<label for="post_posting" class="form__label2">내용을 입력해주세요 :D</label>
+				</div>
+			</div>
+
+			<div id="tag_size">
+				<div id="wrapper">
+					<p>내 맘대로 태그</p>
+					<ul class="tags-input">
+						<li class="tags">자취해보자<i class="fa fa-times"></i></li>
+						<li class="tags-new"><input type="text"></li>
+					</ul>
+				</div>
 			</div>
 			<input type="submit" value="등록완료" id="write_submit">
 		</div>
