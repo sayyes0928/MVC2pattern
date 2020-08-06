@@ -33,9 +33,9 @@ public class TipwriteAction implements Action {
 				fileSize,
 				"UTF-8",
 				new DefaultFileRenamePolicy());
-		tipdto = new TipDTO();
+		tipdto = new TipDTO(); //
 		tipdto.setTip_nickname();
-		
+	
 		if(!isWriteSuccess){
 			response.setContentType("text/html;charset=UTF-8");
 			PrintWriter out = response.getWriter();
