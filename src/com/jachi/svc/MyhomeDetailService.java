@@ -19,8 +19,7 @@ public class MyhomeDetailService {
 		List<BeautyRoomDTO> beautylistall = sqlsession.selectList("select_beautyall");
 		
 		sqlsession.close();
-		System.out.println("∏ ∆€¿ﬂ¥Ÿ≥‡ø»");
-		
+
 		return beautylistall;
 		
 	}
