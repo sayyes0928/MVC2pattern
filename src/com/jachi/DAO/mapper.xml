@@ -61,7 +61,10 @@ FROM jachi.order a join productinfo b on a.or_procode = b.pro_code and a.or_id=#
 	select post_num,post_title,post_posting,post_pic,us_nkname from posting join userinfo  on userinfo.us_id=posting.post_nickname;
 </select>
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> refs/remotes/1231231244/master
 
 <insert id="insert_productinfo" parameterType="com.jachi.DTO.ProductinfoDTO">
 
@@ -70,6 +73,11 @@ insert into productinfo values(#{pro_code},#{pro_name},#{pro_price},#{pro_mainim
  </insert>
 
 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> refs/remotes/1231231244/master
 <insert id="insert_bt" parameterType="com.jachi.DTO.BeautyRoomDTO">
 	insert into posting values(#{post_nkname},#{post_pic},#{post_posting},#{post_pw},default,#{post_tag},#{post_title});
 </insert>

@@ -294,11 +294,10 @@ main {
   /* border: 2px dashed black; */
   /* overflow: hidden; */
   /* border: 1px solid green; */
-  width: 210px;
-  height: 65px;
+  width: 295px;
+  height: 460px;
   margin: 0 auto;
   /* border: 1px solid red; */
-  padding-left: 15px;
   margin-top: 30px;
   /* border: 1px solid red; */
 }
@@ -313,12 +312,12 @@ main {
   float: left;
   margin: 5px 10px 10px 10px;
 } */
-/* .myhomeContentRight_button div button {
-  border: 1px solid white;
+.myhomeContentRight_button_btn {
+  margin:0 auto;
   border-radius: 10px;
-  width: 80px;
+  width: 210px;
   height: 35px;
-} */
+} 
 /* background-color: white; */
 /* border: 1px solid red; */
 
