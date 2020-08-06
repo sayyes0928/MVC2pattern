@@ -35,7 +35,7 @@ public class BTWriteAction implements Action {
 				new DefaultFileRenamePolicy());
 		
 		btr = new BeautyRoomDTO();
-		btr.setPost_nkname(multi.getParameter(us_id));
+		btr.setPost_nkname(us_id);
 		btr.setPost_title(multi.getParameter("post_title"));
 		btr.setPost_posting(multi.getParameter("post_posting"));
 		btr.setPost_pic(
@@ -43,11 +43,11 @@ public class BTWriteAction implements Action {
 		
 		BTWriteService btws = new BTWriteService();
 		boolean isWriteSuccess = btws.registArticle(btr);
-		System.out.println(isWriteSuccess);
-		System.out.println(us_id);
+		
 		System.out.println(btr.getPost_nkname());
 		System.out.println(btr.getPost_posting());
-		sysout
+		System.out.println(btr.getPost_title());
+
 		
 		if(!isWriteSuccess) {
 			response.setContentType("text/html;charset=UTF-8");
@@ -59,7 +59,7 @@ public class BTWriteAction implements Action {
 		}else {
 			forward = new ActionForward();
 			forward.setRedirect(true);
-			forward.setPath("btList.bo");
+			forward.setPath("beauty.bo");
 		}
 		
 		return forward;

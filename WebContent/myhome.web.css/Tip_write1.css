@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+*{
+	margin:0;
+	padding:0;
+}
+
+#banner_wrap{
+	width: 100%;
+	height:300px;
+	background: rgb(18, 74, 133);
+}
+#tip_banner{
+	margin:0 auto;
+	width: 1200px;
+	height: 300px;
+	
+    
+}
+
+#banner_title1{
+    padding-top: 20px;
+	font-size: 40pt;
+	font-weight: bold;
+	color: white;
+}
+
+#banner_title2{
+	margin-top: 30px;
+	font-size: 30pt;
+	color: white;
+
+}
+
+#banner_title3{
+	font-size: 15pt;
+    color: white;
+}
+#main_wrap {
+    width: 1200px;
+    height: 1660px;
+    margin: 40px auto 0 auto;
+    box-sizing: border-box;
+}
+
+#main_header{
+	height: 100px;
+}
+#page_subtitle{
+	font-size: 30pt;
+	font-weight: bold;
+}
+
+#post_title{
+	height: 80px;
+	background-color: white;
+}
+
+#title_line{
+	
+	margin-top: 30px;
+	border:6px solid #141432;
+	background-color : #141432;
+	
+}
+
+#title_label{
+	float: left;
+	margin-left: 30px;
+	margin-top: 20px;
+	font-size: 23pt;
+	font-weight: bold;
+}
+
+#title_text{
+	float: left;
+	margin-top: 27px;
+	width: 650px;
+	height: 30px;
+	border: 0px solid black;
+	font-size: 30px;
+	margin-left: 30px;
+}
+
+#img_size{
+	float: left;
+	margin-top: 27px;
+	margin-left: 27px;
+}
+
+
+#text_post{
+	width:1200px;
+	border:0px solid black;
+	height: 560px;
+}
+
+
+
+
