@@ -11,7 +11,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>상품 구매페이지</title>
+<title>상품 구매페이지1</title>
 <link rel="stylesheet" href="./myhome.web.css/teamTopNav.css"
 	type="text/css">
 <link rel="stylesheet" href="./myhome.web.css/ProdcutPost.css"
@@ -73,7 +73,7 @@
 				</div>
 			</div>
 			<script>
-  $(function() {
+  
     $('#main_nav ul li').hover(
       function() {
         $(this).addClass('main_navov');
@@ -81,7 +81,7 @@
       function() {
         $(this).removeClass('main_navov');
       });
-  });
+    
 </script>
 			<script>
   $(function() {
@@ -104,8 +104,11 @@
      speed: 600,
      pause: 4000
     });
-  });
+
+     
+   });
 </script>
+
 			<div id="main_nav">
 				<ul>
 					<li><a href="teampro_ver_01_1.html"><span>홈</span></a>
@@ -274,11 +277,12 @@
 								</select></li>
 								<% }%>
 							</ul>
-						<div id="buylist_cell">
-							<div id="buylist_section">							    
-							    <div id="buylist"></div>
-							    <input id="#buylist_delete" type="button" value="X">
-								<select id="product_count">
+						<div id="buylist_cell1">
+							<div id="buylist_section1">							    
+							    <div id="buylist1"></div>
+							    <span id="buy_option"></span>
+							    <input id="buylist_delete1" type="button" value="X">
+								<select id="product_count1">
 									<option>1</option>
 									<option>2</option>
 									<option>3</option>
@@ -290,9 +294,12 @@
 									<option>9</option>
 									<option>10+</option>
 								</select>
-								<div id="proudctlist_price"><%= article.get(0).getPro_price()%> 원</div>
+								<div id="proudctlist_price1"><%= article.get(0).getPro_price()%> 원</div>
 							</div>
-							</div>
+						 </div>
+						 <div id="buylist_cell2">
+						 
+						 </div>
 						</div>
 						<div class="s_price">
 							<ul>

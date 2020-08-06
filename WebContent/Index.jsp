@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
 <%@ page import="com.jachi.DTO.DeliveryDTO"%>
-<%@ page import="com.jachi.DTO.OrderListDTO"%>
+<%@ page import="com.jachi.DTO.UserinfoDTO"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,7 +18,7 @@
     <script type="text/javascript" src="./myhome.web.js/jquery-easing-compatibility.1.2.pack.js"></script>
     <script type="text/javascript" src="./myhome.web.js/coda-slider.1.1.1.pack.js"></script>
 
-    
+
 
     <title>Index</title>
     
@@ -81,9 +81,12 @@
      %>
             <ul class="login_go">
               <li><span></span></li>
+              <li><a href="MypageOrderView.bo">마이페이지</a></li>
               <li><span> | </span></li>
               <li><a href="logoutActionPage.jsp">로그아웃</a></li>
+              
             </ul>
+
      <%
        }
      %>
@@ -130,13 +133,13 @@
         <div id="main_nav">
           <ul>
             <li>
-              <a href="teampro_ver_01_1.html"><span>홈</span></a>
+              <a href="Index.jsp"><span>홈</span></a>
             </li>
             <li>
-              <a href="teampro_ver_01_1.html"><span>스토어</span></a>
+              <a href="storeList.bo"><span>스토어</span></a>
             </li>
             <li>
-              <a href="teampro_myhome.html"><span>커뮤니티</span></a>
+              <a href="beauty.bo"><span>커뮤니티</span></a>
             </li>
             <li>
               <a href="teampro_myhome.html"><span>자취에대한 모든것</span></a>
@@ -153,6 +156,7 @@
               <nav role="navigation" class="primary-navigation">
                 <ul class="nav_container">
                   <li>
+                  
                     <ul class="m_line">
                       <li><a href="#">카테고리</a></li>
                       <li><a href="#">베스트</a></li>
@@ -186,10 +190,17 @@
         </div>
       </header>
 
+
       <div id="m_wrap">
         <main>
           <div class="MyPage_container">
-           
+         <%
+       /*  UserinfoDTO userinfoDTO = (UserinfoDTO)request.getAttribute("userinfo");
+         String mail = userinfoDTO.getUs_mail();
+         String name = userinfoDTO.getUs_name();
+         String nickName = userinfoDTO.getUs_nkname();*/
+         %>
+
           </div>
         </main>
       </div>

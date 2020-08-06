@@ -34,7 +34,6 @@ public class JoinIdcheckUserinfoAction implements Action{
 			    out.print("중복된 아이디가 있습니다.");
 			  }
 
-		 System.out.println(article);
 		 
 		ActionForward forward = new ActionForward();
 //	   	request.setAttribute("article", article);

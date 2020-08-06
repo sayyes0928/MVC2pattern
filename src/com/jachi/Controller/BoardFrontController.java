@@ -3,7 +3,6 @@ package com.jachi.Controller;
 
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,7 +17,6 @@ import com.jachi.Action.BTWriteAction;
 import com.jachi.Action.BoardDeleteProAction;
 import com.jachi.Action.BoardDetailAction;
 import com.jachi.Action.BoardListAction;
-import com.jachi.Action.BoardLoginAction;
 import com.jachi.Action.BoardModifyFormAction;
 import com.jachi.Action.BoardModifyProAction;
 import com.jachi.Action.BoardReplyFormAction;
@@ -27,11 +25,15 @@ import com.jachi.Action.JoinIdcheckUserinfoAction;
 import com.jachi.Action.JoinInsertUserInfoAction;
 import com.jachi.Action.JoinNickNamecheckUserinfoAction;
 import com.jachi.Action.LoginUserAction;
+import com.jachi.Action.MyhomeDetailAction;
 import com.jachi.Action.MyhomeWriteProAction;
 import com.jachi.Action.MypageOrderListViewAction;
+import com.jachi.Action.MypageOrderViewAction;
 import com.jachi.Action.PLSelectAction;
 import com.jachi.Action.ProductPostViewAction;
+import com.jachi.Action.TokenGetAccessAction;
 import com.jachi.Action.UserLogin;
+import com.jachi.Api.CallbackNaver;
 import com.jachi.DTO.ActionForward;
 
 
@@ -98,6 +100,23 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
+		else if(command.equals("/callbackNaver.bo")){
+			action  = new CallbackNaver();
+			try {
+				forward=action.execute(request, response );
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/TokenGetAccessAction.bo")){
+			action  = new TokenGetAccessAction();
+			try {
+				forward=action.execute(request, response );
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
 	    else if(command.equals("/Myhome_WritePro.bo")){
 				action  = new MyhomeWriteProAction();
 				try {
@@ -113,8 +132,8 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
-		else if(command.equals("/MypageOrderListView.bo")){
-			action  = new MypageOrderListViewAction();
+		else if(command.equals("/MypageOrderView.bo")){
+			action  = new MypageOrderViewAction();
 			try {
 				forward=action.execute(request, response );
 			} catch (Exception e) {
@@ -134,6 +153,10 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			forward=new ActionForward();
 			forward.setPath("/fileUpload.jsp");
 		}
+		else if(command.equals("/Beautyroom_write.bo")){
+			forward=new ActionForward();
+			forward.setPath("/Beautyroom_write.jsp");
+		}
 		else if(command.equals("/boardList.bo")){
 			System.out.println("üũ2");	
 			action = new BoardListAction();
@@ -143,11 +166,10 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
-        else if(command.equals("/boardLoginPro.bo")){
+        else if(command.equals("/Beautyroom_Detail.bo")){
 
-			action = new BoardLoginAction();
+			action = new MyhomeDetailAction();
 			try{
-				System.out.println("üũ3");
 				forward=action.execute(request, response);
 			}catch(Exception e){
 				e.printStackTrace();

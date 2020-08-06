@@ -6,9 +6,8 @@
   font-weight: normal;
 }
 a:-webkit-any-link {
-  color: -webkit-link;
   cursor: pointer;
-  text-decoration: underline;
+  text-decoration:none;
 }
 
 .topnav li {

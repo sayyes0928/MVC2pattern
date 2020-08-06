@@ -44,7 +44,7 @@ public class JoinInsertUserInfoAction implements Action {
 		  userinfoDTO.setUs_pw(us_pw);
 		  userinfoDTO.setUs_name(us_name);
 		  userinfoDTO.setUs_nkname(us_nkname);
-		  userinfoDTO.setUs_birth(us_birth);
+		  userinfoDTO.setUs_birth("1991-09-28");
 		  userinfoDTO.setUs_tel(us_tel);
 		  userinfoDTO.setUs_telagr(us_telagr);
 		  userinfoDTO.setUs_mail(us_mail);

@@ -7,62 +7,51 @@
         imgSrc = "<img src='" + imgSrc + "' />";
         $('#showimg').html(imgSrc);
       });
-    })
+    });
   
                
     $(document).ready(function() {
-      $('#pr_imgs li img').hover(
-        function() {
-          $(this).removeClass('.s_imgborder');
-          $(this).addClass('imghover');
-        },
-        function() {
-          $(this).removeClass('imghover');
-        }
-      );
-    });
+        $('#pr_imgs li img').hover(
+          function() {
+            $(this).removeClass('.s_imgborder');
+            $(this).addClass('imghover');
+          },
+          function() {
+            $(this).removeClass('imghover');
+          }
+        );
+      });
     
     
   //////////// 주문 목록 리스트 
-    $(document).ready(function(){
-        $('#Option1').on('change', function() {
-        	var $pro_name = $('#product_name').text();
-            var $optiongroup = $('#Option1 option:first').val();
-            var $option = $('#Option1 option:selected').val();
-            
-            $("#buylist_section").css("display", "block");
-            $("#buylist").html( $pro_name+" / "+$optiongroup+" : "+$option);
-        
-        });
-     });
-    
-    $(document).ready(function(){
-        $('#Option1').on('change', function() {
-        	var $pro_name = $('#product_name').text();
-            var $optiongroup = $('#Option1 option:first').val();
-            var $option = $('#Option1 option:selected').val();
-            var $selectbox_size = $('#Option1 option').size();
-            var $buylist_cell = $("#buylist_cell").html();
-       
-                    
-            $("#buylist_section").css("display", "block");
-            $("#buylist").html( $pro_name+" / "+$optiongroup+" : "+$option);
-            $("#buylist_cell").append($buylist_cell);
-          
-            
-        });
-     });
+    $(function() {
+  	  $('#Option1').on('change', function() {   		    
+		 	 var pro_name = $('#product_name').text();
+		     var optiongroup = $('#Option1 option:first').val();
+		     var option = $('#Option1 option:selected').val();  		     	
+		     var buylist_cell1 = $("#buylist_cell1").html();
+ 		     var item_size = $("#Option1 option").size(); 
+  		     var idx = $("#Option1 option").index($("#Option1 option:selected"));
+  		     var item_text = $("#Option1 option:selected").text();
+ 		     var option2 = $("#buylist_section1 #buy_option").text();
+  		     alert(option2);
+//  		     if(){
+//  		    	 
+//  		     };
+  		     $("#buylist_section1").css("display", "block");
+  		     $("#buylist1").text( pro_name+" / "+optiongroup+" : ");	
+  		   $("#buy_option").text(option);	
+  		     $("#buylist_cell2").append(buylist_cell1);
+		       		     
+  		 });
+    });
     
    ////////// 주문 목록 삭제버튼
-    $(document).ready(function(){
-        $('#buylist_section input[type="button"]').on('click', function() {
-        	
-            $("#buylist_section").css("display", "none");
-            $("#buylist_cell").remove();
-        });
-     });
+    $(document).on("click","#buylist_delete1",function(){
+        $(this, '#buylist_delete1').parent().css("display", "none");
+    });
     
-   
+
    
     function createRow() {
 

@@ -47,6 +47,7 @@ public class BTWriteAction implements Action {
 		System.out.println(us_id);
 		System.out.println(btr.getPost_nkname());
 		System.out.println(btr.getPost_posting());
+		sysout
 		
 		if(!isWriteSuccess) {
 			response.setContentType("text/html;charset=UTF-8");

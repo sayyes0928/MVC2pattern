@@ -27,11 +27,11 @@ public class MypageOrderViewService {
         	OrderListDTO orderListDTO = new OrderListDTO();
         	orderListDTO.setOr_id(us_id);
         	orderListDTO.setList_delStatus(status);
+        	
       		 SqlSessionFactory sqlfactory = BoardDAO.getConn();
       		 SqlSession sqlsession = sqlfactory.openSession();
       		 List<OrderListDTO> OrderList_status = sqlsession.selectList("orderList_status", orderListDTO);
       		sqlsession.close();
-      		
       		return OrderList_status;
            
            }

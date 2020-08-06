@@ -50,6 +50,12 @@ public String getUs_mail() {
 public void setUs_mail(String us_mail) {
 	this.us_mail = us_mail;
 }
+public String getUs_mailagr() {
+	return us_mailagr;
+}
+public void setUs_mailagr(String us_mailagr) {
+	this.us_mailagr = us_mailagr;
+}
 public String getUs_adr() {
 	return us_adr;
 }
@@ -70,13 +76,8 @@ String us_tel= null;
 String us_telagr= null;
 String us_mail= null;
 String us_mailagr= null;
-public String getUs_mailagr() {
-	return us_mailagr;
-}
-public void setUs_mailagr(String us_mailagr) {
-	this.us_mailagr = us_mailagr;
-}
 String us_adr= null;
 String us_pic= null;
+
 
 }
