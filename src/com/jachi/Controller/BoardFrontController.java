@@ -31,6 +31,7 @@ import com.jachi.Action.MypageOrderListViewAction;
 import com.jachi.Action.MypageOrderViewAction;
 import com.jachi.Action.PLSelectAction;
 import com.jachi.Action.ProductPostViewAction;
+import com.jachi.Action.TipwriteAction;
 import com.jachi.Action.TokenGetAccessAction;
 import com.jachi.Action.UserLogin;
 import com.jachi.Api.CallbackNaver;
@@ -285,6 +286,14 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		
 		else if(command.equals("/btList.bo")) {
 			action = new BTListAction();
+			try {
+				forward=action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/tip_write.bo")) {
+			action = new TipwriteAction();
 			try {
 				forward=action.execute(request, response);
 			}catch(Exception e) {
