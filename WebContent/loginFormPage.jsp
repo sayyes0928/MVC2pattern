@@ -1,10 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.net.URLEncoder" %>
+<%@ page import="java.security.SecureRandom" %>
+<%@ page import="java.math.BigInteger" %>
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta name = "google-signin-client_id"content = "718028943374-g1388634jglvhvrqeo1h6a781q2jmac2.apps.googleusercontent.com">
-<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
+
 <link rel="stylesheet" type="text/css"href="loginPage.css" />
     <!-- <link rel="stylesheet" type="text/css"href="teamTopNav.css" /> --> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,6 +27,17 @@
 <meta charset="UTF-8">
 <title>Login_page</title>
 </head>
+ <%
+    String clientId = "Z5SQgAjtE4al89G3NLng";//애플리케이션 클라이언트 아이디값";
+    String redirectURI = URLEncoder.encode("http://127.0.0.1:8080/MVC2/callbackNaver.bo", "UTF-8");
+    SecureRandom random = new SecureRandom();
+    String state = new BigInteger(130, random).toString();
+    String apiURL = "https://nid.naver.com/oauth2.0/authorize?response_type=code";
+    apiURL += "&client_id=" + clientId;
+    apiURL += "&redirect_uri=" + redirectURI;
+    apiURL += "&state=" + state;
+    session.setAttribute("state", state);
+ %>
 <body>
   
   <div class="wrapper">
@@ -32,16 +48,14 @@
       <label class="checkbox">
         <input type="checkbox" value="아이디 기억하기" id="rememberMe" name="rememberMe" class="join_go"> 아이디 기억하기
       </label>
-      <div class="g-signin2" data-onsuccess="onSignIn"></div>
-      <script>
-function onSignIn(googleUser) {
-	  var profile = googleUser.getBasicProfile();
-	  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-	  console.log('Name: ' + profile.getName());
-	  console.log('Image URL: ' + profile.getImageUrl());
-	  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-	}
-</script>
+     <a href="<%=apiURL%>">
+     <img height="50" src="./img/naverLoginBtn.PNG"/>
+     </a>
+
+
+
+
+
       <a href="join.jsp" class="join_go">회원가입</a>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
     </form>

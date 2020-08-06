@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
 <%@ page import="com.jachi.DTO.DeliveryDTO"%>
-<%@ page import="com.jachi.DTO.OrderListDTO"%>
+<%@ page import="com.jachi.DTO.UserinfoDTO"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -84,17 +84,9 @@
               <li><a href="MypageOrderView.bo">마이페이지</a></li>
               <li><span> | </span></li>
               <li><a href="logoutActionPage.jsp">로그아웃</a></li>
-              <li><a href="Index.jsp" onclick="signOut();">Sign out</a></li>
               
             </ul>
-            <script>
-  function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    });
-  }
-</script>
+
      <%
        }
      %>
@@ -198,10 +190,17 @@
         </div>
       </header>
 
+
       <div id="m_wrap">
         <main>
           <div class="MyPage_container">
-           
+         <%
+       /*  UserinfoDTO userinfoDTO = (UserinfoDTO)request.getAttribute("userinfo");
+         String mail = userinfoDTO.getUs_mail();
+         String name = userinfoDTO.getUs_name();
+         String nickName = userinfoDTO.getUs_nkname();*/
+         %>
+
           </div>
         </main>
       </div>
