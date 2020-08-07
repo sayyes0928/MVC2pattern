@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="./myhome.web.css/heartbtn.css" />
     <link rel="stylesheet" type="text/css" href="./myhome.web.css/bookmark.css" />
     <link rel="stylesheet" type="text/css"  href="./myhome.web.css/teamTopNav.css" />
+    <script type="text/javascript" src="./myhome.web.js/MyhomeDtail.js"></script>
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./myhome.web.css/styleSlider.css" />
@@ -270,30 +271,7 @@
                               />
                             </div>
                           </div>
-                          <div class="panel" title="Panel 2">
-                            <div class="wrapper">
-                              <img
-                                src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/159141479080575947.jpeg?gif=1&w=850&webp=1"
-                                alt="temp"
-                              />
-                            </div>
-                          </div>
-                          <div class="panel" title="Panel 3">
-                            <div class="wrapper">
-                              <img
-                                src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/159158750321438442.jpeg?gif=1&w=850&webp=1"
-                                alt="temp"
-                              />
-                            </div>
-                          </div>
-                          <div class="panel" title="Panel 4">
-                            <div class="wrapper">
-                              <img
-                                src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/159158779101441293.jpeg?gif=1&w=850&webp=1"
-                                alt="temp"
-                                class="floatleft"
-                              />
-                            </div>
+                          
                             <div class="panel" title="Panel 5">
                               <div class="wrapper">
                                 <!-- <img
@@ -306,39 +284,16 @@
                           </div>
                         </div>
                       </div>
-                      <ul id="thumbAll">
+                      
+                      <ul id="pr_imgs">
                         <li>
-                          <a href="#1" class="cross-link active-thumb"
-                            ><img
+                          <img
                               src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/159031754537170619.jpeg?gif=1&w=850&webp=1"
                               class="nav-thumb"
                               alt="temp-thumb"
                           /></a>
                         </li>
-                        <li>
-                          <a href="#2" class="cross-link"
-                            ><img
-                              src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/159141479080575947.jpeg?gif=1&w=850&webp=1"
-                              class="nav-thumb"
-                              alt="temp-thumb"
-                          /></a>
-                        </li>
-                        <li>
-                          <a href="#3" class="cross-link"
-                            ><img
-                              src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/159158750321438442.jpeg?gif=1&w=850&webp=1"
-                              class="nav-thumb"
-                              alt="temp-thumb"
-                          /></a>
-                        </li>
-                        <li>
-                          <a href="#4" class="cross-link"
-                            ><img
-                              src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/159158779101441293.jpeg?gif=1&w=850&webp=1"
-                              class="nav-thumb"
-                              alt="temp-thumb"
-                          /></a>
-                        </li>
+      
                       </ul>
                     </div>
                   </div>

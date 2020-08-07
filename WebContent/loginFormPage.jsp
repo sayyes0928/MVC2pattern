@@ -28,6 +28,11 @@
 <title>Login_page</title>
 </head>
  <%
+ String login = (String)session.getAttribute("userID");
+     if(login != null){
+    	 
+     }
+ 
     String clientId = "Z5SQgAjtE4al89G3NLng";//애플리케이션 클라이언트 아이디값";
     String redirectURI = URLEncoder.encode("http://127.0.0.1:8080/MVC2/callbackNaver.bo", "UTF-8");
     SecureRandom random = new SecureRandom();

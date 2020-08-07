@@ -22,7 +22,7 @@
  UserinfoDTO userDTO = new UserinfoDTO();
 
 
- SqlSessionFactory sqlfactory = UserDAO.getConn();
+ SqlSessionFactory sqlfactory = TestDAO.getConn();
  SqlSession sqlsession = sqlfactory.openSession();
  int insert = sqlsession.insert("insert_data",userDTO);
 	sqlsession.commit();
