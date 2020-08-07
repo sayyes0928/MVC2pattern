@@ -11,6 +11,7 @@ import com.jachi.DTO.ActionForward;
 import com.jachi.DTO.BoardBean;
 import com.jachi.DTO.TipDTO;
 import com.jachi.svc.BoardWriteProService;
+import com.jachi.svc.TipwriteService;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
@@ -23,18 +24,24 @@ public class TipwriteAction implements Action {
 		ActionForward forward=null;
 		TipDTO tipdto = null;
 		String realFolder="";
-		String saveFolder="/abc";
+		String saveFolder="/upload";
 		int fileSize=5*1024*1024;
 		ServletContext context = request.getServletContext();
 		realFolder=context.getRealPath(saveFolder);
 		
-		MultipartRequest multi=new MultipartRequest(request,
+		System.out.println("tipwirteAction 여기까지 왔다잉");
+		MultipartRequest multi = new MultipartRequest(request,
 				realFolder,
 				fileSize,
 				"UTF-8",
 				new DefaultFileRenamePolicy());
-		tipdto = new TipDTO(); //
-		tipdto.setTip_nickname();
+		tipdto = new TipDTO(); 
+		tipdto.setTip_nickname(us_id);
+		tipdto.setTip_title(multi.getParameter("write_title"));
+		tipdto.setTip_post(multi.getParameter("editordata"));
+		
+		TipwriteService tipwriteService = new TipwriteService();
+		boolean isWriteSuccess = tipwriteService.registArticle(tipdto);
 	
 		if(!isWriteSuccess){
 			response.setContentType("text/html;charset=UTF-8");
@@ -46,8 +53,8 @@ public class TipwriteAction implements Action {
 		}
 		else{
 			forward = new ActionForward();
-			forward.setRedirect(true);
-			forward.setPath("boardList.bo");
+			forward.setRedirect(false);
+			forward.setPath("TipPage.jsp");
 		}
 
 		return forward;

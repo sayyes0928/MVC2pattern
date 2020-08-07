@@ -74,6 +74,10 @@ insert into productinfo values(#{pro_code},#{pro_name},#{pro_price},#{pro_mainim
 	insert into posting values(#{post_nkname},#{post_pic},#{post_posting},#{post_pw},default,#{post_tag},#{post_title});
 </insert>
 
+<insert id="insert_tip" parameterType="com.jachi.DTO.TipDTO">
+    insert into tip values(#{tip_nickname}, #{tip_post}, default, #{tip_title}, #{tip_img});
+</insert> 
+
 
 
 </mapper>
