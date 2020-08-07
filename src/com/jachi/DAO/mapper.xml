@@ -20,6 +20,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 </select>
 
+<select id="order_userinfo" resultType="com.jachi.DTO.UserinfoDTO">
+ select us_name, us_tel, us_adr from userinfo where us_id=#{us_id};
+</select>
+
 
 <select id="select_login_user" resultType="String">
 select us_pw from userinfo where us_id =#{us_id};
@@ -60,7 +64,6 @@ FROM jachi.order a join productinfo b on a.or_procode = b.pro_code and a.or_id=#
 <select id="select_beautyall" parameterType="String" resultType="com.jachi.DTO.BeautyRoomDTO">
 	select post_num,post_title,post_posting,post_pic,us_nkname from posting join userinfo  on userinfo.us_id=posting.post_nickname;
 </select>
-
 
 
 <insert id="insert_productinfo" parameterType="com.jachi.DTO.ProductinfoDTO">
