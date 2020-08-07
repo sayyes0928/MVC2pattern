@@ -21,7 +21,7 @@
 <script type="text/javascript" src="./myhome.web.js/ProductPost.js"></script>
 </head>
 <body>
-	<form id="contentPage">
+	<form id="contentPage" action="ProductOrderPage.bo">
 		<header>
 			<div id="h_wrap">
 				<div class="h_div">
@@ -282,7 +282,7 @@
 							    <div id="buylist1"></div>
 							    <span id="buy_option"></span>
 							    <input id="buylist_delete1" type="button" value="X">
-								<select id="product_count1">
+								<select id="product_count1" name="or_count">
 									<option>1</option>
 									<option>2</option>
 									<option>3</option>
@@ -312,11 +312,17 @@
 						<div class="s_button">
 							<ul id="product_info">
 								<li><button class="m_button01" type="button">장바구니</button></li>
-								<li><button class="m_button02" type="button">바로구매</button></li>
+								<li><button class="m_button02" type="button" onclick="OrderSubmit(contentPage)">바로구매</button></li>
 							</ul>
 						</div>
 					</div>
 				</div>
+				<script>
+				 function OrderSubmit(contentPage){
+					 
+					 contentPage.submit();
+				 }
+				</script>
 				<div id="r_wrap">
 					<div class="pr_nav">
 						<ul class="s_infonav">

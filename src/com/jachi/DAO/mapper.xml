@@ -20,6 +20,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 </select>
 
+<select id="order_userinfo" resultType="com.jachi.DTO.UserinfoDTO">
+ select us_name, us_tel, us_adr from userinfo where us_id=#{us_id};
+</select>
+
 
 <select id="select_login_user" resultType="String">
 select us_pw from userinfo where us_id =#{us_id};
