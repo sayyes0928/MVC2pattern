@@ -12,6 +12,6 @@ $(document).ready(function() {
  });
    
 function hi(){
-	alert("aa");
+	
 }
 

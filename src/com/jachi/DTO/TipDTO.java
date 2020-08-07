@@ -5,7 +5,6 @@ public class TipDTO {
     String tip_post;
     int tip_num;
     String tip_title;
-    String tip_time;
     String tip_img;
     
 	public String getTip_nickname() {
@@ -32,12 +31,7 @@ public class TipDTO {
 	public void setTip_title(String tip_title) {
 		this.tip_title = tip_title;
 	}
-	public String getTip_time() {
-		return tip_time;
-	}
-	public void setTip_time(String tip_time) {
-		this.tip_time = tip_time;
-	}
+
 	public String getTip_img() {
 		return tip_img;
 	}

@@ -301,6 +301,7 @@
 						 
 						 </div>
 						</div>
+						<input type="hidden" value=<%=article.get(0).getPro_code()%> name="Pro_code">
 						<div class="s_price">
 							<ul>
 								<li class="price01">주문금액</li>
