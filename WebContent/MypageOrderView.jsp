@@ -19,10 +19,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script type="text/javascript" src="./myhome.web.js/jquery-easing-1.3.pack.js"></script>
-    <script
-      type="text/javascript"
-      src="./myhome.web.js/jquery-easing-compatibility.1.2.pack.js"
-    ></script>
+    <script type="text/javascript" src="./myhome.web.js/jquery-easing-compatibility.1.2.pack.js"></script>
     <script type="text/javascript" src="./myhome.web.js/coda-slider.1.1.1.pack.js"></script>
 
     <script type="text/javascript">
