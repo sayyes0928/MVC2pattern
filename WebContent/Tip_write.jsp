@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+session.setAttribute("us_id", "likim0829");
+String us_id = (String) session.getAttribute("us_id");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +22,7 @@
 
 </head>
 <body>
-   <form id="contentPage"  method="post">
+   <form action="tip_write.bo" id="contentPage"  method="post" enctype="multipart/form-data" autocomplete="off">
 		<header>
 			<div id="h_wrap">
 				<div class="h_div">
