@@ -32,7 +32,6 @@ import com.jachi.Action.MypageOrderViewAction;
 import com.jachi.Action.PLSelectAction;
 import com.jachi.Action.ProductOrderAction;
 import com.jachi.Action.ProductPostViewAction;
-import com.jachi.Action.TiplistAction;
 import com.jachi.Action.TipwriteAction;
 import com.jachi.Action.TokenGetAccessAction;
 import com.jachi.Action.UserLogin;
@@ -106,7 +105,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		else if(command.equals("/callbackNaver.bo")){
 			action  = new CallbackNaver();
 			try {
-				forward=action.execute(request, response );
+				ActionForward forward44=action.execute(request, response );
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -303,16 +302,9 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
-		else if(command.equals("/tip_write.bo")) {			 
+		else if(command.equals("/tip_write.bo")) {
+			 System.out.println("tip write.bo");
 			action = new TipwriteAction();
-			try {
-				forward=action.execute(request, response);
-			}catch(Exception e) {
-				e.printStackTrace();
-			}
-		}
-		else if(command.equals("/tiplist.bo")) {			 
-			action = new TiplistAction();
 			try {
 				forward=action.execute(request, response);
 			}catch(Exception e) {
