@@ -61,7 +61,7 @@ public class BTWriteAction implements Action {
 		}else {
 			forward = new ActionForward();
 			forward.setRedirect(true);
-			forward.setPath("beauty.bo");
+			forward.setPath("btList.bo");
 		}
 		
 		return forward;

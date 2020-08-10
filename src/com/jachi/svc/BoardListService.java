@@ -17,7 +17,7 @@ public class BoardListService {
 		 SqlSessionFactory sqlfactory = BoardDAO.getConn();
 		 SqlSession sqlsession = sqlfactory.openSession();
 		 listCount = sqlsession.selectOne("select_list");
-
+		 System.out.println(listCount);
 		return listCount;
 		
 	}
@@ -31,7 +31,8 @@ public class BoardListService {
 		 int startrow=(page-1)*10;
 		 
 		 List<BoardBean> selectList = sqlsession.selectList("select_qnaList_all",startrow);
-
+		 System.out.println(startrow);
+		 System.out.println(selectList);
 		return selectList;
 		
 	}
