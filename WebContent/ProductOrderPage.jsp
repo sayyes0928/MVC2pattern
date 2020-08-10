@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true" %>
 <%@ page import="java.util.*"%>
-<%@ page import="com.jachi.DTO.ProductinfoDTO"%>
+<%@ page import="com.jachi.DTO.OrderDTO"%>
+<%@ page import="com.jachi.DTO.UserinfoDTO"%>
+
 
 <!DOCTYPE html>
 <html>
@@ -14,6 +17,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script type="text/javascript" src="./myhome.web.js/jquery-easing-1.3.pack.js"></script>
     <script type="text/javascript" src="./myhome.web.js/jquery-easing-compatibility.1.2.pack.js"></script>
+    <script type="text/javascript" src="./myhome.web.js/addressFinder.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    
 
 
 </head>
@@ -159,11 +166,48 @@
 			</div>
 		</header>
 
+<%
+//ArrayList<OrderDTO> orderDTO=(ArrayList<OrderDTO>)request.getAttribute("orderDTO");
 
 
 
+ArrayList<UserinfoDTO> userinfoDTO=(ArrayList<UserinfoDTO>)request.getAttribute("userinfoDTO");
+String addrAllBeforeTrim = userinfoDTO.get(0).getUs_adr();
+String addrAllAfterTrim= addrAllBeforeTrim.trim();
+String [] adressAll = null;
+adressAll = addrAllAfterTrim.split("/");
+%>
+
+        
 		<div id="pre_order">
-		<form action="#">
+		<form action="#" method="GET" id="form_order">
+		<div id="title">주문/결제</div>
+		<div class="panel">
+      <div class="title">
+        <div class="title">주문상품</div>
+      </div>
+      <table cellspacing="0" id="order_productions">
+        <tbody data-hj-suppress="" data-hj-ignore-attribute="">
+            <tr class="production" data-id="345791" data-cost="99000" data-count="1" data-name="[포더홈] 글로우 천연가죽 4인용 소파 3colors (스툴선택)">
+              <td>
+                <div class="information">
+                  <img src="https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-productions-159675718020982429.jpg/320/320" alt="320">
+                  <div>
+                    <div class="name">[포더홈] 글로우 천연가죽 4인용 소파 3colors (스툴선택)</div>
+                    <div class="option">추가상품 - 글로우 스툴/베이지</div>
+                    <div class="cost_count">
+                      <div class="cost">99,000원</div>
+                      <div class="divider">|</div>
+                      <div class="count">1개</div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+        </tbody>
+      </table>
+
+    </div>
 			<div class="panel">
       <div class="title">
         <div class="title">배송지</div>
@@ -172,30 +216,31 @@
         <div class="field">
           <div class="label">받는분</div>
           <div class="input">
-              <input presence="true" autocomplete="off" class="can_copy half" data-hj-suppress="" type="text" name="order[recipient]" id="order_recipient">
+              <input autocomplete="off" class="can_copy half" data-hj-suppress="" 
+              type="text" name="order[recipient]" id="order_recipient" value="<%= userinfoDTO.get(0).getUs_name()%>">
             <input type="hidden" name="order[received_name]" id="order_received_name">
           </div>
         </div>
         <div class="field">
           <div class="label">우편번호</div>
           <div class="input">
-              <input class="non_edit quarter" presence="true" readonly="readonly" value="" data-hj-suppress="" type="text" name="order[received_zip_code]" id="order_received_zip_code">
-              <span id="find_address">우편번호</span>
+              <input class="non_edit quarter" readonly="readonly" value=<%= adressAll[0]%> data-hj-suppress="" type="text" name="order[received_zip_code]" id="order_received_zip_code">
+              <span id="find_address" onclick="addressFinder()">우편번호</span>
           </div>
         </div>
         <div class="field">
           <div class="label">주소</div>
           <div class="input vertical">
-              <input presence="true" readonly="readonly" class="non_edit full" value="" data-hj-suppress="" type="text" name="order[received_at]" id="order_received_at">
-              <input presence="true" value="" autocomplete="off" data-hj-suppress="" class="full" type="text" name="order[received_at_detail]" id="order_received_at_detail">
-            <input presence="true" value="" data-hj-suppress="" class="full" type="hidden" name="order[received_at_sido]" id="order_received_at_sido">
-            <input presence="true" value="" data-hj-suppress="" class="full" type="hidden" name="order[received_at_post_code6]" id="order_received_at_post_code6">
+              <input  class="non_edit full" value="<%= adressAll[1]%>" type="text" name="order[received_at]" id="order_received_at">           
+              <input value="<%= adressAll[2]%>" autocomplete="off" data-hj-suppress="" class="full" type="text" name="order[received_at_detail]" id="order_received_at_detail">
+            <input  value="" data-hj-suppress="" class="full" type="hidden" name="order[received_at_sido]" id="order_received_at_sido">
+            <input  value="" data-hj-suppress="" class="full" type="hidden" name="order[received_at_post_code6]" id="order_received_at_post_code6">
           </div>
         </div>
         <div class="field">
           <div class="label">휴대전화</div>
           <div class="input phone">
-              <input presence="true" data-hj-suppress="" type="text" name="order[received_phone_number]" id="order_received_phone_number">
+              <input value="<%= userinfoDTO.get(0).getUs_tel()%>"data-hj-suppress="" type="text" name="order[received_phone_number]" id="order_received_phone_number">
           </div>
         </div>
         <div class="field">
@@ -230,19 +275,19 @@
         <div class="field">
           <div class="label">이름</div>
           <div class="input">
-            <input presence="true" value="" autocomplete="off" data-hj-suppress="" class="half" type="text" name="order[payer_name]" id="order_payer_name">
+            <input value="" autocomplete="off" data-hj-suppress="" class="half" type="text" name="order[payer_name]" id="order_payer_name">
           </div>
         </div>
         <div class="field">
           <div class="label">이메일</div>
           <div class="input email">
-            <input presence="true" value="" autocomplete="off" data-hj-suppress="" type="text" name="order[payer_email]" id="order_payer_email">
+            <input value="" autocomplete="off" data-hj-suppress="" type="text" name="order[payer_email]" id="order_payer_email">
           </div>
         </div>
         <div class="field">
           <div class="label">휴대전화</div>
           <div class="input phone">
-            <input presence="true" value="" data-hj-suppress="" type="text" name="order[payer_phone_number]" id="order_payer_phone_number">
+            <input value="" data-hj-suppress="" type="text" name="order[payer_phone_number]" id="order_payer_phone_number">
             <div id="verified_phone_number">
               <div class="verified_phone_number" data-value="" data-verified=""></div>
               <div class="need_verified">

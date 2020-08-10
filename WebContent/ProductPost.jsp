@@ -4,7 +4,7 @@
 <%@ page import="com.jachi.DTO.ProductinfoDTO"%>
 <%
     ArrayList<ProductinfoDTO> article = (ArrayList<ProductinfoDTO>)request.getAttribute("article");
-  
+   session.setAttribute("us_id", "1");
     
     %>
 <!DOCTYPE html>

@@ -105,7 +105,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		else if(command.equals("/callbackNaver.bo")){
 			action  = new CallbackNaver();
 			try {
-				ActionForward forward44=action.execute(request, response );
+				forward=action.execute(request, response );
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

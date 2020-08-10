@@ -117,10 +117,10 @@ public class CallbackNaver implements Action {
 							
 							response.sendRedirect(request.getHeader("referer"));
 
-//							 forward = new ActionForward();
-//							 request.setAttribute("userinfo", userDTO);
-//						     forward.setPath("Index.jsp?");
-//								
+							 forward = new ActionForward();
+							 request.setAttribute("userinfo", userDTO);
+						     forward.setPath("/Index.jsp");
+								
 								
 					    } 
 					}
