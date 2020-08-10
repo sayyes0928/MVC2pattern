@@ -78,7 +78,7 @@
 	width: 650px;
 	height: 30px;
 	border: 0px solid black;
-	font-size: 30px;
+	font-size: 20px;
 	margin-left: 30px;
 }
 
@@ -95,6 +95,32 @@
 	height: 560px;
 }
 
+#button_list{
+	margin-top: 40px;
+	text-align: center;
+}
+#button_insert{
+	width: 200px;
+	height: 60px;
+	font-size: 25pt;
+	font-weight: bold;
+	color : white;
+	background-color:  rgb(18, 74, 133);
+	border: 1px solid black;
+	border-radius: 7px;
+}
+
+#button_cancel{
+	width: 200px;
+	height: 60px;
+	margin-left: 40px;
+	font-size: 25pt;
+	font-weight: bold;
+	color : white;
+	background-color:  rgb(18, 74, 133);
+	border: 1px solid black;
+	border-radius: 7px;
+}
 
 
 

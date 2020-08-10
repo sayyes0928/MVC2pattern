@@ -224,7 +224,7 @@ figure figcaption::after {
 }
 
 .row {
-	width: 100%;
+	width: 215px;
 	overflow: hidden;
   text-decoration: none;
 }
