@@ -32,6 +32,11 @@ import com.jachi.Action.MypageOrderViewAction;
 import com.jachi.Action.PLSelectAction;
 import com.jachi.Action.ProductOrderAction;
 import com.jachi.Action.ProductPostViewAction;
+<<<<<<< HEAD
+=======
+import com.jachi.Action.TipSelectAction;
+import com.jachi.Action.TiplistAction;
+>>>>>>> refs/remotes/1231231244/master
 import com.jachi.Action.TipwriteAction;
 import com.jachi.Action.TokenGetAccessAction;
 import com.jachi.Action.UserLogin;
@@ -311,6 +316,17 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
+<<<<<<< HEAD
+=======
+		else if(command.equals("/tipselect.bo")) {			 
+			action = new TipSelectAction();
+			try {
+				forward=action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+>>>>>>> refs/remotes/1231231244/master
 		
 		
 		if(forward != null){
