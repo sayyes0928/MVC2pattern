@@ -4,6 +4,7 @@
 <%@ page import="com.jachi.DTO.TipDTO" %>
 <%
   ArrayList<TipDTO> tip_article = (ArrayList<TipDTO>)request.getAttribute("tiplist");
+ 
 %>
 <!DOCTYPE html>
 <html>
@@ -167,9 +168,16 @@
 		       <input id="tipBT_write" type="button" value="글쓰기" onclick="location='Tip_write.jsp'">
 		     </div>
 		     <div id="tip_list">
-		        <%=tip_article.get(0).getTip_num()+tip_article.get(0).getTip_post() %>
+	 
+		        <div id="tip_card">
+		           <img src="">
+		           <div id="card_title"></div>
+		           <div id="card_nickname"></div>
+		           <span id="count">11</span>
+		           <span id="scrap">22</span>
+		        </div>
 		     </div>
-		   
+		 
 		 </div>
 		</section>
  </form>
