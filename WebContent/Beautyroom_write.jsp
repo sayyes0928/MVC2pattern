@@ -116,8 +116,8 @@ $(function(){
 
 	</header>
 	<main>
-	<form name="aaa" id="aaa" action="Beautyroom.jsp" method="post"
-		enctype="multipart/form-data" autocomplete="off">
+	<form name="aaa" id="aaa" action="beauty_write.bo" method="post"
+	enctype="multipart/form-data" autocomplete="off">
 		<div id="BT_writemainsize">
 			<div id="file_upsize">
 				<div class="filebox">

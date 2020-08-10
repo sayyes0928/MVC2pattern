@@ -738,10 +738,11 @@
 					<div class="m_img">
 						<ul>
 						<a href="korea.bo?pro_num=<%=article.get(0).getPro_code()%>" >
-							<li>										
+																	
 							<%
 							 for(int i =0; i <article.size(); i++ ){
 							%>
+							<li>
 								<div class="row">					
 									<figure class="effect1">							
 										<img class="m_imgsize"
@@ -753,10 +754,9 @@
 								</div>	
 										
 								<div class="m_pname"><%=article.get(i).getPro_name() %></div>
-								<div class="m_pindex">2clolors</div>
+								<div class="m_pindex"><%=article.get(i).getPro_catecode1() %></div>
 								<div class="m_pindex2"><%=article.get(i).getPro_price() %></div>
 				
-
 							</li>	
 							</a>
 						<% 
@@ -765,142 +765,7 @@
 						</ul>
 					</div>
 				</div>
-
-
-
-				<div class="m_best">
-					<div class="m_mar">
-						<span>최신 상품</span><br>
-						<hr>
-					</div>
-					<div class="m_img">
-						<ul>
-							<li>
-								<div class="row">
-									<figure class="effect1">
-										<img class="m_imgsize" src="<%=request.getContextPath()%>/upload/<%=article.get(4).getPro_mainimg()%>">
-										<figcaption>
-											<p>제품 상세 정보</p>
-										</figcaption>
-									</figure>
-								</div>
-								<div class="m_pname"><%=article.get(4).getPro_name() %></div>
-								<div class="m_pindex">Gray color</div>
-								<div class="m_pindex2"><%=article.get(4).getPro_price() %></div>
-							</li>
-						<li>
-								<div class="row">
-									<figure class="effect1">
-										<img class="m_imgsize" src="<%=request.getContextPath()%>/upload/<%=article.get(5).getPro_mainimg()%>">
-										<figcaption>
-											<p>제품 상세 정보</p>
-										</figcaption>
-									</figure>
-								</div>
-								<div class="m_pname"><%=article.get(5).getPro_name() %></div>
-								<div class="m_pindex">3colors</div>
-								<div class="m_pindex2"><%=article.get(5).getPro_price() %></div>
-							</li>
-							<li>
-								<div class="row">
-									<figure class="effect1">
-										<img class="m_imgsize" src="<%=request.getContextPath()%>/upload/<%=article.get(6).getPro_mainimg()%>">
-										<figcaption>
-											<p>제품 상세 정보</p>
-										</figcaption>
-									</figure>
-								</div>
-								<div class="m_pname"><%=article.get(6).getPro_name() %></div>
-								<div class="m_pindex">일반/LED</div>
-								<div class="m_pindex2"><%=article.get(6).getPro_price() %></div>
-							</li>
-							<li>
-								<div class="row">
-									<figure class="effect1">
-										<img class="m_imgsize" src="<%=request.getContextPath()%>/upload/<%=article.get(7).getPro_mainimg()%>">
-										<figcaption>
-											<p>제품 상세 정보</p>
-										</figcaption>
-									</figure>
-								</div>
-								<div class="m_pname"><%=article.get(7).getPro_name() %></div>
-								<div class="m_pindex">2colors</div>
-								<div class="m_pindex2"><%=article.get(7).getPro_price() %></div>
-							</li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="m_best">
-					<div class="m_mar">
-						<span>전체 가구</span><br>
-						<hr>
-					</div>
-					<div id="com_right">
-						<select>
-							<option>최신순</option>
-							<option>인기순</option>
-						</select>
-					</div>
-					<div class="clear"></div>
-					<div class="m_img">
-						<ul>
-							<li>
-								<div class="row">
-									<figure class="effect1">
-										<img class="m_imgsize" src="<%=request.getContextPath()%>/upload/<%=article.get(8).getPro_mainimg()%>">
-										<figcaption>
-											<p>제품 상세 정보</p>
-										</figcaption>
-									</figure>
-								</div>
-								<div class="m_pname"><%=article.get(8).getPro_name() %></div>
-								<div class="m_pindex">white/7size</div>
-								<div class="m_pindex2"><%=article.get(8).getPro_price() %></div>
-							</li>
-							<li>
-								<div class="row">
-									<figure class="effect1">
-										<img class="m_imgsize" src="<%=request.getContextPath()%>/upload/<%=article.get(9).getPro_mainimg()%>">
-										<figcaption>
-											<p>제품 상세 정보</p>
-										</figcaption>
-									</figure>
-								</div>
-								<div class="m_pname"><%=article.get(9).getPro_name() %></div>
-								<div class="m_pindex">4인/6인 2colors</div>
-								<div class="m_pindex2"><%=article.get(9).getPro_price() %></div>
-							</li>
-							<li>
-								<div class="row">
-									<figure class="effect1">
-										<img class="m_imgsize" src="<%=request.getContextPath()%>/upload/<%=article.get(10).getPro_mainimg()%>">
-										<figcaption>
-											<p>제품 상세 정보</p>
-										</figcaption>
-									</figure>
-								</div>
-								<div class="m_pname"><%=article.get(10).getPro_name() %></div>
-								<div class="m_pindex">슈퍼싱글/퀸</div>
-								<div class="m_pindex2"><%=article.get(10).getPro_price() %></div>
-							</li>
-							<li>
-								<div class="row">
-									<figure class="effect1">
-										<img class="m_imgsize" src="<%=request.getContextPath()%>/upload/<%=article.get(11).getPro_mainimg()%>">
-										<figcaption>
-											<p>제품 상세 정보</p>
-										</figcaption>
-									</figure>
-								</div>
-								<div class="m_pname"><%=article.get(11).getPro_name() %></div>
-								<div class="m_pindex">2종1택</div>
-								<div class="m_pindex2"><%=article.get(11).getPro_price() %></div>
-								
-							</li> 
-						</ul>
-					</div>
-				</div>
+				
 				</main>
 
 			</div>

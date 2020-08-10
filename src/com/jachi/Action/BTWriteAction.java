@@ -38,6 +38,7 @@ public class BTWriteAction implements Action {
 		btr.setPost_nkname(us_id);
 		btr.setPost_title(multi.getParameter("post_title"));
 		btr.setPost_posting(multi.getParameter("post_posting"));
+		btr.setPost_tag(multi.getParameter("tagtest2"));
 		btr.setPost_pic(
 		multi.getOriginalFileName((String)multi.getFileNames().nextElement()));
 		
@@ -47,6 +48,7 @@ public class BTWriteAction implements Action {
 		System.out.println(btr.getPost_nkname());
 		System.out.println(btr.getPost_posting());
 		System.out.println(btr.getPost_title());
+		System.out.println(btr.getPost_tag());
 
 		
 		if(!isWriteSuccess) {

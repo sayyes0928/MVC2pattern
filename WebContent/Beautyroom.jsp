@@ -208,11 +208,7 @@ session.setAttribute("US_ID", "ljkim0829");
 
 		<div id="Beauty_banner">
 			<div id="Beauty_title">나만의 방 자랑하기</div>
-			<% String aaf = request.getParameter("post_title");
-			String aaa = request.getParameter("tagtest2");
-			out.print(aaf);
-			out.print(aaa);
-			%>
+
 			<%
 				if (us_id != null) {
 		%>
