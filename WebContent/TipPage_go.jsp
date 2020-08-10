@@ -8,6 +8,6 @@
 </head>
 <body>
 <form action="tipselect.bo" method="post" name="">
-<input type="submit" value="°¡Áî¾Æ"/>
+<input type="submit" value="gogo"/>
 </body>
 </html>
