@@ -259,7 +259,7 @@ session.setAttribute("US_ID", "ljkim0829");
 				</div>
 				<div class="card__img"
 					style="background-image: URL(<%=request.getContextPath()%>/upload/<%=userpost.get(i).getPost_pic()%>);"></div>
-				<a href="#" class="card_link">
+				<a href="Beautyroom_Detail.bo?board_num=<%=userpost.get(i).getPost_num()%>" class="card_link">
 					<div class="card__img--hover"
 						style="background-image: URL(<%=request.getContextPath()%>/upload/<%=userpost.get(i).getPost_pic()%>);"></div>
 				</a>
@@ -267,8 +267,7 @@ session.setAttribute("US_ID", "ljkim0829");
 					<input type="hidden" value="<%=userpost.get(i).getPost_num()%>">
 					<span class="card__category"><%=userpost.get(i).getPost_title()%></span>
 					<h3 class="card__title"><%=userpost.get(i).getPost_posting()%></h3>
-					<span class="card__by">by <a href="#" class="card__author"
-						title="author"><%=userpost.get(i).getPost_nkname()%></a></span>
+					<span class="card__by">by <a href="Beautyroom_Detail.bo?board_num=<%=userpost.get(i).getPost_num()%>" class="card__author" title="author"><%=userpost.get(i).getPost_nkname()%></a></span>
 				</div>
 			</article>
 			<%

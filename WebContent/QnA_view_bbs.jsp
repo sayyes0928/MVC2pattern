@@ -19,13 +19,12 @@ pageEncoding="UTF-8"%>
     <title>QnA</title>
   </head>
   <body>
-  <% 
- String us_id = (String)session.getAttribute("us_id");
- SqlSessionFactory sqlfactory = UserDAO.getConn();
- SqlSession sqlsession = sqlfactory.openSession();
- List<QnABBS> selectList = sqlsession.selectList("select_QnA");
-
-%>
+  <%
+  	String us_id = (String)session.getAttribute("us_id");
+   SqlSessionFactory sqlfactory = TestDAO.getConn();
+   SqlSession sqlsession = sqlfactory.openSession();
+   List<QnABBS> selectList = sqlsession.selectList("select_QnA");
+  %>
   
       <form action="QnA_wirte_bbs.jsp" method="get">
         <header>

@@ -1,0 +1,119 @@
+/* ===========================================
+                 HEADER
+============================================== */
+
+@charset "UTF-8";
+@font-face {
+  font-family: "Okbe";
+  src: url("Okbe_ttf.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+a span {
+  text-decoration: none;
+  color: black;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Okbe";
+  text-decoration: none;
+}
+body {
+  font-family: "Okbe";
+}
+
+
+
+
+
+/* #h_wrap header {
+  height: 200px;
+} */
+
+#main_nav {
+  clear: both;
+  width:100%;
+  height: 100px;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+
+
+  background-color: white;
+}
+#main_nav ul {
+ 
+  width:  555px;
+  height: 70px;
+  margin: 20px auto;
+}
+#jachi{
+	font-size: 30px;
+}
+
+#main_nav li {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: "Okbe";
+  font-size: 40px;
+  font-weight: 900;
+  list-style: none;
+  position: relative;
+  float: left;
+  margin: auto;
+  width:171px;
+  padding-right:10px;
+}
+
+.main_navov {
+  background-color: #bbe1fa;
+  color: white;
+}
+
+#main_nav li ::after {
+  content: "";
+  width: 0%;
+  left: 0%;
+  height: 1px;
+  display: block;
+  text-decoration: none;
+  position: absolute;
+  margin-top: 3px;
+  border-bottom: 3px solid #234f9a;
+  transition: all 0.5s ease;
+}
+
+#main_nav li:hover ::after {
+  content: "";
+  width: 100%;
+  left: 0px;
+  height: 1px;
+  display: block;
+  position: absolute;
+  margin-top: 3px;
+  border-bottom: 3px solid #234f9a;
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+
+
+
+/* ===========================================
+                 HEADER
+============================================== */
+
+/* ===========================================
+                 FOOTER
+============================================== */
+footer {
+  height: 100px;
+  border-top: 1px solid black;
+  background-color: #f6f6f6;
+}
+/* ===========================================
+                 FOOTER
+============================================== */

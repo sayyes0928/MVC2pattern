@@ -1,0 +1,392 @@
+#pre_order {
+    font-size: 14px;
+    width: 760px;
+    margin: 40px auto 0;
+}
+#pre_order>form>.panel {
+    margin-top: 50px;
+}
+#pre_order>form>.panel>.title {
+    font-size: 40px;
+    padding-bottom: 24px;
+    font-weight: bold;
+    line-height: 1;
+    color: #000000;
+    border-bottom: 2px solid #eee;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+#pre_order>form>.panel>.title>.title {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    padding-right: 20px;
+    min-width: 140px;
+    box-sizing: border-box;
+}
+#pre_order>form>.panel>.input>.field {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 20px;
+}
+#pre_order>form>.panel>.input>.field>.label {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: 140px;
+    padding-left: 10px;
+    font-size: 25px;
+    color: #424242;
+    line-height: 40px;
+
+}
+#pre_order>form>.panel>.input>.field>.input {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 0px;
+    -moz-box-flex: 1;
+    -moz-flex: 1 0 0px;
+    -ms-flex: 1 0 0px;
+    flex: 1 0 0px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+#pre_order>form input[type=text].half, #pre_order>form input[type=number].half {
+    width: 50%;
+}
+#pre_order>form input[type=text], #pre_order>form input[type=number] {
+    border: 1px solid #dcdcdc;
+    margin: 0;
+    padding: 0 15px;
+    line-height: 38px;
+    height: 40px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+#pre_order>form>.panel>.input>.field .non_edit {
+    background-color: #eeeeee;
+}
+#pre_order>form input[type=text]+span, #pre_order>form input[type=text]+a {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    color: white;
+    background: #35c5f0;
+    width: calc(25% - 10px);
+    margin-left: 10px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 3px;
+}
+#pre_order>form>.panel>.input>.field>.input.vertical {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+#pre_order>form>.panel>.input>.field>.input.vertical>input:first-child {
+    margin-bottom: 10px;
+}
+#pre_order>form input[type=text].full, #pre_order>form input[type=number].full {
+    width: 100%;
+}
+#pre_order>form>.panel>.input>.field>.input.phone>input {
+    width: 50%;
+}
+#pre_order>form>.panel>.input>.field>.label.vertical {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+#pre_order>form>.panel>.input>.field>.input #delivery_message {
+    margin-bottom: 3px;
+}
+#pre_order>form>.panel>.input>.field>.input #delivery_message_presets {
+    display: none;
+    position: absolute;
+    width: 610px;
+    background: white;
+    z-index: 100;
+}
+#pre_order>form>.panel>.input>.field>.input #delivery_message_presets>.preset {
+    padding: 10px;
+    font-size: 13px;
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee;
+    border-left: 1px solid #eee;
+}
+#pre_order>form>.panel>.title>.button {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    font-size: 15px;
+    border-radius: 3px;
+    background-color: #fafafa;
+    border: solid 1px #dcdcdc;
+    padding: 3px;
+    cursor: pointer;
+    line-height: 30px;
+}
+#pre_order>form>.panel>.input>.field>.input.phone #verified_phone_number {
+    width: 50%;
+    margin-left: 10px;
+}
+#pre_order>form>.panel>.input>.field>.input.phone #verified_phone_number>.need_verified #do_verified_phone_number {
+    width: 90px;
+    background: #35c5f0;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 3px;
+}
+#pre_order>form>.panel>.input>.field>.input.email>input {
+    width: 50%;
+}
+#pre_order>form>.panel>.cost {
+    font-size: 15px;
+    padding: 10px 10px 0;
+}
+#pre_order>form>.panel>.cost>.cost_panel {
+    margin-top: 10px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+#pre_order>form>.panel>.cost>.cost_panel>.title {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 0px;
+    -moz-box-flex: 1;
+    -moz-flex: 1 0 0px;
+    -ms-flex: 1 0 0px;
+    flex: 1 0 0px;
+    font-size:20px;
+}
+#pre_order>form>.panel>.cost>.cost_panel>.amount {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 0px;
+    -moz-box-flex: 1;
+    -moz-flex: 1 0 0px;
+    -ms-flex: 1 0 0px;
+    flex: 1 0 0px;
+    text-align: right;
+    font-family: Tahoma;
+}
+#pre_order>form>.panel>.cost>.cost_panel.total {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+#pre_order>form #confirm_checkbox {
+    margin-top: 40px;
+    padding: 0 10px;
+}
+.form-radio, .form-check {
+    font-size: 13px;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -moz-box-flex: 1;
+    -moz-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+.form-radio>.form-radio-label, .form-radio .form-check-label, .form-check>.form-radio-label, .form-check .form-check-label {
+    cursor: pointer;
+    display: block;
+    margin-bottom: 10px;
+    padding-left: 32px;
+    min-height: 22px;
+    line-height: 22px;
+    position: relative;
+}
+.form-radio>.form-radio-label>.form-radio, .form-radio>.form-radio-label .form-check, .form-radio .form-check-label>.form-radio, .form-radio .form-check-label .form-check, .form-check>.form-radio-label>.form-radio, .form-check>.form-radio-label .form-check, .form-check .form-check-label>.form-radio, .form-check .form-check-label .form-check {
+    left: -1000px;
+    position: absolute;
+    opacity: 0;
+}
+.form-radio>.form-radio-label .check-img, .form-radio .form-check-label .check-img, .form-check>.form-radio-label .check-img, .form-check .form-check-label .check-img {
+    box-sizing: border-box;
+    height: 22px;
+    width: 22px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 1px #dbdbdb;
+    display: block;
+    transition: .2s ease;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.form-radio>.form-radio-label .check-img:after, .form-radio .form-check-label .check-img:after, .form-check>.form-radio-label .check-img:after, .form-check .form-check-label .check-img:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    display: block;
+    width: 14px;
+    height: 14px;
+    background-size: 14px;
+    background-image: url(/assets/icon_map/v3/ic-checkbox.png);
+    opacity: 0;
+}
+#pre_order>form #confirm_checkbox {
+    margin-top: 40px;
+    padding: 0 10px;
+}
+#pre_order>form #confirm_checkbox>.all_policy {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+#pre_order>form #confirm_checkbox>.all_policy>.title {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 0px;
+    -moz-box-flex: 1;
+    -moz-flex: 1 0 0px;
+    -ms-flex: 1 0 0px;
+    flex: 1 0 0px;
+    font-size: 12px;
+    line-height: 1;
+    color: #757575;
+}
+#pre_order>form #confirm_checkbox>.all_policy>.opener {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    font-size: 12px;
+    line-height: 1;
+    color: #bdbdbd;
+    margin-left: 10px;
+    cursor: pointer;
+}
+#pre_order>form #confirm_checkbox>.policies {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    display: none;
+}
+#pre_order>form #confirm_checkbox>.policies>.policy>.title_panel {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 20px;
+}
+#pre_order>form #confirm_checkbox>.policies>.policy>.title_panel>.title {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 0px;
+    -moz-box-flex: 1;
+    -moz-flex: 1 0 0px;
+    -ms-flex: 1 0 0px;
+    flex: 1 0 0px;
+    font-size: 13px;
+    line-height: 1;
+    color: #424242;
+}
+#pre_order>form #confirm_checkbox>.policies>.policy>.title_panel>.opener {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    font-size: 12px;
+    line-height: 1;
+    color: #bdbdbd;
+    margin-left: 10px;
+    cursor: pointer;
+}
+#pre_order>form #confirm_checkbox>.policies>.policy>.content {
+    margin-top: 10px;
+    max-height: 100px;
+    overflow-y: scroll;
+    display: none;
+    border: 1px solid #eee;
+    padding: 3px;
+}
+#pre_order>form #do_payment {
+    margin: 40px 0 40px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 50px;
+    background: #35c5f0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.form-radio>.form-radio-label .form-check:not(:disabled):checked+.check-img, .form-radio .form-check-label .form-check:not(:disabled):checked+.check-img, .form-check>.form-radio-label .form-check:not(:disabled):checked+.check-img, .form-check .form-check-label .form-check:not(:disabled):checked+.check-img {
+    background-color: #35C5F0;
+    border-color: #35C5F0;
+}
+.form-radio>.form-radio-label .form-check:not(:disabled):checked+.check-img:after, .form-radio .form-check-label .form-check:not(:disabled):checked+.check-img:after, .form-check>.form-radio-label .form-check:not(:disabled):checked+.check-img:after, .form-check .form-check-label .form-check:not(:disabled):checked+.check-img:after {
+    opacity: 1;
+}
+.form-radio>.form-radio-label .check-img:after, .form-radio .form-check-label .check-img:after, .form-check>.form-radio-label .check-img:after, .form-check .form-check-label .check-img:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    display: block;
+    width: 14px;
+    height: 14px;
+    background-size: 14px;
+    background-image: url(https://d1nyaccf3kuclt.cloudfront.net/assets/icon_map/v3/ic-checkbox.png);
+    opacity: 0;
+}
+.button {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    background: none;
+    font-family: inherit;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    transition: color .1s,background-color .1s,border-color .1s;
+    border-radius: 4px;
+    cursor: pointer;
+}

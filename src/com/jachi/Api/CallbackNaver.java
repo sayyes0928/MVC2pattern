@@ -2,6 +2,7 @@ package com.jachi.Api;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -113,11 +114,13 @@ public class CallbackNaver implements Action {
 							userDTO.setUs_name(name);
 							userDTO.setUs_nkname(nickName);
 
+							
+							response.sendRedirect(request.getHeader("referer"));
 
-							 forward = new ActionForward();
-							 request.setAttribute("userinfo", userDTO);
-						     forward.setPath("Index.jsp?email=");
-								
+//							 forward = new ActionForward();
+//							 request.setAttribute("userinfo", userDTO);
+//						     forward.setPath("Index.jsp?");
+//								
 								
 					    } 
 					}

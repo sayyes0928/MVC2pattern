@@ -1,19 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ page import="java.util.*"%>
+<%@ page import="com.jachi.DTO.BeautyRoomDTO"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+    
 
 
     <link rel="stylesheet" type="text/css" href="./myhome.web.css/myhome_write_css.css" />
     <link rel="stylesheet" type="text/css" href="./myhome.web.css/heartbtn.css" />
     <link rel="stylesheet" type="text/css" href="./myhome.web.css/bookmark.css" />
     <link rel="stylesheet" type="text/css"  href="./myhome.web.css/teamTopNav.css" />
+    <script type="text/javascript" src="./myhome.web.js/MyhomeDtail.js"></script>
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./myhome.web.css/styleSlider.css" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script
       type="text/javascript"
       src="./myhome.web.js/jquery-easing-1.3.pack.js"
@@ -233,7 +238,11 @@
           </div>
         </div>
       </header>
-       
+       <%
+    ArrayList<BeautyRoomDTO> article = (ArrayList<BeautyRoomDTO>)request.getAttribute("article");
+
+    
+    %>
         <div id="m_wrap">
           <main>
             <div class="myhomeContentLeft">
@@ -262,30 +271,7 @@
                               />
                             </div>
                           </div>
-                          <div class="panel" title="Panel 2">
-                            <div class="wrapper">
-                              <img
-                                src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/159141479080575947.jpeg?gif=1&w=850&webp=1"
-                                alt="temp"
-                              />
-                            </div>
-                          </div>
-                          <div class="panel" title="Panel 3">
-                            <div class="wrapper">
-                              <img
-                                src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/159158750321438442.jpeg?gif=1&w=850&webp=1"
-                                alt="temp"
-                              />
-                            </div>
-                          </div>
-                          <div class="panel" title="Panel 4">
-                            <div class="wrapper">
-                              <img
-                                src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/159158779101441293.jpeg?gif=1&w=850&webp=1"
-                                alt="temp"
-                                class="floatleft"
-                              />
-                            </div>
+                          
                             <div class="panel" title="Panel 5">
                               <div class="wrapper">
                                 <!-- <img
@@ -298,48 +284,30 @@
                           </div>
                         </div>
                       </div>
-                      <ul id="thumbAll">
+                      
+                      <ul id="pr_imgs">
                         <li>
-                          <a href="#1" class="cross-link active-thumb"
-                            ><img
+                          <img
                               src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/159031754537170619.jpeg?gif=1&w=850&webp=1"
                               class="nav-thumb"
                               alt="temp-thumb"
                           /></a>
                         </li>
-                        <li>
-                          <a href="#2" class="cross-link"
-                            ><img
-                              src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/159141479080575947.jpeg?gif=1&w=850&webp=1"
-                              class="nav-thumb"
-                              alt="temp-thumb"
-                          /></a>
-                        </li>
-                        <li>
-                          <a href="#3" class="cross-link"
-                            ><img
-                              src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/159158750321438442.jpeg?gif=1&w=850&webp=1"
-                              class="nav-thumb"
-                              alt="temp-thumb"
-                          /></a>
-                        </li>
-                        <li>
-                          <a href="#4" class="cross-link"
-                            ><img
-                              src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/159158779101441293.jpeg?gif=1&w=850&webp=1"
-                              class="nav-thumb"
-                              alt="temp-thumb"
-                          /></a>
-                        </li>
+      
                       </ul>
                     </div>
                   </div>
                 </div>
                 <!-- 메인배경용 -->
                 <div id="myhomeContentLeft_main_userContent_bgImage">
+                <div class="myhomeContentLeft_main_userContent">
+                    <p>
+                      <span><%= article.get(0).getPost_title() %>></span>
+                    </p>
+                  </div>
                   <div class="myhomeContentLeft_main_userContent">
                     <p>
-                      <span>사용자 코멘트 동해물과 백두산이 마르고 닳도록</span>
+                      <span><%= article.get(0).getPost_posting() %>></span>
                     </p>
                   </div>
 
@@ -356,15 +324,15 @@
                 <ul class="myhomeContentLeft_main_usercomment">
                   <li>
                     <span>조회수</span>
-                    <span src="#">35</span>
+                    <span>35</span>
                   </li>
                   <li>
                     <span>댓글</span>
-                    <span src="#">0</span>
+                    <span>0</span>
                   </li>
                   <li>
                     <span>공유</span>
-                    <span src="#">1</span>
+                    <span>1</span>
                   </li>
                   <li>
                     <input type="button" value="신고" />
@@ -382,31 +350,7 @@
                         id="userComent"
                       ></textarea>
                     </div>
-                    <script>
-                      function createRow() {
-                        var coment = document.getElementById("userComent");
-                        var ta = document.getElementById("tableList");
-                        var row = ta.insertRow(ta.rows.length);
-                        var td1 = row.insertCell(0); // inerthml
-                        var td2 = row.insertCell(1);
-                        var td3 = row.insertCell(2);
-                        var td4 = row.insertCell(3);
-                        td1.innerHTML =
-                          "<img src='#' width='30px' height='30px' class='comentPic'/>";
-                        td2.innerHTML =
-                          "<span class='comentTxt'>" + coment.value + "</span>";
-                        td3.innerHTML =
-                          "<span class='comentUserID'>" + "userID" + "</span>";
-                        td4.innerHTML =
-                          "<input type ='button' value='삭제' onclick = 'delCheck(this)'/>";
-                        coment.value = "";
-                        // Ex) sel.getAttribute("name"); [속성] 가져오기 cf 값
-                      }
-                      function delCheck(obj) {
-                        var tr = obj.parentNode.parentNode;
-                        tr.parentNode.removeChild(tr);
-                      }
-                    </script>
+                   
                     <div>
                       <input
                         class="btn btn-default"
@@ -444,13 +388,14 @@
             <div class="boxContainer">
               <div class="myhomeContentRight">
                 <div class="myhomeContentRight_button">
-                  <div>
+                  <div class="myhomeContentRight_button_btn">
                     <button type="button" class="btm_image">
-                      <img id="img_btn" src="./img/myhome/icons8-heart-50.png" clicked-image="./img/myhome/icons8-heart-50-2.png" 
+                      <img id="img_btn" src="./img/myhome/icons8-heart-50.png"
+                      clicked-image="./img/myhome/icons8-heart-50-2.png" 
                       unclicked-image="./img/myhome/icons8-heart-50.png" />
                     </button>
-                  </div>
-                  <div>
+                    
+                 
                     <button type="button" class="btm_image">
                       <img
                         src="./img/myhome/icons8-bookmark-50-2.png"
@@ -458,8 +403,25 @@
                         unclicked-image="./img/myhome/icons8-bookmark-50-2.png"
                       />
                     </button>
-                  </div>
+            
                 </div>
+                  
+                   <script>
+                $(document).ready(function () {
+                  $(".btm_image").on("click", function () {
+                    var clicked = $("img", this).attr("clicked-image");
+                    var unclicked = $("img", this).attr("unclicked-image");
+                    var now = $("img", this).attr("src");
+                    if (now == unclicked) {
+                      $("img[src]", this).attr("src", clicked);
+                    } else if (now == clicked) {
+                      $("img[src]", this).attr("src", unclicked);
+                    }
+                  });
+                });
+              </script>
+                  
+               
                 <div class="myhomeContentRight_userinfo">
                   <div><span class="Right_userID">UserID</span></div>
                   <button type="button" class="btm_image">팔로우</button>
@@ -491,20 +453,7 @@
                   </div>
                 </div>
               </div>
-              <script>
-                $(document).ready(function () {
-                  $(".btm_image").on("click", function () {
-                    var clicked = $("img", this).attr("clicked-image");
-                    var unclicked = $("img", this).attr("unclicked-image");
-                    var now = $("img", this).attr("src");
-                    if (now == unclicked) {
-                      $("img[src]", this).attr("src", clicked);
-                    } else if (now == clicked) {
-                      $("img[src]", this).attr("src", unclicked);
-                    }
-                  });
-                });
-              </script>
+             
             </div>
           </main>
         </div>
