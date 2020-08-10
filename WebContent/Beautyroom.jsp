@@ -5,6 +5,8 @@
 
 <%
 	ArrayList<BeautyRoomDTO> userpost = (ArrayList<BeautyRoomDTO>) request.getAttribute("beautyList");
+session.setAttribute("US_ID", "ljkim0829");
+
 %>
 <!DOCTYPE html>
 <html>
@@ -206,9 +208,10 @@
 
 		<div id="Beauty_banner">
 			<div id="Beauty_title">나만의 방 자랑하기</div>
+
 			<%
 				if (us_id != null) {
-			%>
+		%>
 			<div id="wrtie_btsize">
 				<a href="Beautyroom_write.bo"><input type="button" value="자랑하기"
 					id="BT_Writebt"></a>
@@ -217,7 +220,7 @@
 				} else {
 			%>
 			<div id="wrtie_btsize">
-				<input type="button" value="자랑하기" id="BT_Writebt" onclick="alertLogin()">
+				<a href="beauty.bo"><input type="button" value="자랑하기" id="BT_Writebt" onclick="alertLogin()"></a>
 			</div>
 			<%
 				}
@@ -234,6 +237,7 @@
 				if (userpost != null) {
 					for (int i = 0; i < userpost.size(); i++) {
 			%>
+
 			<article class="card card--1">
 				<div class="card__info-hover">
 					<svg class="card__like" viewBox="0 0 24 24">

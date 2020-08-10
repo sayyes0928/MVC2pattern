@@ -15,7 +15,7 @@ public class BTSelectService {
 		SqlSessionFactory sqlfactory = BoardDAO.getConn();
 		SqlSession sqlsession = sqlfactory.openSession();
 		List<BeautyRoomDTO> beautylistall = sqlsession.selectList("select_beautyall");
-		
+		System.out.println(beautylistall.size());
 		sqlsession.close();
 		System.out.println("∏ ∆€¿ﬂ¥Ÿ≥‡ø»");
 		

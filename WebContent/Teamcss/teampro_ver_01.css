@@ -157,6 +157,7 @@ ul.topnav ul ul li a:hover {
   width: 215px;
   padding-right: 15px;
   float: left;
+  margin-bottom:30px;
 }
 
 .m_img ul div {
@@ -304,9 +305,10 @@ figure figcaption::after {
 }
 
 .row {
-	width: 100%;
+	width: 215px;
 	overflow: hidden;
   text-decoration: none;
+
 }
 
 /*
