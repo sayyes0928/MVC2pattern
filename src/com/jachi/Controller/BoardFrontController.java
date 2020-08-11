@@ -304,14 +304,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
-		else if(command.equals("/tipwrite.bo")) {			 
-			action = new TipwriteAction();
-			try {
-				forward=action.execute(request, response);
-			}catch(Exception e) {
-				e.printStackTrace();
-			}
-		}
+	
 		else if(command.equals("/tipselect.bo")) {			 
 			action = new TipSelectAction();
 			try {
