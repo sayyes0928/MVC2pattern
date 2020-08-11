@@ -46,7 +46,6 @@ public class LoginUserAction implements Action{
 				  
 				session.setAttribute("us_id", us_id);
 				forward = new ActionForward();
-				forward.setRedirect(true);
 			   	forward.setPath("Index.bo");
 	
 			  }else if(!getUserpw.equals(us_pw)){

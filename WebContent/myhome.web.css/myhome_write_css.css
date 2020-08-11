@@ -21,10 +21,10 @@ section > article > ul {
   margin-top: 30px;
 }
 #m_wrap {
-  width: 1082px;
-  height: 1500px;
-  /*margin: 0 auto;*/
-  padding-bottom: 200px;
+width: 1082px;
+    height: 1500px;
+    margin: 0 auto;
+    padding-bottom: 200px;
 }
 section > article > ul a {
   /* float: left; */
@@ -69,6 +69,7 @@ main {
   float: left;
   width: 720px;
   height: 1400px;
+
   /* border: 1px solid red; */
 }
 
@@ -92,16 +93,7 @@ main {
   float: right;
 }
 
-.myhomeContentLeft_main ul {
-  width: 550px;
-  border-radius: 5;
-  /* border: 1px solid red; */
-}
-#page-wrap {
-  /* border: 1px solid red; */
-  width: 720px;
-  margin: 0px 0px 0px 0px;
-}
+
 
 .myhomeContentLeft_main_userContent {
   clear: both;

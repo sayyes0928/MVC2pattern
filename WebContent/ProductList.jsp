@@ -107,7 +107,7 @@
                 <img src="./img/grass2icon.svg" width="30" height="30" />
               </li>
             </ul>
-     <%
+       <%
        String us_id = (String)session.getAttribute("us_id"); //로그인 유무 확인
        if(us_id==null){
      %>
@@ -116,6 +116,7 @@
               <li><span> | </span></li>
               <li><a href="join.bo">회원가입</a></li>
             </ul>
+      
 
      <%
        }else{
@@ -124,18 +125,11 @@
               <li><span></span></li>
               <li><a href="MypageOrderView.bo">마이페이지</a></li>
               <li><span> | </span></li>
-              <li><a href="logoutActionPage.jsp">로그아웃</a></li>
-              <li><a href="Index.jsp" onclick="signOut();">Sign out</a></li>
-              
+              <li><a href="logoutActionPage.jsp">로그아웃</a></li> 
             </ul>
-            <script>
-  function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    });
-  }
-</script>
+        
+       
+
      <%
        }
      %>
@@ -191,11 +185,11 @@
               <a href="beauty.bo"><span>커뮤니티</span></a>
             </li>
             <li>
-              <a href="teampro_myhome.html"><span>자취에대한 모든것</span></a>
+              <a href="#"><span>자취에대한 모든것</span></a>
             </li>
 
             <li>
-              <a href="teampro_myhome.html"><span>고객센터</span></a>
+              <a href="#"><span>고객센터</span></a>
             </li>
           </ul>
         </div>

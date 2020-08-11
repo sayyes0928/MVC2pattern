@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="./myhome.web.css/heartbtn.css" />
     <link rel="stylesheet" type="text/css" href="./myhome.web.css/bookmark.css" />
     <link rel="stylesheet" type="text/css"  href="./myhome.web.css/teamTopNav.css" />
+    <link rel="stylesheet" type="text/css"  href="./myhome.web.css/styleSlider.css" />
     <script type="text/javascript" src="./myhome.web.js/MyhomeDtail.js"></script>
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -62,70 +63,48 @@
 </head>
 <body>
 	<!-- 게시판 등록 -->
-	<%
-	
-/*	 String userID = (String)session.getAttribute("userID");
-	if(userID == null){
-		out.println("<script>");
-		out.println("alert('로그인이 필요한 작업입니다.');");
-		out.println("history.back();");
-		out.println("</script>");
-	}*/
-	%>
+
 
 	<form id="contentPage">
          <header>
         <div id="h_wrap">
           <div class="h_div">
             <ul>
-              <li style="padding-top: 110px;">
-                <img src="./img/grass2icon.svg" width="30" height="30" />
-              </li>
-              <li style="padding-top: 80px;">
-                <img src="./img/truck2.svg" width="70" height="70" />
-              </li>
-              <li><img src="./img/sunicon.svg" width="60" height="60" /></li>
-              <li style="padding-top: 110px;">
-                <img src="./img/grass2icon.svg" width="30" height="30" />
-              </li>
-              <li style="padding-top: 100px;">
-                <img src="./img/grassicon.svg" width="40" height="40" />
-              </li>
+             
 
               <li><h1>자취해보자</h1></li>
-              <li style="padding-top: 20px;">
-                <img
-                  src="./img/houseiconcolor.svg"
-                  width="100"
-                  height="100"
-                  onmouseover="this.src='./img/houseicon.svg'"
-                  onmouseout="this.src='./img/houseiconcolor.svg'"
-                />
-              </li>
-              <li style="padding-top: 100px;">
-                <img src="./img/grassicon.svg" width="40" height="40" />
-              </li>
-              <li style="padding-top: 100px;">
-                <img src="./img/grassicon.svg" width="40" height="40" />
-              </li>
-              <li style="padding-top: 110px;">
-                <img src="./img/grass2icon.svg" width="30" height="30" />
-              </li>
+      
             </ul>
 
+
+           <%
+       String us_id = (String)session.getAttribute("us_id"); //로그인 유무 확인
+       if(us_id==null){
+     %>
             <ul class="login_go">
-              <li><a href="loginPage.jsp">로그인</a></li>
+              <li><a href="LoginFormpage.bo">로그인</a></li>
               <li><span> | </span></li>
-              <li><a href="join.jsp">회원가입</a></li>
+              <li><a href="join.bo">회원가입</a></li>
             </ul>
+      
 
+     <%
+       }else{
+     %>
             <ul class="login_go">
               <li><span></span></li>
+              <li><a href="MypageOrderView.bo">마이페이지</a></li>
               <li><span> | </span></li>
-              <li><a href="logoutActionPage.jsp">로그아웃</a></li>
+              <li><a href="logoutActionPage.jsp">로그아웃</a></li> 
             </ul>
-          </div>
-        </div>
+        
+       
+
+     <%
+       }
+     %>
+             </div>
+            </div>
         <script>
           $(function () {
             $("#main_nav ul li").hover(
@@ -157,20 +136,17 @@
         <div id="main_nav">
           <ul>
             <li>
-              <a href="teampro_ver_01_1.html"><span>홈</span></a>
+              <a href="Index.jsp"><span>홈</span></a>
+            </li>
+              <li><a href="storeList.bo"><span>스토어</span></a>
             </li>
             <li>
-              <a href="teampro_ver_01_1.html"><span>스토어</span></a>
+              <a href="beauty.bo"><span>마이홈</span></a>
+            <li>
+              <a href="#"><span>자취에대한 모든것</span></a>
             </li>
             <li>
-              <a href="teampro_myhome.html"><span>커뮤니티</span></a>
-            </li>
-            <li>
-              <a href="teampro_myhome.html"><span>자취에대한 모든것</span></a>
-            </li>
-
-            <li>
-              <a href="teampro_myhome.html"><span>고객센터</span></a>
+              <a href="#"><span>고객센터</span></a>
             </li>
           </ul>
         </div>
@@ -230,6 +206,7 @@
                   time
                 </div>
               </div>
+              
      <script>
      $(document).ready(function() {
          $('#pr_imgs li img').on("mouseover", function() {
@@ -253,26 +230,30 @@
              }
            );
          });
-       
-       
-    
 
      </script>
+        
               <div class="myhomeContentLeft_main">
                 <div id="bg_main">
+                <div id="page-wrap">    
                  <div id="showimg" class="s_mainimg">
-						  <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots1563202386_bcE0MUD3.jpeg?gif=1&w=160&h=160&c=c">
+						  <img src="img/ProductPost/chair02.webp">
 					   </div>
-                  <div id="page-wrap">                 
+                 </div>              
                       <ul id="pr_imgs">
-                        <li>
-                          <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/159031754537170619.jpeg?gif=1&w=850&webp=1"class="nav-thumb" alt="temp-thumb"/>
-                        </li>
+                            <li><img class="s_imgborder" src="<%=request.getContextPath()%>/upload/<%=article.get(0).getPost_pic()%>"></li>
+                            <li><img class="s_imgborder"
+								src="img/ProductPost/chair02.webp"></li>
+							<li><img class="s_imgborder"
+								src="img/ProductPost/chair03.webp"></li>
+							<li><img class="s_imgborder"
+								src="img/ProductPost/chair04.webp"></li>
+							
                       </ul>
                       
-                    </div>
+                    
                   </div>
-                </div>
+               
                 <!-- 메인배경용 -->
                 <div id="myhomeContentLeft_main_userContent_bgImage">
                 <div class="myhomeContentLeft_main_userContent">
@@ -358,8 +339,9 @@
                     </article>
                   </section>
                 </div>
-              </div>
-            </div>
+              
+          </div>
+                </div>
             <div class="boxContainer">
               <div class="myhomeContentRight">
                 <div class="myhomeContentRight_button">
@@ -380,7 +362,7 @@
                     </button>
             
                 </div>
-                  
+               
                    <script>
                 $(document).ready(function () {
                   $(".btm_image").on("click", function () {
@@ -426,6 +408,7 @@
                         src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots1564296425_omoVsNdH.jpeg?gif=1&w=160&h=160&c=c&webp=1"
                     /></a>
                   </div>
+                </div>
                 </div>
               </div>
              

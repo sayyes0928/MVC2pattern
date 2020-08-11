@@ -113,7 +113,7 @@
             </ul>
         
              <%
-               // if(us_id == null){
+                if(us_id == null){
               %>
               <ul class="login_go">
               <li><a href="loginPage.jsp" >로그인</a></li>
@@ -122,7 +122,7 @@
               </ul>
 
               <%
-            //  }else{
+              }else{
               %>
               
              <ul class="login_go">
@@ -131,7 +131,7 @@
              <li><a href="logoutActionPage.jsp" >로그아웃</a></li>
               </ul>
               <%
-              //  }
+                }
               %>
             </div>
         </div>
