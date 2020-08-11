@@ -1,6 +1,6 @@
-
-    $(document).ready(function() {
+$(document).ready(function() {
       $('#pr_imgs li img').on("mouseover", function() {
+    	 console.log("들어옴");
         $('#showimg').show();
         var imgSrc = "";
         imgSrc = $(this).attr("src");
@@ -9,11 +9,10 @@
       });
     });
   
-               
-    $(document).ready(function() {
+$(document).ready(function() {
         $('#pr_imgs li img').hover(
           function() {
-            $(this).removeClass('.s_imgborder');
+            $(this).removeClass('.nav-thumb');
             $(this).addClass('imghover');
           },
           function() {

@@ -390,3 +390,85 @@
     border-radius: 4px;
     cursor: pointer;
 }
+#pre_order>form #order_productions {
+    width: 100%;
+}
+table {
+	border-color: grey;
+	display: table;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+#pre_order>form #order_productions td:first-child {
+    border-right: 1px solid #eee;
+}
+#pre_order>form #order_productions td {
+    border-bottom: 1px solid #eee;
+    box-sizing: content-box;
+}
+#pre_order>form #order_productions div.information {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    padding: 10px;
+}
+#pre_order>form #order_productions div.information>img {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: 85px;
+    height: 85px;
+    margin-right: 10px;
+}
+fieldset, img {
+    border: 0;
+}
+#pre_order>form #order_productions div.information>div {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 0px;
+    -moz-box-flex: 1;
+    -moz-flex: 1 0 0px;
+    -ms-flex: 1 0 0px;
+    flex: 1 0 0px;
+}
+#pre_order>form #order_productions div.information>div>.name {
+    font-size: 25px;
+    color: #424242;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+#pre_order>form #order_productions div.information>div>.option, #pre_order
+>form #order_productions div.information>div>.sub_option {
+    font-size: 15px;
+    color: #757575;
+    margin-bottom: 5px;
+    word-break: break-word;
+}
+#pre_order>form #order_productions div.information>div>.cost_count {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 20px;
+}
+#pre_order>form #order_productions div.information>div>.option, #pre_order
+ >form #order_productions div.information>div>.sub_option {
+    font-size: 20px;
+    color: #757575;
+    margin-bottom: 5px;
+    word-break: break-word;
+}

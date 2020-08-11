@@ -32,6 +32,7 @@ import com.jachi.Action.MypageOrderViewAction;
 import com.jachi.Action.PLSelectAction;
 import com.jachi.Action.ProductOrderAction;
 import com.jachi.Action.ProductPostViewAction;
+import com.jachi.Action.TipSelectAction;
 import com.jachi.Action.TiplistAction;
 import com.jachi.Action.TipwriteAction;
 import com.jachi.Action.TokenGetAccessAction;
@@ -303,16 +304,9 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
-		else if(command.equals("/tip_write.bo")) {			 
-			action = new TipwriteAction();
-			try {
-				forward=action.execute(request, response);
-			}catch(Exception e) {
-				e.printStackTrace();
-			}
-		}
-		else if(command.equals("/tiplist.bo")) {			 
-			action = new TiplistAction();
+	
+		else if(command.equals("/tipselect.bo")) {			 
+			action = new TipSelectAction();
 			try {
 				forward=action.execute(request, response);
 			}catch(Exception e) {

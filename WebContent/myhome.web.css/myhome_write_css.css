@@ -23,7 +23,7 @@ section > article > ul {
 #m_wrap {
   width: 1082px;
   height: 1500px;
-  margin: 0 auto;
+  /*margin: 0 auto;*/
   padding-bottom: 200px;
 }
 section > article > ul a {

@@ -114,13 +114,13 @@ public class CallbackNaver implements Action {
 							userDTO.setUs_name(name);
 							userDTO.setUs_nkname(nickName);
 
+							System.out.println(email);
 							
-							response.sendRedirect(request.getHeader("referer"));
 
-//							 forward = new ActionForward();
-//							 request.setAttribute("userinfo", userDTO);
-//						     forward.setPath("Index.jsp?");
-//								
+							// forward = new ActionForward();
+							// request.setAttribute("userinfo", userDTO);
+						     forward.setPath("/Index.jsp");
+								
 								
 					    } 
 					}

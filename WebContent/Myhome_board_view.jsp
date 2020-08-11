@@ -15,9 +15,7 @@
     <script type="text/javascript" src="./myhome.web.js/MyhomeDtail.js"></script>
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="./myhome.web.css/styleSlider.css" />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script
       type="text/javascript"
@@ -55,20 +53,6 @@
         }, 3000);
       };
 
-      $(function () {
-        $("#main-photo-slider").codaSlider();
-
-        $navthumb = $(".nav-thumb");
-        $crosslink = $(".cross-link");
-
-        $navthumb.click(function () {
-          var $this = $(this);
-          theInterval($this.parent().attr("href").slice(1) - 1);
-          return false;
-        });
-
-        theInterval();
-      });
     </script>
   
 <title>MVC 게시판</title>
@@ -170,16 +154,6 @@
             });
           });
         </script>
-        <script>
-          $(document).ready(function () {
-            $(".slider").bxSlider({
-              mode: "horizontal",
-              auto: true,
-              speed: 600,
-              pause: 4000,
-            });
-          });
-        </script>
         <div id="main_nav">
           <ul>
             <li>
@@ -256,45 +230,46 @@
                   time
                 </div>
               </div>
+     <script>
+     $(document).ready(function() {
+         $('#pr_imgs li img').on("mouseover", function() {
+       	 console.log("들어옴");
+           $('#showimg').show();
+           var imgSrc = "";
+           imgSrc = $(this).attr("src");
+           imgSrc = "<img src='" + imgSrc + "' />";
+           $('#showimg').html(imgSrc);
+         });
+       });
+     
+   $(document).ready(function() {
+           $('#pr_imgs li img').hover(
+             function() {
+               $(this).removeClass('.nav-thumb');
+               $(this).addClass('imghover');
+             },
+             function() {
+               $(this).removeClass('imghover');
+             }
+           );
+         });
+       
+       
+    
 
+     </script>
               <div class="myhomeContentLeft_main">
                 <div id="bg_main">
-                  <div id="page-wrap">
-                    <div class="slider-wrap">
-                      <div id="main-photo-slider" class="csw">
-                        <div class="panelContainer">
-                          <div class="panel" title="Panel 1">
-                            <div class="wrapper">
-                              <img
-                                src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/159031754537170619.jpeg?gif=1&w=850&webp=1"
-                                alt="temp"
-                              />
-                            </div>
-                          </div>
-                          
-                            <div class="panel" title="Panel 5">
-                              <div class="wrapper">
-                                <!-- <img
-                                src="./../image/sliderimages/tempphoto-4.jpg"
-                                alt="temp"
-                                class="floatleft"
-                              /> -->
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      
+                 <div id="showimg" class="s_mainimg">
+						  <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots1563202386_bcE0MUD3.jpeg?gif=1&w=160&h=160&c=c">
+					   </div>
+                  <div id="page-wrap">                 
                       <ul id="pr_imgs">
                         <li>
-                          <img
-                              src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/159031754537170619.jpeg?gif=1&w=850&webp=1"
-                              class="nav-thumb"
-                              alt="temp-thumb"
-                          /></a>
+                          <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/159031754537170619.jpeg?gif=1&w=850&webp=1"class="nav-thumb" alt="temp-thumb"/>
                         </li>
-      
                       </ul>
+                      
                     </div>
                   </div>
                 </div>
