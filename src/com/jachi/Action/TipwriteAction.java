@@ -35,7 +35,7 @@ public class TipwriteAction implements Action {
 				fileSize,
 				"UTF-8",
 				new DefaultFileRenamePolicy());
-		tipdto = new TipDTO(); 
+		tipdto = new TipDTO();
 		tipdto.setTip_nickname(us_id);
 		tipdto.setTip_title(multi.getParameter("write_title"));
 		tipdto.setTip_post(multi.getParameter("editordata"));

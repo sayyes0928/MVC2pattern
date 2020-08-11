@@ -22,7 +22,7 @@ String us_id = (String) session.getAttribute("us_id");
 
 </head>
 <body>
-   <form action="tip_write.bo" id="contentPage"  method="post" enctype="multipart/form-data" autocomplete="off">
+   <form action="tipwrite.bo" id="contentPage"  method="post" enctype="multipart/form-data" autocomplete="off">
 		<header>
 			<div id="h_wrap">
 				<div class="h_div">
