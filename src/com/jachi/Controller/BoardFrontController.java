@@ -21,19 +21,19 @@ import com.jachi.Action.BoardModifyFormAction;
 import com.jachi.Action.BoardModifyProAction;
 import com.jachi.Action.BoardReplyFormAction;
 import com.jachi.Action.BoardReplyProAction;
+import com.jachi.Action.BookMarkUpdate;
 import com.jachi.Action.JoinIdcheckUserinfoAction;
 import com.jachi.Action.JoinInsertUserInfoAction;
 import com.jachi.Action.JoinNickNamecheckUserinfoAction;
+import com.jachi.Action.LikeUpdateAction;
 import com.jachi.Action.LoginUserAction;
 import com.jachi.Action.MyhomeDetailAction;
 import com.jachi.Action.MyhomeWriteProAction;
 import com.jachi.Action.MypageOrderListViewAction;
-import com.jachi.Action.MypageOrderViewAction;
 import com.jachi.Action.PLSelectAction;
 import com.jachi.Action.ProductOrderAction;
 import com.jachi.Action.ProductPostViewAction;
 import com.jachi.Action.TipSelectAction;
-import com.jachi.Action.TiplistAction;
 import com.jachi.Action.TipwriteAction;
 import com.jachi.Action.TokenGetAccessAction;
 import com.jachi.Action.UserLogin;
@@ -136,8 +136,24 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
-		else if(command.equals("/MypageOrderView.bo")){
-			action  = new MypageOrderViewAction();
+		else if(command.equals("/MypageOrderListView.bo")){
+			action  = new MypageOrderListViewAction();
+			try {
+				forward=action.execute(request, response );
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/LikeUpdate.bo")){
+			action  = new LikeUpdateAction();
+			try {
+				forward=action.execute(request, response );
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/BookMarkUpdate.bo")){
+			action  = new BookMarkUpdate();
 			try {
 				forward=action.execute(request, response );
 			} catch (Exception e) {

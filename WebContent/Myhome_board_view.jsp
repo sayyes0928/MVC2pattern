@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-    
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />   
 
 
     <link rel="stylesheet" type="text/css" href="./myhome.web.css/myhome_write_css.css" />
@@ -13,49 +13,17 @@
     <link rel="stylesheet" type="text/css" href="./myhome.web.css/bookmark.css" />
     <link rel="stylesheet" type="text/css"  href="./myhome.web.css/teamTopNav.css" />
     <link rel="stylesheet" type="text/css"  href="./myhome.web.css/styleSlider.css" />
-    <script type="text/javascript" src="./myhome.web.js/MyhomeDtail.js"></script>
+   
     
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
 
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script
-      type="text/javascript"
-      src="./myhome.web.js/jquery-easing-1.3.pack.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="./myhome.web.js/jquery-easing-compatibility.1.2.pack.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="./myhome.web.js/coda-slider.1.1.1.pack.js"
-    ></script>
+   <script type="text/javascript" src="./myhome.web.js/MyhomeDtail.js"></script>
+  <!--  <script type="text/javascript" src="./myhome.web.js/jquery-easing-1.3.pack.js"></script>--> 
+  <!--  <script type="text/javascript" src="./myhome.web.js/jquery-easing-compatibility.1.2.pack.js"></script>--> 
+  <!-- <script type="text/javascript" src="./myhome.web.js/coda-slider.1.1.1.pack.js"></script> --> 
 
-    <script type="text/javascript">
-      var theInt = null;
-      var $crosslink, $navthumb;
-      var curclicked = 0;
-
-      theInterval = function (cur) {
-        clearInterval(theInt);
-
-        if (typeof cur != "undefined") curclicked = cur;
-
-        $crosslink.removeClass("active-thumb");
-        $navthumb.eq(curclicked).parent().addClass("active-thumb");
-        $(".stripNav ul li a").eq(curclicked).trigger("click");
-
-        theInt = setInterval(function () {
-          $crosslink.removeClass("active-thumb");
-          $navthumb.eq(curclicked).parent().addClass("active-thumb");
-          $(".stripNav ul li a").eq(curclicked).trigger("click");
-          curclicked++;
-          if (4 == curclicked) curclicked = 0;
-        }, 3000);
-      };
-
-    </script>
-  
+    
 <title>MVC 게시판</title>
 <style type="text/css">
 
@@ -107,7 +75,7 @@
             </div>
         <script>
           $(function () {
-            $("#main_nav ul li").hover(
+            $("#main_nav li").hover(
               function () {
                 $(this).addClass("main_navov");
               },
@@ -116,16 +84,11 @@
               }
             );
           });
-        </script>
-        <script>
-          $(function () {
+       $(function () {
             $("#sub").hide();
             $("#main_nav").hover(function () {
               $(this).parent().find("#sub").slideDown();
-              $(this)
-                .parent()
-                .hover(
-                  function () {},
+              $(this).parent().hover(
                   function () {
                     $(this).parent().find("#sub").slideUp(900);
                   }
@@ -190,9 +153,11 @@
       </header>
        <%
     ArrayList<BeautyRoomDTO> article = (ArrayList<BeautyRoomDTO>)request.getAttribute("article");
-
-    
+     String board_num = request.getParameter("board_num");
     %>
+        <input type="hidden" value=<%= board_num%> name="post_no" id="post_no"/>
+        <input type="hidden" value=<%= us_id%> name="us_id" id="us_id"/>
+        
         <div id="m_wrap">
           <main>
             <div class="myhomeContentLeft">
@@ -206,33 +171,7 @@
                   time
                 </div>
               </div>
-              
-     <script>
-     $(document).ready(function() {
-         $('#pr_imgs li img').on("mouseover", function() {
-       	 console.log("들어옴");
-           $('#showimg').show();
-           var imgSrc = "";
-           imgSrc = $(this).attr("src");
-           imgSrc = "<img src='" + imgSrc + "' />";
-           $('#showimg').html(imgSrc);
-         });
-       });
-     
-   $(document).ready(function() {
-           $('#pr_imgs li img').hover(
-             function() {
-               $(this).removeClass('.nav-thumb');
-               $(this).addClass('imghover');
-             },
-             function() {
-               $(this).removeClass('imghover');
-             }
-           );
-         });
 
-     </script>
-        
               <div class="myhomeContentLeft_main">
                 <div id="bg_main">
                 <div id="page-wrap">    
@@ -250,8 +189,6 @@
 								src="img/ProductPost/chair04.webp"></li>
 							
                       </ul>
-                      
-                    
                   </div>
                
                 <!-- 메인배경용 -->
@@ -340,43 +277,41 @@
                   </section>
                 </div>
               
-          </div>
-                </div>
+               </div>
+              
+              </div>
+              <%
+              String like = (String)request.getAttribute("Like");
+              String bookmark = (String)request.getAttribute("Bookmark");
+                     
+                if(like.equals("1")){
+                	like="./img/myhome/icons8-heart-50-2.png";
+                	
+                }else{
+                	like="./img/myhome/icons8-heart-50.png";
+                }
+                
+                if(bookmark.equals("1")){
+                	bookmark="./img/myhome/icons8-bookmark-50.png";
+                }else{
+                	bookmark="./img/myhome/icons8-bookmark-50-2.png";
+                }
+          
+               %>
             <div class="boxContainer">
               <div class="myhomeContentRight">
                 <div class="myhomeContentRight_button">
                   <div class="myhomeContentRight_button_btn">
-                    <button type="button" class="btm_image">
-                      <img id="img_btn" src="./img/myhome/icons8-heart-50.png"
-                      clicked-image="./img/myhome/icons8-heart-50-2.png" 
-                      unclicked-image="./img/myhome/icons8-heart-50.png" />
+                    <button type="button" class="btm_image" id="heart_btn">
+                      <img id="img_btn" src="<%= like%>" />
                     </button>
                     
                  
-                    <button type="button" class="btm_image">
-                      <img
-                        src="./img/myhome/icons8-bookmark-50-2.png"
-                        clicked-image="./img/myhome/icons8-bookmark-50.png"
-                        unclicked-image="./img/myhome/icons8-bookmark-50-2.png"
-                      />
+                    <button type="button" class="btm_image" id="bookmark_btn">
+                      <img src="<%= bookmark%>"/>
                     </button>
             
                 </div>
-               
-                   <script>
-                $(document).ready(function () {
-                  $(".btm_image").on("click", function () {
-                    var clicked = $("img", this).attr("clicked-image");
-                    var unclicked = $("img", this).attr("unclicked-image");
-                    var now = $("img", this).attr("src");
-                    if (now == unclicked) {
-                      $("img[src]", this).attr("src", clicked);
-                    } else if (now == clicked) {
-                      $("img[src]", this).attr("src", unclicked);
-                    }
-                  });
-                });
-              </script>
                   
                
                 <div class="myhomeContentRight_userinfo">
