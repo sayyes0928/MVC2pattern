@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>tip1</title>
+<title>tip</title>
 <link rel="stylesheet" href="./myhome.web.css/teamTopNav.css"
 	type="text/css">
 <link rel="stylesheet" href="./myhome.web.css/tip.css" type="text/css">
