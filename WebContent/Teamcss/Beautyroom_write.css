@@ -251,7 +251,6 @@ body{
 
 #add_bt{
 	opacity:0;
-	display: inline-block;
     padding: .5em .75em;
     color: white;
     font-family:"jua";
@@ -265,6 +264,22 @@ body{
     border-bottom-color: #e2e2e2;
     border-radius: .25em;
 	
+}
+#cancel_bt{
+	opacity:0;
+    padding: .5em .75em;
+    color: white;
+    font-family:"jua";
+    font-size: 12pt;
+    font-weight:bold;
+    line-height: normal;
+    vertical-align: middle;
+    background-color: #1F50B5;
+    cursor: pointer;
+    border: 1px solid #ebebeb;
+    border-bottom-color: #e2e2e2;
+    border-radius: .25em;
+    clear:both;
 }
 
 .container{

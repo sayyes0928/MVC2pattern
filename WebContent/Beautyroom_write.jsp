@@ -44,14 +44,26 @@ String us_id = (String) session.getAttribute("US_ID");
 			}
 			reader.readAsDataURL(html.files[0]);
 		}
+		
+		
 		if(reader!=null){
 			$('#add_bt').css('opacity',1);
 			$('#add_bt').on('click',function(){
 				$('.container').css('display','block');
-			
+					$('#add_bt').css('opacity',0);
+					$('#cancel_bt').css('opacity',1);
+					
+				});
+			$('#cancel_bt').on('click',function(){
+				$('.container').css('display','none');
+				$('#add_bt').css('opacity',1);
+				$('#cancel_bt').css('opacity',0);
+				
 			});
-		}	
+			};
+		
 	}
+	
 	
 </script>
 
@@ -135,7 +147,7 @@ $(function(){
                 	    .before(
                 	      '<div class="col-sm-2 imgUp" id="aa"><div class="imagePreview"></div><label class="btn btn-primary">사진추가<input type="file" class="uploadFile img" value="Upload Photo" style="width:0px;height:0px;overflow:hidden;"></label><i class="fa fa-times del"></i></div>'
                 	    );
-            			console.log($('.del').length);
+
             		if($('.del').length==2){
             			$('.imgAdd').hide();
             			
@@ -188,9 +200,12 @@ $(function(){
 		<div id="BT_writemainsize">
 			<div id="file_upsize">
 				<div class="filebox">
-					<label for="cma_file">내 방사진 자랑하기</label><input type="button" value="사진추가하기" id="add_bt"> <input type="file"
+					<label for="cma_file">내 방사진 자랑하기</label>
+					<input type="button" value="사진추가하기" id="add_bt">
+					 <input type="button" value="취소" id="cancel_bt">
+					 <input type="file"
 						name="post_pic" id="cma_file" accept="image/*" capture="camera"
-						onchange="getThumbnailPrivew(this,$('#cma_image'))" /> <br /> <br />
+						onchange="getThumbnailPrivew(this,$('#cma_image'))" /> <br/><br/>
 					<div id="cma_image"></div>
 				</div>
 

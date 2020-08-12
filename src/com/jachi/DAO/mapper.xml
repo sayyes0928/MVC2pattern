@@ -75,7 +75,7 @@ insert into productinfo values(#{pro_code},#{pro_name},#{pro_price},#{pro_mainim
 #{pro_subimg},#{pro_option1},#{pro_option2},#{pro_option3},#{pro_catecode1},#{pro_catecode2},#{pro_catecode3});
  </insert>
 
-<<<<<<< HEAD
+
 <select id="rec_check" parameterType="map" resultType="int">
 		select count(*) from jachi.like where like_postnum = #{no} and like_id = #{id};
 </select>
@@ -101,8 +101,7 @@ insert into productinfo values(#{pro_code},#{pro_name},#{pro_price},#{pro_mainim
 <delete id="book_delete" parameterType="map">
 		delete from jachi.scrap where scr_postnum = #{no} and scr_id = #{id};
 </delete>
-=======
->>>>>>> refs/remotes/1231231244/master
+
 
 <insert id="insert_bt" parameterType="com.jachi.DTO.BeautyRoomDTO">
 	insert into posting values(#{post_nkname},#{post_pic},#{post_posting},#{post_pw},default,#{post_tag},#{post_title});
