@@ -1,6 +1,6 @@
 package com.jachi.Action;
 
-import java.io.PrintWriter;
+import java.io.PrintWriter; 
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
@@ -28,18 +28,18 @@ public class TipwriteAction implements Action {
 		int fileSize=5*1024*1024;
 		ServletContext context = request.getServletContext();
 		realFolder=context.getRealPath(saveFolder);
-		
-		System.out.println("tipwirteAction 여기까지 왔다잉");
 		MultipartRequest multi = new MultipartRequest(request,
 				realFolder,
 				fileSize,
 				"UTF-8",
 				new DefaultFileRenamePolicy());
+        String cover_imgname = multi.getFilesystemName("cover_img");
 		tipdto = new TipDTO();
 		tipdto.setTip_nickname(us_id);
 		tipdto.setTip_title(multi.getParameter("write_title"));
 		tipdto.setTip_post(multi.getParameter("editordata"));
-		
+		tipdto.setTip_coverimg(cover_imgname);
+ 
 		TipwriteService tipwriteService = new TipwriteService();
 		boolean isWriteSuccess = tipwriteService.registArticle(tipdto);
 	
@@ -54,7 +54,7 @@ public class TipwriteAction implements Action {
 		else{
 			forward = new ActionForward();
 			forward.setRedirect(false);
-			forward.setPath("TipPage.jsp");
+			forward.setPath("tipselect.bo");
 		}
 
 		return forward;

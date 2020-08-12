@@ -32,8 +32,8 @@ import com.jachi.Action.MypageOrderViewAction;
 import com.jachi.Action.PLSelectAction;
 import com.jachi.Action.ProductOrderAction;
 import com.jachi.Action.ProductPostViewAction;
+import com.jachi.Action.SummerNoteAction;
 import com.jachi.Action.TipSelectAction;
-import com.jachi.Action.TiplistAction;
 import com.jachi.Action.TipwriteAction;
 import com.jachi.Action.TokenGetAccessAction;
 import com.jachi.Action.UserLogin;
@@ -79,6 +79,10 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		else if(command.equals("/join.bo")){
 			forward=new ActionForward();
 			forward.setPath("/join.jsp");
+		}
+		else if(command.equals("/SummerNoteAction.bo")){
+			SummerNoteAction sr=new SummerNoteAction();
+			
 		}
 		else if(command.equals("/join_Insert.bo")){
 			action  = new JoinInsertUserInfoAction();
