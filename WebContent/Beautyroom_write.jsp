@@ -19,6 +19,13 @@ String us_id = (String) session.getAttribute("US_ID");
 <link
 	href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
 	rel="stylesheet">
+	
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -37,7 +44,15 @@ String us_id = (String) session.getAttribute("US_ID");
 			}
 			reader.readAsDataURL(html.files[0]);
 		}
+		if(reader!=null){
+			$('#add_bt').css('opacity',1);
+			$('#add_bt').on('click',function(){
+				$('.container').css('display','block');
+			
+			});
+		}	
 	}
+	
 </script>
 
 <script>
@@ -105,7 +120,59 @@ $(function(){
 				 aaa.submit();
 				 
             }
- 
+ 	
+            
+            
+            
+     
+            $(document).ready(function(){ 
+            	$(".imgAdd").on("click",function () {
+            		var aa = new FileReader();
+            		
+            			$(this)
+                	    .closest(".row")
+                	    .find(".imgAdd")
+                	    .before(
+                	      '<div class="col-sm-2 imgUp" id="aa"><div class="imagePreview"></div><label class="btn btn-primary">사진추가<input type="file" class="uploadFile img" value="Upload Photo" style="width:0px;height:0px;overflow:hidden;"></label><i class="fa fa-times del"></i></div>'
+                	    );
+            			console.log($('.del').length);
+            		if($('.del').length==2){
+            			$('.imgAdd').hide();
+            			
+            		}
+            		
+            	 
+           	});});
+          
+            	
+            $(document).on("click", "i.del", function () {
+            	  $(this).parent().remove();
+            	  $('.imgAdd').show();
+            	});
+            	$(function () {
+            	  $(document).on("change", ".uploadFile", function () {
+            	    var uploadFile = $(this);
+            	    var files = !!this.files ? this.files : [];
+            	    if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
+
+            	    if (/^image/.test(files[0].type)) {
+            	      // only image file
+            	      var reader = new FileReader(); // instance of the FileReader
+            	      reader.readAsDataURL(files[0]); // read the local file
+
+            	      reader.onloadend = function () {
+            	        // set image data as background of div
+            	        //alert(uploadFile.closest(".upimage").find('.imagePreview').length);
+            	        uploadFile
+            	          .closest(".imgUp")
+            	          .find(".imagePreview")
+            	          .css("background-image", "url(" + this.result + ")");
+            	      };
+            	    }
+            	  });
+            	});
+
+            
 </script>
 </head>
 <body>
@@ -117,16 +184,16 @@ $(function(){
 	</header>
 	<main>
 	<form name="aaa" id="aaa" action="beauty_write.bo" method="post"
-	enctype="multipart/form-data" autocomplete="off">
+		enctype="multipart/form-data" autocomplete="off">
 		<div id="BT_writemainsize">
 			<div id="file_upsize">
 				<div class="filebox">
-					<label for="cma_file">내 방사진 자랑하기</label> <input type="file"
+					<label for="cma_file">내 방사진 자랑하기</label><input type="button" value="사진추가하기" id="add_bt"> <input type="file"
 						name="post_pic" id="cma_file" accept="image/*" capture="camera"
 						onchange="getThumbnailPrivew(this,$('#cma_image'))" /> <br /> <br />
 					<div id="cma_image"></div>
 				</div>
-				<%=us_id %>
+
 				<div class="form__group field">
 					<input type="input" class="form__field" placeholder="제목을 입력해주세요"
 						name="post_title" id='name' required /> <label for="name"
@@ -139,22 +206,40 @@ $(function(){
 					<textarea class="form__field2" id="BT_writepost" autocomplete="off"
 						placeholder="내용을 입력해주세요" name="post_posting"></textarea>
 					<label for="name" class="form__label2">내용을 입력해주세요 :D</label>
-			
 				</div>
 			</div>
+
+
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2 imgUp">
+      <div class="imagePreview"></div>
+      <label class="btn btn-primary">
+        사진추가<input type="file" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"/>
+      </label>
+    </div>
+    <i class="fa fa-plus imgAdd"></i>
+  </div>
+</div>
+
+
 
 			<div id="tag_size">
 				<div id="wrapper">
 					<p>내 맘대로 태그</p>
 					<ul class="tags-input">
 						<li class="tags">자취해보자<i class="fa fa-times"></i></li>
-						<li class="tags-new" ><input type="text"></li>
+						<li class="tags-new"><input type="text"></li>
 					</ul>
 				</div>
 			</div>
-			<input type="text"  name="tagtest2" id="myField">
-			<input type="button" value="등록완료" id="write_submit" onclick="test(aaa)">
+
+			<input type="button" value="등록완료" id="write_submit"
+				onclick="test(aaa)">
 		</div>
+
+
 	</form>
 	</main>
 </body>

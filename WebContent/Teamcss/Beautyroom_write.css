@@ -249,7 +249,27 @@ body{
   box-shadow: none;
 }
 
+#add_bt{
+	opacity:0;
+	display: inline-block;
+    padding: .5em .75em;
+    color: white;
+    font-family:"jua";
+    font-size: 12pt;
+    font-weight:bold;
+    line-height: normal;
+    vertical-align: middle;
+    background-color: #1F50B5;
+    cursor: pointer;
+    border: 1px solid #ebebeb;
+    border-bottom-color: #e2e2e2;
+    border-radius: .25em;
+	
+}
 
+.container{
+	display:none;
+}
 
 #tag_size{
 	margin-top:30px;
@@ -343,5 +363,94 @@ p
 
 
 
+#file-input{
+	display:none;
+
+}
+
+#addimgsize{
+	width:80px;
+	height:80px;
+	margin-top:20px;
+}
+
+
+
+
+
+
+.imagePreview {
+    width: 120px;
+    height: 120px;
+    background-position: center center;
+
+  background-color:white;
+    background-size: cover;
+  background-repeat:no-repeat;
+    display: inline-block;
+    border:1px solid gray;
+    
+}
+.btn-primary
+{
+  display:block;
+  border-radius:0px;
+  margin-top:-5px;
+  width:122px;
+  color: #fff;
+  background-color: #1F50B5;
+  border-color: #1F50B5;
+  cursor: pointer;
+  text-align: center;
+  font-weight:bold;
+  height:30px;
+}
+.imgUp
+{
+  margin-bottom:15px;
+
+}
+.del
+{
+  position:absolute;
+  top:695px;
+
+  text-align:center;
+  line-height:30px;
+  background-color:rgba(255,255,255,0.6);
+  cursor:pointer;
+  margin-left:4px;
+}
+.imgAdd
+{
+  height:30px;
+  background-color:white;
+  color:black;
+  text-align:center;
+  line-height:30px;
+  margin-top:10px;
+  cursor:pointer;
+  font-size:15px;
+}
+
+.col-sm-2 {
+    width: 100px;
+    margin:10px 40px 0 0;
+    float:left;
+}
+
+
+.row{
+    float: left;
+
+}
+
+.fa {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
 
 
