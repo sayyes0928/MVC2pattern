@@ -10,9 +10,6 @@ public class TipwriteService {
 	public boolean registArticle(TipDTO tipDTO) throws Exception{
 		
 		boolean isWriteSuccess = false;
-		System.out.println(tipDTO.getTip_nickname());
-		System.out.println(tipDTO.getTip_post());
-		System.out.println(tipDTO.getTip_title());
 		 SqlSessionFactory sqlfactory = BoardDAO.getConn();
 		 SqlSession sqlsession = sqlfactory.openSession();
 		 int insert = sqlsession.insert("insert_tip",tipDTO);

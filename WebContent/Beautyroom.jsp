@@ -2,9 +2,18 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
 <%@ page import="com.jachi.DTO.BeautyRoomDTO"%>
+<%@ page import="com.jachi.DTO.PageInfo" %>
 
 <%
 	ArrayList<BeautyRoomDTO> userpost = (ArrayList<BeautyRoomDTO>) request.getAttribute("beautyList");
+
+	PageInfo pageInfo = (PageInfo)request.getAttribute("pageInfo");
+	int listCount=pageInfo.getListCount();
+	int nowPage=pageInfo.getPage();
+	int maxPage=pageInfo.getMaxPage();
+	int startPage=pageInfo.getStartPage();
+	int endPage=pageInfo.getEndPage();
+
 session.setAttribute("US_ID", "ljkim0829");
 
 %>
@@ -228,7 +237,7 @@ session.setAttribute("US_ID", "ljkim0829");
 
 		<section class="cards">
 			<%
-				if (userpost != null) {
+				if (userpost != null && listCount > 0) {
 					for (int i = 0; i < userpost.size(); i++) {
 			%>
 
@@ -259,9 +268,12 @@ session.setAttribute("US_ID", "ljkim0829");
 					<span class="card__by">by <a href="Beautyroom_Detail.bo?board_num=<%=userpost.get(i).getPost_num()%>" class="card__author" title="author"><%=userpost.get(i).getPost_nkname()%></a></span>
 				</div>
 			</article>
+				
+			
 			<%
 				}
 			%>
+			
 			<%
 				} else {
 			%>
@@ -270,9 +282,36 @@ session.setAttribute("US_ID", "ljkim0829");
 				}
 			%>
 
-
 		</section>
-
+			
+		<section id="pageList">
+				<%if(nowPage<=1){ %>
+			[이전]&nbsp;
+			<%}else{ %>
+			<a href="beauty.bo?page=<%=nowPage-1%>">[이전]</a>&nbsp;
+			<%} %>
+			
+			<%for(int a=startPage;a<=endPage;a++){
+				if(a==nowPage){%>
+				[<%=a %>]
+			<%}else{ %>
+			<a href="beauty.bo?page=<%=a %>">[<%=a %>]</a>&nbsp;
+			<%
+			}
+			%>
+			<%
+			}
+			%>
+			
+			
+			<%if(nowPage>=maxPage){ %>
+			[다음]
+			<%}else{ %>
+			<a href="beauty.bo?page=<%=nowPage+1 %>">[다음]</a>	
+			<%} %>
+		
+			
+			</section>
 
 		</main>
 		</form>

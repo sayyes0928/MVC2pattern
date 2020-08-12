@@ -3635,7 +3635,7 @@ function createImage(url) {
       deferred.reject($img);
     }).css({
       display: 'none'
-    }).appendTo(document.body).attr('src', url);
+    }).appendTodocument.body.attr('src', url);
   }).promise();
 }
 // CONCATENATED MODULE: ./src/js/base/editing/History.js
@@ -5944,21 +5944,12 @@ var Editor_Editor = /*#__PURE__*/function () {
       return createImage(src, param).then(function ($image) {
         _this3.beforeCommand();
 
-        if (typeof param === 'function') {
-          param($image);
-        } else {
-          if (typeof param === 'string') {
-            $image.attr('data-filename', param);
-          }
 
-          $image.css('width', Math.min(_this3.$editable.width(), $image.width()));
-        }
 
         $image.show();
 
-        _this3.getLastRange().insertNode($image[0]);
+  
 
-        _this3.setLastRange(range.createFromNodeAfter($image[0]).select());
 
         _this3.afterCommand();
       }).fail(function (e) {

@@ -18,7 +18,7 @@ public class BTListService {
 		SqlSessionFactory sqlfactory = BoardDAO.getConn();
 		SqlSession sqlsession = sqlfactory.openSession();
 		listCount = sqlsession.selectOne("btselect_list");
-		
+		System.out.println(listCount);
 		return listCount;
 	}
 	
@@ -29,7 +29,7 @@ public class BTListService {
 		
 		int starrow=(page-1)*12;
 		
-		List<BeautyRoomDTO> selectList =sqlsession.selectList("btselect_listall",starrow);
+		List<BeautyRoomDTO> selectList = sqlsession.selectList("btselect_listall",starrow);
 		
 		return selectList;
 	}

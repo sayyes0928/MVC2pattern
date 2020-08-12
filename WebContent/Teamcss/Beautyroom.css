@@ -19,12 +19,20 @@ main {
   padding: 0;
 }
 
-
+#pageList{
+	margin: auto;
+	width: 500px;
+	text-align: center;
+	font-size:16pt;
+	font-weight:bold;
+	color:gray;
+	
+}
 
 
 .cards {
   width: 1200px;
-
+  height:100%;
   justify-content: center;
   -webkit-justify-content: center;
 
