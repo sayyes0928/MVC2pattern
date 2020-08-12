@@ -46,7 +46,7 @@ public class BTListAction implements Action {
 		pageInfo.setPage(page);
 		pageInfo.setStartPage(startPage);
 		request.setAttribute("pageInfo", pageInfo);
-		request.setAttribute("articleList", articleList);
+		request.setAttribute("beautyList", articleList);
 		ActionForward forward = new ActionForward();
 		forward.setPath("/Beautyroom.jsp");
 		

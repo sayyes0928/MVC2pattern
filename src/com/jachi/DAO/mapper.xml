@@ -85,5 +85,15 @@ insert into productinfo values(#{pro_code},#{pro_name},#{pro_price},#{pro_mainim
 </insert> 
 
 
+<select id="btselect_list" resultType="Integer">
+	select count(*) from posting;
+</select>
+
+<select id="btselect_listall" parameterType="Integer" resultType="com.jachi.DTO.BeautyRoomDTO">
+	select post_num,post_title,post_posting,post_pic,us_nkname as 'post_nkname' from posting
+	 join userinfo on userinfo.us_id=posting.post_nickname order by post_num desc
+	limit #{starrow}, 12;
+</select>
+
 
 </mapper>

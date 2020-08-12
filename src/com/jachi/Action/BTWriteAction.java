@@ -41,7 +41,6 @@ public class BTWriteAction implements Action {
 		btr.setPost_tag(multi.getParameter("tagtest2"));
 		btr.setPost_pic(
 		multi.getOriginalFileName((String)multi.getFileNames().nextElement()));
-		
 		BTWriteService btws = new BTWriteService();
 		boolean isWriteSuccess = btws.registArticle(btr);
 		
@@ -61,7 +60,7 @@ public class BTWriteAction implements Action {
 		}else {
 			forward = new ActionForward();
 			forward.setRedirect(true);
-			forward.setPath("beauty.bo");
+			forward.setPath("btList.bo");
 		}
 		
 		return forward;
