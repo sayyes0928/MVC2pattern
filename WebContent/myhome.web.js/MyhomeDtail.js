@@ -39,11 +39,18 @@ $(document).ready(function() {
     	        }
     	      ); 
     });
+// 로그인 여부
 
 // 추천버튼 클릭시(추천 추가 또는 추천 제거)
 $(function(){
 	$("#heart_btn").click(function(){
-	   var nowImage = $("#heart_btn img").attr("src");
+		var post_no = document.getElementById("post_no").value;
+		var us_id = document.getElementById("us_id").value;
+		if(us_id == 'null'){
+			 alert("로그인이 필요한 작업입니다.");
+			 location.href='LoginFormpage.bo';
+		 }else{
+	    var nowImage = $("#heart_btn img").attr("src");
 		var LikeChecked = "./img/myhome/icons8-heart-50-2.png";
 		var LikeUnchecked = "./img/myhome/icons8-heart-50.png";
 		if(nowImage == LikeChecked){
@@ -51,8 +58,7 @@ $(function(){
 		}else{
 			$("#heart_btn img").attr("src", LikeChecked);
 		}
-		var post_no = document.getElementById("post_no").value;
-		var us_id = document.getElementById("us_id").value;
+		
 		console.log(post_no);
 		$.ajax({
 			
@@ -63,10 +69,10 @@ $(function(){
                id: us_id
            },
            success: function (heart) {
-        	
-      			
+        	   
            },
 		})
+	 }
 	})
 });
 // 스크랩시 등록

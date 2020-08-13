@@ -44,7 +44,8 @@
               </div>
          
        <%
-       String us_id = (String)session.getAttribute("us_id"); //로그인 유무 확인
+       String us_id = null;
+       us_id = (String)session.getAttribute("us_id"); //로그인 유무 확인
        if(us_id==null){
      %>
             <ul class="login_go">
@@ -135,9 +136,11 @@
        <%
     ArrayList<BeautyRoomDTO> article = (ArrayList<BeautyRoomDTO>)request.getAttribute("article");
      String board_num = request.getParameter("board_num");
+     
     %>
         <input type="hidden" value=<%= board_num%> name="post_no" id="post_no"/>
-        <input type="hidden" value=<%= us_id%> name="us_id" id="us_id"/>
+        <input type="text" value=<%= us_id%> name="us_id" id="us_id"/>
+        
         
         <div id="m_wrap">
           <main>
@@ -262,9 +265,12 @@
               
               </div>
               <%
-              String like = (String)request.getAttribute("Like");
-              String bookmark = (String)request.getAttribute("Bookmark");
-                     
+              String like="0";
+              String bookmark="0";
+              like = (String)request.getAttribute("Like");
+              bookmark = (String)request.getAttribute("Bookmark");
+out.print(like+"sdfsdfsdfsdf");
+               if(us_id != null){
                 if(like.equals("1")){
                 	like="./img/myhome/icons8-heart-50-2.png";
                 	
@@ -273,10 +279,15 @@
                 }
                 
                 if(bookmark.equals("1")){
-                	bookmark="./img/myhome/icons8-bookmark-50.png";
-                }else{
                 	bookmark="./img/myhome/icons8-bookmark-50-2.png";
+                
+                }else{
+                	bookmark="./img/myhome/icons8-bookmark-50.png";
                 }
+               }else{
+            	   like="./img/myhome/icons8-heart-50.png";
+            	   bookmark="./img/myhome/icons8-bookmark-50-2.png";
+               }
           
                %>
             <div class="boxContainer">
@@ -285,6 +296,7 @@
                   <div class="myhomeContentRight_button_btn">
                     <button type="button" class="btm_image" id="heart_btn">
                       <img id="img_btn" src="<%= like%>" />
+                      <%= like%>
                     </button>
                     
                  
@@ -296,7 +308,7 @@
                   
                
                 <div class="myhomeContentRight_userinfo">
-                  <div><span class="Right_userID">UserID</span></div>
+                  <div><span class="Right_userID"><%=  article.get(0).getPost_nkname()%></span></div>
                   <button type="button" class="btm_image">팔로우</button>
                 </div>
                 <div class="myhomeContentRight_userimage_container">

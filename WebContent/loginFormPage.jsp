@@ -10,7 +10,7 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
 
-<link rel="stylesheet" type="text/css"href="loginPage.css" />
+<link rel="stylesheet" type="text/css"href="./myhome.web.css/loginPage.css" />
     <!-- <link rel="stylesheet" type="text/css"href="teamTopNav.css" /> --> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -42,11 +42,14 @@
     apiURL += "&redirect_uri=" + redirectURI;
     apiURL += "&state=" + state;
     session.setAttribute("state", state);
+    String backPage = request.getHeader("Referer");
+    session.setAttribute("backPage", backPage);
  %>
 <body>
   
   <div class="wrapper">
-    <form class="form-signin" action="loginAction.bo" method="post">       
+    <form class="form-signin" action="loginAction.bo" method="post">   
+      <input type="hidden" value=<%= backPage%> name="backPage"/>    
       <h1 class="form-signin-heading">로그인</h1>
       <input type="text" class="form-control" name="us_id" placeholder="아이디를 입력해주세요"  />
       <input type="password" class="form-control" name="us_pw" placeholder="비밀번호를 입력해주세요" />      

@@ -4,7 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="header.css" type="text/css">
+<link rel="stylesheet" type="text/css"  href="./myhome.web.css/teamTopNav.css" />
+<!-- <link rel="stylesheet" href="header.css" type="text/css"> -->
 <link rel="stylesheet" href="join.css" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -47,67 +48,7 @@
      <%
        }
      %>
-          <div id="main_nav">
-          <ul>
-            <li>
-              <a href="Index.jsp"><span>홈</span></a>
-            </li>
-            <li>
-              <a href="storeList.bo"><span>스토어</span></a>
-            </li>
-            <li>
-              <a href="beauty.bo"><span>커뮤니티</span></a>
-            </li>
-            <li>
-              <a href="#"><span>자취에대한 모든것</span></a>
-            </li>
-
-            <li>
-              <a href="#"><span>고객센터</span></a>
-            </li>
-          </ul>
-        </div>
         
-        </div>
-
-<div id="sub">
-          <div id="sub_menu">
-            <div class="nav_container_div">
-              <nav role="navigation" class="primary-navigation">
-                <ul class="nav_container">
-                  <li>
-                  
-                    <ul class="m_line">
-                      <li><a href="#">카테고리</a></li>
-                      <li><a href="#">베스트</a></li>
-                      <li><a href="#">특가</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <ul class="m_line">
-                      <li><a href="#">내방자랑</a></li>
-                      <li><a href="#">내집자랑</a></li>
-                      <li><a href="#">전문가집들이</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <ul class="m_line">
-                      <li><a href="#">자취생TIP</a></li>
-                      <li><a href="#">자취생QnA</a></li>
-                      <li><a href="#">혼밥레시피</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <ul class="m_line">
-                      <li><a href="#">질문과답변</a></li>
-                      <li><a href="#">공지사항</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </div>
         
       </header>
 		<section>
