@@ -24,14 +24,12 @@ session.setAttribute("US_ID", "ljkim0829");
 <title>내 방 자랑</title>
 
 <link rel="stylesheet" href="./Teamcss/Beautyroom.css" type="text/css">
-<link rel="stylesheet" href="./myhome.web.css/teamTopNav.css"
-	type="text/css">
-<link rel="stylesheet" href="./Teamjs/team_catemenu.js">
+<link rel="stylesheet" href="./myhome.web.css/teamTopNav.css" type="text/css">
 
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script
-	src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+<script src="./myhome.web.js/teamTopnav.js"></script>
 </head>
 
 <script>
@@ -45,41 +43,10 @@ session.setAttribute("US_ID", "ljkim0829");
 		<header>
         <div id="h_wrap">
           <div class="h_div">
-            <ul>
-              <li style="padding-top: 110px;">
-                <img src="./img/grass2icon.svg" width="30" height="30" />
-              </li>
-              <li style="padding-top: 80px;">
-                <img src="./img/truck2.svg" width="70" height="70" />
-              </li>
-              <li><img src="./img/sunicon.svg" width="60" height="60" /></li>
-              <li style="padding-top: 110px;">
-                <img src="./img/grass2icon.svg" width="30" height="30" />
-              </li>
-              <li style="padding-top: 100px;">
-                <img src="./img/grassicon.svg" width="40" height="40" />
-              </li>
-
-              <li><h1>자취해보자</h1></li>
-              <li style="padding-top: 20px;">
-                <img
-                  src="./img/houseiconcolor.svg"
-                  width="100"
-                  height="100"
-                  onmouseover="this.src='./img/houseicon.svg'"
-                  onmouseout="this.src='./img/houseiconcolor.svg'"
-                />
-              </li>
-              <li style="padding-top: 100px;">
-                <img src="./img/grassicon.svg" width="40" height="40" />
-              </li>
-              <li style="padding-top: 100px;">
-                <img src="./img/grassicon.svg" width="40" height="40" />
-              </li>
-              <li style="padding-top: 110px;">
-                <img src="./img/grass2icon.svg" width="30" height="30" />
-              </li>
-            </ul>
+         
+        <h1>자취해보자</h1>
+              </div>
+         
        <%
        String us_id = (String)session.getAttribute("us_id"); //로그인 유무 확인
        if(us_id==null){
@@ -106,47 +73,7 @@ session.setAttribute("US_ID", "ljkim0829");
      <%
        }
      %>
-          </div>
-        </div>
-        <script>
-          $(function () {
-            $("#main_nav ul li").hover(
-              function () {
-                $(this).addClass("main_navov");
-              },
-              function () {
-                $(this).removeClass("main_navov");
-              }
-            );
-          });
-        </script>
-        <script>
-          $(function () {
-            $("#sub").hide();
-            $("#main_nav").hover(function () {
-              $(this).parent().find("#sub").slideDown();
-              $(this)
-                .parent()
-                .hover(
-                  function () {},
-                  function () {
-                    $(this).parent().find("#sub").slideUp(900);
-                  }
-                );
-            });
-          });
-        </script>
-        <script>
-          $(document).ready(function () {
-            $(".slider").bxSlider({
-              mode: "horizontal",
-              auto: true,
-              speed: 600,
-              pause: 4000,
-            });
-          });
-        </script>
-        <div id="main_nav">
+          <div id="main_nav">
           <ul>
             <li>
               <a href="Index.jsp"><span>홈</span></a>
@@ -166,7 +93,10 @@ session.setAttribute("US_ID", "ljkim0829");
             </li>
           </ul>
         </div>
-        <div id="sub">
+        
+        </div>
+
+<div id="sub">
           <div id="sub_menu">
             <div class="nav_container_div">
               <nav role="navigation" class="primary-navigation">
@@ -204,6 +134,7 @@ session.setAttribute("US_ID", "ljkim0829");
             </div>
           </div>
         </div>
+        
       </header>
 
 
@@ -283,7 +214,7 @@ session.setAttribute("US_ID", "ljkim0829");
 			%>
 
 		</section>
-			
+			<div>
 		<section id="pageList">
 				<%if(nowPage<=1){ %>
 			[이전]&nbsp;
@@ -312,7 +243,7 @@ session.setAttribute("US_ID", "ljkim0829");
 		
 			
 			</section>
-
+</div>
 		</main>
 		</form>
 </body>

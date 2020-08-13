@@ -33,7 +33,10 @@ import com.jachi.Action.MypageOrderListViewAction;
 import com.jachi.Action.PLSelectAction;
 import com.jachi.Action.ProductOrderAction;
 import com.jachi.Action.ProductPostViewAction;
+<<<<<<< HEAD
+=======
 
+>>>>>>> refs/remotes/1231231244/master
 import com.jachi.Action.TipSelectAction;
 import com.jachi.Action.TipwriteAction;
 import com.jachi.Action.TokenGetAccessAction;
@@ -81,6 +84,10 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			forward=new ActionForward();
 			forward.setPath("/join.jsp");
 		}
+<<<<<<< HEAD
+
+=======
+>>>>>>> refs/remotes/1231231244/master
 		else if(command.equals("/join_Insert.bo")){
 			action  = new JoinInsertUserInfoAction();
 			try {

@@ -14,9 +14,7 @@
 <meta charset="utf-8">
 <title>자취해보자 스토어</title>
 
-    <link rel="stylesheet" type="text/css" href="./myhome.web.css/teamTopNav.css" />
-    <link rel="stylesheet" type="text/css" href="./styleSlider.css" />
-    
+    <link rel="stylesheet" type="text/css" href="./myhome.web.css/teamTopNav.css" /> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -26,18 +24,18 @@
 
 
 
-<link rel="stylesheet" href="./Teamcss/ProductList.css" type="text/css">
-<link rel="stylesheet" href="./Teamjs/team_catemenu.js">
+    <link rel="stylesheet" href="./Teamcss/ProductList.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <link rel="stylesheet" href="./Teamcss/teampro_ver_01.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+	<script src="./myhome.web.js/teamTopnav.js"></script>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-<link rel="stylesheet" href="./Teamcss/teampro_ver_01.css" type="text/css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script
-	src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 
-<script>
-	$(document).ready(function() {
+<!-- <script type="text/javascript" src="jquery-1.5.2.min.js"></script> -->
+	<script type="text/javascript" src="./Teamjs/scriptbreaker-multiple-accordion-1.js"></script>
+	<script>
+	$(function() {
 		$('.slider').bxSlider({
 			mode : 'horizontal',
 			auto : true,
@@ -45,68 +43,26 @@
 			pause : 4000
 		});
 	});
-</script>
-
-<!-- <script type="text/javascript" src="jquery-1.5.2.min.js"></script> -->
-<script type="text/javascript"
-	src="./Teamjs/scriptbreaker-multiple-accordion-1.js"></script>
-<script language="JavaScript">
-	$(document).ready(function() {
+	$(function() {
 		//use the scriptbreaker.com multiple accordion menu
 		$(".topnav").accordion({
 			accordion : true,
 			speed : 500
 		});
 	});
-</script>
+	</script>
 
-<style>
-</style>
+	</head>
 
-
-
-</head>
-
-<body>
+	<body>
 	<form id="contentPage">
-       <header>
+      <header>
         <div id="h_wrap">
           <div class="h_div">
-            <ul>
-              <li style="padding-top: 110px;">
-                <img src="./img/grass2icon.svg" width="30" height="30" />
-              </li>
-              <li style="padding-top: 80px;">
-                <img src="./img/truck2.svg" width="70" height="70" />
-              </li>
-              <li><img src="./img/sunicon.svg" width="60" height="60" /></li>
-              <li style="padding-top: 110px;">
-                <img src="./img/grass2icon.svg" width="30" height="30" />
-              </li>
-              <li style="padding-top: 100px;">
-                <img src="./img/grassicon.svg" width="40" height="40" />
-              </li>
-
-              <li><h1>자취해보자</h1></li>
-              <li style="padding-top: 20px;">
-                <img
-                  src="./img/houseiconcolor.svg"
-                  width="100"
-                  height="100"
-                  onmouseover="this.src='./img/houseicon.svg'"
-                  onmouseout="this.src='./img/houseiconcolor.svg'"
-                />
-              </li>
-              <li style="padding-top: 100px;">
-                <img src="./img/grassicon.svg" width="40" height="40" />
-              </li>
-              <li style="padding-top: 100px;">
-                <img src="./img/grassicon.svg" width="40" height="40" />
-              </li>
-              <li style="padding-top: 110px;">
-                <img src="./img/grass2icon.svg" width="30" height="30" />
-              </li>
-            </ul>
+         
+        <h1>자취해보자</h1>
+              </div>
+         
        <%
        String us_id = (String)session.getAttribute("us_id"); //로그인 유무 확인
        if(us_id==null){
@@ -133,47 +89,7 @@
      <%
        }
      %>
-          </div>
-        </div>
-        <script>
-          $(function () {
-            $("#main_nav ul li").hover(
-              function () {
-                $(this).addClass("main_navov");
-              },
-              function () {
-                $(this).removeClass("main_navov");
-              }
-            );
-          });
-        </script>
-        <script>
-          $(function () {
-            $("#sub").hide();
-            $("#main_nav").hover(function () {
-              $(this).parent().find("#sub").slideDown();
-              $(this)
-                .parent()
-                .hover(
-                  function () {},
-                  function () {
-                    $(this).parent().find("#sub").slideUp(900);
-                  }
-                );
-            });
-          });
-        </script>
-        <script>
-          $(document).ready(function () {
-            $(".slider").bxSlider({
-              mode: "horizontal",
-              auto: true,
-              speed: 600,
-              pause: 4000,
-            });
-          });
-        </script>
-        <div id="main_nav">
+          <div id="main_nav">
           <ul>
             <li>
               <a href="Index.jsp"><span>홈</span></a>
@@ -193,7 +109,10 @@
             </li>
           </ul>
         </div>
-        <div id="sub">
+        
+        </div>
+
+<div id="sub">
           <div id="sub_menu">
             <div class="nav_container_div">
               <nav role="navigation" class="primary-navigation">
@@ -231,8 +150,8 @@
             </div>
           </div>
         </div>
+        
       </header>
-
 
 
 
