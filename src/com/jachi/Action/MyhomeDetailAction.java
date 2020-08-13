@@ -20,7 +20,7 @@ import com.jachi.svc.MyhomeDetailService;
 		
 		 
 		 HttpSession session = request.getSession(false);
-		String us_id = (String)session.getAttribute("us_id");
+		String us_id = request.getParameter("us_id");
 		int board_num=Integer.parseInt(request.getParameter("board_num"));
 	
 		MyhomeDetailService myhomeDetailService = new MyhomeDetailService();

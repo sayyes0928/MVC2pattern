@@ -30,7 +30,7 @@ select us_pw from userinfo where us_id =#{us_id};
 </select>
 
 <select id="us_id_select" parameterType="String" resultType="String">
-select us_pw from userinfo where us_id=#{us_id};
+select count(*) from userinfo where us_id=#{us_id};
 </select>
 
 <select id="us_Nickname_select" parameterType="String" resultType="String">

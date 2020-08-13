@@ -33,10 +33,6 @@ import com.jachi.Action.MypageOrderListViewAction;
 import com.jachi.Action.PLSelectAction;
 import com.jachi.Action.ProductOrderAction;
 import com.jachi.Action.ProductPostViewAction;
-<<<<<<< HEAD
-=======
-
->>>>>>> refs/remotes/1231231244/master
 import com.jachi.Action.TipSelectAction;
 import com.jachi.Action.TipwriteAction;
 import com.jachi.Action.TokenGetAccessAction;
@@ -84,13 +80,9 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			forward=new ActionForward();
 			forward.setPath("/join.jsp");
 		}
-<<<<<<< HEAD
-
-=======
->>>>>>> refs/remotes/1231231244/master
 		else if(command.equals("/join_Insert.bo")){
 			action  = new JoinInsertUserInfoAction();
-			try {
+			try { 
 				forward =action.execute(request, response );
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -115,7 +107,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		else if(command.equals("/callbackNaver.bo")){
 			action  = new CallbackNaver();
 			try {
-				ActionForward forward44=action.execute(request, response );
+				forward=action.execute(request, response );
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

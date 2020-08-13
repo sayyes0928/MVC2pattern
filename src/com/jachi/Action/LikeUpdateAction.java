@@ -32,12 +32,12 @@ public class LikeUpdateAction implements Action{
 		System.out.println("클릭1"+result);
 		if(result == 0){ // 추천하지 않았다면 추천 추가
 			likePostinCheckService.recUpdate(m);
-			String heart = "heart";
+			String heart = "1";
 			out.println(heart);
 			out.close();
 		}else{ // 추천을 하였다면 추천 삭제
 			likePostinCheckService.recDelete(m);
-			String heart = "heart";
+			String heart = "0";
 			out.println(heart);
 			out.close();
 		}
