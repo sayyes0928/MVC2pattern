@@ -23,6 +23,9 @@ public class JoinInsertUserInfoAction implements Action {
 		  String Month = request.getParameter("month");
 		  String Day = request.getParameter("day");
 		  String us_birth = Year + "-" + Month + "-" + Day;
+		  if(Year == null) {
+			  us_birth=null;
+		  }
 		  String Phone1 = request.getParameter("phon1");
 		  String Phone2 = request.getParameter("phon2");
 		  String Phone3 = request.getParameter("phon3");
@@ -30,7 +33,10 @@ public class JoinInsertUserInfoAction implements Action {
 		  String us_telagr = request.getParameter("sms_agree");
 		  String Email1 = request.getParameter("email1");
 		  String Email2 = request.getParameter("email2");
-		  String us_mail = Email1 + "@" + Email2;
+		  String us_mail = request.getParameter("us_mail");
+		  if(us_mail == null) {
+		  us_mail = Email1 + "@" + Email2;
+		  }
 		  String us_mailagr = request.getParameter("email_agree");
 		  String Postcode = request.getParameter("postcode");
 		  String Addr1 = request.getParameter("addr1");
@@ -44,7 +50,7 @@ public class JoinInsertUserInfoAction implements Action {
 		  userinfoDTO.setUs_pw(us_pw);
 		  userinfoDTO.setUs_name(us_name);
 		  userinfoDTO.setUs_nkname(us_nkname);
-		  userinfoDTO.setUs_birth("1991-09-28");
+		  userinfoDTO.setUs_birth(us_birth);
 		  userinfoDTO.setUs_tel(us_tel);
 		  userinfoDTO.setUs_telagr(us_telagr);
 		  userinfoDTO.setUs_mail(us_mail);

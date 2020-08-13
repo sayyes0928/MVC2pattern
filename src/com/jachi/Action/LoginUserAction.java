@@ -43,10 +43,15 @@ public class LoginUserAction implements Action{
 
 			    
 			  }else if(getUserpw.equals(us_pw)){
-				  
+				String backPage = request.getParameter("backPage");
 				session.setAttribute("us_id", us_id);
-				forward = new ActionForward();
-			   	forward.setPath("Index.bo");
+			   	
+				  response.setContentType("text/html;charset=UTF-8");
+					PrintWriter out=response.getWriter();
+					out.println("<html><body><script>");
+					out.println("location.href='"+backPage+"'");
+					out.println("</script></body></html>");
+					out.flush();
 	
 			  }else if(!getUserpw.equals(us_pw)){
 	
@@ -62,7 +67,7 @@ public class LoginUserAction implements Action{
 
 			  }
 	   	
-   		return forward;
+   		return null;
 	}
    
 }
