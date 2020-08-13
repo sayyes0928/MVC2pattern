@@ -1,10 +1,18 @@
+<%@page import="com.jachi.DTO.PageInfo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
 <%@ page import="com.jachi.DTO.TipDTO"%>
 <%
-  ArrayList<TipDTO> tip_article = (ArrayList<TipDTO>)request.getAttribute("tiplist");
- 
+  ArrayList<TipDTO> tip_article = (ArrayList<TipDTO>)request.getAttribute("tiparticle");
+  PageInfo page_article = (PageInfo)request.getAttribute("pageinfo");
+  
+  int ListCount = page_article.getListCount();
+  int NowPage = page_article.getPage();
+  int MaxPage = page_article.getMaxPage();
+  int StartPage = page_article.getStartPage();
+  int EndPage = page_article.getEndPage();
+  
 %>
 <!DOCTYPE html>
 <html>
@@ -126,9 +134,11 @@
 					<input id="tipBT_write" type="button" value="글쓰기"
 						onclick="location='Tip_write.jsp'">
 				</div>
-				<div id="tip_list">
-                  <% if(tip_article.size() != 0){
-                      for(int i=0; i<tip_article.size(); i++){ %>
+				
+				<div id="tip_list">				
+				  <% if(tip_article.size() != 0){
+					  
+                      for(int i=0; i<tip_article.size(); i++){ %>                
 					<div class="tip_card">
 						<button type="button">
 							<img src="./img/myhome/icons8-bookmark-50-2.png">
@@ -146,13 +156,31 @@
                         }
                       }else{
                     %>
+                    <%=tip_article.size() +","+ tip_article %>
                     <span>등록된 글이 없습니다.</span>
                     <%
                       }
                     %>
 				</div>
-				<div>
-		
+				<div id="page_button">
+		           <%if(NowPage <= 1){ %>
+		             [이전]&nbsp;
+		           <%}else{ %>
+		            <a href="tiplist.bo?page=<%= NowPage-1%>">[이전]</a>&nbsp;
+		           <%} %>
+		           
+		           <%for(int i=StartPage; i<=EndPage; i++){ 
+		               if(i == NowPage){ %>
+		                 [<%=i %>]
+		               <%}else{ %>
+		                   <a href="tiplist.bo?page=<%= i%>">[<%=i %>]</a>&nbsp;
+		               <%} %>
+		           <%} %>
+		           <%if(NowPage >= MaxPage){ %>
+		           [다음]
+		           <%}else{ %>
+		           <a href="tiplist.bo?page=<%= NowPage+1%>">[다음]</a>
+		           <%} %>
 				</div>
 
 			</div>

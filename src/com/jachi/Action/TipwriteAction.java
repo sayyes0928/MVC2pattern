@@ -54,7 +54,7 @@ public class TipwriteAction implements Action {
 		else{
 			forward = new ActionForward();
 			forward.setRedirect(false);
-			forward.setPath("tipselect.bo");
+			forward.setPath("/tiplist.bo");
 		}
 
 		return forward;

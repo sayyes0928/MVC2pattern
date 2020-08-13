@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="tipselect.bo" method="post" name="">
+<form action="tiplist.bo" method="post" name="">
 <input type="submit" value="gogo"/>
 </body>
 </html>
