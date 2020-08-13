@@ -34,7 +34,13 @@ String us_id = (String) session.getAttribute("US_ID");
 	
 
 <script>
-
+	
+	$(document).ready(function(){
+		$('#add_bt').hide();
+		$('#cancel_bt').hide();
+	});
+	
+	
 	function getThumbnailPrivew(html, $target) {
 		if (html.files && html.files[0]) {
 			var reader = new FileReader();
@@ -48,22 +54,25 @@ String us_id = (String) session.getAttribute("US_ID");
 		}
 		
 		if(reader!=null){
-			$('#add_bt').css('visibility','visible');
+			$('#add_bt').show();
 			$('#add_bt').on('click',function(){
 				$('.container').css('display','block');
-					$('#add_bt').css('visibility','hidden');
-					$('#cancel_bt').css('opacity',1);
-					
+					$('#add_bt').hide();
+					$('#cancel_bt').show();
 				});
 			$('#cancel_bt').on('click',function(){	
+				$('#bb').val("");
+				$('#aa').val("");
+				$('.imagePreview').css('background-image',"");
 				$('.container').css('display','none');
-				$('#add_bt').css('opacity',1);
-				$('#cancel_bt').css('opacity',0);
-		
+				$('#add_bt').show();
+				$('#cancel_bt').hide();	
+			    $('#gg').remove(); 
+			    $('#gg').remove();
+           	    $('.imgAdd').show();
 			});
-			};
+			}
 	
-		
 	}
 	
 	
@@ -94,16 +103,20 @@ $(function(){
       
 		var tag = $(this).val().trim(),
 		length = tag.length;
-
+		console.log($('.tags').length);
 		if((tag.charAt(length - 1) == ',') && (tag != ","))
 		{
 			tag = tag.substring(0, length - 1);
 
-			if(!existingTag(tag))
+			if(!existingTag(tag)&&$('.tags').length!=5)
 			{
+				
 				$('<li class="tags" ><span name="tagtest">' + tag + '</span><i class="fa fa-times" ></i></i></li>').insertBefore($(".tags-new"));
 				$(this).val("");	
 				
+			}else if($('.tags').length==5){
+				alert("최대 입력 가능한 태그는 5개입니다!");
+				$('#tagtext').val("");
 			}
 			else
 			{
@@ -141,15 +154,37 @@ $(function(){
      
             $(document).ready(function(){ 
             	$(".imgAdd").on("click",function () {
-            		var aa = new FileReader();
             		
-            			$(this)
-                	    .closest(".row")
-                	    .find(".imgAdd")
-                	    .before(
-                	      '<div class="col-sm-2 imgUp" id="aa"><div class="imagePreview"></div><label class="btn btn-primary">사진추가<input type="file" class="uploadFile img" value="Upload Photo" style="width:0px;height:0px;overflow:hidden;"></label><i class="fa fa-times del"></i></div>'
-                	    );
-
+            		if(document.getElementById("bb").files.length==0&&$('.del').length==0){
+            			alert("이미지를 먼저 추가해주세욧!!");
+            		
+            		}else{         	
+            			
+            			if($('.del').length==0&&document.getElementById("bb").files.length!=0){
+            				$(this)
+                    	    .closest(".row")
+                    	    .find(".imgAdd")
+                    	    .before(
+                    	      '<div class="col-sm-2 imgUp" id="gg"><div class="imagePreview"></div><label class="btn btn-primary">사진추가<input type="file" id="aa" class="uploadFile img" value="Upload Photo" style="width:0px;height:0px;overflow:hidden;"></label><i class="fa fa-times del"></i></div>'
+                    	    );
+            				
+            			}else if($('.del').length==1&&document.getElementById("bb").files.length!=0&&document.getElementById("aa").files.length==0){
+            					alert("이미지를 먼저 추가해주세욧!!");           					
+            				}else{
+            					$(this)
+                        	    .closest(".row")
+                        	    .find(".imgAdd")
+                        	    .before(
+                        	      '<div class="col-sm-2 imgUp" id="gg"><div class="imagePreview"></div><label class="btn btn-primary">사진추가<input type="file" id="aa" class="uploadFile img" value="Upload Photo" style="width:0px;height:0px;overflow:hidden;"></label><i class="fa fa-times del"></i></div>'
+                        	    );
+            				}
+            		}
+            			
+            		
+            		
+            	
+            			
+					
             		if($('.del').length==2){
             			$('.imgAdd').hide();
             			
@@ -216,7 +251,7 @@ $(function(){
 
 				<div class="form__group field">
 					<input type="input" class="form__field" placeholder="제목을 입력해주세요"
-						name="post_title" id='name' required /> <label for="name"
+						name="post_title" id='name' required maxlength="45"/> <label for="name"
 						class="form__label">제목을 입력해주세요 :D</label>
 				</div>
 				<input type="hidden" value="<%=us_id%>" name="post_nickname">
@@ -224,7 +259,7 @@ $(function(){
 
 				<div class="form__group2 field2">
 					<textarea class="form__field2" id="BT_writepost" autocomplete="off"
-						placeholder="내용을 입력해주세요" name="post_posting"></textarea>
+						placeholder="내용을 입력해주세요" name="post_posting" maxlength="150"></textarea>
 					<label for="name" class="form__label2">내용을 입력해주세요 :D</label>
 				</div>
 			</div>
@@ -250,7 +285,7 @@ $(function(){
 					<p>내 맘대로 태그</p>
 					<ul class="tags-input">
 						<li class="tags">자취해보자<i class="fa fa-times"></i></li>
-						<li class="tags-new"><input type="text"></li>
+						<li class="tags-new"><input type="text" id="tagtext" maxlength="6"></li>
 					</ul>
 				</div>
 			</div>

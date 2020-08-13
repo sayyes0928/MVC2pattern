@@ -249,8 +249,10 @@ body{
   box-shadow: none;
 }
 
+
+
 #add_bt{
-	visibility: hidden;
+	
     padding: .5em .75em;
     color: white;
     font-family:"jua";
@@ -266,7 +268,6 @@ body{
 	
 }
 #cancel_bt{
-	opacity:0;
     padding: .5em .75em;
     color: white;
     font-family:"jua";
@@ -333,7 +334,8 @@ p
 }
 
 .tags
-{
+{	
+
   	background:#1F50B5;
   	padding:5px 20px 5px 8px;
   	border-radius:2px;
