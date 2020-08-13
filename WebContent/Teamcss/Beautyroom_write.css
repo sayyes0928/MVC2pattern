@@ -250,7 +250,7 @@ body{
 }
 
 #add_bt{
-	opacity:0;
+	visibility: hidden;
     padding: .5em .75em;
     color: white;
     font-family:"jua";

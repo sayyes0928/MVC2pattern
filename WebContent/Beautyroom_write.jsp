@@ -33,6 +33,7 @@ String us_id = (String) session.getAttribute("US_ID");
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 <script>
+
 	function getThumbnailPrivew(html, $target) {
 		if (html.files && html.files[0]) {
 			var reader = new FileReader();
@@ -45,22 +46,22 @@ String us_id = (String) session.getAttribute("US_ID");
 			reader.readAsDataURL(html.files[0]);
 		}
 		
-		
 		if(reader!=null){
-			$('#add_bt').css('opacity',1);
+			$('#add_bt').css('visibility','visible');
 			$('#add_bt').on('click',function(){
 				$('.container').css('display','block');
-					$('#add_bt').css('opacity',0);
+					$('#add_bt').css('visibility','hidden');
 					$('#cancel_bt').css('opacity',1);
 					
 				});
-			$('#cancel_bt').on('click',function(){
+			$('#cancel_bt').on('click',function(){	
 				$('.container').css('display','none');
 				$('#add_bt').css('opacity',1);
 				$('#cancel_bt').css('opacity',0);
-				
+		
 			});
 			};
+	
 		
 	}
 	
@@ -183,6 +184,9 @@ $(function(){
             	    }
             	  });
             	});
+            	
+            	
+            	
 
             
 </script>
@@ -231,7 +235,7 @@ $(function(){
     <div class="col-sm-2 imgUp">
       <div class="imagePreview"></div>
       <label class="btn btn-primary">
-        사진추가<input type="file" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"/>
+        사진추가<input type="file" id="bb" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"/>
       </label>
     </div>
     <i class="fa fa-plus imgAdd"></i>
