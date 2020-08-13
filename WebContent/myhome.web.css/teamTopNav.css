@@ -24,20 +24,24 @@ body {
 }
 
 header {
-  padding-top: 30px;
-  position: sticky;
-  top: 0;
-  z-index: 9999;
-  height: 180px;
-
-  background-color: white;
+	width:1500px;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    height: 180px;
+    margin: 0 auto;
+    background-color: white;
 }
 
 #h_wrap {
-  width: 1600px;
-  height: 100px;
-  margin: 0 auto;
-  background-color: white;
+    width: 1080px;
+    padding-top: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    height: 170px;
+    margin: 0 auto;
+    background-color: white;
 }
 
 /* #h_wrap header {
@@ -45,10 +49,12 @@ header {
 } */
 
 #main_nav {
-  clear: both;
-  height: 50px;
- /* border-top: 1px solid; */
- /*border-bottom: 1px solid; */
+clear: both;
+    height: 50px;
+    top: 110px;
+    /* border-top: 1px solid; */
+    /* border-bottom: 1px solid; */
+    position: absolute;
 }
 #main_nav ul {
   width: 1400px;
@@ -65,19 +71,22 @@ header {
   margin: 0 auto;
   padding-top: 15px;
   padding-bottom: 15px;
-  padding-left: 130px;
+  padding-left: 345px;
 }
 #sub {
+	
 	clear:both;
   z-index: 1;
   text-decoration: none;
   color: black;
-  /* top: 130px; */
+  position:absolute;
+    top: 160px; 
+   
 }
 
 #sub_menu .s_menu {
   width: 150px;
-  
+
   /*float: left;*/
 }
 
@@ -90,9 +99,10 @@ header {
 }
 
 .h_div {
-  width: 900px;
-  height: 100px;
- /* margin: 0 auto;*/
+width: 250px;
+    height: 100px;
+    /* margin: 0 auto; */
+    float: left;
 }
 
 .h_div ul {
@@ -102,6 +112,10 @@ header {
   color: black;
   font-size: 20px;
   font-weight: 800;
+}
+.h_div ul:first-child li:first-child {
+	background-color : gray;
+	    width: 800px;
 }
 
 .h_div ul li {
@@ -180,7 +194,7 @@ header {
 }
 .login_go {
   list-style: none;
-  float: left;
+  float: right;
 
   border: 2px solid black;
   border-radius: 10px;
@@ -223,7 +237,7 @@ header {
   margin: 0px 35px 0 -50px;
 }
 .nav_container li:nth-child(3) ul{
-	margin: 0px 91px 0 0px;
+	margin: 0px 98px 0 0px;
 }
 
 /* ===========================================

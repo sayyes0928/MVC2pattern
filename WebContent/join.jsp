@@ -9,62 +9,107 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script type="text/javascript" src="join.js"></script>
+<script src="./myhome.web.js/teamTopnav.js"></script>
 
 </head>
 <body>
 	<form name="myform" action="join_Insert.bo" method="post" autocomplete="off">
-		<header>
-			<div id="h_wrap">
-				<div class="h_div"></div>
-				<div class="h_div">
-					<h1>자취해보자</h1>
-				</div>
-				<div class="h_div">
-					
-					
-						<!-- <li>로그인</li>
-          <li>|</li>
-          <li>회원가입</li> -->
-					
-					<div class="serch">
-						<!-- <input type="text" name="" value=""> -->
-					</div>
-				</div>
-			</div>
-			<div id="nav_hr">
-				<nav role="navigation" class="primary-navigation">
-					<ul id="m_line">
-						<li><a href="#"><span>홈</span></a></li>
-						<li><a href="teampro_ver_01_1.html"><span>스토어</span></a>
-							<ul class="dropdown">
-								<li><a href="#">홈</a></li>
-								<li><a href="#">카테고리</a></li>
-								<li><a href="#">베스트</a></li>
-								<li><a href="#">특가</a></li>
-							</ul>
-						<li><a href="teampro_myhome.html"><span>마이홈</span></a>
-							<ul class="dropdown">
-								<li><a href="#">홈</a></li>
-								<li><a href="#">내방자랑</a></li>
-								<li><a href="#">내집자랑</a></li>
-								<li><a href="#">전문가집들이</a></li>
-							</ul></li>
-						<li><a href="#"><span>자취에대한 모든것</span></a>
-							<ul class="dropdown">
-								<li><a href="#">홈</a></li>
-								<li><a href="#">자취생TIP</a></li>
-								<li><a href="#">자취생QnA</a></li>
-								<li><a href="#">혼밥레시피</a></li>
-							</ul></li>
-						<li><a href="#"><span>고객센터</span></a>
-							<ul class="dropdown">
-								<li><a href="#">질문과답변</a></li>
-								<li><a href="#">공지사항</a></li>
-							</ul></li>
-					</ul>
-				</nav>
-			</div>
-		</header>
+	<header>
+        <div id="h_wrap">
+          <div class="h_div">
+         
+        <h1>자취해보자</h1>
+              </div>
+         
+       <%
+       String us_id = (String)session.getAttribute("us_id"); //로그인 유무 확인
+       if(us_id==null){
+     %>
+            <ul class="login_go">
+              <li><a href="LoginFormpage.bo">로그인</a></li>
+              <li><span> | </span></li>
+              <li><a href="join.bo">회원가입</a></li>
+            </ul>
+      
+
+     <%
+       }else{
+     %>
+            <ul class="login_go">
+              <li><span></span></li>
+              <li><a href="MypageOrderView.bo">마이페이지</a></li>
+              <li><span> | </span></li>
+              <li><a href="logoutActionPage.jsp">로그아웃</a></li> 
+            </ul>
+        
+       
+
+     <%
+       }
+     %>
+          <div id="main_nav">
+          <ul>
+            <li>
+              <a href="Index.jsp"><span>홈</span></a>
+            </li>
+            <li>
+              <a href="storeList.bo"><span>스토어</span></a>
+            </li>
+            <li>
+              <a href="beauty.bo"><span>커뮤니티</span></a>
+            </li>
+            <li>
+              <a href="#"><span>자취에대한 모든것</span></a>
+            </li>
+
+            <li>
+              <a href="#"><span>고객센터</span></a>
+            </li>
+          </ul>
+        </div>
+        
+        </div>
+
+<div id="sub">
+          <div id="sub_menu">
+            <div class="nav_container_div">
+              <nav role="navigation" class="primary-navigation">
+                <ul class="nav_container">
+                  <li>
+                  
+                    <ul class="m_line">
+                      <li><a href="#">카테고리</a></li>
+                      <li><a href="#">베스트</a></li>
+                      <li><a href="#">특가</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <ul class="m_line">
+                      <li><a href="#">내방자랑</a></li>
+                      <li><a href="#">내집자랑</a></li>
+                      <li><a href="#">전문가집들이</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <ul class="m_line">
+                      <li><a href="#">자취생TIP</a></li>
+                      <li><a href="#">자취생QnA</a></li>
+                      <li><a href="#">혼밥레시피</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <ul class="m_line">
+                      <li><a href="#">질문과답변</a></li>
+                      <li><a href="#">공지사항</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        
+      </header>
 		<section>
 			<table style="height:1250">
 				<tr>

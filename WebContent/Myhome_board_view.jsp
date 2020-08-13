@@ -19,6 +19,8 @@
 
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script type="text/javascript" src="./myhome.web.js/MyhomeDtail.js"></script>
+   <script src="./myhome.web.js/teamTopnav.js"></script>
+   
   <!--  <script type="text/javascript" src="./myhome.web.js/jquery-easing-1.3.pack.js"></script>--> 
   <!--  <script type="text/javascript" src="./myhome.web.js/jquery-easing-compatibility.1.2.pack.js"></script>--> 
   <!-- <script type="text/javascript" src="./myhome.web.js/coda-slider.1.1.1.pack.js"></script> --> 
@@ -34,18 +36,14 @@
 
 
 	<form id="contentPage">
-         <header>
+       <header>
         <div id="h_wrap">
           <div class="h_div">
-            <ul>
-             
-
-              <li><h1>자취해보자</h1></li>
-      
-            </ul>
-
-
-           <%
+         
+        <h1>자취해보자</h1>
+              </div>
+         
+       <%
        String us_id = (String)session.getAttribute("us_id"); //로그인 유무 확인
        if(us_id==null){
      %>
@@ -71,54 +69,36 @@
      <%
        }
      %>
-             </div>
-            </div>
-        <script>
-          $(function () {
-            $("#main_nav li").hover(
-              function () {
-                $(this).addClass("main_navov");
-              },
-              function () {
-                $(this).removeClass("main_navov");
-              }
-            );
-          });
-       $(function () {
-            $("#sub").hide();
-            $("#main_nav").hover(function () {
-              $(this).parent().find("#sub").slideDown();
-              $(this).parent().hover(
-                  function () {
-                    $(this).parent().find("#sub").slideUp(900);
-                  }
-                );
-            });
-          });
-        </script>
-        <div id="main_nav">
+          <div id="main_nav">
           <ul>
             <li>
               <a href="Index.jsp"><span>홈</span></a>
             </li>
-              <li><a href="storeList.bo"><span>스토어</span></a>
+            <li>
+              <a href="storeList.bo"><span>스토어</span></a>
             </li>
             <li>
-              <a href="beauty.bo"><span>마이홈</span></a>
+              <a href="beauty.bo"><span>커뮤니티</span></a>
+            </li>
             <li>
               <a href="#"><span>자취에대한 모든것</span></a>
             </li>
+
             <li>
               <a href="#"><span>고객센터</span></a>
             </li>
           </ul>
         </div>
-        <div id="sub">
+        
+        </div>
+
+<div id="sub">
           <div id="sub_menu">
             <div class="nav_container_div">
               <nav role="navigation" class="primary-navigation">
                 <ul class="nav_container">
                   <li>
+                  
                     <ul class="m_line">
                       <li><a href="#">카테고리</a></li>
                       <li><a href="#">베스트</a></li>
@@ -150,6 +130,7 @@
             </div>
           </div>
         </div>
+        
       </header>
        <%
     ArrayList<BeautyRoomDTO> article = (ArrayList<BeautyRoomDTO>)request.getAttribute("article");
