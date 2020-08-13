@@ -19,11 +19,10 @@ public class TipSelectAction implements Action{
 		List<TipDTO> tiplist = new ArrayList<TipDTO>();
 		TipSelectService tipselectservice = new TipSelectService();
 		tiplist = tipselectservice.getTipinfo();
-		
-		System.out.println(tiplist.get(0).getTip_post()); 
+		 
 		ActionForward forward = new ActionForward();
 		request.setAttribute("tiplist", tiplist);
-   		forward.setPath("/TipPage.jsp");
+   		forward.setPath("TipPage.jsp");
    		
 		return forward;
 	}

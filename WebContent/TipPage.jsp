@@ -18,7 +18,7 @@
 	<script src="./myhome.web.js/teamTopnav.js"></script>
 </head>
 <body>
-	<form id="contentPage">
+	<form id="contentPage" >
 		<header>
         <div id="h_wrap">
           <div class="h_div">
@@ -127,7 +127,8 @@
 						onclick="location='Tip_write.jsp'">
 				</div>
 				<div id="tip_list">
-                  <%for(int i=0; i<tip_article.size(); i++){ %>
+                  <% if(tip_article.size() != 0){
+                      for(int i=0; i<tip_article.size(); i++){ %>
 					<div class="tip_card">
 						<button type="button">
 							<img src="./img/myhome/icons8-bookmark-50-2.png">
@@ -142,11 +143,16 @@
 						</ul>
 					</div>
                     <%
-                       }
+                        }
+                      }else{
+                    %>
+                    <span>등록된 글이 없습니다.</span>
+                    <%
+                      }
                     %>
 				</div>
 				<div>
-				 
+		
 				</div>
 
 			</div>

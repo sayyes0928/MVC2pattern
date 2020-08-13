@@ -168,7 +168,7 @@ session.setAttribute("US_ID", "ljkim0829");
 
 		<section class="cards">
 			<%
-				if (userpost != null && listCount > 0) {
+				if (listCount > 0) {
 					for (int i = 0; i < userpost.size(); i++) {
 			%>
 
