@@ -142,7 +142,7 @@ $(function(){
 					 tagAll += tagList[i].innerHTML;
 			}
 				
-				 document.getElementById('myField').value = tagAll;
+				 document.getElementById('tagtext').value = tagAll;
 				 alert(tagAll);
 				 aaa.submit();
 				 
@@ -165,7 +165,7 @@ $(function(){
                     	    .closest(".row")
                     	    .find(".imgAdd")
                     	    .before(
-                    	      '<div class="col-sm-2 imgUp" id="gg"><div class="imagePreview"></div><label class="btn btn-primary">사진추가<input type="file" id="aa" class="uploadFile img" value="Upload Photo" style="width:0px;height:0px;overflow:hidden;"></label><i class="fa fa-times del"></i></div>'
+                    	      '<div class="col-sm-2 imgUp" id="gg"><div class="imagePreview"></div><label class="btn btn-primary">사진추가<input type="file" id="aa" name="post_pic3" class="uploadFile img" value="Upload Photo" style="width:0px;height:0px;overflow:hidden;"></label><i class="fa fa-times del"></i></div>'
                     	    );
             				
             			}else if($('.del').length==1&&document.getElementById("bb").files.length!=0&&document.getElementById("aa").files.length==0){
@@ -175,7 +175,7 @@ $(function(){
                         	    .closest(".row")
                         	    .find(".imgAdd")
                         	    .before(
-                        	      '<div class="col-sm-2 imgUp" id="gg"><div class="imagePreview"></div><label class="btn btn-primary">사진추가<input type="file" id="aa" class="uploadFile img" value="Upload Photo" style="width:0px;height:0px;overflow:hidden;"></label><i class="fa fa-times del"></i></div>'
+                        	      '<div class="col-sm-2 imgUp" id="gg"><div class="imagePreview"></div><label class="btn btn-primary">사진추가<input type="file" id="aa" name="post_pic4"class="uploadFile img" value="Upload Photo" style="width:0px;height:0px;overflow:hidden;"></label><i class="fa fa-times del"></i></div>'
                         	    );
             				}
             		}
@@ -271,7 +271,7 @@ $(function(){
     <div class="col-sm-2 imgUp">
       <div class="imagePreview"></div>
       <label class="btn btn-primary">
-        사진추가<input type="file" id="bb" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"/>
+        사진추가<input type="file" id="bb" name="post_pic2" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"/>
       </label>
     </div>
     <i class="fa fa-plus imgAdd"></i>
@@ -285,13 +285,14 @@ $(function(){
 					<p>내 맘대로 태그</p>
 					<ul class="tags-input">
 						<li class="tags">자취해보자<i class="fa fa-times"></i></li>
-						<li class="tags-new"><input type="text" id="tagtext" maxlength="6"></li>
+						<li class="tags-new"><input type="text" name="tagtest2" id="tagtext" maxlength="6"></li>
 					</ul>
 				</div>
 			</div>
-
+			
 			<input type="button" value="등록완료" id="write_submit"
 				onclick="test(aaa)">
+				
 		</div>
 
 
