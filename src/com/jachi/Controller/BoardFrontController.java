@@ -79,6 +79,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		else if(command.equals("/join.bo")){
 			forward=new ActionForward();
 			forward.setPath("/join.jsp");
+
 		}
 		else if(command.equals("/join_Insert.bo")){
 			action  = new JoinInsertUserInfoAction();
