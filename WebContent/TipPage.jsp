@@ -105,7 +105,7 @@
                   </li>
                   <li>
                     <ul class="m_line">
-                      <li><a href="#">자취생TIP</a></li>
+                      <li><a href="tiplist.bo">자취생TIP</a></li>
                       <li><a href="#">자취생QnA</a></li>
                       <li><a href="#">혼밥레시피</a></li>
                     </ul>
@@ -129,8 +129,6 @@
 			<div id="s_wrap">
 				<div id="section_header">
 					<div id="page_title">집들이 Tip</div>
-					<div id="page_subtitle">집들이 Tip</div>
-					<hr>
 					<input id="tipBT_write" type="button" value="글쓰기"
 						onclick="location='Tip_write.jsp'">
 				</div>
