@@ -61,7 +61,7 @@ String us_id = (String) session.getAttribute("us_id");
 	        
 	       <div id="button_list">
 		    <input id="button_insert" type="submit" value="등록하기">
-		    <input id="button_cancel" type="button" value="등록취소" onclick="location.href='TipPage.jsp'">
+		    <input id="button_cancel" type="button" value="등록취소" onclick="location.href='tiplist.bo'">
 		   </div>
 		 </div>
 	
