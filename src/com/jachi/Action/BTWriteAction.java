@@ -37,7 +37,7 @@ public class BTWriteAction implements Action {
 		String orig_pro_subimg_name3 = "";
 
 		HttpSession session = request.getSession(false);
-		String us_id = (String) session.getAttribute("US_ID");
+		String us_id = (String) session.getAttribute("us_id");
 		ActionForward forward = null;
 		BeautyRoomDTO btr = null;
 		String realFolder = "";
@@ -66,17 +66,17 @@ public class BTWriteAction implements Action {
 			pro_subimg_name = (String) files.nextElement();
 			pro_subimg = multi.getFilesystemName(pro_subimg_name);
 			orig_pro_subimg_name = multi.getOriginalFileName(pro_subimg_name);
-			btr.setPost_pic2(pro_subimg);
+			btr.setPost_pic_2(pro_subimg);
 
 			pro_subimg_name2 = (String) files.nextElement();
 			pro_subimg2 = multi.getFilesystemName(pro_subimg_name2);
 			orig_pro_subimg_name2 = multi.getOriginalFileName(pro_subimg_name2);
-			btr.setPost_pic3(pro_subimg2);
+			btr.setPost_pic_3(pro_subimg2);
 
 			pro_subimg_name3 = (String) files.nextElement();
 			pro_subimg3 = multi.getFilesystemName(pro_subimg_name3);
 			orig_pro_subimg_name3 = multi.getOriginalFileName(pro_subimg_name3);
-			btr.setPost_pic4(pro_subimg3);
+			btr.setPost_pic_4(pro_subimg3);
 
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -84,13 +84,6 @@ public class BTWriteAction implements Action {
 
 		BTWriteService btws = new BTWriteService();
 		boolean isWriteSuccess = btws.registArticle(btr);
-
-		System.out.println(btr.getPost_nkname());
-		System.out.println(btr.getPost_posting());
-		System.out.println(btr.getPost_title());
-		System.out.println(btr.getPost_tag());
-		System.out.println(btr.getPost_pic());
-		System.out.println(btr.getPost_pic2());
 
 		if (!isWriteSuccess) {
 			response.setContentType("text/html;charset=UTF-8");

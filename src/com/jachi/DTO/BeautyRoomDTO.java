@@ -8,9 +8,27 @@ public class BeautyRoomDTO {
 	String post_pw;
 	String post_tag;
 	String post_pic;
-	String post_pic2;
-	String post_pic3;
-	String post_pic4;
+	public String getPost_pic_2() {
+		return post_pic_2;
+	}
+	public void setPost_pic_2(String post_pic_2) {
+		this.post_pic_2 = post_pic_2;
+	}
+	public String getPost_pic_3() {
+		return post_pic_3;
+	}
+	public void setPost_pic_3(String post_pic_3) {
+		this.post_pic_3 = post_pic_3;
+	}
+	public String getPost_pic_4() {
+		return post_pic_4;
+	}
+	public void setPost_pic_4(String post_pic_4) {
+		this.post_pic_4 = post_pic_4;
+	}
+	String post_pic_2;
+	String post_pic_3;
+	String post_pic_4;
 	public int getPost_num() {
 		return post_num;
 	}
@@ -53,24 +71,7 @@ public class BeautyRoomDTO {
 	public void setPost_pic(String post_pic) {
 		this.post_pic = post_pic;
 	}
-	public String getPost_pic2() {
-		return post_pic2;
-	}
-	public void setPost_pic2(String post_pic2) {
-		this.post_pic2 = post_pic2;
-	}
-	public String getPost_pic3() {
-		return post_pic3;
-	}
-	public void setPost_pic3(String post_pic3) {
-		this.post_pic3 = post_pic3;
-	}
-	public String getPost_pic4() {
-		return post_pic4;
-	}
-	public void setPost_pic4(String post_pic4) {
-		this.post_pic4 = post_pic4;
-	}
+	
 
 	
 	

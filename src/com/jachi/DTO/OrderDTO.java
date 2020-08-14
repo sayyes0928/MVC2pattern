@@ -43,6 +43,7 @@ public class OrderDTO {
 	public void setOr_count(int or_count) {
 		this.or_count = or_count;
 	}
+
 String or_id;
  String or_procode;
  String or_adr;

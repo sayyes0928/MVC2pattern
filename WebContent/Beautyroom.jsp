@@ -14,8 +14,6 @@
 	int startPage=pageInfo.getStartPage();
 	int endPage=pageInfo.getEndPage();
 
-session.setAttribute("US_ID", "ljkim0829");
-
 %>
 <!DOCTYPE html>
 <html>
@@ -32,12 +30,7 @@ session.setAttribute("US_ID", "ljkim0829");
 <script src="./myhome.web.js/teamTopnav.js"></script>
 </head>
 
-<script>
- function alertLogin(){
-	 alert('로그인이 필요합니다');
-	 location.href='LoginFormpage.bo'
- }
-</script>
+
 <body>
 	<form id="contentPage">
 		<header>
@@ -154,7 +147,7 @@ session.setAttribute("US_ID", "ljkim0829");
 				} else {
 			%>
 			<div id="wrtie_btsize">
-				<a href="beauty.bo"><input type="button" value="자랑하기" id="BT_Writebt" onclick="alertLogin()"></a>
+				<input type="button" value="자랑하기" id="BT_Writebt" onclick="alertLogin()">
 			</div>
 			<%
 				}
@@ -163,7 +156,12 @@ session.setAttribute("US_ID", "ljkim0829");
 			<div id="Beauty_subtitle">어서오세요, 천천히 둘러보고 가세요 :D</div>
 
 		</div>
-
+<script>
+ function alertLogin(){
+	 alert('로그인이 필요합니다');
+	 location.href="LoginFormpage.bo"
+ }
+</script>
 
 
 		<section class="cards">
