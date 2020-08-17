@@ -168,7 +168,7 @@
 					</ul>
 				</div>
 
-				<!-- 메인배경용 -->
+				<!-- 메인배경 -->
 				<div id="myhomeContentLeft_main_userContent_bgImage">
 					<div class="myhomeContentLeft_main_userContent">
 						<p>
