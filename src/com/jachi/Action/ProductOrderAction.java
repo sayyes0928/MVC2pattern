@@ -40,7 +40,7 @@ public class ProductOrderAction implements Action {
 		  List<Product_cartDTO> productinfoDTO= new ArrayList<Product_cartDTO>();
 		  productinfoDTO = productCartListViewService.getArticle(orderDTO);
 		
-		  System.out.println(productinfoDTO.get(0).getCart_us_id());
+
 		////////////////////////////////////////////////////////
 
 		  ProductPreOrderService productPreOrderService = new ProductPreOrderService();
