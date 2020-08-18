@@ -35,9 +35,8 @@ import com.jachi.Action.PLSelectAction;
 import com.jachi.Action.ProductCartInsertOrderAction;
 import com.jachi.Action.ProductOrderAction;
 import com.jachi.Action.ProductPostViewAction;
-
-
-
+import com.jachi.Action.QnaListAction;
+import com.jachi.Action.QnaSelectAction;
 import com.jachi.Action.TipSelectAction;
 import com.jachi.Action.TipwriteAction;
 import com.jachi.Action.TokenGetAccessAction;
@@ -335,6 +334,16 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			}
 		}
 		
+		else if(command.equals("/qnaList.bo")) {
+			action = new QnaListAction();
+			try {
+				forward=action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		
 		else if(command.equals("/tipwrite.bo")) {			 
 			action = new TipwriteAction();
 			try {
@@ -352,6 +361,16 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
+		
+		else if(command.equals("/qna.bo")) {			 
+			action = new QnaSelectAction();
+			try {
+				forward=action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
 		
 //		else if(command.equals("/tiplist.bo")) {			 
 //			action = new TipListAction();

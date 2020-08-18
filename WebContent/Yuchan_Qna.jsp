@@ -6,13 +6,23 @@
 
 
 
-<%String b = (String)session.getAttribute("us_id");%>
+<%
+ArrayList<QnABBS> userqna = (ArrayList<QnABBS>) request.getAttribute("qnaList");
+
+PageInfo pageInfo = (PageInfo)request.getAttribute("pageInfo");
+int listCount=pageInfo.getListCount();
+int nowPage=pageInfo.getPage();
+int maxPage=pageInfo.getMaxPage();
+int startPage=pageInfo.getStartPage();
+int endPage=pageInfo.getEndPage();
+%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="./myhome.web.css/teamTopNav.css" type="text/css">
+<link rel="stylesheet" href="./myhome.web.css/teamTopNav.css"
+	type="text/css">
 <link rel="stylesheet" href="./Teamcss/Yuchan_Qna.css" type="text/css">
 
 <script
@@ -23,7 +33,7 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></script>
 
 
-	
+
 </script>
 
 <script>
@@ -102,103 +112,93 @@ function expand() {
 
 
 <body>
-	<form name="go" action="NewFile.jsp" >
+	<form name="go" action="NewFile.jsp">
 		<header>
-        <div id="h_wrap">
-          <div class="h_div">
-         
-        <h1>자취해보자</h1>
-              </div>
-         
-       <%
+			<div id="h_wrap">
+				<div class="h_div">
+
+					<h1>자취해보자</h1>
+				</div>
+
+				<%
        String us_id = (String)session.getAttribute("us_id"); //로그인 유무 확인
        if(us_id==null){
      %>
-            <ul class="login_go">
-              <li><a href="LoginFormpage.bo">로그인</a></li>
-              <li><span> | </span></li>
-              <li><a href="join.bo">회원가입</a></li>
-            </ul>
-      
+				<ul class="login_go">
+					<li><a href="LoginFormpage.bo">로그인</a></li>
+					<li><span> | </span></li>
+					<li><a href="join.bo">회원가입</a></li>
+				</ul>
 
-     <%
+
+				<%
        }else{
      %>
-            <ul class="login_go">
-              <li><span></span></li>
-              <li><a href="MypageOrderView.bo">마이페이지</a></li>
-              <li><span> | </span></li>
-              <li><a href="logoutActionPage.jsp">로그아웃</a></li> 
-            </ul>
-        
-       
+				<ul class="login_go">
+					<li><span></span></li>
+					<li><a href="MypageOrderView.bo">마이페이지</a></li>
+					<li><span> | </span></li>
+					<li><a href="logoutActionPage.jsp">로그아웃</a></li>
+				</ul>
 
-     <%
+
+
+				<%
        }
      %>
-          <div id="main_nav">
-          <ul>
-            <li>
-              <a href="Index.jsp"><span>홈</span></a>
-            </li>
-            <li>
-              <a href="storeList.bo"><span>스토어</span></a>
-            </li>
-            <li>
-              <a href="beauty.bo"><span>커뮤니티</span></a>
-            </li>
-            <li>
-              <a href="#"><span>자취에대한 모든것</span></a>
-            </li>
+				<div id="main_nav">
+					<ul>
+						<li><a href="Index.jsp"><span>홈</span></a></li>
+						<li><a href="storeList.bo"><span>스토어</span></a></li>
+						<li><a href="beauty.bo"><span>커뮤니티</span></a></li>
+						<li><a href="#"><span>자취에대한 모든것</span></a></li>
 
-            <li>
-              <a href="#"><span>고객센터</span></a>
-            </li>
-          </ul>
-        </div>
-        
-        </div>
+						<li><a href="#"><span>고객센터</span></a></li>
+					</ul>
+				</div>
 
-<div id="sub">
-          <div id="sub_menu">
-            <div class="nav_container_div">
-              <nav role="navigation" class="primary-navigation">
-                <ul class="nav_container">
-                  <li>
-                  
-                    <ul class="m_line">
-                      <li><a href="#">카테고리</a></li>
-                      <li><a href="#">베스트</a></li>
-                      <li><a href="#">특가</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <ul class="m_line">
-                      <li><a href="#">내방자랑</a></li>
-                      <li><a href="#">내집자랑</a></li>
-                      <li><a href="#">전문가집들이</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <ul class="m_line">
-                      <li><a href="#">자취생TIP</a></li>
-                      <li><a href="#">자취생QnA</a></li>
-                      <li><a href="#">혼밥레시피</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <ul class="m_line">
-                      <li><a href="#">질문과답변</a></li>
-                      <li><a href="#">공지사항</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </div>
-        
-      </header>
+			</div>
+
+			<div id="sub">
+				<div id="sub_menu">
+					<div class="nav_container_div">
+						<nav role="navigation" class="primary-navigation">
+							<ul class="nav_container">
+								<li>
+
+									<ul class="m_line">
+										<li><a href="#">카테고리</a></li>
+										<li><a href="#">베스트</a></li>
+										<li><a href="#">특가</a></li>
+									</ul>
+								</li>
+								<li>
+									<ul class="m_line">
+										<li><a href="#">내방자랑</a></li>
+										<li><a href="#">내집자랑</a></li>
+										<li><a href="#">전문가집들이</a></li>
+									</ul>
+								</li>
+								<li>
+									<ul class="m_line">
+										<li><a href="#">자취생TIP</a></li>
+										<li><a href="#">자취생QnA</a></li>
+										<li><a href="#">혼밥레시피</a></li>
+									</ul>
+								</li>
+								<li>
+									<ul class="m_line">
+										<li><a href="#">질문과답변</a></li>
+										<li><a href="#">공지사항</a></li>
+									</ul>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+
+		</header>
 
 
 		<section>
@@ -216,23 +216,34 @@ function expand() {
 						</div>
 					</div>
 				</div>
-				
+
 				<div id="content">
-				<input type="text" name="input" class="input" id="search-input">
-  <button type="reset" class="search" id="search-btn"></button>
-			</div>
-			
+					<input type="text" name="input" class="input" id="search-input">
+					<button type="reset" class="search" id="search-btn"></button>
+				</div>
+
 			</div>
 			<div id="s_fullsize">
+
+
+				<%if(us_id!=null){%>
 				<div id="write_btsize">
 					<input type="button" value="질문하기" id="qna_write_bt">
-					</div>
+				</div>
+				<%}else{ %>
+				<div id="wrtie_btsize">
+					<input type="button" value="질문하기" id="qna_write_bt"
+						onclick="alertLogin()">
+				</div>
 
-					<%if(b!=null){%>
-					<a id="bta" href="qnainsert.jsp"><input type=button value="글쓰기"
-						class="button2"></a>
-					<%}else{}%>
-	
+				<%}%>
+				<script>
+ function alertLogin(){
+	 alert('로그인이 필요합니다');
+	 location.href="LoginFormpage.bo"
+ }
+</script>
+
 				<div id="qna_body">
 					<!-- 
 
@@ -241,41 +252,86 @@ List<Qna_dto> sl2 = sqlsession.selectList("pr_select");
 sqlsession.close();
 for(int i=0; i<sl2.size(); i++){
 -->
+
+					<%
+				
+				if(listCount > 0){
+					for(int i = 0; i < userqna.size(); i++){
+				%>
 					<hr id="post_hr">
-					
+
 					<table id="tb">
-<!-- 						<tr> -->
-							<td colspan="5"><a id="title_tag" href="readpost.jsp?all_post=  ">
-									<span id="qna_posttitle">제목</span>
-							</a></td>
-							<td id="qna_table_ctr">
-							<span><a>수정</a>  |  <a>삭제</a></span>
-							</td>
+						<!-- 						<tr> -->
+						<td colspan="5"><a id="title_tag"
+							href="readpost.jsp?all_post=  "> <span id="qna_posttitle"><%=userqna.get(i).getQna_title() %></span>
+						</a></td>
+						<%
+					
+							%><td id="qna_table_ctr"><span><a>수정</a> | <a>삭제</a></span></td><%
+					
+						%>
+						<% %>
 						</tr>
-						<tr>
+						<tr><%=us_id %>
 							<td colspan="5" id="post">
-								<!-- 내용들어갈거임 -->내용
+								<!-- 내용들어갈거임 --><%=userqna.get(i).getQna_post()%>
 							</td>
 
 						</tr>
 						<tr id="ps_bt">
 							<td><img src="The_1975.jpg" class="img-circle"><span>
-									<!-- 게시물번호 -->게시물번호
-							</span> <span>
-									<!-- 닉네임 -->닉네임
-							</span>
-							<!-- 시간 -->시간
-								<span></span><span></span></td>
+									<!-- 게시물번호 --><%=userqna.get(i).getQna_num() %>
+							</span> <span> <!-- 닉네임 --><%=userqna.get(i).getQna_nickname() %>
+							</span> <!-- 시간 --><%=userqna.get(i).getQna_time() %> <span></span><span></span></td>
 
 						</tr>
 					</table>
 					<hr>
+					<%	
+					}
+					%>
+					<% 
+				} else {
+				%>
+					<span>등록된글이 없습니다</span>
+					<%
+				}
+					%>
 
 				</div>
 
 
 			</div>
 		</section>
+		
+		<section id="pageList">
+				<%if(nowPage<=1){ %>
+			[이전]&nbsp;
+			<%}else{ %>
+			<a href="beauty.bo?page=<%=nowPage-1%>">[이전]</a>&nbsp;
+			<%} %>
+			
+			<%for(int a=startPage;a<=endPage;a++){
+				if(a==nowPage){%>
+				[<%=a %>]
+			<%}else{ %>
+			<a href="beauty.bo?page=<%=a %>">[<%=a %>]</a>&nbsp;
+			<%
+			}
+			%>
+			<%
+			}
+			%>
+			
+			
+			<%if(nowPage>=maxPage){ %>
+			[다음]
+			<%}else{ %>
+			<a href="beauty.bo?page=<%=nowPage+1 %>">[다음]</a>	
+			<%} %>
+		
+			
+			</section>
 	</form>
 </body>
 </html>

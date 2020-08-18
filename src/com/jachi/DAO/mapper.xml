@@ -125,10 +125,20 @@ insert into productinfo values(#{pro_code},#{pro_name},#{pro_price},#{pro_mainim
 	select count(*) from posting;
 </select>
 
+<select id="qnaselect_list" resultType="Integer">
+	select count(*) from qna;
+</select>
+
 <select id="btselect_listall" parameterType="Integer" resultType="com.jachi.DTO.BeautyRoomDTO">
 	select post_num,post_title,post_posting,post_pic,us_nkname as 'post_nkname' from posting
 	 join userinfo on userinfo.us_id=posting.post_nickname order by post_num desc
 	limit #{starrow}, 12;
+</select>
+
+<select id="qnaselect_listall" parameterType="Integer" resultType="com.jachi.DTO.QnABBS">
+	select qna_num,qna_pw,qna_title,qna_time,qna_post,qna_img,us_nkname as 'qna_nickname' from qna
+	join userinfo on userinfo.us_id=qna.qna_nickname order by qna_num desc
+	limit #{startrow}, 8;
 </select>
 
 <select id="select_tipcount" resultType="Integer">
@@ -138,6 +148,10 @@ insert into productinfo values(#{pro_code},#{pro_name},#{pro_price},#{pro_mainim
 <select id="select_TipListAll" parameterType="Integer" resultType="com.jachi.DTO.TipDTO">
     select us_nkname as 'tip_nickname', tip_num, tip_post, tip_title, tip_coverimg from tip join userinfo
     on us_id = tip_nickname order by tip_num desc limit #{Startrow}, 12;
+</select>
+
+<select id="select_qnaall" parameterType="String" resultType="com.jachi.DTO.QnABBS">
+	select qna_time,qna_pw,qna_time,qna_num,qna_title,qna_post,qna_img,us_nkname as 'qna_nickname' from qna join userinfo on userinfo.us_id=qna.qna_nickname order by qna_num desc;
 </select>
 
 </mapper>
