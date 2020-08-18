@@ -245,13 +245,7 @@ function expand() {
 </script>
 
 				<div id="qna_body">
-					<!-- 
-
-SqlSession sqlsession = sqlfactory.openSession();
-List<Qna_dto> sl2 = sqlsession.selectList("pr_select");
-sqlsession.close();
-for(int i=0; i<sl2.size(); i++){
--->
+				
 
 					<%
 				
