@@ -36,7 +36,7 @@ import com.jachi.Action.ProductCartInsertOrderAction;
 import com.jachi.Action.ProductOrderAction;
 import com.jachi.Action.ProductPostViewAction;
 
-import com.jachi.Action.TipListAction;
+
 
 import com.jachi.Action.TipSelectAction;
 import com.jachi.Action.TipwriteAction;
