@@ -15,7 +15,7 @@
   String pro_price = request.getParameter("Pro_price");
   String pro_group[] = {pro_all, pro_count, pro_price};
   
-if(list.get(0) == null){
+if(list== null){
   ArrayList<String[]> cartlist = new ArrayList<String[]>();
   cartlist.add(pro_group);
   session.setAttribute("cart", cartlist);
@@ -28,9 +28,7 @@ if(list.get(0) == null){
 %>
 
 <%ArrayList<String[]> Cart = (ArrayList<String[]>)session.getAttribute("cart"); %>
-<% 
-   out.print(Cart.get(0)[0]);
-%> 
+
   
 </body>
 </html>

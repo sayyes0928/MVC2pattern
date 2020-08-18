@@ -68,22 +68,14 @@ function buy(){
               'Pro_price': pro_price
             },
 
-            success: function (req) {
-              alert(req);
+            success: function () {
+           
             }
 
           });
  
 
 }
-<%ArrayList<String[]> Cart = (ArrayList<String[]>)session.getAttribute("cart"); 
-String a = "00000";
-if(Cart !=null){
-a= Cart.get(0)[0].toString();
-}
-
-
-%>
 </script>
 </head>
 <body>
@@ -92,7 +84,7 @@ a= Cart.get(0)[0].toString();
         <div id="h_wrap">
           <div class="h_div">
 
-        <h1><%= a%></h1>
+        <h1>자취해보자</h1>
               </div>
          
        <%
@@ -333,11 +325,8 @@ a= Cart.get(0)[0].toString();
 						<hr>
 						<div class="s_button">
 							<ul id="product_info">
-<<<<<<< HEAD
-								<li><button class="m_button01" type="button" onclick="location.href='ProductOrderCart.bo'">장바구니</button></li>
-=======
+
 								<li><button class="m_button01" type="button" onclick="buy()">장바구니</button></li>
->>>>>>> refs/remotes/1231231244/master
 								<li><button class="m_button02" type="button" onclick="OrderSubmit(contentPage)">바로구매</button></li>
 							</ul>
 						</div>
