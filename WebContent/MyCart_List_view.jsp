@@ -29,7 +29,7 @@
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript" src="./myhome.web.js/MyhomeDtail.js"></script>
+<script type="text/javascript" src="./myhome.web.js/Cart_List.js"></script>
 <script src="./myhome.web.js/teamTopnav.js"></script>
 
 <!--  <script type="text/javascript" src="./myhome.web.js/jquery-easing-1.3.pack.js"></script>-->
@@ -170,8 +170,12 @@
                                    if(Cart != null){
                                  for(int i = 0; i < Cart.size(); i++){
                                 	  
-                                	  int count = Integer.parseInt(Cart.get(i)[1].toString());
-                                	  int price = Integer.parseInt(Cart.get(i)[2]);
+                                	  String countX = Cart.get(i)[1];
+                                	  String priceX = Cart.get(i)[2];
+                                	 int count = Integer.parseInt(countX);
+                                	 int price = Integer.parseInt(priceX);
+                                	 int priceAll = (count*price);
+     
                                  %>
 													<li class="commerce-cart__delivery-group__product-item">
 													<article class="carted-product">
@@ -192,7 +196,7 @@
 																</div>
 																<div class="product-small-item__content">
 																	<h1 class="product-small-item__title"><%= Cart.get(i)[0]%></h1>
-																	<p class="product-small-item__caption"><h2>수량 <%= count%><h2></h2></p>
+																	<p class="product-small-item__caption" id="count_one"><%= count%></p>
 																</div></a>
 															<button class="carted-product__delete" type="button"
 																aria-label="삭제">
@@ -204,16 +208,16 @@
 															<div class="carted-product__footer">
 																<span class="carted-product__footer__left"></span>
 																<span class="carted-product__subtotal">
-																<span class="carted-product__subtotal__number"><%= count*price%></span>원</span>
+																<span class="carted-product__subtotal__number" id="price_one"><%= priceAll%></span>원</span>
 															</div>
 														</article></li>
 														<%
-                                 }  
-                                  }
+                                 }                                    }
                                  else{
                                 	   out.print("장바구니가 비었습니다.");
                                    }
 														%>
+
 												</ul>
 												<footer class="commerce-cart__delivery-group__footer">
 													<p class="commerce-cart__delivery-group__total">배송비 착불
@@ -227,7 +231,7 @@
 							<div class="commerce-cart__summary__row">
 								<dt></dt>
 								<dd>
-									<span class="number">938,000</span>원
+									<span class="number" id="price_All1"></span>원
 								</dd>
 							</div>
 							<div class="commerce-cart__summary__row">
@@ -264,7 +268,7 @@
 								<div class="commerce-cart__summary__row">
 									<dt>총 상품금액</dt>
 									<dd>
-										<span class="number">938,000</span>원
+										<span class="number" id="price_All2"></span>원
 									</dd>
 								</div>
 								<div class="commerce-cart__summary__row">

@@ -308,7 +308,7 @@ function buy(){
 									<option>9</option>
 									<option>10+</option>
 								</select>
-								<span id="proudctlist_price1"><%= article.get(0).getPro_price()%> </span>원
+								<span id="proudctlist_price1"><%= article.get(0).getPro_price()%></span>원
 							</div>
 						 </div>
 						 <div id="buylist_cell2">

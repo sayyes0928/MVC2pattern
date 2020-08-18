@@ -8,37 +8,27 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%  
-  ArrayList<String[]> list = (ArrayList<String[]>)session.getAttribute("cart");
-  String pro_all = request.getParameter("Pro_all");
-  String pro_count = request.getParameter("Pro_count");
-  String pro_price = request.getParameter("Pro_price");
-  String pro_group[] = {pro_all, pro_count, pro_price};
-  
-<<<<<<< HEAD
-if(list== null){
-=======
+<%
+ArrayList<String[]> list = (ArrayList<String[]>)session.getAttribute("cart");
+String pro_all = request.getParameter("Pro_all");
+String pro_count = request.getParameter("Pro_count");
+String pro_price = request.getParameter("Pro_price");
+String pro_group[] = {pro_all, pro_count, pro_price};
+
 if(list == null){
->>>>>>> refs/remotes/1231231244/master
-  ArrayList<String[]> cartlist = new ArrayList<String[]>();
-  cartlist.add(pro_group);
-  session.setAttribute("cart", cartlist);
+
+ArrayList<String[]> cartlist = new ArrayList<String[]>();
+cartlist.add(pro_group);
+session.setAttribute("cart", cartlist);
 } else{
 
 	list.add(pro_group);
 	session.setAttribute("cart", list);
 }
-  
+
 %>
 
-<%ArrayList<String[]> Cart = (ArrayList<String[]>)session.getAttribute("cart"); %>
-<<<<<<< HEAD
 
-=======
-<% 
-   out.print(Cart.get(0)[0].toString());
-%> 
->>>>>>> refs/remotes/1231231244/master
   
 </body>
 </html>
