@@ -194,7 +194,7 @@
 					<input type="hidden" value="<%=userpost.get(i).getPost_num()%>">
 					<span class="card__category"><%=userpost.get(i).getPost_title()%></span>
 					<h3 class="card__title"><%=userpost.get(i).getPost_posting()%></h3>
-					<span class="card__by">by <a href="Beautyroom_Detail.bo?board_num=<%=userpost.get(i).getPost_num()%>" class="card__author" title="author"><%=userpost.get(i).getPost_nkname()%></a></span>
+					<span class="card__by">by <a href="Beautyroom_Detail.bo?board_num=<%=userpost.get(i).getPost_num()%>" class="card__author" title="author"><%=userpost.get(i).getpost_nickname()%></a></span>
 				</div>
 			</article>
 				

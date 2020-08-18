@@ -87,7 +87,7 @@ a= Cart.get(0)[0].toString();
 </script>
 </head>
 <body>
-	<form id="contentPage" action="ProductOrderPage.bo">
+	<form id="contentPage" action="ProductOrderCart.bo">
 		<header>
         <div id="h_wrap">
           <div class="h_div">
@@ -333,7 +333,11 @@ a= Cart.get(0)[0].toString();
 						<hr>
 						<div class="s_button">
 							<ul id="product_info">
+<<<<<<< HEAD
+								<li><button class="m_button01" type="button" onclick="location.href='ProductOrderCart.bo'">장바구니</button></li>
+=======
 								<li><button class="m_button01" type="button" onclick="buy()">장바구니</button></li>
+>>>>>>> refs/remotes/1231231244/master
 								<li><button class="m_button02" type="button" onclick="OrderSubmit(contentPage)">바로구매</button></li>
 							</ul>
 						</div>

@@ -50,7 +50,7 @@ public class BTWriteAction implements Action {
 				new DefaultFileRenamePolicy());
 
 		btr = new BeautyRoomDTO();
-		btr.setPost_nkname(us_id);
+		btr.setpost_nickname(us_id);
 		btr.setPost_title(multi.getParameter("post_title"));
 		btr.setPost_posting(multi.getParameter("post_posting"));
 		btr.setPost_tag(multi.getParameter("tagtest2"));

@@ -32,9 +32,12 @@ import com.jachi.Action.MyhomeWriteProAction;
 import com.jachi.Action.MypageOrderListViewAction;
 import com.jachi.Action.MypageOrderViewAction;
 import com.jachi.Action.PLSelectAction;
+import com.jachi.Action.ProductCartInsertOrderAction;
 import com.jachi.Action.ProductOrderAction;
 import com.jachi.Action.ProductPostViewAction;
+
 import com.jachi.Action.TipListAction;
+
 import com.jachi.Action.TipSelectAction;
 import com.jachi.Action.TipwriteAction;
 import com.jachi.Action.TokenGetAccessAction;
@@ -173,6 +176,15 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		}
 		else if(command.equals("/ProductOrderPage.bo")){
 			action  = new ProductOrderAction();
+			try {
+				forward=action.execute(request, response );
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println("로그인 오류");
+			}
+		}
+		else if(command.equals("/ProductOrderCart.bo")){
+			action  = new ProductCartInsertOrderAction();
 			try {
 				forward=action.execute(request, response );
 			} catch (Exception e) {
@@ -341,14 +353,14 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			}
 		}
 		
-		else if(command.equals("/tiplist.bo")) {			 
-			action = new TipListAction();
-			try {
-				forward=action.execute(request, response);
-			}catch(Exception e) {
-				e.printStackTrace();
-			}
-		}
+//		else if(command.equals("/tiplist.bo")) {			 
+//			action = new TipListAction();
+//			try {
+//				forward=action.execute(request, response);
+//			}catch(Exception e) {
+//				e.printStackTrace();
+//			}
+//		}
 		
 		
 		if(forward != null){

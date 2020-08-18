@@ -88,7 +88,7 @@
 
 		</div>
 
-		<div id="sub">
+		<div id="sub" class="sub_menu">
 			<div id="sub_menu">
 				<div class="nav_container_div">
 					<nav role="navigation" class="primary-navigation">
@@ -131,6 +131,11 @@
 	<%
 		ArrayList<BeautyRoomDTO> article = (ArrayList<BeautyRoomDTO>) request.getAttribute("article");
 		String board_num = request.getParameter("board_num");
+		String post_image1 = article.get(0).getPost_pic();
+		String post_image2 = article.get(0).getPost_pic_2();
+		String post_image3 = article.get(0).getPost_pic_3();
+		String post_image4 = article.get(0).getPost_pic_4();
+		String post_image[] = { post_image1, post_image2, post_image3, post_image4 };
 	%>
 	<input type="hidden" value=<%=board_num%> name="post_no" id="post_no" />
 	<input type="hidden" value=<%=us_id%> name="us_id" id="us_id" />
@@ -152,18 +157,33 @@
 				<div id="bg_main">
 					<div id="page-wrap">
 						<div id="showimg" class="s_mainimg">
-							<img src="img/ProductPost/chair02.webp">
+							<img src="<%=request.getContextPath()%>/upload/<%= post_image1%>">
 						</div>
 					</div>
 					<ul id="pr_imgs">
 						<li><img class="s_imgborder"
 							src="<%=request.getContextPath()%>/upload/<%=article.get(0).getPost_pic()%>"></li>
+						<%
+							
+							if (post_image2 != null) {
+						%>
 						<li><img class="s_imgborder"
 							src="<%=request.getContextPath()%>/upload/<%=article.get(0).getPost_pic_2()%>"></li>
+						<%
+							if (post_image3 != null) {
+						%>
 						<li><img class="s_imgborder"
 							src="<%=request.getContextPath()%>/upload/<%=article.get(0).getPost_pic_3()%>"></li>
+						<%
+							if (post_image4 != null) {
+						%>
 						<li><img class="s_imgborder"
 							src="<%=request.getContextPath()%>/upload/<%=article.get(0).getPost_pic_4()%>"></li>
+						<%
+							}
+								}
+							}
+						%>
 
 					</ul>
 				</div>
@@ -213,7 +233,7 @@
 									댓글&nbsp;<span class="comment-feed__header__count">267</span>
 								</h1>
 								<form class="comment-feed__form" action="myPage_reply_insert.bo">
-									<a href="/users/sign_in" class="comment-feed__form__cover"></a>
+						
 									<div class="comment-feed__form__user">
 										<img
 											src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&amp;w=36&amp;webp=1"
@@ -329,7 +349,7 @@
 
 					<div class="myhomeContentRight_userinfo">
 						<div>
-							<span class="Right_userID"><%=article.get(0).getPost_nkname()%></span>
+							<span class="Right_userID"><%=article.get(0).getpost_nickname()%></span>
 						</div>
 						<button type="button" class="btm_image">팔로우</button>
 					</div>
