@@ -287,7 +287,7 @@ function expand() {
 					<% 
 				} else {
 				%>
-					<span>등록된글이 없습니다</span>
+					<span>등록된글이 없습니다 ㅎㅎ</span>
 					<%
 				}
 					%>
