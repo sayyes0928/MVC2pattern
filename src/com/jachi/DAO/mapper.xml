@@ -111,13 +111,15 @@ insert into productinfo values(#{pro_code},#{pro_name},#{pro_price},#{pro_mainim
 
 
 <insert id="insert_bt" parameterType="com.jachi.DTO.BeautyRoomDTO">
-	insert into posting values(#{post_nkname},#{post_pic},#{post_posting},#{post_pw},default,#{post_tag},#{post_title},#{post_pic2},#{post_pic3},#{post_pic4});
+	insert into posting values(default,#{post_nickname},#{post_title},#{post_pw},#{post_pic},#{post_posting},#{post_tag},#{post_pic_2},#{post_pic_3},#{post_pic_4});
 </insert>
 
 <insert id="insert_tip" parameterType="com.jachi.DTO.TipDTO">
     insert into tip values(#{tip_nickname}, #{tip_post}, default, #{tip_title}, #{tip_coverimg});
 </insert> 
-
+<insert id="insert_cart_orderinfo" parameterType="com.jachi.DTO.Product_cartDTO">
+ insert into product_cart values(#{cart_orderCode},#{cart_procode},#{cart_count},#{cart_us_id},#{cart_option});
+</insert>
 
 <select id="btselect_list" resultType="Integer">
 	select count(*) from posting;

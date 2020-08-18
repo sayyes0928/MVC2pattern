@@ -2,7 +2,7 @@ package com.jachi.DTO;
 
 public class BeautyRoomDTO {
 	int post_num;
-	String post_nkname;
+	String post_nickname;
 	String post_title;
 	String post_posting;
 	String post_pw;
@@ -35,11 +35,11 @@ public class BeautyRoomDTO {
 	public void setPost_num(int post_num) {
 		this.post_num = post_num;
 	}
-	public String getPost_nkname() {
-		return post_nkname;
+	public String getpost_nickname() {
+		return post_nickname;
 	}
-	public void setPost_nkname(String post_nkname) {
-		this.post_nkname = post_nkname;
+	public void setpost_nickname(String post_nickname) {
+		this.post_nickname = post_nickname;
 	}
 	public String getPost_title() {
 		return post_title;
