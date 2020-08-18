@@ -14,6 +14,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="./myhome.web.css/teamTopNav.css" type="text/css">
 <link rel="stylesheet" href="./Teamcss/Yuchan_Qna.css" type="text/css">
+
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
@@ -21,6 +22,9 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></script>
 
+
+	
+</script>
 
 <script>
 $(function(){
@@ -60,6 +64,27 @@ $(function(){
 });
 </script>
 
+<script>
+$(function(){
+	$('button').on('click', expand);
+	
+});
+
+function expand() {
+	   $(".search").toggleClass("close");
+	   $(".input").toggleClass("square");
+	   if ($('.search').hasClass('close')) {
+	     $('input').focus();
+	   } else {
+	     $('input').blur();
+	   }
+	 }
+
+</script>
+
+
+
+
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
@@ -77,7 +102,7 @@ $(function(){
 
 
 <body>
-	<form name="go" action="NewFile.jsp">
+	<form name="go" action="NewFile.jsp" >
 		<header>
         <div id="h_wrap">
           <div class="h_div">
@@ -191,21 +216,23 @@ $(function(){
 						</div>
 					</div>
 				</div>
+				
+				<div id="content">
+				<input type="text" name="input" class="input" id="search-input">
+  <button type="reset" class="search" id="search-btn"></button>
+			</div>
+			
 			</div>
 			<div id="s_fullsize">
-				<div id="qna_size">
-
-
-
+				<div id="write_btsize">
+					<input type="button" value="질문하기" id="qna_write_bt">
+					</div>
 
 					<%if(b!=null){%>
 					<a id="bta" href="qnainsert.jsp"><input type=button value="글쓰기"
 						class="button2"></a>
 					<%}else{}%>
-					<hr id="qna_hr">
-				</div>
-
-
+	
 				<div id="qna_body">
 					<!-- 
 
@@ -215,27 +242,29 @@ sqlsession.close();
 for(int i=0; i<sl2.size(); i++){
 -->
 					<hr id="post_hr">
+					
 					<table id="tb">
-						<tr>
-							<td colspan="5"><a href="readpost.jsp?all_post=  ">
-									<h2>
-										<!-- 타이틀들어갈거임 -->
-									</h2>
+<!-- 						<tr> -->
+							<td colspan="5"><a id="title_tag" href="readpost.jsp?all_post=  ">
+									<span id="qna_posttitle">제목</span>
 							</a></td>
+							<td id="qna_table_ctr">
+							<span><a>수정</a>  |  <a>삭제</a></span>
+							</td>
 						</tr>
 						<tr>
 							<td colspan="5" id="post">
-								<!-- 내용들어갈거임 -->
+								<!-- 내용들어갈거임 -->내용
 							</td>
 
 						</tr>
 						<tr id="ps_bt">
 							<td><img src="The_1975.jpg" class="img-circle"><span>
-									<!-- 게시물번호 -->
+									<!-- 게시물번호 -->게시물번호
 							</span> <span>
-									<!-- 닉네임 -->
+									<!-- 닉네임 -->닉네임
 							</span>
-							<!-- 시간 -->
+							<!-- 시간 -->시간
 								<span></span><span></span></td>
 
 						</tr>
