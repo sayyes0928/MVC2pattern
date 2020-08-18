@@ -51,7 +51,7 @@ header {
 #main_nav {
 clear: both;
     height: 50px;
-    top: 110px;
+    top: 115px;
     /* border-top: 1px solid; */
     /* border-bottom: 1px solid; */
     position: absolute;
@@ -69,12 +69,11 @@ clear: both;
   overflow: hidden;
   width: 1400px;
   margin: 0 auto;
-  padding-top: 15px;
   padding-bottom: 15px;
-  padding-left: 345px;
+  padding-left: 135px;
 }
 #sub {
-	
+	display: none;
 	clear:both;
   z-index: 1;
   text-decoration: none;
@@ -142,7 +141,6 @@ width: 250px;
 #main_nav li {
   text-align: center;
   margin-top: 10px;
-  margin-bottom: 10px;
   font-family: "Okbe";
   font-size: 30px;
   font-weight: 800;
@@ -151,6 +149,7 @@ width: 250px;
   float: left;
   padding: 0px 50px;
   margin-left: 20px;
+
 }
 
 .main_navov {

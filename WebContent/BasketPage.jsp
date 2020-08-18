@@ -15,7 +15,11 @@
   String pro_price = request.getParameter("Pro_price");
   String pro_group[] = {pro_all, pro_count, pro_price};
   
+<<<<<<< HEAD
+if(list== null){
+=======
 if(list == null){
+>>>>>>> refs/remotes/1231231244/master
   ArrayList<String[]> cartlist = new ArrayList<String[]>();
   cartlist.add(pro_group);
   session.setAttribute("cart", cartlist);
@@ -28,9 +32,13 @@ if(list == null){
 %>
 
 <%ArrayList<String[]> Cart = (ArrayList<String[]>)session.getAttribute("cart"); %>
+<<<<<<< HEAD
+
+=======
 <% 
    out.print(Cart.get(0)[0].toString());
 %> 
+>>>>>>> refs/remotes/1231231244/master
   
 </body>
 </html>
