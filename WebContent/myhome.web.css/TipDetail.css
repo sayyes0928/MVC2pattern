@@ -15,7 +15,7 @@
 	border: 1px solid black;
 }
 
-#detail_cover img {
+#detail_cover > img {
 	width: 800px;
 	height: 500px;
 	border:1px solid white;
