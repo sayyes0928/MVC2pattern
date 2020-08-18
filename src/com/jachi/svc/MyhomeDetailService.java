@@ -16,7 +16,7 @@ public class MyhomeDetailService {
 		
 		SqlSessionFactory sqlfactory = BoardDAO.getConn();
 		SqlSession sqlsession = sqlfactory.openSession();
-		List<BeautyRoomDTO> beautylistall = sqlsession.selectList("select_beautyall");
+		List<BeautyRoomDTO> beautylistall = sqlsession.selectList("select_beautyall_Detail",board_num);
 		
 		sqlsession.close();
 

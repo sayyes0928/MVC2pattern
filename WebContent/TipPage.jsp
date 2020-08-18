@@ -19,8 +19,7 @@
 <head>
 <meta charset="UTF-8">
 <title>tip</title>
-<link rel="stylesheet" href="./myhome.web.css/teamTopNav.css"
-	type="text/css">
+<link rel="stylesheet" href="./myhome.web.css/teamTopNav.css" type="text/css">
 <link rel="stylesheet" href="./myhome.web.css/tip.css" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script src="./myhome.web.js/teamTopnav.js"></script>
@@ -136,8 +135,9 @@
 				<div id="tip_list">				
 				  <% if(tip_article.size() != 0){
 					  
-                      for(int i=0; i<tip_article.size(); i++){ %>                
-					<div class="tip_card">
+                      for(int i=0; i<tip_article.size(); i++){ %>
+                                    
+					<a href="#"><div class="tip_card">
 						<button type="button">
 							<img src="./img/myhome/icons8-bookmark-50-2.png">
 						</button>
@@ -149,7 +149,7 @@
 							<li id="count">조회수</li>
 							<li id="scrap">스크랩</li>
 						</ul>
-					</div>
+					</div></a>
                     <%
                         }
                       }else{

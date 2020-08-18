@@ -4,10 +4,13 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="SqlData">
+<mapper namespace="com.jachi">
 
 <select id="select_productpostview" parameterType="String" resultType="com.jachi.DTO.ProductinfoDTO">
   select * from productinfo where pro_code=#{pro_code};
+</select>
+<select id="select_productCartList" parameterType="com.jachi.DTO.OrderDTO" resultType="com.jachi.DTO.Product_cartDTO">
+  SELECT cart_orderCode,cart_procode,cart_count,cart_option,cart_price,cart_us_id,pro_mainimg FROM jachi.product_cart a join (select pro_mainimg,pro_code  from productinfo b) b on a.cart_procode = b.pro_code and cart_us_id =#{or_id};
 </select>
 
 <select id="select_orderview_count" parameterType="String" resultType="String">
@@ -65,6 +68,10 @@ FROM jachi.order a join productinfo b on a.or_procode = b.pro_code and a.or_id=#
 	select post_num,post_title,post_posting,post_pic,us_nkname as 'post_nkname' from posting join userinfo on userinfo.us_id=posting.post_nickname order by post_num desc;
 </select>
 
+<select id="select_beautyall_Detail" parameterType="Integer" resultType="com.jachi.DTO.BeautyRoomDTO">
+	select post_num,post_title,post_posting,post_pic,post_pic_2,post_pic_3,post_pic_4,post_tag,us_nkname as 'post_nkname' from posting join userinfo on userinfo.us_id=posting.post_nickname where post_num=#{board_num} order by post_num desc;
+</select>
+
 <select id="select_Tipinfo" resultType="com.jachi.DTO.TipDTO">
   select tip_num, tip_post, tip_title, tip_coverimg, us_nkname as 'tip_nickname'  from tip join userinfo on userinfo.us_id = tip.tip_nickname;
 </select>
@@ -104,13 +111,15 @@ insert into productinfo values(#{pro_code},#{pro_name},#{pro_price},#{pro_mainim
 
 
 <insert id="insert_bt" parameterType="com.jachi.DTO.BeautyRoomDTO">
-	insert into posting values(#{post_nkname},#{post_pic},#{post_posting},#{post_pw},default,#{post_tag},#{post_title},#{post_pic2},#{post_pic3},#{post_pic4});
+	insert into posting values(default,#{post_nickname},#{post_title},#{post_pw},#{post_pic},#{post_posting},#{post_tag},#{post_pic_2},#{post_pic_3},#{post_pic_4});
 </insert>
 
 <insert id="insert_tip" parameterType="com.jachi.DTO.TipDTO">
     insert into tip values(#{tip_nickname}, #{tip_post}, default, #{tip_title}, #{tip_coverimg});
 </insert> 
-
+<insert id="insert_cart_orderinfo" parameterType="com.jachi.DTO.Product_cartDTO">
+ insert into product_cart values(#{cart_orderCode},#{cart_procode},#{cart_count},#{cart_us_id},#{cart_option});
+</insert>
 
 <select id="btselect_list" resultType="Integer">
 	select count(*) from posting;

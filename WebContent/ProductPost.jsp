@@ -1,10 +1,11 @@
+<%@page import="org.apache.catalina.ant.SessionsTask"%>
+<%@page import="javax.websocket.Session"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
 <%@ page import="com.jachi.DTO.ProductinfoDTO"%>
 <%
     ArrayList<ProductinfoDTO> article = (ArrayList<ProductinfoDTO>)request.getAttribute("article");
-   session.setAttribute("us_id", "1");
     
     %>
 <!DOCTYPE html>
@@ -20,14 +21,78 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script type="text/javascript" src="./myhome.web.js/ProductPost.js"></script>
 <script src="./myhome.web.js/teamTopnav.js"></script>
+<script>
+//////////// 주문 목록 리스트 
+$(function() {
+	  $('#Option1').on('change', function() {
+	 	 var pro_name = $('#product_name').text();
+	     var optiongroup = $('#Option1 option:first').val();
+	     var option = $('#Option1 option:selected').val();  		     	
+	     var buylist_cell1 = $("#buylist_cell1").html();
+		     var item_size = $("#Option1 option").size(); 
+		     var idx = $("#Option1 option").index($("#Option1 option:selected"));
+		     var item_text = $("#Option1 option:selected").text();
+		     var option2 = $("#buylist_section1 #buy_option").text();
+
+		     $("#buylist_section1").css("display", "block");
+		     $("#buylist1").text( pro_name+" / "+optiongroup+" : ");	
+		   $("#buy_option").text(option);	
+		     $("#buylist_cell2").append(buylist_cell1);
+	       		     
+		 });
+});
+
+////////// 주문 목록 삭제버튼
+$(document).on("click","#buylist_delete1",function(){
+    $(this, '#buylist_delete1').parent().css("display", "none");
+});
+
+function buy(){
+	var proall = "";
+	var pro_option = document.getElementById("buy_option").innerHTML;
+	var pro_name = document.getElementById("buylist1").innerHTML;
+	var pro_count = document.getElementById("product_count1").value;
+	var pro_price = document.getElementById("proudctlist_price1").innerHTML;
+	var pro_all = pro_name + pro_option;
+	var pro_group = [pro_all, pro_count, pro_price];
+
+	console.log(pro_group[0]);
+	console.log(pro_group[1]);
+	console.log(pro_group[2]);
+	
+          $.ajax({
+            url: 'BasketPage.jsp',
+            data: {
+              'Pro_all': pro_all,
+              'Pro_count': pro_count,
+              'Pro_price': pro_price
+            },
+
+            success: function (req) {
+              alert(req);
+            }
+
+          });
+ 
+
+}
+<%ArrayList<String[]> Cart = (ArrayList<String[]>)session.getAttribute("cart"); 
+String a = "00000";
+if(Cart !=null){
+a= Cart.get(0)[0].toString();
+}
+
+
+%>
+</script>
 </head>
 <body>
-	<form id="contentPage" action="ProductOrderPage.bo">
+	<form id="contentPage" action="ProductOrderCart.bo">
 		<header>
         <div id="h_wrap">
           <div class="h_div">
-         
-        <h1>자취해보자</h1>
+
+        <h1><%= a%></h1>
               </div>
          
        <%
@@ -251,7 +316,7 @@
 									<option>9</option>
 									<option>10+</option>
 								</select>
-								<div id="proudctlist_price1"><%= article.get(0).getPro_price()%> 원</div>
+								<span id="proudctlist_price1"><%= article.get(0).getPro_price()%> </span>원
 							</div>
 						 </div>
 						 <div id="buylist_cell2">
@@ -268,7 +333,11 @@
 						<hr>
 						<div class="s_button">
 							<ul id="product_info">
-								<li><button class="m_button01" type="button">장바구니</button></li>
+<<<<<<< HEAD
+								<li><button class="m_button01" type="button" onclick="location.href='ProductOrderCart.bo'">장바구니</button></li>
+=======
+								<li><button class="m_button01" type="button" onclick="buy()">장바구니</button></li>
+>>>>>>> refs/remotes/1231231244/master
 								<li><button class="m_button02" type="button" onclick="OrderSubmit(contentPage)">바로구매</button></li>
 							</ul>
 						</div>

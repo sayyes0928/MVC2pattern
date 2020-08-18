@@ -6,10 +6,10 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css"  href="./myhome.web.css/teamTopNav.css" />
 <!-- <link rel="stylesheet" href="header.css" type="text/css"> -->
-<link rel="stylesheet" href="join.css" type="text/css">
+<link rel="stylesheet" href="./myhome.web.cssjoin.css" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script type="text/javascript" src="join.js"></script>
+<script type="text/javascript" src="./myhome.web.js/join.js"></script>
 <script src="./myhome.web.js/teamTopnav.js"></script>
 
 </head>
