@@ -20,7 +20,19 @@
               ÆÁ ³»¿ë
              </div>
              <div id="tip_comment">
-              ´ñ±Û
+              ´ñ±Û       <br/> 
+              <table>
+                  <th>
+                    <td><img src="#"></td>
+                    <td>
+                      <div>
+                        <input type="text">
+                        <buton>µî·Ï</buton>
+                      </div>
+                    </td>
+                  </th>
+              </table>
+               
              </div>
           </div>
           <div id="user_action">
