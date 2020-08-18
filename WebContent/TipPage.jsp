@@ -135,8 +135,9 @@
 				<div id="tip_list">				
 				  <% if(tip_article.size() != 0){
 					  
-                      for(int i=0; i<tip_article.size(); i++){ %>                
-					<div class="tip_card">
+                      for(int i=0; i<tip_article.size(); i++){ %>
+                                    
+					<a href="#"><div class="tip_card">
 						<button type="button">
 							<img src="./img/myhome/icons8-bookmark-50-2.png">
 						</button>
@@ -148,7 +149,7 @@
 							<li id="count">조회수</li>
 							<li id="scrap">스크랩</li>
 						</ul>
-					</div>
+					</div></a>
                     <%
                         }
                       }else{
