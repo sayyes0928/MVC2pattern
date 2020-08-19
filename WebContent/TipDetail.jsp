@@ -1,46 +1,49 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
+    <%
+      ArrayList tip_detail = (ArrayList<TipDTO>re)
+    %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>Tip »ó¼¼ÆäÀÌÁö</title>
+<meta charset="UTF-8">
+<title>Tip ìƒì„¸íŽ˜ì´ì§€</title>
 <link rel="stylesheet" href="./myhome.web.css/teamTopNav.css" type="text/css">
 <link rel="stylesheet" href="./myhome.web.css/TipDetail.css" type="text/css">
 </head>
 <body>
-  <form>
+  <form action="tip_reply_write.bo">
  		
       <section>
         <div id="swrap">
           <div id="detail_cover">
              <img src="./img/ProductPost/chair02.webp">
-             <p>[Ä¿¹öÀÌ¹ÌÁö : XXX´ÔÀÇ ½ºÅ¸ÀÏ¸µ¼¦]</p>
+             <p>[ì»¤ë²„ì´ë¯¸ì§€ : XXXë‹˜ì˜ ìŠ¤íƒ€ì¼ë§ìƒ·]</p>
              <div id="tip_post">
-              ÆÁ ³»¿ë
+              íŒ ë‚´ìš©
              </div>
              <div id="tip_comment">
-              ´ñ±Û       <br/> 
+              ëŒ“ê¸€       <br/> 
               <table>
                   <th>
                     <td><img src="#"></td>
                     <td>
                       <div>
-                        <input type="text">
-                        <buton>µî·Ï</buton>
+                        <input name="tip_reply_post" type="text">
+                        <input type="submit" value="ë“±ë¡">
                       </div>
                     </td>
                   </th>
               </table>
-               
              </div>
           </div>
           <div id="user_action">
-                 <p>Á¦¸ñ</p>
-                 <p>°Ô½Ã¹° ½Ã°£</p>
+                 <p>ì œëª©</p>
+                 <p>ê²Œì‹œë¬¼ ì‹œê°„</p>
                  <div class="scrapBT_list">
-                   <span>ÁÁ¾Æ¿ä</span>&nbsp;
-                   <span>½ºÅ©·¦</span>
+                   <span>ì¢‹ì•„ìš”</span>&nbsp;
+                   <span>ìŠ¤í¬ëž©</span>
                  </div>
           </div>
         </div>
