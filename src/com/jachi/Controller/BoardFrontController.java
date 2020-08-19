@@ -39,6 +39,7 @@ import com.jachi.Action.QnaListAction;
 import com.jachi.Action.QnaSearchAction;
 import com.jachi.Action.QnaSearchListAction;
 import com.jachi.Action.QnaSelectAction;
+import com.jachi.Action.QnaWriteAction;
 import com.jachi.Action.TipListAction;
 import com.jachi.Action.TipSelectAction;
 import com.jachi.Action.TipwriteAction;
@@ -401,6 +402,17 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
+		
+		else if(command.equals("/qna_write.bo")) {			 
+			action = new QnaWriteAction();
+			try {
+				forward=action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		
 		
 		
 		if(forward != null){

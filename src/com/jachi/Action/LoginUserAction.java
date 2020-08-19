@@ -19,15 +19,18 @@ public class LoginUserAction implements Action{
 		String us_id=request.getParameter("us_id");
 		String us_pw=request.getParameter("us_pw");
 		
+		
 		ActionForward forward = new ActionForward();
 		forward =null;
 		String getUserpw = null;
+		String getUsernkname = null;
 
 		 System.out.println("널체크2");
 		
 		LoginUserService loginUserService = new LoginUserService();
 		getUserpw = loginUserService.loginUser(us_id);
 		 System.out.println("널체크1"+getUserpw);
+		 getUsernkname = loginUserService.loginnkname(us_id);
 		
 		 if(getUserpw == null){
 			    response.setContentType("text/html;charset=UTF-8");
@@ -45,7 +48,7 @@ public class LoginUserAction implements Action{
 			  }else if(getUserpw.equals(us_pw)){
 				String backPage = request.getParameter("backPage");
 				session.setAttribute("us_id", us_id);
-			   	
+			   	session.setAttribute("nkname", getUsernkname);
 				  response.setContentType("text/html;charset=UTF-8");
 					PrintWriter out=response.getWriter();
 					out.println("<html><body><script>");

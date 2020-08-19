@@ -8,7 +8,7 @@
 
 <%
 	ArrayList<QnABBS> userqna = (ArrayList<QnABBS>) request.getAttribute("qnaList");
-
+	
 	PageInfo pageInfo = (PageInfo) request.getAttribute("pageInfo");
 	int listCount = pageInfo.getListCount();
 	int nowPage = pageInfo.getPage();
@@ -125,6 +125,7 @@
 
 				<%
 					String us_id = (String) session.getAttribute("us_id"); //로그인 유무 확인
+					String us_nk = (String) session.getAttribute("nkname");
 					if (us_id == null) {
 				%>
 				<ul class="login_go">
@@ -236,6 +237,8 @@
 				<div id="write_btsize">
 					<input type="button" value="질문하기" id="qna_write_bt"
 						onclick="goqnawrite()">
+					<input type="button" value="목록으로" id="qna_list_bt"
+						onclick="reset_list()">	
 				</div>
 				<%
 					} else {
@@ -243,11 +246,15 @@
 				<div id="wrtie_btsize">
 					<input type="button" value="질문하기" id="qna_write_bt"
 						onclick="alertLogin()">
+					<input type="button" value="목록으로" id="qna_list_bt"
+						onclick="reset_list()">	
 				</div>
 
 				<%
 					}
 				%>
+				
+				
 				<script>
 					function alertLogin() {
 						alert('로그인이 필요합니다');
@@ -256,7 +263,12 @@
 				</script>
 				<script>
 					function goqnawrite() {
-						location.href = "qna_write.jsp"
+						location.href = "Yuchan_qnawrite.jsp"
+					}
+				</script>
+				<script>
+					function reset_list(){
+						location.href = "qna.bo"
 					}
 				</script>
 
@@ -271,32 +283,40 @@
 					<hr id="post_hr">
 
 					<table id="tb">
-						<!-- 						<tr> -->
-						<td colspan="5"><a id="title_tag"
+										<tr> 
+						<td colspan="5" id="td_size"><a id="title_tag"
 							href="readpost.jsp?all_post=  "> <span id="qna_posttitle"><%=userqna.get(i).getQna_title()%></span>
 						</a></td>
+						<td id="qna_table_ctr">
 						<%
-							
-						%><td id="qna_table_ctr"><span><a>수정ff</a> | <a>삭제</a></span></td>
+						if(us_nk !=null){	
+						%>
+						<%if(us_nk.equals(userqna.get(i).getQna_nickname())){ %>
+						<span><a>수정</a> | <a>삭제</a></span></td>
+						<%}else{ %>
+						
+						
 						<%
-							
+						}	
 						%>
 						<%
-							
+						}else{
 						%>
+					
+						<%} %>
 						</tr>
-						<tr><%=us_id%>
+						<tr>
 							<td colspan="5" id="post">
 								<!-- 내용들어갈거임 --><%=userqna.get(i).getQna_post()%>
 							</td>
-
+							<td rowspan="2"><img src="#" id="img_size"></td>
 						</tr>
 						<tr id="ps_bt">
-							<td><img src="The_1975.jpg" class="img-circle"><span>
-									<!-- 게시물번호 --><%=userqna.get(i).getQna_num()%>
-							</span> <span> <!-- 닉네임 --><%=userqna.get(i).getQna_nickname()%>
-							</span> <!-- 시간 --><%=userqna.get(i).getQna_time()%> <span></span><span></span></td>
-
+							<td><img src="<%=request.getContextPath()%>/upload/<%=userqna.get(i).getQna_img() %>" class="img-circle"><span>
+									<!-- 게시물번호 -->게시물번호 : <%=userqna.get(i).getQna_num()%>
+							</span> <span> <!-- 닉네임 -->닉네임 : <%=userqna.get(i).getQna_nickname()%>
+							</span> <!-- 시간 -->게시시간 : <%=userqna.get(i).getQna_time()%> <span></span><span></span></td>
+						
 						</tr>
 					</table>
 					<hr>
@@ -315,6 +335,7 @@
 					%>
 
 				</div>
+
 
 
 			</div>
