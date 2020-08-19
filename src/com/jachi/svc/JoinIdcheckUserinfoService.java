@@ -15,7 +15,7 @@ public class JoinIdcheckUserinfoService {
 		  SqlSession sqlsession = factory.openSession();
 		  String id_se = sqlsession.selectOne("us_id_select", us_id);
 		  sqlsession.close();
-
+          
 		return id_se;
 		
 	}

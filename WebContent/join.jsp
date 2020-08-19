@@ -6,7 +6,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css"  href="./myhome.web.css/teamTopNav.css" />
 <!-- <link rel="stylesheet" href="header.css" type="text/css"> -->
-<link rel="stylesheet" href="./myhome.web.cssjoin.css" type="text/css">
+<link rel="stylesheet" href="./myhome.web.css/join.css" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script type="text/javascript" src="./myhome.web.js/join.js"></script>
@@ -14,7 +14,7 @@
 
 </head>
 <body>
-	<form name="myform" action="join_Insert.bo" method="post" autocomplete="off">
+	<form name="myform" action="join_Insert.bo" method="post" enctype="multipart/form-data" autocomplete="off">
 	<header>
         <div id="h_wrap">
           <div class="h_div">
@@ -81,6 +81,11 @@
 					<th>닉네임 :</th>
 					<td><input id="nick_check" type="text" name="nick">
 					<span id="ok2"></span></td>
+				</tr>
+				<tr>
+					<th>프로필 사진 :</th>
+					<td><input id="profile_img" type="file" name="profile_img"
+					 accept="image/gif, image/jpeg, image/png">
 				</tr>
 				<tr>
 					<th>생년월일 :</th>
