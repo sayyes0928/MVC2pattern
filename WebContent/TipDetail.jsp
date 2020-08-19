@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
+<%@ page import="com.jachi.DTO.TipDTO"%>
     <%
-      ArrayList tip_detail = (ArrayList<TipDTO>re)
+      ArrayList tip_detail = (ArrayList<TipDTO>)request.getAttribute("tipdetail");
     %>
 <!DOCTYPE html>
 <html>

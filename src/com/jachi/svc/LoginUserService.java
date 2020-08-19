@@ -20,4 +20,15 @@ public class LoginUserService {
 		return login_pw;
 		
 	}
+	
+	public String loginnkname(String us_id) {
+		SqlSessionFactory factory = BoardDAO.getConn();
+		  SqlSession sqlsession = factory.openSession();
+		  String login_nkname = null;
+		  login_nkname = sqlsession.selectOne("select_nkname", us_id);
+		  sqlsession.close();
+		
+		return login_nkname;
+		
+	}
 }

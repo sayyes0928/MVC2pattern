@@ -32,6 +32,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 select us_pw from userinfo where us_id =#{us_id};
 </select>
 
+<select id="select_nkname" resultType="String">
+select us_nkname from userinfo where us_id = #{us_id};
+</select>
+
 <select id="us_id_select" parameterType="String" resultType="String">
 select count(*) from userinfo where us_id=#{us_id};
 </select>
@@ -140,7 +144,7 @@ insert into productinfo values(#{pro_code},#{pro_name},#{pro_price},#{pro_mainim
 </select>
 
 <select id="qnaselect_listall" parameterType="Integer" resultType="com.jachi.DTO.QnABBS">
-	select qna_num,qna_pw,qna_title,qna_time,qna_post,qna_img,us_nkname as 'qna_nickname' from qna
+	select qna_num,qna_pw,qna_title,qna_time,qna_post,us_nkname as 'qna_nickname',us_pic as 'qna_img' from qna
 	join userinfo on userinfo.us_id=qna.qna_nickname order by qna_num desc
 	limit #{startrow}, 8;
 </select>
@@ -155,15 +159,15 @@ insert into productinfo values(#{pro_code},#{pro_name},#{pro_price},#{pro_mainim
 </select>
 
 <select id="select_qnaall" parameterType="String" resultType="com.jachi.DTO.QnABBS">
-	select qna_time,qna_pw,qna_time,qna_num,qna_title,qna_post,qna_img,us_nkname as 'qna_nickname' from qna join userinfo on userinfo.us_id=qna.qna_nickname order by qna_num desc;
+	select qna_time,qna_pw,qna_time,qna_num,qna_title,qna_post,us_nkname as 'qna_nickname',us_pic as 'qna_img' from qna join userinfo on userinfo.us_id=qna.qna_nickname order by qna_num desc;
 </select>
 
 <select id="select_qnasearch" parameterType="String" resultType="com.jachi.DTO.QnABBS">
-	select qna_time,qna_pw,qna_time,qna_num,qna_title,qna_post,qna_img,us_nkname as 'qna_nickname' from qna join userinfo on userinfo.us_id=qna.qna_nickname where qna_title like concat('%', #{search}, '%') order by qna_num desc;
+	select qna_time,qna_pw,qna_time,qna_num,qna_title,qna_post,us_nkname as 'qna_nickname',us_pic as 'qna_img' from qna join userinfo on userinfo.us_id=qna.qna_nickname where qna_title like concat('%', #{search}, '%') order by qna_num desc;
 </select>
 
 <select id="qna_search_select_listall" parameterType="Integer" resultType="com.jachi.DTO.QnABBS">
-	select qna_num,qna_pw,qna_title,qna_time,qna_post,qna_img,us_nkname as 'qna_nickname' from qna
+	select qna_num,qna_pw,qna_title,qna_time,qna_post,us_nkname as 'qna_nickname', us_pic as 'qna_img' from qna
 	join userinfo on userinfo.us_id=qna.qna_nickname where qna_title like concat ('%', #{search}, '%') order by qna_num desc
 	limit #{startrow}, 8;
 </select>

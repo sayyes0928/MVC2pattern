@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.jachi.DTO.ActionForward;
 import com.jachi.DTO.QnABBS;
@@ -22,6 +23,7 @@ public class QnaSelectAction implements Action {
 		
 		ActionForward forward = new ActionForward();
 		request.setAttribute("qnaList", qnalist);
+		
 		forward.setPath("qnaList.bo");
 		
 		return forward;
