@@ -36,6 +36,8 @@ import com.jachi.Action.ProductCartInsertOrderAction;
 import com.jachi.Action.ProductOrderAction;
 import com.jachi.Action.ProductPostViewAction;
 import com.jachi.Action.QnaListAction;
+import com.jachi.Action.QnaSearchAction;
+import com.jachi.Action.QnaSearchListAction;
 import com.jachi.Action.QnaSelectAction;
 import com.jachi.Action.TipListAction;
 import com.jachi.Action.TipSelectAction;
@@ -365,6 +367,24 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		
 		else if(command.equals("/qna.bo")) {			 
 			action = new QnaSelectAction();
+			try {
+				forward=action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		else if(command.equals("/qna_search.bo")) {			 
+			action = new QnaSearchAction();
+			try {
+				forward=action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		else if(command.equals("/qna_searchList.bo")) {			 
+			action = new QnaSearchListAction();
 			try {
 				forward=action.execute(request, response);
 			}catch(Exception e) {

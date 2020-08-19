@@ -7,14 +7,14 @@
 
 
 <%
-ArrayList<QnABBS> userqna = (ArrayList<QnABBS>) request.getAttribute("qnaList");
+	ArrayList<QnABBS> userqna = (ArrayList<QnABBS>) request.getAttribute("qnaList");
 
-PageInfo pageInfo = (PageInfo)request.getAttribute("pageInfo");
-int listCount=pageInfo.getListCount();
-int nowPage=pageInfo.getPage();
-int maxPage=pageInfo.getMaxPage();
-int startPage=pageInfo.getStartPage();
-int endPage=pageInfo.getEndPage();
+	PageInfo pageInfo = (PageInfo) request.getAttribute("pageInfo");
+	int listCount = pageInfo.getListCount();
+	int nowPage = pageInfo.getPage();
+	int maxPage = pageInfo.getMaxPage();
+	int startPage = pageInfo.getStartPage();
+	int endPage = pageInfo.getEndPage();
 %>
 <!DOCTYPE html>
 <html>
@@ -37,59 +37,62 @@ int endPage=pageInfo.getEndPage();
 </script>
 
 <script>
-$(function(){
-	$(".typed").typed({
-		strings:["질문해주세요 :)", "답변해드립니다 :D"],
-		// Optionally use an HTML element to grab strings from (must wrap each string in a <p>)
-		stringsElement: null,
-		// typing speed
-		typeSpeed: 10,
-		// time before typing starts
-		startDelay: 1200,
-		// backspacing speed
-		backSpeed: 8,
-		// time before backspacing
-		backDelay: 800,
-		// loop
-		loop: true,
-		// false = infinite
-		loopCount: true,
-		// show cursor
-		showCursor: false,
-		// character for cursor
-		cursorChar: "|",
-		// attribute to type (null == text)
-		attr: null,
-		// either html or text
-		contentType: 'html',
-		// call when done callback function
-		callback: function() {},
-		// starting callback function before each string
-		preStringTyped: function() {},
-		//callback for every typed string
-		onStringTyped: function() {},
-		// callback for reset
-		resetCallback: function() {}
+	$(function() {
+		$(".typed").typed({
+			strings : [ "질문해주세요 :)", "답변해드립니다 :D" ],
+			// Optionally use an HTML element to grab strings from (must wrap each string in a <p>)
+			stringsElement : null,
+			// typing speed
+			typeSpeed : 10,
+			// time before typing starts
+			startDelay : 1200,
+			// backspacing speed
+			backSpeed : 8,
+			// time before backspacing
+			backDelay : 800,
+			// loop
+			loop : true,
+			// false = infinite
+			loopCount : true,
+			// show cursor
+			showCursor : false,
+			// character for cursor
+			cursorChar : "|",
+			// attribute to type (null == text)
+			attr : null,
+			// either html or text
+			contentType : 'html',
+			// call when done callback function
+			callback : function() {
+			},
+			// starting callback function before each string
+			preStringTyped : function() {
+			},
+			//callback for every typed string
+			onStringTyped : function() {
+			},
+			// callback for reset
+			resetCallback : function() {
+			}
+		});
 	});
-});
 </script>
 
 <script>
-$(function(){
-	$('button').on('click', expand);
-	
-});
+	$(function() {
+		$('button').on('click', expand);
 
-function expand() {
-	   $(".search").toggleClass("close");
-	   $(".input").toggleClass("square");
-	   if ($('.search').hasClass('close')) {
-	     $('input').focus();
-	   } else {
-	     $('input').blur();
-	   }
-	 }
+	});
 
+	function expand() {
+		$(".search").toggleClass("close");
+		$(".input").toggleClass("square");
+		if ($('.search').hasClass('close')) {
+			$('input').focus();
+		} else {
+			$('input').blur();
+		}
+	}
 </script>
 
 
@@ -112,7 +115,7 @@ function expand() {
 
 
 <body>
-	<form name="go" action="NewFile.jsp">
+	<form name="go" action="qna_search.bo">
 		<header>
 			<div id="h_wrap">
 				<div class="h_div">
@@ -121,9 +124,9 @@ function expand() {
 				</div>
 
 				<%
-       String us_id = (String)session.getAttribute("us_id"); //로그인 유무 확인
-       if(us_id==null){
-     %>
+					String us_id = (String) session.getAttribute("us_id"); //로그인 유무 확인
+					if (us_id == null) {
+				%>
 				<ul class="login_go">
 					<li><a href="LoginFormpage.bo">로그인</a></li>
 					<li><span> | </span></li>
@@ -132,8 +135,8 @@ function expand() {
 
 
 				<%
-       }else{
-     %>
+					} else {
+				%>
 				<ul class="login_go">
 					<li><span></span></li>
 					<li><a href="MypageOrderView.bo">마이페이지</a></li>
@@ -144,8 +147,8 @@ function expand() {
 
 
 				<%
-       }
-     %>
+					}
+				%>
 				<div id="main_nav">
 					<ul>
 						<li><a href="Index.jsp"><span>홈</span></a></li>
@@ -218,7 +221,8 @@ function expand() {
 				</div>
 
 				<div id="content">
-					<input type="text" name="input" class="input" id="search-input">
+					<input type="text" name="input" class="input" id="search-input"
+						autocomplete="off">
 					<button type="reset" class="search" id="search-btn"></button>
 				</div>
 
@@ -226,47 +230,62 @@ function expand() {
 			<div id="s_fullsize">
 
 
-				<%if(us_id!=null){%>
+				<%
+					if (us_id != null) {
+				%>
 				<div id="write_btsize">
-					<input type="button" value="질문하기" id="qna_write_bt">
+					<input type="button" value="질문하기" id="qna_write_bt"
+						onclick="goqnawrite()">
 				</div>
-				<%}else{ %>
+				<%
+					} else {
+				%>
 				<div id="wrtie_btsize">
 					<input type="button" value="질문하기" id="qna_write_bt"
 						onclick="alertLogin()">
 				</div>
 
-				<%}%>
+				<%
+					}
+				%>
 				<script>
- function alertLogin(){
-	 alert('로그인이 필요합니다');
-	 location.href="LoginFormpage.bo"
- }
-</script>
+					function alertLogin() {
+						alert('로그인이 필요합니다');
+						location.href = "LoginFormpage.bo"
+					}
+				</script>
+				<script>
+					function goqnawrite() {
+						location.href = "qna_write.jsp"
+					}
+				</script>
 
 				<div id="qna_body">
-				
+
 
 					<%
-				
-				if(listCount > 0){
-					for(int i = 0; i < userqna.size(); i++){
-				%>
+						if (listCount > 0) {
+
+							for (int i = 0; i < userqna.size(); i++) {
+					%>
 					<hr id="post_hr">
 
 					<table id="tb">
 						<!-- 						<tr> -->
 						<td colspan="5"><a id="title_tag"
-							href="readpost.jsp?all_post=  "> <span id="qna_posttitle"><%=userqna.get(i).getQna_title() %></span>
+							href="readpost.jsp?all_post=  "> <span id="qna_posttitle"><%=userqna.get(i).getQna_title()%></span>
 						</a></td>
 						<%
-					
-							%><td id="qna_table_ctr"><span><a>수정</a> | <a>삭제</a></span></td><%
-					
+							
+						%><td id="qna_table_ctr"><span><a>수정ff</a> | <a>삭제</a></span></td>
+						<%
+							
 						%>
-						<% %>
+						<%
+							
+						%>
 						</tr>
-						<tr><%=us_id %>
+						<tr><%=us_id%>
 							<td colspan="5" id="post">
 								<!-- 내용들어갈거임 --><%=userqna.get(i).getQna_post()%>
 							</td>
@@ -274,22 +293,25 @@ function expand() {
 						</tr>
 						<tr id="ps_bt">
 							<td><img src="The_1975.jpg" class="img-circle"><span>
-									<!-- 게시물번호 --><%=userqna.get(i).getQna_num() %>
-							</span> <span> <!-- 닉네임 --><%=userqna.get(i).getQna_nickname() %>
-							</span> <!-- 시간 --><%=userqna.get(i).getQna_time() %> <span></span><span></span></td>
+									<!-- 게시물번호 --><%=userqna.get(i).getQna_num()%>
+							</span> <span> <!-- 닉네임 --><%=userqna.get(i).getQna_nickname()%>
+							</span> <!-- 시간 --><%=userqna.get(i).getQna_time()%> <span></span><span></span></td>
 
 						</tr>
 					</table>
 					<hr>
-					<%	
-					}
+					<%
+						}
 					%>
-					<% 
-				} else {
-				%>
+
+
+
+					<%
+						} else {
+					%>
 					<span>등록된글이 없습니다 ㅎㅎ</span>
 					<%
-				}
+						}
 					%>
 
 				</div>
@@ -297,35 +319,52 @@ function expand() {
 
 			</div>
 		</section>
-		
+
 		<section id="pageList">
-				<%if(nowPage<=1){ %>
+			<%
+				if (nowPage <= 1) {
+			%>
 			[이전]&nbsp;
-			<%}else{ %>
-			<a href="beauty.bo?page=<%=nowPage-1%>">[이전]</a>&nbsp;
-			<%} %>
-			
-			<%for(int a=startPage;a<=endPage;a++){
-				if(a==nowPage){%>
-				[<%=a %>]
-			<%}else{ %>
-			<a href="beauty.bo?page=<%=a %>">[<%=a %>]</a>&nbsp;
 			<%
-			}
+				} else {
+			%>
+			<a href="beauty.bo?page=<%=nowPage - 1%>">[이전]</a>&nbsp;
+			<%
+				}
+			%>
+
+			<%
+				for (int a = startPage; a <= endPage; a++) {
+					if (a == nowPage) {
+			%>
+			[<%=a%>]
+			<%
+				} else {
+			%>
+			<a href="beauty.bo?page=<%=a%>">[<%=a%>]
+			</a>&nbsp;
+			<%
+				}
 			%>
 			<%
-			}
+				}
 			%>
-			
-			
-			<%if(nowPage>=maxPage){ %>
+
+
+			<%
+				if (nowPage >= maxPage) {
+			%>
 			[다음]
-			<%}else{ %>
-			<a href="beauty.bo?page=<%=nowPage+1 %>">[다음]</a>	
-			<%} %>
-		
-			
-			</section>
+			<%
+				} else {
+			%>
+			<a href="beauty.bo?page=<%=nowPage + 1%>">[다음]</a>
+			<%
+				}
+			%>
+
+
+		</section>
 	</form>
 </body>
 </html>
