@@ -133,6 +133,17 @@
 	
 }
 
+#none_posting{
+	float:left;
+	width:1082px;
+	height:100%;
+	margin: 0 auto;
+	text-align:center;
+	font-size:22pt;
+	font-weight:bold;
+	
+}
+
 h1 > #h1plz{
 	float:left;
 	margin-top:0;

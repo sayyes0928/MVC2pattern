@@ -35,7 +35,9 @@ import com.jachi.Action.PLSelectAction;
 import com.jachi.Action.ProductCartInsertOrderAction;
 import com.jachi.Action.ProductOrderAction;
 import com.jachi.Action.ProductPostViewAction;
+import com.jachi.Action.QnaDeleteAction;
 import com.jachi.Action.QnaListAction;
+import com.jachi.Action.QnaModifyAction;
 import com.jachi.Action.QnaSearchAction;
 import com.jachi.Action.QnaSearchListAction;
 import com.jachi.Action.QnaSelectAction;
@@ -434,6 +436,25 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
+		
+		else if(command.equals("/qna_delete.bo")) {
+			action = new QnaDeleteAction();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		else if(command.equals("/qna_modify.bo")) {
+			action = new QnaModifyAction();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
 		
 		
 
