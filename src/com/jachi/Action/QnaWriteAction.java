@@ -1,5 +1,6 @@
 package com.jachi.Action;
 
+import java.io.PrintWriter;
 import java.util.Enumeration;
 
 import javax.servlet.ServletContext;
@@ -57,8 +58,21 @@ public class QnaWriteAction implements Action {
 		QnaWriteService qnas = new QnaWriteService();
 		boolean isWriteSuccess = qnas.registArticle(qna);
 		
+		if(!isWriteSuccess) {
+			response.setContentType("text/html;charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("<script>");
+			out.println("alert('등록실패)");
+			out.println("history.back();");
+			out.println("</script>");
+		}else {
+			forward = new ActionForward();
+			forward.setRedirect(true);
+			forward.setPath("qnaList.bo");
+		}
 		
-		return null;
+		
+		return forward;
 	}
 
 }

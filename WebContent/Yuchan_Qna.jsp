@@ -15,6 +15,8 @@
 	int maxPage = pageInfo.getMaxPage();
 	int startPage = pageInfo.getStartPage();
 	int endPage = pageInfo.getEndPage();
+	
+	String qna_num = request.getParameter("qna_num");
 %>
 <!DOCTYPE html>
 <html>
@@ -292,7 +294,7 @@
 						if(us_nk !=null){	
 						%>
 						<%if(us_nk.equals(userqna.get(i).getQna_nickname())){ %>
-						<span><a>수정</a> | <a>삭제</a></span></td>
+						<span><a href="Yuchan_qnamodify.jsp?qna_num=<%=userqna.get(i).getQna_num()%>&qna_title=<%=userqna.get(i).getQna_title()%>&qna_post=<%=userqna.get(i).getQna_post()%>&qna_pw=<%=userqna.get(i).getQna_pw()%>&qna_img=<%=userqna.get(i).getQna_img()%>">수정</a> | <a href="qna_delete.bo?qna_num=<%=userqna.get(i).getQna_num()%>">삭제</a></span></td>
 						<%}else{ %>
 						
 						
@@ -309,7 +311,7 @@
 							<td colspan="5" id="post">
 								<!-- 내용들어갈거임 --><%=userqna.get(i).getQna_post()%>
 							</td>
-							<td rowspan="2"><img src="#" id="img_size"></td>
+							<td rowspan="2"><img src="<%=request.getContextPath()%>/upload/<%=userqna.get(i).getQna_pw()%>" id="img_size"></td>
 						</tr>
 						<tr id="ps_bt">
 							<td><img src="<%=request.getContextPath()%>/upload/<%=userqna.get(i).getQna_img() %>" class="img-circle"><span>
@@ -329,7 +331,7 @@
 					<%
 						} else {
 					%>
-					<span>등록된글이 없습니다 ㅎㅎ</span>
+					<div id="none_posting">등록된글이 없습니다 ㅎㅎ</div>
 					<%
 						}
 					%>
@@ -349,7 +351,7 @@
 			<%
 				} else {
 			%>
-			<a href="beauty.bo?page=<%=nowPage - 1%>">[이전]</a>&nbsp;
+			<a href="qna.bo?page=<%=nowPage - 1%>">[이전]</a>&nbsp;
 			<%
 				}
 			%>
@@ -362,7 +364,7 @@
 			<%
 				} else {
 			%>
-			<a href="beauty.bo?page=<%=a%>">[<%=a%>]
+			<a href="qna.bo?page=<%=a%>">[<%=a%>]
 			</a>&nbsp;
 			<%
 				}
@@ -379,7 +381,7 @@
 			<%
 				} else {
 			%>
-			<a href="beauty.bo?page=<%=nowPage + 1%>">[다음]</a>
+			<a href="qna.bo?page=<%=nowPage + 1%>">[다음]</a>
 			<%
 				}
 			%>
