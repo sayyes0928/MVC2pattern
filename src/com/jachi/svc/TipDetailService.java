@@ -10,10 +10,10 @@ import com.jachi.DTO.TipDTO;
 
 public class TipDetailService {
 	
-    public List<TipDTO> getTipinfo(int num) {
+    public List<TipDTO> getTipinfo(int tip_num) {
 		SqlSessionFactory sqlfactory = BoardDAO.getConn();
 		SqlSession sqlsession = sqlfactory.openSession();
-		List<TipDTO> Tipselectall = sqlsession.selectList("select_TipDetail", num);
+		List<TipDTO> Tipselectall = sqlsession.selectList("select_TipDetail", tip_num);
 		
 		sqlsession.close();
 		

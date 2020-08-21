@@ -19,12 +19,13 @@ public class TipDetailAction implements Action{
 		String num = request.getParameter("tip_num");
 		int tip_num = Integer.parseInt(num);
 		
-		ActionForward forward = null;
 		List<TipDTO> tipdto = new ArrayList<TipDTO>();
 		
 		TipDetailService tipselectservice = new TipDetailService();
 		tipdto = tipselectservice.getTipinfo(tip_num);
-		 
+		
+		System.out.println(tipdto.get(0).getTip_coverimg());
+		ActionForward forward = new ActionForward();
 		request.setAttribute("tipdetail", tipdto);
    		forward.setPath("TipDetail.jsp");
    		

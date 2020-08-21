@@ -177,6 +177,6 @@ insert into productinfo values(#{pro_code},#{pro_name},#{pro_price},#{pro_mainim
 </insert>
 
 <select id="select_TipDetail" parameterType="Integer" resultType="com.jachi.DTO.TipDTO">
-    select * from tip where tip_num = #{num};
+    select * from tip where tip_num = #{tip_num};
 </select>
 </mapper>
