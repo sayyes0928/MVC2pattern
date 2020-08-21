@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Tip 상세페이지</title>
+<title>Tip 상세페이지1</title>
 <link rel="stylesheet" href="./myhome.web.css/teamTopNav.css" type="text/css">
 <link rel="stylesheet" href="./myhome.web.css/TipDetail.css" type="text/css">
 </head>
