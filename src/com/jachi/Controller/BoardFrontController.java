@@ -41,8 +41,13 @@ import com.jachi.Action.QnaModifyAction;
 import com.jachi.Action.QnaSearchAction;
 import com.jachi.Action.QnaSearchListAction;
 import com.jachi.Action.QnaSelectAction;
+
+import com.jachi.Action.TipDetailAction;
+
 import com.jachi.Action.QnaWriteAction;
+
 import com.jachi.Action.TipListAction;
+import com.jachi.Action.TipReplyWriteAction;
 import com.jachi.Action.TipSelectAction;
 import com.jachi.Action.TipwriteAction;
 import com.jachi.Action.TokenGetAccessAction;
@@ -395,7 +400,6 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			}
 		}
 		
-		
 		else if(command.equals("/tiplist.bo")) {			 
 			action = new TipListAction();
 			try {
@@ -405,6 +409,25 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			}
 		}
 		
+
+		else if(command.equals("/tip_detail.bo")) {			 
+			action = new TipDetailAction();
+			try {
+				forward=action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		else if(command.equals("/tip_reply_write.bo")) {			 
+			action = new TipReplyWriteAction();
+			try {
+				forward=action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+
 		else if(command.equals("/qna_write.bo")) {			 
 			action = new QnaWriteAction();
 			try {
@@ -434,6 +457,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		
 		
 		
+
 		
 		
 		if(forward != null){

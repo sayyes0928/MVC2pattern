@@ -180,8 +180,18 @@ insert into productinfo values(#{pro_code},#{pro_name},#{pro_price},#{pro_mainim
 	limit #{startrow}, 8;
 </select>
 
+
 <update id="update_qna" parameterType="com.jachi.DTO.QnABBS">
 	update qna set qna_post=#{qna_post},qna_pw=#{qna_pw},qna_title=#{qna_title} where qna_num = #{qna_num};
 </update>
+
+
+<insert id="insert_TipReply" parameterType="com.jachi.DTO.TipReplyDTO">
+    insert into tip_reply values(default, default, default, default, #{rep_post}, now());
+</insert>
+
+<select id="select_TipDetail" parameterType="Integer" resultType="com.jachi.DTO.TipDTO">
+    select * from tip where tip_num = #{num};
+</select>
 
 </mapper>
