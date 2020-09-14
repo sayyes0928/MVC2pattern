@@ -193,14 +193,14 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				System.out.println("로그인 오류");
 			}
 		}
-		else if(command.equals("/ProductOrderCart.bo")){
-			action  = new ProductCartInsertOrderAction();
-			try {
-				forward=action.execute(request, response );
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
+//		else if(command.equals("/ProductOrderCart.bo")){
+//			action  = new ProductCartInsertOrderAction();
+//			try {
+//				forward=action.execute(request, response );
+//			} catch (Exception e) {
+//				e.printStackTrace();
+//			}
+//		}
 		else if(command.equals("/Product_add_Write.bo")){
 			forward=new ActionForward();
 			forward.setPath("/fileUpload.jsp");

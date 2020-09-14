@@ -79,7 +79,7 @@ function buy(){
 </script>
 </head>
 <body>
-	<form id="contentPage" action="ProductOrderCart.bo">
+	<form id="contentPage" action="ProductOrderPage.bo">
 		<header>
         <div id="h_wrap">
           <div class="h_div">
