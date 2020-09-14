@@ -17,7 +17,7 @@ public class JoinInsertUserInfoService {
 		 SqlSession sqlsession = sqlfactory.openSession();
 		 int insert = sqlsession.insert("insert_join_userinfo",userinfoDTO);
 				
-		
+		 System.out.println("서비스서비스서비스"+insert);
 		if(insert > 0){
 			sqlsession.commit();
 			isWriteSuccess = true;

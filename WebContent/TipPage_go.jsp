@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<title>gogo</title>
 </head>
 <body>
 <form action="tiplist.bo" method="post" name="">
