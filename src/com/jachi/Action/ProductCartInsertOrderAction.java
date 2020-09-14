@@ -39,7 +39,7 @@ public class ProductCartInsertOrderAction implements Action {
 		  if(cart_btn != null) {
 			  forward.setPath("/Mypage_Cart.bo");
 		  }else {
-			  forward.setPath("/ProductOrderPage.bo");
+			  forward.setPath("/ProductOrderPage.jsp");
 		  }
 	  
 		  
