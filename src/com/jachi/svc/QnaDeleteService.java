@@ -6,18 +6,18 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.jachi.DAO.BoardDAO;
-import com.jachi.DTO.TipDTO;
+import com.jachi.DTO.QnABBS;
 
-public class TipDetailService {
-	
-    public List<TipDTO> getTipinfo(int tip_num) {
+public class QnaDeleteService {
+
+	public List<QnABBS> isArticleWriter(int qna_num) throws Exception{
 		SqlSessionFactory sqlfactory = BoardDAO.getConn();
 		SqlSession sqlsession = sqlfactory.openSession();
-		List<TipDTO> Tipselectall = sqlsession.selectList("select_TipDetail", tip_num);
-		
+		List<QnABBS> qnadelete = sqlsession.selectList("delete_qnaall",qna_num);
 		sqlsession.close();
 		
-		return Tipselectall;
- }
-
+		return qnadelete;
+		
+	}
+	
 }

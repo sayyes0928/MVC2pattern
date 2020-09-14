@@ -125,8 +125,7 @@
 		//ArrayList<OrderDTO> orderDTO=(ArrayList<OrderDTO>)request.getAttribute("orderDTO");
 
 		ArrayList<UserinfoDTO> userinfoDTO = (ArrayList<UserinfoDTO>) request.getAttribute("userinfoDTO");
-		ArrayList<Product_cartDTO> productinfoDTO = (ArrayList<Product_cartDTO>) request
-				.getAttribute("productinfoDTO");
+		ArrayList<Product_cartDTO> productinfoDTO = (ArrayList<Product_cartDTO>) request.getAttribute("productinfoDTO");
 
 		String addrAllBeforeTrim = userinfoDTO.get(0).getUs_adr();
 		String addrAllAfterTrim = addrAllBeforeTrim.trim();
@@ -282,8 +281,10 @@
 					<div class="field">
 						<div class="label">이메일</div>
 						<div class="input email">
-							<input value="" type="text" name="order[received_name]" id="order_received_mail"> 
-							<input value="<%= userinfoDTO.get(0).getUs_mail() %>" type="hidden" name="order[payer_email]" id="order_payer_email">
+							<input value="" type="text" name="order[received_name]"
+								id="order_received_mail"> <input
+								value="<%=userinfoDTO.get(0).getUs_mail()%>" type="hidden"
+								name="order[payer_email]" id="order_payer_email">
 						</div>
 					</div>
 					<div class="field">
@@ -312,10 +313,14 @@
 							$("#copy_delivery")
 									.click(
 											function() {
-												var orderName = document.getElementById("order_recipient").value;
-												var orderMail = document.getElementById("order_payer_email").value;
-												document.getElementById("order_payer_name").value = orderName;
-												document.getElementById("order_received_mail").value = orderMail;
+												var orderName = document
+														.getElementById("order_recipient").value;
+												var orderMail = document
+														.getElementById("order_payer_email").value;
+												document
+														.getElementById("order_payer_name").value = orderName;
+												document
+														.getElementById("order_received_mail").value = orderMail;
 
 											});
 						});

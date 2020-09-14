@@ -22,7 +22,6 @@ public class ProductCartInsertOrderAction implements Action {
 		  String pro_code = request.getParameter("Pro_code");
 		  String cart_count_string = request.getParameter("cart_count");
 		  String cart_option = request.getParameter("cart_option");
-		
 		  int cart_count = Integer.parseInt(cart_count_string);
 
 		  Product_cartDTO product_cartDTO = new Product_cartDTO();
@@ -40,7 +39,7 @@ public class ProductCartInsertOrderAction implements Action {
 		  if(cart_btn != null) {
 			  forward.setPath("/Mypage_Cart.bo");
 		  }else {
-			  forward.setPath("/ProductOrderPage.bo");
+			  forward.setPath("/ProductOrderPage.jsp");
 		  }
 	  
 		  

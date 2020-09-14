@@ -3,13 +3,13 @@
 <%@ page import="java.util.*" %>
 <%@ page import="com.jachi.DTO.TipDTO"%>
     <%
-      ArrayList tip_detail = (ArrayList<TipDTO>)request.getAttribute("tipdetail");
+      ArrayList<TipDTO> tip_detail = (ArrayList<TipDTO>)request.getAttribute("tipdetail");
     %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Tip 상세페이지</title>
+<title>Tip 상세페이지1</title>
 <link rel="stylesheet" href="./myhome.web.css/teamTopNav.css" type="text/css">
 <link rel="stylesheet" href="./myhome.web.css/TipDetail.css" type="text/css">
 </head>
@@ -19,8 +19,8 @@
       <section>
         <div id="swrap">
           <div id="detail_cover">
-             <img src="./img/ProductPost/chair02.webp">
-             <p>[커버이미지 : XXX님의 스타일링샷]</p>
+             <img src="<%=request.getContextPath()%>/upload/<%=tip_detail.get(0).getTip_coverimg()%>">
+             <p>[커버이미지 : <%=tip_detail.get(0).getTip_nickname()%>님의 스타일링샷]</p>
              <div id="tip_post">
               팁 내용
              </div>
