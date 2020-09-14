@@ -22,7 +22,6 @@ public class ProductCartInsertOrderAction implements Action {
 		  String pro_code = request.getParameter("Pro_code");
 		  String cart_count_string = request.getParameter("cart_count");
 		  String cart_option = request.getParameter("cart_option");
-		
 		  int cart_count = Integer.parseInt(cart_count_string);
 
 		  Product_cartDTO product_cartDTO = new Product_cartDTO();

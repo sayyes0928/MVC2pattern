@@ -45,7 +45,7 @@ select us_id from userinfo where us_nkname=#{us_nkname};
 </select>
 
 <insert id="insert_join_userinfo" parameterType="com.jachi.DTO.UserinfoDTO">
-insert into userinfo values(#{us_id}, #{us_pw}, #{us_name}, #{us_nkname}, #{us_birth}, #{us_tel}, #{us_telagr}, #{us_mail}, #{us_mailagr}, #{us_adr}, #{us_pic});
+insert into userinfo(us_id,us_pw,us_name,us_nkname,us_birth,us_tel,us_telagr,us_mail,us_mailagr,us_adr,us_pic) values(#{us_id}, #{us_pw}, #{us_name}, #{us_nkname}, #{us_birth}, #{us_tel}, #{us_telagr}, #{us_mail}, #{us_mailagr}, #{us_adr}, #{us_pic});
 </insert>
 
 <select id="orderList_status" parameterType="com.jachi.DTO.OrderListDTO" resultType="com.jachi.DTO.OrderListDTO" >

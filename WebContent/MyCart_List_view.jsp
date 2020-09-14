@@ -171,7 +171,7 @@
                                  for(int i = 0; i < Cart.size(); i++){
                                 	  
                                 	  int count = Integer.parseInt(Cart.get(i)[1].toString());
-                                	  int price = Integer.parseInt(Cart.get(i)[2]);
+                                	  int price = Integer.parseInt(Cart.get(i)[2].toString());
                                  %>
 													<li class="commerce-cart__delivery-group__product-item">
 													<article class="carted-product">

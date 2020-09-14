@@ -199,7 +199,6 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				forward=action.execute(request, response );
 			} catch (Exception e) {
 				e.printStackTrace();
-				System.out.println("로그인 오류");
 			}
 		}
 		else if(command.equals("/Product_add_Write.bo")){
