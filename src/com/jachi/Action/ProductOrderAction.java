@@ -37,8 +37,8 @@ public class ProductOrderAction implements Action {
 		  orderDTO.setOr_count(or_count);
 		  orderDTO.setOr_id(us_id);
 		  ProductCartListViewService productCartListViewService = new ProductCartListViewService();
-		  List<Product_cartDTO> productinfoDTO= new ArrayList<Product_cartDTO>();
-		  productinfoDTO = productCartListViewService.getArticle(orderDTO);
+		 // List<Product_cartDTO> productinfoDTO= new ArrayList<Product_cartDTO>();
+	//	  productinfoDTO = productCartListViewService.getArticle(orderDTO);
 		
 
 		////////////////////////////////////////////////////////
@@ -50,7 +50,7 @@ public class ProductOrderAction implements Action {
 	
 		  request.setAttribute("orderDTO", orderDTO);
 		  request.setAttribute("userinfoDTO", userinfoDTO);
-		  request.setAttribute("productinfoDTO", productinfoDTO);
+		//  request.setAttribute("productinfoDTO", productinfoDTO);
 
 		  
 		  forward.setPath("/ProductOrderPage.jsp");

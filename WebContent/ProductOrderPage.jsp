@@ -125,7 +125,7 @@
 		//ArrayList<OrderDTO> orderDTO=(ArrayList<OrderDTO>)request.getAttribute("orderDTO");
 
 		ArrayList<UserinfoDTO> userinfoDTO = (ArrayList<UserinfoDTO>) request.getAttribute("userinfoDTO");
-		ArrayList<Product_cartDTO> productinfoDTO = (ArrayList<Product_cartDTO>) request.getAttribute("productinfoDTO");
+		//	ArrayList<Product_cartDTO> productinfoDTO = (ArrayList<Product_cartDTO>) request.getAttribute("productinfoDTO");
 
 		String addrAllBeforeTrim = userinfoDTO.get(0).getUs_adr();
 		String addrAllAfterTrim = addrAllBeforeTrim.trim();
@@ -139,9 +139,7 @@
 			<div id="title">주문/결제</div>
 			<div class="panel">
 				<div class="title">
-					<div class="title">
-						주문상품
-						<%=productinfoDTO.get(0).getCart_us_id()%></div>
+					<div class="title">주문상품</div>
 				</div>
 				<table cellspacing="0" id="order_productions">
 					<tbody data-hj-suppress="" data-hj-ignore-attribute="">
@@ -149,30 +147,30 @@
 							data-count="1" data-name="[포더홈] 글로우 천연가죽 4인용 소파 3colors (스툴선택)">
 							<td>
 								<%
-									if (productinfoDTO != null) {
-										for (int i = 0; i < productinfoDTO.size(); i++) {
-											String cartListAll = productinfoDTO.get(i).getCart_option();
+									ArrayList<String[]> Cart = (ArrayList<String[]>) session.getAttribute("cart");
+									int total_price = 0;
+									if (Cart != null) {
+										for (int i = 0; i < Cart.size(); i++) {
+											String proname = Cart.get(i)[0].toString();
+											int count = Integer.parseInt(Cart.get(i)[1].toString());
+											int price = Integer.parseInt(Cart.get(i)[2].toString());
+											int price_sum = count * price;
 											String cart_arr[] = null;
-											cart_arr = cartListAll.split("@");
 								%>
 								<div class="information">
-									<img
-										src="<%=request.getContextPath()%>/upload/<%=productinfoDTO.get(i).getPro_mainimg()%>">
+									<img src="<%=request.getContextPath()%>/upload/#">
 									<div>
 
-										<div class="name"><%=cart_arr[0]%></div>
-										<div class="option">
-											추가상품 -
-											<%=cart_arr[1]%></div>
+										<div class="name"><%= proname%></div>
+										<div class="option">추가상품 -</div>
 										<div class="cost_count">
-											<div class="cost"><%=productinfoDTO.get(i).getCart_price()%>원
-											</div>
+											<div class="cost"><%= price_sum%>원</div>
 											<div class="divider">|</div>
-											<div class="count"><%=productinfoDTO.get(i).getCart_count()%>개
-											</div>
+											<div class="count"><%= count%>개</div>
 										</div>
 									</div>
 								</div> <%
+								total_price += price_sum;
  	}
  	}
  %>
@@ -344,15 +342,10 @@
 			<div class="panel">
 				<div class="title">최종 결제 금액</div>
 				<div class="cost">
-					<%
-						int costAll = 0;
-						for (int k = 0; k < productinfoDTO.size(); k++) {
-							costAll += productinfoDTO.get(k).getCart_price();
-						}
-					%>
+					원
 					<div class="cost_panel">
 						<div class="title">총 상품 금액</div>
-						<div class="amount" id="preview_product_cost" data-hj-suppress=""><%=costAll%>원
+						<div class="amount" id="preview_product_cost" data-hj-suppress="">원
 						</div>
 					</div>
 
@@ -372,7 +365,7 @@
 					</div>
 
 					<div class="total cost_panel">
-						<div class="amount" id="preview_selling_cost" data-hj-suppress=""><%=costAll + 3000%>원
+						<div class="amount" id="preview_selling_cost" data-hj-suppress="">원
 						</div>
 					</div>
 				</div>
