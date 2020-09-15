@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Tip 상세페이지1</title>
+<title>Tip 상세페이지</title>
 <link rel="stylesheet" href="./myhome.web.css/teamTopNav.css" type="text/css">
 <link rel="stylesheet" href="./myhome.web.css/TipDetail.css" type="text/css">
 </head>
@@ -45,6 +45,8 @@
                  <div class="scrapBT_list">
                    <span>좋아요</span>&nbsp;
                    <span>스크랩</span>
+                   <span><input type="button" value="수정하기"></span>
+                   <span><input type="button" value="등록하기"></span>
                  </div>
           </div>
         </div>
