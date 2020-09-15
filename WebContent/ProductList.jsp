@@ -650,11 +650,12 @@
 
 					<div class="m_img">
 						<ul>
-						<a href="korea.bo?pro_num=<%=article.get(0).getPro_code()%>" >
+						
 																	
 							<%
 							 for(int i =0; i <article.size(); i++ ){
 							%>
+							<a href="korea.bo?pro_num=<%=article.get(i).getPro_code()%>" >
 							<li>
 								<div class="row">					
 									<figure class="effect1">							
