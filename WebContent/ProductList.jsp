@@ -79,7 +79,7 @@
      %>
             <ul class="login_go">
               <li><span></span></li>
-              <li><a href="MypageOrderView.bo">마이페이지</a></li>
+              <li><a href="MypageProfile.bo">마이페이지</a></li>
               <li><span> | </span></li>
               <li><a href="logoutActionPage.jsp">로그아웃</a></li> 
             </ul>
@@ -650,7 +650,7 @@
 
 					<div class="m_img">
 						<ul>
-						<a href="korea.bo?pro_num=<%=article.get(0).getPro_code()%>" >
+						<a href="korea.bo?pro_num=<%= article.get(0).getPro_code()%>" >
 																	
 							<%
 							 for(int i =0; i <article.size(); i++ ){

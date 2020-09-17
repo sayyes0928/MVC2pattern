@@ -13,7 +13,10 @@
 	href="./myhome.web.css/teamTopNav.css" />
 <link rel="stylesheet" type="text/css"
 	href="./myhome.web.css/teamMypage.css" />
-<link rel="stylesheet" type="text/css" href="./styleSlider.css" />
+<link rel="stylesheet" type="text/css"
+	href="./myhome.web.css/mypage_profile_1.css" />
+<link rel="stylesheet" type="text/css"
+	href="./myhome.web.css/mypage_profile_2.css" />
 
 
 
@@ -172,23 +175,38 @@
 		<div id="m_wrap">
 			<main>
 			<div class="MyPage_container">
-				<div class="MyPage_container_header">
-					<nav class="MyPage_container_header_nav">
-						<ul>
-							<li><a href="#"><span>프로필</span></a></li>
-							<li><a href="#"><span>마이쇼핑</span></a></li>
-							<li><a href="#"><span>설정</span></a></li>
-						</ul>
-					</nav>
-					<nav class="MyPage_container_header_nav_sub">
-						<ul>
-							<li><a href="#"><span>주문배송내역 조회</span></a></li>
-							<li><a href="#"><span>장바구니</span></a></li>
-							<li><a href="#"><span>상품문의내역</span></a></li>
-						</ul>
-					</nav>
+				<div class="wrap--nav">
+					<div class="myhome-nav myhome-nav--owner">
+						<nav class="page-navigation myhome-nav__owner">
+							<ul style="transform: translateX(0px);">
+								<li class="page-navigation__item"><a class=""
+									href="MypageProfile.bo" target="_self">프로필</a></li>
+								<li class="page-navigation__item"><a class="active"
+									href="/user_shopping_pages/order_list" target="_self">나의 쇼핑</a></li>
+								<li class="page-navigation__item"><a class=""
+									href="/production_reviews/write" target="_self">나의 리뷰</a></li>
+								<li class="page-navigation__item"><a class=""
+									href="/users/8659285/edit" target="_self">설정</a></li>
+							</ul>
+						</nav>
+						<nav class="page-navigation myhome-nav__contents">
+							<ul style="transform: translateX(0px);">
+								<li class="page-navigation__item"><a class="active"
+									href="/user_shopping_pages/order_list" target="_self">주문배송내역
+										조회</a></li>
+								<li class="page-navigation__item"><a class=""
+									href="Myscrapbook.jsp"
+									target="_self">상품 스크랩북</a></li>
+								<li class="page-navigation__item"><a class=""
+									href="/user_shopping_pages/questions" target="_self">상품문의내역</a></li>
+								<li class="page-navigation__item"><a class=""
+									href="/user_shopping_pages/mileages" target="_self">포인트</a></li>
+								<li class="page-navigation__item"><a class=""
+									href="/contact_us" target="_self">고객센터</a></li>
+							</ul>
+						</nav>
+					</div>
 				</div>
-
 				<!--                            ////////////////////////////// -->
 				<div class="order-list__menu">
 					<a class="order-list__menu__list"
@@ -234,7 +252,7 @@
 				<div class="MyPage_container_selectlist">
 					<table>
 						<tr>
-							<td class="MyPage_container_selectlist_orderDate">주문일</td>
+							<td class="MyPage_container_selectlist_orderDate">주문번호</td>
 							<td class="MyPage_container_selectlist_productName">제품명</td>
 							<td class="MyPage_container_selectlist_deliveryNumber">송장번호</td>
 							<td class="MyPage_container_selectlist_deliveryCompany">택배사</td>
@@ -247,7 +265,7 @@
 								for (int i = 0; i < orderList.size(); i++) {
 						%>
 						<tr>
-							<td><%=orderList.get(i).getList_date()%></td>
+							<td><%=orderList.get(i).getList_code()%></td>
 							<td><%=orderList.get(i).getList_delStatus()%></td>
 							<td><%=orderList.get(i).getList_delNum()%></td>
 							<td><%=orderList.get(i).getList_company()%></td>

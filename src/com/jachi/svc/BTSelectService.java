@@ -7,19 +7,51 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.jachi.DAO.BoardDAO;
 import com.jachi.DTO.BeautyRoomDTO;
+import com.jachi.DTO.QnABBS;
+import com.jachi.DTO.TipDTO;
 
 public class BTSelectService {
 
 	public List<BeautyRoomDTO> getbeautyinfo() {
-		System.out.println("¼­ºñ½ºµé¾î¿È");
+
 		SqlSessionFactory sqlfactory = BoardDAO.getConn();
 		SqlSession sqlsession = sqlfactory.openSession();
 		List<BeautyRoomDTO> beautylistall = sqlsession.selectList("select_beautyall");
 		System.out.println(beautylistall.size());
 		sqlsession.close();
-		System.out.println("¸ÊÆÛÀß´Ù³à¿È");
+
 		
 		return beautylistall;
+		
+	}
+	public List<QnABBS> getQnaListAll(String or_id) {
+
+		SqlSessionFactory sqlfactory = BoardDAO.getConn();
+		SqlSession sqlsession = sqlfactory.openSession();
+		
+		String us_id = or_id;
+		
+		List<QnABBS> qanListAll = sqlsession.selectList("qna_getList",us_id);
+
+		sqlsession.close();
+
+		
+		return qanListAll;
+		
+	}
+	public List<TipDTO> getTipListAll(String or_id) {
+
+		SqlSessionFactory sqlfactory = BoardDAO.getConn();
+		SqlSession sqlsession = sqlfactory.openSession();
+		
+		String us_id = or_id;
+		
+		List<TipDTO> postingListAll = sqlsession.selectList("tip_getList",us_id);
+
+		sqlsession.close();
+
+		
+		return postingListAll;
 		
 	}
 }

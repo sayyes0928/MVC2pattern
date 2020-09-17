@@ -21,7 +21,6 @@ public class BTSelectAction implements Action {
 		
 		ActionForward forward = new ActionForward();
 		request.setAttribute("beautyList", beautyList);
-		System.out.println("액션으로 리턴 잘옴");
 		forward.setPath("btList.bo");
 		
 		return forward;

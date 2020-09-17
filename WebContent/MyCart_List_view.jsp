@@ -53,6 +53,9 @@
 			</div>
 
 			<%
+				String backPage = request.getHeader("Referer");
+				session.setAttribute("backPage", backPage);
+
 				String us_id = null;
 				us_id = (String) session.getAttribute("us_id"); //로그인 유무 확인
 				if (us_id == null) {
@@ -69,7 +72,7 @@
 			%>
 			<ul class="login_go">
 				<li><span></span></li>
-				<li><a href="MypageOrderView.bo">마이페이지</a></li>
+				<li><a href="MypageProfile.bo">마이페이지</a></li>
 				<li><span> | </span></li>
 				<li><a href="logoutActionPage.jsp">로그아웃</a></li>
 			</ul>
@@ -144,7 +147,7 @@
 							class="sticky-container commerce-cart__header-wrap" style="">
 							<div class="sticky-child commerce-cart__header"
 								style="position: relative;">
-								
+
 								<!--<span class="commerce-cart__header__left"><label
 									class="_3xqzr _4VN_z"><div class="_3zqA8">
 											  <input type="checkbox" class="_3UImz" value="" checked="">  
@@ -156,17 +159,18 @@
 										</div> <span class="_1aN3J"><span
 											class="commerce-cart__header__caption">모두선택</span></span></label></span>
 									선택 해제 미구현 		-->
-											<span class="commerce-cart__header__right">
-											<button class="commerce-cart__header__delete" type="button" onclick="cartRemove()">장바구니 비우기</button></span>
+								<span class="commerce-cart__header__right">
+									<button class="commerce-cart__header__delete" type="button"
+										onclick="cartRemove()">장바구니 비우기</button>
+								</span>
 							</div>
 							<script>
-							
-							  function cartRemove(){
-								  
-								  location.href='cartListRemove.jsp';
-							  }
+								function cartRemove() {
+
+									location.href = 'cartListRemove.jsp';
+								}
 							</script>
-							
+
 						</div>
 						<ul class="commerce-cart__content__group-list">
 							<li class="commerce-cart__content__group-item"><article
@@ -232,8 +236,8 @@
 														</article>
 													</li>
 													<footer class="commerce-cart__delivery-group__footer">
-													<p class="commerce-cart__delivery-group__total">배송비</p>
-												</footer>
+														<p class="commerce-cart__delivery-group__total">배송비</p>
+													</footer>
 													<%
 														total_price += price_sum;
 															}
@@ -242,7 +246,7 @@
 														}
 													%>
 												</ul>
-												
+
 											</article></li>
 									</ul>
 								</article></li>

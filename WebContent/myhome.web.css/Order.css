@@ -95,6 +95,7 @@
     cursor: pointer;
     border-radius: 3px;
 }
+
 #pre_order>form>.panel>.input>.field>.input.vertical {
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;

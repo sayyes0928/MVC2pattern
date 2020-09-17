@@ -7,11 +7,11 @@ public class OrderListDTO {
 	public void setList_delStatus(String list_delStatus) {
 		this.list_delStatus = list_delStatus;
 	}
-	public String getOr_id() {
-		return or_id;
+	public String getOdr_id() {
+		return odr_id;
 	}
-	public void setOr_id(String or_id) {
-		this.or_id = or_id;
+	public void setOdr_id(String odr_id) {
+		this.odr_id = odr_id;
 	}
 	public String getList_date() {
 		return list_date;
@@ -44,12 +44,19 @@ public class OrderListDTO {
 		this.cal_price = cal_price;
 	}
 	String list_delStatus;
-	String or_id;
+	String odr_id;
 	String list_date;
 	int list_amount;
 	String list_name;
 	String list_delNum;
 	String list_company;
+	String list_code;
+	public String getList_code() {
+		return list_code;
+	}
+	public void setList_code(String list_code) {
+		this.list_code = list_code;
+	}
 	public String getList_company() {
 		return list_company;
 	}

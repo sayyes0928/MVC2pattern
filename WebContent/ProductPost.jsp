@@ -5,9 +5,8 @@
 <%@ page import="java.util.*"%>
 <%@ page import="com.jachi.DTO.ProductinfoDTO"%>
 <%
-    ArrayList<ProductinfoDTO> article = (ArrayList<ProductinfoDTO>)request.getAttribute("article");
-    
-    %>
+	ArrayList<ProductinfoDTO> article = (ArrayList<ProductinfoDTO>) request.getAttribute("article");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,160 +21,129 @@
 <script type="text/javascript" src="./myhome.web.js/ProductPost.js"></script>
 <script src="./myhome.web.js/teamTopnav.js"></script>
 <script>
-//////////// 주문 목록 리스트 
-$(function() {
-	  $('#Option1').on('change', function() {
-	 	 var pro_name = $('#product_name').text();
-	     var optiongroup = $('#Option1 option:first').val();
-	     var option = $('#Option1 option:selected').val();  		     	
-	     var buylist_cell1 = $("#buylist_cell1").html();
-		     var item_size = $("#Option1 option").size(); 
-		     var idx = $("#Option1 option").index($("#Option1 option:selected"));
-		     var item_text = $("#Option1 option:selected").text();
-		     var option2 = $("#buylist_section1 #buy_option").text();
+	//////////// 주문 목록 리스트 
+	$(function() {
+		$('#Option1')
+				.on(
+						'change',
+						function() {
+							var pro_name = $('#product_name').text();
+							var optiongroup = $('#Option1 option:first').val();
+							var option = $('#Option1 option:selected').val();
+							var buylist_cell1 = $("#buylist_cell1").html();
+							var item_size = $("#Option1 option").size();
+							var idx = $("#Option1 option").index(
+									$("#Option1 option:selected"));
+							var item_text = $("#Option1 option:selected")
+									.text();
+							var option2 = $("#buylist_section1 #buy_option")
+									.text();
 
-		     $("#buylist_section1").css("display", "block");
-		     $("#buylist1").text( pro_name+" / "+optiongroup+" : ");	
-		   $("#buy_option").text(option);	
-		     $("#buylist_cell2").append(buylist_cell1);
-	       		     
-		 });
-});
+							$("#buylist_section1").css("display", "block");
+							$("#buylist1").text(
+									pro_name + " / " + optiongroup + " : ");
+							$("#buy_option").text(option);
+							$("#buylist_cell2").append(buylist_cell1);
 
-////////// 주문 목록 삭제버튼
-$(document).on("click","#buylist_delete1",function(){
-    $(this, '#buylist_delete1').parent().css("display", "none");
-});
+						});
+	});
 
-function buy(){
-	var proall = "";
-	var pro_option = document.getElementById("buy_option").innerHTML;
-	var pro_name = document.getElementById("buylist1").innerHTML;
-	var pro_count = document.getElementById("product_count1").value;
-	var pro_price = document.getElementById("proudctlist_price1").innerHTML;
-	var pro_all = pro_name + pro_option;
-	var pro_group = [pro_all, pro_count, pro_price];
-
-	console.log(pro_group[0]);
-	console.log(pro_group[1]);
-	console.log(pro_group[2]);
-	
-          $.ajax({
-            url: 'BasketPage.jsp',
-            data: {
-              'Pro_all': pro_all,
-              'Pro_count': pro_count,
-              'Pro_price': pro_price
-            },
-
-            success: function () {
-           
-            }
-
-          });
- 
-
-}
+	////////// 주문 목록 삭제버튼
+	$(document).on("click", "#buylist_delete1", function() {
+		$(this, '#buylist_delete1').parent().css("display", "none");
+	});
 </script>
 </head>
 <body>
-	<form id="contentPage" action="ProductOrderPage.bo">
+	<form id="contentPage" action="#">
 		<header>
-        <div id="h_wrap">
-          <div class="h_div">
+			<div id="h_wrap">
+				<div class="h_div">
 
-        <h1>자취해보자</h1>
-              </div>
-         
-       <%
-       String us_id = (String)session.getAttribute("us_id"); //로그인 유무 확인
-       if(us_id==null){
-     %>
-            <ul class="login_go">
-              <li><a href="LoginFormpage.bo">로그인</a></li>
-              <li><span> | </span></li>
-              <li><a href="join.bo">회원가입</a></li>
-            </ul>
-      
+					<h1>자취해보자</h1>
+				</div>
 
-     <%
-       }else{
-     %>
-            <ul class="login_go">
-              <li><span></span></li>
-              <li><a href="MypageOrderView.bo">마이페이지</a></li>
-              <li><span> | </span></li>
-              <li><a href="logoutActionPage.jsp">로그아웃</a></li> 
-            </ul>
-        
-       
+				<%
+					String us_id = (String) session.getAttribute("us_id"); //로그인 유무 확인
+					if (us_id == null) {
+				%>
+				<ul class="login_go">
+					<li><a href="LoginFormpage.bo">로그인</a></li>
+					<li><span> | </span></li>
+					<li><a href="join.bo">회원가입</a></li>
+				</ul>
 
-     <%
-       }
-     %>
-          <div id="main_nav">
-          <ul>
-            <li>
-              <a href="Index.jsp"><span>홈</span></a>
-            </li>
-            <li>
-              <a href="storeList.bo"><span>스토어</span></a>
-            </li>
-            <li>
-              <a href="beauty.bo"><span>커뮤니티</span></a>
-            </li>
-            <li>
-              <a href="#"><span>자취에대한 모든것</span></a>
-            </li>
 
-            <li>
-              <a href="#"><span>고객센터</span></a>
-            </li>
-          </ul>
-        </div>
-        
-        </div>
+				<%
+					} else {
+				%>
+				<ul class="login_go">
+					<li><span></span></li>
+					<li><a href="MypageProfile.bo">마이페이지</a></li>
+					<li><span> | </span></li>
+					<li><a href="CartList.bo">장바구니</a></li>
+					<li><span> | </span></li>
+					<li><a href="logoutActionPage.jsp">로그아웃</a></li>
+				</ul>
 
-<div id="sub">
-          <div id="sub_menu">
-            <div class="nav_container_div">
-              <nav role="navigation" class="primary-navigation">
-                <ul class="nav_container">
-                  <li>
-                  
-                    <ul class="m_line">
-                      <li><a href="#">카테고리</a></li>
-                      <li><a href="#">베스트</a></li>
-                      <li><a href="#">특가</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <ul class="m_line">
-                      <li><a href="#">내방자랑</a></li>
-                      <li><a href="#">내집자랑</a></li>
-                      <li><a href="#">전문가집들이</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <ul class="m_line">
-                      <li><a href="#">자취생TIP</a></li>
-                      <li><a href="#">자취생QnA</a></li>
-                      <li><a href="#">혼밥레시피</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <ul class="m_line">
-                      <li><a href="#">질문과답변</a></li>
-                      <li><a href="#">공지사항</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </div>
-        
-      </header>
+
+
+				<%
+					}
+				%>
+				<div id="main_nav">
+					<ul>
+						<li><a href="Index.jsp"><span>홈</span></a></li>
+						<li><a href="storeList.bo"><span>스토어</span></a></li>
+						<li><a href="beauty.bo"><span>커뮤니티</span></a></li>
+						<li><a href="#"><span>자취에대한 모든것</span></a></li>
+
+						<li><a href="#"><span>고객센터</span></a></li>
+					</ul>
+				</div>
+
+			</div>
+
+			<div id="sub">
+				<div id="sub_menu">
+					<div class="nav_container_div">
+						<nav role="navigation" class="primary-navigation">
+							<ul class="nav_container">
+								<li>
+
+									<ul class="m_line">
+										<li><a href="#">카테고리</a></li>
+										<li><a href="#">베스트</a></li>
+										<li><a href="#">특가</a></li>
+									</ul>
+								</li>
+								<li>
+									<ul class="m_line">
+										<li><a href="#">내방자랑</a></li>
+										<li><a href="#">내집자랑</a></li>
+										<li><a href="#">전문가집들이</a></li>
+									</ul>
+								</li>
+								<li>
+									<ul class="m_line">
+										<li><a href="#">자취생TIP</a></li>
+										<li><a href="#">자취생QnA</a></li>
+										<li><a href="#">혼밥레시피</a></li>
+									</ul>
+								</li>
+								<li>
+									<ul class="m_line">
+										<li><a href="#">질문과답변</a></li>
+										<li><a href="#">공지사항</a></li>
+									</ul>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+
+		</header>
 
 
 
@@ -235,10 +203,10 @@ function buy(){
 						<div class="s_mainproduct">
 							<ul>
 								<li class="s_maintitlefont01">의자왕</li>
-								<li id="product_name" class="s_maintitlefont02"><%= article.get(0).getPro_name()%></li>
+								<li id="product_name" class="s_maintitlefont02"><%=article.get(0).getPro_name()%></li>
 								<li class="s_maintitlefont01">3개 리뷰</li>
 								<li class="s_maintitlefont03">54%</li>
-								<li class="s_li_inline"><%= article.get(0).getPro_price()%>
+								<li class="s_li_inline"><%=article.get(0).getPro_price()%>
 									원</li>
 							</ul>
 						</div>
@@ -246,76 +214,106 @@ function buy(){
 						<div class="s_combobox">
 							<ul>
 
-								<% if(article.get(0).getPro_option1()!=null){
-                      String option = null;
-                      String [] optionsp = null;
-                      for(int i=0; i<article.size(); i++ ){
-        	                option = article.get(i).getPro_option1();
-        	                optionsp = option.split(",");%>
-								<%} %>
+								<%
+									if (article.get(0).getPro_option1() != null) {
+										String option = null;
+										String[] optionsp = null;
+										for (int i = 0; i < article.size(); i++) {
+											option = article.get(i).getPro_option1();
+											optionsp = option.split(",");
+								%>
+								<%
+									}
+								%>
 								<li><select id="Option1">
 
 
-										<%   for(int x=0; x < optionsp.length; x++){%>
+										<%
+											for (int x = 0; x < optionsp.length; x++) {
+										%>
 										<option value="<%=optionsp[x]%>"><%=optionsp[x]%></option>
-										<%} %>
+										<%
+											}
+										%>
 
 								</select></li>
-								<%} %>
+								<%
+									}
+								%>
 
-								<% if(article.get(0).getPro_option2()!=null){
-                      String option = null;
-                      String [] optionsp = null;
-                      for(int i=0; i<article.size(); i++ ){
-        	                option = article.get(i).getPro_option2();
-        	                optionsp = option.split(",");%>
-								<%} %>
+								<%
+									if (article.get(0).getPro_option2() != null) {
+										String option = null;
+										String[] optionsp = null;
+										for (int i = 0; i < article.size(); i++) {
+											option = article.get(i).getPro_option2();
+											optionsp = option.split(",");
+								%>
+								<%
+									}
+								%>
 								<li><select>
-										<%   for(int x=0; x < optionsp.length; x++){%>
+										<%
+											for (int x = 0; x < optionsp.length; x++) {
+										%>
 										<option><%=optionsp[x]%></option>
-										<%} %>
+										<%
+											}
+										%>
 								</select></li>
-								<% }%>
+								<%
+									}
+								%>
 
-								<% if(article.get(0).getPro_option3()!=null){
-                      String option = null;
-                      String [] optionsp = null;
-                      for(int i=0; i<article.size(); i++ ){
-        	                option = article.get(i).getPro_option3();
-        	                optionsp = option.split(",");%>
-								<%} %>
+								<%
+									if (article.get(0).getPro_option3() != null) {
+										String option = null;
+										String[] optionsp = null;
+										for (int i = 0; i < article.size(); i++) {
+											option = article.get(i).getPro_option3();
+											optionsp = option.split(",");
+								%>
+								<%
+									}
+								%>
 								<li><select>
-										<%   for(int x=1; x < optionsp.length; x++){%>
+										<%
+											for (int x = 1; x < optionsp.length; x++) {
+										%>
 										<option><%=optionsp[x]%></option>
-										<%} %>
+										<%
+											}
+										%>
 								</select></li>
-								<% }%>
+								<%
+									}
+								%>
 							</ul>
-						<div id="buylist_cell1">
-							<div id="buylist_section1">							    
-							    <div id="buylist1"></div>
-							    <span id="buy_option"></span>
-							    <input id="buylist_delete1" type="button" value="X">
-								<select id="product_count1" name="or_count">
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
-									<option>6</option>
-									<option>7</option>
-									<option>8</option>
-									<option>9</option>
-									<option>10+</option>
-								</select>
-								<span id="proudctlist_price1"><%= article.get(0).getPro_price()%></span>원
+							<div id="buylist_cell1">
+								<div id="buylist_section1">
+									<div id="buylist1"></div>
+									<span id="buy_option"></span> <input id="buylist_delete1"
+										type="button" value="X"> <select id="product_count1"
+										name="or_count">
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+										<option>5</option>
+										<option>6</option>
+										<option>7</option>
+										<option>8</option>
+										<option>9</option>
+										<option>10+</option>
+									</select> <span id="proudctlist_price1"><%=article.get(0).getPro_price()%></span>원
+								</div>
 							</div>
-						 </div>
-						 <div id="buylist_cell2">
-						 
-						 </div>
+							<div id="buylist_cell2"></div>
 						</div>
-						<input type="hidden" value=<%=article.get(0).getPro_code()%> name="Pro_code">
+						<%
+						 String pro_code = (String)request.getParameter("pro_num");
+						%>
+						<input type="hidden" value=<%= pro_code%> name="pro_code" id="pro_code">
 						<div class="s_price">
 							<ul>
 								<li class="price01">주문금액</li>
@@ -323,21 +321,85 @@ function buy(){
 							</ul>
 						</div>
 						<hr>
+						<script>
+							// 장바구니 및 구매 버튼 클릭시 발생 이벤트 
+							function cart() {
+								var proall = "";
+								var pro_code = document
+										.getElementById("pro_code").value;
+								alert(pro_code);
+								var pro_option = document
+										.getElementById("buy_option").innerHTML;
+								var pro_name = document
+										.getElementById("buylist1").innerHTML;
+								var pro_count = document
+										.getElementById("product_count1").value;
+								var pro_price = document
+										.getElementById("proudctlist_price1").innerHTML;
+								var pro_all = pro_name + pro_option;
+								var pro_group = [ pro_all, pro_count, pro_price ];
+
+								$.ajax({
+									url : 'BasketPage.jsp',
+									data : {
+										'Pro_all' : pro_all,
+										'Pro_count' : pro_count,
+										'Pro_price' : pro_price,
+										'Pro_code' : pro_code
+									},
+
+									success : function() {
+
+									}
+
+								});
+
+							}
+							function buy() {
+								var proall = "";
+								var pro_code = document
+										.getElementById("pro_code").value;
+								var pro_option = document
+										.getElementById("buy_option").innerHTML;
+								var pro_name = document
+										.getElementById("buylist1").innerHTML;
+								var pro_count = document
+										.getElementById("product_count1").value;
+								var pro_price = document
+										.getElementById("proudctlist_price1").innerHTML;
+								var pro_all = pro_name + pro_option;
+								var pro_group = [ pro_all, pro_count, pro_price ];
+
+								$.ajax({
+									url : 'BasketPage.jsp',
+									data : {
+										'Pro_all' : pro_all,
+										'Pro_count' : pro_count,
+										'Pro_price' : pro_price,
+										'Pro_code' : pro_code
+									},
+
+									success : function() {
+										location.href = 'ProductOrderPage.bo';
+
+									}
+
+								});
+
+							}
+						</script>
 						<div class="s_button">
 							<ul id="product_info">
 
-								<li><button class="m_button01" type="button" onclick="buy()">장바구니</button></li>
-								<li><button class="m_button02" type="button" onclick="OrderSubmit(contentPage)">바로구매</button></li>
+								<li><button class="m_button01" type="button"
+										onclick="cart()">장바구니</button></li>
+								<li><button class="m_button02" type="button"
+										onclick="buy()">바로구매</button></li>
 							</ul>
 						</div>
 					</div>
 				</div>
-				<script>
-				 function OrderSubmit(contentPage){
-					 
-					 contentPage.submit();
-				 }
-				</script>
+
 				<div id="r_wrap">
 					<div class="pr_nav">
 						<ul class="s_infonav">
@@ -588,50 +650,80 @@ function buy(){
 						<div class="selling01">
 							<div class="selling_select">
 								<ul>
-									<% if(article.get(0).getPro_option1()!=null){
-                      String option = null;
-                      String [] optionsp = null;
-                      for(int i=0; i<article.size(); i++ ){
-        	                option = article.get(i).getPro_option1();
-        	                optionsp = option.split(",");%>
-									<%} %>
+									<%
+										if (article.get(0).getPro_option1() != null) {
+											String option = null;
+											String[] optionsp = null;
+											for (int i = 0; i < article.size(); i++) {
+												option = article.get(i).getPro_option1();
+												optionsp = option.split(",");
+									%>
+									<%
+										}
+									%>
 									<li><select>
 
 
-											<%   for(int x=0; x < optionsp.length; x++){%>
+											<%
+												for (int x = 0; x < optionsp.length; x++) {
+											%>
 											<option><%=optionsp[x]%></option>
-											<%} %>
+											<%
+												}
+											%>
 
 									</select></li>
-									<%} %>
+									<%
+										}
+									%>
 
-									<% if(article.get(0).getPro_option2()!=null){
-                      String option = null;
-                      String [] optionsp = null;
-                      for(int i=0; i<article.size(); i++ ){
-        	                option = article.get(i).getPro_option2();
-        	                optionsp = option.split(",");%>
-									<%} %>
+									<%
+										if (article.get(0).getPro_option2() != null) {
+											String option = null;
+											String[] optionsp = null;
+											for (int i = 0; i < article.size(); i++) {
+												option = article.get(i).getPro_option2();
+												optionsp = option.split(",");
+									%>
+									<%
+										}
+									%>
 									<li><select>
-											<%   for(int x=0; x < optionsp.length; x++){%>
+											<%
+												for (int x = 0; x < optionsp.length; x++) {
+											%>
 											<option><%=optionsp[x]%></option>
-											<%} %>
+											<%
+												}
+											%>
 									</select></li>
-									<% }%>
+									<%
+										}
+									%>
 
-									<% if(article.get(0).getPro_option3()!=null){
-                      String option = null;
-                      String [] optionsp = null;
-                      for(int i=0; i<article.size(); i++ ){
-        	                option = article.get(i).getPro_option3();
-        	                optionsp = option.split(",");%>
-									<%} %>
+									<%
+										if (article.get(0).getPro_option3() != null) {
+											String option = null;
+											String[] optionsp = null;
+											for (int i = 0; i < article.size(); i++) {
+												option = article.get(i).getPro_option3();
+												optionsp = option.split(",");
+									%>
+									<%
+										}
+									%>
 									<li><select>
-											<%   for(int x=1; x < optionsp.length; x++){%>
+											<%
+												for (int x = 1; x < optionsp.length; x++) {
+											%>
 											<option><%=optionsp[x]%></option>
-											<%} %>
+											<%
+												}
+											%>
 									</select></li>
-									<% }%>
+									<%
+										}
+									%>
 
 								</ul>
 							</div>

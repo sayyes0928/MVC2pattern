@@ -27,13 +27,14 @@ import com.jachi.Action.JoinInsertUserInfoAction;
 import com.jachi.Action.JoinNickNamecheckUserinfoAction;
 import com.jachi.Action.LikeUpdateAction;
 import com.jachi.Action.LoginUserAction;
+import com.jachi.Action.MyPagePostingListViewAction;
 import com.jachi.Action.MyhomeDetailAction;
 import com.jachi.Action.MyhomeWriteProAction;
 import com.jachi.Action.MypageOrderListViewAction;
 import com.jachi.Action.MypageOrderViewAction;
 import com.jachi.Action.PLSelectAction;
-import com.jachi.Action.ProductCartInsertOrderAction;
 import com.jachi.Action.ProductOrderAction;
+import com.jachi.Action.ProductOrderInsertAction;
 import com.jachi.Action.ProductPostViewAction;
 import com.jachi.Action.QnaDeleteAction;
 import com.jachi.Action.QnaListAction;
@@ -41,11 +42,8 @@ import com.jachi.Action.QnaModifyAction;
 import com.jachi.Action.QnaSearchAction;
 import com.jachi.Action.QnaSearchListAction;
 import com.jachi.Action.QnaSelectAction;
-
-import com.jachi.Action.TipDetailAction;
-
 import com.jachi.Action.QnaWriteAction;
-
+import com.jachi.Action.TipDetailAction;
 import com.jachi.Action.TipListAction;
 import com.jachi.Action.TipReplyWriteAction;
 import com.jachi.Action.TipSelectAction;
@@ -151,6 +149,14 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
+		else if(command.equals("/MypageProfile.bo")){
+			action  = new MyPagePostingListViewAction();
+			try {
+				forward=action.execute(request, response );
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 		else if(command.equals("/MypageOrderView.bo")){
 			action  = new MypageOrderViewAction();
 			try {
@@ -193,14 +199,19 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				System.out.println(e);
 			}
 		}
-//		else if(command.equals("/ProductOrderCart.bo")){
-//			action  = new ProductCartInsertOrderAction();
-//			try {
-//				forward=action.execute(request, response );
-//			} catch (Exception e) {
-//				e.printStackTrace();
-//			}
-//		}
+		else if(command.equals("/ProductOrderComplite.bo")){
+			action  = new ProductOrderInsertAction();
+			try {
+				forward=action.execute(request, response );
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println(e);
+			}
+		}
+		else if(command.equals("/CartList.bo")){
+			forward=new ActionForward();
+			forward.setPath("/MyCart_List_view.jsp");
+		}
 		else if(command.equals("/Product_add_Write.bo")){
 			forward=new ActionForward();
 			forward.setPath("/fileUpload.jsp");
@@ -326,7 +337,6 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		}
 		
 		else if(command.equals("/beauty_write.bo")) {
-			System.out.println("³ª¿À´Ï?");
 			action = new BTWriteAction();
 			try {
 				forward=action.execute(request, response);

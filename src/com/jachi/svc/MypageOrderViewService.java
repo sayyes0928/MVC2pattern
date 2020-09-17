@@ -25,7 +25,7 @@ public class MypageOrderViewService {
         public List<OrderListDTO> getOrderList_status(String us_id, String status) {
         	
         	OrderListDTO orderListDTO = new OrderListDTO();
-        	orderListDTO.setOr_id(us_id);
+        	orderListDTO.setOdr_id(us_id);
         	orderListDTO.setList_delStatus(status);
         	
       		 SqlSessionFactory sqlfactory = BoardDAO.getConn();
@@ -35,7 +35,18 @@ public class MypageOrderViewService {
       		return OrderList_status;
            
            }
-
+        public int getOrderCodeTail(String us_id) {
+        	
+    		
+      		 SqlSessionFactory sqlfactory = BoardDAO.getConn();
+      		 SqlSession sqlsession = sqlfactory.openSession();
+      		 int orderCodeTail = sqlsession.selectOne("select_orderCodeTail", us_id);
+      		
+      		sqlsession.close();
+      		
+      		return orderCodeTail;
+           
+           }
         
 
 

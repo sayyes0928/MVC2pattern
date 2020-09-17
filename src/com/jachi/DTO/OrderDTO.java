@@ -1,54 +1,88 @@
 package com.jachi.DTO;
 
 public class OrderDTO {
- public String getOr_id() {
-		return or_id;
+	String odr_id;
+	public String getOdr_id() {
+		return odr_id;
 	}
-	public void setOr_id(String or_id) {
-		this.or_id = or_id;
+	public void setOdr_id(String odr_id) {
+		this.odr_id = odr_id;
 	}
-	public String getOr_procode() {
-		return or_procode;
+	public String getOdr_procode() {
+		return odr_procode;
 	}
-	public void setOr_procode(String or_procode) {
-		this.or_procode = or_procode;
+	public void setOdr_procode(String odr_procode) {
+		this.odr_procode = odr_procode;
 	}
-	public String getOr_adr() {
-		return or_adr;
+	public String getOdr_adr() {
+		return odr_adr;
 	}
-	public void setOr_adr(String or_adr) {
-		this.or_adr = or_adr;
+	public void setOdr_adr(String odr_adr) {
+		this.odr_adr = odr_adr;
 	}
-	public String getOr_tel() {
-		return or_tel;
+	public String getOdr_tel() {
+		return odr_tel;
 	}
-	public void setOr_tel(String or_tel) {
-		this.or_tel = or_tel;
+	public void setOdr_tel(String odr_tel) {
+		this.odr_tel = odr_tel;
 	}
-	public String getOr_date() {
-		return or_date;
+	public String getOdr_date() {
+		return odr_date;
 	}
-	public void setOr_date(String or_date) {
-		this.or_date = or_date;
+	public void setOdr_date(String odr_date) {
+		this.odr_date = odr_date;
 	}
-	public String getOr_code() {
-		return or_code;
+	public int getOdr_count() {
+		return odr_count;
 	}
-	public void setOr_code(String or_code) {
-		this.or_code = or_code;
+	public void setOdr_count(int odr_count) {
+		this.odr_count = odr_count;
 	}
-	public int getOr_count() {
-		return or_count;
+	public String getOdr_name() {
+		return odr_name;
 	}
-	public void setOr_count(int or_count) {
-		this.or_count = or_count;
+	public void setOdr_name(String odr_name) {
+		this.odr_name = odr_name;
 	}
-
-String or_id;
- String or_procode;
- String or_adr;
- String or_tel;
- String or_date;
- String or_code;
- int or_count;
+	public String getOdr_mail() {
+		return odr_mail;
+	}
+	public void setOdr_mail(String odr_mail) {
+		this.odr_mail = odr_mail;
+	}
+	public String getOdr_memo() {
+		return odr_memo;
+	}
+	public void setOdr_memo(String odr_memo) {
+		this.odr_memo = odr_memo;
+	}
+	public String getOdr_proname() {
+		return odr_proname;
+	}
+	public void setOdr_proname(String odr_proname) {
+		this.odr_proname = odr_proname;
+	}
+	public int getOdr_price() {
+		return odr_price;
+	}
+	public void setOdr_price(int odr_price) {
+		this.odr_price = odr_price;
+	}
+	String odr_code;
+	public String getOdr_code() {
+		return odr_code;
+	}
+	public void setOdr_code(String odr_code) {
+		this.odr_code = odr_code;
+	}
+	String odr_procode;
+	String odr_adr;
+	String odr_tel;
+	String odr_date;
+	int odr_count;
+	String odr_name;
+	String odr_mail;
+	String odr_memo;
+	String odr_proname;
+	int odr_price;
 }
