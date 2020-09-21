@@ -209,7 +209,7 @@ insert into productinfo values(#{pro_code},#{pro_name},#{pro_price},#{pro_mainim
 </insert>
 
 <select id="select_TipDetail" parameterType="Integer" resultType="com.jachi.DTO.TipDTO">
-    select * from tip where tip_num = #{tip_num};
+    select tip_num, tip_title, tip_post, tip_coverimg, tip_date, us_nkname as 'tip_nickname' from tip join userinfo on userinfo.us_id = tip.tip_nickname where tip_num = #{tip_num};
 </select>
 
 </mapper>
