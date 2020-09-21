@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.jachi.DTO.ActionForward;
+import com.jachi.DTO.BeautyRoomDTO;
 import com.jachi.DTO.QnABBS;
 import com.jachi.DTO.TipDTO;
 import com.jachi.svc.BTSelectService;
@@ -22,14 +23,18 @@ public class MyPagePostingListViewAction implements Action{
 		
 		List<QnABBS> qnaList = new ArrayList<QnABBS>();
 		List<TipDTO> tipList = new ArrayList<TipDTO>();
+		List<BeautyRoomDTO> postList = new ArrayList<BeautyRoomDTO>();
 
 		BTSelectService btSelectService = new BTSelectService();
 		qnaList = btSelectService.getQnaListAll(or_id);
 		tipList = btSelectService.getTipListAll(or_id);
+		postList = btSelectService.getPostList(or_id);
 		
 		ActionForward forward = new ActionForward();
 	   	request.setAttribute("qnaList", qnaList);
 	   	request.setAttribute("tipList", tipList);
+	   	request.setAttribute("postList", postList);
+	   	
    		forward.setPath("/MypageProfileView.jsp");
    		
    		return forward;

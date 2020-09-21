@@ -54,4 +54,16 @@ public class BTSelectService {
 		return postingListAll;
 		
 	}
+	public List<BeautyRoomDTO> getPostList(String us_id) {
+
+		String post_nickname = us_id;
+		SqlSessionFactory sqlfactory = BoardDAO.getConn();
+		SqlSession sqlsession = sqlfactory.openSession();
+		List<BeautyRoomDTO> posting = sqlsession.selectList("posting_getList",post_nickname);
+		
+		sqlsession.close();
+
+		return posting;
+		
+	}
 }
