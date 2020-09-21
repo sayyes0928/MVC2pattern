@@ -24,7 +24,6 @@ public class TipDetailAction implements Action{
 		TipDetailService tipselectservice = new TipDetailService();
 		tipdto = tipselectservice.getTipinfo(tip_num);
 		
-		System.out.println(tipdto.get(0).getTip_coverimg());
 		ActionForward forward = new ActionForward();
 		request.setAttribute("tipdetail", tipdto);
    		forward.setPath("TipDetail.jsp");
