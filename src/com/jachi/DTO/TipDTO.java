@@ -6,7 +6,15 @@ public class TipDTO {
     int tip_num;
     String tip_title;
     String tip_coverimg;
+    String tip_date;
     
+    
+	public String getTip_date() {
+		return tip_date;
+	}
+	public void setTip_date(String tip_date) {
+		this.tip_date = tip_date;
+	}
 	public String getTip_nickname() {
 		return tip_nickname;
 	}
