@@ -18,6 +18,10 @@
 	href="./myhome.web.css/mypage_profile_1.css" />
 <link rel="stylesheet" type="text/css"
 	href="./myhome.web.css/mypage_profile_2.css" />
+<link rel="stylesheet" type="text/css"
+	href="./myhome.web.css/scrapbook_1.css" />
+<link rel="stylesheet" type="text/css"
+	href="./myhome.web.css/scrapbook_2.css" />
 
 
 
@@ -82,96 +86,15 @@
 		ArrayList<Integer> articleCount = null;
 		articleCount = (ArrayList<Integer>) request.getAttribute("articleCount");
 	%>
+	<%
+		ArrayList<QnABBS> qnaList = (ArrayList<QnABBS>) request.getAttribute("qnaList");
+		ArrayList<TipDTO> tipList = (ArrayList<TipDTO>) request.getAttribute("tipList");
+		ArrayList<TipDTO> postList = (ArrayList<TipDTO>) request.getAttribute("postList");
+	%>
 	<!-- 게시판 등록 -->
 
 	<form id="contentPage">
-		<header>
-			<div id="h_wrap">
-				<div class="h_div">
-
-					<h1>자취해보자</h1>
-				</div>
-
-				<%
-					String us_id = null;
-					us_id = (String) session.getAttribute("us_id"); //로그인 유무 확인
-					if (us_id == null) {
-				%>
-				<ul class="login_go">
-					<li><a href="LoginFormpage.bo">로그인</a></li>
-					<li><span> | </span></li>
-					<li><a href="join.bo">회원가입</a></li>
-				</ul>
-
-
-				<%
-					} else {
-				%>
-				<ul class="login_go">
-					<li><span></span></li>
-					<li><a href="MypageProfile.bo">마이페이지</a></li>
-					<li><span> | </span></li>
-					<li><a href="logoutActionPage.jsp">로그아웃</a></li>
-				</ul>
-
-
-
-				<%
-					}
-				%>
-				<div id="main_nav">
-					<ul>
-						<li><a href="Index.jsp"><span>홈</span></a></li>
-						<li><a href="storeList.bo"><span>스토어</span></a></li>
-						<li><a href="beauty.bo"><span>커뮤니티</span></a></li>
-						<li><a href="#"><span>자취에대한 모든것</span></a></li>
-
-						<li><a href="#"><span>고객센터</span></a></li>
-					</ul>
-				</div>
-
-			</div>
-
-			<div id="sub">
-				<div id="sub_menu">
-					<div class="nav_container_div">
-						<nav role="navigation" class="primary-navigation">
-							<ul class="nav_container">
-								<li>
-
-									<ul class="m_line">
-										<li><a href="#">카테고리</a></li>
-										<li><a href="#">베스트</a></li>
-										<li><a href="#">특가</a></li>
-									</ul>
-								</li>
-								<li>
-									<ul class="m_line">
-										<li><a href="#">내방자랑</a></li>
-										<li><a href="#">내집자랑</a></li>
-										<li><a href="#">전문가집들이</a></li>
-									</ul>
-								</li>
-								<li>
-									<ul class="m_line">
-										<li><a href="#">자취생TIP</a></li>
-										<li><a href="#">자취생QnA</a></li>
-										<li><a href="#">혼밥레시피</a></li>
-									</ul>
-								</li>
-								<li>
-									<ul class="m_line">
-										<li><a href="#">질문과답변</a></li>
-										<li><a href="#">공지사항</a></li>
-									</ul>
-								</li>
-							</ul>
-						</nav>
-					</div>
-				</div>
-			</div>
-
-		</header>
+			 <jsp:include page="includHeader.jsp"></jsp:include>
 
 		<div id="m_wrap">
 			<main>
@@ -187,7 +110,7 @@
 								<li class="page-navigation__item"><a class=""
 									href="/production_reviews/write" target="_self">나의 리뷰</a></li>
 								<li class="page-navigation__item"><a class=""
-									href="/users/8659285/edit" target="_self">설정</a></li>
+									href="Mypage_infoUpdate.jsp" target="_self">설정</a></li>
 							</ul>
 						</nav>
 						<nav class="page-navigation myhome-nav__contents">
@@ -268,7 +191,7 @@
 												</div>
 											</div>
 											<div class="profile-info__actions">
-												<a class="profile-info__btn" href="/users/8659285/edit">설정</a><a
+												<a class="profile-info__btn" href="Mypage_infoUpdate.jsp">설정</a><a
 													class="profile-info__btn profile-info__btn--primary profile-info--hide-on-pc"
 													href="/invite_codes/recommend_code">친구 초대 <span
 													class="highlight">+5,000P</span></a>
@@ -333,21 +256,59 @@
 							</div>
 						</div>
 					</div>
-					<%
-						ArrayList<QnABBS> qnaList = (ArrayList<QnABBS>) request.getAttribute("qnaList");
-						ArrayList<TipDTO> tipList = (ArrayList<TipDTO>) request.getAttribute("tipList");
-					%>
+
 					<div class="horizontal-line"></div>
 					<div class="col-12 offset-lg-1 col-lg-8 wrap--contents">
 						<div class="contents">
 							<section class="post post--cards">
 								<h5 class="post__title">
-									사진 <strong>0</strong>
+									사진 <strong><%=postList.size()%></strong>
 								</h5>
-								<a class="post__upload post--cards__upload"
-									href="Beautyroom_write.bo"><span class="icon--page-mypage"
-									style="margin-right: 5px; background-position-x: -0px; background-position-y: -200px; width: 12px; height: 12px">
-								</span>첫 번째 사진을 올려보세요</a>
+								<div class="container">
+
+									<%
+										if (postList.size() != 0) {
+									%>
+									<section class="collection-feed-filter row">
+										<div class="collection-feed-filter__empty"></div>
+									</section>
+									<div class="virtualized-list collection-feed-collections row"
+										style="padding-top: 0px; padding-bottom: 0px; transform: translateY(0px);">
+										<%
+											for (int i = 0; i < postList.size(); i++) {
+										%>
+										<div class="col-6 col-md-4 col-lg-3">
+											<a
+												href="/productions/475132/selling?affect_type=UserScrapbook&amp;affect_id=8659285">
+												<div class="collection collection--total">
+													<div class="collection__image-wrap">
+														<img class="collection__image"
+															src="https://image.ohou.se/i/bucketplace-v2-development/uploads/deals/159955303371693671.jpg?gif=1&amp;w=320&amp;h=320&amp;c=c&amp;webp=1">
+													</div>
+													<span class="collection__type">상품</span>
+												</div>
+											</a>
+										</div>
+										<%
+											}
+										%>
+
+									</div>
+									<%
+										}else {
+									%>
+									<a class="post__upload post--cards__upload"
+										href="Beautyroom_write.bo"> <span
+										class="icon--page-mypage"
+										style="margin-right: 5px; background-position-x: -0px; background-position-y: -200px; width: 12px; height: 12px"></span>
+										첫 번째 사진을 올려보세요
+									</a>
+
+									<%
+										}
+									%>
+
+								</div>
 							</section>
 							<section class="post post--projects">
 								<h5 class="post__title">
@@ -364,9 +325,9 @@
 											<li class="mypost_preview_contents"><a href="#"><%=qnaList.get(i).getQna_title()%></a></li>
 											<%
 												}
-												}else{
-													%>
-													<li class="mypost_preview_contents">등록된 글이 없습니다.</li>
+												} else {
+											%>
+											<li class="mypost_preview_contents">등록된 글이 없습니다.</li>
 											<%
 												}
 											%>
@@ -383,10 +344,10 @@
 											<li class="mypost_preview_contents"><a href="#"><%=tipList.get(i).getTip_title()%></a></li>
 											<%
 												}
-												}else{
-													%>
-													<li class="mypost_preview_contents">등록된 글이 없습니다.</li>
-													<%
+												} else {
+											%>
+											<li class="mypost_preview_contents">등록된 글이 없습니다.</li>
+											<%
 												}
 											%>
 										</ul>
