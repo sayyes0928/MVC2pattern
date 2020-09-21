@@ -156,14 +156,21 @@
                </div>
              </div>
              <div class="detail_post">
-                 게시물 내용     
+                    게시물 내용      
              </div>
              <div class="comment">
-                <img src="#">
-                <span><input type="text" placeholder="칭찬과 격려의 댓글은 장석자에게 큰 힘이 됩니다 :)"></span>
+                <hr>
+                <p>댓글</p>
+                <div class="comment_form">
+                  <div class="comment_imgbox"><img src="./img/myhome/icons8-heart-50.png"></div>
+                  <div class="comment_textbox">
+                    <input class="comment_text" type="text" placeholder="칭찬과 격려의 댓글은 장석자에게 큰 힘이 됩니다 :)">
+                    <button class="comment_write_btn"name="comment_button">등록</button>
+                  </div>
+               </div>
              </div>
          </div> 
-          <div id="detail_sidebar"> 
+          <div id="detail_sidebar">
         </div>
       </section>
       <footer>
