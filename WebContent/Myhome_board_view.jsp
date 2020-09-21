@@ -39,95 +39,8 @@
 </head>
 <body>
 	<!-- 게시판 등록 -->
+	<jsp:include page="includHeader.jsp"></jsp:include>
 
-
-	<header>
-		<div id="h_wrap">
-			<div class="h_div">
-
-				<h1>자취해보자</h1>
-			</div>
-
-			<%
-				String us_id = null;
-				us_id = (String) session.getAttribute("us_id"); //로그인 유무 확인
-				if (us_id == null) {
-			%>
-			<ul class="login_go">
-				<li><a href="LoginFormpage.bo">로그인</a></li>
-				<li><span> | </span></li>
-				<li><a href="join.bo">회원가입</a></li>
-			</ul>
-
-
-			<%
-				} else {
-			%>
-			<ul class="login_go">
-				<li><span></span></li>
-				<li><a href="MypageProfile.bo">마이페이지</a></li>
-				<li><span> | </span></li>
-				<li><a href="logoutActionPage.jsp">로그아웃</a></li>
-			</ul>
-
-
-
-			<%
-				}
-			%>
-			<div id="main_nav">
-				<ul>
-					<li><a href="Index.jsp"><span>홈</span></a></li>
-					<li><a href="storeList.bo"><span>스토어</span></a></li>
-					<li><a href="beauty.bo"><span>커뮤니티</span></a></li>
-					<li><a href="#"><span>자취에대한 모든것</span></a></li>
-
-					<li><a href="#"><span>고객센터</span></a></li>
-				</ul>
-			</div>
-
-		</div>
-
-		<div id="sub" class="sub_menu">
-			<div id="sub_menu">
-				<div class="nav_container_div">
-					<nav role="navigation" class="primary-navigation">
-						<ul class="nav_container">
-							<li>
-
-								<ul class="m_line">
-									<li><a href="#">카테고리</a></li>
-									<li><a href="#">베스트</a></li>
-									<li><a href="#">특가</a></li>
-								</ul>
-							</li>
-							<li>
-								<ul class="m_line">
-									<li><a href="#">내방자랑</a></li>
-									<li><a href="#">내집자랑</a></li>
-									<li><a href="#">전문가집들이</a></li>
-								</ul>
-							</li>
-							<li>
-								<ul class="m_line">
-									<li><a href="#">자취생TIP</a></li>
-									<li><a href="#">자취생QnA</a></li>
-									<li><a href="#">혼밥레시피</a></li>
-								</ul>
-							</li>
-							<li>
-								<ul class="m_line">
-									<li><a href="#">질문과답변</a></li>
-									<li><a href="#">공지사항</a></li>
-								</ul>
-							</li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-		</div>
-
-	</header>
 	<%
 		ArrayList<BeautyRoomDTO> article = (ArrayList<BeautyRoomDTO>) request.getAttribute("article");
 		String board_num = request.getParameter("board_num");
@@ -136,6 +49,8 @@
 		String post_image3 = article.get(0).getPost_pic_3();
 		String post_image4 = article.get(0).getPost_pic_4();
 		String post_image[] = { post_image1, post_image2, post_image3, post_image4 };
+		String us_id = null;
+		us_id = (String) session.getAttribute("us_id"); //로그인 유무 확인
 	%>
 	<input type="hidden" value=<%=board_num%> name="post_no" id="post_no" />
 	<input type="hidden" value=<%=us_id%> name="us_id" id="us_id" />
@@ -157,14 +72,13 @@
 				<div id="bg_main">
 					<div id="page-wrap">
 						<div id="showimg" class="s_mainimg">
-							<img src="<%=request.getContextPath()%>/upload/<%= post_image1%>">
+							<img src="<%=request.getContextPath()%>/upload/<%=post_image1%>">
 						</div>
 					</div>
 					<ul id="pr_imgs">
 						<li><img class="s_imgborder"
 							src="<%=request.getContextPath()%>/upload/<%=article.get(0).getPost_pic()%>"></li>
 						<%
-							
 							if (post_image2 != null) {
 						%>
 						<li><img class="s_imgborder"
@@ -233,7 +147,7 @@
 									댓글&nbsp;<span class="comment-feed__header__count">267</span>
 								</h1>
 								<form class="comment-feed__form" action="myPage_reply_insert.bo">
-						
+
 									<div class="comment-feed__form__user">
 										<img
 											src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&amp;w=36&amp;webp=1"

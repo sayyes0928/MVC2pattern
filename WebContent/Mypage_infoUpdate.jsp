@@ -102,35 +102,7 @@
 		<div id="m_wrap">
 			<main>
 			<div class="MyPage_container">
-				<div class="wrap--nav">
-					<div class="myhome-nav myhome-nav--owner">
-						<nav class="page-navigation myhome-nav__owner">
-							<ul style="transform: translateX(0px);">
-								<li class="page-navigation__item"><a class=""
-									href="MypageProfile.bo" target="_self">프로필</a></li>
-								<li class="page-navigation__item"><a class=""
-									href="/user_shopping_pages/order_list" target="_self">나의 쇼핑</a></li>
-								<li class="page-navigation__item"><a class=""
-									href="/production_reviews/write" target="_self">나의 리뷰</a></li>
-								<li class="page-navigation__item"><a class="active"
-									href="Mypage_infoUpdate.jsp" target="_self">설정</a></li>
-							</ul>
-						</nav>
-						<nav class="page-navigation myhome-nav__contents">
-							<ul style="transform: translateX(0px);">
-								<li class="page-navigation__item"><a class="active"
-									href="/users/8659285/edit" target="_self">회원정보수정</a></li>
-								<li class="page-navigation__item"><a class=""
-									href="https://pro.ohou.se/?utm_source=ohouse&amp;utm_medium=web&amp;utm_campaign=prosignup&amp;utm_content=myhome"
-									target="_self">전문가 신청</a></li>
-								<li class="page-navigation__item"><a class=""
-									href="/users/8659285/edit_password" target="_self">비밀번호 변경</a></li>
-								<li class="page-navigation__item"><a class=""
-									href="/invite_codes/recommend_code" target="_self">추천코드</a></li>
-							</ul>
-						</nav>
-					</div>
-				</div>
+				<jsp:include page="include_Mypage_infoUpdateNav.jsp"></jsp:include>
 			</div>
 
 			<!--                            ////////////////////////////// -->
