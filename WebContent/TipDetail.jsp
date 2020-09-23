@@ -12,7 +12,35 @@
 <title>Tip 상세페이지</title>
 <link rel="stylesheet" href="./myhome.web.css/teamTopNav.css" type="text/css">
 <link rel="stylesheet" href="./myhome.web.css/TipDetail.css" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
+<script>
+
+function add(){
+	var tip_num = $('#tip_num').val();
+	var tip_nickname = $('#tip_nickname').val();
+	var tip_coverimg = $('#tip_coverimg').val();
+	var rep_post = $(".comment_text").val();
+
+	$(document).ready(function() {	
+	$.ajax({
+		url: 'tip_reply_write.bo',
+		data: {
+			'Tip_num' : tip_num,
+			'Tip_nickname' : tip_nickname,
+			'Tip_coverimg' : tip_coverimg,
+			'Rep_post' : rep_post,
+			
+		},
+		success: function (req){
+			alert("댓글이 등록되었습니다.");
+		}
+	});
+  });
+	
+  $(".comment_text").val('');
+}
+</script>
 <body>
   <form action="tip_reply_write.bo">
  	<header>
@@ -111,39 +139,7 @@
         </div>        
       </header>
       <section>
-    <!--      <div id="swrap">
-          <div id="detail_cover">
-             <img src="<%=request.getContextPath()%>/upload/<%=tip_detail.get(0).getTip_coverimg()%>">
-             <div class="cover_info">[커버이미지 : <%=tip_detail.get(0).getTip_nickname()%>님의 스타일링샷]</div>
-             <div id="tip_post">
-              팁 내용
-             </div>
-             <div id="tip_comment">
-              댓글       <br/> 
-              <table>
-                  <th>
-                    <td><img src="#"></td>
-                    <td>
-                      <div>
-                        <input name="tip_reply_post" type="text">
-                        <input type="submit" value="등록">
-                      </div>
-                    </td>
-                  </th>
-              </table>
-             </div>
-          </div>
-          <div id="user_action">
-                 <p>제목</p>
-                 <p>게시물 시간</p>
-                 <div class="scrapBT_list">
-                   <span>좋아요</span>&nbsp;
-                   <span>스크랩</span>
-                   <span><input type="button" value="수정하기"></span>
-                   <span><input type="button" value="등록하기"></span>
-                 </div>
-          </div>
-        </div> -->
+        <input type="hidden" value="<%=tip_detail.get(0).getTip_num()%>">
         <div class="detail_coverimg"><img src="<%=request.getContextPath()%>/upload/<%=tip_detail.get(0).getTip_coverimg()%>"></div>
         <div id="detail">         
              <div class="detail_header">
@@ -162,11 +158,15 @@
                 <hr>
                 <p>댓글</p>
                 <div class="comment_form">
+                  <input id="tip_num" type="hidden" value="<%=tip_detail.get(0).getTip_num()%>">
+                  <input id="tip_nickname" type="hidden" value="<%=tip_detail.get(0).getTip_nickname()%>">
+                  <input id="tip_coverimg" type="hidden" value="<%=tip_detail.get(0).getTip_coverimg()%>">
                   <div class="comment_imgbox"><img src="./img/myhome/icons8-heart-50.png"></div>
                   <div class="comment_textbox">
-                    <input class="comment_text" type="text" placeholder="칭찬과 격려의 댓글은 장석자에게 큰 힘이 됩니다 :)">
-                    <button class="comment_write_btn"name="comment_button">등록</button>
+                    <input class="comment_text" type="text" name="tip_reply_post" placeholder="칭찬과 격려의 댓글은 작성자에게 큰 힘이 됩니다 :)">
+                    <input class="comment_write_btn" type="button" name="comment_button" value="등록" onclick="add()">
                   </div>
+                
                </div>
              </div>
          </div> 
@@ -174,7 +174,7 @@
         </div>
       </section>
       <footer>
-       푸터당, 헤이트 : 200
+       푸터
       </footer>
      </form>
 </body>
