@@ -217,7 +217,7 @@ insert into posting_reply values(default, #{posting_reply_us_id},#{posting_reply
 
 
 <insert id="insert_TipReply" parameterType="com.jachi.DTO.TipReplyDTO">
-    insert into tip_reply values(default, default, default, default, #{rep_post}, now());
+    insert into tip_reply values(#{rep_nickname}, #{rep_img}, #{tip_num}, default, #{rep_post}, now());
 </insert>
 
 <select id="select_TipDetail" parameterType="Integer" resultType="com.jachi.DTO.TipDTO">

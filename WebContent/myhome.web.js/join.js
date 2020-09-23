@@ -1,7 +1,6 @@
 
      $(document).ready(function () {
           $("#nick_check").change(function () {
-        	  alert("dfdf");
             var inid2 = document.myform.nick.value;
             $.ajax({
               url: 'NickName_check.bo',

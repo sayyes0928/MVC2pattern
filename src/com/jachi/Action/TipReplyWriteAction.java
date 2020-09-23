@@ -14,11 +14,18 @@ public class TipReplyWriteAction implements Action{
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
+		String rep_post = request.getParameter("Rep_post");
+		int tip_num = Integer.parseInt(request.getParameter("Tip_num"));
+		String user_nickname = request.getParameter("Tip_nickname");
+		String user_img = request.getParameter("Tip_coverimg");
+		
 		ActionForward forward = null;
-		String rep_post = request.getParameter("tip_reply_post");
-		System.out.println(rep_post);
+
 		
 		TipReplyDTO repdto = new TipReplyDTO();
+		repdto.setTip_num(tip_num);
+		repdto.setRep_nickname(user_img);
+		repdto.setRep_img(user_nickname);
 		repdto.setRep_post(rep_post);
 	     
 		TipReplyWriteService repwriteservice = new TipReplyWriteService();
