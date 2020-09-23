@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ page import="java.util.*"%>
 <%@ page import="com.jachi.DTO.BeautyRoomDTO"%>
+<%@ page import="com.jachi.DTO.Posting_replyDTO"%>
 
 <!DOCTYPE html>
 <html>
@@ -21,16 +22,12 @@
 	href="./myhome.web.css/styleSlider.css" />
 
 
-
-
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="./myhome.web.js/MyhomeDtail.js"></script>
 <script src="./myhome.web.js/teamTopnav.js"></script>
 
-<!--  <script type="text/javascript" src="./myhome.web.js/jquery-easing-1.3.pack.js"></script>-->
-<!--  <script type="text/javascript" src="./myhome.web.js/jquery-easing-compatibility.1.2.pack.js"></script>-->
-<!-- <script type="text/javascript" src="./myhome.web.js/coda-slider.1.1.1.pack.js"></script> -->
+
 
 
 <title>MVC 게시판</title>
@@ -38,20 +35,25 @@
 </style>
 </head>
 <body>
-	<!-- 게시판 등록 -->
+	<!-- Header include -->
 	<jsp:include page="includHeader.jsp"></jsp:include>
 
+	<!-- 서블릿 값 선언 -->
 	<%
 		ArrayList<BeautyRoomDTO> article = (ArrayList<BeautyRoomDTO>) request.getAttribute("article");
+    	ArrayList<Posting_replyDTO> coment = (ArrayList<Posting_replyDTO>) request.getAttribute("coment");
 		String board_num = request.getParameter("board_num");
+		String us_id = us_id = (String) session.getAttribute("us_id");
+
 		String post_image1 = article.get(0).getPost_pic();
 		String post_image2 = article.get(0).getPost_pic_2();
 		String post_image3 = article.get(0).getPost_pic_3();
 		String post_image4 = article.get(0).getPost_pic_4();
 		String post_image[] = { post_image1, post_image2, post_image3, post_image4 };
-		String us_id = null;
-		us_id = (String) session.getAttribute("us_id"); //로그인 유무 확인
+		
 	%>
+
+	<!-- 해당 페이지의 좋아요 기능을 위해 게시물 정보 Setting -->
 	<input type="hidden" value=<%=board_num%> name="post_no" id="post_no" />
 	<input type="hidden" value=<%=us_id%> name="us_id" id="us_id" />
 
@@ -104,16 +106,15 @@
 
 				<!-- 메인배경 -->
 				<div id="myhomeContentLeft_main_userContent_bgImage">
-					<div class="myhomeContentLeft_main_userContent">
+					<div class="myhomeContentLeft_main_userContent_title">
 						<p>
-							<span><%=article.get(0).getPost_title()%>></span>
+							<span><%=article.get(0).getPost_title()%></span>
 						</p>
+						<div class="myhomeContentLeft_main_userContent_text">
+							<span><%=article.get(0).getPost_posting()%></span>
+						</div>
 					</div>
-					<div class="myhomeContentLeft_main_userContent">
-						<p>
-							<span><%=article.get(0).getPost_posting()%>></span>
-						</p>
-					</div>
+
 
 					<div class="myhomeContentLeft_main_keyword">
 						<ul class="myhomeContentLeft_main_keyword_tag">
@@ -124,7 +125,7 @@
 
 								for (int i = 0; i < post_tag.length; i++) {
 							%>
-							<li><a href="#"><%=post_tag[i]%></a></li>
+							<li><a href="#">#<%=post_tag[i]%></a></li>
 							<%
 								}
 							%>
@@ -132,89 +133,11 @@
 					</div>
 				</div>
 
-				<ul class="myhomeContentLeft_main_usercomment">
-					<li><span>조회수</span> <span>35</span></li>
-					<li><span>댓글</span> <span>0</span></li>
-					<li><span>공유</span> <span>1</span></li>
-					<li><input type="button" value="신고" /></li>
-				</ul>
-
 				<div class="myhomeContentLeft_main_writeComment">
-					<section class="section_left">
-						<div class="card-detail-comment-section">
-							<section class="comment-feed">
-								<h1 class="comment-feed__header">
-									댓글&nbsp;<span class="comment-feed__header__count">267</span>
-								</h1>
-								<form class="comment-feed__form" action="myPage_reply_insert.bo">
-
-									<div class="comment-feed__form__user">
-										<img
-											src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&amp;w=36&amp;webp=1"
-											srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&amp;w=72&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&amp;w=72&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&amp;w=144&amp;webp=1 3x">
-									</div>
-									<div class="comment-feed__form__input">
-										<div class="comment-feed__form__content">
-											<div class="comment-content-input">
-												<div
-													class="comment-content-input__text comment-feed__form__content__text"
-													data-ph="칭찬과 격려의 댓글은 작성자에게 큰 힘이 됩니다 :)"
-													contenteditable="true"></div>
-											</div>
-										</div>
-										<div class="comment-feed__form__actions">
-											<button class="comment-feed__form__submit" aria-label="등록"
-												type="submit" disabled="">등록</button>
-										</div>
-									</div>
-								</form>
-								<ul class="comment-feed__list">
-									<li class="comment-feed__list__item"><article
-											class="comment-feed__item">
-											<p class="comment-feed__item__content">
-												<a href="/users/6600494"
-													class="comment-feed__item__content__author"><img
-													class="comment-feed__item__content__author__image"
-													alt="오세두"
-													src="https://image.ohou.se/i/bucketplace-v2-development/uploads/users/profile_images1581002795_917854.jpeg?gif=1&amp;w=36&amp;webp=1"
-													srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/users/profile_images1581002795_917854.jpeg?gif=1&amp;w=72&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/users/profile_images1581002795_917854.jpeg?gif=1&amp;w=72&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/users/profile_images1581002795_917854.jpeg?gif=1&amp;w=144&amp;webp=1 3x"><span
-													class="comment-feed__item__content__author__name">오세두</span></a><span
-													class="comment-feed__item__content__content">이쁘네요</span>
-											</p>
-											<footer class="comment-feed__item__footer">
-												<time class="comment-feed__item__footer__time">3주 전</time>
-												<span class="comment-feed__item__footer__likes zero">
-													<a class="comment-feed__item__footer__likes__icon" href="#">
-														<svg class="badge" width="15" height="14"
-															preserveAspectRatio="xMidYMid meet">
-		<path fill-rule="evenodd" class="heart"
-																d="M7 12.4c4.8-2.5 6.7-5.2 6.5-8-.3-3-4.1-4-6.1-1.4l-.4.5-.4-.5C4.6.4.8 1.5.6 4.4c-.3 2.8 1.6 5.5 6.4 8z"></path>
-		                                       </svg>
-												</a> <span class="comment-feed__item__footer__likes__count">0</span>
-												</span> <a class="comment-feed__item__footer__like-btn" href="#">좋아요</a>
-												<a class="comment-feed__item__footer__reply-btn"
-													href="/users/sign_in">답글 달기</a><a
-													class="comment-feed__item__footer__report-btn" href="#">신고</a>
-											</footer>
-										</article></li>
-								</ul>
-								<ul class="list-paginator">
-									<li><button class="list-paginator__page sm selected"
-											type="button">1</button></li>
-									<li><button class="list-paginator__next" type="button">
-											<svg width="26" height="26" viewBox="0 0 26 26"
-												preserveAspectRatio="xMidYMid meet">
-												<g fill="none" fill-rule="evenodd"
-													transform="matrix(-1 0 0 1 26 0)">
-												<rect width="25" height="25" x=".5" y=".5" stroke="#DCDCDC"
-													rx="4"></rect>
-												<g stroke="#424242" stroke-linecap="square" stroke-width="2">
-												<path d="M14.75 8.263L10.25 13M10.25 13l4.5 4.737"></path></g></g></svg>
-										</button></li>
-								</ul>
-							</section>
-						</div>
-					</section>
+						<jsp:include page="include_Myhome_Detail_coment.jsp">
+						  <jsp:param value="<%= coment%>" name="coment"/>
+						  <jsp:param value="<%= board_num%>" name="post_num"/>
+						</jsp:include>
 				</div>
 			</div>
 
@@ -226,7 +149,7 @@
 			like = (String) request.getAttribute("Like");
 			bookmark = (String) request.getAttribute("Bookmark");
 			if (us_id != null) {
-				if (like.equals("1")) {
+				if (like.equals("0")) {
 					like = "./img/myhome/icons8-heart-50-2.png";
 
 				} else {
@@ -261,12 +184,13 @@
 					</div>
 
 
-					<div class="myhomeContentRight_userinfo">
-						<div>
-							<span class="Right_userID"><%=article.get(0).getpost_nickname()%></span>
-						</div>
-						<button type="button" class="btm_image">팔로우</button>
+					<div class="user-profile__profile-image_container">
+						<a class="user-profile__profile-image"> 
+						<img class="card-detail-writer__image" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/users/profile_images/157622320361586387.jpg?gif=1&w=72&h=72&c=c&webp=1"/>
+						</a> 
+						<span class="Right_userID"><%=article.get(0).getpost_nickname()%></span>
 					</div>
+
 					<div class="myhomeContentRight_userimage_container">
 						<div class="myhomeContentRight_userimage">
 							<a href="#"><img

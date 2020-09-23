@@ -27,5 +27,20 @@ public class JoinInsertUserInfoService {
 		return isWriteSuccess;
 		
 	}
+	public boolean updateUserinfo(UserinfoDTO userinfoDTO) throws Exception{
+		
+		boolean isWriteSuccess = false;
+		
+		 SqlSessionFactory sqlfactory = BoardDAO.getConn();
+		 SqlSession sqlsession = sqlfactory.openSession();
+		 int insert = sqlsession.update("update_userinfo",userinfoDTO);
+				
+			sqlsession.commit();
+			sqlsession.close();
+			isWriteSuccess = true;	
+
+		return isWriteSuccess;
+		
+	}
 
 }

@@ -157,7 +157,7 @@
 												</div>
 											</div>
 											<div class="profile-info__actions">
-												<a class="profile-info__btn" href="Mypage_infoUpdate.jsp">설정</a><a
+												<a class="profile-info__btn" href="mypage_profile_userinfo_update.bo">설정</a><a
 													class="profile-info__btn profile-info__btn--primary profile-info--hide-on-pc"
 													href="/invite_codes/recommend_code">친구 초대 <span
 													class="highlight">+5,000P</span></a>
@@ -241,7 +241,7 @@
 									<div class="virtualized-list collection-feed-collections row"
 										style="padding-top: 0px; padding-bottom: 0px; transform: translateY(0px);">
 										<%
-											for (int i = 0; i < postList.size(); i++) {
+											for (int i = 0; i < 4; i++) {
 										%>
 										<div class="col-6 col-md-4 col-lg-3">
 											<a
@@ -327,9 +327,7 @@
 		</div>
 		</main>
 		</div>
-		<footer>
-			<div></div>
-		</footer>
+	<jsp:include page="include_footer.jsp"></jsp:include>
 	</form>
 
 </body>
