@@ -23,7 +23,7 @@
 			%>
 			<ul class="login_go">
 				<li><span></span></li>
-				<li><a href="MypageOrderView.bo">마이페이지</a></li>
+				<li><a href="MypageProfile.bo">마이페이지</a></li>
 				<li><span> | </span></li>
 				<li><a href="logoutActionPage.jsp">로그아웃</a></li>
 			</ul>

@@ -139,7 +139,7 @@ $(function(){
             	var tagAll = "";
             	var tagList = document.getElementsByName("tagtest");    
 				 for (var i = 0; i < tagList.length; i++) {
-					 tagAll += tagList[i].innerHTML;
+					 tagAll += tagList[i].innerHTML +",";
 			}
 				
 				 document.getElementById('tagtext').value = tagAll;
