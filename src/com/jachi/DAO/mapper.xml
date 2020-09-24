@@ -217,7 +217,7 @@ insert into posting_reply values(default, #{posting_reply_us_id},#{posting_reply
 
 <select id="select_TipListAll" parameterType="Integer" resultType="com.jachi.DTO.TipDTO">
     select us_nkname as 'tip_nickname', tip_num, tip_post, tip_title, tip_coverimg from tip join userinfo
-    on us_id = tip_nickname order by tip_num desc limit #{Startrow},12;
+    on us_id = tip_nickname order by tip_num desc limit #{Startrow}, 12;
 </select>
 
 <select id="select_qnaall" parameterType="String" resultType="com.jachi.DTO.QnABBS">
