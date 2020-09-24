@@ -492,6 +492,15 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			}
 		}
 		
+		else if(command.equals("/tip_replylist.bo")) {
+			action = new QnaModifyAction();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
 		
 		
 

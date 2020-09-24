@@ -165,13 +165,11 @@
                     <input class="comment_text" type="text" name="reply_post" placeholder="칭찬과 격려의 댓글은 작성자에게 큰 힘이 됩니다 :)">
                     <input class="comment_write_btn" type="submit" value="등록">
                   </div>
-                <table>
-                 <tr>
-                   <td>
-                     <img src="#">
-                   <td>
-                 </tr>
-                </table>
+                <div class="comment_list">
+                  <div class="comment_author_img"><img src="upload/t1.PNG"></div>
+                  <p>12345</p>
+                  <p>답글달기</p>
+                </div>
                </div>
              </div>
          </div> 
