@@ -25,7 +25,7 @@ public class ProductPostViewAction implements Action{
 		ProductPostViewService PostViewService = new ProductPostViewService();
 		article = PostViewService.getArticle(pro_num);
 		
-		article.get(0).getPro_code();
+		
 		ActionForward forward = new ActionForward();
 	   	request.setAttribute("article", article);
    		forward.setPath("/ProductPost.jsp");

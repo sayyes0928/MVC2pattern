@@ -23,8 +23,7 @@ public class JoinIdcheckUserinfoAction implements Action{
 		JoinIdcheckUserinfoService joinIdcheckUserinfoService = new JoinIdcheckUserinfoService();
 		article = joinIdcheckUserinfoService.checkUserID(us_id);
 		
-		
-		 if(article == null){
+		 if(article.equals("0")){
 				response.setContentType("text/html;charset=UTF-8");
 				PrintWriter out=response.getWriter();
 			    out.print("사용 가능한 아이디입니다.");

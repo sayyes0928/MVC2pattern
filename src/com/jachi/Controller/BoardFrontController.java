@@ -27,17 +27,25 @@ import com.jachi.Action.JoinInsertUserInfoAction;
 import com.jachi.Action.JoinNickNamecheckUserinfoAction;
 import com.jachi.Action.LikeUpdateAction;
 import com.jachi.Action.LoginUserAction;
+import com.jachi.Action.MyPagePostingListViewAction;
 import com.jachi.Action.MyhomeDetailAction;
 import com.jachi.Action.MyhomeWriteProAction;
 import com.jachi.Action.MypageOrderListViewAction;
 import com.jachi.Action.MypageOrderViewAction;
 import com.jachi.Action.PLSelectAction;
-import com.jachi.Action.ProductCartInsertOrderAction;
 import com.jachi.Action.ProductOrderAction;
+import com.jachi.Action.ProductOrderInsertAction;
 import com.jachi.Action.ProductPostViewAction;
-
+import com.jachi.Action.QnaDeleteAction;
+import com.jachi.Action.QnaListAction;
+import com.jachi.Action.QnaModifyAction;
+import com.jachi.Action.QnaSearchAction;
+import com.jachi.Action.QnaSearchListAction;
+import com.jachi.Action.QnaSelectAction;
+import com.jachi.Action.QnaWriteAction;
+import com.jachi.Action.TipDetailAction;
 import com.jachi.Action.TipListAction;
-
+import com.jachi.Action.TipReplyWriteAction;
 import com.jachi.Action.TipSelectAction;
 import com.jachi.Action.TipwriteAction;
 import com.jachi.Action.TokenGetAccessAction;
@@ -141,6 +149,14 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
+		else if(command.equals("/MypageProfile.bo")){
+			action  = new MyPagePostingListViewAction();
+			try {
+				forward=action.execute(request, response );
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 		else if(command.equals("/MypageOrderView.bo")){
 			action  = new MypageOrderViewAction();
 			try {
@@ -180,17 +196,21 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				forward=action.execute(request, response );
 			} catch (Exception e) {
 				e.printStackTrace();
-				System.out.println("로그인 오류");
+				System.out.println(e);
 			}
 		}
-		else if(command.equals("/ProductOrderCart.bo")){
-			action  = new ProductCartInsertOrderAction();
+		else if(command.equals("/ProductOrderComplite.bo")){
+			action  = new ProductOrderInsertAction();
 			try {
 				forward=action.execute(request, response );
 			} catch (Exception e) {
 				e.printStackTrace();
-				System.out.println("로그인 오류");
+				System.out.println(e);
 			}
+		}
+		else if(command.equals("/CartList.bo")){
+			forward=new ActionForward();
+			forward.setPath("/MyCart_List_view.jsp");
 		}
 		else if(command.equals("/Product_add_Write.bo")){
 			forward=new ActionForward();
@@ -317,7 +337,6 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		}
 		
 		else if(command.equals("/beauty_write.bo")) {
-			System.out.println("나오니?");
 			action = new BTWriteAction();
 			try {
 				forward=action.execute(request, response);
@@ -334,6 +353,16 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
+		
+		else if(command.equals("/qnaList.bo")) {
+			action = new QnaListAction();
+			try {
+				forward=action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
 		
 		else if(command.equals("/tipwrite.bo")) {			 
 			action = new TipwriteAction();
@@ -353,14 +382,91 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			}
 		}
 		
-//		else if(command.equals("/tiplist.bo")) {			 
-//			action = new TipListAction();
-//			try {
-//				forward=action.execute(request, response);
-//			}catch(Exception e) {
-//				e.printStackTrace();
-//			}
-//		}
+		else if(command.equals("/qna.bo")) {			 
+			action = new QnaSelectAction();
+			try {
+				forward=action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		else if(command.equals("/qna_search.bo")) {			 
+			action = new QnaSearchAction();
+			try {
+				forward=action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		else if(command.equals("/qna_searchList.bo")) {			 
+			action = new QnaSearchListAction();
+			try {
+				forward=action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		else if(command.equals("/tiplist.bo")) {			 
+			action = new TipListAction();
+			try {
+				forward=action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+
+		else if(command.equals("/tip_detail.bo")) {			 
+			action = new TipDetailAction();
+			try {
+				forward=action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		else if(command.equals("/tip_reply_write.bo")) {			 
+			action = new TipReplyWriteAction();
+			try {
+				forward=action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		else if(command.equals("/qna_write.bo")) {			 
+			action = new QnaWriteAction();
+			try {
+				forward=action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		else if(command.equals("/qna_delete.bo")) {
+			action = new QnaDeleteAction();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		else if(command.equals("/qna_modify.bo")) {
+			action = new QnaModifyAction();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		
+		
+
 		
 		
 		if(forward != null){

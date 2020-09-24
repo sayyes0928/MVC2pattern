@@ -1,22 +1,18 @@
 .MyPage_container {
-  border: 1px solid black;
-  width: 60%;
-  height: 800px;
+  width: 90%;
   margin: 0 auto;
   margin-bottom: 20px;
 }
 .MyPage_container_header {
   border: 1px solid black;
-  width: 90%;
-  height: 120px;
+  border-radius:10px;
+  width: 650px;
   margin: 0 auto;
   margin-bottom: 10px;
   margin-top: 10px;
 }
 .MyPage_container_header_nav {
-  border: 1px solid black;
-  width: 70%;
-  height: 50px;
+  height: 30px;
   margin: 0 auto;
   margin-top: 5px;
 }
@@ -25,16 +21,15 @@
 }
 .MyPage_container_header_nav > ul li {
   display: inline;
-  font-size: 40px;
+  font-size: 25px;
   font-weight: 800;
   list-style: none;
   padding: 0 20px;
   align-items: center;
 }
 .MyPage_container_header_nav_sub {
-  border: 1px solid black;
-  width: 95%;
-  height: 50px;
+  border-top: 2px dashed black;
+  height: 30px;
   margin: 0 auto;
   margin-top: 5px;
 }
@@ -43,7 +38,7 @@
 }
 .MyPage_container_header_nav_sub > ul li {
   display: inline;
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 700;
   list-style: none;
   padding: 0 20px;
@@ -1191,4 +1186,160 @@
 }
 .MyPage_container_selectlist_productPrice{
 	width:20%;
+}
+/*  마이페이지 프로필 */
+
+
+.user-show-layout>.container {
+    margin-bottom: 40px;
+}
+@media (min-width: 1024px)
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+    width: calc(100% - 120px);
+    max-width: 100%;
+    box-sizing: border-box;
+    min-height: 1px;
+}
+@media (min-width: 768px)
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+    width: calc(100% - 80px);
+    max-width: 100%;
+    box-sizing: border-box;
+    min-height: 1px;
+}
+@media (min-width: 375px)
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+    width: calc(100% - 30px);
+    max-width: 100%;
+    box-sizing: border-box;
+    min-height: 1px;
+}
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+    width: calc(100% - 30px);
+    max-width: 100%;
+    box-sizing: border-box;
+    min-height: 1px;
+}
+@media (min-width: 768px)
+.row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    margin-right: -7.5px;
+    margin-left: -7.5px;
+}
+@media (min-width: 375px)
+.row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    margin-right: -5px;
+    margin-left: -5px;
+}
+.row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    margin-right: -5px;
+    margin-left: -5px;
+}
+.wrap--profile {
+    padding-top: 30px;
+}
+@media (min-width: 768px)
+.col-12 {
+    padding-right: 7.5px;
+    padding-left: 7.5px;
+}
+@media (min-width: 375px)
+.col-12 {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.col-12 {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    box-sizing: border-box;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 100%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+@media (min-width: 1024px)
+.wrap--contents {
+    order: 2;
+}
+@media (min-width: 1024px)
+.offset-lg-1 {
+    margin-left: 8.3333333333%;
+}
+@media (min-width: 1024px)
+.col-lg-8 {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+@media (min-width: 1024px) and (min-width: 768px)
+.col-lg-8 {
+    padding-right: 7.5px;
+    padding-left: 7.5px;
+}
+@media (min-width: 1024px) and (min-width: 375px)
+.col-lg-8 {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+@media (min-width: 1024px)
+.col-lg-8 {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    box-sizing: border-box;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 66.6666666667%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 66.6666666667%;
+    -ms-flex: 0 0 66.6666666667%;
+    flex: 0 0 66.6666666667%;
+    max-width: 66.6666666667%;
+    padding-right: 5px;
+    padding-left: 5px;
 }

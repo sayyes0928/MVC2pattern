@@ -23,23 +23,7 @@ public class ProductOrderAction implements Action {
 
 		HttpSession session = request.getSession(false);
 		  String us_id = (String)session.getAttribute("us_id");
-		 
-		  String pro_code = request.getParameter("Pro_code");
-		  String or_countString = request.getParameter("or_count");
-		  String or_procode = request.getParameter("or_procode");
-
-		  int or_count = Integer.parseInt(or_countString);
-
-		  OrderDTO orderDTO = new OrderDTO();
-		  
-		  orderDTO.setOr_procode("a0001");
-		  orderDTO.setOr_code("1");
-		  orderDTO.setOr_count(or_count);
-		  orderDTO.setOr_id(us_id);
-		  ProductCartListViewService productCartListViewService = new ProductCartListViewService();
-		  List<Product_cartDTO> productinfoDTO= new ArrayList<Product_cartDTO>();
-		  productinfoDTO = productCartListViewService.getArticle(orderDTO);
-		
+		 	
 
 		////////////////////////////////////////////////////////
 
@@ -47,10 +31,8 @@ public class ProductOrderAction implements Action {
 		  List<UserinfoDTO> userinfoDTO= new ArrayList<UserinfoDTO>();
 		  userinfoDTO = productPreOrderService.getOrderinfo(us_id);
 		  
-	
-		  request.setAttribute("orderDTO", orderDTO);
 		  request.setAttribute("userinfoDTO", userinfoDTO);
-		  request.setAttribute("productinfoDTO", productinfoDTO);
+
 
 		  
 		  forward.setPath("/ProductOrderPage.jsp");
