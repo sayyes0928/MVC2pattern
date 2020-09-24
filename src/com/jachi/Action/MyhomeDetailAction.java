@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import com.jachi.DTO.ActionForward;
 import com.jachi.DTO.BeautyRoomDTO;
+import com.jachi.DTO.Posting_replyDTO;
 import com.jachi.svc.BookMarkCheckService;
 import com.jachi.svc.LikePostinCheckService;
 import com.jachi.svc.MyhomeDetailService;
@@ -25,7 +26,7 @@ import com.jachi.svc.MyhomeDetailService;
 	
 		MyhomeDetailService myhomeDetailService = new MyhomeDetailService();
 		List<BeautyRoomDTO> article = myhomeDetailService.getArticle(board_num);
-        
+        List<Posting_replyDTO> coment = myhomeDetailService.getReply(board_num);
 		if(us_id != null) {
 		
 		// 좋아요, 스크랩 유무
@@ -58,6 +59,7 @@ import com.jachi.svc.MyhomeDetailService;
 		}
 		ActionForward forward = new ActionForward();
 	   	request.setAttribute("article", article);
+	   	request.setAttribute("coment", coment);
    		forward.setPath("/Myhome_board_view.jsp");
    		return forward;
 

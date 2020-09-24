@@ -99,42 +99,8 @@
 		<div id="m_wrap">
 			<main>
 			<div class="MyPage_container">
-				<div class="wrap--nav">
-					<div class="myhome-nav myhome-nav--owner">
-						<nav class="page-navigation myhome-nav__owner">
-							<ul style="transform: translateX(0px);">
-								<li class="page-navigation__item"><a class="active"
-									href="MypageProfile.bo" target="_self">프로필</a></li>
-								<li class="page-navigation__item"><a class=""
-									href="MypageOrderView.bo" target="_self">나의 쇼핑</a></li>
-								<li class="page-navigation__item"><a class=""
-									href="/production_reviews/write" target="_self">나의 리뷰</a></li>
-								<li class="page-navigation__item"><a class=""
-									href="Mypage_infoUpdate.jsp" target="_self">설정</a></li>
-							</ul>
-						</nav>
-						<nav class="page-navigation myhome-nav__contents">
-							<ul style="transform: translateX(0px);">
-								<li class="page-navigation__item"><a class="active"
-									href="/users/8659285" target="_self">모두보기</a></li>
-								<li class="page-navigation__item"><a class=""
-									href="/users/8659285/cards" target="_self">사진</a></li>
-								<li class="page-navigation__item"><a class=""
-									href="/users/8659285/projects" target="_self">집들이</a></li>
-								<li class="page-navigation__item"><a class=""
-									href="/users/8659285/advices" target="_self">노하우</a></li>
-								<li class="page-navigation__item"><a class=""
-									href="/users/8659285/questions" target="_self">질문과답변</a></li>
-								<li class="page-navigation__item"><a class=""
-									href="Myscrapbook.jsp" target="_self">스크랩북</a></li>
-								<li class="page-navigation__item"><a class=""
-									href="/users/8659285/praises" target="_self">좋아요</a></li>
-								<li class="page-navigation__item"><a class=""
-									href="/users/8659285/activation" target="_self">나의활동</a></li>
-							</ul>
-						</nav>
-					</div>
-				</div>
+							
+				<jsp:include page="include_Mypage_ProfileNav.jsp"></jsp:include>
 			</div>
 
 			<!--                            ////////////////////////////// -->
@@ -191,7 +157,7 @@
 												</div>
 											</div>
 											<div class="profile-info__actions">
-												<a class="profile-info__btn" href="Mypage_infoUpdate.jsp">설정</a><a
+												<a class="profile-info__btn" href="mypage_profile_userinfo_update.bo">설정</a><a
 													class="profile-info__btn profile-info__btn--primary profile-info--hide-on-pc"
 													href="/invite_codes/recommend_code">친구 초대 <span
 													class="highlight">+5,000P</span></a>
@@ -275,7 +241,7 @@
 									<div class="virtualized-list collection-feed-collections row"
 										style="padding-top: 0px; padding-bottom: 0px; transform: translateY(0px);">
 										<%
-											for (int i = 0; i < postList.size(); i++) {
+											for (int i = 0; i < 4; i++) {
 										%>
 										<div class="col-6 col-md-4 col-lg-3">
 											<a
@@ -361,9 +327,7 @@
 		</div>
 		</main>
 		</div>
-		<footer>
-			<div></div>
-		</footer>
+	<jsp:include page="include_footer.jsp"></jsp:include>
 	</form>
 
 </body>

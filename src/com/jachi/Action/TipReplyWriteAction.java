@@ -14,11 +14,12 @@ public class TipReplyWriteAction implements Action{
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		String rep_post = request.getParameter("Rep_post");
-		int tip_num = Integer.parseInt(request.getParameter("Tip_num"));
-		String user_nickname = request.getParameter("Tip_nickname");
-		String user_img = request.getParameter("Tip_coverimg");
+		String rep_post = request.getParameter("reply_post");
+		int tip_num = Integer.parseInt(request.getParameter("tip_num"));
+		String user_nickname = request.getParameter("user_nickname");
+		String user_img = request.getParameter("user_img");
 		
+		System.out.println(rep_post+tip_num+user_nickname+user_img);
 		ActionForward forward = null;
 
 		
@@ -27,7 +28,8 @@ public class TipReplyWriteAction implements Action{
 		repdto.setRep_nickname(user_img);
 		repdto.setRep_img(user_nickname);
 		repdto.setRep_post(rep_post);
-	     
+	    
+		System.out.println(rep_post);
 		TipReplyWriteService repwriteservice = new TipReplyWriteService();
 		boolean isWriteSuccess = repwriteservice.registArticle(repdto);
 		
@@ -42,7 +44,7 @@ public class TipReplyWriteAction implements Action{
 		else{
 			forward = new ActionForward();
 			forward.setRedirect(false);
-			forward.setPath("/tiplist.bo");
+			forward.setPath("/tip_detail.bo?board_num=tip_num");
 		}
 
 		return forward;

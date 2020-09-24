@@ -29,9 +29,12 @@ import com.jachi.Action.LikeUpdateAction;
 import com.jachi.Action.LoginUserAction;
 import com.jachi.Action.MyPagePostingListViewAction;
 import com.jachi.Action.MyhomeDetailAction;
+import com.jachi.Action.MyhomeDetailComentAction;
 import com.jachi.Action.MyhomeWriteProAction;
 import com.jachi.Action.MypageOrderListViewAction;
 import com.jachi.Action.MypageOrderViewAction;
+import com.jachi.Action.MypageProfileUserinfoUpdateAction;
+import com.jachi.Action.MypageUserInfoUpdateAction;
 import com.jachi.Action.PLSelectAction;
 import com.jachi.Action.ProductOrderAction;
 import com.jachi.Action.ProductOrderInsertAction;
@@ -89,12 +92,28 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			}
 			
 		}
+		else if(command.equals("/mypage_userinfo_update.bo")){
+			action  = new MypageUserInfoUpdateAction();
+			try { 
+				forward =action.execute(request, response );
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 		else if(command.equals("/join.bo")){
 			forward=new ActionForward();
 			forward.setPath("/join.jsp");
 		}
 		else if(command.equals("/join_Insert.bo")){
 			action  = new JoinInsertUserInfoAction();
+			try { 
+				forward =action.execute(request, response );
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/mypage_profile_userinfo_update.bo")){
+			action  = new MypageProfileUserinfoUpdateAction();
 			try { 
 				forward =action.execute(request, response );
 			} catch (Exception e) {
@@ -232,6 +251,15 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
         else if(command.equals("/Beautyroom_Detail.bo")){
 
 			action = new MyhomeDetailAction();
+			try{
+				forward=action.execute(request, response);
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		}
+        else if(command.equals("/myPage_reply_insert.bo")){
+
+			action = new MyhomeDetailComentAction();
 			try{
 				forward=action.execute(request, response);
 			}catch(Exception e){
@@ -428,7 +456,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			}
 		}
 		
-		else if(command.equals("/tip_reply_write.bo")) {			 
+		else if(command.equals("/tip_reply_write.bo")) {	
 			action = new TipReplyWriteAction();
 			try {
 				forward=action.execute(request, response);

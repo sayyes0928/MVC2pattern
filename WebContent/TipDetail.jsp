@@ -16,7 +16,7 @@
 </head>
 <script>
 
-function add(){
+/*function add(){
 	var tip_num = $('#tip_num').val();
 	var tip_nickname = $('#tip_nickname').val();
 	var tip_coverimg = $('#tip_coverimg').val();
@@ -39,7 +39,7 @@ function add(){
   });
 	
   $(".comment_text").val('');
-}
+}*/
 </script>
 <body>
   <form action="tip_reply_write.bo">
@@ -139,7 +139,6 @@ function add(){
         </div>        
       </header>
       <section>
-        <input type="hidden" value="<%=tip_detail.get(0).getTip_num()%>">
         <div class="detail_coverimg"><img src="<%=request.getContextPath()%>/upload/<%=tip_detail.get(0).getTip_coverimg()%>"></div>
         <div id="detail">         
              <div class="detail_header">
@@ -158,15 +157,21 @@ function add(){
                 <hr>
                 <p>댓글</p>
                 <div class="comment_form">
-                  <input id="tip_num" type="hidden" value="<%=tip_detail.get(0).getTip_num()%>">
-                  <input id="tip_nickname" type="hidden" value="<%=tip_detail.get(0).getTip_nickname()%>">
-                  <input id="tip_coverimg" type="hidden" value="<%=tip_detail.get(0).getTip_coverimg()%>">
-                  <div class="comment_imgbox"><img src="./img/myhome/icons8-heart-50.png"></div>
+                  <input name="tip_num" type="hidden" value="<%=tip_detail.get(0).getTip_num()%>">
+                  <input name="user_nickname" type="hidden" value="<%=tip_detail.get(0).getTip_nickname()%>">
+                  <input name="user_img" type="hidden" value="11">
+                  <div class="comment_imgbox"><img src="#"></div>
                   <div class="comment_textbox">
-                    <input class="comment_text" type="text" name="tip_reply_post" placeholder="칭찬과 격려의 댓글은 작성자에게 큰 힘이 됩니다 :)">
-                    <input class="comment_write_btn" type="button" name="comment_button" value="등록" onclick="add()">
+                    <input class="comment_text" type="text" name="reply_post" placeholder="칭찬과 격려의 댓글은 작성자에게 큰 힘이 됩니다 :)">
+                    <input class="comment_write_btn" type="submit" value="등록">
                   </div>
-                
+                <table>
+                 <tr>
+                   <td>
+                     <img src="#">
+                   <td>
+                 </tr>
+                </table>
                </div>
              </div>
          </div> 

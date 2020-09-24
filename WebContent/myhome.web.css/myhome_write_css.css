@@ -4,12 +4,6 @@
 	/* border: 1px dotted red; */
 }
 
-.section_left {
-	height: 300px;
-	/* border: 3px solid green; */
-	margin: 50px 0px 0px 0px;
-}
-
 section>article>ul {
 	list-style: none;
 	clear: both;
@@ -85,22 +79,23 @@ section>article>ul li {
 	flex: 1 1 0px;
 	min-width: 0;
 }
-[contentEditable=true]:empty:not(:focus):before {
-    content: attr(data-ph);
-    color: #939598;
-    display: block;
 
+[contentEditable=true]:empty:not (:focus ):before {
+	content: attr(data-ph);
+	color: #939598;
+	display: block;
 }
+
 .comment-feed__form__input {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flexbox;
-    display: flex;
-    position: relative;
-    max-width: 100%;
-    border: 1px solid #dbdbdb;
-    border-radius: 4px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flexbox;
+	display: flex;
+	position: relative;
+	max-width: 100%;
+	border: 1px solid #dbdbdb;
+	border-radius: 4px;
 }
 
 .comment-content-input {
@@ -109,7 +104,7 @@ section>article>ul li {
 
 .comment-feed__form__content__text {
 	display: block;
-	width: 100%;
+	width: 95%;
 	min-height: 38px;
 	border: none;
 	background: none;
@@ -127,38 +122,86 @@ section>article>ul li {
 
 @media ( min-width : 1024px) .card-detail-comment-section {
 	margin
+	
+	
+	
+	
 	:
+	
+	
 	 
+	
+	
 	60
 	px
+	
+	
 	 
+	
+	
 	0
 	0;
 	padding
+	
+	
+	
+	
 	:
+	
+	
 	 
+	
+	
 	60
 	px
+	
+	
 	 
+	
+	
 	0
 	0;
 }
 
 @media ( min-width : 768px) .card-detail-comment-section {
 	margin
+	
+	
+	
+	
 	:
+	
+	
 	 
+	
+	
 	50
 	px
+	
+	
 	 
+	
+	
 	0
 	0;
 	padding
+	
+	
+	
+	
 	:
+	
+	
 	 
+	
+	
 	50
 	px
+	
+	
 	 
+	
+	
 	0
 	0;
 }
@@ -412,7 +455,7 @@ a, button, [role=button], input[type=button], input[type=submit], input[type=res
 }
 
 article {
-	height: 200px;
+	height: 80px;
 }
 
 article table {
@@ -457,7 +500,7 @@ main {
 	float: right;
 }
 
-.myhomeContentLeft_main_userContent {
+.myhomeContentLeft_main_userContent_title {
 	clear: both;
 	width: 700px;
 	height: 100px;
@@ -467,11 +510,24 @@ main {
 	padding: 10px;
 }
 
-.myhomeContentLeft_main_userContent>p {
+.myhomeContentLeft_main_userContent_text {
+	clear: both;
+	width: 95%;
+	height: 95%;
+	margin: 20px auto 20px auto;
+	/* border: 2px dashed black; */
+	border-radius: 15px;
+	padding: 10px;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.myhomeContentLeft_main_userContent_title p {
 	width: 660px;
 	margin-left: 10px;
 	border-bottom: 1px dotted gray;
-	font-size: 18px;
+	font-size: 22px;
+	font-weight: 800;
 }
 
 #bg_main {
@@ -541,14 +597,16 @@ main {
 	list-style: none;
 	display: list-item;
 	float: left;
-	font-size:25px;
-	font-weight:800;
+	font-size: 25px;
+	font-weight: 800;
 }
 
 .myhomeContentLeft_main_keyword_tag li {
 	float: left;
-	margin-right: 50px;
+}
 
+.myhomeContentLeft_main_keyword_tag li a {
+	margin-right: 10px;
 }
 
 .myhomeContentLeft_main_keyword a {
@@ -584,9 +642,7 @@ main {
 .myhomeContentLeft_main_writeComment div {
 	float: left;
 }
-div {
-    display: block;
-}
+
 .myhomeContentLeft_main_writeComment h1 {
 	margin-bottom: 25px;
 }
@@ -693,8 +749,8 @@ div {
 .btm_image {
 	border: 1px solid white;
 	border-radius: 10px;
-	width: 80px;
-	height: 35px;
+	width: 49.4%;
+	height: 50px;
 }
 /* .myhomeContentRight_button div {
   float: left;
@@ -703,8 +759,8 @@ div {
 .myhomeContentRight_button_btn {
 	margin: 0 auto;
 	border-radius: 10px;
-	width: 210px;
-	height: 35px;
+	width: 95%;
+	height: 52px;
 }
 /* background-color: white; */
 /* border: 1px solid red; */
@@ -735,7 +791,7 @@ div {
 	margin-top: 20px;
 	/* border: 1px solid red; */
 }
-
+/*
 .myhomeContentRight_userinfo div {
 	background-color: #f2f2f2;
 	border-radius: 10px;
@@ -752,14 +808,10 @@ div {
 	height: 30px;
 	/* border: 1px solid red; */
 }
-
 .myhomeContentRight_userimage_container {
-	/* border: 1px solid yellowgreen; */
-	/* border: 2px dashed black; */
 	width: 295px;
 	height: 300px;
 	margin: 10px auto 10px auto;
-	/* border: 1px solid red; */
 }
 
 .myhomeContentRight_userimage {
@@ -831,14 +883,63 @@ td
 +
 {
 width
+
+
+
+
 :
+
+
  
+
+
 50
 px
+
+
+
+
 ;
-
-
 }
 .table>tbody>tr+td+td+td {
 	width: 50px;
+}
+
+.user-profile__profile-image {
+	position: absolute;
+	top: 10px;
+	left: 80px;
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+	background-color: #ededed;
+}
+
+.user-profile__profile-image_container {
+	height: 70px;
+}
+
+.Right_userID {
+	position: absolute;
+	top: 20px;
+	left: 150px;
+	font-weight:800;
+	font-size:20px;
+}
+.card-detail-writer__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: #ededed;
+}
+[contentEditable="true"]:empty:not(:focus):before {
+  content: attr(data-ph);
+  color: #939598;
+  display: block;
+}
+[contentEditable="true"]:focus {
+  outline: none;
 }
