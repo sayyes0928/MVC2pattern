@@ -22,6 +22,7 @@ import com.jachi.Action.BoardModifyProAction;
 import com.jachi.Action.BoardReplyFormAction;
 import com.jachi.Action.BoardReplyProAction;
 import com.jachi.Action.BookMarkUpdate;
+import com.jachi.Action.CateSearchAction;
 import com.jachi.Action.JoinIdcheckUserinfoAction;
 import com.jachi.Action.JoinInsertUserInfoAction;
 import com.jachi.Action.JoinNickNamecheckUserinfoAction;
@@ -40,7 +41,11 @@ import com.jachi.Action.PLSelectAction;
 import com.jachi.Action.ProductOrderAction;
 import com.jachi.Action.ProductOrderInsertAction;
 import com.jachi.Action.ProductPostViewAction;
+import com.jachi.Action.QnaCommentAction;
+import com.jachi.Action.QnaCommentListAction;
+import com.jachi.Action.QnaCommentWriteAction;
 import com.jachi.Action.QnaDeleteAction;
+import com.jachi.Action.QnaDetailAction;
 import com.jachi.Action.QnaListAction;
 import com.jachi.Action.QnaModifyAction;
 import com.jachi.Action.QnaSearchAction;
@@ -500,6 +505,56 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				forward=action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
+			}
+		}
+		
+		else if(command.equals("/cate_search.bo")) {
+			System.out.println("카테체크");
+			action = new CateSearchAction();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+			System.out.println(e);
+			}
+		}
+		
+		else if(command.equals("/qna_detail.bo")) {
+			System.out.println("카테체크");
+			action = new QnaDetailAction();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+			System.out.println(e);
+			}
+		}
+	
+		else if(command.equals("/qna_commentselect.bo")) {
+			System.out.println("커맨트체크");
+			action = new QnaCommentAction();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+			System.out.println(e);
+			}
+		}
+		
+		else if(command.equals("/qna_commentselectList.bo")) {
+			System.out.println("커맨트체크");
+			action = new QnaCommentListAction();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+			System.out.println(e);
+			}
+		}
+		
+		else if(command.equals("/qna_commentwrite.bo")) {
+			System.out.println("커맨트체크");
+			action = new QnaCommentWriteAction();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+			System.out.println(e);
 			}
 		}
 		

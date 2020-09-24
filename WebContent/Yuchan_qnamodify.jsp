@@ -113,7 +113,7 @@ function existingTag(text)
 <body>
 	<header>
 		<div id="BT_writebannersize">
-			<a href="#" id="BT_writebanner"><span>자취해보자</span></a>
+			<a href="qna.bo" id="BT_writebanner"><span>자취해보자</span></a>
 		</div>
 
 	</header>
@@ -123,8 +123,9 @@ function existingTag(text)
 		<div id="BT_writemainsize"> 
 			<div id="file_upsize">
 				<div class="filebox">
-					<label for="cma_file">사진변경</label>
-					<input type="button" value="취소" id="cancel_bt">
+					<!-- <label for="cma_file">사진변경</label> -->
+					<!-- <input type="button" value="취소" id="cancel_bt">-->
+					
 					 <input type="file"
 						name="post_pic" id="cma_file" accept="image/*" capture="camera"
 						onchange="getThumbnailPrivew(this,$('#cma_image'))"  /> <br/><br/>
