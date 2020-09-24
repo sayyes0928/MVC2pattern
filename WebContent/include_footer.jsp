@@ -15,7 +15,7 @@
 				<div class="layout-footer__cs__row">
 					<a class="layout-footer__cs__tel" href="tel:1670-0876">1670-0876</a>
 				</div>
-				<span class="layout-footer__cs__time">평일 10:00~17:00 (점심시간
+				<span class="layout-footer__cs__time">평일 10:00~17:00 //(점심시간
 					12:00~13:00 / 주말&amp;공휴일 제외)</span>
 			</address>
 			<div class="layout-footer__outbound">
