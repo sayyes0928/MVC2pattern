@@ -287,7 +287,7 @@
 					<table id="tb">
 										<tr> 
 						<td colspan="5" id="td_size"><a id="title_tag"
-							href="readpost.jsp?all_post=  "> <span id="qna_posttitle"><%=userqna.get(i).getQna_title()%></span>
+							href="qna_detail.bo?getnum=<%=userqna.get(i).getQna_num()%>"> <span id="qna_posttitle"><%=userqna.get(i).getQna_title()%></span>
 						</a></td>
 						<td id="qna_table_ctr">
 						<%

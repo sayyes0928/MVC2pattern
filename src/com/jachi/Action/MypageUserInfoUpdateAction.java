@@ -91,7 +91,7 @@ public class MypageUserInfoUpdateAction implements Action {
 		else{
 			forward = new ActionForward();
 			forward.setRedirect(true);
-			forward.setPath("mypage_profile_userinfo_update.bols_");
+			forward.setPath("mypage_profile_userinfo_update.bo");
 		}
 
 		return forward;

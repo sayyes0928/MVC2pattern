@@ -32,9 +32,6 @@
 
 <script src="./myhome.web.js/teamTopnav.js"></script>
 
-<!--  <script type="text/javascript" src="./myhome.web.js/jquery-easing-1.3.pack.js"></script>-->
-<!--  <script type="text/javascript" src="./myhome.web.js/jquery-easing-compatibility.1.2.pack.js"></script>-->
-<!-- <script type="text/javascript" src="./myhome.web.js/coda-slider.1.1.1.pack.js"></script> -->
 
 
 <title>MVC 게시판</title>
@@ -230,7 +227,7 @@
 							<div class="commerce-cart__side-bar__order">
 								<button
 									class="button button--color-blue button--size-50 button--shape-4 commerce-cart__side-bar__order__btn"
-									type="button">바로구매</button>
+									type="button" onclick="location.href = 'ProductOrderPage.bo'">바로구매</button>
 							</div>
 						</div>
 					</div>

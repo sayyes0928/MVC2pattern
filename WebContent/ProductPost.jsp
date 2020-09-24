@@ -1,7 +1,7 @@
-<%@page import="org.apache.catalina.ant.SessionsTask"%>
-<%@page import="javax.websocket.Session"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="org.apache.catalina.ant.SessionsTask"%>
+<%@ page import="javax.websocket.Session"%>
 <%@ page import="java.util.*"%>
 <%@ page import="com.jachi.DTO.ProductinfoDTO"%>
 <%

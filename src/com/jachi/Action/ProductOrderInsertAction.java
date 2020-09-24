@@ -58,7 +58,6 @@ public class ProductOrderInsertAction implements Action {
 		Character orderCodeHeader2= (char)((int)(Math.random()*26)+97);
 		Character orderCodeHeader3= (char)((int)(Math.random()*26)+97);
 		
-		String orderCodeHeader = orderCodeHeader1.toString() + orderCodeHeader2.toString() + orderCodeHeader3.toString();
 
 		DeliveryDTO deliveryDTO = new DeliveryDTO();
 		
@@ -89,6 +88,7 @@ public class ProductOrderInsertAction implements Action {
 			orderDTO.setOdr_price(totalPrice);
 			orderDTO.setOdr_procode(cart.get(i)[3]);
 
+			String orderCodeHeader = orderCodeHeader1.toString() + orderCodeHeader2.toString() + orderCodeHeader3.toString();
 			
 			String odr_code = orderCodeHeader + orderCodeBody + orderCodeTail;
 			System.out.println(odr_code);

@@ -3,8 +3,10 @@
 <%@ page import="java.util.*"%>
 <%@ page import="com.jachi.DTO.ProductinfoDTO"%>
 
+
 <%
 	ArrayList<ProductinfoDTO> article = (ArrayList<ProductinfoDTO>) request.getAttribute("article");
+	
 %>
 <!DOCTYPE html>
 <html>
@@ -13,37 +15,30 @@
 <meta charset="utf-8">
 <title>자취해보자 스토어</title>
 
-<link rel="stylesheet" type="text/css"
-	href="./myhome.web.css/teamTopNav.css" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./myhome.web.css/teamTopNav.css" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script type="text/javascript"
-	src="./myhome.web.js/jquery-easing-1.3.pack.js"></script>
-<script type="text/javascript"
-	src="./myhome.web.js/jquery-easing-compatibility.1.2.pack.js"></script>
-<script type="text/javascript"
-	src="./myhome.web.js/coda-slider.1.1.1.pack.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="./myhome.web.js/jquery-easing-1.3.pack.js"></script>
+    <script type="text/javascript" src="./myhome.web.js/jquery-easing-compatibility.1.2.pack.js"></script>
+    <script type="text/javascript" src="./myhome.web.js/coda-slider.1.1.1.pack.js"></script>
+
+	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 
 
-<link rel="stylesheet" href="./Teamcss/ProductList.css" type="text/css">
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-<link rel="stylesheet" href="./Teamcss/teampro_ver_01.css"
-	type="text/css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script
-	src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-<script src="./myhome.web.js/teamTopnav.js"></script>
+
+    <link rel="stylesheet" href="./Teamcss/ProductList.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <link rel="stylesheet" href="./Teamcss/teampro_ver_01.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+	<script src="./myhome.web.js/teamTopnav.js"></script>
 
 
 <!-- <script type="text/javascript" src="jquery-1.5.2.min.js"></script> -->
-<script type="text/javascript"
-	src="./Teamjs/scriptbreaker-multiple-accordion-1.js"></script>
-<script>
+	<script type="text/javascript" src="./Teamjs/scriptbreaker-multiple-accordion-1.js"></script>
+	<script>
 	$(function() {
 		$('.slider').bxSlider({
 			mode : 'horizontal',
@@ -59,13 +54,111 @@
 			speed : 500
 		});
 	});
-</script>
+	</script>
 
-</head>
+	</head>
 
-<body>
+	<body>
 	<form id="contentPage">
-		<jsp:include page="includHeader.jsp"></jsp:include>
+      <header>
+        <div id="h_wrap">
+          <div class="h_div">
+         
+        <h1>자취해보자</h1>
+              </div>
+         
+       <%
+       String us_id = (String)session.getAttribute("us_id"); //로그인 유무 확인
+       if(us_id==null){
+     %>
+            <ul class="login_go">
+              <li><a href="LoginFormpage.bo">로그인</a></li>
+              <li><span> | </span></li>
+              <li><a href="join.bo">회원가입</a></li>
+            </ul>
+      
+
+     <%
+       }else{
+     %>
+            <ul class="login_go">
+              <li><span></span></li>
+              <li><a href="MypageOrderView.bo">마이페이지</a></li>
+              <li><span> | </span></li>
+              <li><a href="logoutActionPage.jsp">로그아웃</a></li> 
+            </ul>
+        
+       
+
+     <%
+       }
+     %>
+          <div id="main_nav">
+          <ul>
+            <li>
+              <a href="Index.jsp"><span>홈</span></a>
+            </li>
+            <li>
+              <a href="storeList.bo"><span>스토어</span></a>
+            </li>
+            <li>
+              <a href="beauty.bo"><span>커뮤니티</span></a>
+            </li>
+            <li>
+              <a href="qna.bo"><span>자취에대한 모든것</span></a>
+            </li>
+
+            <li>
+              <a href="#"><span>고객센터</span></a>
+            </li>
+          </ul>
+        </div>
+        
+        </div>
+
+<div id="sub">
+          <div id="sub_menu">
+            <div class="nav_container_div">
+              <nav role="navigation" class="primary-navigation">
+                <ul class="nav_container">
+                  <li>
+                  
+                    <ul class="m_line">
+                      <li><a href="#">카테고리</a></li>
+                      <li><a href="#">베스트</a></li>
+                      <li><a href="#">특가</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <ul class="m_line">
+                      <li><a href="#">내방자랑</a></li>
+                      <li><a href="#">내집자랑</a></li>
+                      <li><a href="#">전문가집들이</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <ul class="m_line">
+                      <li><a href="#">자취생TIP</a></li>
+                      <li><a href="#">자취생QnA</a></li>
+                      <li><a href="#">혼밥레시피</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <ul class="m_line">
+                      <li><a href="#">질문과답변</a></li>
+                      <li><a href="#">공지사항</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        
+      </header>
+
+
+
 		<section>
 
 			<div id="m_wrap">
@@ -75,18 +168,18 @@
 							<ul>
 								<li><a href="#">소파/거실가구</a>
 									<ul>
-										<li><a href="#">소파</a></li>
-										<li><a href="#">거실/TV장</a></li>
-										<li><a href="#">거실/소파테이블</a></li>
-										<li><a href="#">의자</a></li>
+										<li><a href="cate_search.bo?cate=소파">소파</a></li>
+										<li><a href="cate_search.bo?cate=거실수납장">거실/TV장</a></li>
+										<li><a href="cate_search.bo?cate=가구">거실/소파테이블</a></li>
+										<li><a href="cate_search.bo?cate=거실수납장">의자</a></li>
 									</ul></li>
 								<li><a href="#">침실가구</a>
 									<ul>
-										<li><a href="#">침대</a></li>
-										<li><a href="#">매트리스</a></li>
-										<li><a href="#">화장대</a></li>
-										<li><a href="#">서랍장</a></li>
-										<li><a href="#">거울</a></li>
+										<li><a href="cate_search.bo?cate=침구">침대</a></li>
+										<li><a href="cate_search.bo?cate=블라인드">매트리스</a></li>
+										<li><a href="cate_search.bo?cate=침구">화장대</a></li>
+										<li><a href="cate_search.bo?cate=블라인드">서랍장</a></li>
+										<li><a href="cate_search.bo?cate=블라인드">거울</a></li>
 									</ul></li>
 								<li><a href="#">드레스룸</a>
 									<ul>
@@ -136,19 +229,19 @@
 							<ul>
 								<li><a href="#">침구</a>
 									<ul>
-										<li><a href="#">이불커버</a></li>
-										<li><a href="#">이불솜</a></li>
-										<li><a href="#">토퍼</a></li>
-										<li><a href="#">베개커버</a></li>
-										<li><a href="#">바디필로우</a></li>
-										<li><a href="#">매트리스커버</a></li>
+										<li><a href="cate_search.bo?cate=침구">이불커버</a></li>
+										<li><a href="cate_search.bo?cate=블라인드">이불솜</a></li>
+										<li><a href="cate_search.bo?cate=침구">토퍼</a></li>
+										<li><a href="cate_search.bo?cate=블라인드">베개커버</a></li>
+										<li><a href="cate_search.bo?cate=침구">바디필로우</a></li>
+										<li><a href="cate_search.bo?cate=블라인드">매트리스커버</a></li>
 									</ul></li>
 								<li><a href="#">커튼/블라인드</a>
 									<ul>
-										<li><a href="#">암막커튼</a></li>
-										<li><a href="#">일반커튼</a></li>
-										<li><a href="#">레이스/속커튼</a></li>
-										<li><a href="#">롤스크린</a></li>
+										<li><a href="cate_search.bo?cate=블라인드">암막커튼</a></li>
+										<li><a href="cate_search.bo?cate=블라인드">일반커튼</a></li>
+										<li><a href="cate_search.bo?cate=블라인드">레이스/속커튼</a></li>
+										<li><a href="cate_search.bo?cate=블라인드">롤스크린</a></li>
 									</ul></li>
 								<li><a href="#">카페트/러그</a>
 									<ul>
@@ -532,7 +625,9 @@
 				<main id="cate_main">
 				<div class="m_best">
 					<div class="m_mar">
-						<span>가구</span><br>
+					
+					
+					<span>스토어 상품</span><br>
 						<hr>
 					</div>
 					<div class="slider">
@@ -561,36 +656,32 @@
 
 					<div class="m_img">
 						<ul>
-
-
-							<%
-								for (int i = 0; i < article.size(); i++) {
-							%>
-							<a href="korea.bo?pro_num=<%=article.get(i).getPro_code()%>">
-								<li>
-									<div class="row">
-										<figure class="effect1">
-											<img class="m_imgsize"
-												src="<%=request.getContextPath()%>/upload/<%=article.get(i).getPro_mainimg()%>">
+						
+																	
+							<%for(int i = 0; i < article.size(); i++){ %>
+							<a href="korea.bo?pro_num=<%=article.get(i).getPro_code()%>" >
+							<li>
+								<div class="row">					
+									<figure class="effect1">							
+										<img class="m_imgsize"
+											src="<%=request.getContextPath()%>/upload/<%=article.get(i).getPro_mainimg()%>">
 											<figcaption>
 												<p>제품 상세 정보</p>
 											</figcaption>
-										</figure>
-									</div>
-
-									<div class="m_pname"><%=article.get(i).getPro_name()%></div>
-									<div class="m_pindex"><%=article.get(i).getPro_catecode1()%></div>
-									<div class="m_pindex2"><%=article.get(i).getPro_price()%></div>
-
-							</li>
+									</figure>
+								</div>	
+										
+								<div class="m_pname"><%=article.get(i).getPro_name() %></div>
+								<div class="m_pindex"><%=article.get(i).getPro_info() %></div>
+								<div class="m_pindex2"><%=article.get(i).getPro_price() %></div>
+				
+							</li>	
 							</a>
-							<%
-								}
-							%>
+						<%} %>
 						</ul>
 					</div>
 				</div>
-
+				
 				</main>
 
 			</div>
@@ -601,4 +692,3 @@
 </body>
 
 </html>
->>>>>>> refs/remotes/jooyoungHOME/master
