@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+@font-face{
+	font-family:"myfont2";
+	src:url("./Kano.otf");
+}
+*{
+	margin:0;
+	padding:0;
+	font-family:"myfont2";
+}
+#header_size{
+	
+	width:100%;
+	height:170px;
+	border:1px solid gray;
+/* 	background-image: url("../img/headerimg4.jpg"); */
+	background-repeat : no-repeat;
+	background-size : cover;
+
+}
+
+#logosize{
+	float:left;
+	margin-left:20px;
+}
+
+.main_menu{
+	float:left;
+	width:1400px;
+	height:170px;
+}
+.main_menu >ul > li{
+
+	margin-right:160px;
+	display: inline;
+	
+}
+.main_menu >ul > li > a{
+	
+	position:relative;
+	left:160px;
+	top:120px;
+	text-decoration: none;
+	color:black;
+	font-size: 20pt;
+	font-weight: bold;
+
+
+}
+
+#user_nav{
+	margin-right:80px;
+	margin-top:20px;
+	float:right;
+	border-bottom:1px solid gray;
+}
+
+#join_nav{
+	font-size:10pt;
+	margin-right:7px;
+	font-weight: bold;
+}
+#login_nav{
+	font-size:10pt;
+	margin-left:7px;
+	font-weight: bold;
+}

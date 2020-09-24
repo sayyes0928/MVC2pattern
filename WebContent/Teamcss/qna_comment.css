@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+#qna_post_replysize{
+
+	float:left;
+
+	width:820px;
+	height:100%;
+	margin-left:300px;
+	margin-top:30px;
+}
+
+#reply_title_size{
+	width:820px;
+	height:50px;
+	font-size:18pt;
+	font-weight: bold;
+	color:black;
+}
+
+#reply_inner_text{
+	width:820px;
+	height:30px;
+	font-size:14pt;
+	color:gray;
+	outline-style: none;
+
+
+
+}
+
+#reply_inner_text_null{
+	width:820px;
+	height:150px;
+	font-size:14pt;
+}
+
+#reply_button{
+	float:right;
+	margin-top:10px;
+	margin-left:2px;
+	width:70px;
+	height:50px;
+	color:white;
+	background-color:#0D3EA3;
+	font-size:16pt;
+	font-weight:bold;
+	border:none;
+	cursor: pointer;
+}
+#null_comment{
+	width:820px;
+	height:80px;
+	
+	
+	margin-top:15px;
+	background-color:gray;
+}
+
+#comment_size{
+
+	width:820px;
+	height:100%;
+}
+
+#comment_profileimg{
+	width: 40px;
+    height: 40px; 
+    border-radius: 70%;
+    overflow: hidden;
+    margin-right:15px;
+    position: relative;
+    top:10px;
+	
+}
+
+#comment_id{
+	font-size:13pt;
+	font-weight:bold;
+	position: relative;
+	bottom: 8px;
+
+}
+
+#comment_content{
+	color:gray;
+	font-size:13pt;
+	margin-bottom:5px;
+	margin-left:55px;
+}
+
+#commnet_number{
+	margin-right:8px;
+	margin-left:55px;
+}
+
+#comment_date{
+	margin-left:8px;
+	margin-right:8px;
+}
+
+#reply_txt{
+	width:600px;
+	height:30px;
+}
+
+.comment_modify{
+	color:gray;
+	font-weight: bold;
+	margin-right:7px;
+	
+}
+
+#comment_line{
+	margin-top:5px;
+	margin-bottom:5px;
+	color:gray;
+	width:90%;
+	margin-left:30px;
+	
+}
