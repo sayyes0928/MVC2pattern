@@ -288,7 +288,7 @@
 												if (qnaList != null) {
 													for (int i = 0; i < qnaList.size(); i++) {
 											%>
-											<li class="mypost_preview_contents"><a href="#"><%=qnaList.get(i).getQna_title()%></a></li>
+											<li class="mypost_preview_contents"><a href="qna_detail.bo?getnum=<%= qnaList.get(i).getQna_num()%>"><%=qnaList.get(i).getQna_title()%></a></li>
 											<%
 												}
 												} else {

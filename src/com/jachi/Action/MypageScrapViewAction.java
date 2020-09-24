@@ -28,7 +28,7 @@ import com.jachi.svc.LikePostinCheckService;
 		
 		ActionForward forward = new ActionForward();
 	   	request.setAttribute("bookmarkList", bookmarkList);
-   		forward.setPath("/MyscrapLike.jsp");
+   		forward.setPath("/Myscrapbook.jsp");
    		return forward;
 
 	 }

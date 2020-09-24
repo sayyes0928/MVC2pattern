@@ -132,7 +132,7 @@
 						<div class="collection collection--total">
 							<div class="collection__image-wrap">
 								<img class="collection__image"
-									src="<%=request.getContextPath()%>/upload/<%= %>articleCount">
+									src="<%=request.getContextPath()%>/upload/<%= articleCount.get(0).getPost_pic()%>">
 							</div>
 							<span class="collection__type">상품</span>
 						</div></a>
