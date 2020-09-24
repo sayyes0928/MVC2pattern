@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
-<%@ page import="com.jachi.DTO.BeautyRoomDTO"%>
+<%@ page import="com.jachi.DTO.DeliveryDTO"%>
+<%@ page import="com.jachi.DTO.OrderListDTO"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,8 +81,8 @@
 </head>
 <body>
 	<%
-		ArrayList<BeautyRoomDTO> articleCount = null;
-		articleCount = (ArrayList<BeautyRoomDTO>) request.getAttribute("bookmarkList");
+		ArrayList<Integer> articleCount = null;
+		articleCount = (ArrayList<Integer>) request.getAttribute("articleCount");
 	%>
 	<!-- 게시판 등록 -->
 
@@ -132,7 +133,7 @@
 						<div class="collection collection--total">
 							<div class="collection__image-wrap">
 								<img class="collection__image"
-									src="<%=request.getContextPath()%>/upload/<%= %>articleCount">
+									src="https://image.ohou.se/i/bucketplace-v2-development/uploads/deals/159955303371693671.jpg?gif=1&amp;w=320&amp;h=320&amp;c=c&amp;webp=1">
 							</div>
 							<span class="collection__type">상품</span>
 						</div></a>

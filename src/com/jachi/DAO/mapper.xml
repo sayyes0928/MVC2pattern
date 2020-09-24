@@ -55,7 +55,9 @@ insert into userinfo(us_id,us_pw,us_name,us_nkname,us_birth,us_tel,us_telagr,us_
 
 </insert>
 
-
+<select id="select_getScrapList" resultType="com.jachi.DTO.BeautyRoomDTO" parameterType="String">
+ SELECT * FROM jachi.posting where post_num = (select scr_postnum from scrap where scr_id=#{us_id});
+</select>
 <select id="orderList_status" parameterType="com.jachi.DTO.OrderListDTO" resultType="com.jachi.DTO.OrderListDTO" >
 SELECT DISTINCT list_name,dlv_status as 'list_delStatus',cal_price,list_amount,
 a.dlv_comp as 'list_company',a.dlv_num as 'list_delNum' ,a.dlv_code as 'list_code'

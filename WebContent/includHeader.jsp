@@ -25,6 +25,8 @@
 				<li><span></span></li>
 				<li><a href="MypageProfile.bo">마이페이지</a></li>
 				<li><span> | </span></li>
+				<li><a href="CartList.bo">장바구니</a></li>
+				<li><span> | </span></li>
 				<li><a href="logoutActionPage.jsp">로그아웃</a></li>
 			</ul>
 
