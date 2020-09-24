@@ -43,6 +43,6 @@ public class BoardReplyProAction implements Action {
 	   		
 	   		return forward;
 	   		
-	}  	
+	}
 	 
 }

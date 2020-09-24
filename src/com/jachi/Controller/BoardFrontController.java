@@ -35,7 +35,6 @@ import com.jachi.Action.MyhomeWriteProAction;
 import com.jachi.Action.MypageOrderListViewAction;
 import com.jachi.Action.MypageOrderViewAction;
 import com.jachi.Action.MypageProfileUserinfoUpdateAction;
-import com.jachi.Action.MypageScrapViewAction;
 import com.jachi.Action.MypageUserInfoUpdateAction;
 import com.jachi.Action.PLSelectAction;
 import com.jachi.Action.ProductOrderAction;
@@ -263,16 +262,6 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
-        else if(command.equals("/MypageScrapView.bo")){
-
-  			action = new MypageScrapViewAction();
-  			try{
-  				forward=action.execute(request, response);
-  			}catch(Exception e){
-  				e.printStackTrace();
-  			}
-  		}
-		
         else if(command.equals("/myPage_reply_insert.bo")){
 
 			action = new MyhomeDetailComentAction();
@@ -558,10 +547,17 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			}
 		}
 		
+		else if(command.equals("/tip_replylist.bo")) {
+			action = new QnaModifyAction();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 		
 		
-
-		
+	
 		
 		if(forward != null){
 			
