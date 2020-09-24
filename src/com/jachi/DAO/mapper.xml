@@ -203,7 +203,7 @@ insert into posting_reply values(default, #{posting_reply_us_id},#{posting_reply
 
 <select id="qnalistall_detail" parameterType="Integer" resultType="com.jachi.DTO.QnABBS">
 	select qna_num,qna_pw,qna_title,qna_time,qna_post,us_nkname as 'qna_nickname',us_pic as 'qna_img' from qna
-	join userinfo on userinfo.us_id=qna.qna_nickname where qna_num = #{qnanum} ;
+	join userinfo on userinfo.us_id=qna.qna_nickname where qna_num = #{qnanum};
 </select>
 
 <select id="qna_select_comment" parameterType="Integer" resultType="com.jachi.DTO.QnA_Comment">
