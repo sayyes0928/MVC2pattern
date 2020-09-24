@@ -35,7 +35,6 @@ import com.jachi.Action.MyhomeWriteProAction;
 import com.jachi.Action.MypageOrderListViewAction;
 import com.jachi.Action.MypageOrderViewAction;
 import com.jachi.Action.MypageProfileUserinfoUpdateAction;
-import com.jachi.Action.MypageScrapViewAction;
 import com.jachi.Action.MypageUserInfoUpdateAction;
 import com.jachi.Action.PLSelectAction;
 import com.jachi.Action.ProductOrderAction;
@@ -45,6 +44,7 @@ import com.jachi.Action.QnaCommentAction;
 import com.jachi.Action.QnaCommentListAction;
 import com.jachi.Action.QnaCommentWriteAction;
 import com.jachi.Action.QnaDeleteAction;
+import com.jachi.Action.QnaDetailAction;
 import com.jachi.Action.QnaListAction;
 import com.jachi.Action.QnaModifyAction;
 import com.jachi.Action.QnaSearchAction;
@@ -497,6 +497,56 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			}
 		}
 		
+		else if(command.equals("/cate_search.bo")) {
+			System.out.println("카테체크");
+			action = new CateSearchAction();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+			System.out.println(e);
+			}
+		}
+		
+		else if(command.equals("/qna_detail.bo")) {
+			System.out.println("카테체크");
+			action = new QnaDetailAction();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+			System.out.println(e);
+			}
+		}
+	
+		else if(command.equals("/qna_commentselect.bo")) {
+			System.out.println("커맨트체크");
+			action = new QnaCommentAction();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+			System.out.println(e);
+			}
+		}
+		
+		else if(command.equals("/qna_commentselectList.bo")) {
+			System.out.println("커맨트체크");
+			action = new QnaCommentListAction();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+			System.out.println(e);
+			}
+		}
+		
+		else if(command.equals("/qna_commentwrite.bo")) {
+			System.out.println("커맨트체크");
+			action = new QnaCommentWriteAction();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+			System.out.println(e);
+			}
+		}
+		
 		else if(command.equals("/tip_replylist.bo")) {
 			action = new QnaModifyAction();
 			try {
@@ -507,9 +557,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		}
 		
 		
-		
-
-		
+	
 		
 		if(forward != null){
 			
