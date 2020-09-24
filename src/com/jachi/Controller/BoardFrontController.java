@@ -428,7 +428,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			}
 		}
 		
-		else if(command.equals("/tip_reply_write.bo")) {			 
+		else if(command.equals("/tip_reply_write.bo")) {	
 			action = new TipReplyWriteAction();
 			try {
 				forward=action.execute(request, response);
