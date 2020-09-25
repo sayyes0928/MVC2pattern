@@ -17,7 +17,7 @@
 				<img src="./img/jachilogo75.png" id="logosize">
 				<div class="main_menu">
 					<ul>
-						<li><a href="#">Home</a></li>
+						<li><a href="Jachi_main.bo">Home</a></li>
 						<li><a href="storeList.bo">Store</a></li>
 						<li><a href="btList.bo">Photo</a></li>
 						<li><a href="qna.bo">QnA</a></li>
