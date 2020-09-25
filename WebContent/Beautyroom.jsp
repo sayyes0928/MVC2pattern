@@ -14,6 +14,7 @@
 	int maxPage=pageInfo.getMaxPage();
 	int startPage=pageInfo.getStartPage();
 	int endPage=pageInfo.getEndPage();
+	String us_id = (String)session.getAttribute("us_id"); //로그인 유무 확인
 
 %>
 <!DOCTYPE html>
@@ -34,6 +35,7 @@
 
 <body>
 	<form id="contentPage">
+
 		<header>
         <div id="h_wrap">
           <div class="h_div">
@@ -42,7 +44,7 @@
               </div>
          
        <%
-       String us_id = (String)session.getAttribute("us_id"); //로그인 유무 확인
+       
        if(us_id==null){
      %>
             <ul class="login_go">

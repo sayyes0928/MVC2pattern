@@ -23,6 +23,7 @@ import com.jachi.Action.BoardReplyFormAction;
 import com.jachi.Action.BoardReplyProAction;
 import com.jachi.Action.BookMarkUpdate;
 import com.jachi.Action.CateSearchAction;
+import com.jachi.Action.JachiMainAction;
 import com.jachi.Action.JoinIdcheckUserinfoAction;
 import com.jachi.Action.JoinInsertUserInfoAction;
 import com.jachi.Action.JoinNickNamecheckUserinfoAction;
@@ -565,6 +566,15 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
+		else if(command.equals("/Jachi_main.bo")) {
+			action = new JachiMainAction();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
 		
 		
 	
