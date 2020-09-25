@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Index test</title>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+(function () {
+	  var app;
+
+	  $(document).ready(function () {
+	    return app.init();
+	  });
+
+	  app = {
+	    text: "자취해보자 From Juyeong/Yuchan/JaeSung",
+	    index: 0,
+	    chars: 0,
+	    speed: 100,
+	    container: ".text .content",
+	    init: function () {
+	      this.chars = this.text.length;
+	      return this.write();
+	    },
+	    write: function () {
+	      $(this.container).append(this.text[this.index]);
+	      if (this.index < this.chars) {
+	        this.index++;
+	        return window.setTimeout(function () {
+	          return app.write();
+	        }, this.speed);
+	      }
+	    } };
+	 
+
+	}).call(this);
+	
+	$(function(){
+		$('.text').click(function(){
+			  location.href = 'beauty.bo';
+		});
+	});
+	
+
+	
+
+</script>
+
+<style>
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+body {
+  font-family: 'Roboto';
+  color: #333;
+}
+
+.text {
+  width: 100%;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  font-size: 30px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  cursor: pointer;
+}
+.text .content {
+  display: inline;
+}
+.text .dash {
+  display: inline-block;
+  height: 3px;
+  width: 20px;
+  background-color: #3498db;
+  animation: blink .5s infinite linear;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+</style>
+<body>
+<div class='text'>
+  <div class='content'></div>
+  <div class='dash'></div>
+</div>
+
+</body>
+</html>
