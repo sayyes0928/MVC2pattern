@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 
 import com.jachi.DTO.ActionForward;
 import com.jachi.DTO.BeautyRoomDTO;
+import com.jachi.DTO.PageInfo;
 import com.jachi.DTO.Posting_replyDTO;
 import com.jachi.svc.BookMarkCheckService;
 import com.jachi.svc.LikePostinCheckService;
@@ -20,14 +21,44 @@ import com.jachi.svc.MyhomeDetailService;
 		
 		 
 		 HttpSession session = request.getSession(false);
-		String us_id = request.getParameter("us_id");
+		String us_id = (String)session.getAttribute("us_id");
 		int board_num=Integer.parseInt(request.getParameter("board_num"));
 	
 		MyhomeDetailService myhomeDetailService = new MyhomeDetailService();
 		List<BeautyRoomDTO> article = myhomeDetailService.getArticle(board_num);
-        List<Posting_replyDTO> coment = myhomeDetailService.getReply(board_num);
-		if(us_id != null) {
+        
+        
+        
+        //페이징
+		int page=1;
+		int limit=5;
+		if(request.getParameter("page")!=null) {
+			page=Integer.parseInt(request.getParameter("page"));
+		}
+		int listCount = myhomeDetailService.getListCount(board_num);
+		List<Posting_replyDTO> coment = myhomeDetailService.getReply(page,limit,board_num);
+        
 		
+		int maxPage=(int)((double)listCount/limit+0.95);
+		int startPage = (((int)((double)page/10+0.9)) - 1)* 10 + 1;
+		int endPage = startPage + 10 -1;
+		
+		if(endPage>maxPage) endPage = maxPage;
+		
+		
+		PageInfo pageInfo = new PageInfo();
+		pageInfo.setEndPage(endPage);
+		pageInfo.setListCount(listCount);
+		pageInfo.setMaxPage(maxPage);
+		pageInfo.setPage(page);
+		pageInfo.setStartPage(startPage);
+		request.setAttribute("pageInfo", pageInfo);	
+		
+        //
+        
+		if(us_id != null) {
+			
+			
 		// 좋아요, 스크랩 유무
 		Map<String, Object> m = new HashMap<>();
 

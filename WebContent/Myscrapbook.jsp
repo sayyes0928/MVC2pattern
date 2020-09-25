@@ -80,13 +80,11 @@
 </head>
 <body>
 	<%
-		ArrayList<BeautyRoomDTO> articleCount = null;
-		articleCount = (ArrayList<BeautyRoomDTO>) request.getAttribute("bookmarkList");
+		ArrayList<BeautyRoomDTO> bookmarkList = (ArrayList<BeautyRoomDTO>) request.getAttribute("bookmarkList");
 	%>
 	<!-- 게시판 등록 -->
-
 	<form id="contentPage">
-			 <jsp:include page="includHeader.jsp"></jsp:include>
+		<jsp:include page="includHeader.jsp"></jsp:include>
 
 
 		<main> <header class="container collection-book-header">
@@ -126,17 +124,30 @@
 			</section>
 			<div class="virtualized-list collection-feed-collections row"
 				style="padding-top: 0px; padding-bottom: 0px; transform: translateY(0px);">
+				<%
+					if (bookmarkList.size() != 0) {
+						for (int i = 0; i < bookmarkList.size(); i++) {
+				%>
+
+
+
+
 				<div class="col-6 col-md-4 col-lg-3">
 					<a
-						href="/productions/475132/selling?affect_type=UserScrapbook&amp;affect_id=8659285">
+						href="Beautyroom_Detail.bo?board_num=<%= bookmarkList.get(i).getPost_num()%>">
 						<div class="collection collection--total">
 							<div class="collection__image-wrap">
-								<img class="collection__image"
-									src="<%=request.getContextPath()%>/upload/<%= articleCount.get(0).getPost_pic()%>">
+								<img class="collection__image" src="<%=request.getContextPath()%>/upload/<%= bookmarkList.get(i).getPost_pic()%>">
 							</div>
 							<span class="collection__type">상품 </span>
-						</div></a>
+						</div>
+					</a>
 				</div>
+				<%
+					}
+
+					}
+				%>
 			</div>
 		</div>
 		</main>

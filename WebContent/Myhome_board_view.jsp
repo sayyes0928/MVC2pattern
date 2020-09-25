@@ -2,6 +2,7 @@
 <%@ page import="java.util.*"%>
 <%@ page import="com.jachi.DTO.BeautyRoomDTO"%>
 <%@ page import="com.jachi.DTO.Posting_replyDTO"%>
+<%@ page import="com.jachi.DTO.PageInfo"%>
 
 <!DOCTYPE html>
 <html>
@@ -44,6 +45,7 @@
     	ArrayList<Posting_replyDTO> coment = (ArrayList<Posting_replyDTO>) request.getAttribute("coment");
 		String board_num = request.getParameter("board_num");
 		String us_id = us_id = (String) session.getAttribute("us_id");
+		PageInfo pageInfo = (PageInfo)request.getAttribute("pageInfo");
 
 		String post_image1 = article.get(0).getPost_pic();
 		String post_image2 = article.get(0).getPost_pic_2();
@@ -137,6 +139,7 @@
 						<jsp:include page="include_Myhome_Detail_coment.jsp">
 						  <jsp:param value="<%= coment%>" name="coment"/>
 						  <jsp:param value="<%= board_num%>" name="post_num"/>
+						  <jsp:param value="<%= pageInfo%>" name="pageInfo"/>
 						</jsp:include>
 				</div>
 			</div>
@@ -148,15 +151,20 @@
 			String bookmark = "0";
 			like = (String) request.getAttribute("Like");
 			bookmark = (String) request.getAttribute("Bookmark");
+			
+			%>
+			<%= like%>
+			<%= bookmark%>
+			<%
 			if (us_id != null) {
-				if (like.equals("0")) {
+				if (like.equals("1")) {
 					like = "./img/myhome/icons8-heart-50-2.png";
 
 				} else {
 					like = "./img/myhome/icons8-heart-50.png";
 				}
 
-				if (bookmark.equals("1")) {
+				if (bookmark.equals("0")) {
 					bookmark = "./img/myhome/icons8-bookmark-50-2.png";
 
 				} else {
@@ -173,7 +181,6 @@
 					<div class="myhomeContentRight_button_btn">
 						<button type="button" class="btm_image" id="heart_btn">
 							<img id="img_btn" src="<%=like%>" />
-
 						</button>
 
 

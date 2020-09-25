@@ -1,7 +1,9 @@
 package com.jachi.svc;
 
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -24,11 +26,18 @@ public class MyhomeDetailService {
 		
 	}
 	
-	public List<Posting_replyDTO> getReply(int posting_reply_post_num) throws Exception{
+	public List<Posting_replyDTO> getReply(int page, int limit, int board_num) throws Exception{
 		
 		SqlSessionFactory sqlfactory = BoardDAO.getConn();
 		SqlSession sqlsession = sqlfactory.openSession();
-		List<Posting_replyDTO> comentAll = sqlsession.selectList("select_beautyall_Detail_coment",posting_reply_post_num);
+		
+		
+		int starrow=(page-1)*5;
+		Map<String, Object> m = new HashMap<>();
+		m.put("board_num", board_num);
+		m.put("starrow", starrow);
+		
+		List<Posting_replyDTO> comentAll = sqlsession.selectList("select_beautyall_Detail_coment",m);
 		
 		sqlsession.close();
 
@@ -45,6 +54,17 @@ public class MyhomeDetailService {
 		sqlsession.close();
 
 		return comentAll;
+		
+	}
+	public int getListCount(int post_num) throws Exception{
+		
+		int listCount = 0;
+		
+		SqlSessionFactory sqlfactory = BoardDAO.getConn();
+		SqlSession sqlsession = sqlfactory.openSession();
+		listCount = sqlsession.selectOne("myhome_comment_list",post_num);
+		
+		return listCount;
 		
 	}
 
