@@ -114,7 +114,7 @@ select * from posting where post_nickname = #{post_nickname};
 <insert id="insert_productinfo" parameterType="com.jachi.DTO.ProductinfoDTO">
 
 insert into productinfo values(#{pro_code},#{pro_name},#{pro_price},#{pro_mainimg},
-#{pro_subimg},#{pro_option1},#{pro_option2},#{pro_option3},#{pro_catecode1},#{pro_catecode2},#{pro_catecode3});
+#{pro_subimg},#{pro_option1},#{pro_option2},#{pro_option3},#{pro_catecode1},#{pro_catecode2},#{pro_catecode3},#{pro_info});
  </insert>
 
 
@@ -179,6 +179,10 @@ insert into posting_reply values(default, #{posting_reply_us_id},#{posting_reply
 
 <select id="mainbestbtselect_list" resultType="Integer">
 	select count(*) from posting;
+</select>
+
+<select id="mainbestplselect_list" resultType="Integer">
+	select count(*) from productinfo;
 </select>
 
 <select id="qna_comment_list" resultType="Integer">
