@@ -131,7 +131,7 @@
 					<input id="tipBT_write" type="button" value="글쓰기"
 						onclick="location='Tip_write.jsp'">
 				</div>
-				
+				<%=tip_article.size() %>
 				<div id="tip_list">				
 				  <% if(tip_article.size() != 0){
 					  
@@ -156,8 +156,8 @@
                         }
                       }else{
                     %>
-                    <%=tip_article.size() +","+ tip_article %>
-                    <span>등록된 글이 없습니다.</span>
+                   
+                    <span class="null_tipboard">등록된 글이 없습니다.</span>
                     <%
                       }
                     %>

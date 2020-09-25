@@ -30,7 +30,7 @@ public class TipListAction implements Action {
 		int MaxPage = (int)((double)listCount/limit+0.95); 
 		int StartPage = (((int)((double)page / 10 + 0.9)) -1 ) *10 +1;
 		int EndPage = StartPage+10-1;
-		
+		System.out.println(tiparticle.get(0).getTip_num());
 		if(EndPage > MaxPage) {
 			EndPage = MaxPage;
 		}
