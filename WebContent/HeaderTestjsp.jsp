@@ -32,7 +32,7 @@
 				%>
 
 				<div id="user_nav">
-					<span id="join_nav">Sign Up</span>|<span id="login_nav">Login</span>
+					<span id="join_nav"><a href="LoginFormpage.bo">Sign Up</a></span>|<span id="login_nav"><a href="join.bo">Login</a></span>
 				</div>
 				<%
 					} else {
