@@ -19,10 +19,6 @@
 								<li class="page-navigation__item"><a class=""
 									href="/users/8659285/cards" target="_self">사진</a></li>
 								<li class="page-navigation__item"><a class=""
-									href="/users/8659285/advices" target="_self">노하우</a></li>
-								<li class="page-navigation__item"><a class=""
-									href="/users/8659285/questions" target="_self">질문과답변</a></li>
-								<li class="page-navigation__item"><a class=""
 									href="MypageScrapView.bo" target="_self">스크랩북</a></li>
 								<li class="page-navigation__item"><a class=""
 									href="/users/8659285/praises" target="_self">좋아요</a></li>

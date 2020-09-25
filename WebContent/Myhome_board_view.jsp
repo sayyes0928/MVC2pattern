@@ -3,6 +3,8 @@
 <%@ page import="com.jachi.DTO.BeautyRoomDTO"%>
 <%@ page import="com.jachi.DTO.Posting_replyDTO"%>
 <%@ page import="com.jachi.DTO.PageInfo"%>
+<%@ page import="com.jachi.DTO.UserinfoDTO"%>
+
 
 <!DOCTYPE html>
 <html>
@@ -21,6 +23,9 @@
 	href="./myhome.web.css/teamTopNav.css" />
 <link rel="stylesheet" type="text/css"
 	href="./myhome.web.css/styleSlider.css" />
+<link rel="stylesheet" type="text/css"
+	href="./myhome.web.css/myhome_detail_comment.css" />
+
 
 
 <script
@@ -42,17 +47,19 @@
 	<!-- 서블릿 값 선언 -->
 	<%
 		ArrayList<BeautyRoomDTO> article = (ArrayList<BeautyRoomDTO>) request.getAttribute("article");
-    	ArrayList<Posting_replyDTO> coment = (ArrayList<Posting_replyDTO>) request.getAttribute("coment");
+		ArrayList<Posting_replyDTO> coment = (ArrayList<Posting_replyDTO>) request.getAttribute("coment");
+		ArrayList<BeautyRoomDTO> postList = (ArrayList<BeautyRoomDTO>) request.getAttribute("postList");
+		ArrayList<UserinfoDTO> userinfoDTO = (ArrayList<UserinfoDTO>) request.getAttribute("userinfoDTO");
+
 		String board_num = request.getParameter("board_num");
 		String us_id = us_id = (String) session.getAttribute("us_id");
-		PageInfo pageInfo = (PageInfo)request.getAttribute("pageInfo");
+		PageInfo pageInfo = (PageInfo) request.getAttribute("pageInfo");
 
 		String post_image1 = article.get(0).getPost_pic();
 		String post_image2 = article.get(0).getPost_pic_2();
 		String post_image3 = article.get(0).getPost_pic_3();
 		String post_image4 = article.get(0).getPost_pic_4();
 		String post_image[] = { post_image1, post_image2, post_image3, post_image4 };
-		
 	%>
 
 	<!-- 해당 페이지의 좋아요 기능을 위해 게시물 정보 Setting -->
@@ -129,18 +136,18 @@
 							%>
 							<li><a href="#">#<%=post_tag[i]%></a></li>
 							<%
-								}
+							}
 							%>
 						</ul>
 					</div>
 				</div>
 
 				<div class="myhomeContentLeft_main_writeComment">
-						<jsp:include page="include_Myhome_Detail_coment.jsp">
-						  <jsp:param value="<%= coment%>" name="coment"/>
-						  <jsp:param value="<%= board_num%>" name="post_num"/>
-						  <jsp:param value="<%= pageInfo%>" name="pageInfo"/>
-						</jsp:include>
+					<jsp:include page="include_Myhome_Detail_coment.jsp">
+						<jsp:param value="<%=coment%>" name="coment" />
+						<jsp:param value="<%=board_num%>" name="post_num" />
+						<jsp:param value="<%=pageInfo%>" name="pageInfo" />
+					</jsp:include>
 				</div>
 			</div>
 
@@ -151,30 +158,27 @@
 			String bookmark = "0";
 			like = (String) request.getAttribute("Like");
 			bookmark = (String) request.getAttribute("Bookmark");
-			
-			%>
-			<%= like%>
-			<%= bookmark%>
-			<%
-			if (us_id != null) {
-				if (like.equals("1")) {
-					like = "./img/myhome/icons8-heart-50-2.png";
+		%> 
+		<%
+ 	if (us_id != null) {
+ 		if (like.equals("1")) {
+ 			like = "./img/myhome/icons8-heart-50-2.png";
 
-				} else {
-					like = "./img/myhome/icons8-heart-50.png";
-				}
+ 		} else {
+ 			like = "./img/myhome/icons8-heart-50.png";
+ 		}
 
-				if (bookmark.equals("0")) {
-					bookmark = "./img/myhome/icons8-bookmark-50-2.png";
+ 		if (bookmark.equals("0")) {
+ 			bookmark = "./img/myhome/icons8-bookmark-50-2.png";
 
-				} else {
-					bookmark = "./img/myhome/icons8-bookmark-50.png";
-				}
-			} else {
-				like = "./img/myhome/icons8-heart-50.png";
-				bookmark = "./img/myhome/icons8-bookmark-50-2.png";
-			}
-		%>
+ 		} else {
+ 			bookmark = "./img/myhome/icons8-bookmark-50.png";
+ 		}
+ 	} else {
+ 		like = "./img/myhome/icons8-heart-50.png";
+ 		bookmark = "./img/myhome/icons8-bookmark-50-2.png";
+ 	}
+ %>
 		<div class="boxContainer">
 			<div class="myhomeContentRight">
 				<div class="myhomeContentRight_button">
@@ -192,29 +196,26 @@
 
 
 					<div class="user-profile__profile-image_container">
-						<a class="user-profile__profile-image"> 
-						<img class="card-detail-writer__image" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/users/profile_images/157622320361586387.jpg?gif=1&w=72&h=72&c=c&webp=1"/>
-						</a> 
-						<span class="Right_userID"><%=article.get(0).getpost_nickname()%></span>
+						<a class="user-profile__profile-image"> <img
+							class="card-detail-writer__image"
+							src="<%=request.getContextPath()%>/upload/<%=userinfoDTO.get(0).getUs_pic()%>" />
+						</a> <span class="Right_userID"><%=article.get(0).getpost_nickname()%></span>
 					</div>
 
 					<div class="myhomeContentRight_userimage_container">
+						<%
+							if (postList.size() != 0) {
+								for (int i = 0; i < 4; i++) {
+						%>
 						<div class="myhomeContentRight_userimage">
-							<a href="#"><img
-								src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots1563202386_bcE0MUD3.jpeg?gif=1&w=160&h=160&c=c" /></a>
+							<a href="Beautyroom_Detail.bo?board_num=<%= postList.get(i).getPost_num()%>"><img
+								src="<%=request.getContextPath()%>/upload/<%=postList.get(i).getPost_pic()%>" /></a>
 						</div>
-						<div class="myhomeContentRight_userimage">
-							<a href="#"><img
-								src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots1563596725_O.jpeg?gif=1&w=160&h=160&c=c&webp=1" /></a>
-						</div>
-						<div class="myhomeContentRight_userimage">
-							<a href="#"><img
-								src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots1564145477_Vz05afV.jpeg?gif=1&w=160&h=160&c=c&webp=1" /></a>
-						</div>
-						<div class="myhomeContentRight_userimage">
-							<a href="#"><img
-								src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots1564296425_omoVsNdH.jpeg?gif=1&w=160&h=160&c=c&webp=1" /></a>
-						</div>
+
+						<%
+							}
+							}
+						%>
 					</div>
 				</div>
 			</div>

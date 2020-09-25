@@ -1,4 +1,5 @@
 package com.jachi.Action;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -11,9 +12,12 @@ import com.jachi.DTO.ActionForward;
 import com.jachi.DTO.BeautyRoomDTO;
 import com.jachi.DTO.PageInfo;
 import com.jachi.DTO.Posting_replyDTO;
+import com.jachi.DTO.UserinfoDTO;
+import com.jachi.svc.BTSelectService;
 import com.jachi.svc.BookMarkCheckService;
 import com.jachi.svc.LikePostinCheckService;
 import com.jachi.svc.MyhomeDetailService;
+import com.jachi.svc.MypageProfileUserInfoService;
 
  public class MyhomeDetailAction implements Action {
 	 
@@ -27,8 +31,16 @@ import com.jachi.svc.MyhomeDetailService;
 		MyhomeDetailService myhomeDetailService = new MyhomeDetailService();
 		List<BeautyRoomDTO> article = myhomeDetailService.getArticle(board_num);
         
-        
-        
+		// 게시자 정보 가져오기
+		List<BeautyRoomDTO> postList = new ArrayList<BeautyRoomDTO>();
+		String userId = article.get(0).getpost_nickname();
+		
+		BTSelectService btSelectService = new BTSelectService();
+		postList = btSelectService.getPostList(userId);
+		MypageProfileUserInfoService mypageProfileUserInfoService = new MypageProfileUserInfoService();
+		List<UserinfoDTO> userinfoDTO = new ArrayList<UserinfoDTO>();
+		userinfoDTO = mypageProfileUserInfoService.getUserInfo_list(userId);
+
         //페이징
 		int page=1;
 		int limit=5;
@@ -88,8 +100,11 @@ import com.jachi.svc.MyhomeDetailService;
 			request.setAttribute("Bookmark", "1");
 		}
 		ActionForward forward = new ActionForward();
+		
+		request.setAttribute("userinfoDTO", userinfoDTO);
 	   	request.setAttribute("article", article);
 	   	request.setAttribute("coment", coment);
+	   	request.setAttribute("postList", postList);
    		forward.setPath("/Myhome_board_view.jsp");
    		return forward;
 

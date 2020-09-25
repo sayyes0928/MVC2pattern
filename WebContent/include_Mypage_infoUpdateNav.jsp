@@ -9,7 +9,7 @@
 				<li class="page-navigation__item"><a class=""
 					href="MypageOrderView.bo" target="_self">나의 쇼핑</a></li>
 				<li class="page-navigation__item"><a class="active"
-					href="Mypage_infoUpdate.jsp" target="_self">설정</a></li>
+					href="mypage_profile_userinfo_update.bo" target="_self">설정</a></li>
 			</ul>
 		</nav>
 		<nav class="page-navigation myhome-nav__contents">

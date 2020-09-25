@@ -23,15 +23,20 @@ public class MyPagePostingListViewAction implements Action {
 		HttpSession session = request.getSession(false);
 		String or_id = (String) session.getAttribute("us_id");
 
-		List<QnABBS> qnaList = new ArrayList<QnABBS>();
-		List<TipDTO> tipList = new ArrayList<TipDTO>();
-		List<BeautyRoomDTO> postList = new ArrayList<BeautyRoomDTO>();
-
+		List<QnABBS> qnaList = new ArrayList<QnABBS>(); // 본인이 작성한 질문 출력
+		List<TipDTO> tipList = new ArrayList<TipDTO>(); // 본인이 작성한 팁 출력
+		List<BeautyRoomDTO> postList = new ArrayList<BeautyRoomDTO>(); // 본인이 작성한 사진 게시물 출력
+		
+		
+		
+		
 		BTSelectService btSelectService = new BTSelectService();
 		qnaList = btSelectService.getQnaListAll(or_id);
 		tipList = btSelectService.getTipListAll(or_id);
 		postList = btSelectService.getPostList(or_id);
-
+		
+		int countLike = btSelectService.getCountLike(or_id);
+		int ountScrap = btSelectService.getCountScrap(or_id);
 		List<UserinfoDTO> userinfoDTO = new ArrayList<UserinfoDTO>();
 
 		MypageProfileUserInfoService mypageProfileUserInfoService = new MypageProfileUserInfoService();
@@ -39,6 +44,8 @@ public class MyPagePostingListViewAction implements Action {
 		userinfoDTO = mypageProfileUserInfoService.getUserInfo_list(or_id);
 
 		ActionForward forward = new ActionForward();
+		request.setAttribute("countLike", countLike);
+		request.setAttribute("ountScrap", ountScrap);
 		request.setAttribute("qnaList", qnaList);
 		request.setAttribute("tipList", tipList);
 		request.setAttribute("postList", postList);

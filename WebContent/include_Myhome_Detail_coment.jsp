@@ -7,15 +7,13 @@
 <%
 	ArrayList<Posting_replyDTO> coment = (ArrayList<Posting_replyDTO>) request.getAttribute("coment");
 	String post_num = (String) request.getParameter("post_num");
-	
-	 PageInfo pageInfo = (PageInfo)request.getAttribute("pageInfo");
-	    int listCount = pageInfo.getListCount();
-		int nowPage = pageInfo.getPage();
-		int maxPage = pageInfo.getMaxPage();
-		int startPage = pageInfo.getStartPage();
-		int endPage = pageInfo.getEndPage();
-	
-	
+
+	PageInfo pageInfo = (PageInfo) request.getAttribute("pageInfo");
+	int listCount = pageInfo.getListCount();
+	int nowPage = pageInfo.getPage();
+	int maxPage = pageInfo.getMaxPage();
+	int startPage = pageInfo.getStartPage();
+	int endPage = pageInfo.getEndPage();
 %>
 <div class="card-detail-comment-section">
 	<section class="comment-feed">
@@ -70,10 +68,34 @@
 
 
 		</ul>
+		<%
+		if (coment.size() != 0) {
+		%>
 		<ul class="list-paginator">
+			<%
+				for (int a = startPage; a <= endPage; a++) {
+					if (a == nowPage) {
+			%>
 			<li><button class="list-paginator__page sm selected"
-					type="button">1</button></li>
-			<li><button class="list-paginator__next" type="button">
+					type="button"
+					onclick="location.href='Beautyroom_Detail.bo?board_num=<%=coment.get(0).getPosting_reply_post_num()%>&page=<%=a%>'"><%=a%></button></li>
+			<%
+				} else {
+			%>
+			<li><button class="list-paginator__page sm selected"
+					type="button"
+					onclick="location.href='Beautyroom_Detail.bo?board_num=<%=coment.get(0).getPosting_reply_post_num()%>&page=<%=a%>'"><%=a%></button></li>
+			<%
+				}
+				}
+			%>
+
+			<%
+				if (nowPage >= maxPage) {
+			%>
+
+			<li><button class="list-paginator__next" type="button"
+					onclick="location.href='Beautyroom_Detail.bo?board_num=<%=coment.get(0).getPosting_reply_post_num()%>&page=<%=nowPage + 1%>'">
 					<svg width="26" height="26" viewBox="0 0 26 26"
 						preserveAspectRatio="xMidYMid meet">
 												<g fill="none" fill-rule="evenodd"
@@ -83,54 +105,24 @@
 												<g stroke="#424242" stroke-linecap="square" stroke-width="2">
 												<path d="M14.75 8.263L10.25 13M10.25 13l4.5 4.737"></path></g></g></svg>
 				</button></li>
+			<%
+				} else {
+			%>
+			<li><button class="list-paginator__next" type="button"
+					onclick="location.href='Beautyroom_Detail.bo?board_num=<%=coment.get(0).getPosting_reply_post_num()%>&page=<%=nowPage + 1%>'">
+					<svg width="26" height="26" viewBox="0 0 26 26"
+						preserveAspectRatio="xMidYMid meet">
+												<g fill="none" fill-rule="evenodd"
+							transform="matrix(-1 0 0 1 26 0)">
+												<rect width="25" height="25" x=".5" y=".5" stroke="#DCDCDC"
+							rx="4"></rect>
+												<g stroke="#424242" stroke-linecap="square" stroke-width="2">
+												<path d="M14.75 8.263L10.25 13M10.25 13l4.5 4.737"></path></g></g></svg>
+				</button></li>
+			<%
+				}
+		}
+			%>
 		</ul>
 	</section>
 </div>
-<section id="pageList">
-	<%
-		if (nowPage <= 1) {
-	%>
-	[이전]&nbsp;
-	<%
-		} else {
-	%>
-	<a
-		href="Beautyroom_Detail.bo?board_num=<%=coment.get(0).getPosting_reply_post_num()%>&page=<%=nowPage - 1%>">[이전]</a>&nbsp;
-	<%
-		}
-	%>
-
-	<%
-		for (int a = startPage; a <= endPage; a++) {
-			if (a == nowPage) {
-	%>
-	[<%=a%>]
-	<%
-		} else {
-	%>
-	<a
-		href="Beautyroom_Detail.bo?board_num=<%=coment.get(0).getPosting_reply_post_num()%>&page=<%=a%>">[<%=a%>]
-	</a>&nbsp;
-	<%
-		}
-	%>
-	<%
-		}
-	%>
-
-
-	<%
-		if (nowPage >= maxPage) {
-	%>
-	[다음]
-	<%
-		} else {
-	%>
-	<a
-		href="Beautyroom_Detail.bo?board_num=<%=coment.get(0).getPosting_reply_post_num()%>&page=<%=nowPage + 1%>">[다음]</a>
-	<%
-		}
-	%>
-
-
-</section>
