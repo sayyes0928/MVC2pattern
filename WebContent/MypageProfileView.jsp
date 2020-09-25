@@ -3,7 +3,7 @@
 <%@ page import="java.util.*"%>
 <%@ page import="com.jachi.DTO.TipDTO"%>
 <%@ page import="com.jachi.DTO.QnABBS"%>
-
+<%@ page import="com.jachi.DTO.UserinfoDTO"%>
 <%@ page import="com.jachi.DTO.OrderListDTO"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,24 +82,24 @@
 <title>MYpage</title>
 </head>
 <body>
+
 	<%
-		ArrayList<Integer> articleCount = null;
-		articleCount = (ArrayList<Integer>) request.getAttribute("articleCount");
-	%>
-	<%
+		ArrayList<UserinfoDTO> userinfoDTO = (ArrayList<UserinfoDTO>) request.getAttribute("userinfoDTO");
 		ArrayList<QnABBS> qnaList = (ArrayList<QnABBS>) request.getAttribute("qnaList");
 		ArrayList<TipDTO> tipList = (ArrayList<TipDTO>) request.getAttribute("tipList");
 		ArrayList<TipDTO> postList = (ArrayList<TipDTO>) request.getAttribute("postList");
+		String us_proimg = userinfoDTO.get(0).getUs_pic();
 	%>
 	<!-- 게시판 등록 -->
 
 	<form id="contentPage">
-			 <jsp:include page="includHeader.jsp"></jsp:include>
+		<!-- Header include -->
+		<jsp:include page="HeaderTestjsp.jsp"></jsp:include>
 
 		<div id="m_wrap">
 			<main>
 			<div class="MyPage_container">
-							
+
 				<jsp:include page="include_Mypage_ProfileNav.jsp"></jsp:include>
 			</div>
 
@@ -138,12 +138,11 @@
 									<div class="user-profile__container">
 										<div class="user-profile__profile-image">
 											<img
-												src="https://image.ohou.se/i/bucketplace-v2-development/uploads/users/profile_images/1591064955_kakao_1372291789.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1"
-												srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/users/profile_images/1591064955_kakao_1372291789.jpg?gif=1&amp;w=240&amp;h=240&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/users/profile_images/1591064955_kakao_1372291789.jpg?gif=1&amp;w=320&amp;h=320&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/users/profile_images/1591064955_kakao_1372291789.jpg?gif=1&amp;w=480&amp;h=480&amp;c=c&amp;webp=1 3x">
+												src="<%=request.getContextPath()%>/upload/<%=us_proimg%>">
 										</div>
 										<div class="profile-info">
 											<div class="profile-info__name">
-												<span>가가가가가가2</span>
+												<span><%=userinfoDTO.get(0).getUs_nkname()%></span>
 											</div>
 											<div class="profile-info__follow-state">
 												<div class="profile-info__follow-state__text">
@@ -157,7 +156,8 @@
 												</div>
 											</div>
 											<div class="profile-info__actions">
-												<a class="profile-info__btn" href="mypage_profile_userinfo_update.bo">설정</a><a
+												<a class="profile-info__btn"
+													href="mypage_profile_userinfo_update.bo">설정</a><a
 													class="profile-info__btn profile-info__btn--primary profile-info--hide-on-pc"
 													href="/invite_codes/recommend_code">친구 초대 <span
 													class="highlight">+5,000P</span></a>
@@ -167,7 +167,8 @@
 									<div class="user-profile__links">
 										<div class="short-cut">
 											<div class="short-cut__item">
-												<a href="Myscrapbook.jsp"><div class="short-cut__icon">
+												<a href="MypageScrapView.bo"><div
+														class="short-cut__icon">
 														<svg width="24" height="24" viewBox="0 0 24 24"
 															fill="currentColor" preserveAspectRatio="xMidYMid meet">
 																<path fill-rule="evenodd"
@@ -261,7 +262,7 @@
 
 									</div>
 									<%
-										}else {
+										} else {
 									%>
 									<a class="post__upload post--cards__upload"
 										href="Beautyroom_write.bo"> <span
@@ -288,7 +289,8 @@
 												if (qnaList != null) {
 													for (int i = 0; i < qnaList.size(); i++) {
 											%>
-											<li class="mypost_preview_contents"><a href="qna_detail.bo?getnum=<%= qnaList.get(i).getQna_num()%>"><%=qnaList.get(i).getQna_title()%></a></li>
+											<li class="mypost_preview_contents"><a
+												href="qna_detail.bo?getnum=<%=qnaList.get(i).getQna_num()%>"><%=qnaList.get(i).getQna_title()%></a></li>
 											<%
 												}
 												} else {
@@ -327,7 +329,7 @@
 		</div>
 		</main>
 		</div>
-	<jsp:include page="include_footer.jsp"></jsp:include>
+		<jsp:include page="include_footer.jsp"></jsp:include>
 	</form>
 
 </body>

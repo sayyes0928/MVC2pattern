@@ -42,7 +42,8 @@
 	<!-- 게시판 등록 -->
 
 
-	 <jsp:include page="includHeader.jsp"></jsp:include>
+	<!-- Header include -->
+	<jsp:include page="HeaderTestjsp.jsp"></jsp:include>
 
 
 

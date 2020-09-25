@@ -1,5 +1,6 @@
 package com.jachi.Action;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,16 +15,18 @@ import com.jachi.DTO.Posting_replyDTO;
 import com.jachi.svc.BookMarkCheckService;
 import com.jachi.svc.LikePostinCheckService;
 
- public class MypageScrapViewAction implements Action {
-	 
-	 public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception{ 
+public class MypageScrapViewAction implements Action {
+
+	public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception{ 
 		
 		 
-		 HttpSession session = request.getSession(false);
-		String us_id = request.getParameter("us_id");
+		HttpSession session = request.getSession(false);
+		String us_id = (String)session.getAttribute("us_id");
 	
+		
 		BookMarkCheckService bookMarkCheckService = new BookMarkCheckService();
-		List<BeautyRoomDTO> bookmarkList = bookMarkCheckService.getBookmarkList(us_id);
+		List<BeautyRoomDTO> bookmarkList = new ArrayList<BeautyRoomDTO>();
+		bookmarkList = bookMarkCheckService.getBookmarkList(us_id);
 
 		
 		ActionForward forward = new ActionForward();
@@ -32,5 +35,5 @@ import com.jachi.svc.LikePostinCheckService;
    		return forward;
 
 	 }
-	 
+
 }

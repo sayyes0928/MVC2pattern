@@ -22,8 +22,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   union all (SELECT ifnull(count(*),'0') FROM delivery where us_id = #{us_id} and dlv_status='구매확정');
 
 </select>
-<select id="select_beautyall_Detail_coment" parameterType="Integer" resultType="com.jachi.DTO.Posting_replyDTO">
- select * from posting_reply where posting_reply_post_num = #{posting_reply_post_num};
+<select id="select_beautyall_Detail_coment" parameterType="map" resultType="com.jachi.DTO.Posting_replyDTO">
+ select * from posting_reply where posting_reply_post_num = #{board_num} order by posting_reply_post_num desc limit #{starrow}, 5;	
 </select>
 <select id="order_userinfo" resultType="com.jachi.DTO.UserinfoDTO">
  select us_name, us_tel, us_adr from userinfo where us_id=#{us_id};
@@ -56,7 +56,7 @@ insert into userinfo(us_id,us_pw,us_name,us_nkname,us_birth,us_tel,us_telagr,us_
 </insert>
 
 <select id="select_getScrapList" resultType="com.jachi.DTO.BeautyRoomDTO" parameterType="String">
- SELECT * FROM jachi.posting where post_num = (select scr_postnum from scrap where scr_id=#{us_id});
+ SELECT * FROM jachi.posting where post_num = ANY (select scrap.scr_postnum from jachi.scrap where scr_id=#{us_id});
 </select>
 <select id="orderList_status" parameterType="com.jachi.DTO.OrderListDTO" resultType="com.jachi.DTO.OrderListDTO" >
 SELECT DISTINCT list_name,dlv_status as 'list_delStatus',cal_price,list_amount,
@@ -169,8 +169,16 @@ insert into posting_reply values(default, #{posting_reply_us_id},#{posting_reply
 	select count(*) from posting;
 </select>
 
+<select id="mainbestbtselect_list" resultType="Integer">
+	select count(*) from posting;
+</select>
+
 <select id="qna_comment_list" resultType="Integer">
 	select count(*) from qna_comment where qcb_num = #{qnanum};
+</select>
+
+<select id="myhome_comment_list" resultType="Integer">
+	select count(*) from posting_reply where posting_reply_post_num = #{post_num};
 </select>
 
 <select id="qnaselect_list" resultType="Integer">
@@ -190,6 +198,13 @@ insert into posting_reply values(default, #{posting_reply_us_id},#{posting_reply
 	 join userinfo on userinfo.us_id=posting.post_nickname order by post_num desc
 	limit #{starrow}, 12;
 </select>
+
+<select id="mainbestbtall" resultType="com.jachi.DTO.BeautyRoomDTO">
+	select post_num,post_title,post_posting,post_pic,us_nkname as 'post_nickname' from posting
+	 join userinfo on userinfo.us_id=posting.post_nickname order by post_num desc
+	limit 4; 
+</select>
+
 
 <select id="qnaselect_listall" parameterType="Integer" resultType="com.jachi.DTO.QnABBS">
 	select qna_num,qna_pw,qna_title,qna_time,qna_post,us_nkname as 'qna_nickname',us_pic as 'qna_img' from qna

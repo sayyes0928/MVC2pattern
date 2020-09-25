@@ -34,7 +34,8 @@
 
 </head>
 <body>
-	<jsp:include page="includHeader.jsp"></jsp:include>
+	<!-- Header include -->
+	<jsp:include page="HeaderTestjsp.jsp"></jsp:include>
 
 	<div id="pre_order">
 		<form action="ProductOrderComplite.bo" method="POST" name="form_order">

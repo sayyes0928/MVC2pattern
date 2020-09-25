@@ -11,16 +11,18 @@ import com.jachi.DTO.ActionForward;
 import com.jachi.DTO.BeautyRoomDTO;
 import com.jachi.DTO.QnABBS;
 import com.jachi.DTO.TipDTO;
+import com.jachi.DTO.UserinfoDTO;
 import com.jachi.svc.BTSelectService;
+import com.jachi.svc.MypageProfileUserInfoService;
 
-public class MyPagePostingListViewAction implements Action{
+public class MyPagePostingListViewAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		
+
 		HttpSession session = request.getSession(false);
 		String or_id = (String) session.getAttribute("us_id");
-		
+
 		List<QnABBS> qnaList = new ArrayList<QnABBS>();
 		List<TipDTO> tipList = new ArrayList<TipDTO>();
 		List<BeautyRoomDTO> postList = new ArrayList<BeautyRoomDTO>();
@@ -29,15 +31,22 @@ public class MyPagePostingListViewAction implements Action{
 		qnaList = btSelectService.getQnaListAll(or_id);
 		tipList = btSelectService.getTipListAll(or_id);
 		postList = btSelectService.getPostList(or_id);
-		
+
+		List<UserinfoDTO> userinfoDTO = new ArrayList<UserinfoDTO>();
+
+		MypageProfileUserInfoService mypageProfileUserInfoService = new MypageProfileUserInfoService();
+
+		userinfoDTO = mypageProfileUserInfoService.getUserInfo_list(or_id);
+
 		ActionForward forward = new ActionForward();
-	   	request.setAttribute("qnaList", qnaList);
-	   	request.setAttribute("tipList", tipList);
-	   	request.setAttribute("postList", postList);
-	   	
-   		forward.setPath("/MypageProfileView.jsp");
-   		
-   		return forward;
+		request.setAttribute("qnaList", qnaList);
+		request.setAttribute("tipList", tipList);
+		request.setAttribute("postList", postList);
+		request.setAttribute("userinfoDTO", userinfoDTO);
+
+		forward.setPath("/MypageProfileView.jsp");
+
+		return forward;
 	}
-   
+
 }

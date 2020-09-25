@@ -2,10 +2,20 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
 <%@ page import="com.jachi.DTO.Posting_replyDTO"%>
+<%@ page import="com.jachi.DTO.PageInfo"%>
 
 <%
 	ArrayList<Posting_replyDTO> coment = (ArrayList<Posting_replyDTO>) request.getAttribute("coment");
 	String post_num = (String) request.getParameter("post_num");
+	
+	 PageInfo pageInfo = (PageInfo)request.getAttribute("pageInfo");
+	    int listCount = pageInfo.getListCount();
+		int nowPage = pageInfo.getPage();
+		int maxPage = pageInfo.getMaxPage();
+		int startPage = pageInfo.getStartPage();
+		int endPage = pageInfo.getEndPage();
+	
+	
 %>
 <div class="card-detail-comment-section">
 	<section class="comment-feed">
@@ -76,3 +86,51 @@
 		</ul>
 	</section>
 </div>
+<section id="pageList">
+	<%
+		if (nowPage <= 1) {
+	%>
+	[이전]&nbsp;
+	<%
+		} else {
+	%>
+	<a
+		href="Beautyroom_Detail.bo?board_num=<%=coment.get(0).getPosting_reply_post_num()%>&page=<%=nowPage - 1%>">[이전]</a>&nbsp;
+	<%
+		}
+	%>
+
+	<%
+		for (int a = startPage; a <= endPage; a++) {
+			if (a == nowPage) {
+	%>
+	[<%=a%>]
+	<%
+		} else {
+	%>
+	<a
+		href="Beautyroom_Detail.bo?board_num=<%=coment.get(0).getPosting_reply_post_num()%>&page=<%=a%>">[<%=a%>]
+	</a>&nbsp;
+	<%
+		}
+	%>
+	<%
+		}
+	%>
+
+
+	<%
+		if (nowPage >= maxPage) {
+	%>
+	[다음]
+	<%
+		} else {
+	%>
+	<a
+		href="Beautyroom_Detail.bo?board_num=<%=coment.get(0).getPosting_reply_post_num()%>&page=<%=nowPage + 1%>">[다음]</a>
+	<%
+		}
+	%>
+
+
+</section>

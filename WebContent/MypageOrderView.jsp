@@ -84,7 +84,8 @@
 	<!-- 게시판 등록 -->
 
 	<form id="contentPage">
-		<jsp:include page="includHeader.jsp"></jsp:include>
+		<!-- Header include -->
+	<jsp:include page="HeaderTestjsp.jsp"></jsp:include>
 
 
 		<div id="m_wrap">

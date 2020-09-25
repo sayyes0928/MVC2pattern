@@ -40,7 +40,7 @@
 					<li><a href="Index.jsp"><span>홈</span></a></li>
 					<li><a href="storeList.bo"><span>스토어</span></a></li>
 					<li><a href="beauty.bo"><span>커뮤니티</span></a></li>
-					<li><a href="#"><span>자취에대한 모든것</span></a></li>
+					<li><a href="qna.bo"><span>자취에대한 모든것</span></a></li>
 
 					<li><a href="#"><span>고객센터</span></a></li>
 				</ul>
