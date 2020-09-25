@@ -33,6 +33,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  select * from userinfo where us_id = #{us_id};
 </select>
 
+<select id="counting_Like" parameterType="String" resultType="Integer">
+ select count(*) from jachi.like where like_id = #{us_id};
+</select>
+
+<select id="Counting_Scrap" parameterType="String" resultType="Integer">
+ select count(*) from jachi.scrap where scr_id = #{us_id};
+</select>
+
 <select id="select_login_user" resultType="String">
 select us_pw from userinfo where us_id =#{us_id};
 </select>

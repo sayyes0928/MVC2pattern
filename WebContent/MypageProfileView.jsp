@@ -88,6 +88,8 @@
 		ArrayList<QnABBS> qnaList = (ArrayList<QnABBS>) request.getAttribute("qnaList");
 		ArrayList<TipDTO> tipList = (ArrayList<TipDTO>) request.getAttribute("tipList");
 		ArrayList<TipDTO> postList = (ArrayList<TipDTO>) request.getAttribute("postList");
+		Integer countLike = (Integer)request.getAttribute("countLike");
+		Integer ountScrap = (Integer)request.getAttribute("ountScrap");
 		String us_proimg = userinfoDTO.get(0).getUs_pic();
 	%>
 	<!-- 게시판 등록 -->
@@ -177,7 +179,7 @@
 													</div>
 													<div class="short-cut__text">스크랩북</div>
 													<div class="short-cut__text">
-														<b class="highlight">2</b>
+														<b class="highlight"><%= ountScrap%></b>
 													</div></a>
 											</div>
 											<div class="short-cut__item">
@@ -190,7 +192,7 @@
 													</div>
 													<div class="short-cut__text">좋아요</div>
 													<div class="short-cut__text">
-														<b class="highlight">0</b>
+														<b class="highlight"><%= countLike%></b>
 													</div></a>
 											</div>
 											<div class="short-cut__item">

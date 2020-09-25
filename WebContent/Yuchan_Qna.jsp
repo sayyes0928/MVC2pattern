@@ -8,15 +8,17 @@
 
 <%
 	ArrayList<QnABBS> userqna = (ArrayList<QnABBS>) request.getAttribute("qnaList");
-	
+
 	PageInfo pageInfo = (PageInfo) request.getAttribute("pageInfo");
 	int listCount = pageInfo.getListCount();
 	int nowPage = pageInfo.getPage();
 	int maxPage = pageInfo.getMaxPage();
 	int startPage = pageInfo.getStartPage();
 	int endPage = pageInfo.getEndPage();
-	
+
 	String qna_num = request.getParameter("qna_num");
+	String us_id = (String) session.getAttribute("us_id"); //로그인 유무 확인
+	String us_nk = (String) session.getAttribute("nkname");
 %>
 <!DOCTYPE html>
 <html>
@@ -118,95 +120,8 @@
 
 <body>
 	<form name="go" action="qna_search.bo">
-		<header>
-			<div id="h_wrap">
-				<div class="h_div">
-
-					<h1>자취해보자</h1>
-				</div>
-
-				<%
-					String us_id = (String) session.getAttribute("us_id"); //로그인 유무 확인
-					String us_nk = (String) session.getAttribute("nkname");
-					if (us_id == null) {
-				%>
-				<ul class="login_go">
-					<li><a href="LoginFormpage.bo">로그인</a></li>
-					<li><span> | </span></li>
-					<li><a href="join.bo">회원가입</a></li>
-				</ul>
-
-
-				<%
-					} else {
-				%>
-				<ul class="login_go">
-					<li><span></span></li>
-					<li><a href="MypageOrderView.bo">마이페이지</a></li>
-					<li><span> | </span></li>
-					<li><a href="logoutActionPage.jsp">로그아웃</a></li>
-				</ul>
-
-
-
-				<%
-					}
-				%>
-				<div id="main_nav">
-					<ul>
-						<li><a href="Index.jsp"><span>홈</span></a></li>
-						<li><a href="storeList.bo"><span>스토어</span></a></li>
-						<li><a href="beauty.bo"><span>커뮤니티</span></a></li>
-						<li><a href="#"><span>자취에대한 모든것</span></a></li>
-
-						<li><a href="#"><span>고객센터</span></a></li>
-					</ul>
-				</div>
-
-			</div>
-
-			<div id="sub">
-				<div id="sub_menu">
-					<div class="nav_container_div">
-						<nav role="navigation" class="primary-navigation">
-							<ul class="nav_container">
-								<li>
-
-									<ul class="m_line">
-										<li><a href="#">카테고리</a></li>
-										<li><a href="#">베스트</a></li>
-										<li><a href="#">특가</a></li>
-									</ul>
-								</li>
-								<li>
-									<ul class="m_line">
-										<li><a href="#">내방자랑</a></li>
-										<li><a href="#">내집자랑</a></li>
-										<li><a href="#">전문가집들이</a></li>
-									</ul>
-								</li>
-								<li>
-									<ul class="m_line">
-										<li><a href="#">자취생TIP</a></li>
-										<li><a href="#">자취생QnA</a></li>
-										<li><a href="#">혼밥레시피</a></li>
-									</ul>
-								</li>
-								<li>
-									<ul class="m_line">
-										<li><a href="#">질문과답변</a></li>
-										<li><a href="#">공지사항</a></li>
-									</ul>
-								</li>
-							</ul>
-						</nav>
-					</div>
-				</div>
-			</div>
-
-		</header>
-
-
+		<!-- Header include -->
+		<jsp:include page="HeaderTestjsp.jsp"></jsp:include>
 		<section>
 			<div id="post_banner">
 				<div id="inbanner_size">
@@ -238,25 +153,23 @@
 				%>
 				<div id="write_btsize">
 					<input type="button" value="질문하기" id="qna_write_bt"
-						onclick="goqnawrite()">
-					<input type="button" value="목록으로" id="qna_list_bt"
-						onclick="reset_list()">	
+						onclick="goqnawrite()"> <input type="button" value="목록으로"
+						id="qna_list_bt" onclick="reset_list()">
 				</div>
 				<%
 					} else {
 				%>
 				<div id="wrtie_btsize">
 					<input type="button" value="질문하기" id="qna_write_bt"
-						onclick="alertLogin()">
-					<input type="button" value="목록으로" id="qna_list_bt"
-						onclick="reset_list()">	
+						onclick="alertLogin()"> <input type="button" value="목록으로"
+						id="qna_list_bt" onclick="reset_list()">
 				</div>
 
 				<%
 					}
 				%>
-				
-				
+
+
 				<script>
 					function alertLogin() {
 						alert('로그인이 필요합니다');
@@ -269,7 +182,7 @@
 					}
 				</script>
 				<script>
-					function reset_list(){
+					function reset_list() {
 						location.href = "qna.bo"
 					}
 				</script>
@@ -285,40 +198,52 @@
 					<hr id="post_hr">
 
 					<table id="tb">
-										<tr> 
-						<td colspan="5" id="td_size"><a id="title_tag"
-							href="qna_detail.bo?getnum=<%=userqna.get(i).getQna_num()%>"> <span id="qna_posttitle"><%=userqna.get(i).getQna_title()%></span>
-						</a></td>
-						<td id="qna_table_ctr">
-						<%
-						if(us_nk !=null){	
-						%>
-						<%if(us_nk.equals(userqna.get(i).getQna_nickname())){ %>
-						<span><a href="Yuchan_qnamodify.jsp?qna_num=<%=userqna.get(i).getQna_num()%>&qna_title=<%=userqna.get(i).getQna_title()%>&qna_post=<%=userqna.get(i).getQna_post()%>&qna_pw=<%=userqna.get(i).getQna_pw()%>&qna_img=<%=userqna.get(i).getQna_img()%>">수정</a> | <a href="qna_delete.bo?qna_num=<%=userqna.get(i).getQna_num()%>">삭제</a></span></td>
-						<%}else{ %>
-						
-						
-						<%
-						}	
-						%>
-						<%
-						}else{
-						%>
-					
-						<%} %>
+						<tr>
+							<td colspan="5" id="td_size"><a id="title_tag"
+								href="qna_detail.bo?getnum=<%=userqna.get(i).getQna_num()%>">
+									<span id="qna_posttitle"><%=userqna.get(i).getQna_title()%></span>
+							</a></td>
+							<td id="qna_table_ctr">
+								<%
+									if (us_nk != null) {
+								%> <%
+ 	if (us_nk.equals(userqna.get(i).getQna_nickname())) {
+ %> <span><a
+									href="Yuchan_qnamodify.jsp?qna_num=<%=userqna.get(i).getQna_num()%>&qna_title=<%=userqna.get(i).getQna_title()%>&qna_post=<%=userqna.get(i).getQna_post()%>&qna_pw=<%=userqna.get(i).getQna_pw()%>&qna_img=<%=userqna.get(i).getQna_img()%>">수정</a>
+									| <a
+									href="qna_delete.bo?qna_num=<%=userqna.get(i).getQna_num()%>">삭제</a></span>
+							</td>
+							<%
+								} else {
+							%>
+
+
+							<%
+								}
+							%>
+							<%
+								} else {
+							%>
+
+							<%
+								}
+							%>
 						</tr>
 						<tr>
 							<td colspan="5" id="post">
 								<!-- 내용들어갈거임 --><%=userqna.get(i).getQna_post()%>
 							</td>
-							<td rowspan="2"><img src="<%=request.getContextPath()%>/upload/<%=userqna.get(i).getQna_pw()%>" id="img_size"></td>
+							<td rowspan="2"><img
+								src="<%=request.getContextPath()%>/upload/<%=userqna.get(i).getQna_pw()%>"
+								id="img_size"></td>
 						</tr>
 						<tr id="ps_bt">
-							<td><img src="<%=request.getContextPath()%>/upload/<%=userqna.get(i).getQna_img() %>" class="img-circle"><span>
-									<!-- 게시물번호 -->게시물번호 : <%=userqna.get(i).getQna_num()%>
+							<td><img
+								src="<%=request.getContextPath()%>/upload/<%=userqna.get(i).getQna_img()%>"
+								class="img-circle"><span> <!-- 게시물번호 -->게시물번호 : <%=userqna.get(i).getQna_num()%>
 							</span> <span> <!-- 닉네임 -->닉네임 : <%=userqna.get(i).getQna_nickname()%>
 							</span> <!-- 시간 -->게시시간 : <%=userqna.get(i).getQna_time()%> <span></span><span></span></td>
-						
+
 						</tr>
 					</table>
 					<hr>
