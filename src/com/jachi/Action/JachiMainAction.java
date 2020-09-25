@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.jachi.DTO.ActionForward;
 import com.jachi.DTO.BeautyRoomDTO;
 import com.jachi.DTO.PageInfo;
+import com.jachi.DTO.ProductinfoDTO;
 import com.jachi.svc.JachiMainService;
 
 public class JachiMainAction implements Action {
@@ -21,6 +22,10 @@ public class JachiMainAction implements Action {
 		JachiMainService jms = new JachiMainService();
 		int listCount = jms.mainbestbtListCount();
 		articleList = jms.getmainbestbtall();
+		
+		List<ProductinfoDTO> productList = new ArrayList<ProductinfoDTO>();
+		int pllistCount = jms.getbestplListCount();
+		productList = jms.getbestplListall();
 		
 		PageInfo pageInfo = new PageInfo();
 		pageInfo.setListCount(listCount);

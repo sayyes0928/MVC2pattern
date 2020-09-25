@@ -3,10 +3,11 @@
 <%@ page import="java.util.*"%>
 <%@ page import="com.jachi.DTO.BeautyRoomDTO"%>
 <%@ page import="com.jachi.DTO.PageInfo"%>
+<%@ page import="com.jachi.DTO.ProductinfoDTO"%>
 
 <%
 	ArrayList<BeautyRoomDTO> userpost = (ArrayList<BeautyRoomDTO>) request.getAttribute("beautyList");
-
+	ArrayList<ProductinfoDTO> article = (ArrayList<ProductinfoDTO>) request.getAttribute("article");
 	PageInfo pageInfo = (PageInfo) request.getAttribute("pageInfo");
 	int listCount = pageInfo.getListCount();
 
@@ -32,11 +33,11 @@
 		<div id="full_banner"></div>
 		<div id="main_size">
 			<div id="index_best_bt_size">
-				<div id="index_best_bt_title">
-					<a href="btList.bo" id="index_best_bt_title_link">Best
+				<div class="index_best_bt_title">
+					<a href="btList.bo" class="index_best_bt_title_link">Best
 						BeautyRoom</a>
 				</div>
-				<hr id="index_hr_size">
+				<hr class="index_hr_size">
 
 
 				<section class="cards">
@@ -88,15 +89,50 @@
 					<%
 						}
 					%>
-
-
 				</section>
 
-
-
-
-
 			</div>
+			
+			<div id="index_best_store_size">
+				<div class="index_best_store_title">
+					<a href="storeList.bo" class="index_best_bt_title_link">Best
+						Store</a>
+				</div>
+				<hr class="index_hr_size">
+				
+				<div class="m_img">
+						<ul>
+
+
+							<%
+								for (int i = 0; i < article.size(); i++) {
+							%>
+							<a href="korea.bo?pro_num=<%=article.get(i).getPro_code()%>">
+								<li>
+									<div class="row">
+										<figure class="effect1">
+											<img class="m_imgsize"
+												src="<%=request.getContextPath()%>/upload/<%=article.get(i).getPro_mainimg()%>">
+											<figcaption>
+												<p>제품 상세 정보</p>
+											</figcaption>
+										</figure>
+									</div>
+
+									<div class="m_pname"><%=article.get(i).getPro_name()%></div>
+									<div class="m_pindex"><%=article.get(i).getPro_info()%></div>
+									<div class="m_pindex2"><%=article.get(i).getPro_price()%></div>
+
+							</li>
+							</a>
+							<%
+								}
+							%>
+						</ul>
+					</div>
+			</div>
+			
+			
 		</div>
 		</main>
 

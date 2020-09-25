@@ -14,8 +14,7 @@
 <meta charset="utf-8">
 <title>자취해보자 스토어</title>
 
-<link rel="stylesheet" type="text/css"
-	href="./myhome.web.css/teamTopNav.css" />
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <script
