@@ -37,7 +37,7 @@
 </head>
 <body>
 	<!-- Header include -->
-	<jsp:include page="includHeader.jsp"></jsp:include>
+	<jsp:include page="HeaderTestjsp.jsp"></jsp:include>
 
 	<!-- 서블릿 값 선언 -->
 	<%

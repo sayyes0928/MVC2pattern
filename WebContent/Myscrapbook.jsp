@@ -84,7 +84,8 @@
 	%>
 	<!-- 게시판 등록 -->
 	<form id="contentPage">
-		<jsp:include page="includHeader.jsp"></jsp:include>
+		<!-- Header include -->
+		<jsp:include page="HeaderTestjsp.jsp"></jsp:include>
 
 
 		<main> <header class="container collection-book-header">
@@ -134,10 +135,11 @@
 
 				<div class="col-6 col-md-4 col-lg-3">
 					<a
-						href="Beautyroom_Detail.bo?board_num=<%= bookmarkList.get(i).getPost_num()%>">
+						href="Beautyroom_Detail.bo?board_num=<%=bookmarkList.get(i).getPost_num()%>">
 						<div class="collection collection--total">
 							<div class="collection__image-wrap">
-								<img class="collection__image" src="<%=request.getContextPath()%>/upload/<%= bookmarkList.get(i).getPost_pic()%>">
+								<img class="collection__image"
+									src="<%=request.getContextPath()%>/upload/<%=bookmarkList.get(i).getPost_pic()%>">
 							</div>
 							<span class="collection__type">상품 </span>
 						</div>

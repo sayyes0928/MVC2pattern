@@ -3,19 +3,18 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
 <%@ page import="com.jachi.DTO.BeautyRoomDTO"%>
-<%@ page import="com.jachi.DTO.PageInfo" %>
+<%@ page import="com.jachi.DTO.PageInfo"%>
 
 <%
 	ArrayList<BeautyRoomDTO> userpost = (ArrayList<BeautyRoomDTO>) request.getAttribute("beautyList");
 
-	PageInfo pageInfo = (PageInfo)request.getAttribute("pageInfo");
-	int listCount=pageInfo.getListCount();
-	int nowPage=pageInfo.getPage();
-	int maxPage=pageInfo.getMaxPage();
-	int startPage=pageInfo.getStartPage();
-	int endPage=pageInfo.getEndPage();
-	String us_id = (String)session.getAttribute("us_id"); //로그인 유무 확인
-
+	PageInfo pageInfo = (PageInfo) request.getAttribute("pageInfo");
+	int listCount = pageInfo.getListCount();
+	int nowPage = pageInfo.getPage();
+	int maxPage = pageInfo.getMaxPage();
+	int startPage = pageInfo.getStartPage();
+	int endPage = pageInfo.getEndPage();
+	String us_id = (String) session.getAttribute("us_id"); //로그인 유무 확인
 %>
 <!DOCTYPE html>
 <html>
@@ -24,11 +23,14 @@
 <title>내 방 자랑</title>
 
 <link rel="stylesheet" href="./Teamcss/Beautyroom.css" type="text/css">
-<link rel="stylesheet" href="./myhome.web.css/teamTopNav.css" type="text/css">
+<link rel="stylesheet" href="./myhome.web.css/teamTopNav.css"
+	type="text/css">
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 <script src="./myhome.web.js/teamTopnav.js"></script>
 </head>
 
@@ -36,102 +38,8 @@
 <body>
 	<form id="contentPage">
 
-		<header>
-        <div id="h_wrap">
-          <div class="h_div">
-         
-        <h1>자취해보자</h1>
-              </div>
-         
-       <%
-       
-       if(us_id==null){
-     %>
-            <ul class="login_go">
-              <li><a href="LoginFormpage.bo">로그인</a></li>
-              <li><span> | </span></li>
-              <li><a href="join.bo">회원가입</a></li>
-            </ul>
-      
-
-     <%
-       }else{
-     %>
-            <ul class="login_go">
-              <li><span></span></li>
-              <li><a href="MypageOrderView.bo">마이페이지</a></li>
-              <li><span> | </span></li>
-              <li><a href="logoutActionPage.jsp">로그아웃</a></li> 
-            </ul>
-        
-       
-
-     <%
-       }
-     %>
-          <div id="main_nav">
-          <ul>
-            <li>
-              <a href="Index.jsp"><span>홈</span></a>
-            </li>
-            <li>
-              <a href="storeList.bo"><span>스토어</span></a>
-            </li>
-            <li>
-              <a href="beauty.bo"><span>커뮤니티</span></a>
-            </li>
-            <li>
-              <a href="#"><span>자취에대한 모든것</span></a>
-            </li>
-
-            <li>
-              <a href="#"><span>고객센터</span></a>
-            </li>
-          </ul>
-        </div>
-        
-        </div>
-
-<div id="sub">
-          <div id="sub_menu">
-            <div class="nav_container_div">
-              <nav role="navigation" class="primary-navigation">
-                <ul class="nav_container">
-                  <li>
-                  
-                    <ul class="m_line">
-                      <li><a href="#">카테고리</a></li>
-                      <li><a href="#">베스트</a></li>
-                      <li><a href="#">특가</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <ul class="m_line">
-                      <li><a href="#">내방자랑</a></li>
-                      <li><a href="#">내집자랑</a></li>
-                      <li><a href="#">전문가집들이</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <ul class="m_line">
-                      <li><a href="#">자취생TIP</a></li>
-                      <li><a href="#">자취생QnA</a></li>
-                      <li><a href="#">혼밥레시피</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <ul class="m_line">
-                      <li><a href="#">질문과답변</a></li>
-                      <li><a href="#">공지사항</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </div>
-        
-      </header>
+		<!-- Header include -->
+		<jsp:include page="HeaderTestjsp.jsp"></jsp:include>
 
 
 		<main>
@@ -141,7 +49,7 @@
 
 			<%
 				if (us_id != null) {
-		%>
+			%>
 			<div id="wrtie_btsize">
 				<a href="Beautyroom_write.bo"><input type="button" value="자랑하기"
 					id="BT_Writebt"></a>
@@ -150,7 +58,8 @@
 				} else {
 			%>
 			<div id="wrtie_btsize">
-				<input type="button" value="자랑하기" id="BT_Writebt" onclick="alertLogin()">
+				<input type="button" value="자랑하기" id="BT_Writebt"
+					onclick="alertLogin()">
 			</div>
 			<%
 				}
@@ -159,12 +68,12 @@
 			<div id="Beauty_subtitle">어서오세요, 천천히 둘러보고 가세요 :D</div>
 
 		</div>
-<script>
- function alertLogin(){
-	 alert('로그인이 필요합니다');
-	 location.href="LoginFormpage.bo"
- }
-</script>
+		<script>
+			function alertLogin() {
+				alert('로그인이 필요합니다');
+				location.href = "LoginFormpage.bo"
+			}
+		</script>
 
 
 		<section class="cards">
@@ -190,22 +99,27 @@
 				</div>
 				<div class="card__img"
 					style="background-image: URL(<%=request.getContextPath()%>/upload/<%=userpost.get(i).getPost_pic()%>);"></div>
-				<a href="Beautyroom_Detail.bo?board_num=<%=userpost.get(i).getPost_num()%>" class="card_link">
-				 <div class="card__img--hover" style="background-image: URL(<%=request.getContextPath()%>/upload/<%=userpost.get(i).getPost_pic()%>);"></div>
+				<a
+					href="Beautyroom_Detail.bo?board_num=<%=userpost.get(i).getPost_num()%>"
+					class="card_link">
+					<div class="card__img--hover"
+						style="background-image: URL(<%=request.getContextPath()%>/upload/<%=userpost.get(i).getPost_pic()%>);"></div>
 				</a>
 				<div class="card__info">
 					<input type="hidden" value="<%=userpost.get(i).getPost_num()%>">
 					<span class="card__category"><%=userpost.get(i).getPost_title()%></span>
 					<h3 class="card__title"><%=userpost.get(i).getPost_posting()%></h3>
-					<span class="card__by">by <a href="Beautyroom_Detail.bo?board_num=<%=userpost.get(i).getPost_num()%>" class="card__author" title="author"><%=userpost.get(i).getpost_nickname()%></a></span>
+					<span class="card__by">by <a
+						href="Beautyroom_Detail.bo?board_num=<%=userpost.get(i).getPost_num()%>"
+						class="card__author" title="author"><%=userpost.get(i).getpost_nickname()%></a></span>
 				</div>
 			</article>
-				
-			
+
+
 			<%
 				}
 			%>
-			
+
 			<%
 				} else {
 			%>
@@ -213,42 +127,59 @@
 			<%
 				}
 			%>
-	
-				
+
+
 		</section>
-			<div>
-		<section id="pageList">
-			<%if(nowPage<=1){ %>
-			[이전]&nbsp;
-			<%}else{ %>
-			<a href="beauty.bo?page=<%=nowPage-1%>">[이전]</a>&nbsp;
-			<%} %>
-			
-			<%for(int a=startPage;a<=endPage;a++){
-				if(a==nowPage){%>
-				[<%=a %>]
-			<%}else{ %>
-			<a href="beauty.bo?page=<%=a %>">[<%=a %>]</a>&nbsp;
-			<%
-			}
-			%>
-			<%
-			}
-			%>
-			
-			
-			<%if(nowPage>=maxPage){ %>
-			[다음]
-			<%}else{ %>
-			<a href="beauty.bo?page=<%=nowPage+1 %>">[다음]</a>	
-			<%} %>
-	
-		
-			
-			</section> 
-</div>
+		<div>
+			<section id="pageList">
+				<%
+					if (nowPage <= 1) {
+				%>
+				[이전]&nbsp;
+				<%
+					} else {
+				%>
+				<a href="beauty.bo?page=<%=nowPage - 1%>">[이전]</a>&nbsp;
+				<%
+					}
+				%>
+
+				<%
+					for (int a = startPage; a <= endPage; a++) {
+						if (a == nowPage) {
+				%>
+				[<%=a%>]
+				<%
+					} else {
+				%>
+				<a href="beauty.bo?page=<%=a%>">[<%=a%>]
+				</a>&nbsp;
+				<%
+					}
+				%>
+				<%
+					}
+				%>
+
+
+				<%
+					if (nowPage >= maxPage) {
+				%>
+				[다음]
+				<%
+					} else {
+				%>
+				<a href="beauty.bo?page=<%=nowPage + 1%>">[다음]</a>
+				<%
+					}
+				%>
+
+
+
+			</section>
+		</div>
 		</main>
-		</form>
+	</form>
 </body>
 
 </html>

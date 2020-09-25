@@ -93,7 +93,8 @@
 	<!-- 게시판 등록 -->
 
 	<form id="contentPage">
-		<jsp:include page="includHeader.jsp"></jsp:include>
+		<!-- Header include -->
+		<jsp:include page="HeaderTestjsp.jsp"></jsp:include>
 
 		<div id="m_wrap">
 			<main>
@@ -141,7 +142,7 @@
 										</div>
 										<div class="profile-info">
 											<div class="profile-info__name">
-												<span><%= userinfoDTO.get(0).getUs_nkname()%></span>
+												<span><%=userinfoDTO.get(0).getUs_nkname()%></span>
 											</div>
 											<div class="profile-info__follow-state">
 												<div class="profile-info__follow-state__text">

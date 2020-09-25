@@ -99,7 +99,8 @@
 	<!-- 게시판 등록 -->
 
 	<form id="contentPage" action="mypage_userinfo_update.bo" method="post" enctype="multipart/form-data" autocomplete="off">
-		<jsp:include page="includHeader.jsp"></jsp:include>
+		<!-- Header include -->
+	<jsp:include page="HeaderTestjsp.jsp"></jsp:include>
 
 		<div id="m_wrap">
 			<main>

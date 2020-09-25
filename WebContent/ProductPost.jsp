@@ -56,7 +56,8 @@
 </head>
 <body>
 	<form id="contentPage" action="#">
-		<jsp:include page="includHeader.jsp"></jsp:include>
+		<!-- Header include -->
+		<jsp:include page="HeaderTestjsp.jsp"></jsp:include>
 
 		<div id="s_wrap">
 			<section>
