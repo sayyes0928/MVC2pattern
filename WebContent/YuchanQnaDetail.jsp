@@ -149,7 +149,7 @@ function aaa(btn){
 		
 		<section>
 		<div id="qna_detail_postsize">
-			<div id="qna_titlenamesize"><a href="#" id="qna_titlename">질문과 답변</a></div>
+			<div id="qna_titlenamesize"><a href="#" id="qna_titlename">질문과 답변 추가됐니?</a></div>
 			<div id="qna_post_titlesize"><%=qna_detail.get(0).getQna_title()%></div>
 			<div id="qna_post_picsize"><img src="<%=request.getContextPath()%>/upload/<%=qna_detail.get(0).getQna_pw()%>"></div>
 			<div id="qna_post_postingsize"><%=qna_detail.get(0).getQna_post()%></div>
