@@ -6,7 +6,7 @@
 		<div class="layout-footer__top">
 			<address class="layout-footer__cs">
 				<div class="layout-footer__cs__row">
-					<a class="layout-footer__cs__link" href="/customer_center">고객센터<svg
+					<a class="layout-footer__cs__link" href="/customer_center">고객센터s<svg
 							class="icon" aria-hidden="true" width="1em" height="1em"
 							viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet">
 							<path fill="currentColor" fill-rule="nonzero"
