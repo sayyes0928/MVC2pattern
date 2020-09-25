@@ -10,14 +10,15 @@
 </head>
 <body>
 <header>
+<div id="test_header">
 	<div id="header_size">
-		<img src="./img/jachilogo50.png" id="logosize">
+		<img src="./img/jachilogo75.png" id="logosize">
 		<div class="main_menu">
 			<ul>
 				<li><a href="#">Home</a></li>
-				<li><a href="#">Store</a></li>
-				<li><a href="#">Photo</a></li>
-				<li><a href="#">QnA</a></li>
+				<li><a href="storeList.bo">Store</a></li>
+				<li><a href="btList.bo">Photo</a></li>
+				<li><a href="qna.bo">QnA</a></li>
 				<li><a href="#">Contact</a></li>
 			</ul>
 		</div>
@@ -25,7 +26,7 @@
 			<span id="join_nav">Sign Up</span>|<span id="login_nav">Login</span>
 		</div>
 	</div>
-
+</div>
 </header>
 </body>
 </html>

@@ -169,6 +169,10 @@ insert into posting_reply values(default, #{posting_reply_us_id},#{posting_reply
 	select count(*) from posting;
 </select>
 
+<select id="mainbestbtselect_list" resultType="Integer">
+	select count(*) from posting;
+</select>
+
 <select id="qna_comment_list" resultType="Integer">
 	select count(*) from qna_comment where qcb_num = #{qnanum};
 </select>
@@ -190,6 +194,13 @@ insert into posting_reply values(default, #{posting_reply_us_id},#{posting_reply
 	 join userinfo on userinfo.us_id=posting.post_nickname order by post_num desc
 	limit #{starrow}, 12;
 </select>
+
+<select id="mainbestbtall" resultType="com.jachi.DTO.BeautyRoomDTO">
+	select post_num,post_title,post_posting,post_pic,us_nkname as 'post_nickname' from posting
+	 join userinfo on userinfo.us_id=posting.post_nickname order by post_num desc
+	limit 4; 
+</select>
+
 
 <select id="qnaselect_listall" parameterType="Integer" resultType="com.jachi.DTO.QnABBS">
 	select qna_num,qna_pw,qna_title,qna_time,qna_post,us_nkname as 'qna_nickname',us_pic as 'qna_img' from qna
