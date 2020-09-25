@@ -51,9 +51,9 @@ public class JachiMainService {
 			SqlSessionFactory sqlfactory = BoardDAO.getConn();
 			SqlSession sqlsession = sqlfactory.openSession();
 			
-			List<BeautyRoomDTO> selectList = sqlsession.selectList("mainbestbtall");
+			List<ProductinfoDTO> selectbestplList = sqlsession.selectList("");
 			
-			return null;
+			return selectbestplList;
 			
 		}
 }
