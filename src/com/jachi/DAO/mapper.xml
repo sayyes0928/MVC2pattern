@@ -209,6 +209,10 @@ insert into posting_reply values(default, #{posting_reply_us_id},#{posting_reply
 	limit 4; 
 </select>
 
+<select id="mainbestplall" resultType="com.jachi.DTO.ProductinfoDTO">
+	select pro_code,pro_name,pro_price,pro_mainimg,pro_info from productinfo limit 4 ;
+</select>
+
 
 <select id="qnaselect_listall" parameterType="Integer" resultType="com.jachi.DTO.QnABBS">
 	select qna_num,qna_pw,qna_title,qna_time,qna_post,us_nkname as 'qna_nickname',us_pic as 'qna_img' from qna

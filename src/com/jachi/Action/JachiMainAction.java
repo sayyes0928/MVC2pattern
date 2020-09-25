@@ -31,6 +31,7 @@ public class JachiMainAction implements Action {
 		pageInfo.setListCount(listCount);
 		request.setAttribute("pageInfo", pageInfo);
 		request.setAttribute("beautyList", articleList);
+		request.setAttribute("article", productList);
 		ActionForward forward = new ActionForward();
 		forward.setPath("/Jachi_main.jsp");
 		
