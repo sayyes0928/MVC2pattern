@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-session.setAttribute("us_id", "jae");
+/*session.setAttribute("us_id", "jae");*/
 String us_id = (String) session.getAttribute("us_id");
 %>
 <!DOCTYPE html>
@@ -23,7 +23,8 @@ String us_id = (String) session.getAttribute("us_id");
 </head>
 <body>
    <form action="tipwrite.bo" id="contentPage"  method="post" enctype="multipart/form-data" autocomplete="off">
-	
+        <!-- header -->
+	    <jsp:include page="HeaderTestjsp.jsp"></jsp:include>
 		<section>
 		 <div id="banner_wrap">
 		   <div id="tip_banner">

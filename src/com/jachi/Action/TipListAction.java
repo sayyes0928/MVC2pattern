@@ -26,11 +26,9 @@ public class TipListAction implements Action {
 		TipListService tiplistservice = new TipListService();
 		int listCount = tiplistservice.getListcount();
 		tiparticle = tiplistservice.getArticleList(page, limit);
-		
 		int MaxPage = (int)((double)listCount/limit+0.95); 
 		int StartPage = (((int)((double)page / 10 + 0.9)) -1 ) *10 +1;
 		int EndPage = StartPage+10-1;
-		
 		if(EndPage > MaxPage) {
 			EndPage = MaxPage;
 		}
