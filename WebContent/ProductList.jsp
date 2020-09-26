@@ -47,8 +47,9 @@
 <script type="text/javascript"
 	src="./Teamjs/scriptbreaker-multiple-accordion-1.js"></script>
 <script>
-	$(function() {
-		$('.slider').bxSlider({
+var jb = jQuery.noConflict();
+jb(function() {
+	jb('.slider').bxSlider({
 			mode : 'horizontal',
 			auto : true,
 			speed : 600,
