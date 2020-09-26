@@ -66,4 +66,28 @@ public class BTSelectService {
 		return posting;
 		
 	}
+	
+	public int getCountLike (String us_id) {
+
+		SqlSessionFactory sqlfactory = BoardDAO.getConn();
+		SqlSession sqlsession = sqlfactory.openSession();
+		int counting_Like = sqlsession.selectOne("counting_Like",us_id);
+		
+		sqlsession.close();
+
+		return counting_Like;
+		
+	}
+	
+	public int getCountScrap (String us_id) {
+
+		SqlSessionFactory sqlfactory = BoardDAO.getConn();
+		SqlSession sqlsession = sqlfactory.openSession();
+		int Counting_Scrap = sqlsession.selectOne("Counting_Scrap",us_id);
+		
+		sqlsession.close();
+
+		return Counting_Scrap;
+		
+	}
 }
