@@ -15,21 +15,17 @@ public class TipReplyWriteAction implements Action{
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		String rep_post = request.getParameter("reply_post");
+		String us_id = request.getParameter("us_id");
 		int tip_num = Integer.parseInt(request.getParameter("tip_num"));
-		String user_nickname = request.getParameter("user_nickname");
-		String user_img = request.getParameter("user_img");
-		
-		System.out.println(rep_post+tip_num+user_nickname+user_img);
+	
 		ActionForward forward = null;
 
 		
 		TipReplyDTO repdto = new TipReplyDTO();
-		repdto.setTip_num(tip_num);
-		repdto.setRep_nickname(user_img);
-		repdto.setRep_img(user_nickname);
+		repdto.setRep_tip_num(tip_num);
 		repdto.setRep_post(rep_post);
-	    
-		System.out.println(rep_post);
+		repdto.setRep_nickname(us_id);
+	    System.out.println("1");
 		TipReplyWriteService repwriteservice = new TipReplyWriteService();
 		boolean isWriteSuccess = repwriteservice.registArticle(repdto);
 		

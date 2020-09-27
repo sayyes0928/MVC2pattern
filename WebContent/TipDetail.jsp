@@ -4,6 +4,8 @@
 <%@ page import="com.jachi.DTO.TipDTO"%>
     <%
       ArrayList<TipDTO> tip_detail = (ArrayList<TipDTO>)request.getAttribute("tipdetail");
+      
+      String us_id = (String)session.getAttribute("us_id");
     %>
 <!DOCTYPE html>
 <html>
@@ -40,6 +42,7 @@
 	
   $(".comment_text").val('');
 }*/
+
 </script>
 <body>
   <form action="tip_reply_write.bo">
@@ -64,17 +67,33 @@
                 <hr>
                 <p>댓글</p>
                 <div class="comment_form">
-                  <input name="tip_num" type="hidden" value="<%=tip_detail.get(0).getTip_num()%>">
                   <div class="comment_imgbox"><img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&amp;w=36&amp;webp=1"></div>
                   <div class="comment_textbox">
                     <input class="comment_text" type="text" name="reply_post" placeholder="칭찬과 격려의 댓글은 작성자에게 큰 힘이 됩니다 :)">
+                  <%if(us_id != null){ %>
+                    <input name="tip_num" type="hidden" value="<%=tip_detail.get(0).getTip_num()%>">
+                    <input name="us_id" type="hidden" value="<%= us_id%>">
                     <input class="comment_write_btn" type="submit" value="등록">
+                  <%}else{ %>
+                    <input class="comment_write_btn" type="button" value="등록" onclick="login()">
+                  <%} %>
                   </div>
-                </div>  
+                </div>
+                 
+        <script>
+         function login(){
+        	 alert("로그인이 필요합니다.");
+        	 location.href = "LoginFormpage.bo"
+         }
+        </script>    
+             
                 <div class="comment_list">
                   <div class="comment_author_img"><img src="#"></div>
-                  <p>?????</p>
-                  <p>답글달기</p>
+                  <p>내용</p>
+                  <ul class="comment_list_feed">
+                   <li>날짜</li>
+                   <li>삭제버튼</li>
+                  </ul>
                 </div>
                
              </div>

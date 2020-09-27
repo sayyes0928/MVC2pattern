@@ -167,11 +167,12 @@ hr{
 .comment_list {
 	clear: both;
 	margin-top: 40px;
+	margin-bottom: 10px;
 }
 .comment_author_img{
-  
-	width:30px;
-	height:30px;
+    float: left;
+	width:40px;
+	height:40px;
 	border-radius: 100%;
 	overflow: hidden;
 	
@@ -182,18 +183,24 @@ hr{
 	object-fit: cover;
 }
 
-.comment_list p:nth-child(2){
+.comment_list > p{
 	margin: 0 0 0 70px;
-	font-size: 20px;
-	font-weight: bold;
+	font-size: 18px;
 }
 
-.comment_list p:nth-child(3){
-    margin: 5px 0 0 70px;
-	font-size:20px;
-	font-weight: bold;
+.comment_list_feed{
+	list-style: none;
+}
+
+.comment_list_feed li{
+	display: inline;
 	color: gray;
 }
+
+.comment_list_feed > li:first-child{
+	margin-left: 30px;
+}
+
 
 footer{
 	width: 100%;

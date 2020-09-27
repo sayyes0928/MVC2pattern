@@ -3,7 +3,7 @@ package com.jachi.DTO;
 public class TipReplyDTO {
     String rep_nickname;
     String rep_img;
-    int tip_num;
+    int rep_tip_num;
     int rep_num;
     String rep_post;
     String rep_date;
@@ -20,11 +20,11 @@ public class TipReplyDTO {
 	public void setRep_img(String rep_img) {
 		this.rep_img = rep_img;
 	}
-	public int getTip_num() {
-		return tip_num;
+	public int getRep_tip_num() {
+		return rep_tip_num;
 	}
-	public void setTip_num(int post_num) {
-		this.tip_num = post_num;
+	public void setRep_tip_num(int rep_tip_num) {
+		this.rep_tip_num = rep_tip_num;
 	}
 	public int getRep_num() {
 		return rep_num;
