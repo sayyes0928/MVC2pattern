@@ -20,6 +20,7 @@ String us_id = (String) session.getAttribute("US_ID");
 	href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
 	rel="stylesheet">
 	
+	
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	
 
@@ -229,9 +230,7 @@ $(function(){
 </head>
 <body>
 	<header>
-		<div id="BT_writebannersize">
-			<a href="#" id="BT_writebanner"><span>자취해보자</span></a>
-		</div>
+		<jsp:include page="HeaderTestjsp.jsp"></jsp:include>
 
 	</header>
 	<main>

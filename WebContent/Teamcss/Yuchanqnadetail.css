@@ -1,0 +1,115 @@
+@charset "UTF-8";
+
+@font-face{
+	font-family:"godo";
+	src:url("./../GodoM.woff");
+}
+@font-face {
+  font-family: "jua";
+  src: url("Okbe_ttf.woff") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+#qna_detail_postsize{
+	float:left;
+	width:820px;
+	height:100%;
+	margin-left:300px;
+	margin-top:50px;
+}
+
+#qna_asidesize{
+	float:right;
+	border:1px solid gray;
+	border-radius:7px;
+	width:350px;
+	height:800px;
+	margin-right:400px;
+	margin-top:250px;
+}
+
+#title_hr{
+	width:200px;
+	color:gray;
+	margin-top:7px;
+
+}
+
+#qna_titlenamesize{
+	width:200px;
+	height:40px;
+	margin-left:20px;
+	margin-top:10px;
+
+}
+
+#qna_titlename{
+	text-decoration:none;
+	font-size: 30pt;
+	font-weight: bold;
+	color:#0D3EA3;
+	font-family:"godo";
+}
+
+#qna_post_titlesize{
+	margin-left:20px;
+	margin-top:80px;
+	font-family:"godo";
+	width:780px;
+	height:60px;
+	font-size:25pt;
+	font-weight:bold;
+	border-bottom:1px solid gray;
+}
+#profile_img{
+	width: 40px;
+    height: 40px; 
+    border-radius: 70%;
+    overflow: hidden;
+    margin-right:15px;
+}
+
+#qna_post_picsize{
+
+	margin-top:10px;
+	margin-left:20px;
+	width:780px;
+	height:100%;
+}
+
+#qna_post_postingsize{
+
+	width:780px;
+	height:100%;
+	margin-top:20px;
+	margin-left:20px;
+	font-family:"godo";
+	font-size:11pt;
+	font-weight: bold;
+}
+
+#qna_post_timesize{
+
+	width:200px;
+	height:50px;
+	margin-top:20px;
+	margin-left:20px;
+	font-family:"godo";
+	font-size:9pt;
+	font-weight: bold;
+	color:gray;
+}
+#qna_post_line{
+	color:gray;
+	margin-top:20px;
+	margin-left:20px;
+	width:780px;
+}
+
+#writer_name{
+	font-size:18pt;
+	font-weight: bold;
+	position: absolute;
+}
+
