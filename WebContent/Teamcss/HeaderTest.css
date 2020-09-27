@@ -9,6 +9,9 @@
 	padding:0;
 
 }
+header{
+		font-family:"godo";
+}
 #header_size{
 	
 	width:1080px;
@@ -154,7 +157,7 @@
 
 	height:90px;
 	border-bottom:1px solid #BDBDBD;
-		font-family:"myfont2";
+		font-family:"godo";
 }
 
 #submenu_bar{

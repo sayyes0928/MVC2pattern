@@ -6,6 +6,13 @@
   font-style: normal;
   font-weight: normal;
 }
+@font-face{
+	font-family:"godo";
+	src:url("./../GodoM.woff");
+}
+header{
+		font-family:"godo";
+}
 
 * {
   box-sizing: border-box;

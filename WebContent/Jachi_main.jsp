@@ -114,7 +114,7 @@
 											<img class="m_imgsize"
 												src="<%=request.getContextPath()%>/upload/<%=article.get(i).getPro_mainimg()%>">
 											<figcaption>
-												<p>제품으로 이동</p>
+												<p>제품 상세 보기</p>
 											</figcaption>
 										</figure>
 									</div>

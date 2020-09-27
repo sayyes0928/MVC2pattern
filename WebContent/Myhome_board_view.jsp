@@ -52,7 +52,7 @@
 		ArrayList<UserinfoDTO> userinfoDTO = (ArrayList<UserinfoDTO>) request.getAttribute("userinfoDTO");
 
 		String board_num = request.getParameter("board_num");
-		String us_id = us_id = (String) session.getAttribute("us_id");
+		String us_id = (String) session.getAttribute("us_id");
 		PageInfo pageInfo = (PageInfo) request.getAttribute("pageInfo");
 
 		String post_image1 = article.get(0).getPost_pic();
@@ -196,9 +196,9 @@
 
 
 					<div class="user-profile__profile-image_container">
-						<a class="user-profile__profile-image"> <img
-							class="card-detail-writer__image"
-							src="<%=request.getContextPath()%>/upload/<%=userinfoDTO.get(0).getUs_pic()%>" />
+						<a class="user-profile__profile-image"> 
+<!-- 						<img class="card-detail-writer__image" -->
+<%-- 							src="<%=request.getContextPath()%>/upload/<%=userinfoDTO.get(0).getUs_pic()%>" /> --%>
 						</a> <span class="Right_userID"><%=article.get(0).getpost_nickname()%></span>
 					</div>
 

@@ -5,6 +5,89 @@
   font-style: normal;
   font-weight: normal;
 }
+@font-face{
+	font-family:"godo";
+	src:url("./../GodoM.woff");
+}
+
+header{
+		font-family:"godo";
+}
+a:-webkit-any-link {
+  cursor: pointer;
+  text-decoration:none;
+}
+
+.topnav li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+ul.topnav {
+  width:140px;
+  padding-right: 28px;
+  padding-top: 7px;
+  margin: 0;
+  font-size: 1em;
+  line-height: 0.5em;
+  list-style: none;
+}
+
+ul.topnav span {
+  opacity: 0;
+}
+
+ul.topnav li {
+  padding-top:5px;
+}
+
+ul.topnav li a {
+  line-height: 10px;
+  font-size: 20px;
+  padding: 10px 5px;
+  color: #000;
+  display: block;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+ul.topnav ul {
+  margin: 0;
+  padding: 0;
+  display: none;
+  list-style: none;
+}
+
+ul.topnav ul li {
+  margin: 0;
+  padding-bottom: 0;
+  clear: both;
+}
+
+ul.topnav ul li a {
+  padding-left: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  outline: 0;
+  color:rgb(46, 97, 110);
+}
+
+ul.topnav ul li a:hover {
+  background-color: #D3C99C;
+  color: #675C7C;
+}
+
+ul.topnav ul ul li a {
+  color: rgb(88, 94, 83);
+  padding-left: 28px;
+}
+
+ul.topnav ul ul li a:hover {
+  background-color: #D3CEB8;
+  color: #675C7C;
+}
+
+
 #m_wrap {
   width: 1082px;
   height: 1660px;
@@ -121,6 +204,7 @@
   font-family: "jua";
   color: black;
   text-decoration: none;
+  font-weight: bold;
 }
 
 .m_pindex {
