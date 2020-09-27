@@ -52,7 +52,7 @@
 		ArrayList<UserinfoDTO> userinfoDTO = (ArrayList<UserinfoDTO>) request.getAttribute("userinfoDTO");
 
 		String board_num = request.getParameter("board_num");
-		String us_id = us_id = (String) session.getAttribute("us_id");
+		String us_id = (String) session.getAttribute("us_id");
 		PageInfo pageInfo = (PageInfo) request.getAttribute("pageInfo");
 
 		String post_image1 = article.get(0).getPost_pic();
@@ -205,14 +205,15 @@
 					<div class="myhomeContentRight_userimage_container">
 						<%
 							if (postList.size() != 0) {
-								for (int i = 0; i < 4; i++) {
+								for (int i = 0; i < postList.size(); i++) {
+									if(i<4){
 						%>
 						<div class="myhomeContentRight_userimage">
 							<a href="Beautyroom_Detail.bo?board_num=<%= postList.get(i).getPost_num()%>"><img
 								src="<%=request.getContextPath()%>/upload/<%=postList.get(i).getPost_pic()%>" /></a>
 						</div>
 
-						<%
+						<%}
 							}
 							}
 						%>
