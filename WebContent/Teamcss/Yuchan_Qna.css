@@ -1,0 +1,464 @@
+
+@charset "UTF-8";
+
+/*============================================
+                 SECTION
+==============================================*/
+@font-face{
+	font-family:"godo";
+	src:url("./../GodoM.woff");
+}
+header{
+		font-family:"godo";
+}
+
+#s_fullsize {
+  width: 1082px;
+  height: 1000px;
+  margin: 0 auto;
+}
+
+#qna_size{
+	width: 1082px;
+	height: 50px;
+	margin: 0 auto;
+	background-color:#edf7fa;
+	
+}
+
+#qna_hr{
+	width:9%;
+	margin-top:3px;
+	
+}
+
+#qna_body{
+	width:1082px;
+	height:800px;
+	margin-top:20px;
+}
+
+.img-circle{
+	width: 40px;
+    height: 40px; 
+    border-radius: 70%;
+    overflow: hidden;
+    margin-right:15px;
+}
+
+
+#post{
+	padding-top:15px;
+	padding-bottom:15px;
+	font-size:20px;
+}
+
+#ps_bt span{
+	font-size:17px;
+	padding-right:20px;
+}
+
+#tb{
+	margin-left:70px;
+}
+
+#td_size{
+	width:380px;
+}
+
+#qna_table_ctr{
+	width:620px;
+	height:50px;
+	float:right;
+}
+#img_size{
+	float:right;
+	width:100px;
+	height:100px;
+	border:1px solid gray;
+}
+#qna_table_ctr > span{
+	float:right;
+	font-size:16pt;
+}
+
+#qna_table_ctr > span > a{
+	cursor: pointer;
+	list-style: none;
+	text-decoration: none;
+	color:black;
+}
+
+#title_tag{
+	text-decoration: none;
+	
+}
+
+#qna_posttitle{
+	color:black;
+	text-decoration:none;
+	font-size:28pt;
+	font-weight:bold;
+	
+}
+#write_btsize{
+	width:1082px;
+	height:100px;
+}
+
+#qna_write_bt{
+	float:left;
+	width:100px;
+	height:60px;
+	background-color:#1F50B5;
+	color:white;
+	font-size:14pt;
+	font-weight:bold;
+	box-shadow: 0;
+	border:none;
+	border-radius:0px;
+	font-family: "Okbe";
+	margin-top:40px;
+	position: relative;
+    left: 9%;
+}
+
+#qna_list_bt{
+	float:left;
+	width:100px;
+	height:60px;
+	background-color:#1F50B5;
+	color:white;
+	font-size:14pt;
+	font-weight:bold;
+	box-shadow: 0;
+	border:none;
+	border-radius:0px;
+	font-family: "Okbe";
+	margin-top:40px;
+	position: relative;
+    left: 9.2%;
+	
+}
+
+#none_posting{
+	float:left;
+	width:1082px;
+	height:100%;
+	margin: 0 auto;
+	text-align:center;
+	font-size:22pt;
+	font-weight:bold;
+	
+}
+
+h1 > #h1plz{
+	float:left;
+	margin-top:0;
+}
+
+#bta{
+	width:80px;
+	height:40px;
+	float:right;
+}
+
+.button2 {
+	
+    width:80px;
+    height:40px;
+    background-color: #34495e;
+    border: none;
+    color:#fff;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-weight:bold;
+    cursor: pointer;
+    padding: 0;
+    
+}
+
+#post_hr{
+	margin:0;
+	width:100%;
+	color:gray;
+}
+
+#post_banner{
+	width:100%;
+	height:350px;
+	/*background-color:#d7f7f5*/
+	background-color:rgb(18, 74 , 133);
+	margin-bottom:30px;
+}
+
+#inbanner_size{
+	width:1000px;
+	margin:0 auto;
+}
+
+#banner_text{
+	font-size: 30pt;
+	color:black;
+	padding-top:150px;
+}
+
+#icon{
+	width:70px;
+	height:70px;
+
+}
+
+#ques{
+	margin-left:100px;
+	font-size:40pt;
+	color:#ff1e56;
+	font-weight: bold;
+
+}
+#req{
+	font-size:40pt;
+	color:white;
+}
+#qnahr{
+	width:15%;
+	color:white;
+	margin:0 0 0 120px;
+}
+
+
+
+/*============================================
+                 SECTION
+==============================================*/
+
+/*============================================
+				배너효과
+=============================================*/
+
+
+.banner {
+	
+	display: block;
+	min-height: 200px;
+	width: 100%;
+	position: relative;
+}
+.typed_wrap {
+	
+	display: block;
+	border: 4px solid #ecf0f1;
+	width: 700px;
+	height: auto;
+	padding: 30px;
+	
+	/*centers it in the .banner*/
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+
+.typed_wrap h1 {
+	display: inline;
+	font-size: 40pt;
+	color:white;
+	font-weight: bold;
+}
+
+/*Add custom cursor so it auto inherits font styles*/
+.typed::after {
+	content: '|';
+	display: inline;
+	-webkit-animation: blink 0.7s infinite;
+	-moz-animation: blink 0.7s infinite;
+	animation: blink 0.7s infinite;
+}
+
+/*Removes cursor that comes with typed.js*/
+.typed-cursor{
+   opacity: 0;
+	display: none;
+}
+/*Custom cursor animation*/
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+/*============================================
+				배너효과
+=============================================*/
+
+/*============================================
+				검색효과
+============================================*/
+
+body {
+  background-color: rgb(18, 74, 133);
+  color: #fff;
+  margin: 0;
+}
+
+#content {
+    position: absolute;
+    height: 60px;
+    width: 300px;
+    margin-left: 500px;
+    top: 60%;
+    left: 59%;
+    transform: translate(-50%, -50%);
+}
+
+#content.on {
+  -webkit-animation-name: in-out;
+  animation-name: in-out;
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+input {
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgb(18, 74 , 133);
+  border-radius: 50%;
+  background: none;
+  color: rgb(18, 74 , 133);
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Okbe";
+  outline: 0;
+  -webkit-transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out,
+    padding 0.2s;
+  transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out,
+    padding 0.2s;
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+  -webkit-transform: translate(-100%, -50%);
+  -ms-transform: translate(-100%, -50%);
+  transform: translate(-100%, -50%);
+}
+
+.search {
+  background: none;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  border-radius: 100%;
+  outline: 0;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  -webkit-transform: translate(-100%, -50%);
+  -ms-transform: translate(-100%, -50%);
+  transform: translate(-100%, -50%);
+}
+
+.search:before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 4px;
+  background-color: rgb(18, 74 , 133);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  margin-top: 26px;
+  margin-left: 17px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.close {
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+
+.close:before {
+  content: "";
+  position: absolute;
+  width: 27px;
+  height: 4px;
+  margin-top: -1px;
+  margin-left: -13px;
+  background-color: rgb(18, 74 , 133);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.close:after {
+  content: "";
+  position: absolute;
+  width: 27px;
+  height: 4px;
+  background-color: rgb(18, 74 , 133);
+  margin-top: -1px;
+  margin-left: -13px;
+  cursor: pointer;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.square {
+  box-sizing: border-box;
+  padding: 0 40px 0 10px;
+  width: 300px;
+  height: 60px;
+  border: 4px solid rgb(18, 74 , 133);
+  border-radius: 0;
+  background: none;
+  color: rgb(18, 74 , 133);
+  font-family: "Okbe";
+  font-size: 28px;
+  font-weight: bold;
+  outline: 0;
+  -webkit-transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out,
+    padding 0.2s;
+  transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out,
+    padding 0.2s;
+  -webkit-transition-delay: 0.4s, 0s, 0.4s;
+  transition-delay: 0.4s, 0s, 0.4s;
+  -webkit-transform: translate(-100%, -50%);
+  -ms-transform: translate(-100%, -50%);
+  transform: translate(-100%, -50%);
+}
+
+
+/*============================================
+				검색효과
+============================================*/
+

@@ -82,7 +82,7 @@ $(document).ready(function(){
 				%>
 
 				<div id="user_nav">
-					<span id="join_nav"><a href="LoginFormpage.bo">Sign Up</a></span>|<span id="login_nav"><a href="join.bo">Login</a></span>
+					<span id="join_nav"><a href="join.bo">Sign Up</a></span>|<span id="login_nav"><a href="LoginFormpage.bo">Login</a></span>
 				</div>
 				<%
 					} else {

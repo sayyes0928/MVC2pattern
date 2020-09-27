@@ -197,23 +197,24 @@
 
 					<div class="user-profile__profile-image_container">
 						<a class="user-profile__profile-image"> 
-<!-- 						<img class="card-detail-writer__image" -->
-<%-- 							src="<%=request.getContextPath()%>/upload/<%=userinfoDTO.get(0).getUs_pic()%>" /> --%>
+						<img class="card-detail-writer__image"
+							src="<%=request.getContextPath()%>/upload/<%=userinfoDTO.get(0).getUs_pic()%>" />
 						</a> <span class="Right_userID"><%=article.get(0).getpost_nickname()%></span>
 					</div>
 
 					<div class="myhomeContentRight_userimage_container">
 						<%
 							if (postList.size() != 0) {
-								for (int i = 0; i < 4; i++) {
+								for (int i = 0; i < postList.size(); i++) {
+									if(i<4){
 						%>
 						<div class="myhomeContentRight_userimage">
 							<a href="Beautyroom_Detail.bo?board_num=<%= postList.get(i).getPost_num()%>"><img
 								src="<%=request.getContextPath()%>/upload/<%=postList.get(i).getPost_pic()%>" /></a>
 						</div>
 
-						<%
-							}
+						<%}
+							 }
 							}
 						%>
 					</div>
