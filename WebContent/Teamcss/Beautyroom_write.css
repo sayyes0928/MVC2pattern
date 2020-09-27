@@ -6,23 +6,15 @@
   font-style: normal;
   font-weight: normal;
 }
-
+@font-face{
+	font-family:"godo";
+	src:url("./../GodoM.woff");
+}
 body{
 	font-family:"jua";
 }
 
-#BT_writebannersize{
-	width:100%;
-	height:100px;
-	margin: 40px 0 0 40px;
-}
 
-#BT_writebanner{
-	font-size:45pt;
-	color:black;
-	text-decoration:none;
-	font-weight: bold;
-}
 
 #BT_writemainsize{
 	width:1080px;
@@ -77,7 +69,10 @@ body{
 	border-radius:7px;
 
 }
-
+label{
+	font-size:13pt;
+	font-family:"jua";
+}
 
 
 
@@ -112,6 +107,7 @@ body{
 	border-radius:7px;
 	font-family: "jua";
 	margin: 30px 80px 0 0;
+	cursor: pointer;
 }
 #go_list{
 	float:right;
@@ -166,11 +162,11 @@ body{
 
 .form__label {
   position: absolute;
-  top: 0;
+  top: -15px;
   left:10px;
   display: block;
   transition: 0.2s;
-  font-size: 1rem;
+  font-size: 18pt;
   color: #9b9b9b;
   
 }
@@ -233,11 +229,11 @@ body{
 
 .form__label2 {
   position: absolute;
-  top: 0;
+  top: -15px;
   left:10px;
   display: block;
   transition: 0.2s;
-  font-size: 1rem;
+  font-size: 18pt;
   color: #9b9b9b;
 }
 
@@ -320,6 +316,7 @@ body{
     height:150px;
     float:left;
     margin-top:40px;
+    font-family:"jua";
 }
 
 p 
@@ -335,7 +332,7 @@ p
   	border:1px solid #ccc;
   	display:inline-block;
   	padding:5px;
-  	height: 26px;
+  	height: 25px;
     font-size:14px;
     background:#f3f3f3;
     width: 600px;
@@ -473,6 +470,7 @@ p
 
 
 .row{
+	margin-top:10px;
     float: left;
 
 }

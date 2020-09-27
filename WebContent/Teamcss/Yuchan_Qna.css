@@ -99,6 +99,9 @@ header{
 	list-style: none;
 	text-decoration: none;
 	color:black;
+	font-family:"godo";
+	font-size:11pt;
+	font-weight: bold;
 }
 
 #title_tag{

@@ -73,6 +73,7 @@ function aaa(btn){
 					<hr id="title_hr">
 				</div>
 				<div id="qna_post_titlesize"><%=qna_detail.get(0).getQna_title()%></div>
+				
 				<div id="qna_post_picsize">
 					<img
 						src="<%=request.getContextPath()%>/upload/<%=qna_detail.get(0).getQna_pw()%>">
@@ -101,8 +102,8 @@ function aaa(btn){
 					if (us_id != null) {
 				%>
 				<input type="text" id="reply_inner_text" value="댓글을 입력해주세요"
-					name="comment_post"></input><br> <input type="submit"
-					value="등록" id="reply_button"> <input type="hidden"
+					name="comment_post"></input><input type="submit"
+					value="등록" id="reply_button"><br>  <input type="hidden"
 					value="<%=qna_detail.get(0).getQna_num()%>" name="getnum">
 				<%
 					} else {
@@ -113,7 +114,7 @@ function aaa(btn){
 					}
 				%>
 
-				댓글수 :
+				<span id="comment_count">댓글수 :</span>
 				<%=listCount%>
 				<div id="comment_size">
 					<%
@@ -130,15 +131,64 @@ function aaa(btn){
 					<span><a href="#" class="comment_modify">수정</a></span><span>|</span><span>
 						<a href="#" class="comment_modify">삭제</a>
 					</span>|<span> <input type="button" value="답글"
-						onclick="aaa(<%=k%>)" id="test<%=k%>"></span>
+						onclick="aaa(<%=k%>)" id="test<%=k%>" class="re_bt"></span>
 					<div class="reply_size" id="reply_size<%=k%>">
 						<input type="text" id="reply_txt" class="reply_txt"
-							name="reply_txt"> <input type="submit" value="등록">
+							name="reply_txt"> <input type="button" value="등록" id="re_okbt">
 					</div>
 					<hr id="comment_line">
 					<%
 						}
 					%>
+					<div id="pageList">
+						<%
+							if (nowPage <= 1) {
+						%>
+						[이전]&nbsp;
+						<%
+							} else {
+						%>
+						<a href="qna.bo?page=<%=nowPage - 1%>">[이전]</a>&nbsp;
+						<%
+							}
+						%>
+
+						<%
+							for (int a = startPage; a <= endPage; a++) {
+									if (a == nowPage) {
+						%>
+						[<%=a%>]
+						<%
+							} else {
+						%>
+						<a href="qna.bo?page=<%=a%>">[<%=a%>]
+						</a>&nbsp;
+						<%
+							}
+						%>
+						<%
+							}
+						%>
+
+
+						<%
+							if (nowPage >= maxPage) {
+						%>
+						[다음]
+						<%
+							} else {
+						%>
+						<a href="qna.bo?page=<%=nowPage + 1%>">[다음]</a>
+						<%
+							}
+						%>
+
+
+					</div>
+					
+					
+					
+					
 					<%
 						} else if (listCount == 0) {
 					%>
@@ -148,54 +198,7 @@ function aaa(btn){
 						}
 					%>
 				</div>
-				<section id="pageList">
-					<%
-						if (nowPage <= 1) {
-					%>
-					[이전]&nbsp;
-					<%
-						} else {
-					%>
-					<a
-						href="qna_detail.bo?getnum=<%=qna_detail.get(0).getQna_num()%>&page=<%=nowPage - 1%>">[이전]</a>&nbsp;
-					<%
-						}
-					%>
-
-					<%
-						for (int a = startPage; a <= endPage; a++) {
-							if (a == nowPage) {
-					%>
-					[<%=a%>]
-					<%
-						} else {
-					%>
-					<a
-						href="qna_detail.bo?getnum=<%=qna_detail.get(0).getQna_num()%>&page=<%=a%>">[<%=a%>]
-					</a>&nbsp;
-					<%
-						}
-					%>
-					<%
-						}
-					%>
-
-
-					<%
-						if (nowPage >= maxPage) {
-					%>
-					[다음]
-					<%
-						} else {
-					%>
-					<a
-						href="qna_detail.bo?getnum=<%=qna_detail.get(0).getQna_num()%>&page=<%=nowPage + 1%>">[다음]</a>
-					<%
-						}
-					%>
-
-
-				</section>
+				
 
 
 			</div>
