@@ -196,9 +196,9 @@
 
 
 					<div class="user-profile__profile-image_container">
-						<a class="user-profile__profile-image"> <img
-							class="card-detail-writer__image"
-							src="<%=request.getContextPath()%>/upload/<%=userinfoDTO.get(0).getUs_pic()%>" />
+						<a class="user-profile__profile-image"> 
+<!-- 						<img class="card-detail-writer__image" -->
+<%-- 							src="<%=request.getContextPath()%>/upload/<%=userinfoDTO.get(0).getUs_pic()%>" /> --%>
 						</a> <span class="Right_userID"><%=article.get(0).getpost_nickname()%></span>
 					</div>
 

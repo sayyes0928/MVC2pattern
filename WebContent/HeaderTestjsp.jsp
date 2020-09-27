@@ -7,9 +7,13 @@
 <title>헤더테스트</title>
 
 <link rel="stylesheet" href="./Teamcss/HeaderTest.css" type="text/css">
-<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
 
 <script>
+
+
 $(document).ready(function(){
 	$('#a_home').hover(function(){
 		$('#sub_store').css('display','none');

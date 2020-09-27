@@ -47,17 +47,19 @@
 <script type="text/javascript"
 	src="./Teamjs/scriptbreaker-multiple-accordion-1.js"></script>
 <script>
-	$(function() {
-		$('.slider').bxSlider({
+var jb = jQuery.noConflict();
+var ac = jQuery.noConflict();
+jb(function() {
+	jb('.slider').bxSlider({
 			mode : 'horizontal',
 			auto : true,
 			speed : 600,
 			pause : 4000
 		});
 	});
-	$(function() {
+ac(function() {
 		//use the scriptbreaker.com multiple accordion menu
-		$(".topnav").accordion({
+		ac(".topnav").accordion({
 			accordion : true,
 			speed : 500
 		});
