@@ -25,8 +25,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="./myhome.web.css/teamTopNav.css"
-	type="text/css">
+
 <link rel="stylesheet" href="./Teamcss/Yuchan_Qna.css" type="text/css">
 
 <script
@@ -243,7 +242,7 @@ qnajs(function() {
 								src="<%=request.getContextPath()%>/upload/<%=userqna.get(i).getQna_img()%>"
 								class="img-circle"><span> <!-- 게시물번호 -->게시물번호 : <%=userqna.get(i).getQna_num()%>
 							</span> <span> <!-- 닉네임 -->닉네임 : <%=userqna.get(i).getQna_nickname()%>
-							</span> <!-- 시간 -->게시시간 : <%=userqna.get(i).getQna_time()%> <span></span><span></span></td>
+							</span>  <span>게시시간 : <%=userqna.get(i).getQna_time()%></span><span></span></td>
 
 						</tr>
 					</table>
@@ -251,25 +250,7 @@ qnajs(function() {
 					<%
 						}
 					%>
-
-
-
-					<%
-						} else {
-					%>
-					<div id="none_posting">등록된글이 없습니다 ㅎㅎ</div>
-					<%
-						}
-					%>
-
-				</div>
-
-
-
-			</div>
-		</section>
-
-		<section id="pageList">
+					<div id="pageList">
 			<%
 				if (nowPage <= 1) {
 			%>
@@ -313,7 +294,23 @@ qnajs(function() {
 			%>
 
 
+		</div>
+
+
+					<%
+						} else {
+					%>
+					<div id="none_posting">등록된글이 없습니다 ㅎㅎ</div>
+					<%
+						}
+					%>
+
+				</div>
+			</div>
+			
 		</section>
+
+		
 	</form>
 </body>
 </html>

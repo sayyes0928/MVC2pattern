@@ -40,12 +40,12 @@
 
 		<!-- Header include -->
 		<jsp:include page="HeaderTestjsp.jsp"></jsp:include>
-
+		<div id="full_banner"><div id="back_text">나만의 방 자랑하기</div><div id="back_test2">My Beauty Room & DIY</div></div>
 
 		<main>
 
 		<div id="Beauty_banner">
-			<div id="Beauty_title">나만의 방 자랑하기</div>
+			<div id="Beauty_title">My Room</div>
 
 			<%
 				if (us_id != null) {
@@ -119,7 +119,7 @@
 			<%
 				}
 			%>
-
+				
 			<%
 				} else {
 			%>
@@ -130,8 +130,7 @@
 
 
 		</section>
-		<div>
-			<section id="pageList">
+		<div id="pageList">
 				<%
 					if (nowPage <= 1) {
 				%>
@@ -176,7 +175,11 @@
 
 
 
-			</section>
+			</div>
+		
+		
+		<div>
+			
 		</div>
 		</main>
 	</form>

@@ -27,8 +27,7 @@
 <head>
 <meta charset="UTF-8">
 <title>QNA 상세페이지</title>
-<link rel="stylesheet" href="./myhome.web.css/teamTopNav.css"
-	type="text/css">
+
 <link rel="stylesheet" href="./Teamcss/Yuchanqnadetail.css"
 	type="text/css">
 <link rel="stylesheet" href="./Teamcss/qna_comment.css" type="text/css">
@@ -71,6 +70,7 @@ function aaa(btn){
 			<div id="qna_detail_postsize">
 				<div id="qna_titlenamesize">
 					<a href="#" id="qna_titlename">질문과 답변</a>
+					<hr id="title_hr">
 				</div>
 				<div id="qna_post_titlesize"><%=qna_detail.get(0).getQna_title()%></div>
 				<div id="qna_post_picsize">

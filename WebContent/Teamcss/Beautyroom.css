@@ -18,8 +18,46 @@ header{
   box-sizing: border-box;
 }
 
+#full_banner {
+	width: 100%;
+	height: 400px;
+	background-image: url('./../img/btback2.webp');
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#back_text{
+	width:700px;
+	height:100px;
+	z-index:3;
+	position:relative;
+	font-size:30pt;
+	font-weight: bold;
+	font-family:"godo";
+	top:20%;
+	left:22%;
+	color:white;
+}
+
+#back_test2{
+	width:700px;
+	height:100px;
+	z-index:3;
+	position:relative;
+	font-size:24pt;
+	font-weight: bold;
+	font-family:"godo";
+	top:10%;
+	left:22%;
+
+
+}
+
+
 main {
-  font-family: "jua", serif;
+  font-family:"godo";
   margin: 0 auto;
   width: 1200px;
   height: 1000px;
@@ -27,13 +65,13 @@ main {
 }
 
 #pageList{
-	margin: auto;
-	width: 500px;
+	width:1080px;
+	height:100px;
+	margin:0 auto;
 	text-align: center;
-	font-size:16pt;
+	font-size:14px;
 	font-weight:bold;
-	color:gray;
-	
+	font-family:"godo";
 }
 
 
@@ -138,27 +176,29 @@ main {
 }
 
 .card__category {
-  font-family: "jua", sans-serif;
+  font-family:"godo";
   text-transform: uppercase;
-  font-size: 20pt;
+  font-size: 16pt;
   letter-spacing: 2px;
-  font-weight: 600;
+  font-weight: bold;
   color: black;
 }
 
 .card__title {
-  margin-top: 5px;
+  margin-top: 20px;
   margin-bottom: 10px;
-  font-family: "jua", serif;
-  font-size:12pt;
-  font-weight:normal;
+  font-family:"godo";
+  font-size:10pt;
+  font-weight:bold;
   color: #868686;
 }
 
 .card__by {
-  font-size: 12pt;
-  font-family: "jua", sans-serif;
-  font-weight: 500;
+  position:relative;
+  top:10px;
+  font-size: 10pt;
+  font-family:"godo";
+  font-weight: bold;
   
 }
 
@@ -196,7 +236,7 @@ main {
 }
 
 #Beauty_title{
-	
+	margin-top:30px;
 	width: 300px;
 	height: 50px;
 	font-size: 28pt;
@@ -207,7 +247,7 @@ main {
 
 #Beauty_hr{
 	margin:15px 0 15px 0;
-	width:7%;
+	width:14%;
 	color:gray;
 }
 
@@ -215,19 +255,21 @@ main {
 	width: 300px;
 	height: 50px;
 	font-size: 14pt;
-	color:pink;
+	font-weight:bold;
+	color:#1F50B5;
 }
 
 #BT_Writebt{
-	
+	 font-family: "jua";
 	width:100px;
 	height:60px;
 	background-color:#1F50B5;
 	color:white;
-	font-size:12pt;
+	font-size:14pt;
 	font-weight:bold;
 	box-shadow: 0;
 	border:none;
+	cursor: pointer;
 }
 
 #wrtie_btsize{

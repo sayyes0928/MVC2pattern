@@ -30,7 +30,7 @@
 		<jsp:include page="HeaderTestjsp.jsp"></jsp:include>
 
 		<main>
-		<div id="full_banner"></div>
+		<div id="full_banner"><div id="back_text">자취해보자</div><div id="back_test2">LifeStyle&Peace</div></div>
 		<div id="main_size">
 			<div id="index_best_bt_size">
 				<div class="index_best_bt_title">
