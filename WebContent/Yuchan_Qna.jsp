@@ -40,9 +40,8 @@
 </script>
 
 <script>
-var qnajs = jQuery.noConflict();
-qnajs(function() {
-	qnajs(".typed").typed({
+	$(function() {
+		$(".typed").typed({
 			strings : [ "질문해주세요 :)", "답변해드립니다 :D" ],
 			// Optionally use an HTML element to grab strings from (must wrap each string in a <p>)
 			stringsElement : null,

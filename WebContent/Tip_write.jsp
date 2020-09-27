@@ -10,7 +10,6 @@ String us_id = (String) session.getAttribute("us_id");
 <meta charset="UTF-8">
 <title>Tip 게시글 등록</title>
 
-<link rel="stylesheet" href="./myhome.web.css/teamTopNav.css" type="text/css">
 <link rel="stylesheet" href="./myhome.web.css/Tip_write1.css" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 

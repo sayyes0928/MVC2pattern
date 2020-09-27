@@ -13,17 +13,25 @@
   int StartPage = page_article.getStartPage();
   int EndPage = page_article.getEndPage();
   
+  String us_id = (String)session.getAttribute("us_id");
+  
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>tip</title>
-<link rel="stylesheet" href="./myhome.web.css/teamTopNav.css" type="text/css">
+
 <link rel="stylesheet" href="./myhome.web.css/tip.css" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script src="./myhome.web.js/teamTopnav.js"></script>
 </head>
+<script>
+  function login(){
+	  alert("로그인이 필요합니다.");
+	  location.href = "LoginFormpage.bo"
+  }
+</script>
 <body>
 	<form id="contentPage" >
 	        <!-- header -->
@@ -34,10 +42,15 @@
 			<div id="s_wrap">
 				<div id="section_header">
 					<div id="page_title">집들이 Tip</div>
-					<input id="tipBT_write" type="button" value="글쓰기"
-						onclick="location='Tip_write.jsp'">
+					<%if(us_id != null){%>					
+					 <input id="tipBT_write" type="button" value="글쓰기"
+						 onclick="location.href='Tip_write.jsp'">
+					<%}else{ %>
+					  <input id="tipBT_write" type="button" value="글쓰기"
+						 onclick="login()">
+					<%} %>
+					
 				</div>
-				<%=tip_article.size() %>
 				<div id="tip_list">				
 				  <% if(tip_article.size() != 0){
 					  
@@ -52,7 +65,7 @@
 							src="<%=request.getContextPath()%>/upload/<%=tip_article.get(i).getTip_coverimg()%>">
 						<ul>
 							<li id="card_title"><%=tip_article.get(i).getTip_title() %></li>
-							<li id="card_nickname"><%=tip_article.get(i).getTip_nickname() %></li>
+							<li id="card_nickname">by <%=tip_article.get(i).getTip_nickname() %></li>
 							<li id="count">조회수</li>
 							<li id="scrap">스크랩</li>
 						</ul>
