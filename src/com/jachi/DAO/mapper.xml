@@ -282,7 +282,7 @@ insert into posting_reply values(default, #{posting_reply_us_id},#{posting_reply
 </insert>
 
 <select id="select_TipDetail" parameterType="Integer" resultType="com.jachi.DTO.TipDTO">
-    select tip_num, tip_title, tip_post, tip_coverimg, tip_date, us_nkname as 'tip_nickname' from tip join userinfo on userinfo.us_id = tip.tip_nickname where tip_num = #{tip_num};
+    select tip_num, tip_title, tip_post, tip_coverimg, tip_date, us_nkname as 'tip_nickname', us_pic as 'tip_img' from tip join userinfo on userinfo.us_id = tip.tip_nickname where tip_num = #{tip_num};
 </select>
 
 </mapper>
