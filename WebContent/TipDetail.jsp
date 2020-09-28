@@ -23,7 +23,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Tip 상세페이지</title>
-<link rel="stylesheet" href="./myhome.web.css/teamTopNav.css" type="text/css">
+
 <link rel="stylesheet" href="./myhome.web.css/TipDetail.css" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
@@ -75,7 +75,11 @@
                     게시물 내용      
              </div>
              <div class="comment">
-                <p>댓글</p>
+                <div class="comment_title">
+                  <span>댓글</span>
+                  <span><%=ListCount%></span>
+                </div>
+                
                 <div class="comment_form">
                   <div class="comment_imgbox"><img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&amp;w=36&amp;webp=1"></div>
                   <div class="comment_textbox">
@@ -101,12 +105,13 @@
               for(int i=0; i<commentlist.size(); i++){ %>
                 <div class="comment_list">
                   <div class="comment_author_img"><img src="<%=request.getContextPath()%>/upload/<%=commentlist.get(i).getRep_img()%>"></div>
-                  <p><%=commentlist.get(i).getRep_post()%></p>
+                  <span><%=commentlist.get(i).getRep_nickname()%></span>
+                  <span><%=commentlist.get(i).getRep_post()%></span>
                   <ul class="comment_list_feed">
                    <li><%=commentlist.get(i).getRep_date()%></li>
                    <li>삭제버튼</li>
                   </ul>
-               
+                </div>
           <%  }
             }else{  %>
             <div class="null_comment_list">등록된 댓글이 없습니다.</div>

@@ -18,7 +18,7 @@
 									href="/user_shopping_pages/order_list" target="_self">주문배송내역
 										조회</a></li>
 								<li class="page-navigation__item"><a class=""
-									href="/contact_us" target="_self">고객센터</a></li>
+									href="#" target="_self">고객센터</a></li>
 							</ul>
 						</nav>
 					</div>

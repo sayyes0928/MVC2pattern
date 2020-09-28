@@ -93,11 +93,21 @@ section{
 	border-top: 3px solid #e3e3e3;
 }
 
-.comment p{
-	margin-top: 10px;
+.comment_title{
+	margin-top: 20px;
+}
+
+.comment_title span:nth-child(1){
 	font-size: 20px;
 	font-weight: bold;
 }
+
+.comment_title span:nth-child(2){
+	font-size: 20px;
+	font-weight: bold;
+	color: skyblue;
+}
+
 .comment_imgbox{
 	float: left;
     width: 40px;
@@ -173,8 +183,13 @@ section{
 	object-fit: cover;
 }
 
-.comment_list > p{
-	margin: 0 0 0 70px;
+.comment_list span:nth-child(2){
+	margin: 0 0 0 21px;
+	font-weight: bold;
+}
+
+.comment_list span:nth-child(3){
+	margin: 0 0 0 10px;
 	font-size: 18px;
 }
 
@@ -188,7 +203,7 @@ section{
 }
 
 .comment_list_feed > li:first-child{
-	margin-left: 30px;
+	margin-left: 21px;
 	margin-bottom: 10px;
 }
 

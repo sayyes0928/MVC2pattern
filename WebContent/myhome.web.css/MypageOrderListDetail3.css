@@ -426,7 +426,7 @@
 }
 
 .orders.show>.contents>#detail_info>.table>.order_list>.product_image>.image,
-	.order_productions.show>.contents>#detail_info>.table>.order_list>.product_image>.image
+	.order_productions.show>.contents>#detail_info>.table>.order_list>.product_image>.image,
 	{
 	width: 90px;
 	height: 90px;

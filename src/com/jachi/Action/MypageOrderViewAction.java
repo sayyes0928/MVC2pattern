@@ -30,9 +30,9 @@ public class MypageOrderViewAction implements Action{
 
 		List<Integer> articleCount = new ArrayList<Integer>(6);
 
-		MypageOrderViewService PostViewService = new MypageOrderViewService();
+		MypageOrderViewService mypageOrderViewService = new MypageOrderViewService();
 		
-		articleCount = PostViewService.getDeliveryCount(userID);
+		articleCount = mypageOrderViewService.getDeliveryCount(userID);
 		
 		
 

@@ -1,7 +1,9 @@
 package com.jachi.Action;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -26,7 +28,7 @@ public class TipDetailAction implements Action{
 		TipDetailService tipselectservice = new TipDetailService();
 		tipdto = tipselectservice.getTipinfo(tip_num);
 		
-		
+		//´ñ±Û ¸ñ·Ï
 		List<TipReplyDTO> commentlist = new ArrayList<TipReplyDTO>();
 		int page = 1;
 		int limit = 5;
@@ -36,13 +38,13 @@ public class TipDetailAction implements Action{
 		}
 		
 		TipDetailService commentservice = new TipDetailService();
-		int listCount = commentservice.getListcount();
+		int rep_tip_num = tip_num;
+		int listCount = commentservice.getListcount(rep_tip_num);
 		
-		commentlist = commentservice.getArticleList(page, limit);
+		commentlist = commentservice.getArticleList(page, limit, rep_tip_num);
 		int MaxPage = (int)((double)listCount/limit+0.95);
-		int StartPage = (((int)((double)page/10+0.9))-1)*10+1;
-		int EndPage = StartPage+10-1;
-		
+		int StartPage = (((int)((double)page / 10 + 0.9)) -1 ) *10 +1;
+		int EndPage = StartPage+10-1;		
 		if(EndPage > MaxPage) {
 			EndPage = MaxPage;
 		}
@@ -50,6 +52,7 @@ public class TipDetailAction implements Action{
 		PageInfo pageinfo = new PageInfo();
 		pageinfo.setEndPage(EndPage);
 		pageinfo.setListCount(listCount);
+		pageinfo.setMaxPage(MaxPage);
 		pageinfo.setPage(page);
 		pageinfo.setStartPage(StartPage);
 		

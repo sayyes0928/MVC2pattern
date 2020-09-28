@@ -4,7 +4,8 @@
 <%@ page import="com.jachi.DTO.TipDTO"%>
 <%@ page import="com.jachi.DTO.QnABBS"%>
 <%@ page import="com.jachi.DTO.UserinfoDTO"%>
-<%@ page import="com.jachi.DTO.OrderListDTO"%>
+<%@ page import="com.jachi.DTO.OrderDTO"%>
+<%@ page import="com.jachi.DTO.ProductinfoDTO"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,58 +46,14 @@
 	src="./myhome.web.js/coda-slider.1.1.1.pack.js"></script>
 <script src="./myhome.web.js/teamTopnav.js"></script>
 
-<script type="text/javascript">
-	var theInt = null;
-	var $crosslink, $navthumb;
-	var curclicked = 0;
-
-	theInterval = function(cur) {
-		clearInterval(theInt);
-
-		if (typeof cur != "undefined")
-			curclicked = cur;
-
-		$crosslink.removeClass("active-thumb");
-		$navthumb.eq(curclicked).parent().addClass("active-thumb");
-		$(".stripNav ul li a").eq(curclicked).trigger("click");
-
-		theInt = setInterval(function() {
-			$crosslink.removeClass("active-thumb");
-			$navthumb.eq(curclicked).parent().addClass("active-thumb");
-			$(".stripNav ul li a").eq(curclicked).trigger("click");
-			curclicked++;
-			if (4 == curclicked)
-				curclicked = 0;
-		}, 3000);
-	 };
-
-	$(function() {
-		$("#main-photo-slider").codaSlider();
-
-		$navthumb = $(".nav-thumb");
-		$crosslink = $(".cross-link");
-
-		$navthumb.click(function() {
-			var $this = $(this);
-			theInterval($this.parent().attr("href").slice(1) - 1);
-			return false;
-		});
-
-		theInterval();
-	});
-</script>
-
 <title>MYpage</title>
 </head>
 <body>
 
 	<%
-		ArrayList<UserinfoDTO> userinfoDTO = (ArrayList<UserinfoDTO>) request.getAttribute("userinfoDTO");
-		ArrayList<QnABBS> qnaList = (ArrayList<QnABBS>) request.getAttribute("qnaList");
-		ArrayList<TipDTO> tipList = (ArrayList<TipDTO>) request.getAttribute("tipList");
-		ArrayList<TipDTO> postList = (ArrayList<TipDTO>) request.getAttribute("postList");
-		Integer countLike = (Integer) request.getAttribute("countLike");
-		Integer ountScrap = (Integer) request.getAttribute("ountScrap");
+		ArrayList<OrderDTO> orderList_Receipt = (ArrayList<OrderDTO>) request.getAttribute("orderList_Receipt");
+		ArrayList<ProductinfoDTO> productInfo = (ArrayList<ProductinfoDTO>) request.getAttribute("productInfo");
+		String delivery_status = (String)request.getParameter("delivery_status");
 	%>
 	<!-- 게시판 등록 -->
 
@@ -121,29 +78,26 @@
 					<!-- finish title -->
 
 					<div id="detail_info">
-						<div class="subtitle">주문번호 : 33143923 | 주문일자 : 2020.09.28</div>
+						<div class="subtitle">주문번호 : <%= orderList_Receipt.get(0).getOdr_code()%> | 주문일자 : <%= orderList_Receipt.get(0).getOdr_date() %></div>
 
 						<div class="table">
 							<div class="order_list">
 								<div class="product_image">
-									<div class="image"
-										style="background-image: url('https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-productions-159313467735207495.jpg/250/none')"></div>
+									<div class="image" style="background-image: url('<%=request.getContextPath()%>/upload/<%= productInfo.get(0).getPro_mainimg()%>')">
+									</div>
 								</div>
 
 								<div class="product_detail">
 									<a class="name" target="_blank"
-										href="/productions/310706/selling">[스칸디앤홈] 헤링본 사이잘룩 라탄 러그
-										카페트 4colors 4size</a>
-
-									<div class="option">색상: 03_베이지 / 사이즈: 100x150</div>
+										href="/productions/310706/selling"><%= orderList_Receipt.get(0).getOdr_proname()%></a>
 
 
 
-									<div class="cost">16,900원</div>
-									<div class="count">| 1개</div>
+									<div class="cost"><%= orderList_Receipt.get(0).getOdr_price()%>원</div>
+									<div class="count">| <%= orderList_Receipt.get(0).getOdr_count()%> 개</div>
 
 									<div class="status">
-										입금대기 <span class="status__divider"></span>일반택배배송
+										<%= delivery_status%> <span class="status__divider"></span>일반택배배송
 									</div>
 								</div>
 
@@ -185,11 +139,7 @@
 							</div>
 							<div class="field">
 								<div class="title">입금금액</div>
-								<div class="content emphasis">16,900원</div>
-							</div>
-							<div class="field">
-								<div class="title">기한</div>
-								<div class="content">2020.10.03 까지</div>
+								<div class="content emphasis"><%= orderList_Receipt.get(0).getOdr_price()%>원</div>
 							</div>
 						</div>
 					</div>
@@ -201,11 +151,11 @@
 						<div class="wrap_panel divide one">
 							<div class="field">
 								<div class="title">상품금액</div>
-								<div class="content">90,000원</div>
+								<div class="content"><%= orderList_Receipt.get(0).getOdr_price()%>원</div>
 							</div>
 							<div class="field">
 								<div class="title">할인금액</div>
-								<div class="content">(-) 73,100원</div>
+								<div class="content">(-) 0원</div>
 							</div>
 							<div class="field">
 								<div class="title">선불배송비</div>
@@ -225,7 +175,7 @@
 							</div>
 							<div class="field">
 								<div class="title">결제금액</div>
-								<div class="content emphasis">16,900원</div>
+								<div class="content emphasis"><%= orderList_Receipt.get(0).getOdr_price()%>원</div>
 							</div>
 							<div class="field">
 								<div class="title">결제방법</div>
@@ -240,17 +190,16 @@
 							<div class="field">
 								<div class="title">주문자</div>
 								<div class="personal">
-									노주영 (닉네임: <a target="_blank" href="/users/8659285">가가가가가가2</a>
-									/ 회원번호: 8659285)
+									<%= orderList_Receipt.get(0).getOdr_name()%> (닉네임: <%= orderList_Receipt.get(0).getOdr_id()%>)
 								</div>
 							</div>
 							<div class="field">
 								<div class="title">연락처</div>
-								<div class="personal">010-2636-2448</div>
+								<div class="personal"><%= orderList_Receipt.get(0).getOdr_tel()%></div>
 							</div>
 							<div class="field">
 								<div class="title">이메일</div>
-								<div class="personal">shwndud0928@gmail.com</div>
+								<div class="personal"><%= orderList_Receipt.get(0).getOdr_mail()%></div>
 							</div>
 						</div>
 					</div>
@@ -262,20 +211,20 @@
 						<div class="wrap_panel">
 							<div class="field">
 								<div class="title">수령인</div>
-								<div class="content">노주영</div>
+								<div class="content"><%= orderList_Receipt.get(0).getOdr_name()%></div>
 							</div>
 							<div class="field">
 								<div class="title">연락처</div>
-								<div class="content">123-123</div>
+								<div class="content"><%= orderList_Receipt.get(0).getOdr_tel()%></div>
 							</div>
 							<div class="field">
 								<div class="title">주소</div>
-								<div class="content">(08826) 서울 관악구 관악로 1 (신림동) 서울대학교 집</div>
+								<div class="content"><%= orderList_Receipt.get(0).getOdr_adr()%></div>
 							</div>
 							<div class="field">
 								<div class="title">배송메모</div>
 								<div class="content">
-									<div class="memo">부재시 경비실에 맡겨주세요.</div>
+									<div class="memo"><%= orderList_Receipt.get(0).getOdr_memo()%></div>
 								</div>
 							</div>
 						</div>
