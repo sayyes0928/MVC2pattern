@@ -183,8 +183,13 @@ section{
 	object-fit: cover;
 }
 
-.comment_list > p{
-	margin: 0 0 0 70px;
+.comment_list span:nth-child(2){
+	margin: 0 0 0 21px;
+	font-weight: bold;
+}
+
+.comment_list span:nth-child(3){
+	margin: 0 0 0 10px;
 	font-size: 18px;
 }
 
@@ -198,7 +203,7 @@ section{
 }
 
 .comment_list_feed > li:first-child{
-	margin-left: 30px;
+	margin-left: 21px;
 	margin-bottom: 10px;
 }
 

@@ -77,7 +77,7 @@
              <div class="comment">
                 <div class="comment_title">
                   <span>댓글</span>
-                  <span><%=commentlist.size()%></span>
+                  <span><%=ListCount%></span>
                 </div>
                 
                 <div class="comment_form">
@@ -105,12 +105,13 @@
               for(int i=0; i<commentlist.size(); i++){ %>
                 <div class="comment_list">
                   <div class="comment_author_img"><img src="<%=request.getContextPath()%>/upload/<%=commentlist.get(i).getRep_img()%>"></div>
-                  <p><%=commentlist.get(i).getRep_post()%></p>
+                  <span><%=commentlist.get(i).getRep_nickname()%></span>
+                  <span><%=commentlist.get(i).getRep_post()%></span>
                   <ul class="comment_list_feed">
                    <li><%=commentlist.get(i).getRep_date()%></li>
                    <li>삭제버튼</li>
                   </ul>
-               
+                </div>
           <%  }
             }else{  %>
             <div class="null_comment_list">등록된 댓글이 없습니다.</div>
