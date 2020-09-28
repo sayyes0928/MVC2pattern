@@ -1,7 +1,6 @@
 package com.jachi.DTO;
 
 public class OrderDTO {
-	String odr_id;
 	public String getOdr_id() {
 		return odr_id;
 	}
@@ -68,21 +67,23 @@ public class OrderDTO {
 	public void setOdr_price(int odr_price) {
 		this.odr_price = odr_price;
 	}
-	String odr_code;
+	
 	public String getOdr_code() {
 		return odr_code;
 	}
 	public void setOdr_code(String odr_code) {
 		this.odr_code = odr_code;
 	}
+	String odr_id;
 	String odr_procode;
+	int odr_count;
 	String odr_adr;
 	String odr_tel;
-	String odr_date;
-	int odr_count;
-	String odr_name;
+	String odr_code;	
+	String odr_name;	
 	String odr_mail;
 	String odr_memo;
 	String odr_proname;
 	int odr_price;
+	String odr_date;
 }

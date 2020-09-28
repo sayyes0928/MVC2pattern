@@ -142,6 +142,7 @@
 					<tr>
 						<td class="MyPage_container_selectlist_orderDate">주문번호</td>
 						<td class="MyPage_container_selectlist_productName">제품명</td>
+						<td class="MyPage_container_selectlist_deliveryStatus">배송상태</td>
 						<td class="MyPage_container_selectlist_deliveryNumber">송장번호</td>
 						<td class="MyPage_container_selectlist_deliveryCompany">택배사</td>
 						<td class="MyPage_container_selectlist_productPrice">가격</td>
@@ -153,11 +154,15 @@
 							for (int i = 0; i < orderList.size(); i++) {
 					%>
 					<tr>
-						<td><%=orderList.get(i).getList_code()%></td>
+
+						<td><a
+							href="MypageOrderListDetailView.bo?delivery_code=<%=orderList.get(i).getList_code()%>"><%=orderList.get(i).getList_code()%></a></td>
+						<td><%=orderList.get(i).getList_name()%></td>
 						<td><%=orderList.get(i).getList_delStatus()%></td>
 						<td><%=orderList.get(i).getList_delNum()%></td>
 						<td><%=orderList.get(i).getList_company()%></td>
 						<td><%=orderList.get(i).getCal_price()%></td>
+
 					</tr>
 					<%
 						}
