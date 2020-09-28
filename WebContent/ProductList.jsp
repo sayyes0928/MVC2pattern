@@ -32,10 +32,8 @@
 
 
 <link rel="stylesheet" href="./Teamcss/ProductList.css" type="text/css">
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-<link rel="stylesheet" href="./Teamcss/teampro_ver_01.css"
-	type="text/css">
+
+
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script
@@ -543,8 +541,8 @@ ac(function() {
 					<div class="m_mar">
 
 
-						<span>스토어 상품</span><br>
-						<hr>
+						<span id="cate_title">CATEGORY</span><br>
+						
 					</div>
 					<div class="slider">
 						<div>
@@ -566,8 +564,8 @@ ac(function() {
 				</div>
 				<div class="m_best">
 					<div class="m_mar">
-						<span>Best 상품</span><br>
-						<hr>
+						<span id="cate_pro">PRODUCT</span><br>
+						
 					</div>
 
 					<div class="m_img">

@@ -69,7 +69,7 @@ $(document).ready(function(){
 					<ul>
 						<li><a href="Jachi_main.bo" id="a_home">Home</a></li>
 						<li><a href="plindex.bo" id="a_store">Store</a></li>
-						<li><a href="btList.bo" id="a_photo">Photo</a></li>
+						<li><a href="Beautyroom_index.bo" id="a_photo">Photo</a></li>
 						<li><a href="qna.bo" id="a_qna">QnA</a></li>
 						<li><a href="#" id="a_contact">Contact</a></li>
 					</ul>
@@ -109,16 +109,17 @@ $(document).ready(function(){
 					<li><a href="storeList.bo">Category</a></li>
 				</ul>
 				<ul id="sub_Photo">
-					<li><a href="#">Photo Home</a></li>
-					<li><a href="#">Best Photo</a></li>
+					<li><a href="Beautyroom_index.bo">Photo Home</a></li>
+					<li><a href="btList.bo">My Room</a></li>
 					<li><a href="tiplist.bo">Tip</a></li>
 				</ul>
 				<ul id="sub_qna">
-					<li><a href="#">QNA Home</a></li>
+					<li><a href="qna.bo">QNA Home</a></li>
 					<li><a href="#">Notice</a></li>
 				</ul>
 				<ul id="sub_contact">
-					<li><a href="#">contact</a></li>
+					<li><a href="#">Contact</a></li>
+					<li><a href="#">1:1 QNA</a>
 				</ul>
 			</div>
 		

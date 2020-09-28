@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.jachi.Action.Action;
+import com.jachi.Action.BTIndexAction;
 import com.jachi.Action.BTListAction;
 import com.jachi.Action.BTSelectAction;
 import com.jachi.Action.BTWriteAction;
@@ -583,6 +584,15 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
+		else if(command.equals("/Beautyroom_index.bo")) {
+			action = new BTIndexAction();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
 		
 		
 		

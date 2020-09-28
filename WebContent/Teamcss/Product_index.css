@@ -193,22 +193,24 @@
 }
 
 .m_pname {
-  font-size: 23px;
-  font-family: "jua";
+  font-size: 15pt;
+  font-family:"godo";
   color: black;
   text-decoration: none;
   font-weight: bold;
 }
 
 .m_pindex {
-  font-size: 17px;
-  font-family: "jua";
+  font-size: 12pt;
+  font-weight:bold;
+  font-family:"godo";
   color:gray;
   text-decoration: none;
 }
 .m_pindex2 {
-  font-size: 18px;
-  font-family: "jua";
+  font-size: 12pt;
+  font-family:"godo";
+  font-weight:bold;
   color:rgb(40, 146, 177);
   text-decoration: none;
 }

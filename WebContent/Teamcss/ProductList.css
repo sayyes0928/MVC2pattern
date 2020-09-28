@@ -43,7 +43,7 @@ ul.topnav li {
 
 ul.topnav li a {
   line-height: 10px;
-  font-size: 20px;
+  font-size: 14pt;
   padding: 10px 5px;
   color: #000;
   display: block;
@@ -66,25 +66,25 @@ ul.topnav ul li {
 
 ul.topnav ul li a {
   padding-left: 20px;
-  font-size: 18px;
+  font-size: 11pt;
   font-weight: bold;
   outline: 0;
-  color:rgb(46, 97, 110);
+  color:#1245AB;
 }
 
 ul.topnav ul li a:hover {
-  background-color: #D3C99C;
-  color: #675C7C;
+  background-color: #EAEAEA;
+  color: #FFA7A7;
 }
 
 ul.topnav ul ul li a {
-  color: rgb(88, 94, 83);
+  color: #5CD1E5;
   padding-left: 28px;
 }
 
 ul.topnav ul ul li a:hover {
-  background-color: #D3CEB8;
-  color: #675C7C;
+  background-color: #EAEAEA;
+  color: #7B7B7B;
 }
 
 
@@ -92,7 +92,7 @@ ul.topnav ul ul li a:hover {
   width: 1082px;
   height: 1660px;
   margin: 0 auto;
-  font-family: "jua";
+  font-family:"godo";
 
 }
 
@@ -160,6 +160,7 @@ ul.topnav ul ul li a:hover {
   width: 215px;
   padding-right: 15px;
   float: left;
+  margin-bottom:30px;
 }
 
 .m_img ul div {
@@ -200,22 +201,24 @@ ul.topnav ul ul li a:hover {
 }
 
 .m_pname {
-  font-size: 23px;
-  font-family: "jua";
+  font-size: 15pt;
+  font-family:"godo";
   color: black;
   text-decoration: none;
   font-weight: bold;
 }
 
 .m_pindex {
-  font-size: 17px;
-  font-family: "jua";
+  font-size: 12pt;
+  font-weight:bold;
+  font-family:"godo";
   color:gray;
   text-decoration: none;
 }
 .m_pindex2 {
-  font-size: 18px;
-  font-family: "jua";
+  font-size: 12pt;
+  font-family:"godo";
+  font-weight:bold;
   color:rgb(40, 146, 177);
   text-decoration: none;
 }
@@ -224,6 +227,19 @@ ul.topnav ul ul li a:hover {
   float: left;
   width: 920px;
   margin-left: 40px;
+}
+
+#cate_title{
+	font-family:"godo";
+	font-weight: bold;
+	font-size:20pt;
+}
+
+#cate_pro{
+	font-family:"godo";
+	font-weight: bold;
+	font-size:20pt;
+	
 }
 
 
