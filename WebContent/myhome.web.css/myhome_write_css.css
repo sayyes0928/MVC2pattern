@@ -1,6 +1,12 @@
+
+@font-face{
+	font-family:"godo";
+	src:url("./../GodoM.woff");
+}
 * {
 	margin: 0;
 	padding: 0;
+	font-family:"godo";
 	/* border: 1px dotted red; */
 }
 
@@ -111,7 +117,7 @@ section>article>ul li {
 	color: #424242;
 	margin: 0;
 	padding: 8px 15px 9px;
-	font-family: inherit;
+	font-family: "godo";
 	font-size: 15px;
 	line-height: 1.4;
 	resize: none;
@@ -310,7 +316,7 @@ ol, ul {
 	padding: 0;
 	font-size: 13px;
 	font-weight: inherit;
-	font-family: inherit;
+	font-family: "godo";
 }
 
 .comment-feed__item__footer>:after {
@@ -341,7 +347,7 @@ ol, ul {
 	padding: 0;
 	font-size: 13px;
 	font-weight: inherit;
-	font-family: inherit;
+	font-family: "godo";
 }
 
 .comment-feed__item__footer>a, .comment-feed__item__footer>button {
@@ -351,7 +357,7 @@ ol, ul {
 	padding: 0;
 	font-size: 13px;
 	font-weight: inherit;
-	font-family: inherit;
+	font-family: "godo";
 }
 
 .list-paginator {
@@ -383,7 +389,7 @@ ol, ul {
 	border: none;
 	background-color: transparent;
 	border-radius: 4px;
-	font-family: inherit;
+	font-family: "godo";
 	font-size: 15px;
 	font-weight: 700;
 	line-height: 1;

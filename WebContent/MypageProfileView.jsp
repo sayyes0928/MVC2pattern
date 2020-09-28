@@ -5,13 +5,12 @@
 <%@ page import="com.jachi.DTO.QnABBS"%>
 <%@ page import="com.jachi.DTO.UserinfoDTO"%>
 <%@ page import="com.jachi.DTO.OrderListDTO"%>
+<%@ page import="com.jachi.DTO.BeautyRoomDTO"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta charset="UTF-8" />
-<link rel="stylesheet" type="text/css"
-	href="./myhome.web.css/teamTopNav.css" />
 <link rel="stylesheet" type="text/css"
 	href="./myhome.web.css/teamMypage.css" />
 <link rel="stylesheet" type="text/css"
@@ -25,8 +24,8 @@
 
 
 
-<script type="text/javascript" src="./myhome.web.js/MypageOrder.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -37,47 +36,7 @@
 <script type="text/javascript"
 	src="./myhome.web.js/coda-slider.1.1.1.pack.js"></script>
 <script src="./myhome.web.js/teamTopnav.js"></script>
-
-<script type="text/javascript">
-	var theInt = null;
-	var $crosslink, $navthumb;
-	var curclicked = 0;
-
-	theInterval = function(cur) {
-		clearInterval(theInt);
-
-		if (typeof cur != "undefined")
-			curclicked = cur;
-
-		$crosslink.removeClass("active-thumb");
-		$navthumb.eq(curclicked).parent().addClass("active-thumb");
-		$(".stripNav ul li a").eq(curclicked).trigger("click");
-
-		theInt = setInterval(function() {
-			$crosslink.removeClass("active-thumb");
-			$navthumb.eq(curclicked).parent().addClass("active-thumb");
-			$(".stripNav ul li a").eq(curclicked).trigger("click");
-			curclicked++;
-			if (4 == curclicked)
-				curclicked = 0;
-		}, 3000);
-	};
-
-	$(function() {
-		$("#main-photo-slider").codaSlider();
-
-		$navthumb = $(".nav-thumb");
-		$crosslink = $(".cross-link");
-
-		$navthumb.click(function() {
-			var $this = $(this);
-			theInterval($this.parent().attr("href").slice(1) - 1);
-			return false;
-		});
-
-		theInterval();
-	});
-</script>
+<script type="text/javascript" src="./myhome.web.js/MypageOrder.js"></script>
 
 <title>MYpage</title>
 </head>
@@ -87,7 +46,7 @@
 		ArrayList<UserinfoDTO> userinfoDTO = (ArrayList<UserinfoDTO>) request.getAttribute("userinfoDTO");
 		ArrayList<QnABBS> qnaList = (ArrayList<QnABBS>) request.getAttribute("qnaList");
 		ArrayList<TipDTO> tipList = (ArrayList<TipDTO>) request.getAttribute("tipList");
-		ArrayList<TipDTO> postList = (ArrayList<TipDTO>) request.getAttribute("postList");
+		ArrayList<BeautyRoomDTO> postList = (ArrayList<BeautyRoomDTO>) request.getAttribute("postList");
 		Integer countLike = (Integer)request.getAttribute("countLike");
 		Integer ountScrap = (Integer)request.getAttribute("ountScrap");
 		String us_proimg = userinfoDTO.get(0).getUs_pic();
@@ -231,34 +190,34 @@
 						<div class="contents">
 							<section class="post post--cards">
 								<h5 class="post__title">
-									사진 <strong><%=postList.size()%></strong>
+									사진 <strong><%= postList.size()%></strong>
 								</h5>
 								<div class="container">
 
 									<%
 										if (postList.size() != 0) {
 									%>
-									<section class="collection-feed-filter row">
-										<div class="collection-feed-filter__empty"></div>
-									</section>
 									<div class="virtualized-list collection-feed-collections row"
 										style="padding-top: 0px; padding-bottom: 0px; transform: translateY(0px);">
 										<%
-											for (int i = 0; i < 4; i++) {
+											for (int i = 0; i < postList.size(); i++) {
 										%>
 										<div class="col-6 col-md-4 col-lg-3">
 											<a
-												href="/productions/475132/selling?affect_type=UserScrapbook&amp;affect_id=8659285">
+												href="Beautyroom_Detail.bo?board_num=<%= postList.get(i).getPost_num()%>">
 												<div class="collection collection--total">
 													<div class="collection__image-wrap">
 														<img class="collection__image"
-															src="https://image.ohou.se/i/bucketplace-v2-development/uploads/deals/159955303371693671.jpg?gif=1&amp;w=320&amp;h=320&amp;c=c&amp;webp=1">
+															src="<%=request.getContextPath()%>/upload/<%= postList.get(i).getPost_pic()%>">
 													</div>
 													<span class="collection__type">상품</span>
 												</div>
 											</a>
 										</div>
 										<%
+										if(i>3){
+											break;
+										}
 											}
 										%>
 

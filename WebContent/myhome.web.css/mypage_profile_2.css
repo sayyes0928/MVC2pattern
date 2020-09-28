@@ -38,6 +38,10 @@ h5,
 h6 {
   font-weight: inherit;
 }
+@font-face{
+	font-family:"godo";
+	src:url("./../GodoM.woff");
+}
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -83,7 +87,7 @@ sub {
 input,
 textarea,
 select {
-  font-family: inherit;
+  font-family:"godo";
   font-size: inherit;
   font-weight: inherit;
 }
@@ -1167,8 +1171,7 @@ textarea.form-control {
 html,
 body {
   line-height: 1;
-  font-family: "Noto Sans KR", "Apple SD Gothic Neo", "¸¼Àº °íµñ",
-    "Malgun Gothic", sans-serif;
+  font-family: "godo";
   -webkit-font-smoothing: antialiased;
   letter-spacing: -0.4px;
   font-size: 13px;

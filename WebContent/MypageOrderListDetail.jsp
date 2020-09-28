@@ -53,6 +53,7 @@
 	<%
 		ArrayList<OrderDTO> orderList_Receipt = (ArrayList<OrderDTO>) request.getAttribute("orderList_Receipt");
 		ArrayList<ProductinfoDTO> productInfo = (ArrayList<ProductinfoDTO>) request.getAttribute("productInfo");
+		String delivery_status = (String)request.getParameter("delivery_status");
 	%>
 	<!-- 게시판 등록 -->
 
@@ -90,15 +91,13 @@
 									<a class="name" target="_blank"
 										href="/productions/310706/selling"><%= orderList_Receipt.get(0).getOdr_proname()%></a>
 
-									<div class="option">색상: 03_베이지 / 사이즈: 100x150</div>
-
 
 
 									<div class="cost"><%= orderList_Receipt.get(0).getOdr_price()%>원</div>
-									<div class="count">|1개</div>
+									<div class="count">| <%= orderList_Receipt.get(0).getOdr_count()%> 개</div>
 
 									<div class="status">
-										입금대기 <span class="status__divider"></span>일반택배배송
+										<%= delivery_status%> <span class="status__divider"></span>일반택배배송
 									</div>
 								</div>
 

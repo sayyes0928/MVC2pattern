@@ -110,13 +110,7 @@
 		<nav class="page-navigation collection-book-nav">
 			<ul style="transform: translateX(0px);">
 				<li class="page-navigation__item"><a class="active"
-					href="/users/8659285/collections" target="_self">모두 (4)</a></li>
-				<li class="page-navigation__item"><a class=""
-					href="/users/8659285/collections?filter=production" target="_self">상품
-						(3)</a></li>
-				<li class="page-navigation__item"><a class=""
-					href="/users/8659285/collections?filter=card" target="_self">사진
-						(1)</a></li>
+					href="/users/8659285/collections" target="_self">상품 및 게시글 모아보기 (<%= bookmarkList.size()%>)</a></li>
 			</ul>
 		</nav>
 		<div class="container">

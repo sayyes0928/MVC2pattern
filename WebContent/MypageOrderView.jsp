@@ -156,7 +156,7 @@
 					<tr>
 
 						<td><a
-							href="MypageOrderListDetailView.bo?delivery_code=<%=orderList.get(i).getList_code()%>"><%=orderList.get(i).getList_code()%></a></td>
+							href="MypageOrderListDetailView.bo?delivery_code=<%=orderList.get(i).getList_code()%>&delivery_status=<%=orderList.get(i).getList_delStatus()%>"><%=orderList.get(i).getList_code()%></a></td>
 						<td><%=orderList.get(i).getList_name()%></td>
 						<td><%=orderList.get(i).getList_delStatus()%></td>
 						<td><%=orderList.get(i).getList_delNum()%></td>
