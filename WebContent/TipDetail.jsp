@@ -101,7 +101,7 @@
          }
         </script>
               <div id="comment_feed_list">  
-          <% if(commentlist.size() != 0){
+         <% if(commentlist.size() != 0){
               for(int i=0; i<commentlist.size(); i++){ %>
                 <div class="comment_list">
                   <div class="comment_author_img"><img src="<%=request.getContextPath()%>/upload/<%=commentlist.get(i).getRep_img()%>"></div>
@@ -109,13 +109,15 @@
                   <span><%=commentlist.get(i).getRep_post()%></span>
                   <ul class="comment_list_feed">
                    <li><%=commentlist.get(i).getRep_date()%></li>
-                   <li>삭제버튼</li>
+                 <%if(us_id.equals(commentlist.get(i).getRep_us_id())){ %>
+                   <li><input class="comment_delete" type="button" value="삭제" onclick="location.href='Tip_reply_delete.bo?rep_num=<%=commentlist.get(i).getRep_num()%>&rep_tip_num=<%=commentlist.get(i).getRep_tip_num()%>'"></li>
+                 <% }%>
                   </ul>
                 </div>
           <%  }
-            }else{  %>
+           }else{  %>
             <div class="null_comment_list">등록된 댓글이 없습니다.</div>
-          <%} %>
+         <%} %>
             </div>
             <div id="page_button">
              <%if(NowPage <= 1){ %>

@@ -7,7 +7,15 @@ public class TipReplyDTO {
     int rep_num;
     String rep_post;
     String rep_date;
+    String rep_us_id;
     
+    
+	public String getRep_us_id() {
+		return rep_us_id;
+	}
+	public void setRep_us_id(String rep_us_id) {
+		this.rep_us_id = rep_us_id;
+	}
 	public String getRep_nickname() {
 		return rep_nickname;
 	}
