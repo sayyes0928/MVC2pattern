@@ -23,7 +23,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Tip 상세페이지</title>
-<link rel="stylesheet" href="./myhome.web.css/teamTopNav.css" type="text/css">
+
 <link rel="stylesheet" href="./myhome.web.css/TipDetail.css" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
@@ -75,7 +75,11 @@
                     게시물 내용      
              </div>
              <div class="comment">
-                <p>댓글</p>
+                <div class="comment_title">
+                  <span>댓글</span>
+                  <span><%=commentlist.size()%></span>
+                </div>
+                
                 <div class="comment_form">
                   <div class="comment_imgbox"><img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&amp;w=36&amp;webp=1"></div>
                   <div class="comment_textbox">

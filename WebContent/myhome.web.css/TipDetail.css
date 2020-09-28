@@ -93,11 +93,21 @@ section{
 	border-top: 3px solid #e3e3e3;
 }
 
-.comment p{
-	margin-top: 10px;
+.comment_title{
+	margin-top: 20px;
+}
+
+.comment_title span:nth-child(1){
 	font-size: 20px;
 	font-weight: bold;
 }
+
+.comment_title span:nth-child(2){
+	font-size: 20px;
+	font-weight: bold;
+	color: skyblue;
+}
+
 .comment_imgbox{
 	float: left;
     width: 40px;
