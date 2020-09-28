@@ -1,6 +1,8 @@
 package com.jachi.svc;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -31,14 +33,19 @@ public class TipDetailService {
     	return listcount;
     }
     
-    public List<TipReplyDTO> getArticleList(int page, int limit) throws Exception{
+    public List<TipReplyDTO> getArticleList(int page, int limit, int tip_num) throws Exception{
     	
     	int Startrow = (page-1)*12;
-    	
+    	    	
+    	Map<String,Object> map = new HashMap<>();
+		map.put("Startrow", Startrow);
+		map.put("limit", limit);
+		map.put("rep_tip_num", tip_num);
+		
     	SqlSessionFactory sqlfactory = BoardDAO.getConn();
     	SqlSession sqlsession = sqlfactory.openSession();
     	
-    	List<TipReplyDTO> selectlist = sqlsession.selectList("select_tip_Commentlist", Startrow);
+    	List<TipReplyDTO> selectlist = sqlsession.selectList("select_tip_Commentlist", map);
     	
     	return selectlist;
     }

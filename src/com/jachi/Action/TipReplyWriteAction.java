@@ -25,7 +25,7 @@ public class TipReplyWriteAction implements Action{
 		repdto.setRep_tip_num(tip_num);
 		repdto.setRep_post(rep_post);
 		repdto.setRep_nickname(us_id);
-	    System.out.println("1");
+
 		TipReplyWriteService repwriteservice = new TipReplyWriteService();
 		boolean isWriteSuccess = repwriteservice.registArticle(repdto);
 		
