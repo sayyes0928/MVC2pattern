@@ -68,7 +68,7 @@
 			if (4 == curclicked)
 				curclicked = 0;
 		}, 3000);
-	};
+	 };
 
 	$(function() {
 		$("#main-photo-slider").codaSlider();
