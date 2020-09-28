@@ -95,7 +95,7 @@
 
 
 									<div class="cost"><%= orderList_Receipt.get(0).getOdr_price()%>원</div>
-									<div class="count">| 1개</div>
+									<div class="count">|1개</div>
 
 									<div class="status">
 										입금대기 <span class="status__divider"></span>일반택배배송
