@@ -9,6 +9,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <select id="select_productpostview" parameterType="String" resultType="com.jachi.DTO.ProductinfoDTO">
   select * from productinfo where pro_code=#{pro_code};
 </select>
+
 <select id="select_productCartList" parameterType="com.jachi.DTO.OrderDTO" resultType="com.jachi.DTO.Product_cartDTO">
   SELECT cart_orderCode,cart_procode,cart_count,cart_option,cart_price,cart_us_id,pro_mainimg FROM jachi.product_cart a join (select pro_mainimg,pro_code  from productinfo b) b on a.cart_procode = b.pro_code and cart_us_id =#{odr_id};
 </select>
@@ -21,6 +22,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   union all(SELECT ifnull(count(*),'0') FROM delivery where us_id = #{us_id} and dlv_status='배송완료')
   union all (SELECT ifnull(count(*),'0') FROM delivery where us_id = #{us_id} and dlv_status='구매확정');
 
+</select>
+<select id="orderList_Receipt" parameterType="String" resultType="com.jachi.DTO.OrderDTO">
+SELECT * FROM jachi.ordertable where odr_code = #{odr_code};
 </select>
 <select id="select_beautyall_Detail_coment" parameterType="map" resultType="com.jachi.DTO.Posting_replyDTO">
  select * from posting_reply where posting_reply_post_num = #{board_num} order by posting_reply_post_num desc limit #{starrow}, 5;	
@@ -74,8 +78,8 @@ SELECT DISTINCT list_name,dlv_status as 'list_delStatus',cal_price,list_amount,
 a.dlv_comp as 'list_company',a.dlv_num as 'list_delNum' ,a.dlv_code as 'list_code'
 FROM jachi.delivery a 
 join 
-(select b.pro_name as 'list_name',a.odr_count as 'list_amount',(a.odr_count*b.pro_price) as 'cal_price',a.odr_id
-FROM jachi.ordertable a join productinfo b on a.odr_procode = b.pro_code and a.odr_id=#{odr_id}) k where a.dlv_status=#{list_delStatus} group by a.dlv_code;
+(select b.pro_name as 'list_name',a.odr_count as 'list_amount',(a.odr_count*b.pro_price) as 'cal_price',a.odr_id, a.odr_code
+FROM jachi.ordertable a join jachi.productinfo b on a.odr_procode = b.pro_code and a.odr_id=#{odr_id}) k where a.dlv_status=#{list_delStatus} and k.odr_code = a.dlv_code group by a.dlv_code;
 
 </select>
 <select id="select_orderCodeTail" parameterType="String" resultType="Integer">
@@ -168,8 +172,8 @@ insert into posting_reply values(default, #{posting_reply_us_id},#{posting_reply
 </insert> 
 
 <insert id="insert_order_complite" parameterType="com.jachi.DTO.OrderDTO">
- insert into ordertable(odr_id,odr_procode,odr_count,odr_adr,odr_tel,odr_name,odr_mail,odr_memo,odr_proname,odr_price,odr_code) 
- values(#{odr_id},#{odr_procode},#{odr_count},#{odr_adr},#{odr_tel},#{odr_name},#{odr_mail},#{odr_memo},#{odr_proname},#{odr_price},#{odr_code});
+ insert into ordertable(odr_id,odr_procode,odr_count,odr_adr,odr_tel,odr_name,odr_mail,odr_memo,odr_proname,odr_price,odr_code,odr_date) 
+ values(#{odr_id},#{odr_procode},#{odr_count},#{odr_adr},#{odr_tel},#{odr_name},#{odr_mail},#{odr_memo},#{odr_proname},#{odr_price},#{odr_code},#{odr_date});
 </insert>
 
 <insert id="qna_comment_write" parameterType="com.jachi.DTO.QnA_Comment">
