@@ -46,7 +46,9 @@ import com.jachi.Action.ProductOrderAction;
 import com.jachi.Action.ProductOrderInsertAction;
 import com.jachi.Action.ProductPostViewAction;
 import com.jachi.Action.QnaCommentAction;
+import com.jachi.Action.QnaCommentDeleteAction;
 import com.jachi.Action.QnaCommentListAction;
+import com.jachi.Action.QnaCommentReplyListAction;
 import com.jachi.Action.QnaCommentWriteAction;
 import com.jachi.Action.QnaDeleteAction;
 import com.jachi.Action.QnaDetailAction;
@@ -558,6 +560,16 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			}
 		}
 		
+		else if(command.equals("/qna_commentreplyselectList.bo")) {
+			System.out.println("커맨트체크");
+			action = new QnaCommentReplyListAction();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+			System.out.println(e);
+			}
+		}
+		
 		else if(command.equals("/qna_commentwrite.bo")) {
 			System.out.println("커맨트체크");
 			action = new QnaCommentWriteAction();
@@ -594,6 +606,14 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		}
 		else if(command.equals("/Beautyroom_index.bo")) {
 			action = new BTIndexAction();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/qna_comment_delete.bo")) {
+			action = new QnaCommentDeleteAction();
 			try {
 				forward=action.execute(request, response);
 			} catch (Exception e) {

@@ -113,3 +113,15 @@
 	position: absolute;
 }
 
+.modify_text{
+	width:500px;
+	height:30px;
+	display:none;
+}
+
+.modify_bt{
+	display:none;
+	
+}
+
+

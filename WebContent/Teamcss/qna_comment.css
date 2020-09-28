@@ -181,3 +181,11 @@
 	font-size:7pt;
 	font-weight: bold;
 }
+
+#reply_reply_size{
+	width:790px;
+	height:100%;
+	position:relative;
+	left:30px;
+	border:1px solid gray;
+}

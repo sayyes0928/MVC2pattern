@@ -22,15 +22,59 @@
 <title>Home</title>
 
 <link rel="stylesheet" href="./Teamcss/Jachi_main.css" type="text/css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+	<script>
+	var bntest = jQuery.noConflict();
+	var bntest2 = jQuery.noConflict();
+	bntest(document).ready(function(){
+		bntest('#banner_box1').hover(function(){
+			bntest('#banner1').css('color','black');
+			bntest('#banner1').css('-webkit-transition','-webkit-transform .8s ease');
+			bntest('#banner1').css('transform','scale(1.05)');
+			bntest('#banner2').css('color','black');
+			bntest('#banner2').css('-webkit-transition','-webkit-transform .8s ease');
+			bntest('#banner2').css('transform','scale(1.05)');
+			bntest('#banner2').css('border','5px solid black');
+			
+			},
+			function(){
+				bntest('#banner1').css('color','white');
+				bntest('#banner1').css('-webkit-transition','-webkit-transform .8s ease');
+				bntest('#banner1').css('transform','scale(1.05)');
+				bntest('#banner2').css('color','white');
+				bntest('#banner2').css('-webkit-transition','-webkit-transform .8s ease');
+				bntest('#banner2').css('transform','scale(1.05)');
+				bntest('#banner2').css('border','5px solid white');	
+			});
+		bntest2('#banner_box2').hover(function(){
+			bntest2('#banner3').css('color','#2457BD');
+			bntest2('#banner3').css('-webkit-transition','-webkit-transform .8s ease');
+			bntest2('#banner3').css('transform','scale(1.05)');
+		},
+		function(){
+			bntest2('#banner3').css('color','white');
+			bntest2('#banner3').css('-webkit-transition','-webkit-transform .8s ease');
+			bntest2('#banner3').css('transform','scale(1.05)');
+		});
+		
+		});
+	
+	</script>
 </head>
 
 <body>
-
+	
 	<form>
 		<jsp:include page="HeaderTestjsp.jsp"></jsp:include>
 
 		<main>
 		<div id="full_banner"><div id="back_text">자취해보자</div><div id="back_test2">LifeStyle&Peace</div></div>
+		<div id="store_index_banner_body">
+			<div id="banner_box1"><div id="banner1">TODAY PRODUCT</div><div id="banner2">보러가기</div></div>
+			<div id="banner_box2"><div id="banner3">TODAY MYROOM</div></div>
+		</div>
 		<div id="main_size">
 			<div id="index_best_bt_size">
 				<div class="index_best_bt_title">

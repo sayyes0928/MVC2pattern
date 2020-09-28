@@ -99,7 +99,7 @@ $(document).ready(function(){
 		<div id="submenu_bar">
 			<div class="sub_menu">
 				<ul id="sub_home">
-					<li><a href="#">Home</a></li>
+					<li><a href="Jachi_main.bo">Home</a></li>
 					<li><a href="#">Best Room</a></li>
 					<li><a href="#">Best Store</a></li>
 				</ul>

@@ -138,6 +138,10 @@ insert into productinfo values(#{pro_code},#{pro_name},#{pro_price},#{pro_mainim
 	delete from qna where qna_num = #{qna_num};
 </delete>
 
+<delete id="delete_qnacmall" parameterType="Integer">
+	delete from qna_comment where qc_num = #{qna_num};
+</delete>
+
 <select id="book_check" parameterType="map" resultType="int">
 		select count(*) from jachi.scrap where scr_postnum = #{no} and scr_id = #{id};
 </select>
@@ -235,6 +239,11 @@ insert into posting_reply values(default, #{posting_reply_us_id},#{posting_reply
 	select qc_num,qna_num as 'qcb_num',us_nkname as'qc_nickname',qc_date,qc_content,us_pic as 'qc_img' from qna_comment
 	join userinfo on userinfo.us_id=qna_comment.qc_nickname COLLATE utf8_general_ci join qna on qna.qna_num=qna_comment.qcb_num where qcb_num = #{qnanum}
 	order by qc_num desc limit #{starrow}, 5;
+</select>
+
+<select id="qna_select_comment_reply" parameterType="map" resultType="com.jachi.DTO.Qna_comment_reply">
+	select replynum,us_pic as 'replyimg',us_nkname as 'replyuser',replycontent,replydate from qna_comment_reply
+	join userinfo on userinfo.us_id=qna_comment_reply.replyuser where qnapostnum = #{qnanum};
 </select>
 
 <select id="qnalistall_detail" parameterType="Integer" resultType="com.jachi.DTO.QnABBS">

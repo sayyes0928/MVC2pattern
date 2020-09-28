@@ -5,11 +5,12 @@
 <%@ page import="com.jachi.DTO.QnABBS"%>
 <%@ page import="com.jachi.DTO.QnA_Comment"%>
 <%@ page import="com.jachi.DTO.PageInfo"%>
+<%@ page import="com.jachi.DTO.Qna_comment_reply"%>
 
 <%
 	ArrayList<QnABBS> qna_detail = (ArrayList<QnABBS>) request.getAttribute("listall");
 	ArrayList<QnA_Comment> qna_list = (ArrayList<QnA_Comment>) request.getAttribute("qnacommentlist");
-
+	ArrayList<Qna_comment_reply> reply = (ArrayList<Qna_comment_reply>) request.getAttribute("replylist");
 	String us_id = (String) session.getAttribute("us_id"); //로그인 유무 확인
 	String us_nk = (String) session.getAttribute("nkname");
 
@@ -19,6 +20,7 @@
 	int maxPage = pageInfo.getMaxPage();
 	int startPage = pageInfo.getStartPage();
 	int endPage = pageInfo.getEndPage();
+	int getnum = qna_detail.get(0).getQna_num();
 %>
 
 
@@ -59,6 +61,32 @@ function aaa(btn){
 }
 
 </script>
+
+<script>
+	function reply_ok(testnum){
+		console.log(testnum);
+		console.log(<%=getnum%>);
+		location.href = "qna_commentreplyselectList.bo?getnum="+<%=getnum%>+"&getconum="+testnum;
+	}
+</script>
+
+<script>
+
+	function md(num){
+		
+			$('#comment_content'+num).css('display','none');
+			$('#commnet_number'+num).css('display','none');
+			$('#comment_date'+num).css('display','none');
+			$('#comment_reply'+num).css('display','none');
+			$('#comment_delete'+num).css('display','none');
+			$('test'+num).css('display','none');
+			$('#modify_text'+num).css('display','inline');
+			$('#modify_text'+num).focus();
+			$('#modify_bt'+num).css('display','inline');
+	
+	}
+
+</script>
 </head>
 <body>
 	<!-- Header include -->
@@ -94,9 +122,7 @@ function aaa(btn){
 				</span>
 			</div>
 
-
-
-			<div id="qna_post_replysize">
+<div id="qna_post_replysize">
 				<div id="reply_title_size">Comments</div>
 				<%
 					if (us_id != null) {
@@ -125,18 +151,28 @@ function aaa(btn){
 					<span><img
 						src="<%=request.getContextPath()%>/upload/<%=qna_list.get(k).getQc_img()%>"
 						id="comment_profileimg"></span> <span id="comment_id"><%=qna_list.get(k).getQc_nickname()%></span><br>
-					<div id="comment_content"><%=qna_list.get(k).getQc_content()%></div>
-					<span id="commnet_number">글번호: <%=qna_list.get(k).getQc_num()%></span>
-					|<span id="comment_date"><%=qna_list.get(k).getQc_date()%></span>
-					<span><a href="#" class="comment_modify">수정</a></span><span>|</span><span>
-						<a href="#" class="comment_modify">삭제</a>
-					</span>|<span> <input type="button" value="답글"
-						onclick="aaa(<%=k%>)" id="test<%=k%>" class="re_bt"></span>
+					<div id="comment_content<%=k%>"><%=qna_list.get(k).getQc_content()%></div>
+					<span id="commnet_number<%=k%>">글번호: <%=qna_list.get(k).getQc_num()%></span>
+					<span id="comment_date<%=k%>"><%=qna_list.get(k).getQc_date()%></span>
+					<span><input type="button" class="comment_modify" id="comment_reply<%=k%>" value="수정" onclick="md(<%=k%>)"></span><span>
+						<a href="qna_comment_delete.bo?renum=<%=qna_list.get(k).getQc_num()%>&postnum=<%=qna_list.get(k).getQcb_num() %>" class="comment_modify" id="comment_delete<%=k%>">삭제</a>
+					</span><span> <input type="button" value="답글"
+			onclick="aaa(<%=k%>)" id="test<%=k%>" class="re_bt"></span>
+			
+					<input type="text" id="modify_text<%=k%>" class="modify_text"><input type="button" id="modify_bt<%=k%>" value="수정" class="modify_bt">
+			
+			
+			
 					<div class="reply_size" id="reply_size<%=k%>">
-						<input type="text" id="reply_txt" class="reply_txt"
-							name="reply_txt"> <input type="button" value="등록" id="re_okbt">
+						<input type="text" id="reply_txt<%=k %>" class="reply_txt"
+							name="reply_txt<%=k %>"> <input type="button" value="등록" id="re_okbt<%=k %>" onclick="reply_ok(<%=qna_list.get(k).getQc_num()%>)">
 					</div>
 					<hr id="comment_line">
+<!-- 						<div id="reply_reply_size"> -->
+<%-- 							<span><img src="<%=request.getContextPath()%>/upload/<%=reply.get(0).getReplyimg()%>"></span><span>아이디</span><br> --%>
+<!-- 							<div>콘텐츠</div> -->
+<!-- 							<span>글번호</span><span>날짜</span><span>수정</span><span>삭제</span> -->
+<!-- 						</div> -->
 					<%
 						}
 					%>
@@ -148,7 +184,7 @@ function aaa(btn){
 						<%
 							} else {
 						%>
-						<a href="qna.bo?page=<%=nowPage - 1%>">[이전]</a>&nbsp;
+						<a href="qna_detail.bo?getnum=<%=getnum%>&page=<%=nowPage - 1%>">[이전]</a>&nbsp;
 						<%
 							}
 						%>
@@ -161,7 +197,7 @@ function aaa(btn){
 						<%
 							} else {
 						%>
-						<a href="qna.bo?page=<%=a%>">[<%=a%>]
+						<a href="qna_detail.bo?getnum=<%=getnum%>&page=<%=a%>">[<%=a%>]
 						</a>&nbsp;
 						<%
 							}
@@ -178,7 +214,7 @@ function aaa(btn){
 						<%
 							} else {
 						%>
-						<a href="qna.bo?page=<%=nowPage + 1%>">[다음]</a>
+						<a href="qna_detail.bo?getnum=<%=getnum%>&page=<%=nowPage + 1%>">[다음]</a>
 						<%
 							}
 						%>
@@ -202,6 +238,8 @@ function aaa(btn){
 
 
 			</div>
+
+
 
 
 
