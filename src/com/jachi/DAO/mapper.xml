@@ -291,8 +291,8 @@ insert into posting_reply values(default, #{posting_reply_us_id},#{posting_reply
 <select id="select_tip_comment_count" resultType="Integer">
     select count(*) from tip_reply;
 </select>
-<select id="select_tip_Commentlist" parameterType="Integer" resultType="com.jachi.DTO.TipReplyDTO">
-    select us_nkname as 'rep_nickname', us_pic as 'rep_img', rep_post, rep_date from tip_reply join userinfo on userinfo.us_id = tip_reply.rep_nickname order by rep_num desc limit #{Startrow}, 5;
+<select id="select_tip_Commentlist" parameterType="map" resultType="com.jachi.DTO.TipReplyDTO">
+    select us_nkname as 'rep_nickname', us_pic as 'rep_img', rep_post, rep_date from tip_reply join userinfo on userinfo.us_id = tip_reply.rep_nickname where rep_tip_num = #{rep_tip_num} order by rep_num desc limit #{Startrow}, #{limit};
 </select>
 
 </mapper>
