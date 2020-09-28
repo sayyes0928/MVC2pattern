@@ -34,6 +34,7 @@ import com.jachi.Action.MyPagePostingListViewAction;
 import com.jachi.Action.MyhomeDetailAction;
 import com.jachi.Action.MyhomeDetailComentAction;
 import com.jachi.Action.MyhomeWriteProAction;
+import com.jachi.Action.MypageLikeViewAction;
 import com.jachi.Action.MypageOrderListViewAction;
 import com.jachi.Action.MypageOrderViewAction;
 import com.jachi.Action.MypageProfileUserinfoUpdateAction;
@@ -193,7 +194,14 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
-		
+		else if(command.equals("/MypageLikeView.bo")){
+			action  = new MypageLikeViewAction();
+			try {
+				forward=action.execute(request, response );
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}		
 		else if(command.equals("/MypageOrderView.bo")){
 			action  = new MypageOrderViewAction();
 			try {

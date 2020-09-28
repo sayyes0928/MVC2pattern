@@ -1159,7 +1159,7 @@
 /* //////////////////////////////////////////////////// */
 
 .MyPage_container_selectlist {
-  width: 95%;
+  width: 75%;
   height: 300px;
   border: 1px solid black;
   margin: 0 auto;
@@ -1175,18 +1175,33 @@
 }
 
 .MyPage_container_selectlist_orderDate{
+	font-size:20px;
+	font-weight:700;
+	text-align: center;
 	width:15%;
 }
 .MyPage_container_selectlist_productName{
+	font-size:20px;
+	font-weight:700;
+	text-align: center;
 	width:25%;
 }
 .MyPage_container_selectlist_deliveryNumber{
+	font-size:20px;
+	font-weight:700;
+	text-align: center;
 	width:20%;
 }
 .MyPage_container_selectlist_deliveryCompany{
+	font-size:20px;
+	font-weight:700;
+	text-align: center;
 	width:20%;
 }
 .MyPage_container_selectlist_productPrice{
+	font-size:20px;
+	font-weight:700;
+	text-align: center;
 	width:20%;
 }
 /*  마이페이지 프로필 */

@@ -183,7 +183,7 @@
 													</div></a>
 											</div>
 											<div class="short-cut__item">
-												<a href="/users/8659285/praises"><div
+												<a href="MypageLikeView.bo"><div
 														class="short-cut__icon">
 														<svg width="24" height="24" viewBox="0 0 24 24"
 															preserveAspectRatio="xMidYMid meet">

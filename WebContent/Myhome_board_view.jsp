@@ -213,7 +213,7 @@
 								src="<%=request.getContextPath()%>/upload/<%=postList.get(i).getPost_pic()%>" /></a>
 						</div>
 
-						<%}
+						<% }
 							 }
 							}
 						%>
