@@ -68,7 +68,7 @@ $(document).ready(function(){
 				<div class="main_menu">
 					<ul>
 						<li><a href="Jachi_main.bo" id="a_home">Home</a></li>
-						<li><a href="storeList.bo" id="a_store">Store</a></li>
+						<li><a href="plindex.bo" id="a_store">Store</a></li>
 						<li><a href="btList.bo" id="a_photo">Photo</a></li>
 						<li><a href="qna.bo" id="a_qna">QnA</a></li>
 						<li><a href="#" id="a_contact">Contact</a></li>
@@ -104,9 +104,9 @@ $(document).ready(function(){
 					<li><a href="#">Best Store</a></li>
 				</ul>
 				<ul id="sub_store">
-					<li><a href="#">Store Home</a></li>
+					<li><a href="plindex.bo">Store Home</a></li>
 					<li><a href="#">Best Store</a></li>
-					<li><a href="#">Category</a></li>
+					<li><a href="storeList.bo">Category</a></li>
 				</ul>
 				<ul id="sub_Photo">
 					<li><a href="#">Photo Home</a></li>

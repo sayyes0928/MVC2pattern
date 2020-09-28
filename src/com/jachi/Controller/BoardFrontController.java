@@ -38,6 +38,7 @@ import com.jachi.Action.MypageOrderViewAction;
 import com.jachi.Action.MypageProfileUserinfoUpdateAction;
 import com.jachi.Action.MypageScrapViewAction;
 import com.jachi.Action.MypageUserInfoUpdateAction;
+import com.jachi.Action.PLIndexAction;
 import com.jachi.Action.PLSelectAction;
 import com.jachi.Action.ProductOrderAction;
 import com.jachi.Action.ProductOrderInsertAction;
@@ -574,6 +575,15 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
+		else if(command.equals("/plindex.bo")) {
+			action = new PLIndexAction();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
 		
 		
 		
