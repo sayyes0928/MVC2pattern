@@ -55,6 +55,7 @@ import com.jachi.Action.QnaSearchAction;
 import com.jachi.Action.QnaSearchListAction;
 import com.jachi.Action.QnaSelectAction;
 import com.jachi.Action.QnaWriteAction;
+import com.jachi.Action.TipDeleteAction;
 import com.jachi.Action.TipDetailAction;
 import com.jachi.Action.TipListAction;
 import com.jachi.Action.TipReplyDeleteAction;
@@ -587,6 +588,15 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		
 		else if(command.equals("/Tip_reply_delete.bo")) {
 			action = new TipReplyDeleteAction();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		else if(command.equals("/TipDelete.bo")) {
+			action = new TipDeleteAction();
 			try {
 				forward=action.execute(request, response);
 			} catch (Exception e) {
