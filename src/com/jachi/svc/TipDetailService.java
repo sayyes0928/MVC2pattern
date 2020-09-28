@@ -40,7 +40,7 @@ public class TipDetailService {
     	Map<String,Object> map = new HashMap<>();
 		map.put("Startrow", Startrow);
 		map.put("limit", limit);
-		map.put("rep_tup_num", tip_num);
+		map.put("rep_tip_num", tip_num);
 		
     	SqlSessionFactory sqlfactory = BoardDAO.getConn();
     	SqlSession sqlsession = sqlfactory.openSession();
