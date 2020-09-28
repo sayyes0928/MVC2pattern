@@ -25,8 +25,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="./myhome.web.css/teamTopNav.css"
-	type="text/css">
+
 <link rel="stylesheet" href="./Teamcss/Yuchan_Qna.css" type="text/css">
 
 <script
@@ -41,8 +40,10 @@
 </script>
 
 <script>
-	$(function() {
-		$(".typed").typed({
+
+var qnajs = jQuery.noConflict();
+qnajs(function() {
+	qnajs(".typed").typed({
 			strings : [ "질문해주세요 :)", "답변해드립니다 :D" ],
 			// Optionally use an HTML element to grab strings from (must wrap each string in a <p>)
 			stringsElement : null,
@@ -242,7 +243,7 @@
 								src="<%=request.getContextPath()%>/upload/<%=userqna.get(i).getQna_img()%>"
 								class="img-circle"><span> <!-- 게시물번호 -->게시물번호 : <%=userqna.get(i).getQna_num()%>
 							</span> <span> <!-- 닉네임 -->닉네임 : <%=userqna.get(i).getQna_nickname()%>
-							</span> <!-- 시간 -->게시시간 : <%=userqna.get(i).getQna_time()%> <span></span><span></span></td>
+							</span> <span>게시시간 : <%=userqna.get(i).getQna_time()%></span><span></span></td>
 
 						</tr>
 					</table>
@@ -250,7 +251,51 @@
 					<%
 						}
 					%>
+					<div id="pageList">
+						<%
+							if (nowPage <= 1) {
+						%>
+						[이전]&nbsp;
+						<%
+							} else {
+						%>
+						<a href="qna.bo?page=<%=nowPage - 1%>">[이전]</a>&nbsp;
+						<%
+							}
+						%>
 
+						<%
+							for (int a = startPage; a <= endPage; a++) {
+									if (a == nowPage) {
+						%>
+						[<%=a%>]
+						<%
+							} else {
+						%>
+						<a href="qna.bo?page=<%=a%>">[<%=a%>]
+						</a>&nbsp;
+						<%
+							}
+						%>
+						<%
+							}
+						%>
+
+
+						<%
+							if (nowPage >= maxPage) {
+						%>
+						[다음]
+						<%
+							} else {
+						%>
+						<a href="qna.bo?page=<%=nowPage + 1%>">[다음]</a>
+						<%
+							}
+						%>
+
+
+					</div>
 
 
 					<%
@@ -262,57 +307,11 @@
 					%>
 
 				</div>
-
-
-
 			</div>
-		</section>
-
-		<section id="pageList">
-			<%
-				if (nowPage <= 1) {
-			%>
-			[이전]&nbsp;
-			<%
-				} else {
-			%>
-			<a href="qna.bo?page=<%=nowPage - 1%>">[이전]</a>&nbsp;
-			<%
-				}
-			%>
-
-			<%
-				for (int a = startPage; a <= endPage; a++) {
-					if (a == nowPage) {
-			%>
-			[<%=a%>]
-			<%
-				} else {
-			%>
-			<a href="qna.bo?page=<%=a%>">[<%=a%>]
-			</a>&nbsp;
-			<%
-				}
-			%>
-			<%
-				}
-			%>
-
-
-			<%
-				if (nowPage >= maxPage) {
-			%>
-			[다음]
-			<%
-				} else {
-			%>
-			<a href="qna.bo?page=<%=nowPage + 1%>">[다음]</a>
-			<%
-				}
-			%>
-
 
 		</section>
+
+
 	</form>
 </body>
 </html>

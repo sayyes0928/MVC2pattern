@@ -462,7 +462,6 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		}
 		
 		else if(command.equals("/tiplist.bo")) {		
-			System.out.println("팁 리스트 컨트롤러");
 			action = new TipListAction();
 			try {
 				forward=action.execute(request, response);

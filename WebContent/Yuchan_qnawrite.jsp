@@ -92,9 +92,7 @@ function existingTag(text)
 </head>
 <body>
 	<header>
-		<div id="BT_writebannersize">
-			<a href="#" id="BT_writebanner"><span>자취해보자</span></a>
-		</div>
+		<jsp:include page="HeaderTestjsp.jsp"></jsp:include>
 
 	</header>
 	<main>

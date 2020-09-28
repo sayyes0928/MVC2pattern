@@ -82,7 +82,7 @@ $(document).ready(function(){
 				%>
 
 				<div id="user_nav">
-					<span id="join_nav"><a href="LoginFormpage.bo">Sign Up</a></span>|<span id="login_nav"><a href="join.bo">Login</a></span>
+					<span id="join_nav"><a href="join.bo">Sign Up</a></span>|<span id="login_nav"><a href="LoginFormpage.bo">Login</a></span>
 				</div>
 				<%
 					} else {
@@ -111,7 +111,7 @@ $(document).ready(function(){
 				<ul id="sub_Photo">
 					<li><a href="#">Photo Home</a></li>
 					<li><a href="#">Best Photo</a></li>
-					<li><a href="#">Tip</a></li>
+					<li><a href="tiplist.bo">Tip</a></li>
 				</ul>
 				<ul id="sub_qna">
 					<li><a href="#">QNA Home</a></li>
