@@ -161,7 +161,7 @@ insert into posting_reply values(default, #{posting_reply_us_id},#{posting_reply
 </insert>
 
 <insert id="insert_tip" parameterType="com.jachi.DTO.TipDTO">
-    insert into tip values(#{tip_nickname}, #{tip_post}, default, #{tip_title}, #{tip_coverimg}, now());
+    insert into tip values(#{tip_nickname}, #{tip_post}, default, #{tip_title}, #{tip_coverimg}, now(), #{tip_img});
 </insert> 
 
 <insert id="insert_order_complite" parameterType="com.jachi.DTO.OrderDTO">
@@ -278,11 +278,18 @@ insert into posting_reply values(default, #{posting_reply_us_id},#{posting_reply
 
 
 <insert id="insert_TipReply" parameterType="com.jachi.DTO.TipReplyDTO">
-    insert into tip_reply values(#{rep_nickname}, #{rep_img}, #{tip_num}, default, #{rep_post}, now());
+    insert into tip_reply values(#{rep_nickname}, #{rep_img}, #{rep_tip_num}, default, #{rep_post}, now());
 </insert>
 
 <select id="select_TipDetail" parameterType="Integer" resultType="com.jachi.DTO.TipDTO">
     select tip_num, tip_title, tip_post, tip_coverimg, tip_date, us_nkname as 'tip_nickname', us_pic as 'tip_img' from tip join userinfo on userinfo.us_id = tip.tip_nickname where tip_num = #{tip_num};
+</select>
+
+<select id="select_tip_comment_count" resultType="Integer">
+    select count(*) from tip_reply;
+</select>
+<select id="select_tip_Commentlist" parameterType="Integer" resultType="com.jachi.DTO.TipReplyDTO">
+    select us_nkname as 'rep_nickname', us_pic as 'rep_img', rep_post, rep_date from tip_reply join userinfo on userinfo.us_id = tip_reply.rep_nickname order by rep_num desc limit #{Startrow}, 5;
 </select>
 
 </mapper>

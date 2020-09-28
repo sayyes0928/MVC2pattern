@@ -7,7 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.jachi.DTO.ActionForward;
+import com.jachi.DTO.PageInfo;
 import com.jachi.DTO.TipDTO;
+import com.jachi.DTO.TipReplyDTO;
 import com.jachi.svc.TipDetailService;
 import com.jachi.svc.TipSelectService;
 
@@ -24,9 +26,38 @@ public class TipDetailAction implements Action{
 		TipDetailService tipselectservice = new TipDetailService();
 		tipdto = tipselectservice.getTipinfo(tip_num);
 		
+		
+		List<TipReplyDTO> commentlist = new ArrayList<TipReplyDTO>();
+		int page = 1;
+		int limit = 5;
+		
+		if(request.getParameter("commentpage") != null) {
+			page = Integer.parseInt(request.getParameter("commentpage"));
+		}
+		
+		TipDetailService commentservice = new TipDetailService();
+		int listCount = commentservice.getListcount();
+		
+		commentlist = commentservice.getArticleList(page, limit);
+		int MaxPage = (int)((double)listCount/limit+0.95);
+		int StartPage = (((int)((double)page/10+0.9))-1)*10+1;
+		int EndPage = StartPage+10-1;
+		
+		if(EndPage > MaxPage) {
+			EndPage = MaxPage;
+		}
+		
+		PageInfo pageinfo = new PageInfo();
+		pageinfo.setEndPage(EndPage);
+		pageinfo.setListCount(listCount);
+		pageinfo.setPage(page);
+		pageinfo.setStartPage(StartPage);
+		
 		ActionForward forward = new ActionForward();
 		request.setAttribute("tipdetail", tipdto);
-   		forward.setPath("TipDetail.jsp");
+		request.setAttribute("comment_pageinfo", pageinfo);
+		request.setAttribute("commentlist", commentlist);
+   		forward.setPath("/TipDetail.jsp");
    		
 		return forward;
 	}

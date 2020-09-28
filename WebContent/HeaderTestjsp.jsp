@@ -111,7 +111,7 @@ $(document).ready(function(){
 				<ul id="sub_Photo">
 					<li><a href="#">Photo Home</a></li>
 					<li><a href="#">Best Photo</a></li>
-					<li><a href="#">Tip</a></li>
+					<li><a href="tiplist.bo">Tip</a></li>
 				</ul>
 				<ul id="sub_qna">
 					<li><a href="#">QNA Home</a></li>
