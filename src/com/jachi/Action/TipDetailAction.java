@@ -56,7 +56,6 @@ public class TipDetailAction implements Action{
 		pageinfo.setPage(page);
 		pageinfo.setStartPage(StartPage);
 		
-		System.out.println(commentlist.get(0).getRep_us_id());
 		ActionForward forward = new ActionForward();
 		request.setAttribute("tipdetail", tipdto);
 		request.setAttribute("comment_pageinfo", pageinfo);
