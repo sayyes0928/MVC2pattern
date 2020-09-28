@@ -1,11 +1,13 @@
 package com.jachi.svc;
 
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.jachi.DAO.BoardDAO;
+import com.jachi.DTO.BeautyRoomDTO;
 
 public class LikePostinCheckService {
 	SqlSessionFactory factory = BoardDAO.getConn();
@@ -50,4 +52,11 @@ public class LikePostinCheckService {
 			e.printStackTrace();
 		}
 	}
+	public List<BeautyRoomDTO> getLikeList(String us_id){
+		
+		List<BeautyRoomDTO> getBookmarkList = sqlsession.selectList("select_getLikeList", us_id);
+		sqlsession.close();
+		
+	return getBookmarkList;
+}
 }

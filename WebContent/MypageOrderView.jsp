@@ -17,6 +17,8 @@
 	href="./myhome.web.css/mypage_profile_1.css" />
 <link rel="stylesheet" type="text/css"
 	href="./myhome.web.css/mypage_profile_2.css" />
+<link rel="stylesheet" type="text/css"
+	href="./myhome.web.css/scrapbook_1.css" />
 
 
 
@@ -85,7 +87,7 @@
 
 	<form id="contentPage">
 		<!-- Header include -->
-	<jsp:include page="HeaderTestjsp.jsp"></jsp:include>
+		<jsp:include page="HeaderTestjsp.jsp"></jsp:include>
 
 
 		<div id="m_wrap">
@@ -166,9 +168,7 @@
 			</div>
 			</main>
 		</div>
-		<footer>
-			<div></div>
-		</footer>
+		<jsp:include page="include_footer.jsp"></jsp:include>
 	</form>
 
 </body>

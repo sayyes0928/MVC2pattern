@@ -1,0 +1,1015 @@
+.orders.show>.contents, .order_productions.show>.contents {
+	max-width: 1030px;
+	width: 100%;
+	margin: 30px auto;
+	background-color: #ffffff;
+	box-sizing: border-box;
+	overflow: hidden;
+	padding: 40px 50px;
+	color: #424242
+}
+
+@media only screen and (max-width: 767px) {
+	.orders.show>.contents, .order_productions.show>.contents {
+		margin-top: 0;
+		padding: 30px 15px
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+	.orders.show>.contents, .order_productions.show>.contents {
+		max-width: 614px;
+		padding: 40px 20px
+	}
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1279px) {
+	.orders.show>.contents, .order_productions.show>.contents {
+		max-width: 800px;
+		padding: 40px 20px
+	}
+}
+
+.orders.show>.contents .point-info, .order_productions.show>.contents .point-info
+	{
+	box-sizing: border-box;
+	font-size: 13px;
+	line-height: 1.54;
+	color: #424242;
+	padding: 12px 16px;
+	background-color: #e5f9ff;
+	margin: 10px 0 25px 0
+}
+
+@media only screen and (max-width: 767px) {
+	.orders.show>.contents .point-info--pc, .order_productions.show>.contents .point-info--pc
+		{
+		display: none
+	}
+}
+
+.orders.show>.contents .point-info--mobile, .order_productions.show>.contents .point-info--mobile
+	{
+	display: none
+}
+
+@media only screen and (max-width: 767px) {
+	.orders.show>.contents .point-info--mobile, .order_productions.show>.contents .point-info--mobile
+		{
+		display: block;
+		margin: -30px -15px 25px;
+		width: calc(100% + 30px)
+	}
+}
+
+.orders.show>.contents .point-info>ul>li>span, .order_productions.show>.contents .point-info>ul>li>span
+	{
+	font-weight: bold;
+	color: #35c5f0
+}
+
+.orders.show>.contents>.title, .order_productions.show>.contents>.title
+	{
+	font-size: 24px;
+	font-weight: 700;
+	padding: 0 0 30px
+}
+
+@media only screen and (max-width: 767px) {
+	.orders.show>.contents>.title, .order_productions.show>.contents>.title
+		{
+		font-size: 18px;
+		padding: 0 5px 20px
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+	.orders.show>.contents>.title, .order_productions.show>.contents>.title
+		{
+		padding: 0 10px 30px
+	}
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1279px) {
+	.orders.show>.contents>.title, .order_productions.show>.contents>.title
+		{
+		padding: 0 10px 30px
+	}
+}
+
+.orders.show>.contents>#vbank_info, .orders.show>.contents #payment_info,
+	.orders.show>.contents #delivery_info, .orders.show>.contents #change_delivery_form,
+	.order_productions.show>.contents>#vbank_info, .order_productions.show>.contents #payment_info,
+	.order_productions.show>.contents #delivery_info, .order_productions.show>.contents #change_delivery_form
+	{
+	font-size: 15px;
+	margin-bottom: 55px
+}
+
+@media only screen and (max-width: 767px) {
+	.orders.show>.contents>#vbank_info, .orders.show>.contents #payment_info,
+		.orders.show>.contents #delivery_info, .orders.show>.contents #change_delivery_form,
+		.order_productions.show>.contents>#vbank_info, .order_productions.show>.contents #payment_info,
+		.order_productions.show>.contents #delivery_info, .order_productions.show>.contents #change_delivery_form
+		{
+		font-size: 12px;
+		margin-bottom: 25px
+	}
+}
+
+.orders.show>.contents>#vbank_info>.subtitle, .orders.show>.contents #payment_info>.subtitle,
+	.orders.show>.contents #delivery_info>.subtitle, .orders.show>.contents #change_delivery_form>.subtitle,
+	.order_productions.show>.contents>#vbank_info>.subtitle,
+	.order_productions.show>.contents #payment_info>.subtitle,
+	.order_productions.show>.contents #delivery_info>.subtitle,
+	.order_productions.show>.contents #change_delivery_form>.subtitle {
+	font-weight: 700;
+	border-bottom: solid 1px #dcdcdc;
+	padding: 15px 10px
+}
+
+@media only screen and (max-width: 767px) {
+	.orders.show>.contents>#vbank_info>.subtitle, .orders.show>.contents #payment_info>.subtitle,
+		.orders.show>.contents #delivery_info>.subtitle, .orders.show>.contents #change_delivery_form>.subtitle,
+		.order_productions.show>.contents>#vbank_info>.subtitle,
+		.order_productions.show>.contents #payment_info>.subtitle,
+		.order_productions.show>.contents #delivery_info>.subtitle,
+		.order_productions.show>.contents #change_delivery_form>.subtitle {
+		font-size: 13px;
+		padding: 15px 5px
+	}
+}
+
+.orders.show>.contents>#vbank_info>.wrap_panel, .orders.show>.contents #payment_info>.wrap_panel,
+	.orders.show>.contents #delivery_info>.wrap_panel, .orders.show>.contents #change_delivery_form>.wrap_panel,
+	.order_productions.show>.contents>#vbank_info>.wrap_panel,
+	.order_productions.show>.contents #payment_info>.wrap_panel,
+	.order_productions.show>.contents #delivery_info>.wrap_panel,
+	.order_productions.show>.contents #change_delivery_form>.wrap_panel {
+	display: table-cell;
+	padding: 5px 10px
+}
+
+@media only screen and (max-width: 767px) {
+	.orders.show>.contents>#vbank_info>.wrap_panel, .orders.show>.contents #payment_info>.wrap_panel,
+		.orders.show>.contents #delivery_info>.wrap_panel, .orders.show>.contents #change_delivery_form>.wrap_panel,
+		.order_productions.show>.contents>#vbank_info>.wrap_panel,
+		.order_productions.show>.contents #payment_info>.wrap_panel,
+		.order_productions.show>.contents #delivery_info>.wrap_panel,
+		.order_productions.show>.contents #change_delivery_form>.wrap_panel {
+		display: block
+	}
+}
+
+.orders.show>.contents>#vbank_info>.wrap_panel.divide, .orders.show>.contents #payment_info>.wrap_panel.divide,
+	.orders.show>.contents #delivery_info>.wrap_panel.divide, .orders.show>.contents #change_delivery_form>.wrap_panel.divide,
+	.order_productions.show>.contents>#vbank_info>.wrap_panel.divide,
+	.order_productions.show>.contents #payment_info>.wrap_panel.divide,
+	.order_productions.show>.contents #delivery_info>.wrap_panel.divide,
+	.order_productions.show>.contents #change_delivery_form>.wrap_panel.divide
+	{
+	width: 360px
+}
+
+@media only screen and (max-width: 767px) {
+	.orders.show>.contents>#vbank_info>.wrap_panel.divide, .orders.show>.contents #payment_info>.wrap_panel.divide,
+		.orders.show>.contents #delivery_info>.wrap_panel.divide, .orders.show>.contents #change_delivery_form>.wrap_panel.divide,
+		.order_productions.show>.contents>#vbank_info>.wrap_panel.divide,
+		.order_productions.show>.contents #payment_info>.wrap_panel.divide,
+		.order_productions.show>.contents #delivery_info>.wrap_panel.divide,
+		.order_productions.show>.contents #change_delivery_form>.wrap_panel.divide
+		{
+		width: 310px
+	}
+	.orders.show>.contents>#vbank_info>.wrap_panel.divide.one, .orders.show>.contents #payment_info>.wrap_panel.divide.one,
+		.orders.show>.contents #delivery_info>.wrap_panel.divide.one, .orders.show>.contents #change_delivery_form>.wrap_panel.divide.one,
+		.order_productions.show>.contents>#vbank_info>.wrap_panel.divide.one,
+		.order_productions.show>.contents #payment_info>.wrap_panel.divide.one,
+		.order_productions.show>.contents #delivery_info>.wrap_panel.divide.one,
+		.order_productions.show>.contents #change_delivery_form>.wrap_panel.divide.one
+		{
+		padding-bottom: 0px
+	}
+	.orders.show>.contents>#vbank_info>.wrap_panel.divide.two, .orders.show>.contents #payment_info>.wrap_panel.divide.two,
+		.orders.show>.contents #delivery_info>.wrap_panel.divide.two, .orders.show>.contents #change_delivery_form>.wrap_panel.divide.two,
+		.order_productions.show>.contents>#vbank_info>.wrap_panel.divide.two,
+		.order_productions.show>.contents #payment_info>.wrap_panel.divide.two,
+		.order_productions.show>.contents #delivery_info>.wrap_panel.divide.two,
+		.order_productions.show>.contents #change_delivery_form>.wrap_panel.divide.two
+		{
+		padding-top: 0px
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+	.orders.show>.contents>#vbank_info>.wrap_panel.divide, .orders.show>.contents #payment_info>.wrap_panel.divide,
+		.orders.show>.contents #delivery_info>.wrap_panel.divide, .orders.show>.contents #change_delivery_form>.wrap_panel.divide,
+		.order_productions.show>.contents>#vbank_info>.wrap_panel.divide,
+		.order_productions.show>.contents #payment_info>.wrap_panel.divide,
+		.order_productions.show>.contents #delivery_info>.wrap_panel.divide,
+		.order_productions.show>.contents #change_delivery_form>.wrap_panel.divide
+		{
+		width: 267px
+	}
+}
+
+.orders.show>.contents>#vbank_info>.wrap_panel>.field, .orders.show>.contents #payment_info>.wrap_panel>.field,
+	.orders.show>.contents #delivery_info>.wrap_panel>.field, .orders.show>.contents #change_delivery_form>.wrap_panel>.field,
+	.order_productions.show>.contents>#vbank_info>.wrap_panel>.field,
+	.order_productions.show>.contents #payment_info>.wrap_panel>.field,
+	.order_productions.show>.contents #delivery_info>.wrap_panel>.field,
+	.order_productions.show>.contents #change_delivery_form>.wrap_panel>.field
+	{
+	margin: 15px 0;
+	overflow: hidden
+}
+
+.orders.show>.contents>#vbank_info>.wrap_panel>.field>.title, .orders.show>.contents #payment_info>.wrap_panel>.field>.title,
+	.orders.show>.contents #delivery_info>.wrap_panel>.field>.title,
+	.orders.show>.contents #change_delivery_form>.wrap_panel>.field>.title,
+	.order_productions.show>.contents>#vbank_info>.wrap_panel>.field>.title,
+	.order_productions.show>.contents #payment_info>.wrap_panel>.field>.title,
+	.order_productions.show>.contents #delivery_info>.wrap_panel>.field>.title,
+	.order_productions.show>.contents #change_delivery_form>.wrap_panel>.field>.title
+	{
+	color: #bdbdbd;
+	float: left
+}
+
+.orders.show>.contents>#vbank_info>.wrap_panel>.field>.content, .orders.show>.contents #payment_info>.wrap_panel>.field>.content,
+	.orders.show>.contents #delivery_info>.wrap_panel>.field>.content,
+	.orders.show>.contents #change_delivery_form>.wrap_panel>.field>.content,
+	.order_productions.show>.contents>#vbank_info>.wrap_panel>.field>.content,
+	.order_productions.show>.contents #payment_info>.wrap_panel>.field>.content,
+	.order_productions.show>.contents #delivery_info>.wrap_panel>.field>.content,
+	.order_productions.show>.contents #change_delivery_form>.wrap_panel>.field>.content
+	{
+	padding-left: 110px
+}
+
+.orders.show>.contents>#vbank_info>.wrap_panel>.field>.content.emphasis,
+	.orders.show>.contents #payment_info>.wrap_panel>.field>.content.emphasis,
+	.orders.show>.contents #delivery_info>.wrap_panel>.field>.content.emphasis,
+	.orders.show>.contents #change_delivery_form>.wrap_panel>.field>.content.emphasis,
+	.order_productions.show>.contents>#vbank_info>.wrap_panel>.field>.content.emphasis,
+	.order_productions.show>.contents #payment_info>.wrap_panel>.field>.content.emphasis,
+	.order_productions.show>.contents #delivery_info>.wrap_panel>.field>.content.emphasis,
+	.order_productions.show>.contents #change_delivery_form>.wrap_panel>.field>.content.emphasis
+	{
+	font-weight: 700
+}
+
+.orders.show>.contents>#vbank_info>.wrap_panel>.field>.content>.name,
+	.orders.show>.contents #payment_info>.wrap_panel>.field>.content>.name,
+	.orders.show>.contents #delivery_info>.wrap_panel>.field>.content>.name,
+	.orders.show>.contents #change_delivery_form>.wrap_panel>.field>.content>.name,
+	.order_productions.show>.contents>#vbank_info>.wrap_panel>.field>.content>.name,
+	.order_productions.show>.contents #payment_info>.wrap_panel>.field>.content>.name,
+	.order_productions.show>.contents #delivery_info>.wrap_panel>.field>.content>.name,
+	.order_productions.show>.contents #change_delivery_form>.wrap_panel>.field>.content>.name
+	{
+	font-size: 12px;
+	color: #bdbdbd;
+	margin-bottom: 8px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	word-wrap: break-word
+}
+
+.orders.show>.contents>#vbank_info>.wrap_panel>.field>.content>.memo,
+	.orders.show>.contents #payment_info>.wrap_panel>.field>.content>.memo,
+	.orders.show>.contents #delivery_info>.wrap_panel>.field>.content>.memo,
+	.orders.show>.contents #change_delivery_form>.wrap_panel>.field>.content>.memo,
+	.order_productions.show>.contents>#vbank_info>.wrap_panel>.field>.content>.memo,
+	.order_productions.show>.contents #payment_info>.wrap_panel>.field>.content>.memo,
+	.order_productions.show>.contents #delivery_info>.wrap_panel>.field>.content>.memo,
+	.order_productions.show>.contents #change_delivery_form>.wrap_panel>.field>.content>.memo
+	{
+	margin-bottom: 15px
+}
+
+.orders.show>.contents>#vbank_info>.wrap_panel>.field>.content>a,
+	.orders.show>.contents #payment_info>.wrap_panel>.field>.content>a,
+	.orders.show>.contents #delivery_info>.wrap_panel>.field>.content>a,
+	.orders.show>.contents #change_delivery_form>.wrap_panel>.field>.content>a,
+	.order_productions.show>.contents>#vbank_info>.wrap_panel>.field>.content>a,
+	.order_productions.show>.contents #payment_info>.wrap_panel>.field>.content>a,
+	.order_productions.show>.contents #delivery_info>.wrap_panel>.field>.content>a,
+	.order_productions.show>.contents #change_delivery_form>.wrap_panel>.field>.content>a
+	{
+	text-decoration: underline;
+	font-size: 13px;
+	margin-top: 1px;
+	color: #757575
+}
+
+.orders.show>.contents>#vbank_info>.wrap_panel>.field>.personal, .orders.show>.contents #payment_info>.wrap_panel>.field>.personal,
+	.orders.show>.contents #delivery_info>.wrap_panel>.field>.personal,
+	.orders.show>.contents #change_delivery_form>.wrap_panel>.field>.personal,
+	.order_productions.show>.contents>#vbank_info>.wrap_panel>.field>.personal,
+	.order_productions.show>.contents #payment_info>.wrap_panel>.field>.personal,
+	.order_productions.show>.contents #delivery_info>.wrap_panel>.field>.personal,
+	.order_productions.show>.contents #change_delivery_form>.wrap_panel>.field>.personal
+	{
+	padding-left: 80px
+}
+
+@media only screen and (max-width: 767px) {
+	.orders.show>.contents>#vbank_info>.wrap_panel>.field>.personal, .orders.show>.contents #payment_info>.wrap_panel>.field>.personal,
+		.orders.show>.contents #delivery_info>.wrap_panel>.field>.personal,
+		.orders.show>.contents #change_delivery_form>.wrap_panel>.field>.personal,
+		.order_productions.show>.contents>#vbank_info>.wrap_panel>.field>.personal,
+		.order_productions.show>.contents #payment_info>.wrap_panel>.field>.personal,
+		.order_productions.show>.contents #delivery_info>.wrap_panel>.field>.personal,
+		.order_productions.show>.contents #change_delivery_form>.wrap_panel>.field>.personal
+		{
+		padding-left: 110px
+	}
+}
+
+.orders.show>.contents>#detail_info, .order_productions.show>.contents>#detail_info
+	{
+	font-size: 15px;
+	margin-bottom: 55px
+}
+
+@media only screen and (max-width: 767px) {
+	.orders.show>.contents>#detail_info, .order_productions.show>.contents>#detail_info
+		{
+		margin-bottom: 25px
+	}
+}
+
+.orders.show>.contents>#detail_info>.subtitle, .order_productions.show>.contents>#detail_info>.subtitle
+	{
+	font-weight: 700;
+	padding: 15px 10px
+}
+
+@media only screen and (max-width: 767px) {
+	.orders.show>.contents>#detail_info>.subtitle, .order_productions.show>.contents>#detail_info>.subtitle
+		{
+		font-size: 13px;
+		padding: 15px 5px
+	}
+}
+
+.orders.show>.contents>#detail_info>.table, .order_productions.show>.contents>#detail_info>.table
+	{
+	margin-bottom: 40px
+}
+
+.orders.show>.contents>#detail_info>.table>.order_delivery,
+	.order_productions.show>.contents>#detail_info>.table>.order_delivery {
+	text-align: center;
+	font-size: 13px;
+	color: #757575;
+	padding: 15px 0;
+	background-color: #eeeeee
+}
+
+@media only screen and (max-width: 767px) {
+	.orders.show>.contents>#detail_info>.table>.order_delivery,
+		.order_productions.show>.contents>#detail_info>.table>.order_delivery
+		{
+		font-size: 11px
+	}
+}
+
+.orders.show>.contents>#detail_info>.table>.order_delivery>.method,
+	.order_productions.show>.contents>#detail_info>.table>.order_delivery>.method
+	{
+	margin-bottom: 8px
+}
+
+.orders.show>.contents>#detail_info>.table>.order_delivery>span, .orders.show>.contents>#detail_info>.table>.order_delivery a,
+	.order_productions.show>.contents>#detail_info>.table>.order_delivery>span,
+	.order_productions.show>.contents>#detail_info>.table>.order_delivery a
+	{
+	font-size: 15px;
+	font-weight: bold
+}
+
+@media only screen and (max-width: 767px) {
+	.orders.show>.contents>#detail_info>.table>.order_delivery>span, .orders.show>.contents>#detail_info>.table>.order_delivery a,
+		.order_productions.show>.contents>#detail_info>.table>.order_delivery>span,
+		.order_productions.show>.contents>#detail_info>.table>.order_delivery a
+		{
+		font-size: 13px
+	}
+}
+
+.orders.show>.contents>#detail_info>.table>.order_delivery .phone,
+	.order_productions.show>.contents>#detail_info>.table>.order_delivery .phone
+	{
+	color: #35c5f0;
+	text-decoration: underline
+}
+
+.orders.show>.contents>#detail_info>.table>.order_list,
+	.order_productions.show>.contents>#detail_info>.table>.order_list {
+	display: table;
+	width: 100%;
+	border-top: solid 1px #dcdcdc;
+	font-size: 15px
+}
+
+.orders.show>.contents>#detail_info>.table>.order_list>.product_image,
+	.order_productions.show>.contents>#detail_info>.table>.order_list>.product_image
+	{
+	display: table-cell;
+	width: 90px;
+	vertical-align: top
+}
+
+.orders.show>.contents>#detail_info>.table>.order_list>.product_image>.image,
+	.order_productions.show>.contents>#detail_info>.table>.order_list>.product_image>.image
+	{
+	width: 90px;
+	height: 90px;
+	background-size: cover;
+	background-position: center;
+	margin: 20px 0 0 10px
+}
+
+.orders.show>.contents>#detail_info>.table>.order_list>.product_detail,
+	.order_productions.show>.contents>#detail_info>.table>.order_list>.product_detail
+	{
+	display: table-cell;
+	padding: 20px
+}
+
+@media only screen and (max-width: 767px) {
+	.orders.show>.contents>#detail_info>.table>.order_list>.product_detail,
+		.order_productions.show>.contents>#detail_info>.table>.order_list>.product_detail
+		{
+		font-size: 13px;
+		padding-bottom: 10px
+	}
+}
+
+.orders.show>.contents>#detail_info>.table>.order_list>.product_detail>.name,
+	.order_productions.show>.contents>#detail_info>.table>.order_list>.product_detail>.name
+	{
+	font-size: 15px;
+	font-weight: 700;
+	margin-bottom: 15px;
+	display: block
+}
+
+.orders.show>.contents>#detail_info>.table>.order_list>.product_detail>.option,
+	.order_productions.show>.contents>#detail_info>.table>.order_list>.product_detail>.option
+	{
+	margin-bottom: 10px;
+	color: #bdbdbd;
+	word-break: break-word
+}
+
+.orders.show>.contents>#detail_info>.table>.order_list>.product_detail>.cost,
+	.order_productions.show>.contents>#detail_info>.table>.order_list>.product_detail>.cost
+	{
+	font-weight: 700;
+	margin-bottom: 10px;
+	float: left;
+	margin-right: 20px
+}
+
+@media only screen and (max-width: 767px) {
+	.orders.show>.contents>#detail_info>.table>.order_list>.product_detail>.cost,
+		.order_productions.show>.contents>#detail_info>.table>.order_list>.product_detail>.cost
+		{
+		margin-right: 10px
+	}
+}
+
+.orders.show>.contents>#detail_info>.table>.order_list>.product_detail>.count,
+	.order_productions.show>.contents>#detail_info>.table>.order_list>.product_detail>.count
+	{
+	margin-bottom: 10px;
+	color: #bdbdbd
+}
+
+.orders.show>.contents>#detail_info>.table>.order_list>.product_detail>.status,
+	.order_productions.show>.contents>#detail_info>.table>.order_list>.product_detail>.status
+	{
+	color: #35c5f0;
+	font-size: 15px
+}
+
+.orders.show>.contents>#detail_info>.table>.order_list>.product_detail>.status>span,
+	.order_productions.show>.contents>#detail_info>.table>.order_list>.product_detail>.status>span
+	{
+	color: #bdbdbd
+}
+
+.orders.show>.contents>#detail_info>.table>.order_list>.product_detail>.status .status__divider,
+	.order_productions.show>.contents>#detail_info>.table>.order_list>.product_detail>.status .status__divider
+	{
+	border-left: 1px solid #ededed;
+	height: 15px;
+	width: 5px;
+	margin: 0 4px;
+	display: inline-block;
+	vertical-align: middle
+}
+
+.orders.show>.contents>#detail_info>.table>.order_list>.product_detail>.button,
+	.order_productions.show>.contents>#detail_info>.table>.order_list>.product_detail>.button
+	{
+	padding: 5px 10px;
+	border-radius: 3px;
+	border: 1px solid #dcdcdc;
+	float: left;
+	display: block;
+	margin-top: 5px;
+	margin-right: 5px
+}
+
+.orders.show>.contents>#detail_info>.table>.order_list>.product_detail>.button.negative,
+	.order_productions.show>.contents>#detail_info>.table>.order_list>.product_detail>.button.negative
+	{
+	border-color: #ff7777;
+	color: #ff7777
+}
+
+.orders.show>.contents>#detail_info>.table>.order_list>.product_detail>.button.positive,
+	.order_productions.show>.contents>#detail_info>.table>.order_list>.product_detail>.button.positive
+	{
+	border-color: #35c5f0;
+	color: #35c5f0
+}
+
+.orders.show>.contents>#detail_info>.table>.order_list>.button_set,
+	.order_productions.show>.contents>#detail_info>.table>.order_list>.button_set
+	{
+	display: table-cell;
+	width: 189px;
+	border-left: solid 1px #dcdcdc;
+	text-align: center;
+	vertical-align: middle
+}
+
+@media only screen and (max-width: 767px) {
+	.orders.show>.contents>#detail_info>.table>.order_list>.button_set,
+		.order_productions.show>.contents>#detail_info>.table>.order_list>.button_set
+		{
+		display: table-row;
+		border-left: none
+	}
+}
+
+.orders.show>.contents>#detail_info>.table>.order_list>.button_set>.fake,
+	.order_productions.show>.contents>#detail_info>.table>.order_list>.button_set>.fake
+	{
+	display: none
+}
+
+@media only screen and (max-width: 767px) {
+	.orders.show>.contents>#detail_info>.table>.order_list>.button_set>.fake,
+		.order_productions.show>.contents>#detail_info>.table>.order_list>.button_set>.fake
+		{
+		display: table-cell
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.orders.show>.contents>#detail_info>.table>.order_list>.button_set>.buttons,
+		.order_productions.show>.contents>#detail_info>.table>.order_list>.button_set>.buttons
+		{
+		text-align: left;
+		padding-left: 17px;
+		padding-bottom: 15px
+	}
+}
+
+.orders.show>.contents>#detail_info>.table>.order_list>.button_set>.buttons>.button,
+	.order_productions.show>.contents>#detail_info>.table>.order_list>.button_set>.buttons>.button
+	{
+	text-align: center;
+	display: inline-block;
+	border: solid 1px #dcdcdc;
+	padding: 8px 0;
+	font-size: 12px;
+	width: 73px;
+	margin: 5px 3px
+}
+
+@media only screen and (max-width: 767px) {
+	.orders.show>.contents>#detail_info>.table>.order_list>.button_set>.buttons>.button,
+		.order_productions.show>.contents>#detail_info>.table>.order_list>.button_set>.buttons>.button
+		{
+		width: 93px
+	}
+}
+
+.orders.show>.contents>#detail_info>.table>.order_list>.button_set>.buttons>.button.fake,
+	.order_productions.show>.contents>#detail_info>.table>.order_list>.button_set>.buttons>.button.fake
+	{
+	border: none
+}
+
+.orders.show>.contents>#detail_info>.table>.order_list>.button_set>.buttons>.button.blue,
+	.order_productions.show>.contents>#detail_info>.table>.order_list>.button_set>.buttons>.button.blue
+	{
+	background-color: #35c5f0;
+	border: 1px solid #35c5f0;
+	color: #ffffff
+}
+
+.orders.show>.contents #change_delivery_form input, .order_productions.show>.contents #change_delivery_form input
+	{
+	border: 1px solid #dcdcdc;
+	margin: 0;
+	padding: 0 15px;
+	line-height: 38px;
+	height: 40px;
+	box-sizing: border-box
+}
+
+.orders.show>.contents #change_delivery_form input.non_edit,
+	.order_productions.show>.contents #change_delivery_form input.non_edit
+	{
+	background-color: #eeeeee
+}
+
+.orders.show>.contents #change_delivery_form input.delivery_memo,
+	.order_productions.show>.contents #change_delivery_form input.delivery_memo
+	{
+	width: 100%
+}
+
+.orders.show>.contents #change_delivery_form input.error,
+	.order_productions.show>.contents #change_delivery_form input.error {
+	border-color: #ff7777
+}
+
+.orders.show>.contents #change_delivery_form .post_code>input,
+	.order_productions.show>.contents #change_delivery_form .post_code>input
+	{
+	width: 178px;
+	text-align: center;
+	float: left
+}
+
+.orders.show>.contents #change_delivery_form .address>input,
+	.order_productions.show>.contents #change_delivery_form .address>input
+	{
+	width: 100%;
+	margin-bottom: 10px
+}
+
+.orders.show>.contents #change_delivery_form .address #order_received_at_detail,
+	.order_productions.show>.contents #change_delivery_form .address #order_received_at_detail
+	{
+	margin-bottom: 0
+}
+
+.orders.show>.contents #change_delivery_form .delivery_message,
+	.order_productions.show>.contents #change_delivery_form .delivery_message
+	{
+	margin-bottom: 16px
+}
+
+.orders.show>.contents #change_delivery_form .delivery_message>.delivery_message>input,
+	.order_productions.show>.contents #change_delivery_form .delivery_message>.delivery_message>input
+	{
+	width: 100%;
+	font-weight: 300
+}
+
+.orders.show>.contents #change_delivery_form .delivery_message>.delivery_message #delivery_message_presets,
+	.order_productions.show>.contents #change_delivery_form .delivery_message>.delivery_message #delivery_message_presets
+	{
+	position: absolute;
+	background-color: white;
+	border: 1px solid #bcbec0;
+	display: none
+}
+
+.orders.show>.contents #change_delivery_form .delivery_message>.delivery_message #delivery_message_presets>div,
+	.order_productions.show>.contents #change_delivery_form .delivery_message>.delivery_message #delivery_message_presets>div
+	{
+	padding: 6px 12px;
+	cursor: pointer;
+	font-size: 12px
+}
+
+.orders.show>.contents #change_delivery_form .delivery_message>.delivery_message #delivery_messages,
+	.order_productions.show>.contents #change_delivery_form .delivery_message>.delivery_message #delivery_messages
+	{
+	display: none
+}
+
+.orders.show>.contents #change_delivery_form .delivery_message>.delivery_message #delivery_messages>.delivery_message,
+	.order_productions.show>.contents #change_delivery_form .delivery_message>.delivery_message #delivery_messages>.delivery_message
+	{
+	margin-top: 8px
+}
+
+.orders.show>.contents #change_delivery_form .delivery_message>.delivery_message #delivery_messages>.delivery_message.first,
+	.order_productions.show>.contents #change_delivery_form .delivery_message>.delivery_message #delivery_messages>.delivery_message.first
+	{
+	margin-top: 0
+}
+
+.orders.show>.contents #change_delivery_form .delivery_message>.delivery_message #delivery_messages>.delivery_message>.product_name,
+	.order_productions.show>.contents #change_delivery_form .delivery_message>.delivery_message #delivery_messages>.delivery_message>.product_name
+	{
+	margin-bottom: 4px;
+	font-size: 10px;
+	line-height: 10px;
+	color: #bdbdbd
+}
+
+.orders.show>.contents #change_delivery_form .delivery_message>.delivery_message #delivery_messages>.delivery_message>input,
+	.order_productions.show>.contents #change_delivery_form .delivery_message>.delivery_message #delivery_messages>.delivery_message>input
+	{
+	width: 100%;
+	border: 1px solid #dcdcdc;
+	font-size: 14px;
+	color: #424242;
+	padding: 7px 8px;
+	font-weight: 300
+}
+
+.orders.show>.contents #change_delivery_form .delivery_message>.delivery_message>.information,
+	.order_productions.show>.contents #change_delivery_form .delivery_message>.delivery_message>.information
+	{
+	margin-top: 6px;
+	color: #bdbdbd;
+	font-size: 10px;
+	line-height: 13px
+}
+
+.orders.show>.contents #change_delivery_form .alert, .order_productions.show>.contents #change_delivery_form .alert
+	{
+	color: #757575;
+	font-size: 14px;
+	margin-top: 6px
+}
+
+.orders.show>.contents #change_delivery_form input[type=submit], .orders.show>.contents #change_delivery_form #find_address,
+	.order_productions.show>.contents #change_delivery_form input[type=submit],
+	.order_productions.show>.contents #change_delivery_form #find_address {
+	display: block;
+	float: left;
+	padding: 0 16px;
+	line-height: 40px;
+	border-radius: 4px;
+	border: none;
+	background-color: #35c5f0;
+	color: #ffffff;
+	font-size: 15px;
+	font-weight: bold;
+	margin-left: 10px;
+	cursor: pointer
+}
+
+.orders.show>.contents #change_delivery_form input[type=submit],
+	.order_productions.show>.contents #change_delivery_form input[type=submit]
+	{
+	float: right;
+	width: 150px
+}
+
+.orders.show .sales_communication, .order_productions.show .sales_communication
+	{
+	background-color: #f1f2f2;
+	padding: 10px
+}
+
+.orders.show .sales_communication>.title, .order_productions.show .sales_communication>.title
+	{
+	margin-bottom: 10px;
+	font-weight: bold
+}
+
+.orders.show .sales_communication>.comment, .order_productions.show .sales_communication>.comment
+	{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flexbox;
+	display: flex;
+	margin-bottom: 10px
+}
+
+.orders.show .sales_communication>.comment>img, .order_productions.show .sales_communication>.comment>img
+	{
+	-webkit-box-flex: 0;
+	-webkit-flex: 0 0 40px;
+	-moz-box-flex: 0;
+	-moz-flex: 0 0 40px;
+	-ms-flex: 0 0 40px;
+	flex: 0 0 40px;
+	width: 40px;
+	height: 40px;
+	margin-right: 5px;
+	border-radius: 50%
+}
+
+.orders.show .sales_communication>.comment>.content, .order_productions.show .sales_communication>.comment>.content
+	{
+	-webkit-box-flex: 1;
+	-webkit-flex: 1 0 0px;
+	-moz-box-flex: 1;
+	-moz-flex: 1 0 0px;
+	-ms-flex: 1 0 0px;
+	flex: 1 0 0px
+}
+
+.orders.show .sales_communication>.comment>.content>.nickname_ago,
+	.order_productions.show .sales_communication>.comment>.content>.nickname_ago
+	{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flexbox;
+	display: flex
+}
+
+.orders.show .sales_communication>.comment>.content>.nickname_ago>.nickname,
+	.order_productions.show .sales_communication>.comment>.content>.nickname_ago>.nickname
+	{
+	-webkit-box-flex: 1;
+	-webkit-flex: 1 0 0px;
+	-moz-box-flex: 1;
+	-moz-flex: 1 0 0px;
+	-ms-flex: 1 0 0px;
+	flex: 1 0 0px
+}
+
+.orders.show .sales_communication>.comment>.content>.nickname_ago>.ago,
+	.order_productions.show .sales_communication>.comment>.content>.nickname_ago>.ago
+	{
+	text-align: right
+}
+
+.orders.show .sales_communication form>.input, .order_productions.show .sales_communication form>.input
+	{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flexbox;
+	display: flex
+}
+
+.orders.show .sales_communication form>.input>div, .order_productions.show .sales_communication form>.input>div
+	{
+	-webkit-box-flex: 0;
+	-webkit-flex: 0 0 40px;
+	-moz-box-flex: 0;
+	-moz-flex: 0 0 40px;
+	-ms-flex: 0 0 40px;
+	flex: 0 0 40px
+}
+
+.orders.show .sales_communication form>.input textarea,
+	.order_productions.show .sales_communication form>.input textarea {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1 0 0px;
+	-moz-box-flex: 1;
+	-moz-flex: 1 0 0px;
+	-ms-flex: 1 0 0px;
+	flex: 1 0 0px;
+	border: 1px solid #dcddde;
+	resize: none;
+	font-size: 14px;
+	line-height: 21px;
+	padding: 5px;
+	height: 50px
+}
+
+.orders.show .sales_communication form>.input input[type=submit],
+	.order_productions.show .sales_communication form>.input input[type=submit]
+	{
+	-webkit-box-flex: 0;
+	-webkit-flex: 0 0 40px;
+	-moz-box-flex: 0;
+	-moz-flex: 0 0 40px;
+	-ms-flex: 0 0 40px;
+	flex: 0 0 40px
+}
+
+#production_exchange_do_accept>div {
+	width: 300px;
+	height: 156px;
+	margin: auto;
+	position: absolute;
+	right: 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	padding: 20px;
+	border-radius: 5px;
+	background-color: #ffffff
+}
+
+#production_exchange_do_accept>div .title {
+	font-size: 14px;
+	margin-bottom: 10px;
+	font-weight: bold;
+	color: #424242
+}
+
+#production_exchange_do_accept>div .sub_title {
+	font-size: 12px;
+	margin-bottom: 5px;
+	font-weight: bold;
+	color: #757575
+}
+
+#production_exchange_do_accept>div select {
+	padding: 5px;
+	margin-bottom: 5px;
+	font-size: 14px;
+	color: #424242;
+	border: 1px solid #eeeeee;
+	width: 100%;
+	background-image:
+		url(https://d1nyaccf3kuclt.cloudfront.net/assets/select_arrow.png);
+	background-color: #ffffff;
+	background-repeat: no-repeat;
+	background-position: calc(100% - 5px);
+	background-size: 16px
+}
+
+#production_exchange_do_accept>div input[type=text] {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 5px;
+	margin-bottom: 5px;
+	font-size: 14px;
+	color: #424242;
+	border: 1px solid #eeeeee
+}
+
+#production_exchange_do_accept>div input[type=submit] {
+	margin-top: 5px;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 5px;
+	font-size: 14px;
+	text-align: center;
+	color: #ffffff;
+	background-color: #35c5f0;
+	border-radius: 2px;
+	border: none;
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2)
+}
+
+#change_invoice>.contents {
+	width: 300px;
+	height: 97px;
+	margin: auto;
+	position: absolute;
+	right: 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	padding: 20px;
+	border-radius: 5px;
+	background-color: #ffffff
+}
+
+#change_invoice>.contents select {
+	padding: 5px;
+	margin-bottom: 5px;
+	font-size: 14px;
+	color: #424242;
+	border: 1px solid #eeeeee;
+	width: 100%;
+	background-image:
+		url(https://d1nyaccf3kuclt.cloudfront.net/assets/select_arrow.png);
+	background-color: #ffffff;
+	background-repeat: no-repeat;
+	background-position: calc(100% - 5px);
+	background-size: 16px
+}
+
+#change_invoice>.contents input[type=text] {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 5px;
+	margin-bottom: 5px;
+	font-size: 14px;
+	color: #424242;
+	border: 1px solid #eeeeee
+}
+
+#change_invoice>.contents input[type=submit] {
+	margin-top: 5px;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 5px;
+	font-size: 14px;
+	text-align: center;
+	color: #ffffff;
+	background-color: #35c5f0;
+	border-radius: 2px;
+	border: none;
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2)
+}
