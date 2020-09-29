@@ -24,7 +24,10 @@ import com.jachi.svc.MypageProfileUserInfoService;
 	 public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception{ 
 		
 		 
-		HttpSession session = request.getSession(true);
+
+		 HttpSession session = request.getSession(true);
+
+
 		String us_id = (String)session.getAttribute("us_id");
 		int board_num=Integer.parseInt(request.getParameter("board_num"));
 	
