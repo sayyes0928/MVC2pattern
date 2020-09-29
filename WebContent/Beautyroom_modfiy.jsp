@@ -1,24 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
-<%@ page import="com.jachi.DTO.QnABBS"%>
+<%@ page import="com.jachi.DTO.BeautyRoomDTO"%>
 
 <%
-	ArrayList<QnABBS> userpost = (ArrayList<QnABBS>) request.getAttribute("article");
+ArrayList<BeautyRoomDTO> userpost = (ArrayList<BeautyRoomDTO>) request.getAttribute("beautyList");
 
 String us_id = (String) session.getAttribute("us_id");
-String qna_title = request.getParameter("qna_title");
-String qna_post = request.getParameter("qna_post");
-String qna_pw = request.getParameter("qna_pw");
-String qna_num = request.getParameter("qna_num");
-String qna_img = request.getParameter("qna_img");
+String post_title = request.getParameter("bt_title");
+String post_posting = request.getParameter("bt_posting");
+String post_pic = request.getParameter("bt_img");
+String post_num = request.getParameter("bt_num");
+String post_pw = request.getParameter("bt_pic");
 %>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>QnA</title>
+<title>뷰티수정하기</title>
 <link rel="stylesheet" href="./Teamcss/Beautyroom_write.css"
 	type="text/css">
 <link
@@ -127,22 +127,22 @@ function existingTag(text)
 					 <input type="file"
 						name="post_pic" id="cma_file" accept="image/*" capture="camera"
 						onchange="getThumbnailPrivew(this,$('#cma_image'))"  /> <br/><br/>
-					<div id="cma_image"><img src="<%=request.getContextPath()%>/upload/<%=qna_pw%>" border="0" width="400px" height="400px" alt=""></div>
+					<div id="cma_image"><img src="<%=request.getContextPath()%>/upload/<%=post_pic%>" border="0" width="400px" height="400px" alt=""></div>
 				</div>
 
 				<div class="form__group field">
 					<input type="input" class="form__field" placeholder="제목을 입력해주세요"
-						name="qna_title" id='name' required maxlength="45" value="<%=qna_title%>"/> <label for="name"
+						name="post_title" id='name' required maxlength="45" value="<%=post_title%>"/> <label for="name"
 						class="form__label">제목을 입력해주세요 :D</label>
 				</div>
 				<input type="hidden" value="<%=us_id%>" name="post_nickname">
-				<input type="hidden" value="<%=qna_num%>" name="qna_num">
-                <input type="hidden" id="qna_pw" value="<%=qna_pw%>">
-                <input type="hidden" id="qna_img" value="<%=qna_img%>">
+				<input type="hidden" value="<%=post_num%>" name="post_num">
+                <input type="hidden" id="post_pic" value="<%=post_pic%>">
+                <input type="hidden" id="post_pw" value="<%=post_pw%>">
                 <input type="hidden" id="aa" value="<%=request.getContextPath()%>">
 				<div class="form__group2 field2">
 					<textarea class="form__field2" id="BT_writepost" autocomplete="off"
-						placeholder="내용을 입력해주세요" name="qna_post" maxlength="150"><%=qna_post%></textarea>
+						placeholder="내용을 입력해주세요" name="post_posting" maxlength="150"><%=post_posting%></textarea>
 					<label for="name" class="form__label2">내용을 입력해주세요 :D</label>
 				</div>
 			</div>

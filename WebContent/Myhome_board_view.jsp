@@ -53,6 +53,7 @@
 
 		String board_num = request.getParameter("board_num");
 		String us_id = (String) session.getAttribute("us_id");
+		String us_nk = (String) session.getAttribute("nkname");
 		PageInfo pageInfo = (PageInfo) request.getAttribute("pageInfo");
 
 		String post_image1 = article.get(0).getPost_pic();
@@ -218,9 +219,19 @@
 							}
 						%>
 					</div>
+					
 				</div>
+				<%if(us_nk != null){ %>
+				<%if(us_nk.equals(article.get(0).getpost_nickname())) {%>
+				<div id="modianddel">
+					<span><a href="#">수정</a></span><span><a href="bt_detail_delete.bo?dt_num=<%=article.get(0).getPost_num()%>">삭제</a></span>
+					</div>
+					<%}else{ %>
+					<%} }else { %>
+					<%} %>
 			</div>
-
+				
+				
 		</div>
 	</div>
 	</main>

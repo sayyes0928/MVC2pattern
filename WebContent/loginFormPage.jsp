@@ -42,6 +42,7 @@
     apiURL += "&redirect_uri=" + redirectURI;
     apiURL += "&state=" + state;
     session.setAttribute("state", state);
+
     String backPage = request.getHeader("Referer");
     session.setAttribute("backPage", backPage);
  %>
