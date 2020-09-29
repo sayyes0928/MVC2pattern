@@ -220,6 +220,7 @@
 						%>
 					</div>
 					
+					
 				</div>
 				<%if(us_nk != null){ %>
 				<%if(us_nk.equals(article.get(0).getpost_nickname())) {%>
