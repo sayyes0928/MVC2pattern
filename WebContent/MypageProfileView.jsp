@@ -190,7 +190,7 @@
 						<div class="contents">
 							<section class="post post--cards">
 								<h5 class="post__title">
-									사진  <strong><%= postList.size()%></strong>
+									사진 <strong><%= postList.size()%></strong>
 								</h5>
 								<div class="container">
 
