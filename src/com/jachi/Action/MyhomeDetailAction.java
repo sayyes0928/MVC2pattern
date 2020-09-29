@@ -35,12 +35,12 @@ import com.jachi.svc.MypageProfileUserInfoService;
 		List<BeautyRoomDTO> postList = new ArrayList<BeautyRoomDTO>();
 		String userId = article.get(0).getpost_nickname();
 			System.out.println(userId+"123123123");
+
 		BTSelectService btSelectService = new BTSelectService();
 		postList = btSelectService.getPostList(userId);
 		MypageProfileUserInfoService mypageProfileUserInfoService = new MypageProfileUserInfoService();
 		List<UserinfoDTO> userinfoDTO = new ArrayList<UserinfoDTO>();
 		userinfoDTO = mypageProfileUserInfoService.getUserInfo_list(userId);
-
         //∆‰¿Ã¬°
 		int page=1;
 		int limit=5;
