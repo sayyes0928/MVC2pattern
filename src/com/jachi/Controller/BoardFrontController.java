@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.jachi.Action.Action;
 import com.jachi.Action.BTDetailDeleteAction;
 import com.jachi.Action.BTListAction;
+import com.jachi.Action.BTModifyAction;
 import com.jachi.Action.BTSelectAction;
 import com.jachi.Action.BTWriteAction;
 import com.jachi.Action.BoardDeleteProAction;
@@ -536,6 +537,16 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
+		
+		else if(command.equals("/bt_modify.bo")) {
+			action = new BTModifyAction();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
 		
 		else if(command.equals("/cate_search.bo")) {
 			System.out.println("카테체크");
