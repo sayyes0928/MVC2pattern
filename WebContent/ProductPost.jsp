@@ -193,10 +193,10 @@
 						 	<div id="buylist_cell1">
 						 	    <%for(int i=0; i<option_split1.length; i++) {%>
 								<div id="buylist_section1">
-									<div id="buylist1"></div>
-									<span id="buy_option"></span> <input id="buylist_delete1"
-										type="button" value="X"> <select id="product_count1"
-										name="or_count">
+									<div id="buylist1">123</div>
+									<span id="buy_option"></span> 
+									<input id="buylist_delete1" type="button" value="X">
+									<select id="product_count1" name="or_count">
 										<option>1</option>
 										<option>2</option>
 										<option>3</option>
@@ -207,12 +207,19 @@
 										<option>8</option>
 										<option>9</option>
 										<option>10+</option>
-									</select> <span id="proudctlist_price1"><%=article.get(0).getPro_price()%></span>원
+									</select> 
+									<span id="proudctlist_price1"><%=article.get(0).getPro_price()%></span>원
 								</div>
 								<%} %>						
 							</div>
-							
 						</div>
+						
+						<script>
+						     function(){
+						    	 
+						     }
+						</script>
+							
 						<%
 							String pro_code = (String) request.getParameter("pro_num");
 						%>
