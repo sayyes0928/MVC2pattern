@@ -124,50 +124,44 @@
 						<hr class="clear">
 						<div class="s_combobox">
 							<ul>
+						      <%  if(!article.get(0).getPro_option1().equals(",")) {										
+								     String option1 = null;
+								     String[] option_split1 = null;
+										
+								     for (int i=0; i<article.size(); i++) {
+									   option1 = article.get(i).getPro_option1();
+									   option_split1 = option1.split(",");
+									 }
+							      %>
+								     <li><select id="Option1">
+								       <%  for (int x=0; x<option_split1.length; x++) {  %>
+										    <option value="<%=option_split1[x]%>"><%=option_split1[x]%></option>
+									   <%
+										   }
+									   %>
+
+								     </select></li>
+						       <%
+								   }
+							   %>
 
 								<%
-									if (article.get(0).getPro_option1() != null) {
-										String option = null;
-										String[] optionsp = null;
+									if (!article.get(0).getPro_option2().equals(",")) {
+										
+										String option2 = null;
+										String[] option_split2 = null;
+										
 										for (int i = 0; i < article.size(); i++) {
-											option = article.get(i).getPro_option1();
-											optionsp = option.split(",");
+											option2 = article.get(i).getPro_option2();
+											option_split2 = option2.split(",");
+										}
 								%>
-								<%
-									}
-								%>
-								<li><select id="Option1">
-
-
-										<%
-											for (int x = 0; x < optionsp.length; x++) {
-										%>
-										<option value="<%=optionsp[x]%>"><%=optionsp[x]%></option>
-										<%
-											}
-										%>
-
-								</select></li>
-								<%
-									}
-								%>
-
-								<%
-									if (article.get(0).getPro_option2() != null) {
-										String option = null;
-										String[] optionsp = null;
-										for (int i = 0; i < article.size(); i++) {
-											option = article.get(i).getPro_option2();
-											optionsp = option.split(",");
-								%>
-								<%
-									}
-								%>
+								
 								<li><select>
 										<%
-											for (int x = 0; x < optionsp.length; x++) {
+											for (int x = 0; x < option_split2.length; x++) {
 										%>
-										<option><%=optionsp[x]%></option>
+										<option><%=option_split2[x]%></option>
 										<%
 											}
 										%>
@@ -177,21 +171,21 @@
 								%>
 
 								<%
-									if (article.get(0).getPro_option3() != null) {
-										String option = null;
-										String[] optionsp = null;
+									if (!article.get(0).getPro_option3().equals(",")) {
+										String option3 = null;
+										String[] option_split3 = null;
 										for (int i = 0; i < article.size(); i++) {
-											option = article.get(i).getPro_option3();
-											optionsp = option.split(",");
+											option3 = article.get(i).getPro_option3();
+											option_split3 = option3.split(",");
 								%>
 								<%
 									}
 								%>
 								<li><select>
 										<%
-											for (int x = 1; x < optionsp.length; x++) {
+											for (int x = 1; x < option_split3.length; x++) {
 										%>
-										<option><%=optionsp[x]%></option>
+										<option><%=option_split3[x]%></option>
 										<%
 											}
 										%>
@@ -200,7 +194,7 @@
 									}
 								%>
 							</ul>
-							<div id="buylist_cell1">
+						<!-- 	<div id="buylist_cell1">
 								<div id="buylist_section1">
 									<div id="buylist1"></div>
 									<span id="buy_option"></span> <input id="buylist_delete1"
@@ -219,7 +213,7 @@
 									</select> <span id="proudctlist_price1"><%=article.get(0).getPro_price()%></span>원
 								</div>
 							</div>
-							<div id="buylist_cell2"></div>
+							<div id="buylist_cell2"></div>  -->
 						</div>
 						<%
 							String pro_code = (String) request.getParameter("pro_num");
