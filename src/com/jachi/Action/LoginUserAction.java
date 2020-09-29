@@ -41,7 +41,7 @@ public class LoginUserAction implements Action {
 			out.flush();
 
 
-		} else if (getUserpw.equals(us_pw) && getUserpw.equals(us_id)) {
+		} else if (getUserpw.equals(us_pw)) {
 			
 			System.out.println(backPage);
 			session.setAttribute("us_id", us_id);
