@@ -30,17 +30,17 @@ import com.jachi.svc.MypageProfileUserInfoService;
 	
 		MyhomeDetailService myhomeDetailService = new MyhomeDetailService();
 		List<BeautyRoomDTO> article = myhomeDetailService.getArticle(board_num);
-        
+        System.out.println(board_num +"게시물번호");
 		// 게시자 정보 가져오기
 		List<BeautyRoomDTO> postList = new ArrayList<BeautyRoomDTO>();
 		String userId = article.get(0).getpost_nickname();
-			
+			System.out.println(userId+"123123123");
+
 		BTSelectService btSelectService = new BTSelectService();
 		postList = btSelectService.getPostList(userId);
 		MypageProfileUserInfoService mypageProfileUserInfoService = new MypageProfileUserInfoService();
 		List<UserinfoDTO> userinfoDTO = new ArrayList<UserinfoDTO>();
 		userinfoDTO = mypageProfileUserInfoService.getUserInfo_list(userId);
-
         //페이징
 		int page=1;
 		int limit=5;
