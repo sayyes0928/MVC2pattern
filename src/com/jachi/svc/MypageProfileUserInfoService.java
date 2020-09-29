@@ -10,12 +10,24 @@ import com.jachi.DTO.OrderListDTO;
 import com.jachi.DTO.UserinfoDTO;
 
 public class MypageProfileUserInfoService {
-        public List<UserinfoDTO> getUserInfo_list(String us_id) {
+        public List<UserinfoDTO> getUserInfo_list_profile(String us_id) {
         	
     		
    		 SqlSessionFactory sqlfactory = BoardDAO.getConn();
    		 SqlSession sqlsession = sqlfactory.openSession();
    		 List<UserinfoDTO> deliveryCount = sqlsession.selectList("select_mypage_userinfo", us_id);
+   		
+   		sqlsession.close();
+   		
+   		return deliveryCount;
+        
+        }
+        public List<UserinfoDTO> getUserInfo_list(String us_id) {
+        	
+    		
+   		 SqlSessionFactory sqlfactory = BoardDAO.getConn();
+   		 SqlSession sqlsession = sqlfactory.openSession();
+   		 List<UserinfoDTO> deliveryCount = sqlsession.selectList("select_mypage_userinfo_photo", us_id);
    		
    		sqlsession.close();
    		

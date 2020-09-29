@@ -37,6 +37,7 @@ import com.jachi.Action.MypageLikeViewAction;
 import com.jachi.Action.MypageOrderListViewAction;
 import com.jachi.Action.MypageOrderReceiptViewAction;
 import com.jachi.Action.MypageOrderViewAction;
+import com.jachi.Action.MypagePhotoViewAction;
 import com.jachi.Action.MypageProfileUserinfoUpdateAction;
 import com.jachi.Action.MypageScrapViewAction;
 import com.jachi.Action.MypageUserInfoUpdateAction;
@@ -197,6 +198,14 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		}
 		else if(command.equals("/MypageScrapView.bo")){
 			action  = new MypageScrapViewAction();
+			try {
+				forward=action.execute(request, response );
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/MypagePhotoView.bo")){
+			action  = new MypagePhotoViewAction();
 			try {
 				forward=action.execute(request, response );
 			} catch (Exception e) {
