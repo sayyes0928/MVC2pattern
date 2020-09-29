@@ -20,6 +20,7 @@ public class LoginUserAction implements Action {
 		String us_pw = request.getParameter("us_pw");
 		String backPage = request.getParameter("backPage");
 		ActionForward forward = new ActionForward();
+		
 		String getUserpw = null;
 		String getUsernkname = null;
 
