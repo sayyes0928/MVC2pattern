@@ -95,7 +95,7 @@ FROM jachi.ordertable a join jachi.productinfo b on a.odr_procode = b.pro_code a
 	select pro_code,pro_name,pro_price,pro_mainimg,pro_info from productinfo;
 </select>
 <select id="posting_getList" parameterType="String" resultType="com.jachi.DTO.BeautyRoomDTO">
-select * from jachi.posting where post_nickname = #{post_nickname};
+select * from jachi.posting where post_nickname = (select us_id from userinfo where us_nkname = #{post_nickname});
 </select>
 <select id="select_logininfo" parameterType="String" resultType="String">
 	select us_pw from userinfo where us_id = #{us_id};
