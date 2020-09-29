@@ -65,6 +65,7 @@ public class ProductOrderInsertAction implements Action {
 		SimpleDateFormat date = new SimpleDateFormat("yyyyMMdd");
 		String orderCodeBody = (String)date.format(today);
 		
+		orderDTO.setOdr_date(orderCodeBody);
 		deliveryDTO.setUs_id(or_id);
 		deliveryDTO.setDlv_status("배송준비");
 		

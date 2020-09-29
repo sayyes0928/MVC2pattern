@@ -69,6 +69,13 @@
                   <div class="author_img"><img src="<%=request.getContextPath()%>/upload/<%=tip_detail.get(0).getTip_img()%>"></div>
                   <p><%=tip_detail.get(0).getTip_nickname()%></p>
                   <p><%=tip_detail.get(0).getTip_date()%></p>
+                  
+          <%  if(us_id != null) { 
+                if(us_id.equals(tip_detail.get(0).getTip_us_id())) {  %>
+                  <input class="board_delete_btn" type="button" value="삭제" onclick="location.href='TipDelete.bo?tip_num=<%=tip_detail.get(0).getTip_num()%>'">
+          <%    } 
+              }    %>
+              
                </div>
              </div>
              <div class="detail_post">
@@ -101,21 +108,27 @@
          }
         </script>
               <div id="comment_feed_list">  
-          <% if(commentlist.size() != 0){
+         <% if(commentlist.size() != 0){
               for(int i=0; i<commentlist.size(); i++){ %>
                 <div class="comment_list">
                   <div class="comment_author_img"><img src="<%=request.getContextPath()%>/upload/<%=commentlist.get(i).getRep_img()%>"></div>
                   <span><%=commentlist.get(i).getRep_nickname()%></span>
                   <span><%=commentlist.get(i).getRep_post()%></span>
                   <ul class="comment_list_feed">
-                   <li><%=commentlist.get(i).getRep_date()%></li>
-                   <li>삭제버튼</li>
+                   <li class="comment_feed_date"><%=commentlist.get(i).getRep_date()%></li>
+                                      
+              <% if(us_id != null) {
+                   if(us_id.equals(commentlist.get(i).getRep_us_id())) { %>
+                   <li class="comment_feed_delte"><input class="comment_delete_btn" type="button" value="삭제" onclick="location.href='Tip_reply_delete.bo?rep_num=<%=commentlist.get(i).getRep_num()%>&rep_tip_num=<%=commentlist.get(i).getRep_tip_num()%>'"></li>
+              <%   }
+                 }   %>
+                 
                   </ul>
                 </div>
           <%  }
-            }else{  %>
+           }else { %>
             <div class="null_comment_list">등록된 댓글이 없습니다.</div>
-          <%} %>
+         <%} %>
             </div>
             <div id="page_button">
              <%if(NowPage <= 1){ %>

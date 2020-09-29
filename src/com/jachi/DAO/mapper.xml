@@ -34,8 +34,15 @@ SELECT * FROM jachi.ordertable where odr_code = #{odr_code};
 </select>
 
 <select id="select_mypage_userinfo" parameterType="String" resultType="com.jachi.DTO.UserinfoDTO">
- select * from userinfo where us_id = #{us_id};
+ select * from jachi.userinfo where us_id = #{us_id};
+ 
 </select>
+
+<select id="select_mypage_userinfo_photo" parameterType="String" resultType="com.jachi.DTO.UserinfoDTO">
+ select * from jachi.userinfo where us_nkname = #{us_id};
+ 
+</select>
+
 
 <select id="counting_Like" parameterType="String" resultType="Integer">
  select count(*) from jachi.like where like_id = #{us_id};
@@ -52,7 +59,6 @@ select us_pw from userinfo where us_id =#{us_id};
 <select id="select_nkname" resultType="String">
 select us_nkname from userinfo where us_id = #{us_id};
 </select>
-
 <select id="us_id_select" parameterType="String" resultType="String">
 select count(*) from userinfo where us_id=#{us_id};
 </select>
@@ -92,7 +98,7 @@ FROM jachi.ordertable a join jachi.productinfo b on a.odr_procode = b.pro_code a
 	select pro_code,pro_name,pro_price,pro_mainimg,pro_info from productinfo;
 </select>
 <select id="posting_getList" parameterType="String" resultType="com.jachi.DTO.BeautyRoomDTO">
-select * from jachi.posting where post_nickname = #{post_nickname};
+select * from jachi.posting where post_nickname = (select us_id from userinfo where us_nkname = #{post_nickname});
 </select>
 <select id="select_logininfo" parameterType="String" resultType="String">
 	select us_pw from userinfo where us_id = #{us_id};
@@ -142,8 +148,13 @@ insert into productinfo values(#{pro_code},#{pro_name},#{pro_price},#{pro_mainim
 	delete from qna where qna_num = #{qna_num};
 </delete>
 
+<<<<<<< HEAD
 <delete id="delete_qnacmall" parameterType="Integer">
 	delete from qna_comment where qc_num = #{qna_num};
+=======
+<delete id="bt_del" parameterType="Integer">
+	delete from posting where post_num = #{bt_num};
+>>>>>>> refs/remotes/origin/master
 </delete>
 
 <select id="book_check" parameterType="map" resultType="int">
@@ -172,7 +183,7 @@ insert into posting_reply values(default, #{posting_reply_us_id},#{posting_reply
 </insert>
 
 <insert id="insert_tip" parameterType="com.jachi.DTO.TipDTO">
-    insert into tip values(#{tip_nickname}, #{tip_post}, default, #{tip_title}, #{tip_coverimg}, now(), #{tip_img});
+    insert into tip values(#{tip_nickname}, #{tip_post}, default, #{tip_title}, #{tip_coverimg}, now(), #{tip_img}, #{tip_us_id});
 </insert> 
 
 <insert id="insert_order_complite" parameterType="com.jachi.DTO.OrderDTO">
@@ -294,18 +305,30 @@ insert into posting_reply values(default, #{posting_reply_us_id},#{posting_reply
 
 
 <insert id="insert_TipReply" parameterType="com.jachi.DTO.TipReplyDTO">
-    insert into tip_reply values(#{rep_nickname}, #{rep_img}, #{rep_tip_num}, default, #{rep_post}, now());
+    insert into tip_reply values(#{rep_nickname}, #{rep_img}, #{rep_tip_num}, default, #{rep_post}, now(), #{rep_us_id});
 </insert>
 
 <select id="select_TipDetail" parameterType="Integer" resultType="com.jachi.DTO.TipDTO">
-    select tip_num, tip_title, tip_post, tip_coverimg, tip_date, us_nkname as 'tip_nickname', us_pic as 'tip_img' from tip join userinfo on userinfo.us_id = tip.tip_nickname where tip_num = #{tip_num};
+    select tip_num, tip_title, tip_post, tip_coverimg, tip_date, us_nkname as 'tip_nickname', us_pic as 'tip_img', tip_us_id from tip join userinfo on userinfo.us_id = tip.tip_nickname where tip_num = #{tip_num};
 </select>
 
 <select id="select_tip_comment_count" resultType="Integer">
     select count(*) from tip_reply where rep_tip_num = #{rep_tip_num};
 </select>
 <select id="select_tip_Commentlist" parameterType="map" resultType="com.jachi.DTO.TipReplyDTO">
-    select us_nkname as 'rep_nickname', us_pic as 'rep_img', rep_post, rep_date from tip_reply join userinfo on userinfo.us_id = tip_reply.rep_nickname where rep_tip_num = #{rep_tip_num} order by rep_num desc limit #{Startrow}, #{limit};
+    select us_nkname as 'rep_nickname', us_pic as 'rep_img', rep_post, rep_date, rep_tip_num, rep_num, rep_us_id from tip_reply join userinfo on userinfo.us_id = tip_reply.rep_nickname where rep_tip_num = #{rep_tip_num} order by rep_num desc limit #{Startrow}, #{limit};
 </select>
+
+<delete id="tip_comment_delete" parameterType="com.jachi.DTO.TipReplyDTO">
+		delete from tip_reply where rep_tip_num = #{rep_tip_num} and rep_num = #{rep_num};
+</delete>
+
+<delete id="delete_Tip" parameterType="Integer">
+		delete from tip where tip_num = #{tip_num};
+</delete>
+
+<delete id="delete_Tip_inComment" parameterType="Integer">
+		delete from tip_reply where rep_tip_num = #{tip_num};
+</delete>
 
 </mapper>

@@ -11,8 +11,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.jachi.Action.Action;
+<<<<<<< HEAD
 import com.jachi.Action.BTIndexAction;
+=======
+import com.jachi.Action.BTDetailDeleteAction;
+>>>>>>> refs/remotes/origin/master
 import com.jachi.Action.BTListAction;
+import com.jachi.Action.BTModifyAction;
 import com.jachi.Action.BTSelectAction;
 import com.jachi.Action.BTWriteAction;
 import com.jachi.Action.BoardDeleteProAction;
@@ -38,6 +43,7 @@ import com.jachi.Action.MypageLikeViewAction;
 import com.jachi.Action.MypageOrderListViewAction;
 import com.jachi.Action.MypageOrderReceiptViewAction;
 import com.jachi.Action.MypageOrderViewAction;
+import com.jachi.Action.MypagePhotoViewAction;
 import com.jachi.Action.MypageProfileUserinfoUpdateAction;
 import com.jachi.Action.MypageScrapViewAction;
 import com.jachi.Action.MypageUserInfoUpdateAction;
@@ -59,8 +65,10 @@ import com.jachi.Action.QnaSearchAction;
 import com.jachi.Action.QnaSearchListAction;
 import com.jachi.Action.QnaSelectAction;
 import com.jachi.Action.QnaWriteAction;
+import com.jachi.Action.TipDeleteAction;
 import com.jachi.Action.TipDetailAction;
 import com.jachi.Action.TipListAction;
+import com.jachi.Action.TipReplyDeleteAction;
 import com.jachi.Action.TipReplyWriteAction;
 import com.jachi.Action.TipSelectAction;
 import com.jachi.Action.TipwriteAction;
@@ -199,6 +207,14 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		}
 		else if(command.equals("/MypageScrapView.bo")){
 			action  = new MypageScrapViewAction();
+			try {
+				forward=action.execute(request, response );
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/MypagePhotoView.bo")){
+			action  = new MypagePhotoViewAction();
 			try {
 				forward=action.execute(request, response );
 			} catch (Exception e) {
@@ -529,6 +545,16 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			}
 		}
 		
+		else if(command.equals("/bt_modify.bo")) {
+			action = new BTModifyAction();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		
 		else if(command.equals("/cate_search.bo")) {
 			System.out.println("카테체크");
 			action = new CateSearchAction();
@@ -589,14 +615,6 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			}
 		}
 		
-		else if(command.equals("/tip_replylist.bo")) {
-			action = new QnaModifyAction();
-			try {
-				forward=action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
 		else if(command.equals("/Jachi_main.bo")) {
 			action = new JachiMainAction();
 			try {
@@ -630,6 +648,34 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			}
 		}
 		
+		
+		
+		else if(command.equals("/Tip_reply_delete.bo")) {
+			action = new TipReplyDeleteAction();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		else if(command.equals("/TipDelete.bo")) {
+			action = new TipDeleteAction();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		else if(command.equals("/bt_detail_delete.bo")) {
+			action = new BTDetailDeleteAction();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 		
 		
 		

@@ -35,7 +35,7 @@ public class MypageProfileUserinfoUpdateAction implements Action {
 		
 		MypageProfileUserInfoService mypageProfileUserInfoService = new MypageProfileUserInfoService();
 		
-		userinfoDTO = mypageProfileUserInfoService.getUserInfo_list(or_id);
+		userinfoDTO = mypageProfileUserInfoService.getUserInfo_list_profile(or_id);
 
 		////////////////////////////////////////////////////////
 		request.setAttribute("userinfoDTO", userinfoDTO);

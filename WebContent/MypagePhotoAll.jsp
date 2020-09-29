@@ -35,12 +35,52 @@
 	src="./myhome.web.js/coda-slider.1.1.1.pack.js"></script>
 <script src="./myhome.web.js/teamTopnav.js"></script>
 
+<script type="text/javascript">
+	var theInt = null;
+	var $crosslink, $navthumb;
+	var curclicked = 0;
+
+	theInterval = function(cur) {
+		clearInterval(theInt);
+
+		if (typeof cur != "undefined")
+			curclicked = cur;
+
+		$crosslink.removeClass("active-thumb");
+		$navthumb.eq(curclicked).parent().addClass("active-thumb");
+		$(".stripNav ul li a").eq(curclicked).trigger("click");
+
+		theInt = setInterval(function() {
+			$crosslink.removeClass("active-thumb");
+			$navthumb.eq(curclicked).parent().addClass("active-thumb");
+			$(".stripNav ul li a").eq(curclicked).trigger("click");
+			curclicked++;
+			if (4 == curclicked)
+				curclicked = 0;
+		}, 3000);
+	};
+
+	$(function() {
+		$("#main-photo-slider").codaSlider();
+
+		$navthumb = $(".nav-thumb");
+		$crosslink = $(".cross-link");
+
+		$navthumb.click(function() {
+			var $this = $(this);
+			theInterval($this.parent().attr("href").slice(1) - 1);
+			return false;
+		});
+
+		theInterval();
+	});
+</script>
 
 <title>MYpage</title>
 </head>
 <body>
 	<%
-		ArrayList<BeautyRoomDTO> bookmarkList = (ArrayList<BeautyRoomDTO>) request.getAttribute("bookmarkList");
+		ArrayList<BeautyRoomDTO> postList = (ArrayList<BeautyRoomDTO>) request.getAttribute("postList");
 	%>
 	<!-- 게시판 등록 -->
 	<form id="contentPage">
@@ -49,7 +89,7 @@
 
 
 		<main> <header class="container collection-book-header">
-			<h1 class="collection-book-title__book-name">스크랩북</h1>
+			<h1 class="collection-book-title__book-name">내 사진 모아보기</h1>
 			<p class="collection-book-owner">
 
 			</p>
@@ -66,7 +106,7 @@
 		<nav class="page-navigation collection-book-nav">
 			<ul style="transform: translateX(0px);">
 				<li class="page-navigation__item"><a class="active"
-					href="/users/8659285/collections" target="_self">상품 및 게시글 모아보기 (<%= bookmarkList.size()%>)</a></li>
+					href="/users/8659285/collections" target="_self">상품 및 게시글 모아보기 (<%= postList.size()%>)</a></li>
 			</ul>
 		</nav>
 		<div class="container">
@@ -76,8 +116,8 @@
 			<div class="virtualized-list collection-feed-collections row"
 				style="padding-top: 0px; padding-bottom: 0px; transform: translateY(0px);">
 				<%
-					if (bookmarkList.size() != 0) {
-						for (int i = 0; i < bookmarkList.size(); i++) {
+					if (postList.size() != 0) {
+						for (int i = 0; i < postList.size(); i++) {
 				%>
 
 
@@ -85,11 +125,11 @@
 
 				<div class="col-6 col-md-4 col-lg-3">
 					<a
-						href="Beautyroom_Detail.bo?board_num=<%=bookmarkList.get(i).getPost_num()%>">
+						href="Beautyroom_Detail.bo?board_num=<%=postList.get(i).getPost_num()%>">
 						<div class="collection collection--total">
 							<div class="collection__image-wrap">
 								<img class="collection__image"
-									src="<%=request.getContextPath()%>/upload/<%=bookmarkList.get(i).getPost_pic()%>">
+									src="<%=request.getContextPath()%>/upload/<%=postList.get(i).getPost_pic()%>">
 							</div>
 							<span class="collection__type">상품 </span>
 						</div>

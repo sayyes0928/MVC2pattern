@@ -50,7 +50,7 @@ section{
 .author_header {
 	margin-top: 20px;
 	weight: 100%;
-	height: 50px;
+	height: 100px;
 }
 
 .author_img{
@@ -74,21 +74,41 @@ section{
 
 .author_header p:nth-child(3){
     margin: 5px 0 0 70px;
-	font-size:20px;
+	font-size: 15px;
 	font-weight: bold;
 	color: gray;
+}
+
+.board_delete_btn {
+	float: right;
+	background-color: rgb(18, 74, 133);
+	color: white;
+	width: 58px;
+	height: 32px;
+	font-size: 15px;
+	font-weight: bold;
+	border: 1px solid rgb(18, 74, 133);
+	border-radius: 7px;
+	outline: none;
+	margin-top: 10px;
+}
+
+.board_delete_btn:hover {
+	border: 1px solid rgb(27 99 175);
+	background-color: rgb(30 80 134);
+	color: white;
 }
 
 .detail_post{
 	width:100%;
 	height: 500px;
 	border: 1px solid black;
-	margin-top: 60px;
+	margin-top: 30px;
 }
 
 .comment{
 	width: 100%;
-	height: 500px;
+	height: 100%;
 	margin-top: 40px;
 	border-top: 3px solid #e3e3e3;
 }
@@ -183,45 +203,54 @@ section{
 	object-fit: cover;
 }
 
-.comment_list span:nth-child(2){
+.comment_list span:nth-child(2) {
 	margin: 0 0 0 21px;
 	font-weight: bold;
 }
 
-.comment_list span:nth-child(3){
+.comment_list span:nth-child(3) {
 	margin: 0 0 0 10px;
 	font-size: 18px;
 }
 
-.comment_list_feed{
+.comment_list_feed {
 	list-style: none;
+	height: 23px;
 }
 
-.comment_list_feed li{
+.comment_list_feed li {
 	display: inline;
 	color: gray;
 }
 
-.comment_list_feed > li:first-child{
+.comment_feed_date {
 	margin-left: 21px;
 	margin-bottom: 10px;
+	font-size: 15px;
 }
 
-a{
+.comment_feed_delte {
+	margin-left: 10px;
+}
+
+a {
 	color:black;
 }
 
-#comment_feed_list{
+#page_button a:hover {
+	color: gray;
+}
+#comment_feed_list {
 	margin-top: 30px;
 }
-.null_comment_list{
+.null_comment_list {
 	clear: both;
 	text-align: center;
 	text-weight: bold;
 	margin-top: 30px;
 	
 }
-#page_button{
+#page_button {
 	clear: both;
 	width: 100%;
 	height: 50px;
@@ -231,6 +260,19 @@ a{
 	border-top: 3px solid #e3e3e3;
 	margin-top: 30px;
 	padding-top: 10px;
+}
+
+.comment_delete_btn {
+	border: 0px solid black;
+	background-color: white;
+	color: gray;
+	font-size: 15px;
+	outline: none;
+}
+
+.comment_delete_btn:hover {
+	border-bottom: 1px solid black;
+	color: black;
 }
 
 footer{
