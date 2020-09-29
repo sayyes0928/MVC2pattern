@@ -31,4 +31,14 @@ public class LoginUserService {
 		return login_nkname;
 		
 	}
+	public String loginnpw(String us_id) {
+		SqlSessionFactory factory = BoardDAO.getConn();
+		  SqlSession sqlsession = factory.openSession();
+		  String login_nkname = sqlsession.selectOne("select_pw", us_id);
+		  
+		  sqlsession.close();
+		
+		return login_nkname;
+		
+	}
 }
