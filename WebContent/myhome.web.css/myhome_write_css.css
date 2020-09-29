@@ -948,3 +948,8 @@ px
 [contentEditable="true"]:focus {
   outline: none;
 }
+
+#modianddel{
+	width:295px;
+	hegiht:50px;
+}

@@ -1,24 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
-<%@ page import="com.jachi.DTO.QnABBS"%>
+<%@ page import="com.jachi.DTO.BeautyRoomDTO"%>
 
 <%
-	ArrayList<QnABBS> userpost = (ArrayList<QnABBS>) request.getAttribute("article");
+ArrayList<BeautyRoomDTO> userpost = (ArrayList<BeautyRoomDTO>) request.getAttribute("beautyList");
 
 String us_id = (String) session.getAttribute("us_id");
-String qna_title = request.getParameter("qna_title");
-String qna_post = request.getParameter("qna_post");
-String qna_pw = request.getParameter("qna_pw");
-String qna_num = request.getParameter("qna_num");
-String qna_img = request.getParameter("qna_img");
+String post_title = request.getParameter("bt_title");
+String post_posting = request.getParameter("bt_posting");
+String post_pic = request.getParameter("bt_img");
+String post_num = request.getParameter("bt_num");
+String post_pw = request.getParameter("bt_pic");
 %>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>QnA</title>
+<title>뷰티룸수정하기</title>
 <link rel="stylesheet" href="./Teamcss/Beautyroom_write.css"
 	type="text/css">
 <link
