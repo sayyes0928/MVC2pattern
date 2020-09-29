@@ -16,7 +16,6 @@ public class MypageProfileUserInfoService {
    		 SqlSessionFactory sqlfactory = BoardDAO.getConn();
    		 SqlSession sqlsession = sqlfactory.openSession();
    		 List<UserinfoDTO> deliveryCount = sqlsession.selectList("select_mypage_userinfo", us_id);
-   		
    		sqlsession.close();
    		
    		return deliveryCount;
