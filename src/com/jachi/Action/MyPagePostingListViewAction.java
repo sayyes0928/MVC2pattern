@@ -41,7 +41,7 @@ public class MyPagePostingListViewAction implements Action {
 
 		MypageProfileUserInfoService mypageProfileUserInfoService = new MypageProfileUserInfoService();
 
-		userinfoDTO = mypageProfileUserInfoService.getUserInfo_list(or_id);
+		userinfoDTO = mypageProfileUserInfoService.getUserInfo_list_profile(or_id);
 
 		ActionForward forward = new ActionForward();
 		request.setAttribute("countLike", countLike);

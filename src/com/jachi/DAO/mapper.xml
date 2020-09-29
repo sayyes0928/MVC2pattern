@@ -37,6 +37,9 @@ SELECT * FROM jachi.ordertable where odr_code = #{odr_code};
  select * from jachi.userinfo where us_id = #{us_id};
  
 </select>
+<select id="select_mypage_userinfo_photo" parameterType="String" resultType="com.jachi.DTO.UserinfoDTO">
+ select * from userinfo where us_nkname = #{us_id};
+</select>
 
 <select id="select_mypage_userinfo_photo" parameterType="String" resultType="com.jachi.DTO.UserinfoDTO">
  select * from jachi.userinfo where us_nkname = #{us_id};

@@ -35,46 +35,6 @@
 	src="./myhome.web.js/coda-slider.1.1.1.pack.js"></script>
 <script src="./myhome.web.js/teamTopnav.js"></script>
 
-<script type="text/javascript">
-	var theInt = null;
-	var $crosslink, $navthumb;
-	var curclicked = 0;
-
-	theInterval = function(cur) {
-		clearInterval(theInt);
-
-		if (typeof cur != "undefined")
-			curclicked = cur;
-
-		$crosslink.removeClass("active-thumb");
-		$navthumb.eq(curclicked).parent().addClass("active-thumb");
-		$(".stripNav ul li a").eq(curclicked).trigger("click");
-
-		theInt = setInterval(function() {
-			$crosslink.removeClass("active-thumb");
-			$navthumb.eq(curclicked).parent().addClass("active-thumb");
-			$(".stripNav ul li a").eq(curclicked).trigger("click");
-			curclicked++;
-			if (4 == curclicked)
-				curclicked = 0;
-		}, 3000);
-	};
-
-	$(function() {
-		$("#main-photo-slider").codaSlider();
-
-		$navthumb = $(".nav-thumb");
-		$crosslink = $(".cross-link");
-
-		$navthumb.click(function() {
-			var $this = $(this);
-			theInterval($this.parent().attr("href").slice(1) - 1);
-			return false;
-		});
-
-		theInterval();
-	});
-</script>
 
 <title>MYpage</title>
 </head>
@@ -91,11 +51,7 @@
 		<main> <header class="container collection-book-header">
 			<h1 class="collection-book-title__book-name">좋아요</h1>
 			<p class="collection-book-owner">
-				<a class="collection-book-owner__link" href="/users/8659285"><img
-					class="profile-image"
-					src="https://image.ohou.se/i/bucketplace-v2-development/uploads/users/profile_images/1591064955_kakao_1372291789.jpg?gif=1&amp;w=36&amp;h=36&amp;c=c&amp;webp=1"
-					srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/users/profile_images/1591064955_kakao_1372291789.jpg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/users/profile_images/1591064955_kakao_1372291789.jpg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/users/profile_images/1591064955_kakao_1372291789.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 3x"><span
-					class="collection-book-owner__name">가가가가가가2</span></a>
+
 			</p>
 			<div class="collection-book-actions">
 				<div class="drop-down">

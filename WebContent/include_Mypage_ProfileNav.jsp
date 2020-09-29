@@ -17,7 +17,7 @@
 								<li class="page-navigation__item"><a class="active"
 									href="/users/8659285" target="_self">모두보기</a></li>
 								<li class="page-navigation__item"><a class=""
-									href="#" target="_self">사진</a></li>
+									href="MypagePhotoView.bo" target="_self">사진</a></li>
 								<li class="page-navigation__item"><a class=""
 									href="MypageScrapView.bo" target="_self">스크랩북</a></li>
 								<li class="page-navigation__item"><a class=""
