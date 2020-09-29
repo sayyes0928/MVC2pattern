@@ -8,8 +8,15 @@ public class TipDTO {
     String tip_coverimg;
     String tip_date;
     String tip_img;
+    String tip_us_id;
     
     
+	public String getTip_us_id() {
+		return tip_us_id;
+	}
+	public void setTip_us_id(String tip_us_id) {
+		this.tip_us_id = tip_us_id;
+	}
 	public String getTip_img() {
 		return tip_img;
 	}

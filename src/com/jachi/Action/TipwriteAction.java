@@ -39,6 +39,7 @@ public class TipwriteAction implements Action {
 		tipdto.setTip_title(multi.getParameter("write_title"));
 		tipdto.setTip_post(multi.getParameter("editordata"));
 		tipdto.setTip_coverimg(cover_imgname);
+		tipdto.setTip_us_id(us_id);
  
 		TipwriteService tipwriteService = new TipwriteService();
 		boolean isWriteSuccess = tipwriteService.registArticle(tipdto);

@@ -23,24 +23,24 @@ public class TipDetailService {
 		return Tipselectall;
     }
     
-    public int getListcount() throws Exception {
+    public int getListcount(int rep_tip_num) throws Exception {
     	int listcount = 0;
     	
     	SqlSessionFactory sqlfactory = BoardDAO.getConn();
     	SqlSession sqlsession = sqlfactory.openSession();
-    	listcount = sqlsession.selectOne("select_tip_comment_count");
+    	listcount = sqlsession.selectOne("select_tip_comment_count", rep_tip_num);
     	
     	return listcount;
     }
     
-    public List<TipReplyDTO> getArticleList(int page, int limit, int tip_num) throws Exception{
+    public List<TipReplyDTO> getArticleList(int page, int limit, int rep_tip_num) throws Exception{
     	
-    	int Startrow = (page-1)*12;
+    	int Startrow = (page-1)*5;
     	    	
     	Map<String,Object> map = new HashMap<>();
 		map.put("Startrow", Startrow);
 		map.put("limit", limit);
-		map.put("rep_tip_num", tip_num);
+		map.put("rep_tip_num", rep_tip_num);
 		
     	SqlSessionFactory sqlfactory = BoardDAO.getConn();
     	SqlSession sqlsession = sqlfactory.openSession();

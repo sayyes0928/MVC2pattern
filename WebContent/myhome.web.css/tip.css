@@ -34,8 +34,10 @@
 	float: right;
 }
 #tip_list{
-	border: 1px solid black;
+	border-top: 2px solid black;
 	width:100%;
+	height:100%;
+	padding-top: 10px;
 }
 
 #tip_list > a{
@@ -138,8 +140,10 @@ a{
 }
 
 .null_tipboard{
-    margin-left: 539px;
+	width: 100%;
+	height: 20px;
+	margin-top: 10px;
+    margin-left: 508px;
     font-size: 20px;
 	font-weight: bold;
-
 }
