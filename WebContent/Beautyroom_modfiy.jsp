@@ -18,7 +18,7 @@ String post_pw = request.getParameter("bt_pic");
 <html>
 <head>
 <meta charset="UTF-8">
-<title>뷰티룸수정하기</title>
+<title>뷰티수정하기</title>
 <link rel="stylesheet" href="./Teamcss/Beautyroom_write.css"
 	type="text/css">
 <link
