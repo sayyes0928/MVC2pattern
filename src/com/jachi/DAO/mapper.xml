@@ -57,7 +57,7 @@ select us_pw from userinfo where us_id =#{us_id};
 </select>
 
 <select id="select_nkname" resultType="String">
-select us_nkname from userinfo where us_id = #{us_id};
+select us_pw from userinfo where us_id = #{us_id};
 </select>
 
 <select id="us_id_select" parameterType="String" resultType="String">
