@@ -12,16 +12,15 @@
 <head>
 <meta charset="UTF-8">
 <title>상품 구매페이지1</title>
-<link rel="stylesheet" href="./myhome.web.css/teamTopNav.css"
-	type="text/css">
-<link rel="stylesheet" href="./myhome.web.css/ProdcutPost.css"
-	type="text/css">
+
+<link rel="stylesheet" href="./myhome.web.css/ProdcutPost.css" type="text/css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script type="text/javascript" src="./myhome.web.js/ProductPost.js"></script>
 <script src="./myhome.web.js/teamTopnav.js"></script>
+
 <script>
-	//////////// 주문 목록 리스트 
+/*	//////////// 주문 목록 리스트 
 	$(function() {
 		$('#Option1')
 				.on(
@@ -51,8 +50,9 @@
 	////////// 주문 목록 삭제버튼
 	$(document).on("click", "#buylist_delete1", function() {
 		$(this, '#buylist_delete1').parent().css("display", "none");
-	});
+	});  */ 
 </script>
+
 </head>
 <body>
 	<form id="contentPage" action="#">
@@ -122,85 +122,55 @@
 							</ul>
 						</div>
 						<hr class="clear">
+						<div class="product_orderbox">
 						<div class="s_combobox">
 							<ul>
+						      <% String option1 = option1 = article.get(0).getPro_option1();
+							     String[] option_split1 = option1.split(",");
+						         if(!article.get(0).getPro_option1().equals(",")) { %>
+								     <li><select id="Option1">
+								       <%  for (int x=0; x<option_split1.length; x++) {  %>
+										    <option value="<%=option_split1[x]%>"><%=option_split1[x]%></option>
+									   <%
+										   }
+									   %>
 
-								<%
-									if (article.get(0).getPro_option1() != null) {
-										String option = null;
-										String[] optionsp = null;
-										for (int i = 0; i < article.size(); i++) {
-											option = article.get(i).getPro_option1();
-											optionsp = option.split(",");
-								%>
-								<%
-									}
-								%>
-								<li><select id="Option1">
+								     </select></li>
+						       <%
+								   }
+							   %>
 
+							   <% String option2 = article.get(0).getPro_option2();
+							      String[] option_split2 = option2.split(",");
+						          if(!article.get(0).getPro_option2().equals(",")) { %>
+								     <li><select id="Option2">
+								       <%  for (int x=0; x<option_split2.length; x++) {  %>
+										    <option value="<%=option_split2[x]%>"><%=option_split2[x]%></option>
+									   <%
+										   }
+									   %>
 
-										<%
-											for (int x = 0; x < optionsp.length; x++) {
-										%>
-										<option value="<%=optionsp[x]%>"><%=optionsp[x]%></option>
-										<%
-											}
-										%>
+								     </select></li>
+						       <%
+								   }
+							   %>
 
-								</select></li>
-								<%
-									}
-								%>
+							    <% String option3 = article.get(0).getPro_option3();
+							       String[] option_split3 = option3.split(",");
+						           if(!article.get(0).getPro_option3().equals(",")) { %>
+								     <li><select id="Option3">
+								       <%  for (int x=0; x<option_split3.length; x++) {  %>
+										    <option value="<%=option_split3[x]%>"><%=option_split3[x]%></option>
+									   <%
+										   }
+									   %>
 
-								<%
-									if (article.get(0).getPro_option2() != null) {
-										String option = null;
-										String[] optionsp = null;
-										for (int i = 0; i < article.size(); i++) {
-											option = article.get(i).getPro_option2();
-											optionsp = option.split(",");
-								%>
-								<%
-									}
-								%>
-								<li><select>
-										<%
-											for (int x = 0; x < optionsp.length; x++) {
-										%>
-										<option><%=optionsp[x]%></option>
-										<%
-											}
-										%>
-								</select></li>
-								<%
-									}
-								%>
-
-								<%
-									if (article.get(0).getPro_option3() != null) {
-										String option = null;
-										String[] optionsp = null;
-										for (int i = 0; i < article.size(); i++) {
-											option = article.get(i).getPro_option3();
-											optionsp = option.split(",");
-								%>
-								<%
-									}
-								%>
-								<li><select>
-										<%
-											for (int x = 1; x < optionsp.length; x++) {
-										%>
-										<option><%=optionsp[x]%></option>
-										<%
-											}
-										%>
-								</select></li>
-								<%
-									}
-								%>
+								     </select></li>
+						       <%
+								   }
+							   %>
 							</ul>
-							<div id="buylist_cell1">
+						<!-- 	<div id="buylist_cell1">
 								<div id="buylist_section1">
 									<div id="buylist1"></div>
 									<span id="buy_option"></span> <input id="buylist_delete1"
@@ -219,18 +189,48 @@
 									</select> <span id="proudctlist_price1"><%=article.get(0).getPro_price()%></span>원
 								</div>
 							</div>
-							<div id="buylist_cell2"></div>
+							<div id="buylist_cell2"></div>  -->
+						 	<div id="buylist_cell1">
+						 	    <%for(int i=0; i<option_split1.length; i++) {%>
+								<div id="buylist_section1">
+									<div id="buylist1">123</div>
+									<span id="buy_option"></span> 
+									<input id="buylist_delete1" type="button" value="X">
+									<select id="product_count1" name="or_count">
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+										<option>5</option>
+										<option>6</option>
+										<option>7</option>
+										<option>8</option>
+										<option>9</option>
+										<option>10+</option>
+									</select> 
+									<span id="proudctlist_price1"><%=article.get(0).getPro_price()%></span>원
+								</div>
+								<%} %>						
+							</div>
 						</div>
+						
+						<script>
+						     function(){
+						    	 
+						     }
+						</script>
+							
 						<%
 							String pro_code = (String) request.getParameter("pro_num");
 						%>
 						<input type="hidden" value=<%=pro_code%> name="pro_code"
 							id="pro_code">
-						<div class="s_price">
+						 <div class="s_price">
 							<ul>
 								<li class="price01">주문금액</li>
 								<li class="price02">0원</li>
 							</ul>
+						 </div>
 						</div>
 						<hr>
 						<script>
