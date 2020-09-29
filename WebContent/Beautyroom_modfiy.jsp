@@ -127,22 +127,22 @@ function existingTag(text)
 					 <input type="file"
 						name="post_pic" id="cma_file" accept="image/*" capture="camera"
 						onchange="getThumbnailPrivew(this,$('#cma_image'))"  /> <br/><br/>
-					<div id="cma_image"><img src="<%=request.getContextPath()%>/upload/<%=qna_pw%>" border="0" width="400px" height="400px" alt=""></div>
+					<div id="cma_image"><img src="<%=request.getContextPath()%>/upload/<%=post_pic%>" border="0" width="400px" height="400px" alt=""></div>
 				</div>
 
 				<div class="form__group field">
 					<input type="input" class="form__field" placeholder="제목을 입력해주세요"
-						name="qna_title" id='name' required maxlength="45" value="<%=qna_title%>"/> <label for="name"
+						name="post_title" id='name' required maxlength="45" value="<%=post_title%>"/> <label for="name"
 						class="form__label">제목을 입력해주세요 :D</label>
 				</div>
 				<input type="hidden" value="<%=us_id%>" name="post_nickname">
-				<input type="hidden" value="<%=qna_num%>" name="qna_num">
-                <input type="hidden" id="qna_pw" value="<%=qna_pw%>">
-                <input type="hidden" id="qna_img" value="<%=qna_img%>">
+				<input type="hidden" value="<%=post_num%>" name="post_num">
+                <input type="hidden" id="post_pic" value="<%=post_pic%>">
+                <input type="hidden" id="post_pw" value="<%=post_pw%>">
                 <input type="hidden" id="aa" value="<%=request.getContextPath()%>">
 				<div class="form__group2 field2">
 					<textarea class="form__field2" id="BT_writepost" autocomplete="off"
-						placeholder="내용을 입력해주세요" name="qna_post" maxlength="150"><%=qna_post%></textarea>
+						placeholder="내용을 입력해주세요" name="post_posting" maxlength="150"><%=post_posting%></textarea>
 					<label for="name" class="form__label2">내용을 입력해주세요 :D</label>
 				</div>
 			</div>
