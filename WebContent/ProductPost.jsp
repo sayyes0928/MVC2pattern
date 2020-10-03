@@ -20,8 +20,8 @@
 <script src="./myhome.web.js/teamTopnav.js"></script>
 
 <script>
-/*	//////////// 주문 목록 리스트 
-	$(function() {
+	//////////// 주문 목록 리스트 
+/*	$(function() {
 		$('#Option1')
 				.on(
 						'change',
@@ -50,7 +50,7 @@
 	////////// 주문 목록 삭제버튼
 	$(document).on("click", "#buylist_delete1", function() {
 		$(this, '#buylist_delete1').parent().css("display", "none");
-	});  */ 
+	}); */   
 </script>
 
 </head>
@@ -191,9 +191,9 @@
 							</div>
 							<div id="buylist_cell2"></div>  -->
 						 	<div id="buylist_cell1">
-						 	    <%for(int i=0; i<option_split1.length; i++) {%>
+						 	      <%for(int i=0; i<option_split1.length; i++) {%>
 								<div id="buylist_section1">
-									<div id="buylist1">123</div>
+									<div id="buylist1" name="<%= i%>"><%= option_split1[i]%></div>
 									<span id="buy_option"></span> 
 									<input id="buylist_delete1" type="button" value="X">
 									<select id="product_count1" name="or_count">
@@ -210,14 +210,53 @@
 									</select> 
 									<span id="proudctlist_price1"><%=article.get(0).getPro_price()%></span>원
 								</div>
-								<%} %>						
+								<%} %> 						
 							</div>
 						</div>
 						
 						<script>
-						     function(){
+						      
+						    /*	 $("#Option1").on('change',function(){
+						    		 
+						    		 
+						    		 console.log("옵션 1체인지");
+						    		 var str = "";
+						    		 var op1 = $("#Option1").size();
+						    		 var op1_vla = $("#Option1").val();
+						    		 var op2 = $("#Option2").size();
+						    		 var op3 = $("#Option3").size();
+						    		 var op = $(".input").val();
+						    		 
+						    		 str += "<div>";
+						    		 str += "<input class='input' type='button' value='"+op1_vla+"'>";
+						    		 str += "</div>";
+						    		 
+						    		 console.log(op1+","+ op2);
+						    		 
+						    		 if(op1_vla == op){
+						    			 alert("이미 선택한 옵션입니다.");
+						    			 return;
+						    		 }		 
+							    		 
+						    		 $("#buylist_cell1").append(str);
+						    	     
+						    		 console.log(op);
+						    	 }); */
 						    	 
-						     }
+						    	 $("#Option1").on('change',function(){
+						    		 var idx = $("#Option1 option").index($("#Option1 option:selected"));
+						    		 var op2 = $("#Option1").size();
+						    		 
+						    		 console.log(idx+","+op2);
+						    		 $("div[name='"+idx+"']").parent().css("display", "block");
+						    		 
+						    		 
+						    	 });
+						     
+						    	 $(document).on("click", "#buylist_delete1", function() {
+						    			$(this, '#buylist_delete1').parent().css("display", "none");
+						    	 });
+						    	 
 						</script>
 							
 						<%

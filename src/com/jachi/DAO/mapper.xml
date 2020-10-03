@@ -148,13 +148,14 @@ insert into productinfo values(#{pro_code},#{pro_name},#{pro_price},#{pro_mainim
 	delete from qna where qna_num = #{qna_num};
 </delete>
 
-<<<<<<< HEAD
+
 <delete id="delete_qnacmall" parameterType="Integer">
 	delete from qna_comment where qc_num = #{qna_num};
-=======
+</delete>
+
 <delete id="bt_del" parameterType="Integer">
 	delete from posting where post_num = #{bt_num};
->>>>>>> refs/remotes/origin/master
+
 </delete>
 
 <select id="book_check" parameterType="map" resultType="int">
