@@ -4,8 +4,11 @@
 <%@ page import="javax.websocket.Session"%>
 <%@ page import="java.util.*"%>
 <%@ page import="com.jachi.DTO.ProductinfoDTO"%>
+<%@page import="java.text.DecimalFormat" %>
 <%
 	ArrayList<ProductinfoDTO> article = (ArrayList<ProductinfoDTO>) request.getAttribute("article");
+
+    DecimalFormat aaa = new DecimalFormat("###,###");
 %>
 <!DOCTYPE html>
 <html>
@@ -117,7 +120,7 @@
 								<li id="product_name" class="s_maintitlefont02"><%=article.get(0).getPro_name()%></li>
 								<li class="s_maintitlefont01">3개 리뷰</li>
 								<li class="s_maintitlefont03">54%</li>
-								<li class="s_li_inline"><%=article.get(0).getPro_price()%>
+								<li class="s_li_inline"><%=aaa.format(article.get(0).getPro_price())%>
 									원</li>
 							</ul>
 						</div>
@@ -125,7 +128,7 @@
 						<div class="product_orderbox">
 						<div class="s_combobox">
 							<ul>
-						      <% String option1 = option1 = article.get(0).getPro_option1();
+						      <% String option1 = article.get(0).getPro_option1();
 							     String[] option_split1 = option1.split(",");
 						         if(!article.get(0).getPro_option1().equals(",")) { %>
 								     <li><select id="Option1">
@@ -139,83 +142,41 @@
 						       <%
 								   }
 							   %>
-
-							   <% String option2 = article.get(0).getPro_option2();
-							      String[] option_split2 = option2.split(",");
-						          if(!article.get(0).getPro_option2().equals(",")) { %>
-								     <li><select id="Option2">
-								       <%  for (int x=0; x<option_split2.length; x++) {  %>
-										    <option value="<%=option_split2[x]%>"><%=option_split2[x]%></option>
-									   <%
-										   }
-									   %>
-
-								     </select></li>
-						       <%
-								   }
-							   %>
-
-							    <% String option3 = article.get(0).getPro_option3();
-							       String[] option_split3 = option3.split(",");
-						           if(!article.get(0).getPro_option3().equals(",")) { %>
-								     <li><select id="Option3">
-								       <%  for (int x=0; x<option_split3.length; x++) {  %>
-										    <option value="<%=option_split3[x]%>"><%=option_split3[x]%></option>
-									   <%
-										   }
-									   %>
-
-								     </select></li>
-						       <%
-								   }
-							   %>
 							</ul>
-						<!-- 	<div id="buylist_cell1">
-								<div id="buylist_section1">
-									<div id="buylist1"></div>
-									<span id="buy_option"></span> <input id="buylist_delete1"
-										type="button" value="X"> <select id="product_count1"
-										name="or_count">
-										<option>1</option>
-										<option>2</option>
-										<option>3</option>
-										<option>4</option>
-										<option>5</option>
-										<option>6</option>
-										<option>7</option>
-										<option>8</option>
-										<option>9</option>
-										<option>10+</option>
-									</select> <span id="proudctlist_price1"><%=article.get(0).getPro_price()%></span>원
-								</div>
-							</div>
-							<div id="buylist_cell2"></div>  -->
 						 	<div id="buylist_cell1">
-						 	      <%for(int i=0; i<option_split1.length; i++) {%>
+						 	      <% int price = article.get(0).getPro_price();
+						 	         for(int i=0; i<option_split1.length; i++) {%>
 								<div id="buylist_section1">
-									<div id="buylist1" name="<%= i%>"><%= option_split1[i]%></div>
+									<div id="buylist" name="<%= i%>"><%= option_split1[i]%></div>
 									<span id="buy_option"></span> 
 									<input id="buylist_delete1" type="button" value="X">
-									<select id="product_count1" name="or_count">
-										<option>1</option>
-										<option>2</option>
-										<option>3</option>
-										<option>4</option>
-										<option>5</option>
-										<option>6</option>
-										<option>7</option>
-										<option>8</option>
-										<option>9</option>
-										<option>10+</option>
+									<select class="product_count" name="or_count">
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+										<option value="7">7</option>
+										<option value="8">8</option>
+										<option value="9">9</option>
+										<option value="10">10+</option>
 									</select> 
-									<span id="proudctlist_price1"><%=article.get(0).getPro_price()%></span>원
+									<span id="count_price"><%=aaa.format(article.get(0).getPro_price())%>원</span>
+									<input class="ep_price" type="hidden" value="<%=price%>">
 								</div>
 								<%} %> 						
 							</div>
 						</div>
 						
 						<script>
-						      
+						
+						// 가격 콤마
+						function addComma(num) {
+					        var regexp = /\B(?=(\d{3})+(?!\d))/g;
+					        return num.toString().replace(regexp, ',');
+					      }  
+						
 						    /*	 $("#Option1").on('change',function(){
 						    		 
 						    		 
@@ -243,18 +204,60 @@
 						    		 console.log(op);
 						    	 }); */
 						    	 
-						    	 $("#Option1").on('change',function(){
-						    		 var idx = $("#Option1 option").index($("#Option1 option:selected"));
-						    		 var op2 = $("#Option1").size();
-						    		 
-						    		 console.log(idx+","+op2);
-						    		 $("div[name='"+idx+"']").parent().css("display", "block");
-						    		 
-						    		 
-						    	 });
-						     
-						    	 $(document).on("click", "#buylist_delete1", function() {
-						    			$(this, '#buylist_delete1').parent().css("display", "none");
+						    	 // 주문 옵션 리스트
+						    	  $(function(){
+						    		  
+						    		  var price_all = 0;
+						    		  var sum = 0;
+                                      var j = new Array(); // 내가 선택한 인덱스 값
+                                     
+						    		  $("#Option1").on('change',function(){
+						    			 
+							    		 var idx = $("#Option1 option").index($("#Option1 option:selected"));
+							    		 var op2 = $("#Option1").size();
+							    		 
+							    		 
+							    		 for(var i=0; i<j.length; i++){
+							    			   if(j[i] == idx){
+							    				 alert("이미 선택한 옵션입니다.");
+							    			 	 return;   
+							    			   }
+							    		 }
+							    		 
+							    		 if(idx!=0){
+					    				   $("div[name='"+idx+"']").parent().css("display", "block");
+					    				   j.push(idx);
+					    				   price_all += <%=price%>;
+							    		   $(".price02").text(price_all); 
+					    		 
+							    			 console.log(j[0]);
+							    		 }
+							    	 });
+							          
+							    	 // 주문 삭제버튼
+							    	 $(document).on("click", "#buylist_delete1", function() {
+							    			$(this, '#buylist_delete1').parent().css("display", "none");
+							    	 });
+							    	 
+						    	     // 상품 수량
+							    	 $(document).on('change','.product_count',function(){
+							    		 var n = $(".product_count").index(this);
+							    		 var count = $(".product_count:eq("+n+") option:selected").val();
+							    		 var price = count*<%=price%>;
+							             
+							    		 $(".product_count:eq("+n+")").next("#count_price").text(addComma(price)+" 원");
+							    		 $(".ep_price:eq("+n+")").val(price);
+							    		 var a = $(".ep_price:eq("+n+")").val();
+							    		 
+							    		 console.log(Number(a)*1);
+							    		
+							    		 sum += Number(a);
+							    		 $(".price02").text(sum);
+							    								    		 
+							    		
+							    		 
+							    	 });
+							    	 
 						    	 });
 						    	 
 						</script>
