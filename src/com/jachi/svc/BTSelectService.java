@@ -66,8 +66,6 @@ public class BTSelectService {
 
 
 		int counting_Like = sqlsession.selectOne("counting_Like",us_id);
-		
-		
 
 		return counting_Like;
 		
@@ -77,8 +75,7 @@ public class BTSelectService {
 
 
 		int Counting_Scrap = sqlsession.selectOne("Counting_Scrap",us_id);
-		
-		
+
 
 		return Counting_Scrap;
 		

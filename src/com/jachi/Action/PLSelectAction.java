@@ -12,7 +12,6 @@ import com.jachi.DTO.ActionForward;
 import com.jachi.DTO.BoardBean;
 import com.jachi.DTO.PageInfo;
 import com.jachi.DTO.ProductinfoDTO;
-import com.jachi.svc.BoardListService;
 import com.jachi.svc.PLSelectService;
 
 public class PLSelectAction implements Action {
