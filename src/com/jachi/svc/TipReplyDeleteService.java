@@ -11,8 +11,7 @@ public class TipReplyDeleteService {
 	    public boolean removeAticle(TipReplyDTO rep_dto) throws Exception{
 	    	
 	    	boolean RemoveSuccess = false;
-	    	SqlSessionFactory sqlfactory = BoardDAO.getConn();
-	    	SqlSession sqlsession = sqlfactory.openSession();
+	    	SqlSession sqlsession = BoardDAO.getInstance();
 	    	
 	        int deleteCount = sqlsession.delete("tip_comment_delete", rep_dto);
 	        
@@ -21,7 +20,7 @@ public class TipReplyDeleteService {
 	        	 RemoveSuccess = true;	        
 	        }
 	        
-	        sqlsession.close();
+	        
 	        
 	        return RemoveSuccess;
 	    	

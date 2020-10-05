@@ -10,14 +10,13 @@ import com.jachi.DTO.BeautyRoomDTO;
 import com.jachi.DTO.UserinfoDTO;
 
 public class ProductPreOrderService {
+	SqlSession sqlsession = BoardDAO.getInstance();
 
 	public List<UserinfoDTO> getOrderinfo(String us_id) {
 
-		SqlSessionFactory sqlfactory = BoardDAO.getConn();
-		SqlSession sqlsession = sqlfactory.openSession();
 		List<UserinfoDTO> userinfo = sqlsession.selectList("order_userinfo",us_id);
 		
-		sqlsession.close();
+		
 
 		
 		return userinfo;

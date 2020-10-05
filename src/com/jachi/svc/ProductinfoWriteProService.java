@@ -9,13 +9,12 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 public class ProductinfoWriteProService {
+	SqlSession sqlsession = BoardDAO.getInstance();
 
 	public boolean registArticle(ProductinfoDTO productinfoDTO) throws Exception{
 		
 		boolean isWriteSuccess = false;
 		
-		 SqlSessionFactory sqlfactory = BoardDAO.getConn();
-		 SqlSession sqlsession = sqlfactory.openSession();
 		 int insert = sqlsession.insert("insert_productinfo",productinfoDTO);
 				
 		
@@ -24,7 +23,7 @@ public class ProductinfoWriteProService {
 			isWriteSuccess = true;
 		}
 		
-		sqlsession.close();
+		
 		return isWriteSuccess;
 		
 	}

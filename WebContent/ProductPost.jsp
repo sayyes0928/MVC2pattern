@@ -131,7 +131,7 @@
 						      <% String option1 = article.get(0).getPro_option1();
 							     String[] option_split1 = option1.split(",");
 						         if(!article.get(0).getPro_option1().equals(",")) { %>
-								     <li><select id="Option1">
+								     <li><select id="Option1" name="Option1">
 								       <%  for (int x=0; x<option_split1.length; x++) {  %>
 										    <option value="<%=option_split1[x]%>"><%=option_split1[x]%></option>
 									   <%
@@ -150,7 +150,7 @@
 									<div id="buylist" name="<%= i%>"><%= option_split1[i]%></div>
 									<span id="buy_option"></span> 
 									<input id="buylist_delete1" type="button" value="X">
-									<select class="product_count" name="or_count">
+									<select class="product_count" name="or_count" id="or_count">
 										<option value="1">1</option>
 										<option value="2">2</option>
 										<option value="3">3</option>
@@ -163,6 +163,7 @@
 										<option value="10">10+</option>
 									</select> 
 									<span id="count_price"><%=aaa.format(article.get(0).getPro_price())%>원</span>
+									<input type="hidden" value="" name="price_hidden" id="price_hidden"/>
 									<input class="ep_price" type="hidden" value="<%=price%>">
 								</div>
 								<%} %> 						
@@ -250,7 +251,8 @@
 							    		 var a = $(".ep_price:eq("+n+")").val();
 							    		 
 							    		 console.log(Number(a)*1);
-							    		
+							    		 $("#price_hidden").val(Number(a));
+							    
 							    		 sum += Number(a);
 							    		 $(".price02").text(sum);
 							    								    		 
@@ -278,21 +280,30 @@
 						<script>
 							// 장바구니 및 구매 버튼 클릭시 발생 이벤트 
 							function cart() {
+								
+								
 								var proall = "";
 								var pro_code = document
 										.getElementById("pro_code").value;
-								alert(pro_code);
 								var pro_option = document
 										.getElementById("buy_option").innerHTML;
 								var pro_name = document
-										.getElementById("buylist1").innerHTML;
+										.getElementById("Option1").innerHTML;
 								var pro_count = document
-										.getElementById("product_count1").value;
+										.getElementById("or_count").value;
 								var pro_price = document
-										.getElementById("proudctlist_price1").innerHTML;
+										.getElementById("price_hidden").value;
 								var pro_all = pro_name + pro_option;
 								var pro_group = [ pro_all, pro_count, pro_price ];
 
+								
+								
+								console.log(pro_code);
+								console.log(pro_option);
+								console.log(pro_name);
+								console.log(pro_count);
+								console.log(pro_price);
+								console.log(pro_group);
 								$.ajax({
 									url : 'BasketPage.jsp',
 									data : {

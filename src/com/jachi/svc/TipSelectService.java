@@ -10,14 +10,13 @@ import com.jachi.DTO.BeautyRoomDTO;
 import com.jachi.DTO.TipDTO;
 
 public class TipSelectService {
-	
-         public List<TipDTO> getTipinfo() {
-        		SqlSessionFactory sqlfactory = BoardDAO.getConn();
-        		SqlSession sqlsession = sqlfactory.openSession();
-        		List<TipDTO> Tipselectall = sqlsession.selectList("select_Tipinfo");
-        		
-        		sqlsession.close();
-        		
-        		return Tipselectall;
-         }
+
+	public List<TipDTO> getTipinfo() {
+		SqlSession sqlsession = BoardDAO.getInstance();
+		List<TipDTO> Tipselectall = sqlsession.selectList("select_Tipinfo");
+
+		
+
+		return Tipselectall;
+	}
 }

@@ -8,13 +8,12 @@ import com.jachi.DTO.QnA_Comment;
 
 public class QnaCommentWriteService {
 
-	
+	SqlSession sqlsession = BoardDAO.getInstance();
+
 	public boolean insertreply(QnA_Comment qcw) throws Exception{
 		
 		boolean isWriteSuccess = false;
 		
-		SqlSessionFactory sqlfactory = BoardDAO.getConn();
-		SqlSession sqlsession = sqlfactory.openSession();
 		int insert = sqlsession.insert("qna_comment_write",qcw);
 		
 		if(insert > 0) {
@@ -22,7 +21,7 @@ public class QnaCommentWriteService {
 			isWriteSuccess = true;
 		}
 		
-		sqlsession.close();
+		
 		
 		return isWriteSuccess;
 		

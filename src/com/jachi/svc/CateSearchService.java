@@ -12,12 +12,10 @@ public class CateSearchService {
 
 	
 	public List<ProductinfoDTO> getcatesearch(String cate1){
-		
-		SqlSessionFactory sqlfactory = BoardDAO.getConn();
-		SqlSession sqlsession = sqlfactory.openSession();
-		
+		SqlSession sqlsession = BoardDAO.getInstance();
+
 		List<ProductinfoDTO> prod = sqlsession.selectList("cate_searchtest", cate1);
-		sqlsession.close();
+		
 		
 		return prod;
 		

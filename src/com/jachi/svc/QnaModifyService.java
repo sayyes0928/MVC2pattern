@@ -7,13 +7,11 @@ import com.jachi.DAO.BoardDAO;
 import com.jachi.DTO.QnABBS;
 
 public class QnaModifyService {
-
 		public boolean plzup(QnABBS qnam) throws Exception{
 			
 			boolean isWriteSuccess = false;
 			
-			SqlSessionFactory sqlfactory = BoardDAO.getConn();
-			SqlSession sqlsession = sqlfactory.openSession();
+			SqlSession sqlsession = BoardDAO.getInstance();
 			
 			int insert = sqlsession.update("update_qna",qnam);
 			
@@ -22,7 +20,7 @@ public class QnaModifyService {
 				isWriteSuccess = true;
 			}
 			
-			sqlsession.close();
+			
 			
 			return isWriteSuccess;
 			

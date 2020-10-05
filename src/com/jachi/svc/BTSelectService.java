@@ -11,14 +11,13 @@ import com.jachi.DTO.QnABBS;
 import com.jachi.DTO.TipDTO;
 
 public class BTSelectService {
+	SqlSession sqlsession = BoardDAO.getInstance();
 
 	public List<BeautyRoomDTO> getbeautyinfo() {
 
-		SqlSessionFactory sqlfactory = BoardDAO.getConn();
-		SqlSession sqlsession = sqlfactory.openSession();
 		List<BeautyRoomDTO> beautylistall = sqlsession.selectList("select_beautyall");
 		System.out.println(beautylistall.size());
-		sqlsession.close();
+		
 
 		
 		return beautylistall;
@@ -26,14 +25,13 @@ public class BTSelectService {
 	}
 	public List<QnABBS> getQnaListAll(String or_id) {
 
-		SqlSessionFactory sqlfactory = BoardDAO.getConn();
-		SqlSession sqlsession = sqlfactory.openSession();
+
 		
 		String us_id = or_id;
 		
 		List<QnABBS> qanListAll = sqlsession.selectList("qna_getList",us_id);
 
-		sqlsession.close();
+		
 
 		
 		return qanListAll;
@@ -41,14 +39,12 @@ public class BTSelectService {
 	}
 	public List<TipDTO> getTipListAll(String or_id) {
 
-		SqlSessionFactory sqlfactory = BoardDAO.getConn();
-		SqlSession sqlsession = sqlfactory.openSession();
 		
 		String us_id = or_id;
 		
 		List<TipDTO> postingListAll = sqlsession.selectList("tip_getList",us_id);
 
-		sqlsession.close();
+		
 
 		
 		return postingListAll;
@@ -57,11 +53,10 @@ public class BTSelectService {
 	public List<BeautyRoomDTO> getPostList(String us_id) {
 
 		String post_nickname = us_id;
-		SqlSessionFactory sqlfactory = BoardDAO.getConn();
-		SqlSession sqlsession = sqlfactory.openSession();
+
 		List<BeautyRoomDTO> posting = sqlsession.selectList("posting_getList",post_nickname);
 		
-		sqlsession.close();
+		
 
 		return posting;
 		
@@ -69,11 +64,10 @@ public class BTSelectService {
 	
 	public int getCountLike (String us_id) {
 
-		SqlSessionFactory sqlfactory = BoardDAO.getConn();
-		SqlSession sqlsession = sqlfactory.openSession();
+
 		int counting_Like = sqlsession.selectOne("counting_Like",us_id);
 		
-		sqlsession.close();
+		
 
 		return counting_Like;
 		
@@ -81,11 +75,10 @@ public class BTSelectService {
 	
 	public int getCountScrap (String us_id) {
 
-		SqlSessionFactory sqlfactory = BoardDAO.getConn();
-		SqlSession sqlsession = sqlfactory.openSession();
+
 		int Counting_Scrap = sqlsession.selectOne("Counting_Scrap",us_id);
 		
-		sqlsession.close();
+		
 
 		return Counting_Scrap;
 		
