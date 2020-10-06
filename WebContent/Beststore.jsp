@@ -16,6 +16,7 @@ String us_id = (String) session.getAttribute("us_id"); //로그인 유무 확인
 </head>
 <body>
 
+
 <header>
 	<jsp:include page="HeaderTestjsp.jsp"></jsp:include>
 	</header>
