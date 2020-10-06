@@ -11,12 +11,11 @@ import com.jachi.DTO.QnA_Comment;
 
 public class QnaCommentDeleteService {
 
-	
+	SqlSession sqlsession = BoardDAO.getInstance();
+
 	public List<QnA_Comment> isArticleWriter(int qna_num) throws Exception{
-		SqlSessionFactory sqlfactory = BoardDAO.getConn();
-		SqlSession sqlsession = sqlfactory.openSession();
 		List<QnA_Comment> qnadelete = sqlsession.selectList("delete_qnacmall",qna_num);
-		sqlsession.close();
+		
 		
 		return qnadelete;
 		

@@ -10,16 +10,15 @@ import com.jachi.DTO.ProductinfoDTO;
 
 public class PLIndexService {
 
-	
+	SqlSession sqlsession = BoardDAO.getInstance();
+
 	public List<ProductinfoDTO> getproindexinfo() {
-		
-		SqlSessionFactory sqlfactory = BoardDAO.getConn();
-		SqlSession sqlsession = sqlfactory.openSession();
+
 		List<ProductinfoDTO> ProListAll = sqlsession.selectList("select_listall");
+
 		
-		sqlsession.close();
-		
+
 		return ProListAll;
-		
+
 	}
 }

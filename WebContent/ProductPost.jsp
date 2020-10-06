@@ -4,8 +4,11 @@
 <%@ page import="javax.websocket.Session"%>
 <%@ page import="java.util.*"%>
 <%@ page import="com.jachi.DTO.ProductinfoDTO"%>
+<%@page import="java.text.DecimalFormat" %>
 <%
 	ArrayList<ProductinfoDTO> article = (ArrayList<ProductinfoDTO>) request.getAttribute("article");
+
+    DecimalFormat aaa = new DecimalFormat("###,###");
 %>
 <!DOCTYPE html>
 <html>
@@ -20,8 +23,8 @@
 <script src="./myhome.web.js/teamTopnav.js"></script>
 
 <script>
-/*	//////////// 주문 목록 리스트 
-	$(function() {
+	//////////// 주문 목록 리스트 
+/*	$(function() {
 		$('#Option1')
 				.on(
 						'change',
@@ -50,7 +53,7 @@
 	////////// 주문 목록 삭제버튼
 	$(document).on("click", "#buylist_delete1", function() {
 		$(this, '#buylist_delete1').parent().css("display", "none");
-	});  */ 
+	}); */   
 </script>
 
 </head>
@@ -117,7 +120,7 @@
 								<li id="product_name" class="s_maintitlefont02"><%=article.get(0).getPro_name()%></li>
 								<li class="s_maintitlefont01">3개 리뷰</li>
 								<li class="s_maintitlefont03">54%</li>
-								<li class="s_li_inline"><%=article.get(0).getPro_price()%>
+								<li class="s_li_inline"><%=aaa.format(article.get(0).getPro_price())%>
 									원</li>
 							</ul>
 						</div>
@@ -125,10 +128,10 @@
 						<div class="product_orderbox">
 						<div class="s_combobox">
 							<ul>
-						      <% String option1 = option1 = article.get(0).getPro_option1();
+						      <% String option1 = article.get(0).getPro_option1();
 							     String[] option_split1 = option1.split(",");
 						         if(!article.get(0).getPro_option1().equals(",")) { %>
-								     <li><select id="Option1">
+								     <li><select id="Option1" name="Option1">
 								       <%  for (int x=0; x<option_split1.length; x++) {  %>
 										    <option value="<%=option_split1[x]%>"><%=option_split1[x]%></option>
 									   <%
@@ -139,85 +142,126 @@
 						       <%
 								   }
 							   %>
-
-							   <% String option2 = article.get(0).getPro_option2();
-							      String[] option_split2 = option2.split(",");
-						          if(!article.get(0).getPro_option2().equals(",")) { %>
-								     <li><select id="Option2">
-								       <%  for (int x=0; x<option_split2.length; x++) {  %>
-										    <option value="<%=option_split2[x]%>"><%=option_split2[x]%></option>
-									   <%
-										   }
-									   %>
-
-								     </select></li>
-						       <%
-								   }
-							   %>
-
-							    <% String option3 = article.get(0).getPro_option3();
-							       String[] option_split3 = option3.split(",");
-						           if(!article.get(0).getPro_option3().equals(",")) { %>
-								     <li><select id="Option3">
-								       <%  for (int x=0; x<option_split3.length; x++) {  %>
-										    <option value="<%=option_split3[x]%>"><%=option_split3[x]%></option>
-									   <%
-										   }
-									   %>
-
-								     </select></li>
-						       <%
-								   }
-							   %>
 							</ul>
-						<!-- 	<div id="buylist_cell1">
-								<div id="buylist_section1">
-									<div id="buylist1"></div>
-									<span id="buy_option"></span> <input id="buylist_delete1"
-										type="button" value="X"> <select id="product_count1"
-										name="or_count">
-										<option>1</option>
-										<option>2</option>
-										<option>3</option>
-										<option>4</option>
-										<option>5</option>
-										<option>6</option>
-										<option>7</option>
-										<option>8</option>
-										<option>9</option>
-										<option>10+</option>
-									</select> <span id="proudctlist_price1"><%=article.get(0).getPro_price()%></span>원
-								</div>
-							</div>
-							<div id="buylist_cell2"></div>  -->
 						 	<div id="buylist_cell1">
-						 	    <%for(int i=0; i<option_split1.length; i++) {%>
+						 	      <% int price = article.get(0).getPro_price();
+						 	         for(int i=0; i<option_split1.length; i++) {%>
 								<div id="buylist_section1">
-									<div id="buylist1">123</div>
+									<div id="buylist" name="<%= i%>"><%= option_split1[i]%></div>
 									<span id="buy_option"></span> 
 									<input id="buylist_delete1" type="button" value="X">
-									<select id="product_count1" name="or_count">
-										<option>1</option>
-										<option>2</option>
-										<option>3</option>
-										<option>4</option>
-										<option>5</option>
-										<option>6</option>
-										<option>7</option>
-										<option>8</option>
-										<option>9</option>
-										<option>10+</option>
+									<select class="product_count" name="or_count" id="or_count">
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+										<option value="7">7</option>
+										<option value="8">8</option>
+										<option value="9">9</option>
+										<option value="10">10+</option>
 									</select> 
-									<span id="proudctlist_price1"><%=article.get(0).getPro_price()%></span>원
+									<span id="count_price"><%=aaa.format(article.get(0).getPro_price())%>원</span>
+									<input type="hidden" value="" name="price_hidden" id="price_hidden"/>
+									<input class="ep_price" type="hidden" value="<%=price%>">
 								</div>
-								<%} %>						
+								<%} %> 						
 							</div>
 						</div>
 						
 						<script>
-						     function(){
+						
+						// 가격 콤마
+						function addComma(num) {
+					        var regexp = /\B(?=(\d{3})+(?!\d))/g;
+					        return num.toString().replace(regexp, ',');
+					      }  
+						
+						    /*	 $("#Option1").on('change',function(){
+						    		 
+						    		 
+						    		 console.log("옵션 1체인지");
+						    		 var str = "";
+						    		 var op1 = $("#Option1").size();
+						    		 var op1_vla = $("#Option1").val();
+						    		 var op2 = $("#Option2").size();
+						    		 var op3 = $("#Option3").size();
+						    		 var op = $(".input").val();
+						    		 
+						    		 str += "<div>";
+						    		 str += "<input class='input' type='button' value='"+op1_vla+"'>";
+						    		 str += "</div>";
+						    		 
+						    		 console.log(op1+","+ op2);
+						    		 
+						    		 if(op1_vla == op){
+						    			 alert("이미 선택한 옵션입니다.");
+						    			 return;
+						    		 }		 
+							    		 
+						    		 $("#buylist_cell1").append(str);
+						    	     
+						    		 console.log(op);
+						    	 }); */
 						    	 
-						     }
+						    	 // 주문 옵션 리스트
+						    	  $(function(){
+						    		  
+						    		  var price_all = 0;
+						    		  var sum = 0;
+                                      var j = new Array(); // 내가 선택한 인덱스 값
+                                     
+						    		  $("#Option1").on('change',function(){
+						    			 
+							    		 var idx = $("#Option1 option").index($("#Option1 option:selected"));
+							    		 var op2 = $("#Option1").size();
+							    		 
+							    		 
+							    		 for(var i=0; i<j.length; i++){
+							    			   if(j[i] == idx){
+							    				 alert("이미 선택한 옵션입니다.");
+							    			 	 return;   
+							    			   }
+							    		 }
+							    		 
+							    		 if(idx!=0){
+					    				   $("div[name='"+idx+"']").parent().css("display", "block");
+					    				   j.push(idx);
+					    				   price_all += <%=price%>;
+							    		   $(".price02").text(price_all); 
+					    		 
+							    			 console.log(j[0]);
+							    		 }
+							    	 });
+							          
+							    	 // 주문 삭제버튼
+							    	 $(document).on("click", "#buylist_delete1", function() {
+							    			$(this, '#buylist_delete1').parent().css("display", "none");
+							    	 });
+							    	 
+						    	     // 상품 수량
+							    	 $(document).on('change','.product_count',function(){
+							    		 var n = $(".product_count").index(this);
+							    		 var count = $(".product_count:eq("+n+") option:selected").val();
+							    		 var price = count*<%=price%>;
+							             
+							    		 $(".product_count:eq("+n+")").next("#count_price").text(addComma(price)+" 원");
+							    		 $(".ep_price:eq("+n+")").val(price);
+							    		 var a = $(".ep_price:eq("+n+")").val();
+							    		 
+							    		 console.log(Number(a)*1);
+							    		 $("#price_hidden").val(Number(a));
+							    
+							    		 sum += Number(a);
+							    		 $(".price02").text(sum);
+							    								    		 
+							    		
+							    		 
+							    	 });
+							    	 
+						    	 });
+						    	 
 						</script>
 							
 						<%
@@ -236,21 +280,30 @@
 						<script>
 							// 장바구니 및 구매 버튼 클릭시 발생 이벤트 
 							function cart() {
+								
+								
 								var proall = "";
 								var pro_code = document
 										.getElementById("pro_code").value;
-								alert(pro_code);
 								var pro_option = document
 										.getElementById("buy_option").innerHTML;
 								var pro_name = document
-										.getElementById("buylist1").innerHTML;
+										.getElementById("Option1").innerHTML;
 								var pro_count = document
-										.getElementById("product_count1").value;
+										.getElementById("or_count").value;
 								var pro_price = document
-										.getElementById("proudctlist_price1").innerHTML;
+										.getElementById("price_hidden").value;
 								var pro_all = pro_name + pro_option;
 								var pro_group = [ pro_all, pro_count, pro_price ];
 
+								
+								
+								console.log(pro_code);
+								console.log(pro_option);
+								console.log(pro_name);
+								console.log(pro_count);
+								console.log(pro_price);
+								console.log(pro_group);
 								$.ajax({
 									url : 'BasketPage.jsp',
 									data : {

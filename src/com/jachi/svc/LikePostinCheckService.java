@@ -10,15 +10,14 @@ import com.jachi.DAO.BoardDAO;
 import com.jachi.DTO.BeautyRoomDTO;
 
 public class LikePostinCheckService {
-	SqlSessionFactory factory = BoardDAO.getConn();
-	  SqlSession sqlsession = factory.openSession();
+	
+	SqlSession sqlsession = BoardDAO.getInstance();
+	  
 	  int result = 0;
 	public int likeCheck(Map<String, Object> m) throws Exception{
 		try {
-		
-		
+
 		  result = sqlsession.selectOne("rec_check", m);
-		  System.out.println(result);
 		}catch (Exception e) {
 			System.out.println("recCheck : " + e);
 			e.printStackTrace();
@@ -31,9 +30,8 @@ public class LikePostinCheckService {
 	public void recUpdate(Map<String, Object> m)throws Exception{
 		try {
 			int insert =sqlsession.insert("rec_update", m);
-			System.out.println(insert);
 			sqlsession.commit();
-			 sqlsession.close();
+			 
 		} catch (Exception e) {
 			System.out.println("recUpdate : " + e);
 			e.printStackTrace();
@@ -44,9 +42,8 @@ public class LikePostinCheckService {
 	public void recDelete(Map<String, Object> m)throws Exception{
 		try {
 			int insert =sqlsession.delete("rec_delete", m);
-			System.out.println(insert);
 			sqlsession.commit();
-			 sqlsession.close();
+			 
 		} catch (Exception e) {
 			System.out.println("recDelete : " + e);
 			e.printStackTrace();
@@ -55,7 +52,7 @@ public class LikePostinCheckService {
 	public List<BeautyRoomDTO> getLikeList(String us_id){
 		
 		List<BeautyRoomDTO> getBookmarkList = sqlsession.selectList("select_getLikeList", us_id);
-		sqlsession.close();
+		
 		
 	return getBookmarkList;
 }

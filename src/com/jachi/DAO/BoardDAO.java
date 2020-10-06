@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import javax.sql.DataSource;
 
 import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
@@ -24,6 +25,7 @@ import com.jachi.DTO.BoardBean;
 public class BoardDAO {
 	
 	private static SqlSessionFactory sqlfactory;
+	private static SqlSession sqlsession;
 
 	DataSource ds;
 	Connection con;
@@ -32,11 +34,11 @@ public class BoardDAO {
 	private BoardDAO() {
 	}
 
-	public static BoardDAO getInstance(){
-		if(boardDAO == null){
-			boardDAO = new BoardDAO();
+	public static SqlSession getInstance(){
+		if(sqlsession == null){
+			sqlsession = getConn();
 		}
-		return boardDAO;
+		return sqlsession;
 	}
 
 	public void setConnection(Connection con){
@@ -67,18 +69,19 @@ public class BoardDAO {
 
 	}
 	
-	public static SqlSessionFactory getConn() { // xml 읽는 생성자
+	public static SqlSession getConn() { // xml 읽는 생성자
 		//연결
 		try {
 			//sqlfactory 인스턴스를 사용하기 위해 SqlSessionFactoryBuilder() 를 통해 빌드한다.
 			//이때, mybatis-config.xml 의 설정 파일에서 sqlfactory 를 빌드한다
 			Reader reader = Resources.getResourceAsReader("com/jachi/DAO/mybatis-config.xml"); //xml 파일(mybatis.xml 파일)
 			sqlfactory = new SqlSessionFactoryBuilder().build(reader);
+			sqlsession = sqlfactory.openSession();
 		} catch (IOException e) {
 			
 			e.printStackTrace();
 		}
-		return sqlfactory;
+		return sqlsession;
 	}
 
 	public ArrayList<BoardBean> selectArticleList(int page,int limit){

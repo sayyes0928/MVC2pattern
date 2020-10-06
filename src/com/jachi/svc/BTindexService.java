@@ -9,13 +9,12 @@ import com.jachi.DAO.BoardDAO;
 import com.jachi.DTO.BeautyRoomDTO;
 
 public class BTindexService {
-	
+	SqlSession sqlsession = BoardDAO.getInstance();
+
 	public int btindexListCount() throws Exception{
 		
 		int listCount =0;
-		
-		SqlSessionFactory sqlfactory = BoardDAO.getConn();
-		SqlSession sqlsession = sqlfactory.openSession();
+
 		listCount = sqlsession.selectOne("mainbestbtselect_list");
 		
 		return listCount;
@@ -24,8 +23,7 @@ public class BTindexService {
 	
 	public List<BeautyRoomDTO> btindexall() throws Exception{
 		
-		SqlSessionFactory sqlfactory = BoardDAO.getConn();
-		SqlSession sqlsession = sqlfactory.openSession();
+
 		
 		List<BeautyRoomDTO> selectList = sqlsession.selectList("mainbestbtall");
 		

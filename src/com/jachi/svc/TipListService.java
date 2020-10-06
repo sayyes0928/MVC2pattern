@@ -9,13 +9,12 @@ import com.jachi.DAO.BoardDAO;
 import com.jachi.DTO.TipDTO;
 
 public class TipListService {
-    
+	SqlSession sqlsession = BoardDAO.getInstance();
 	public int getListcount() throws Exception {
     	
 		int listCount = 0;
 		
-		SqlSessionFactory sqlfactory = BoardDAO.getConn();
-		SqlSession sqlsession = sqlfactory.openSession();
+		
 		listCount = sqlsession.selectOne("select_tipcount");
 		
 		return listCount;
@@ -25,8 +24,6 @@ public class TipListService {
 		
 		int Startrow = (page-1)*12;
 		
-		SqlSessionFactory sqlfactory = BoardDAO.getConn();
-	    SqlSession sqlsession = sqlfactory.openSession();
         
 	    List<TipDTO> selectlist = sqlsession.selectList("select_TipListAll", Startrow);
 	    

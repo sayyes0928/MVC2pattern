@@ -14,11 +14,8 @@ public class UserLoginService {
 	public String logingo(String us_id) throws Exception {
 		
 		
-		SqlSessionFactory sqlfactory = BoardDAO.getConn();
-		SqlSession sqlsession = sqlfactory.openSession();
-		
+		SqlSession sqlsession = BoardDAO.getInstance();		
 		String sllogininfo = sqlsession.selectOne("select_logininfo",us_id);
-		System.out.println(sllogininfo+"¼¿·º°ªÀº ¶ß´Ï?");
 	
 		
 		return sllogininfo;

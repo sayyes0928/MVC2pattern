@@ -9,13 +9,12 @@ import com.jachi.DAO.BoardDAO;
 import com.jachi.DTO.QnABBS;
 
 public class QnaListService {
+	SqlSession sqlsession = BoardDAO.getInstance();
 
 	public int getListCount() throws Exception{
 		
 		int listCount = 0;
 		
-		SqlSessionFactory sqlfactory = BoardDAO.getConn();
-		SqlSession sqlsession = sqlfactory.openSession();
 		listCount = sqlsession.selectOne("qnaselect_list");
 		
 		return listCount;
@@ -24,8 +23,6 @@ public class QnaListService {
 	
 	public List<QnABBS> getArticleList(int page, int limit) throws Exception{
 		
-		SqlSessionFactory sqlfactory = BoardDAO.getConn();
-		SqlSession sqlsession = sqlfactory.openSession();
 		
 		int startrow=(page-1)*8;
 		

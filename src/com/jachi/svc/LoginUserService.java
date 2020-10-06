@@ -9,34 +9,29 @@ import com.jachi.DTO.ProductinfoDTO;
 import com.jachi.DAO.BoardDAO;
 
 public class LoginUserService {
-	
+	SqlSession sqlsession = BoardDAO.getInstance();
+
 	public String loginUser(String us_id) {
-		SqlSessionFactory factory = BoardDAO.getConn();
-		  SqlSession sqlsession = factory.openSession();
 		  String login_pw = null;
 		   login_pw = sqlsession.selectOne("select_login_user", us_id);
-		  sqlsession.close();
+		  
 
 		return login_pw;
 		
 	}
 	
 	public String loginnkname(String us_id) {
-		SqlSessionFactory factory = BoardDAO.getConn();
-		  SqlSession sqlsession = factory.openSession();
 		  String login_nkname = sqlsession.selectOne("select_nkname", us_id);
 		  
-		  sqlsession.close();
+		  
 		
 		return login_nkname;
 		
 	}
 	public String loginnpw(String us_id) {
-		SqlSessionFactory factory = BoardDAO.getConn();
-		  SqlSession sqlsession = factory.openSession();
 		  String login_nkname = sqlsession.selectOne("select_pw", us_id);
 		  
-		  sqlsession.close();
+		  
 		
 		return login_nkname;
 		

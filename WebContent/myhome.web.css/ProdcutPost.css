@@ -642,14 +642,14 @@
     margin-top:60px;
     margin-bottom: 40px;
   }
+  
   .delivery_title02 li:last-child{
     /* margin-left:5px; */
   }
-  #buylist_cell1{
-  /* 	display: none;*/
-  }
+  
+  
   #buylist_section1{
-   /*display: none;*/
+   display: none;
    border:1px solid black;
    width:300px;
    height: 80px;
@@ -661,29 +661,23 @@
   
   }
 
-  #buylist1{
-   /* display: none;*/
+  #buylist{
     float:left;
-    margin-top: 10px;
-    padding-left: 10px;  
-    width:150px;
+    margin-top: 10px; 
     box-sizing: border-box;
-    font-size: 25px;
-    font-weight: bold;
-    text-align: left;
-   
+    font-size: 15px;
+    margin-left: 10px;
   }
   
-  #product_count1{
+  .product_count{
   clear:both;
   float:left;
   margin :8px 0 0 10px;
   width: 100px;
   height: 25px;
   box-sizing: border-box;
-  padding: 0px 0px 0px 10px;
-  font-weight: bold;
-  font-size: 16px;
+  text-align-last: center;
+  font-size: 15px;
   border:1px solid  #c8c8c8;
   border-radius:7px;
   
@@ -704,13 +698,13 @@
  
   }
   
-  #proudctlist_price1{
+  #count_price{
    
    float:right;
    margin-top: 10px;
    margin-right: 10px;'
-   font-size: 16px;
-   font-weight: bold;
+   font-size: 15px;
+  
   }
   
   #buy_option{
@@ -724,6 +718,5 @@
   .product_orderbox {
      width: 100%;
      height: 100%;
-     border: 1px solid black;
   }
   

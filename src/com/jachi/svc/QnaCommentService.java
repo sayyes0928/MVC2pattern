@@ -9,13 +9,12 @@ import com.jachi.DAO.BoardDAO;
 import com.jachi.DTO.QnA_Comment;
 
 public class QnaCommentService {
-	
+	SqlSession sqlsession = BoardDAO.getInstance();
+
 	public List<QnA_Comment> cm_list(int qnanum){
 		
-		SqlSessionFactory sqlfactory = BoardDAO.getConn();
-		SqlSession sqlsession =sqlfactory.openSession();
 		List<QnA_Comment> getcmlist = sqlsession.selectList("qna_select_comment",qnanum);
-		sqlsession.close();
+		
 		
 		return getcmlist;
 		

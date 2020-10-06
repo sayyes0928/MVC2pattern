@@ -12,8 +12,7 @@ public class BTModifyService {
 		
 		boolean isWriteSuccess =false;
 		
-		SqlSessionFactory sqlfactory = BoardDAO.getConn();
-		SqlSession sqlsession = sqlfactory.openSession();
+		SqlSession sqlsession = BoardDAO.getInstance();
 		
 		int insert = sqlsession.update("update_btm",btm);
 		

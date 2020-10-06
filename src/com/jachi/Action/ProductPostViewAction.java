@@ -10,8 +10,6 @@ import com.jachi.DTO.ActionForward;
 import com.jachi.DTO.BoardBean;
 import com.jachi.DTO.PageInfo;
 import com.jachi.DTO.ProductinfoDTO;
-import com.jachi.svc.BoardDetailService;
-import com.jachi.svc.BoardListService;
 import com.jachi.svc.ProductPostViewService;
 
 public class ProductPostViewAction implements Action{

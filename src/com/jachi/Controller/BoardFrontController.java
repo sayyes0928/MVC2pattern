@@ -1,3 +1,4 @@
+
 package com.jachi.Controller;
 
 
@@ -20,13 +21,6 @@ import com.jachi.Action.BTListAction;
 import com.jachi.Action.BTModifyAction;
 import com.jachi.Action.BTSelectAction;
 import com.jachi.Action.BTWriteAction;
-import com.jachi.Action.BoardDeleteProAction;
-import com.jachi.Action.BoardDetailAction;
-import com.jachi.Action.BoardListAction;
-import com.jachi.Action.BoardModifyFormAction;
-import com.jachi.Action.BoardModifyProAction;
-import com.jachi.Action.BoardReplyFormAction;
-import com.jachi.Action.BoardReplyProAction;
 import com.jachi.Action.BookMarkUpdate;
 import com.jachi.Action.CateSearchAction;
 import com.jachi.Action.JachiMainAction;
@@ -292,15 +286,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			forward=new ActionForward();
 			forward.setPath("/Beautyroom_write.jsp");
 		}
-		else if(command.equals("/boardList.bo")){
-			System.out.println("üũ2");	
-			action = new BoardListAction();
-			try{
-				forward=action.execute(request, response);
-			}catch(Exception e){
-				e.printStackTrace();
-			}
-		}
+		
         else if(command.equals("/Beautyroom_Detail.bo")){
 
 			action = new MyhomeDetailAction();
@@ -319,14 +305,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
-		else if(command.equals("/boardDetail.bo")){
-			action = new BoardDetailAction();
-			try{
-				forward=action.execute(request, response);
-			}catch(Exception e){
-				e.printStackTrace();
-			}
-		}
+		
 		else if(command.equals("/qna_file_down.bo")){
 			forward=new ActionForward();
 			forward.setPath("/qna_file_down.jsp");
@@ -336,37 +315,9 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
-		else if(command.equals("/boardReplyForm.bo")){
-			action = new BoardReplyFormAction();
-			try{
-				forward=action.execute(request, response);
-			}catch(Exception e){
-				e.printStackTrace();
-			}
-		}
-		else if(command.equals("/boardReplyPro.bo")){
-			action = new BoardReplyProAction();
-			try{
-				forward=action.execute(request, response);
-			}catch(Exception e){
-				e.printStackTrace();
-			}
-		}
-		else if(command.equals("/boardModifyForm.bo")){
-			action = new BoardModifyFormAction();
-			try{
-				forward=action.execute(request, response);
-			}catch(Exception e){
-				e.printStackTrace();
-			}
-		}else if(command.equals("/boardModifyPro.bo")){
-			action = new BoardModifyProAction();
-			try{
-				forward=action.execute(request, response);
-			}catch(Exception e){
-				e.printStackTrace();
-			}
-		}else if(command.equals("/boardDeleteForm.bo")){
+		
+		
+		else if(command.equals("/boardDeleteForm.bo")){
 			String nowPage = request.getParameter("page");
 			request.setAttribute("page", nowPage);
 			int board_num=Integer.parseInt(request.getParameter("board_num"));
@@ -374,14 +325,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			forward=new ActionForward();
 			forward.setPath("/qna_board_delete.jsp");
 		}
-		else if(command.equals("/boardDeletePro.bo")){
-			action = new BoardDeleteProAction();
-			try{
-				forward=action.execute(request, response);
-			}catch(Exception e){
-				e.printStackTrace();
-			}
-		}else if(command.equals("/korea.bo")){
+		else if(command.equals("/korea.bo")){
 			action = new ProductPostViewAction();
 			try{
 				forward=action.execute(request, response);
@@ -714,4 +658,5 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		return;
 	}   
 	
+
 }
