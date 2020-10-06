@@ -11,18 +11,16 @@ import com.jachi.DTO.Product_cartDTO;
 import com.jachi.DTO.ProductinfoDTO;
 
 public class ProductPostViewService {
-        public List<ProductinfoDTO> getArticle(String pro_code) {
-        	
-    		
-   		 SqlSessionFactory sqlfactory = BoardDAO.getConn();
-   		 SqlSession sqlsession = sqlfactory.openSession();
-   		 List<ProductinfoDTO> productselect = sqlsession.selectList("select_productpostview", pro_code);
-        
-   	
-   		sqlsession.close();
-   		
-   		return productselect;
-        
-        }
+	SqlSession sqlsession = BoardDAO.getInstance();
+
+	public List<ProductinfoDTO> getArticle(String pro_code) {
+
+		List<ProductinfoDTO> productselect = sqlsession.selectList("select_productpostview", pro_code);
+
+		
+
+		return productselect;
+
+	}
 
 }

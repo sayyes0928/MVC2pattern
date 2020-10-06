@@ -11,10 +11,9 @@ import com.jachi.DAO.BoardDAO;
 public class JoinNickNamecheckUserinfoService {
 	
 	public String checkUserNickName(String us_nkname) {
-		SqlSessionFactory factory = BoardDAO.getConn();
-		  SqlSession sqlsession = factory.openSession();
+		  SqlSession sqlsession = BoardDAO.getInstance();
 		  String nick_se = sqlsession.selectOne("us_Nickname_select", us_nkname);
-		  sqlsession.close();
+		  
 
 		return nick_se;
 		

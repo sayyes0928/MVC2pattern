@@ -10,13 +10,13 @@ import com.jachi.DTO.BeautyRoomDTO;
 import com.jachi.DTO.ProductinfoDTO;
 
 public class JachiMainService {
+	SqlSession sqlsession = BoardDAO.getInstance();
 
 		public int mainbestbtListCount() throws Exception{
 			
 			int listCount =0;
 			
-			SqlSessionFactory sqlfactory = BoardDAO.getConn();
-			SqlSession sqlsession = sqlfactory.openSession();
+
 			listCount = sqlsession.selectOne("mainbestbtselect_list");
 			
 			return listCount;
@@ -24,9 +24,7 @@ public class JachiMainService {
 		}
 		
 		public List<BeautyRoomDTO> getmainbestbtall() throws Exception{
-			
-			SqlSessionFactory sqlfactory = BoardDAO.getConn();
-			SqlSession sqlsession = sqlfactory.openSession();
+
 			
 			List<BeautyRoomDTO> selectList = sqlsession.selectList("mainbestbtall");
 			
@@ -37,9 +35,7 @@ public class JachiMainService {
 		public int getbestplListCount() throws Exception{
 			
 			int pllistCount = 0;
-			
-			SqlSessionFactory sqlfactory = BoardDAO.getConn();
-			SqlSession sqlsession = sqlfactory.openSession();
+
 			pllistCount = sqlsession.selectOne("mainbestplselect_list");
 			
 			return pllistCount;
@@ -48,8 +44,6 @@ public class JachiMainService {
 		
 		public List<ProductinfoDTO> getbestplListall() throws Exception{
 			
-			SqlSessionFactory sqlfactory = BoardDAO.getConn();
-			SqlSession sqlsession = sqlfactory.openSession();
 			
 			List<ProductinfoDTO> selectbestplList = sqlsession.selectList("mainbestplall");
 			

@@ -11,18 +11,16 @@ import com.jachi.DTO.Product_cartDTO;
 import com.jachi.DTO.ProductinfoDTO;
 
 public class ProductCartListViewService {
-        public List<Product_cartDTO> getArticle(OrderDTO orderDTO) {
-        	
-    		
-   		 SqlSessionFactory sqlfactory = BoardDAO.getConn();
-   		 SqlSession sqlsession = sqlfactory.openSession();
-   		 List<Product_cartDTO> productselect = sqlsession.selectList("select_productCartList", orderDTO);
-        
-   	
-   		sqlsession.close();
-   		
-   		return productselect;
-        
-        }
+	SqlSession sqlsession = BoardDAO.getInstance();
+
+	public List<Product_cartDTO> getArticle(OrderDTO orderDTO) {
+
+		List<Product_cartDTO> productselect = sqlsession.selectList("select_productCartList", orderDTO);
+
+		
+
+		return productselect;
+
+	}
 
 }

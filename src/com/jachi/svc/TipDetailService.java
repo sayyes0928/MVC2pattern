@@ -12,13 +12,11 @@ import com.jachi.DTO.TipDTO;
 import com.jachi.DTO.TipReplyDTO;
 
 public class TipDetailService {
-	
+	SqlSession sqlsession = BoardDAO.getInstance();
     public List<TipDTO> getTipinfo(int tip_num) {
-		SqlSessionFactory sqlfactory = BoardDAO.getConn();
-		SqlSession sqlsession = sqlfactory.openSession();
 		List<TipDTO> Tipselectall = sqlsession.selectList("select_TipDetail", tip_num);
 		
-		sqlsession.close();
+		
 		
 		return Tipselectall;
     }
@@ -26,8 +24,6 @@ public class TipDetailService {
     public int getListcount(int rep_tip_num) throws Exception {
     	int listcount = 0;
     	
-    	SqlSessionFactory sqlfactory = BoardDAO.getConn();
-    	SqlSession sqlsession = sqlfactory.openSession();
     	listcount = sqlsession.selectOne("select_tip_comment_count", rep_tip_num);
     	
     	return listcount;
@@ -42,8 +38,6 @@ public class TipDetailService {
 		map.put("limit", limit);
 		map.put("rep_tip_num", rep_tip_num);
 		
-    	SqlSessionFactory sqlfactory = BoardDAO.getConn();
-    	SqlSession sqlsession = sqlfactory.openSession();
     	
     	List<TipReplyDTO> selectlist = sqlsession.selectList("select_tip_Commentlist", map);
     	

@@ -9,13 +9,11 @@ import com.jachi.DAO.BoardDAO;
 import com.jachi.DTO.QnABBS;
 
 public class QnaSelectService {
-
+	SqlSession sqlsession = BoardDAO.getInstance();
 		public List<QnABBS> getqnainfo(){
 			
-			SqlSessionFactory sqlfactory = BoardDAO.getConn();
-			SqlSession sqlsession = sqlfactory.openSession();
 			List<QnABBS> qnalistall = sqlsession.selectList("select_qnaall");
-			sqlsession.close();
+			
 			return qnalistall;
 			
 		}

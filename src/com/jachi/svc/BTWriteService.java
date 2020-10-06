@@ -11,9 +11,8 @@ public class BTWriteService {
 	public boolean registArticle(BeautyRoomDTO btr) throws Exception{
 		
 		boolean isWriteSuccess = false;
-		
-		SqlSessionFactory sqlfactory = BoardDAO.getConn();
-		SqlSession sqlsession = sqlfactory.openSession();
+		SqlSession sqlsession = BoardDAO.getInstance();
+
 		int insert = sqlsession.insert("insert_bt",btr);
 		
 		if(insert > 0) {
@@ -21,7 +20,7 @@ public class BTWriteService {
 			isWriteSuccess = true;
 		}
 		
-		sqlsession.close();
+		
 		
 		return isWriteSuccess;
 		

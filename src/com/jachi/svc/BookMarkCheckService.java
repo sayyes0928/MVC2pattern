@@ -10,8 +10,8 @@ import com.jachi.DAO.BoardDAO;
 import com.jachi.DTO.BeautyRoomDTO;
 
 public class BookMarkCheckService {
-	SqlSessionFactory factory = BoardDAO.getConn();
-	SqlSession sqlsession = factory.openSession();
+	SqlSession sqlsession = BoardDAO.getInstance();
+
 	int result = 0;
 
 	public int likeCheck(Map<String, Object> m) throws Exception {
@@ -30,7 +30,7 @@ public class BookMarkCheckService {
 		try {
 			int insert = sqlsession.insert("book_update", m);
 			sqlsession.commit();
-			sqlsession.close();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -41,7 +41,7 @@ public class BookMarkCheckService {
 		try {
 			int insert = sqlsession.delete("book_delete", m);
 			sqlsession.commit();
-			sqlsession.close();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -50,7 +50,7 @@ public class BookMarkCheckService {
 	public List<BeautyRoomDTO> getBookmarkList(String us_id){
 	
 			List<BeautyRoomDTO> getBookmarkList = sqlsession.selectList("select_getScrapList", us_id);
-			sqlsession.close();
+			
 			
 		return getBookmarkList;
 	}

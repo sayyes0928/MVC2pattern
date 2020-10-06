@@ -8,15 +8,13 @@ import com.jachi.DTO.BeautyRoomDTO;
 import com.jachi.DTO.QnABBS;
 
 public class QnaWriteService {
-
+	SqlSession sqlsession = BoardDAO.getInstance();
 	
 	
 public boolean registArticle(QnABBS qna) throws Exception{
 		
 		boolean isWriteSuccess = false;
 		
-		SqlSessionFactory sqlfactory = BoardDAO.getConn();
-		SqlSession sqlsession = sqlfactory.openSession();
 		int insert = sqlsession.insert("insert_qna",qna);
 		
 		if(insert > 0) {
@@ -24,7 +22,7 @@ public boolean registArticle(QnABBS qna) throws Exception{
 			isWriteSuccess = true;
 		}
 		
-		sqlsession.close();
+		
 		
 		return isWriteSuccess;
 		

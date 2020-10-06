@@ -4,24 +4,25 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.jachi.DAO.BoardDAO;
-import com.jachi.DTO.QnA_Comment;
+import com.jachi.DTO.BeautyRoomDTO;
 
-public class QnaCommentWriteService {
+public class BTModifyService {
 
-	SqlSession sqlsession = BoardDAO.getInstance();
-
-	public boolean insertreply(QnA_Comment qcw) throws Exception{
+	public boolean btmo(BeautyRoomDTO btm) throws Exception{
 		
-		boolean isWriteSuccess = false;
+		boolean isWriteSuccess =false;
 		
-		int insert = sqlsession.insert("qna_comment_write",qcw);
+		SqlSession sqlsession = BoardDAO.getInstance();
+		
+		int insert = sqlsession.update("update_btm",btm);
+		
 		
 		if(insert > 0) {
 			sqlsession.commit();
 			isWriteSuccess = true;
 		}
 		
-		
+		sqlsession.close();
 		
 		return isWriteSuccess;
 		

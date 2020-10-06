@@ -10,15 +10,12 @@ import com.jachi.DTO.BeautyRoomDTO;
 import com.jachi.DTO.QnABBS;
 
 public class QnaSearchService {
-
+	SqlSession sqlsession = BoardDAO.getInstance();
 	
 		public List<QnABBS> getsearchinfo(String search) {
-			System.out.println("서비스왔냠");
-			System.out.println(search+"서비스쪽인풋");
-			SqlSessionFactory sqlfactory = BoardDAO.getConn();
-			SqlSession sqlsession = sqlfactory.openSession();
+
 			List<QnABBS> qnasch = sqlsession.selectList("select_qnasearch", search);
-			sqlsession.close();
+			
 			
 			return qnasch;
 			

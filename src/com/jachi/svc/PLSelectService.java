@@ -9,15 +9,13 @@ import com.jachi.DTO.ProductinfoDTO;
 import com.jachi.DAO.BoardDAO;
 
 public class PLSelectService {
-	
+	SqlSession sqlsession = BoardDAO.getInstance();
+
 	public List<ProductinfoDTO> getproinfo() {
-		System.out.println("서비스 들어왔니?");
-		SqlSessionFactory sqlfactory = BoardDAO.getConn();
-		SqlSession sqlsession = sqlfactory.openSession();
+
 		List<ProductinfoDTO> ProListAll = sqlsession.selectList("select_listall");
 		
-		sqlsession.close();
-		System.out.println("네드렁왔어여");
+		
 		return ProListAll;
 		
 	}

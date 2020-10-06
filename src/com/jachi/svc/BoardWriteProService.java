@@ -9,13 +9,12 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 public class BoardWriteProService {
+	SqlSession sqlsession = BoardDAO.getInstance();
 
 	public boolean registArticle(BoardBean boardBean) throws Exception{
 		
 		boolean isWriteSuccess = false;
-		
-		 SqlSessionFactory sqlfactory = BoardDAO.getConn();
-		 SqlSession sqlsession = sqlfactory.openSession();
+
 		 int insert = sqlsession.insert("insert_qna_board",boardBean);
 				
 		
@@ -24,7 +23,7 @@ public class BoardWriteProService {
 			isWriteSuccess = true;
 		}
 		
-		sqlsession.close();
+		
 		return isWriteSuccess;
 		
 	}
