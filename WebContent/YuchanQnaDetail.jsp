@@ -101,7 +101,7 @@ function aaa(btn){
 					<hr id="title_hr">
 				</div>
 				<div id="qna_post_titlesize"><%=qna_detail.get(0).getQna_title()%></div>
-				
+
 				<div id="qna_post_picsize">
 					<img
 						src="<%=request.getContextPath()%>/upload/<%=qna_detail.get(0).getQna_pw()%>">
@@ -122,14 +122,14 @@ function aaa(btn){
 				</span>
 			</div>
 
-<div id="qna_post_replysize">
+			<div id="qna_post_replysize">
 				<div id="reply_title_size">Comments</div>
 				<%
 					if (us_id != null) {
 				%>
 				<input type="text" id="reply_inner_text" value="댓글을 입력해주세요"
-					name="comment_post"></input><input type="submit"
-					value="등록" id="reply_button"><br>  <input type="hidden"
+					name="comment_post"></input><input type="submit" value="등록"
+					id="reply_button"><br> <input type="hidden"
 					value="<%=qna_detail.get(0).getQna_num()%>" name="getnum">
 				<%
 					} else {
@@ -151,28 +151,33 @@ function aaa(btn){
 					<span><img
 						src="<%=request.getContextPath()%>/upload/<%=qna_list.get(k).getQc_img()%>"
 						id="comment_profileimg"></span> <span id="comment_id"><%=qna_list.get(k).getQc_nickname()%></span><br>
-					<div id="comment_content<%=k%>"><%=qna_list.get(k).getQc_content()%></div>
-					<span id="commnet_number<%=k%>">글번호: <%=qna_list.get(k).getQc_num()%></span>
-					<span id="comment_date<%=k%>"><%=qna_list.get(k).getQc_date()%></span>
-					<span><input type="button" class="comment_modify" id="comment_reply<%=k%>" value="수정" onclick="md(<%=k%>)"></span><span>
-						<a href="qna_comment_delete.bo?renum=<%=qna_list.get(k).getQc_num()%>&postnum=<%=qna_list.get(k).getQcb_num() %>" class="comment_modify" id="comment_delete<%=k%>">삭제</a>
-					</span><span> <input type="button" value="답글"
-			onclick="aaa(<%=k%>)" id="test<%=k%>" class="re_bt"></span>
-			
-					<input type="text" id="modify_text<%=k%>" class="modify_text"><input type="button" id="modify_bt<%=k%>" value="수정" class="modify_bt">
-			
-			
-			
+					<div id="comment_content"><%=qna_list.get(k).getQc_content()%></div>
+					<span id="commnet_number">글번호: <%=qna_list.get(k).getQc_num()%></span>
+					<span id="comment_date"><%=qna_list.get(k).getQc_date()%></span>
+<!-- 					<span><input type="button" class="comment_modify" -->
+<%-- 						id="comment_reply<%=k%>" value="수정" onclick="md(<%=k%>)"></span> --%>
+						<span>
+						<a
+						href="qna_comment_delete.bo?renum=<%=qna_list.get(k).getQc_num()%>&postnum=<%=qna_list.get(k).getQcb_num()%>"
+						class="comment_modify" id="comment_delete<%=k%>">삭제</a>
+					</span> <input type="text"
+						id="modify_text<%=k%>" class="modify_text"><input
+						type="button" id="modify_bt<%=k%>" value="수정" class="modify_bt">
+
+
+
 					<div class="reply_size" id="reply_size<%=k%>">
-						<input type="text" id="reply_txt<%=k %>" class="reply_txt"
-							name="reply_txt<%=k %>"> <input type="button" value="등록" id="re_okbt<%=k %>" onclick="reply_ok(<%=qna_list.get(k).getQc_num()%>)">
+						<input type="text" id="reply_txt<%=k%>" class="reply_txt"
+							name="reply_txt<%=k%>"> <input type="button" value="등록"
+							id="re_okbt<%=k%>"
+							onclick="reply_ok(<%=qna_list.get(k).getQc_num()%>)">
 					</div>
 					<hr id="comment_line">
-<!-- 						<div id="reply_reply_size"> -->
-<%-- 							<span><img src="<%=request.getContextPath()%>/upload/<%=reply.get(0).getReplyimg()%>"></span><span>아이디</span><br> --%>
-<!-- 							<div>콘텐츠</div> -->
-<!-- 							<span>글번호</span><span>날짜</span><span>수정</span><span>삭제</span> -->
-<!-- 						</div> -->
+					<!-- 						<div id="reply_reply_size"> -->
+					<%-- 							<span><img src="<%=request.getContextPath()%>/upload/<%=reply.get(0).getReplyimg()%>"></span><span>아이디</span><br> --%>
+					<!-- 							<div>콘텐츠</div> -->
+					<!-- 							<span>글번호</span><span>날짜</span><span>수정</span><span>삭제</span> -->
+					<!-- 						</div> -->
 					<%
 						}
 					%>
@@ -221,10 +226,10 @@ function aaa(btn){
 
 
 					</div>
-					
-					
-					
-					
+
+
+
+
 					<%
 						} else if (listCount == 0) {
 					%>
@@ -234,7 +239,7 @@ function aaa(btn){
 						}
 					%>
 				</div>
-				
+
 
 
 			</div>

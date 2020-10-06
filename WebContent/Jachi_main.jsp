@@ -31,6 +31,7 @@
 	<script>
 	var bntest = jQuery.noConflict();
 	var bntest2 = jQuery.noConflict();
+	var gobest = jQuery.noConflict();
 	bntest(document).ready(function(){
 		bntest('#banner_box1').hover(function(){
 			bntest('#banner1').css('color','black');
@@ -65,6 +66,14 @@
 		});
 	
 	</script>
+	
+	<script>
+	gobest(function(){
+		gobest('#banner_box2').click(function(){
+			location.href = 'bestbt.bo';
+		});
+	});
+	</script>
 </head>
 
 <body>
@@ -75,7 +84,8 @@
 		<main>
 		<div id="full_banner"><div id="back_text">자취해보자</div><div id="back_test2">LifeStyle&Peace</div></div>
 		<div id="store_index_banner_body">
-			<div id="banner_box1"><div id="banner1">TODAY PRODUCT</div><div id="banner2">보러가기</div></div>
+			<a href="bestst.bo"><div id="banner_box1"><div id="banner1">TODAY PRODUCT</div>
+			<div id="banner2">보러가기</div></div></a>
 			<div id="banner_box2"><div id="banner3">TODAY MYROOM</div></div>
 		</div>
 		<div id="main_size">

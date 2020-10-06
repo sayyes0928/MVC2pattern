@@ -100,12 +100,12 @@ $(document).ready(function(){
 			<div class="sub_menu">
 				<ul id="sub_home">
 					<li><a href="Jachi_main.bo">Home</a></li>
-					<li><a href="#">Best Room</a></li>
-					<li><a href="#">Best Store</a></li>
+					<li><a href="bestbt.bo">Best Room</a></li>
+					<li><a href="bestst.bo">Best Store</a></li>
 				</ul>
 				<ul id="sub_store">
 					<li><a href="plindex.bo">Store Home</a></li>
-					<li><a href="#">Best Store</a></li>
+					<li><a href="bestst.bo">Best Store</a></li>
 					<li><a href="storeList.bo">Category</a></li>
 				</ul>
 				<ul id="sub_Photo">

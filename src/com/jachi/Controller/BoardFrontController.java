@@ -21,6 +21,8 @@ import com.jachi.Action.BTListAction;
 import com.jachi.Action.BTModifyAction;
 import com.jachi.Action.BTSelectAction;
 import com.jachi.Action.BTWriteAction;
+import com.jachi.Action.BestBTAction;
+import com.jachi.Action.BestSTAction;
 import com.jachi.Action.BookMarkUpdate;
 import com.jachi.Action.CateSearchAction;
 import com.jachi.Action.JachiMainAction;
@@ -614,6 +616,24 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		
 		else if(command.equals("/bt_detail_delete.bo")) {
 			action = new BTDetailDeleteAction();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		else if(command.equals("/bestbt.bo")) {
+			action = new BestBTAction();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		else if(command.equals("/bestst.bo")) {
+			action = new BestSTAction();
 			try {
 				forward=action.execute(request, response);
 			} catch (Exception e) {
