@@ -11,11 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.jachi.Action.Action;
-<<<<<<< HEAD
+
 import com.jachi.Action.BTIndexAction;
-=======
+
 import com.jachi.Action.BTDetailDeleteAction;
->>>>>>> refs/remotes/origin/master
+
 import com.jachi.Action.BTListAction;
 import com.jachi.Action.BTModifyAction;
 import com.jachi.Action.BTSelectAction;
@@ -676,6 +676,8 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
+		
+		
 		
 		
 		

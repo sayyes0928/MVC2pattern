@@ -116,7 +116,7 @@ function existingTag(text)
 
 	</header>
 	<main>
-	<form action="qna_modify.bo" method="post"
+	<form action="bt_modify.bo" method="post"
 		enctype="multipart/form-data" autocomplete="off">
 		<div id="BT_writemainsize"> 
 			<div id="file_upsize">
