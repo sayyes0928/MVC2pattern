@@ -25,34 +25,34 @@
 <script>
 	//////////// 주문 목록 리스트 
 /*	$(function() {
-		$('#Option1')
+		$('.Option1')
 				.on(
 						'change',
 						function() {
 							var pro_name = $('#product_name').text();
-							var optiongroup = $('#Option1 option:first').val();
-							var option = $('#Option1 option:selected').val();
-							var buylist_cell1 = $("#buylist_cell1").html();
-							var item_size = $("#Option1 option").size();
-							var idx = $("#Option1 option").index(
-									$("#Option1 option:selected"));
-							var item_text = $("#Option1 option:selected")
+							var optiongroup = $('.Option1 option:first').val();
+							var option = $('.Option1 option:selected').val();
+							var buylist_cell1 = $(".buylist_cell1").html();
+							var item_size = $(".Option1 option").size();
+							var idx = $(".Option1 option").index(
+									$(".Option1 option:selected"));
+							var item_text = $(".Option1 option:selected")
 									.text();
-							var option2 = $("#buylist_section1 #buy_option")
+							var option2 = $(".buylist_section1 #buy_option")
 									.text();
 
-							$("#buylist_section1").css("display", "block");
+							$(".buylist_section1").css("display", "block");
 							$("#buylist1").text(
 									pro_name + " / " + optiongroup + " : ");
 							$("#buy_option").text(option);
-							$("#buylist_cell2").append(buylist_cell1);
+							$(".buylist_cell2").append(buylist_cell1);
 
 						});
 	});
 
 	////////// 주문 목록 삭제버튼
-	$(document).on("click", "#buylist_delete1", function() {
-		$(this, '#buylist_delete1').parent().css("display", "none");
+	$(document).on("click", ".buylist_delete1", function() {
+		$(this, '.buylist_delete1').parent().css("display", "none");
 	}); */   
 </script>
 
@@ -131,7 +131,7 @@
 						      <% String option1 = article.get(0).getPro_option1();
 							     String[] option_split1 = option1.split(",");
 						         if(!article.get(0).getPro_option1().equals(",")) { %>
-								     <li><select id="Option1">
+								     <li><select class="Option1" >
 								       <%  for (int x=0; x<option_split1.length; x++) {  %>
 										    <option value="<%=option_split1[x]%>"><%=option_split1[x]%></option>
 									   <%
@@ -146,10 +146,10 @@
 						 	<div id="buylist_cell1">
 						 	      <% int price = article.get(0).getPro_price();
 						 	         for(int i=0; i<option_split1.length; i++) {%>
-								<div id="buylist_section1">
-									<div id="buylist" name="<%= i%>"><%= option_split1[i]%></div>
-									<span id="buy_option"></span> 
-									<input id="buylist_delete1" type="button" value="X">
+								<div class="buylist_section1">
+									<div class="buylist" name="<%= i%>" ><%= option_split1[i]%></div>
+									<span class="buy_option"></span> 
+									<input class="buylist_delete1" type="button" value="X">
 									<select class="product_count" name="or_count">
 										<option value="1">1</option>
 										<option value="2">2</option>
@@ -162,8 +162,8 @@
 										<option value="9">9</option>
 										<option value="10">10+</option>
 									</select> 
-									<span id="count_price"><%=aaa.format(article.get(0).getPro_price())%>원</span>
-									<input class="ep_price" type="hidden" value="<%=price%>">
+									<span class="count_price"><%=aaa.format(article.get(0).getPro_price())%>원</span>
+									<input class="ep_price" type="text" value="0">
 								</div>
 								<%} %> 						
 							</div>
@@ -171,19 +171,14 @@
 						
 						<script>
 						
-						// 가격 콤마
-						function addComma(num) {
-					        var regexp = /\B(?=(\d{3})+(?!\d))/g;
-					        return num.toString().replace(regexp, ',');
-					      }  
-						
-						    /*	 $("#Option1").on('change',function(){
-						    		 
+						    /*	 $(".Option1").on('change',function(){
+						    		 $('.buylist').data('price'); //80000;
+						    		 $('.buylist').data('price')
 						    		 
 						    		 console.log("옵션 1체인지");
 						    		 var str = "";
-						    		 var op1 = $("#Option1").size();
-						    		 var op1_vla = $("#Option1").val();
+						    		 var op1 = $(".Option1").size();
+						    		 var op1_vla = $(".Option1").val();
 						    		 var op2 = $("#Option2").size();
 						    		 var op3 = $("#Option3").size();
 						    		 var op = $(".input").val();
@@ -199,79 +194,105 @@
 						    			 return;
 						    		 }		 
 							    		 
-						    		 $("#buylist_cell1").append(str);
+						    		 $(".buylist_cell1").append(str);
 						    	     
 						    		 console.log(op);
 						    	 }); */
 						    	 
+						    		// 가격 콤마
+									function addComma(num) {
+								        var regexp = /\B(?=(\d{3})+(?!\d))/g;
+								        return num.toString().replace(regexp, ',');
+								      }  
+						    	 
 						    	 // 주문 옵션 리스트
-						    	  $(function(){
+						    	  $(document).ready(function(){
 						    		  
 						    		  var price_all = 0;
 						    		  var sum = 0;
                                       var j = new Array(); // 내가 선택한 인덱스 값
                                      
-						    		  $("#Option1").on('change',function(){
+						    		  $(".Option1").on('change',function(){
 						    			 
-							    		 var idx = $("#Option1 option").index($("#Option1 option:selected"));
-							    		 var op2 = $("#Option1").size();
+							    		 var idx = $(".Option1 option").index($(".Option1 option:selected"));
+							    		 var op2 = $(".Option1").size();
 							    		 
 							    		 
-							    		 for(var i=0; i<j.length; i++){
+							    		/* for(var i=0; i<j.length; i++){
 							    			   if(j[i] == idx){
 							    				 alert("이미 선택한 옵션입니다.");
 							    			 	 return;   
 							    			   }
-							    		 }
+							    		 }*/
+							    		 console.log(idx);
 							    		 
 							    		 if(idx!=0){
 					    				   $("div[name='"+idx+"']").parent().css("display", "block");
-					    				   j.push(idx);
-					    				   price_all += <%=price%>;
-							    		   $(".price02").text(price_all); 
-					    		 
-							    			 console.log(j[0]);
+
+					    				   
+					    				   $(".ep_price:eq("+idx+")").val(<%=price%>);
+					    				   
+					    				   var count = $(".product_count:eq("+idx+") option:selected").val();
+								    	   var pr_price = parseInt(count * <%=price%>);
+					    				   $(".product_count:eq("+idx+")").next(".count_price").text(addComma(pr_price)+" 원")
+					    				   calculator();
+							    		  
 							    		 }
+							    		 
 							    	 });
 							          
 							    	 // 주문 삭제버튼
-							    	 $(document).on("click", "#buylist_delete1", function() {
-							    			$(this, '#buylist_delete1').parent().css("display", "none");
+							    	 $(document).on("click", ".buylist_delete1", function() {
+							    			$(this, '.buylist_delete1').parent().css("display", "none");							    			
+							    		   
+							    			var n = $(".buylist_delete1").index(this);
+							    			$(".ep_price:eq("+n+")").val("0");
+							    		    
+							    			$(".product_count:eq("+n+") option:eq(0)").prop("selected", true);
+							    			
+							    			calculator();
 							    	 });
 							    	 
 						    	     // 상품 수량
 							    	 $(document).on('change','.product_count',function(){
 							    		 var n = $(".product_count").index(this);
 							    		 var count = $(".product_count:eq("+n+") option:selected").val();
-							    		 var price = count*<%=price%>;
-							             
-							    		 $(".product_count:eq("+n+")").next("#count_price").text(addComma(price)+" 원");
-							    		 $(".ep_price:eq("+n+")").val(price);
-							    		 var a = $(".ep_price:eq("+n+")").val();
-							    		 
-							    		 console.log(Number(a)*1);
-							    		
-							    		 sum += Number(a);
-							    		 $(".price02").text(sum);
-							    								    		 
-							    		
+							    		 var pr_price = parseInt(count * <%=price%>);
+
+							    		 $(".product_count:eq("+n+")").next(".count_price").text(addComma(pr_price)+" 원");
+							    		 $(".ep_price:eq("+n+")").val(pr_price);
+
+							    		 calculator();
 							    		 
 							    	 });
-							    	 
 						    	 });
+						    	 
+						    	 // 값 계산
+						    	 function calculator(){
+						    		 var sum = 0;
+						    		 var  v = document.getElementsByClassName('ep_price'); //each
+						    		    for(var i=1; i<v.length; i++){						    		    	
+						    		    	 sum += parseInt(v[i].value);
+						    		    	 
+						    		    }
+						    		   // alert(sum);
+						    		  $('.price02').text(addComma(sum)+" 원");
+						    		  $('.buy_price').val(sum);
+						    	 }
 						    	 
 						</script>
 							
 						<%
 							String pro_code = (String) request.getParameter("pro_num");
 						%>
-						<input type="hidden" value=<%=pro_code%> name="pro_code"
-							id="pro_code">
+						
+						<input type="hidden" value="<%= pro_code%>" name="pro_code" id="pro_code">
 						 <div class="s_price">
 							<ul>
 								<li class="price01">주문금액</li>
 								<li class="price02">0원</li>
 							</ul>
+								<input class="buy_price" type="hidden" value="">
 						 </div>
 						</div>
 						<hr>
