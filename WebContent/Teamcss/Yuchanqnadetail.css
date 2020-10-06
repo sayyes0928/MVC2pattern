@@ -10,12 +10,16 @@
   font-style: normal;
   font-weight: normal;
 }
-
+*{
+	font-family:"godo";
+	font-weight:bold;
+}
 #qna_detail_postsize{
 	float:left;
 	width:820px;
 	height:100%;
 	margin-left:300px;
+	
 	margin-top:50px;
 }
 
