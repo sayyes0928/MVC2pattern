@@ -103,14 +103,17 @@
 
   .s_maintitle li {
     list-style-type: none;
-    padding-left: 20px;
-    margin-bottom: 10px;
   }
 
   .s_mainproduct {
     margin-top: 25px;
     width: 330px;
     height: 190px;
+  }
+  
+  .s_mainproduct li {
+    padding-left: 20px;
+    margin-bottom: 10px;
   }
 
   .s_maintitlefont01 {
@@ -150,16 +153,19 @@
   }
 
   .s_price {
-    float: left;
-    margin-top: 30px;
+    
+    border-top: 1px solid black;
     width: 330px;
-    height: 40px;
+    height: 100%;
+    box-sizing: border-box;
     margin-bottom: 10px;
+    margin-top: 20px;
+    border: 1px solid black;
+    
   }
 
   .s_price li {
     display: inline;
-    padding: 0;
   }
 
   .price01 {
@@ -171,10 +177,9 @@
 
   .price02 {
     float: right;
-    margin-right: 15px;
-    width: 30px;
+    width: 100px;
     height: 20px;
-    font-size: 20px;
+    font-size: 15px;
   }
 
   .s_button {
@@ -218,9 +223,7 @@
     font-size: 20px;
   }
 
-  .clear {
-    clear: both;
-  }
+  
 
   /* section */
   #r_wrap {
@@ -704,6 +707,9 @@
  
   }
   
+  .Option1{
+     margin-top: 10px;
+  }
   .count_price{
    
    float: right;
@@ -722,6 +728,7 @@
   }
   
   .product_orderbox {
+     border-top: 1px solid black;
      width: 100%;
      height: 100%;
   }

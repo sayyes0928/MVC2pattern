@@ -124,7 +124,7 @@
 									원</li>
 							</ul>
 						</div>
-						<hr class="clear">
+						
 						<div class="product_orderbox">
 						<div class="s_combobox">
 							<ul>
@@ -163,7 +163,7 @@
 										<option value="10">10+</option>
 									</select> 
 									<span class="count_price"><%=aaa.format(article.get(0).getPro_price())%>원</span>
-									<input class="ep_price" type="text" value="0">
+									<input class="ep_price" type="hidden" value="0">
 								</div>
 								<%} %> 						
 							</div>
@@ -287,15 +287,14 @@
 						%>
 						
 						<input type="hidden" value="<%= pro_code%>" name="pro_code" id="pro_code">
-						 <div class="s_price">
-							<ul>
+						
+							<ul class="s_price">
 								<li class="price01">주문금액</li>
 								<li class="price02">0원</li>
 							</ul>
 								<input class="buy_price" type="hidden" value="">
-						 </div>
 						</div>
-						<hr>
+						
 						<script>
 							// 장바구니 및 구매 버튼 클릭시 발생 이벤트 
 							function cart() {
