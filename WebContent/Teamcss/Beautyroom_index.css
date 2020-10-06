@@ -258,8 +258,8 @@
   background-color: #fff;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
-  padding: 16px 24px 24px 24px;
-  width:270px;
+  padding: 16px 24px 24px 5px;
+  width:240px;
   height:100px;
   max-height: 145px;
 }
@@ -301,6 +301,8 @@
 .card:hover .card__img--hover {
   height: 100%;
   opacity: 0.3;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
 .card:hover .card__info {
