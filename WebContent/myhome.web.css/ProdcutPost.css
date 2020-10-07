@@ -1,5 +1,12 @@
-@charset "EUC-KR";
+@charset "UTF-8";
 
+@font-face{
+	font-family:"godo";
+	src:url("./../GodoM.woff");
+}
+*{
+	font-family:"godo";
+}
 
   /* ===============section================ */
   #s_wrap {
