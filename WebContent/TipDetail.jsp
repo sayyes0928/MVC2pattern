@@ -25,6 +25,7 @@
 <title>Tip 상세페이지</title>
 
 <link rel="stylesheet" href="./myhome.web.css/TipDetail.css" type="text/css">
+<link rel="stylesheet" type="text/css" href="./myhome.web.css/scrapbook_1.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <script>
@@ -152,12 +153,13 @@
              </div>
             </div> 
           </div>
-         </div> 
+        
           <!--  <div id="detail_sidebar">
           </div>-->
       </section>
+      
       <footer>
-       푸터
+     <jsp:include page="include_footer.jsp"></jsp:include>
       </footer>
      </form>
 </body>

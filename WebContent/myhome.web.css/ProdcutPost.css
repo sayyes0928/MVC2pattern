@@ -9,14 +9,19 @@
 }
 
   /* ===============section================ */
+ 
   #s_wrap {
     width: 1082px;
     height: 10000px;
     margin: 0 auto;
-    font-family: "jua";
-    /* border: 1px solid black; */
+    border: 1px solid black;
   }
-
+  
+  #pr_wrap {
+   width: 100%;
+   height: 700px;
+   
+  }
   .s_menuhr {
     margin-top: 10px;
   }
@@ -65,6 +70,7 @@
     margin-top: 50px;
     width: 1082px;
     height: 100%;
+
   }
 
   .s_subimg {
@@ -106,6 +112,7 @@
     margin-top: 10px;
     width: 330px;
     height: 100%;
+   
   }
 
   .s_maintitle li {
@@ -163,30 +170,31 @@
     
     border-top: 1px solid black;
     width: 330px;
-    height: 100%;
+    height: 40px;
     box-sizing: border-box;
     margin-bottom: 10px;
     margin-top: 20px;
-    border: 1px solid black;
+    
     
   }
 
   .s_price li {
     display: inline;
+    margin-top: 20px;
   }
 
   .price01 {
     float: left;
     margin-left: 20px;
-    width: 70px;
-    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
   }
 
   .price02 {
     float: right;
-    width: 100px;
-    height: 20px;
-    font-size: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fb9b24;
   }
 
   .s_button {
@@ -233,33 +241,30 @@
   
 
   /* section */
-  #r_wrap {
-    width: 1082px;
-    height: 9205px;
-  }
-
+ 
   /* .info_productimg {
     width: 1082px;
     height: 6600px;
   } */
   /* ==============Product suv nav============== */
   .pr_nav {
-    position: sticky;
-    top: 152px;
+    
+    margin-top: 10px;
     width: 100%;
     height: 50px;
   }
+  
 
   .s_infonav {
-    float: left;
-    border-top: 1px solid rgba(80, 78, 82, 0.44);
-    border-bottom: 1px solid rgba(80, 78, 82, 0.44);
+    
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
     background-color: rgba(247, 247, 247, 1);
     width: 100%;
     height: 35px;
     font-size: 25px;
-    z-index: 9999;
     padding-top: 12px;
+    text-align: center;
   }
   .s_infonav a{
      text-decoration: none;
@@ -267,7 +272,11 @@
   }
   .s_infonav li {
     display: inline;
-    padding-left: 60px;
+  }
+  .s_infonav li:nth-child(2n+2) {
+    margin: 0 70px 0 70px;
+    color: gray;
+    font-weight: 100;
   }
 
   .s_infoimg {
@@ -279,50 +288,41 @@
 
   /*============= product img ================*/
   .productinfo_wrap {
-    float: left;
-    margin-top: 60px;
-    width: 600px;
-    margin-top: 60px;
-    margin-left: 40px;
+  
+    width: 100%;
+    height: 100%;
+    border: 1px solid red;
+  }
+  
+   .productinfo_wrap > p{
+    
+    width: 20px;
+    margin-top: 80px;
+    font-weihgt: bold;
+    font-size: 20px;
+    margin-left: 135px;
+    border-bottom: 1px solid black;
   }
 
   .productimg {
-    float: left;
     /* margin-top: 60px; */
-    width: 650px;
+    width: 800px;
+    height: 7500px;
+    margin: 0 auto;
   }
 
-  .productimg li {
-    /* margin-left: 40px; */
-    list-style-type: none;
-    margin-bottom: 30px;
+  .pro_detail_img {
+    width: 100%;
+    height: 100%;
   }
 
-  .s_infoimgsize01 {
-    width: 600px;
-    height: 500px;
-  }
 
-  .s_infoimgsize02 {
-    width: 600px;
-    height: 400px;
-  }
-
-  .s_infoimgsize03 {
-    width: 600px;
-    height: 3700px;
-  }
-
-  .s_infoimgsize04 {
-    width: 600px;
-    height: 1800px;
-  }
 
   /* =============product buy=============== */
-  .product_selling {
+ /* .product_selling {
     float: right;
     position: sticky;
-    top: 277px;
+    top: 200px;
     padding-bottom: 100px;
     width: 400px;
     height: 800px;
@@ -398,7 +398,7 @@
   .selling02_button02:hover {
     background-color: skyblue;
     color: white;
-  }
+  } */
 
   .scrapsize {
     float: left;
@@ -439,12 +439,15 @@
 
   /* ==============table info/size============= */
   .pr_info {
-    clear: both;
+    width: 100%;
+
   }
 
   .pr_info table {
     width: 600px;
     color: gray;
+    margin: 0 auto;
+
   }
 
   .td_size {
