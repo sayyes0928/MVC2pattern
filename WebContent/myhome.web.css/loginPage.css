@@ -1,17 +1,15 @@
 @import "bourbon";
 @charset "UTF-8";
 @font-face{
-  font-family: "Okbe";
-  src:url("Okbe_ttf.ttf")format("truetype");
-  font-style: normal;
-  font-weight: normal;
+	font-family:"godo";
+	src:url("./../GodoM.woff");
 }
 *{
- font-family: "Okbe";
+ font-family: "godo";
  
 }
 body {
- font-family: "Okbe";
+ font-family: "godo";
   background: #eee !important;
 }
 .title_logo{
@@ -25,11 +23,11 @@ body {
 .wrapper {
   margin-top: 80px;
   margin-bottom: 80px;
-   font-family: "Okbe";
+   font-family: "godo";
 }
 
 .form-signin {
-  font-family: "Okbe";
+  font-family: "godo";
   max-width: 380px;
   padding: 15px 35px 45px;
   margin: 0 auto;

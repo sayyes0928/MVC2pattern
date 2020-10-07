@@ -27,14 +27,14 @@
 <body>
   
   <div class="wrapper">
-    <form class="form-signin" action="join_Insert.bo" method="post">   
+    <form class="form-signin" action="join_Insert.bo" method="post" enctype="multipart/form-data" autocomplete="off">   
    <div class="form-structor">
 	<div class="signup">
 		<h2 class="form-title" id="signup"><span>or</span>Sign up</h2>
 		<div class="form-holder">
-			<input type="text" class="input" value=<%= userinfoDTO.getUs_name()%> name="name"/>
+			<input type="text" class="input" value=<%= userinfoDTO.getUs_name()%> name="name" readonly/>
 			<input type="email" class="input" value=<%= userinfoDTO.getUs_mail()%> name="us_mail" />
-			<input type="text" class="input" placeholder="닉네임" name="nick" />
+			<input type="text" class="input" value=<%= userinfoDTO.getUs_nkname()%> name="nick" readonly />
 			<input type="hidden" class="input" value=<%= login%> name="id" />
 		</div>
 		<button class="submit-btn">Sign up</button>
