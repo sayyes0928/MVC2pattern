@@ -65,13 +65,15 @@ main {
 }
 
 #pageList{
-	width:1080px;
+	width:100%;
 	height:100px;
 	margin:0 auto;
 	text-align: center;
 	font-size:14px;
 	font-weight:bold;
 	font-family:"godo";
+	position:relative;
+	bottom:2%;
 }
 
 

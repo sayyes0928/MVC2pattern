@@ -25,6 +25,7 @@ header{
 	margin-left:20px;
 	position: relative;
 	left:-100px;
+	cursor: pointer;
 }
 
 .main_menu{

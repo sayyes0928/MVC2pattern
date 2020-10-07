@@ -180,13 +180,13 @@
 			</div>
 		
 		
-		<div>
-			
-		</div>
+		
 		</main>
 		
 	</form>
-	<jsp:include page="include_footer.jsp"></jsp:include>
+	<footer>
+			<jsp:include page="include_footer.jsp"></jsp:include>
+		</footer>
 </body>
 
 </html>
