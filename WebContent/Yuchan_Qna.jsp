@@ -27,6 +27,8 @@
 <title>Insert title here</title>
 
 <link rel="stylesheet" href="./Teamcss/Yuchan_Qna.css" type="text/css">
+<link rel="stylesheet" type="text/css"
+   href="./myhome.web.css/scrapbook_1.css" />
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -310,7 +312,7 @@ qnajs(function() {
 			</div>
 
 		</section>
-
+<jsp:include page="include_footer.jsp"></jsp:include>
 
 	</form>
 </body>

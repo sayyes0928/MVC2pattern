@@ -32,6 +32,8 @@
 
 
 <link rel="stylesheet" href="./Teamcss/ProductList.css" type="text/css">
+<link rel="stylesheet" type="text/css"
+   href="./myhome.web.css/scrapbook_1.css" />
 
 
 <script
@@ -605,7 +607,9 @@ ac(function() {
 			</div>
 		</section>
 
-		<footer> </footer>
+		<footer>
+			<jsp:include page="include_footer.jsp"></jsp:include>
+		 </footer>
 	</form>
 </body>
 

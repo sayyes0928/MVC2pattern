@@ -271,6 +271,9 @@ ul.topnav ul ul li a:hover {
 .bx-wrapper .bx-pager.bx-default-pager a:focus {
   background: rgb(217, 218, 216);
 }
+.bx-pager-item{
+	opacity:0;
+}
 
 .bx-controls-direction a {
   opacity: 0;

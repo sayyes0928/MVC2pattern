@@ -1,4 +1,11 @@
 @charset "UTF-8";
+@font-face{
+	font-family:"godo";
+	src:url("./../GodoM.woff");
+}
+*{
+	font-family:"godo";
+}
 
 #s_wrap {
   width: 1200px;
@@ -9,15 +16,24 @@
 }
 
 #tip_banner{
-	width:100%;
-	height: 300px;
-	box-sizing: border-box;
-	background-color: rgb(18, 74, 133);
-	color: white;
-	text-align: center;
-	font-size: 80px;
-	padding-top: 80px;
-	margin-bottom: 40px;
+	width: 100%;
+	height: 400px;
+	background-image: url('./../img/tip.jpg');
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#banner_text{
+	width:300px;
+	height:100px;
+	z-index:3;
+	position:relative;
+	font-size:30pt;
+	font-weight: bold;
+	font-family:"godo";
+	top:20%;
+	left:22%;
 }
 
 #section_header{
@@ -28,6 +44,7 @@
 #page_title{
 	font-size: 30pt;
 	font-weight: bold;
+	margin-top:30px;
 }
 
 #tipBT_write{
@@ -50,6 +67,18 @@
 	height: 300px;
 	margin-left: 23px;
 	margin-bottom: 24px;
+}
+#tip_img{
+	width:272px;
+	height:182px;
+	cursor: pointer;
+	-webkit-transition: -webkit-transform .8s ease;
+}
+
+#tip_img:hover{
+	-webkit-transform: scale(1.05);
+          transform: scale(1.05);
+	transition: transform .8s ease;
 }
 
 .tip_card:nth-child(4n+1){

@@ -25,6 +25,8 @@
 <link rel="stylesheet" href="./Teamcss/Beautyroom.css" type="text/css">
 <link rel="stylesheet" href="./myhome.web.css/teamTopNav.css"
 	type="text/css">
+	<link rel="stylesheet" type="text/css"
+   href="./myhome.web.css/scrapbook_1.css" />
 
 
 <script
@@ -182,7 +184,9 @@
 			
 		</div>
 		</main>
+		
 	</form>
+	<jsp:include page="include_footer.jsp"></jsp:include>
 </body>
 
 </html>

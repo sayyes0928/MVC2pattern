@@ -33,6 +33,7 @@
 <link rel="stylesheet" href="./Teamcss/Yuchanqnadetail.css"
 	type="text/css">
 <link rel="stylesheet" href="./Teamcss/qna_comment.css" type="text/css">
+
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 
 <script>
@@ -168,8 +169,8 @@ function aaa(btn){
 
 					<div class="reply_size" id="reply_size<%=k%>">
 						<input type="text" id="reply_txt<%=k%>" class="reply_txt"
-							name="reply_txt<%=k%>"> <input type="button" value="등록"
-							id="re_okbt<%=k%>"
+							name="reply_txt<%=k%>">
+							<input type="button" value="등록" id="re_okbt<%=k%>"
 							onclick="reply_ok(<%=qna_list.get(k).getQc_num()%>)">
 					</div>
 					<hr id="comment_line">
@@ -251,6 +252,9 @@ function aaa(btn){
 
 
 		</section>
+		
 	</form>
+	
 </body>
+
 </html>

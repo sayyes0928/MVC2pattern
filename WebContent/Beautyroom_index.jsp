@@ -14,6 +14,8 @@ int listCount = pageInfo.getListCount();
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="./Teamcss/Beautyroom_index.css" type="text/css">
+<link rel="stylesheet" type="text/css"
+   href="./myhome.web.css/scrapbook_1.css" />
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	
@@ -48,9 +50,10 @@ int listCount = pageInfo.getListCount();
 </header>
 
 <main>
+
 	<div id="store_index_banner_body">
-			<div id="banner_box1"><div id="banner1">SELF DIY BEST</div><div id="banner2">보러가기</div></div>
-			<div id="banner_box2"><div id="banner3">LIFESTYLE</div><div id="banner4">TIP</div></div>
+			<a href="bestbt.bo"><div id="banner_box1"><div id="banner1">SELF DIY BEST</div><div id="banner2">보러가기</div></div></a>
+			<a href="tiplist.bo"><div id="banner_box2"><div id="banner3">LIFESTYLE</div><div id="banner4">TIP</div></div></a>
 		</div>
 	<div id="store_index_main">
 			<div id="sub_title1">
@@ -111,5 +114,9 @@ int listCount = pageInfo.getListCount();
 			</div>	
 
 </main>
+<div>
+<jsp:include page="include_footer.jsp"></jsp:include>
+</div>
 </body>
+
 </html>

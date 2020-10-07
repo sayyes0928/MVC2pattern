@@ -25,6 +25,8 @@
 <title>Home</title>
 
 <link rel="stylesheet" href="./Teamcss/Jachi_main.css" type="text/css">
+<link rel="stylesheet" type="text/css"
+   href="./myhome.web.css/scrapbook_1.css" />
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	
@@ -193,7 +195,7 @@
 		</div>
 		</main>
 		
-		
+		<jsp:include page="include_footer.jsp"></jsp:include>
 		
 
 	</form>
