@@ -17,7 +17,7 @@
 		String pro_group[] = { pro_all, pro_count, pro_price, pro_code };
 
 		if (list == null) {
-
+//
 			ArrayList<String[]> cartlist = new ArrayList<String[]>();
 			cartlist.add(pro_group);
 			session.setAttribute("cart", cartlist);
