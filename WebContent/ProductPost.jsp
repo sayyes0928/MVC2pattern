@@ -61,9 +61,8 @@
 	<form id="contentPage" action="#">
 		<!-- Header include -->
 		<jsp:include page="HeaderTestjsp.jsp"></jsp:include>
-
-		<div id="s_wrap">
-			<section>
+		
+        <section id="s_wrap">
 				<div id="s_menusize">
 					<div class="s_menu1">
 						<ul>
@@ -76,9 +75,6 @@
 							<li>기획전</li>
 						</ul>
 					</div>
-					<div id="s_menuhr">
-						<hr>
-					</div>
 				</div>
 				<div class="s_category">
 					<ul>
@@ -88,6 +84,7 @@
 						<li><a href="#">학생의자</a></li>
 					</ul>
 				</div>
+		   <div id="pr_wrap">
 				<div id="mainsize">
 					<div class="s_subimg">
 						<ul id="pr_imgs">
@@ -199,18 +196,18 @@
 						    		 console.log(op);
 						    	 }); */
 						    	 
-						    		// 가격 콤마
-									function addComma(num) {
-								        var regexp = /\B(?=(\d{3})+(?!\d))/g;
-								        return num.toString().replace(regexp, ',');
-								      }  
+						         // 가격 콤마
+								   function addComma(num) {
+								      var regexp = /\B(?=(\d{3})+(?!\d))/g;
+								      return num.toString().replace(regexp, ',');
+								   }  
 						    	 
 						    	 // 주문 옵션 리스트
 						    	  $(document).ready(function(){
 						    		  
 						    		  var price_all = 0;
 						    		  var sum = 0;
-                                      var j = new Array(); // 내가 선택한 인덱스 값
+                                    //  var j = new Array();  내가 선택한 인덱스 값
                                      
 						    		  $(".Option1").on('change',function(){
 						    			 
@@ -288,11 +285,21 @@
 						
 						<input type="hidden" value="<%= pro_code%>" name="pro_code" id="pro_code">
 						
-							<ul class="s_price">
+					         <ul class="s_price">
 								<li class="price01">주문금액</li>
 								<li class="price02">0원</li>
 							</ul>
-								<input class="buy_price" type="hidden" value="">
+					
+						<input class="buy_price" type="hidden" value="">
+						<div class="s_button">
+							<ul id="product_info">
+
+								<li><button class="m_button01" type="button"
+										onclick="cart()">장바구니</button></li>
+								<li><button class="m_button02" type="button"
+										onclick="buy()">바로구매</button></li>
+							</ul>
+						</div>
 						</div>
 						
 						<script>
@@ -362,37 +369,27 @@
 
 							}
 						</script>
-						<div class="s_button">
-							<ul id="product_info">
-
-								<li><button class="m_button01" type="button"
-										onclick="cart()">장바구니</button></li>
-								<li><button class="m_button02" type="button"
-										onclick="buy()">바로구매</button></li>
-							</ul>
-						</div>
+				
 					</div>
 				</div>
+		   </div>
+		   <div id="r_wrap">
 
-				<div id="r_wrap">
-					<div class="pr_nav">
 						<ul class="s_infonav">
 							<li><a href="#product_info">상품정보</a></li>
+							<li>|</li>
 							<li><a href="#product_review">리뷰</a></li>
+							<li>|</li>
 							<li><a href="#product_inquiry">문의</a></li>
+							<li>|</li>
 							<li><a href="#product_delivery">배송/환불</a></li>
 						</ul>
-					</div>
+		
 					<div class="productinfo_wrap">
 						<ul class="productimg">
 							<li>상품정보</li>
 							<li><img class="s_infoimgsize01"
 								src="img/c_product/intro1.jpg"></li>
-							<li><img class="s_infoimgsize02"
-								src="img/c_product/intro2.gif"></li>
-							<li><img class="s_infoimgsize03"
-								src="img/c_product/intro3.jpg"></li>
-							<li><img class="s_infoimgsize04" src="img/c_product/CS_.jpg"></li>
 						</ul>
 						<div class="pr_info">
 							<table>
@@ -620,86 +617,26 @@
 							</div>
 						</div>
 					</div>
-					<div class="product_selling">
+					
+				<!--  	<div class="product_selling">
 						<div class="selling01">
 							<div class="selling_select">
 								<ul>
-									<%
-										if (article.get(0).getPro_option1() != null) {
-											String option = null;
-											String[] optionsp = null;
-											for (int i = 0; i < article.size(); i++) {
-												option = article.get(i).getPro_option1();
-												optionsp = option.split(",");
-									%>
-									<%
-										}
-									%>
-									<li><select>
+						      <%  option1 = article.get(0).getPro_option1();
+							      option_split1 = option1.split(",");
+						         if(!article.get(0).getPro_option1().equals(",")) { %>
+								     <li><select class="Option1" >
+								       <%  for (int x=0; x<option_split1.length; x++) {  %>
+										    <option value="<%=option_split1[x]%>"><%=option_split1[x]%></option>
+									   <%
+										   }
+									   %>
 
-
-											<%
-												for (int x = 0; x < optionsp.length; x++) {
-											%>
-											<option><%=optionsp[x]%></option>
-											<%
-												}
-											%>
-
-									</select></li>
-									<%
-										}
-									%>
-
-									<%
-										if (article.get(0).getPro_option2() != null) {
-											String option = null;
-											String[] optionsp = null;
-											for (int i = 0; i < article.size(); i++) {
-												option = article.get(i).getPro_option2();
-												optionsp = option.split(",");
-									%>
-									<%
-										}
-									%>
-									<li><select>
-											<%
-												for (int x = 0; x < optionsp.length; x++) {
-											%>
-											<option><%=optionsp[x]%></option>
-											<%
-												}
-											%>
-									</select></li>
-									<%
-										}
-									%>
-
-									<%
-										if (article.get(0).getPro_option3() != null) {
-											String option = null;
-											String[] optionsp = null;
-											for (int i = 0; i < article.size(); i++) {
-												option = article.get(i).getPro_option3();
-												optionsp = option.split(",");
-									%>
-									<%
-										}
-									%>
-									<li><select>
-											<%
-												for (int x = 1; x < optionsp.length; x++) {
-											%>
-											<option><%=optionsp[x]%></option>
-											<%
-												}
-											%>
-									</select></li>
-									<%
-										}
-									%>
-
-								</ul>
+								     </select></li>
+						       <%
+								   }
+							   %>
+							</ul>
 							</div>
 							<div class="pr_contents">
 								<ul>
@@ -723,10 +660,10 @@
 								<li><button class="selling02_button02" type="button">바로구매</button></li>
 							</ul>
 						</div>
-					</div>
+					</div>  -->
+					
 				</div>
-			</section>
-		</div>
+		</section>
 		<footer class="f_wrap">
 			<hr>
 		</footer>
