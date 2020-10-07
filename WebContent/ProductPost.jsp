@@ -4,7 +4,7 @@
 <%@ page import="javax.websocket.Session"%>
 <%@ page import="java.util.*"%>
 <%@ page import="com.jachi.DTO.ProductinfoDTO"%>
-<%@page import="java.text.DecimalFormat" %>
+<%@page import="java.text.DecimalFormat"%>
 <%
 	ArrayList<ProductinfoDTO> article = (ArrayList<ProductinfoDTO>) request.getAttribute("article");
 
@@ -16,7 +16,8 @@
 <meta charset="UTF-8">
 <title>상품 구매페이지1</title>
 
-<link rel="stylesheet" href="./myhome.web.css/ProdcutPost.css" type="text/css">
+<link rel="stylesheet" href="./myhome.web.css/ProdcutPost.css"
+	type="text/css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script type="text/javascript" src="./myhome.web.js/ProductPost.js"></script>
@@ -24,7 +25,7 @@
 
 <script>
 	//////////// 주문 목록 리스트 
-/*	$(function() {
+	$(function() {
 		$('.Option1')
 				.on(
 						'change',
@@ -50,10 +51,11 @@
 						});
 	});
 
-	////////// 주문 목록 삭제버튼
+	//주문 목록 삭제버튼
 	$(document).on("click", ".buylist_delete1", function() {
 		$(this, '.buylist_delete1').parent().css("display", "none");
-	}); */   
+	}); 
+	  
 </script>
 
 </head>
@@ -124,52 +126,54 @@
 									원</li>
 							</ul>
 						</div>
-						
+
 						<div class="product_orderbox">
-						<div class="s_combobox">
-							<ul>
-						      <% String option1 = article.get(0).getPro_option1();
+							<div class="s_combobox">
+								<ul>
+									<% String option1 = article.get(0).getPro_option1();
 							     String[] option_split1 = option1.split(",");
 						         if(!article.get(0).getPro_option1().equals(",")) { %>
-								     <li><select class="Option1" >
-								       <%  for (int x=0; x<option_split1.length; x++) {  %>
-										    <option value="<%=option_split1[x]%>"><%=option_split1[x]%></option>
-									   <%
+									<li><select class="Option1">
+											<%  for (int x=0; x<option_split1.length; x++) {  %>
+											<option value="<%=option_split1[x]%>"><%=option_split1[x]%></option>
+											<%
 										   }
 									   %>
 
-								     </select></li>
-						       <%
+									</select></li>
+									<%
 								   }
 							   %>
-							</ul>
-						 	<div id="buylist_cell1">
-						 	      <% int price = article.get(0).getPro_price();
+								</ul>
+								<div id="buylist_cell1">
+									<% int price = article.get(0).getPro_price();
 						 	         for(int i=0; i<option_split1.length; i++) {%>
-								<div class="buylist_section1">
-									<div class="buylist" name="<%= i%>" ><%= option_split1[i]%></div>
-									<span class="buy_option"></span> 
-									<input class="buylist_delete1" type="button" value="X">
-									<select class="product_count" name="or_count">
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-										<option value="4">4</option>
-										<option value="5">5</option>
-										<option value="6">6</option>
-										<option value="7">7</option>
-										<option value="8">8</option>
-										<option value="9">9</option>
-										<option value="10">10+</option>
-									</select> 
-									<span class="count_price"><%=aaa.format(article.get(0).getPro_price())%>원</span>
-									<input class="ep_price" type="hidden" value="0">
+									<div class="buylist_section1">
+										<div class="buylist" name="<%= i%>" id="buylist<%= i%>"><%= option_split1[i]%></div>
+										<input type="hidden" value="<%= option_split1[i]%>"
+											class="buylistCart" /> <span class="buy_option"></span> <input
+											class="buylist_delete1" type="button" value="X"> <select
+											class="product_count" name="or_count"
+											id="product_count<%= i%>">
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+											<option value="6">6</option>
+											<option value="7">7</option>
+											<option value="8">8</option>
+											<option value="9">9</option>
+											<option value="10">10+</option>
+										</select> 
+										<span class="count_price" id="count_price<%= i%>"><%=aaa.format(article.get(0).getPro_price())%>원</span>
+										<input class="ep_price" type="hidden" value="0">
+									</div>
+									<%} %>
 								</div>
-								<%} %> 						
 							</div>
-						</div>
-						
-						<script>
+
+							<script>
 						
 						    /*	 $(".Option1").on('change',function(){
 						    		 $('.buylist').data('price'); //80000;
@@ -224,7 +228,7 @@
 							    			 	 return;   
 							    			   }
 							    		 }*/
-							    		 console.log(idx);
+							    		 console.log(idx+"선택옵션");
 							    		 
 							    		 if(idx!=0){
 					    				   $("div[name='"+idx+"']").parent().css("display", "block");
@@ -257,60 +261,84 @@
 							    	 $(document).on('change','.product_count',function(){
 							    		 var n = $(".product_count").index(this);
 							    		 var count = $(".product_count:eq("+n+") option:selected").val();
-							    		 var pr_price = parseInt(count * <%=price%>);
+							    		 var pr_price = parseInt(count * <%=price%>
+								);
 
-							    		 $(".product_count:eq("+n+")").next(".count_price").text(addComma(pr_price)+" 원");
-							    		 $(".ep_price:eq("+n+")").val(pr_price);
+																		$(
+																				".product_count:eq("
+																						+ n
+																						+ ")")
+																				.next(
+																						".count_price")
+																				.text(
+																						addComma(pr_price)
+																								+ " 원");
+																		$(
+																				".ep_price:eq("
+																						+ n
+																						+ ")")
+																				.val(
+																						pr_price);
 
-							    		 calculator();
-							    		 
-							    	 });
-						    	 });
-						    	 
-						    	 // 값 계산
-						    	 function calculator(){
-						    		 var sum = 0;
-						    		 var  v = document.getElementsByClassName('ep_price'); //each
-						    		    for(var i=1; i<v.length; i++){						    		    	
-						    		    	 sum += parseInt(v[i].value);
-						    		    	 
-						    		    }
-						    		   // alert(sum);
-						    		  $('.price02').text(addComma(sum)+" 원");
-						    		  $('.buy_price').val(sum);
-						    	 }
-						    	 
-						</script>
-							
-						<%
-							String pro_code = (String) request.getParameter("pro_num");
-						%>
-						
-						<input type="hidden" value="<%= pro_code%>" name="pro_code" id="pro_code">
-						
+																		calculator();
+
+																	});
+												});
+
+								// 값 계산
+								function calculator() {
+									var sum = 0;
+									var v = document
+											.getElementsByClassName('ep_price'); //each
+									for (var i = 1; i < v.length; i++) {
+										sum += parseInt(v[i].value);
+
+									}
+									// alert(sum);
+									$('.price02').text(addComma(sum) + " 원");
+									$('.buy_price').val(sum);
+								}
+							</script>
+
+							<%
+								String pro_code = (String) request.getParameter("pro_num");
+							%>
+
+							<input type="hidden" value="<%=pro_code%>" name="pro_code"
+								id="pro_code">
+
 							<ul class="s_price">
 								<li class="price01">주문금액</li>
 								<li class="price02">0원</li>
 							</ul>
-								<input class="buy_price" type="hidden" value="">
+							<input class="buy_price" type="hidden" value="">
 						</div>
-						
+
 						<script>
 							// 장바구니 및 구매 버튼 클릭시 발생 이벤트 
 							function cart() {
+
 								var proall = "";
 								var pro_code = document
 										.getElementById("pro_code").value;
-								alert(pro_code);
-								var pro_option = document
-										.getElementById("buy_option").innerHTML;
 								var pro_name = document
-										.getElementById("buylist1").innerHTML;
-								var pro_count = document
-										.getElementById("product_count1").value;
+										.getElementById("product_name").innerHTML;
+
+								var pro_option = document.getElementsByClassName("buylistCart");
+
+								var pro_count = document.getElementsByClassName('product_count'); //by주영, 같은 클래스 값들을 배열로 변수에 담는다
+
+								console.log(pro_option.length + "길이");
+								for (var i = 0; i < pro_option.length; i++) {
+									console.log(pro_option[i].value);
+									console.log(pro_count[i].value + "값");
+								}
+
 								var pro_price = document
 										.getElementById("proudctlist_price1").innerHTML;
+
 								var pro_all = pro_name + pro_option;
+
 								var pro_group = [ pro_all, pro_count, pro_price ];
 
 								$.ajax({
@@ -336,7 +364,7 @@
 								var pro_option = document
 										.getElementById("buy_option").innerHTML;
 								var pro_name = document
-										.getElementById("buylist1").innerHTML;
+										.getElementById("product_name").innerHTML;
 								var pro_count = document
 										.getElementById("product_count1").value;
 								var pro_price = document

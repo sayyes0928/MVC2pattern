@@ -110,7 +110,7 @@ public class JoinInsertUserInfoAction implements Action {
 		else{
 			forward = new ActionForward();
 			forward.setRedirect(true);
-			forward.setPath("Index.jsp");
+			forward.setPath("Jachi_main.bo");
 		}
 
 		return forward;
