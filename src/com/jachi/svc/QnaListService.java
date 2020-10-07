@@ -14,8 +14,10 @@ public class QnaListService {
 	public int getListCount() throws Exception{
 		
 		int listCount = 0;
+		//변수 초기화
 		
 		listCount = sqlsession.selectOne("qnaselect_list");
+		//Q&A 테이블에 담겨진 리스트 갯수를 select
 		
 		return listCount;
 		
@@ -25,9 +27,9 @@ public class QnaListService {
 		
 		
 		int startrow=(page-1)*8;
-		
+		//현재 페이지를 알수있게 해주는 변수
 		List<QnABBS> selectList = sqlsession.selectList("qnaselect_listall",startrow);
-		
+		//해당 페이지의 리스트 select
 		return selectList;
 		
 	}

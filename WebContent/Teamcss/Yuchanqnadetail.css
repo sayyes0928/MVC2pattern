@@ -22,15 +22,22 @@
 	
 	margin-top:50px;
 }
+#post_pic{
+	width:auto;
+	height:auto;
+	max-width:500px;
+	max-height:500px;
+	border-radius: 12px;
 
+}
 #qna_asidesize{
 	float:right;
 	border:1px solid gray;
 	border-radius:7px;
 	width:350px;
-	height:800px;
+	height:80px;
 	margin-right:400px;
-	margin-top:250px;
+	margin-top:240px;
 }
 
 #title_hr{
@@ -67,8 +74,8 @@
 	border-bottom:1px solid gray;
 }
 #profile_img{
-	width: 40px;
-    height: 40px; 
+	width: 60px;
+    height: 60px; 
     border-radius: 70%;
     overflow: hidden;
     margin-right:15px;
@@ -116,6 +123,7 @@
 	font-size:18pt;
 	font-weight: bold;
 	position: absolute;
+	margin-top:15px;
 }
 
 .modify_text{
