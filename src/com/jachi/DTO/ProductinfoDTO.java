@@ -14,6 +14,15 @@ String pro_code;
  String pro_catecode2;
  String pro_catecode3;
  String pro_info;
+ String pro_detail_img;
+ 
+ 
+public String getPro_detail_img() {
+	return pro_detail_img;
+}
+public void setPro_detail_img(String pro_detail_img) {
+	this.pro_detail_img = pro_detail_img;
+}
 public String getPro_code() {
 	return pro_code;
 }

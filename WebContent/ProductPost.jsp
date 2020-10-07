@@ -88,27 +88,17 @@
 				<div id="mainsize">
 					<div class="s_subimg">
 						<ul id="pr_imgs">
+							<!-- <li><img class="s_imgborder"
+								src="<%=request.getContextPath()%>/upload/<%=article.get(0).getPro_mainimg()%>"></li>-->
 							<li><img class="s_imgborder"
-								src="<%=request.getContextPath()%>/upload/<%=article.get(0).getPro_mainimg()%>"></li>
+								src="img/ProductPost/sofar1.webp"></li>
 							<li><img class="s_imgborder"
-								src="img/ProductPost/chair02.webp"></li>
-							<li><img class="s_imgborder"
-								src="img/ProductPost/chair03.webp"></li>
-							<li><img class="s_imgborder"
-								src="img/ProductPost/chair04.webp"></li>
-							<li><img class="s_imgborder"
-								src="img/ProductPost/chair05.webp"></li>
-							<li><img class="s_imgborder"
-								src="img/ProductPost/chair06.webp"></li>
-							<li><img class="s_imgborder"
-								src="img/ProductPost/chair_info01.webp"></li>
-							<li><img class="s_imgborder"
-								src="img/ProductPost/chair_info02.webp"></li>
+								src="img/ProductPost/sofar2.webp"></li>
 						</ul>
 					</div>
 					<div id="showimg" class="s_mainimg">
 						<img
-							src="<%=request.getContextPath()%>/upload/<%=article.get(0).getPro_mainimg()%>">
+							src="img/ProductPost/sofar1.webp">
 					</div>
 					<div class="s_maintitle">
 						<div class="s_mainproduct">
@@ -388,8 +378,8 @@
 					<div class="productinfo_wrap">
 						<ul class="productimg">
 							<li>상품정보</li>
-							<li><img class="s_infoimgsize01"
-								src="img/c_product/intro1.jpg"></li>
+							<li><img class="pro_detail_img"
+								src="img/ProductPost/sofar_detail1.jpg"></li>
 						</ul>
 						<div class="pr_info">
 							<table>
@@ -617,51 +607,6 @@
 							</div>
 						</div>
 					</div>
-					
-				<!--  	<div class="product_selling">
-						<div class="selling01">
-							<div class="selling_select">
-								<ul>
-						      <%  option1 = article.get(0).getPro_option1();
-							      option_split1 = option1.split(",");
-						         if(!article.get(0).getPro_option1().equals(",")) { %>
-								     <li><select class="Option1" >
-								       <%  for (int x=0; x<option_split1.length; x++) {  %>
-										    <option value="<%=option_split1[x]%>"><%=option_split1[x]%></option>
-									   <%
-										   }
-									   %>
-
-								     </select></li>
-						       <%
-								   }
-							   %>
-							</ul>
-							</div>
-							<div class="pr_contents">
-								<ul>
-									<li></li>
-									<li></li>
-								</ul>
-							</div>
-							<div class="pr_price">
-								<ul>
-									<li class="price01">주문금액</li>
-									<li class="price02">0원</li>
-								</ul>
-							</div>
-						</div>
-						<div class="selling02">
-							<ul>
-								<li><button class="scrapsize" type="button">
-										<img src="img/c_product/scrap.png">
-									</button></li>
-								<li><button class="selling02_button02" type="button">장바구니</button></li>
-								<li><button class="selling02_button02" type="button">바로구매</button></li>
-							</ul>
-						</div>
-					</div>  -->
-					
 				</div>
 		</section>
 		<footer class="f_wrap">
