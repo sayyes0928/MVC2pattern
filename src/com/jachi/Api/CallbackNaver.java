@@ -31,7 +31,7 @@ public class CallbackNaver implements Action {
 		    String clientSecret = "8c2ZbjbrQq";//애플리케이션 클라이언트 시크릿값";
 		    String code = request.getParameter("code");
 		    String state = request.getParameter("state");
-		    String redirectURI = URLEncoder.encode("http://127.0.0.1:8080/MVC2/backpage.jsp", "UTF-8");
+		    String redirectURI = URLEncoder.encode("http://greenjachi.cafe24.com/backpage.jsp", "UTF-8");
 		    String apiURL;
 		    apiURL = "https://nid.naver.com/oauth2.0/token?grant_type=authorization_code&";
 		    apiURL += "client_id=" + clientId;
@@ -65,7 +65,6 @@ public class CallbackNaver implements Action {
 		      }
 		      br.close();
 		      if(responseCode==200) {
-		    		System.out.println(res.toString());
 		    		JSONParser parsing = new JSONParser();
 		    		Object obj = parsing.parse(res.toString());
 		    		JSONObject jsonObj = (JSONObject)obj;
@@ -74,9 +73,7 @@ public class CallbackNaver implements Action {
 		    		refresh_token = (String)jsonObj.get("refresh_token");
 		    		
 		    	   
-					if(access_token != null) { // access_token을 잘 받아왔다면
-							System.out.println("access_token");
-							System.out.println("엑세토큰");
+					if(access_token != null) { //by 주영, access_token을 정상적으로 받아왔울 경우, 프로필 정보 요청_200728
 							String apiurl = "https://openapi.naver.com/v1/nid/me";
 							URL url1 = new URL(apiurl);
 							HttpURLConnection con1 = (HttpURLConnection)url1.openConnection();
@@ -104,14 +101,15 @@ public class CallbackNaver implements Action {
 							JSONObject jsonObj1 = (JSONObject)obj1;
 							JSONObject resObj = (JSONObject)jsonObj1.get("response");
 							 
-							//왼쪽 변수 이름은 원하는 대로 정하면 된다. 
-							//단, 우측의 get()안에 들어가는 값은 와인색 상자 안의 값을 그대로 적어주어야 한다.
+							
+							//by주영, JSON으로 전달된 값들을 지정된 키 값으로 받아와 변수로 세팅한다	
 							String us_id = (String)resObj.get("id");
 							String email = (String)resObj.get("email");
 							String name = (String)resObj.get("name");
+							String nickname = (String)resObj.get("nickname");
 							String profile_image = (String)resObj.get("profile_image");
 							
-					    	// 이 안에 코드 작성
+					    	//by주영, 통합 회원가입을 위해 회원 객체에 Setting 후 중복확인을 거쳐 DB에 등록된다._200728
 							HttpSession session = request.getSession(false);
 							UserinfoDTO userDTO = new UserinfoDTO();
 							
@@ -119,17 +117,19 @@ public class CallbackNaver implements Action {
 							userDTO.setUs_mail(email);
 							userDTO.setUs_name(name);
 							userDTO.setUs_pic(profile_image);
+							userDTO.setUs_nkname(nickname);
 							
 							if(email==null || name==null || profile_image==null) {
 								
 								response.setContentType("text/html;charset=UTF-8");
 								PrintWriter out = response.getWriter();
 								out.println("<script>");
-								out.println("alert('필수항목은 반드시 동의해주셔야 합니다.누구처럼 반대하지말고.순응하세요')");
+								out.println("alert('필수항목은 반드시 동의해주셔야 합니다.')");
 								out.println("history.back();");
 								out.println("</script>");
 							}
-			// 통합회원 가입여부 체크
+							
+			               // 통합회원 가입여부 체크
 							String joinCheck = null;
 						    JoinIdcheckUserinfoService joinIdcheckUserinfoService = new JoinIdcheckUserinfoService();
 						    joinCheck = joinIdcheckUserinfoService.checkUserID(us_id);
