@@ -25,7 +25,7 @@
 
 <script>
 	//////////// 주문 목록 리스트 
-	$(function() {
+	/*$(function() {
 		$('.Option1')
 				.on(
 						'change',
@@ -51,11 +51,11 @@
 						});
 	});
 
-	//주문 목록 삭제버튼
+	주문 목록 삭제버튼
 	$(document).on("click", ".buylist_delete1", function() {
 		$(this, '.buylist_delete1').parent().css("display", "none");
 	}); 
-	  
+	  */
 </script>
 
 </head>
@@ -93,8 +93,7 @@
 				<div id="mainsize">
 					<div class="s_subimg">
 						<ul id="pr_imgs">
-							<li><img class="s_imgborder"
-								src="<%=request.getContextPath()%>/upload/<%=article.get(0).getPro_mainimg()%>"></li>
+							<li><img class="s_imgborder" src="#"></li>
 							<li><img class="s_imgborder"
 								src="img/ProductPost/chair02.webp"></li>
 							<li><img class="s_imgborder"
@@ -122,7 +121,8 @@
 								<li id="product_name" class="s_maintitlefont02"><%=article.get(0).getPro_name()%></li>
 								<li class="s_maintitlefont01">3개 리뷰</li>
 								<li class="s_maintitlefont03">54%</li>
-								<li class="s_li_inline"><%=aaa.format(article.get(0).getPro_price())%>
+								<li class="s_li_inline" id="pro_price"
+									value="<%=article.get(0).getPro_price()%>"><%=aaa.format(article.get(0).getPro_price())%>
 									원</li>
 							</ul>
 						</div>
@@ -165,8 +165,7 @@
 											<option value="8">8</option>
 											<option value="9">9</option>
 											<option value="10">10+</option>
-										</select> 
-										<span class="count_price" id="count_price<%= i%>"><%=aaa.format(article.get(0).getPro_price())%>원</span>
+										</select> <span class="count_price" id="count_price<%= i%>"><%=aaa.format(article.get(0).getPro_price())%>원</span>
 										<input class="ep_price" type="hidden" value="0">
 									</div>
 									<%} %>
@@ -316,36 +315,50 @@
 
 						<script>
 							// 장바구니 및 구매 버튼 클릭시 발생 이벤트 
-							function cart() {
+							function cartList() {
 
 								var proall = "";
 								var pro_code = document
 										.getElementById("pro_code").value;
 								var pro_name = document
 										.getElementById("product_name").innerHTML;
+								var pro_option = document
+										.getElementsByClassName("buylistCart");
+								var pro_count = document
+										.getElementsByClassName('product_count'); //by주영, 같은 클래스 값들을 배열로 변수에 담는다
+								var pro_price = document
+										.getElementById("pro_price").value;
 
-								var pro_option = document.getElementsByClassName("buylistCart");
+								var userSelect = document
+										.getElementsByClassName("ep_price");
+								//by주영, 사용자가 옵션을 선택했을 경우, value 값이 변환되기 때문에 '0'이 아닐 경우에
+								//사용자가 값을 선택했다는 것을 알 수 있어 플래그로 사용한다._201007
 
-								var pro_count = document.getElementsByClassName('product_count'); //by주영, 같은 클래스 값들을 배열로 변수에 담는다
+								//by주영, ajax로 값을 넘겨주기 위해 배열에 받아온 값들을 넣어준다._20201007
+								var option_arr = new Array();
+								var count_arr = new Array();
 
-								console.log(pro_option.length + "길이");
-								for (var i = 0; i < pro_option.length; i++) {
-									console.log(pro_option[i].value);
-									console.log(pro_count[i].value + "값");
+								for (var i = 1; i < pro_option.length; i++) {
+									if (userSelect[i].value != 0) {
+										//by주영, 사용자가 select 태그에서 선택한 값(userSelect[i])을 찾아 반복문 실행_20201007
+										option_arr.push(pro_name + " / "
+												+ pro_option[i].value);
+										count_arr.push(pro_count[i].value);
+									}
+
 								}
 
-								var pro_price = document
-										.getElementById("proudctlist_price1").innerHTML;
-
-								var pro_all = pro_name + pro_option;
-
-								var pro_group = [ pro_all, pro_count, pro_price ];
+								console.log(option_arr);
+								console.log(count_arr);
+								console.log(pro_price);
+								console.log(pro_code);
 
 								$.ajax({
 									url : 'BasketPage.jsp',
+									traditional : true,
 									data : {
-										'Pro_all' : pro_all,
-										'Pro_count' : pro_count,
+										'Pro_all' : option_arr,
+										'Pro_count' : count_arr,
 										'Pro_price' : pro_price,
 										'Pro_code' : pro_code
 									},
@@ -357,30 +370,54 @@
 								});
 
 							}
+
 							function buy() {
+
 								var proall = "";
 								var pro_code = document
 										.getElementById("pro_code").value;
-								var pro_option = document
-										.getElementById("buy_option").innerHTML;
 								var pro_name = document
 										.getElementById("product_name").innerHTML;
+								var pro_option = document
+										.getElementsByClassName("buylistCart");
 								var pro_count = document
-										.getElementById("product_count1").value;
+										.getElementsByClassName('product_count'); //by주영, 같은 클래스 값들을 배열로 변수에 담는다
 								var pro_price = document
-										.getElementById("proudctlist_price1").innerHTML;
-								var pro_all = pro_name + pro_option;
-								var pro_group = [ pro_all, pro_count, pro_price ];
+										.getElementById("pro_price").value;
+
+								var userSelect = document
+										.getElementsByClassName("ep_price");
+								//by주영, 사용자가 옵션을 선택했을 경우, value 값이 변환되기 때문에 '0'이 아닐 경우에
+								//사용자가 값을 선택했다는 것을 알 수 있어 플래그로 사용한다._201007
+
+								//by주영, ajax로 값을 넘겨주기 위해 배열에 받아온 값들을 넣어준다._20201007
+								var option_arr = new Array();
+								var count_arr = new Array();
+
+								for (var i = 1; i < pro_option.length; i++) {
+									if (userSelect[i].value != 0) {
+										//by주영, 사용자가 select 태그에서 선택한 값(userSelect[i])을 찾아 반복문 실행_20201007
+										option_arr.push(pro_name + " / "
+												+ pro_option[i].value);
+										count_arr.push(pro_count[i].value);
+									}
+
+								}
+
+								console.log(option_arr);
+								console.log(count_arr);
+								console.log(pro_price);
+								console.log(pro_code);
 
 								$.ajax({
 									url : 'BasketPage.jsp',
+									traditional : true,
 									data : {
-										'Pro_all' : pro_all,
-										'Pro_count' : pro_count,
+										'Pro_all' : option_arr,
+										'Pro_count' : count_arr,
 										'Pro_price' : pro_price,
 										'Pro_code' : pro_code
 									},
-
 									success : function() {
 										location.href = 'ProductOrderPage.bo';
 
@@ -393,10 +430,9 @@
 						<div class="s_button">
 							<ul id="product_info">
 
-								<li><button class="m_button01" type="button"
-										onclick="cart()">장바구니</button></li>
-								<li><button class="m_button02" type="button"
-										onclick="buy()">바로구매</button></li>
+								<li><button type="button" class="m_button01"
+										onclick="cartList()">장바구니</button></li>
+								<li><button class="m_button02" onclick="buy()">바로구매</button></li>
 							</ul>
 						</div>
 					</div>
