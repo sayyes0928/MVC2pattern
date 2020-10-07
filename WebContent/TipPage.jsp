@@ -23,6 +23,8 @@
 <title>tip</title>
 
 <link rel="stylesheet" href="./myhome.web.css/tip.css" type="text/css">
+<link rel="stylesheet" type="text/css"
+   href="./myhome.web.css/scrapbook_1.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script src="./myhome.web.js/teamTopnav.js"></script>
 </head>
@@ -38,7 +40,7 @@
 	    <jsp:include page="HeaderTestjsp.jsp"></jsp:include>
 		<section>
 
-			<div id="tip_banner">Tip 배너</div>
+			<div id="tip_banner"><div id="banner_text">TIP & INFORMATION</div></div>
 			<div id="s_wrap">
 				<div id="section_header">
 					<div id="page_title">집들이 Tip</div>
@@ -62,7 +64,7 @@
 						</button>
 						<a href="tip_detail.bo?tip_num=<%= tip_article.get(i).getTip_num()%>">
 						<img
-							src="<%=request.getContextPath()%>/upload/<%=tip_article.get(i).getTip_coverimg()%>">
+							src="<%=request.getContextPath()%>/upload/<%=tip_article.get(i).getTip_coverimg()%>" id="tip_img">
 						<ul>
 							<li id="card_title"><%=tip_article.get(i).getTip_title() %></li>
 							<li id="card_nickname">by <%=tip_article.get(i).getTip_nickname() %></li>
@@ -104,6 +106,7 @@
 
 			</div>
 		</section>
+		<jsp:include page="include_footer.jsp"></jsp:include>
 	</form>
 </body>
 </html>

@@ -12,6 +12,8 @@ String us_id = (String) session.getAttribute("us_id"); //로그인 유무 확인
 <meta charset="UTF-8">
 <title>Best MYRoom</title>
 <link rel="stylesheet" href="./Teamcss/Bestbt.css" type="text/css">
+<link rel="stylesheet" type="text/css"
+   href="./myhome.web.css/scrapbook_1.css" />
 
 
 </head>
@@ -55,6 +57,6 @@ String us_id = (String) session.getAttribute("us_id"); //로그인 유무 확인
 	
 	
 	</main>
-
+	<jsp:include page="include_footer.jsp"></jsp:include>
 </body>
 </html>

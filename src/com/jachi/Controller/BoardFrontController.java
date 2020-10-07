@@ -43,6 +43,7 @@ import com.jachi.Action.MypagePhotoViewAction;
 import com.jachi.Action.MypageProfileUserinfoUpdateAction;
 import com.jachi.Action.MypageScrapViewAction;
 import com.jachi.Action.MypageUserInfoUpdateAction;
+import com.jachi.Action.NoticeAction;
 import com.jachi.Action.PLIndexAction;
 import com.jachi.Action.PLSelectAction;
 import com.jachi.Action.ProductOrderAction;
@@ -634,6 +635,15 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		
 		else if(command.equals("/bestst.bo")) {
 			action = new BestSTAction();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		else if(command.equals("/notice.bo")) {
+			action = new NoticeAction();
 			try {
 				forward=action.execute(request, response);
 			} catch (Exception e) {

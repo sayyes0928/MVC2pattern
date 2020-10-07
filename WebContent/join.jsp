@@ -3,14 +3,20 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" type="text/css"  href="./myhome.web.css/teamTopNav.css" />
+<title>Sign UP</title>
+
 <!-- <link rel="stylesheet" href="header.css" type="text/css"> -->
 <link rel="stylesheet" href="./myhome.web.css/join.css" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script type="text/javascript" src="./myhome.web.js/join.js"></script>
 <script src="./myhome.web.js/teamTopnav.js"></script>
+
+<script>
+function cancel(){
+	location.href='Jachi_main.bo';
+}
+</script>
 
 </head>
 <body>
@@ -19,35 +25,7 @@
         <div id="h_wrap">
           <div class="h_div">
          
-        <h1>자취해보자</h1>
-              </div>
-         
-       <%
-       String us_id = (String)session.getAttribute("us_id"); //로그인 유무 확인
-       if(us_id==null){
-     %>
-            <ul class="login_go">
-              <li><a href="LoginFormpage.bo">로그인</a></li>
-              <li><span> | </span></li>
-              <li><a href="join.bo">회원가입</a></li>
-            </ul>
-      
-
-     <%
-       }else{
-     %>
-            <ul class="login_go">
-              <li><span></span></li>
-              <li><a href="MypageOrderView.bo">마이페이지</a></li>
-              <li><span> | </span></li>
-              <li><a href="logoutActionPage.jsp">로그아웃</a></li> 
-            </ul>
-        
-       
-
-     <%
-       }
-     %>
+       <jsp:include page="HeaderTestjsp.jsp"></jsp:include>
         
         
       </header>
@@ -217,7 +195,7 @@
 				<tr>
 					<td id="lastbutton" colspan="2"><input id="joinbutton"
 						type="button" name="SUBMIT" value="가입하기" onclick="out()">
-						<input type="submit" name="CANCEL" value="취소하기"></td>
+						<input type="button" name="CANCEL" value="취소하기" id="cancelbt" onclick='cancel()'></td>
 				</tr>
 			</table>
 		</section>

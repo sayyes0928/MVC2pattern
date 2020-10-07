@@ -57,6 +57,12 @@ $(document).ready(function(){
 	});
 });
 </script>
+
+<script>
+function gohome(){
+	location.href ="Jachi_main.bo"
+}
+</script>
 </head>
 
 
@@ -64,7 +70,7 @@ $(document).ready(function(){
 	<header>
 		<div id="test_header">
 			<div id="header_size">
-				<img src="./img/jachilogo75.png" id="logosize">
+				<img src="./img/jachilogo75.png" id="logosize" onclick='gohome()'>
 				<div class="main_menu">
 					<ul>
 						<li><a href="Jachi_main.bo" id="a_home">Home</a></li>
@@ -115,7 +121,7 @@ $(document).ready(function(){
 				</ul>
 				<ul id="sub_qna">
 					<li><a href="qna.bo">QNA Home</a></li>
-					<li><a href="#">Notice</a></li>
+					<li><a href="notice.bo">Notice</a></li>
 				</ul>
 				<ul id="sub_contact">
 					<li><a href="#">Contact</a></li>

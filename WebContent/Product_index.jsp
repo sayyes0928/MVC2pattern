@@ -13,6 +13,8 @@
 <title>Insert title here</title>
 
 <link rel="stylesheet" href="./Teamcss/Product_index.css" type="text/css">
+<link rel="stylesheet" type="text/css"
+   href="./myhome.web.css/scrapbook_1.css" />
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -48,8 +50,8 @@
 </header>
 	<main>
 		<div id="store_index_banner_body">
-			<div id="banner_box1"><div id="banner1">TODAY BEST</div><div id="banner2">보러가기</div></div>
-			<div id="banner_box2"><div id="banner3">CATEGORY</div></div>
+			<a href="bestst.bo"><div id="banner_box1"><div id="banner1">TODAY BEST</div><div id="banner2">보러가기</div></div></a>
+			<a href="storeList.bo"><div id="banner_box2"><div id="banner3">CATEGORY</div></div></a>
 		</div>
 		<div id="store_index_main">
 			<div id="sub_title1">
@@ -90,5 +92,6 @@
 	
 	
 	</main>
+		<jsp:include page="include_footer.jsp"></jsp:include>
 </body>
 </html>

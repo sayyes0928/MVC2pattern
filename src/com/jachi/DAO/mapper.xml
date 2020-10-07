@@ -347,5 +347,11 @@ insert into posting_reply values(default, #{posting_reply_us_id},#{posting_reply
 <delete id="delete_Tip_inComment" parameterType="Integer">
 		delete from tip_reply where rep_tip_num = #{tip_num};
 </delete>
+
+<select id="select_notice" resultType="com.jachi.DTO.NoticeDTO">
+	select * from notice order by notice_num desc;
+</select>
+
+
 </mapper>
 

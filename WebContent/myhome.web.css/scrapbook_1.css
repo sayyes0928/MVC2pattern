@@ -3245,7 +3245,7 @@ html:not(.js-focus-visible) ._2mmfI:focus {
 }
 .layout-footer {
   display: block;
-  background-color: #fafafa;
+  background-color: #e9e9e9;
 }
 .layout-footer a::-moz-focus-inner {
   border: 0;
