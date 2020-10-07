@@ -18,6 +18,7 @@ public class JachiMainAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		List<BeautyRoomDTO> articleList = new ArrayList<BeautyRoomDTO>();
+		//최상위 게시물 limit을 걸어 가져오기 위한 객체
 		
 		JachiMainService jms = new JachiMainService();
 		int listCount = jms.mainbestbtListCount();

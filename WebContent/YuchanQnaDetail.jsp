@@ -105,7 +105,8 @@ function aaa(btn){
 
 				<div id="qna_post_picsize">
 					<img
-						src="<%=request.getContextPath()%>/upload/<%=qna_detail.get(0).getQna_pw()%>">
+						src="<%=request.getContextPath()%>/upload/<%=qna_detail.get(0).getQna_pw()%>"
+						id="post_pic">
 				</div>
 				<div id="qna_post_postingsize"><%=qna_detail.get(0).getQna_post()%></div>
 				<div id="qna_post_timesize">
@@ -120,7 +121,7 @@ function aaa(btn){
 					src="<%=request.getContextPath()%>/upload/<%=qna_detail.get(0).getQna_img()%>"
 					id="profile_img">
 				</span> <span id="writer_name"> <%=qna_detail.get(0).getQna_nickname()%>
-				</span>
+				</span><span>님의 질문입니다 :D</span>
 			</div>
 
 			<div id="qna_post_replysize">
@@ -155,30 +156,34 @@ function aaa(btn){
 					<div id="comment_content"><%=qna_list.get(k).getQc_content()%></div>
 					<span id="commnet_number">글번호: <%=qna_list.get(k).getQc_num()%></span>
 					<span id="comment_date"><%=qna_list.get(k).getQc_date()%></span>
-<!-- 					<span><input type="button" class="comment_modify" -->
-<%-- 						id="comment_reply<%=k%>" value="수정" onclick="md(<%=k%>)"></span> --%>
-						<span>
-						<a
+
+					<%
+									if (us_nk != null) {
+								%>
+					<%
+ 	if (us_nk.equals(qna_list.get(k).getQc_nickname())) {
+ %>
+					<span> <a
 						href="qna_comment_delete.bo?renum=<%=qna_list.get(k).getQc_num()%>&postnum=<%=qna_list.get(k).getQcb_num()%>"
 						class="comment_modify" id="comment_delete<%=k%>">삭제</a>
-					</span> <input type="text"
-						id="modify_text<%=k%>" class="modify_text"><input
+					</span>
+					<%}else{ %>
+					<%}
+					
+					}%>
+					<input type="text" id="modify_text<%=k%>" class="modify_text"><input
 						type="button" id="modify_bt<%=k%>" value="수정" class="modify_bt">
 
 
 
 					<div class="reply_size" id="reply_size<%=k%>">
 						<input type="text" id="reply_txt<%=k%>" class="reply_txt"
-							name="reply_txt<%=k%>">
-							<input type="button" value="등록" id="re_okbt<%=k%>"
+							name="reply_txt<%=k%>"> <input type="button" value="등록"
+							id="re_okbt<%=k%>"
 							onclick="reply_ok(<%=qna_list.get(k).getQc_num()%>)">
 					</div>
 					<hr id="comment_line">
-					<!-- 						<div id="reply_reply_size"> -->
-					<%-- 							<span><img src="<%=request.getContextPath()%>/upload/<%=reply.get(0).getReplyimg()%>"></span><span>아이디</span><br> --%>
-					<!-- 							<div>콘텐츠</div> -->
-					<!-- 							<span>글번호</span><span>날짜</span><span>수정</span><span>삭제</span> -->
-					<!-- 						</div> -->
+
 					<%
 						}
 					%>
@@ -252,9 +257,9 @@ function aaa(btn){
 
 
 		</section>
-		
+
 	</form>
-	
+
 </body>
 
 </html>

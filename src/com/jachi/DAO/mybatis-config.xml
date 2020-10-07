@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Confi 3.0//EN" 
@@ -26,6 +27,7 @@
 	<mappers>
 		<mapper resource="com/jachi/DAO/mapper.xml" />
 	</mappers>
+
 
 
 </configuration>

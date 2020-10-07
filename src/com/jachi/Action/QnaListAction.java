@@ -19,20 +19,26 @@ public class QnaListAction implements Action {
 		List<QnABBS> articleList = new ArrayList<QnABBS>();
 		int page=1;
 		int limit=8;
+		//페이징을 위한 변수 -> 한 페이지에 8개까지의 게시물을 보여주기위해 limit을 설정
 		
 		if(request.getParameter("page")!=null) {
 			page=Integer.parseInt(request.getParameter("page"));
-		}
+		}//
 		
 		QnaListService qnaListService = new QnaListService();
 		int listCount=qnaListService.getListCount();
+		//현재 페이지의 리스트가 존재하는지 확인
+		
 		articleList = qnaListService.getArticleList(page, limit);
+		//페이징 처리를 위해 지정한 limit 개수만큼만 select
 		
 		int maxPage=(int)((double)listCount/limit+0.95);
 		int startPage = (((int)((double)page/10+0.9)) - 1)* 10 + 1;
 		int endPage = startPage + 10 -1;
+		//페이징 처리
 		
-		if(endPage>maxPage) endPage = maxPage;
+		
+		if(endPage>maxPage) endPage = maxPage; //끝페이지가 최대페이지보다 커지면 최대페이지를 끝페이지에 대입
 		
 		PageInfo pageInfo = new PageInfo();
 		pageInfo.setEndPage(endPage);
@@ -42,8 +48,13 @@ public class QnaListAction implements Action {
 		pageInfo.setStartPage(startPage);
 		request.setAttribute("pageInfo", pageInfo);
 		request.setAttribute("qnaList", articleList);
+		//페이지정보와 select한 리스트들을 세션에 저장
+		
 		ActionForward forward = new ActionForward();
+		//페이지 이동을 처리해줄 ActionForward 객체 forward 생성
+		
 		forward.setPath("/Yuchan_Qna.jsp");
+		//해당 페이지로 이동
 				
 		return forward;
 	}
