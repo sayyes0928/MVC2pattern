@@ -276,6 +276,7 @@
   .s_infonav li:nth-child(2n+2) {
     margin: 0 70px 0 70px;
     color: gray;
+    font-weight: 100;
   }
 
   .s_infoimg {
@@ -292,17 +293,22 @@
     height: 100%;
     border: 1px solid red;
   }
+  
+   .productinfo_wrap > p{
+    
+    width: 20px;
+    margin-top: 80px;
+    font-weihgt: bold;
+    font-size: 20px;
+    margin-left: 135px;
+    border-bottom: 1px solid black;
+  }
 
   .productimg {
     /* margin-top: 60px; */
     width: 800px;
-    height: 100%;
-  }
-
-  .productimg li {
-    /* margin-left: 40px; */
-    list-style-type: none;
-    margin-bottom: 30px;
+    height: 7500px;
+    margin: 0 auto;
   }
 
   .pro_detail_img {
@@ -433,12 +439,15 @@
 
   /* ==============table info/size============= */
   .pr_info {
-    clear: both;
+    width: 100%;
+
   }
 
   .pr_info table {
     width: 600px;
     color: gray;
+    margin: 0 auto;
+
   }
 
   .td_size {

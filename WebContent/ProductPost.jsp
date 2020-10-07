@@ -376,11 +376,11 @@
 						</ul>
 		
 					<div class="productinfo_wrap">
-						<ul class="productimg">
-							<li>상품정보</li>
-							<li><img class="pro_detail_img"
-								src="img/ProductPost/sofar_detail1.jpg"></li>
-						</ul>
+							<p>상품정보</p>
+						<div class="productimg">
+							<img class="pro_detail_img"
+								src="img/ProductPost/sofar_detail1.jpg">
+						</div>
 						<div class="pr_info">
 							<table>
 								<tr>
