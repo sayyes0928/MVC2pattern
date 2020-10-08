@@ -43,18 +43,17 @@
 	/// by주영, 네이버 아이디로 로그인 요청시, 해당 페이지의 클라이언트 정보를 담아 로그인 페이지로 이동
 	///      로그인 여부에 따라 콜백 페이지로 이동.
 	/// </summary> 
-	String clientId = "Z5SQgAjtE4al89G3NLng";//by 주영, 애플리케이션 클라이언트 (네아로)아이디값_200728
+	String clientId = "Z5SQgAjtE4al89G3NLng";
+	//by 주영, 애플리케이션 클라이언트 (네아로)아이디값_200728
 	String redirectURI = URLEncoder.encode("http://greenjachi.cafe24.com/callbackNaver.bo", "UTF-8");
 	//by 주영, 네아로의 토큰값을 사용해 유저 정보를 받아오기 위한 서블릿 페이지(콜백페이지) 경로
-	
-    /* by주영, 로그인 후, 이전페이지로 돌아가기 위해 URL의 헤더값을 가져와 저장
+
+	/* by주영, 로그인 후, 이전페이지로 돌아가기 위해 URL의 헤더값을 가져와 저장
 	* 필요에 따라 세션값에 저장된 백페이지를 사용한다._200728
 	*/
 	String backPage = request.getHeader("Referer");
 	session.setAttribute("backPage", backPage);
-	
-	
-	
+
 	/*
 	* by주영, 네아로 API를 사용하기 위한 URL 생성구조, 네이버로부터 할당받아 사용한다_200728
 	*/
@@ -65,8 +64,6 @@
 	apiURL += "&redirect_uri=" + redirectURI;
 	apiURL += "&state=" + state;
 	session.setAttribute("state", state);
-
-	
  %>
 
 <body>
