@@ -9,18 +9,23 @@
 }
 
   /* ===============section================ */
- 
+
   #s_wrap {
     width: 1082px;
-    height: 10000px;
+    height: 100%;
     margin: 0 auto;
-    border: 1px solid black;
+   
   }
   
   #pr_wrap {
-   width: 100%;
-   height: 700px;
    
+   width: 100%;
+   min-height: 646px;
+   
+  }
+  
+  #r_wrap{
+   clear: both;
   }
   .s_menuhr {
     margin-top: 10px;
@@ -34,7 +39,6 @@
   .s_menu1 {
     margin-top: 10px;
     margin-left: 20px;
-    float: left;
     margin-bottom: 10px;
   }
 
@@ -49,7 +53,7 @@
   }
 
   .s_category {
-    float: left;
+   
     margin-top: 10px;
     margin-left: 28px;
   }
@@ -122,7 +126,7 @@
   .s_mainproduct {
     margin-top: 25px;
     width: 330px;
-    height: 190px;
+    height: 132px;
   }
   
   .s_mainproduct li {
@@ -291,17 +295,17 @@
   
     width: 100%;
     height: 100%;
-    border: 1px solid red;
+    
   }
   
    .productinfo_wrap > p{
     
-    width: 20px;
+   width: 140px;
     margin-top: 80px;
+    margin-left: 70px;
     font-weihgt: bold;
     font-size: 20px;
-    margin-left: 135px;
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid gray;
   }
 
   .productimg {
@@ -468,34 +472,37 @@
 
   /* =============review================== */
   #review {
-    clear: both;
-    float: left;
+   
     margin-top: 80px;
-    width: 600px;
-    height: 650px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
   }
 
   .r_header {
     margin-top: 20px;
-    width: 600px;
+    width: 1040px;
     height: 30px;
+    margin: 0 auto;
   }
 
   .r_title {
-    float: left;
+   
+    margin-left: 70px;
     font-size: 20px;
   }
 
   .r_count {
-    float: left;
+
     font-size: 20px;
     color: skyblue;
     margin-left: 10px;
   }
 
   .r_b_write button {
-    font-family: "jua";
+   
     float: right;
+    margin-right: 70px;
     border: 0;
     background-color: white;
     color: skyblue;
@@ -503,14 +510,12 @@
   }
 
   .review_feed {
-    width: 600px;
-    height: 600px;
+    width: 800px;
+    height: 500px;
+    box-sizing: border-box;
+    margin: 0 auto;
   }
 
-  .feed_header {
-    width: 600px;
-    height: 80px;
-  }
 
   .header_stars {
     float: left;
@@ -539,14 +544,7 @@
     padding-bottom: 10px;
   }
 
-  .filter_best button {
-    border: 0;
-    background-color: white;
-    font-family: "jua";
-    font-size: 15px;
-    /* outline: none; */
 
-  }
 
   .filter_best li button img {
     float: left;
@@ -565,9 +563,7 @@
     padding-top: 12px;
   }
 
-  .r_align {
-    padding: 12px 5px 10px 5px;
-  }
+ 
 
   .filter_option {
     margin-left: 245px;
@@ -588,35 +584,6 @@
     width: 12px;
     height: 12px;
     padding-left: 10px;
-  }
-
-  .feed_filter ul {
-    float: left;
-  }
-
-  .feed_filter ul li {
-    display: inline;
-  }
-
-  .f_wrap {
-    clear: both;
-    height: 200px;
-  }
-
-  #review_list{
-   padding-left:8px;
-   padding-top:60px;
-  }
-  #review_list tr{
-   text-align: center;
-   font-size: 20px;
-  }
-  #review_list tr:last-child{
-   float:left;
-   margin-left:210px;
-  }
-  #review_list input{
-   margin-left:10px;
   }
 
   .inquiry{

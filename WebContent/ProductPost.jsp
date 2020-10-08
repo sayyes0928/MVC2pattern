@@ -1,15 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="org.apache.catalina.ant.SessionsTask"%>
 <%@ page import="javax.websocket.Session"%>
 <%@ page import="java.util.*"%>
 <%@ page import="com.jachi.DTO.ProductinfoDTO"%>
 <%@page import="java.text.DecimalFormat" %>
+
 <%
-	ArrayList<ProductinfoDTO> article = (ArrayList<ProductinfoDTO>) request.getAttribute("article");
+	ArrayList<ProductinfoDTO> article = (ArrayList<ProductinfoDTO>)request.getAttribute("article");
 
     DecimalFormat aaa = new DecimalFormat("###,###");
 %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,8 +18,9 @@
 <title>상품 구매페이지1</title>
 
 <link rel="stylesheet" href="./myhome.web.css/ProdcutPost.css" type="text/css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="./myhome.web.css/scrapbook_1.css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script type="text/javascript" src="./myhome.web.js/ProductPost.js"></script>
 <script src="./myhome.web.js/teamTopnav.js"></script>
 
@@ -62,7 +64,8 @@
 		<!-- Header include -->
 		<jsp:include page="HeaderTestjsp.jsp"></jsp:include>
 		
-        <section id="s_wrap">
+        <section>
+           <div id="s_wrap">
 				<div id="s_menusize">
 					<div class="s_menu1">
 						<ul>
@@ -85,7 +88,7 @@
 					</ul>
 				</div>
 		   <div id="pr_wrap">
-				<div id="mainsize">
+				<!--   <div id="mainsize"> -->
 					<div class="s_subimg">
 						<ul id="pr_imgs">
 							<!-- <li><img class="s_imgborder"
@@ -292,7 +295,8 @@
 							</ul>
 						</div>
 						</div>
-						
+							</div>
+		       </div>
 						<script>
 							// 장바구니 및 구매 버튼 클릭시 발생 이벤트 
 							function cartList() {
@@ -407,13 +411,8 @@
 
 							}
 						</script>
-				
-					</div>
-				</div>
-		   </div>
-		   <div id="r_wrap">
-
-
+						
+					 <div id="r_wrap">
 						<ul class="s_infonav">
 							<li><a href="#product_info">상품정보</a></li>
 							<li>|</li>
@@ -423,8 +422,7 @@
 							<li>|</li>
 							<li><a href="#product_delivery">배송/환불</a></li>
 						</ul>
-		
-					<div class="productinfo_wrap">
+						<div class="productinfo_wrap">
 							<p>상품정보</p>
 						<div class="productimg">
 							<img class="pro_detail_img"
@@ -535,54 +533,31 @@
 								</tr>
 							</table>
 						</div>
-						<!-- ================review============== -->
-						<div id="review">
+					  </div>
+					</div>
+					  	<!-- ================review============== -->
+					 	<div id="review">
 							<div class="r_header">
-								<div class="r_title">리뷰</div>
-								<span class="r_count">1000</span>
-								<div class="r_b_write">
-									<button id="review_button" type="button" name="button"
-										onclick="createRow()">리뷰쓰기</button>
-								</div>
+								<span class="r_title">리뷰</span>
+								<span class="r_count">1000</span>								
 							</div>
 							<div class="review_feed">
-								<div class="feed_header">
-									<span class="header_stars">4.2</span> <span class="stars_icon"><img
-										src="img/c_product/stars.png"> </span>
-								</div>
-								<div class="feed_filter">
-									<ul class="filter_best">
-										<li><button class="r_align" type="button" name="button">베스트순</button>
-										</li>
-										<li><button class="r_align" type="button" name="button">최신순</button>
-										</li>
-										<li><button class="b_picture" type="button" name="button">
-												<img src="img/c_product/camera.png"><span
-													class="cameratext
-                    ">사진리뷰</span>
-											</button></li>
-									</ul>
-									<ul class="filter_option">
-										<li><button type="button" name="button">
-												별점<img src="img/c_product/d_arrow.png">
-											</button></li>
-										<li><button type="button" name="button">
-												옵션<img src="img/c_product/d_arrow.png">
-											</button></li>
-									</ul>
-								</div>
-								<div id="product_inquiry" class="review_list_wrap">
-									<table id="review_list">
-									</table>
-								</div>
+							  <div class="feed_product_name"><%=article.get(0).getPro_name()%></div>
+						    <!--   <div class="r_b_write">
+									<button id="review_button" type="button" name="button"
+										onclick="">리뷰쓰기</button>
+							  </div>  -->
 							</div>
-							<div id="product_delivery" class="inquiry">
+						</div>	
+						
+						
+				  	<!-- 	<div id="product_delivery" class="inquiry">
 								<ul>
 									<li>문의</li>
 									<li>1000</li>
 								</ul>
 								<button type="button" name="button">문의하기</button>
-							</div>
+						</div>
 							<div class="delivery">
 								<div class="delivery_title01">배송</div>
 								<table>
@@ -653,13 +628,12 @@
 										</td>
 									</tr>
 								</table>
-							</div>
-						</div>
-					</div>
-				</div>
+							</div> -->
+							
+	      </div>
 		</section>
-		<footer class="f_wrap">
-			<hr>
+		<footer>
+		 <jsp:include page="include_footer.jsp"></jsp:include>	
 		</footer>
 	</form>
 </body>
