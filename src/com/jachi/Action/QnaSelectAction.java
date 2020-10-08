@@ -15,20 +15,18 @@ import com.jachi.svc.QnaSelectService;
 public class QnaSelectAction implements Action {
 
 	@Override
+	//Action interface의 execute() 메소드를 오버라이딩 --> 메소드의 원형이 동일
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		List<QnABBS> qnalist = new ArrayList<QnABBS>();
-		//등록된 Q&A 리스트들을 담아줄 객체 생성
-		
-		QnaSelectService qnaSelectService = new QnaSelectService();
+		QnaSelectService qnaSelectService = new QnaSelectService();	
 		qnalist = qnaSelectService.getqnainfo();
-		//서비스클래스에서 받아온값을 qnalist에 담아준다
-		
+
 		ActionForward forward = new ActionForward();
 		//페이지 이동을 처리하기 위한 ActionForward 클래스의 객체 생성
 		
 		request.setAttribute("qnaList", qnalist);
-		//qnalist의 값들을 "qnaList" 라는 이름으로 세션에 저장
+		//담아온 값들 세션에 저장
 		
 		forward.setPath("qnaList.bo");
 		//페이징을 위해 이동

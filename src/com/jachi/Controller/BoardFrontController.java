@@ -415,6 +415,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			try {
 				forward=action.execute(request, response);
 			}catch(Exception e) {
+				//예외처리
 				e.printStackTrace();
 			}
 		}

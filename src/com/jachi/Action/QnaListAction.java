@@ -23,7 +23,7 @@ public class QnaListAction implements Action {
 		
 		if(request.getParameter("page")!=null) {
 			page=Integer.parseInt(request.getParameter("page"));
-		}//
+		}
 		
 		
 		QnaListService qnaListService = new QnaListService();
@@ -39,7 +39,8 @@ public class QnaListAction implements Action {
 		//페이징 처리
 		
 		
-		if(endPage>maxPage) endPage = maxPage; //끝페이지가 최대페이지보다 커지면 최대페이지를 끝페이지에 대입
+		if(endPage>maxPage) endPage = maxPage; 
+		//끝 페이징 처리
 		
 		PageInfo pageInfo = new PageInfo();
 		pageInfo.setEndPage(endPage);

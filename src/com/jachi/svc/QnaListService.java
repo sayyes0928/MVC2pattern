@@ -10,12 +10,11 @@ import com.jachi.DTO.QnABBS;
 
 public class QnaListService {
 	SqlSession sqlsession = BoardDAO.getInstance();
-
-	public int getListCount() throws Exception{
+	//싱글톤 패턴을 사용해 객체를 한번만 생성하여 불필요한 로드를 없앰
+	
+	public int getListCount() throws Exception{ 
 		
-		int listCount = 0;
-		//변수 초기화
-		
+		int listCount = 0;	
 		listCount = sqlsession.selectOne("qnaselect_list");
 		//Q&A 테이블에 담겨진 리스트 갯수를 select
 		
@@ -24,7 +23,6 @@ public class QnaListService {
 	}
 	
 	public List<QnABBS> getArticleList(int page, int limit) throws Exception{
-		
 		
 		int startrow=(page-1)*8;
 		//현재 페이지를 알수있게 해주는 변수
