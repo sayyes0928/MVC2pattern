@@ -26,6 +26,7 @@ public class QnaListAction implements Action {
 		}
 		
 		
+		
 		QnaListService qnaListService = new QnaListService();
 		int listCount=qnaListService.getListCount();
 		//현재 페이지의 리스트가 존재하는지 확인
