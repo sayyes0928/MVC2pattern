@@ -41,7 +41,6 @@ public class CallbackNaver implements Action {
 		    apiURL += "&state=" + state;
 		    String access_token = "";
 		    String refresh_token = "";
-		    System.out.println("apiURL="+apiURL);
 		    ActionForward forward = new ActionForward();
 	
 		    
