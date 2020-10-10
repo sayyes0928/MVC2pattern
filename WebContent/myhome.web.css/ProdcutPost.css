@@ -710,3 +710,43 @@
      height: 100%;
   }
   
+  .feed_header{
+    width: 100%;
+    height: 20px;
+    border: 1px solid black;
+  }
+  
+  .feed_product_name{
+   float: left;
+    
+  }
+  
+  .review_option{
+    float: left;
+    outline: none;
+    margin-left: 10px;
+    border: 1px solid white;
+  }
+  
+  .review_feed span:nth-child(2){
+    float: left;
+    margin-left: 10px;
+  }
+  
+  .review_feed div:nth-child(3){
+    float: left;
+    margin-left: 10px;
+
+  }
+  
+  .review_feed span:nth-child(5){
+    float: left;
+    margin-left: 10px;
+    
+  }
+  
+  .review_post{
+    clear: both;
+  }
+  
+ 

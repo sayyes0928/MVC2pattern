@@ -542,15 +542,31 @@
 								<span class="r_count">1000</span>								
 							</div>
 							<div class="review_feed">
-							  <div class="feed_product_name"><%=article.get(0).getPro_name()%></div>
+							  <div class="feed_header">
+							  <span class="feed_product_name"><%=article.get(0).getPro_name()%></span>
+							  <span>(</span>
+							  <div>리뷰 옵션 : </div>
+							<%  if(!article.get(0).getPro_option1().equals(",")) { %>
+								     <select class="review_option" >
+								       <%  for (int x=0; x<option_split1.length; x++) {  %>
+										    <option value="<%=option_split1[x]%>"><%=option_split1[x]%></option>
+									   <%
+										   }
+									   %>
+								     </select>
+						       <%
+								   }
+							   %>
+							  <span>)</span>
+							  </div>
+							   
 						    <!--   <div class="r_b_write">
 									<button id="review_button" type="button" name="button"
 										onclick="">리뷰쓰기</button>
 							  </div>  -->
 							</div>
 						</div>	
-						
-						
+				
 				  	<!-- 	<div id="product_delivery" class="inquiry">
 								<ul>
 									<li>문의</li>
