@@ -8,6 +8,7 @@
 <%
 	ArrayList<ProductinfoDTO> article = (ArrayList<ProductinfoDTO>)request.getAttribute("article");
 
+    String us_id = (String)session.getAttribute("us_id");
     DecimalFormat aaa = new DecimalFormat("###,###");
 %>
 
@@ -15,7 +16,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>상품 구매페이지1</title>
+<title>상품 구매페이지</title>
 
 <link rel="stylesheet" href="./myhome.web.css/ProdcutPost.css" type="text/css">
 <link rel="stylesheet" type="text/css" href="./myhome.web.css/scrapbook_1.css" />
@@ -545,7 +546,7 @@
 							  <div class="feed_header">
 							  <span class="feed_product_name"><%=article.get(0).getPro_name()%></span>
 							  <span>(</span>
-							  <div>리뷰 옵션 : </div>
+							  <div>상품 옵션 : </div>
 							<%  if(!article.get(0).getPro_option1().equals(",")) { %>
 								     <select class="review_option" >
 								       <%  for (int x=0; x<option_split1.length; x++) {  %>
@@ -558,93 +559,38 @@
 								   }
 							   %>
 							  <span>)</span>
+							  <input class="feed_btn" type="button" value="리뷰쓰기">
 							  </div>
-							   
-						    <!--   <div class="r_b_write">
-									<button id="review_button" type="button" name="button"
-										onclick="">리뷰쓰기</button>
-							  </div>  -->
+							  <div class="feed_write">
+							   <span>제목 :</span>
+							   <input class="feed_title" type="text" >
+							   <textarea class="feed_post"></textarea>
+							  </div>
 							</div>
 						</div>	
-				
-				  	<!-- 	<div id="product_delivery" class="inquiry">
-								<ul>
-									<li>문의</li>
-									<li>1000</li>
-								</ul>
-								<button type="button" name="button">문의하기</button>
-						</div>
-							<div class="delivery">
-								<div class="delivery_title01">배송</div>
-								<table>
-									<tr>
-										<td class="td_size">배송</td>
-										<td>화물택배상품</td>
-									</tr>
-									<tr>
-										<td class="table_hr" colspan="2">
-											<hr>
-										</td>
-									</tr>
-									<tr>
-										<td>배송비</td>
-										<td>5000원</td>
-									</tr>
-									<tr>
-										<td class="table_hr" colspan="2">
-											<hr>
-										</td>
-									</tr>
-									<tr>
-										<td>도서산간 추가 배송비</td>
-										<td>배송불가 지역이 없습니다.</td>
-									</tr>
-									<tr>
-										<td class="table_hr" colspan="2">
-											<hr>
-										</td>
-									</tr>
-									<tr>
-										<td>비례 배송비</td>
-										<td>주문 상품 개수에 비례하여 배송비 부과</td>
-									</tr>
-									<tr>
-										<td class="table_hr" colspan="2">
-											<hr>
-										</td>
-									</tr>
-								</table>
-								<div class="delivery_title02">교환/환불</div>
-								<table>
-									<tr>
-										<td class="td_size">반품배송비</td>
-										<td>5,000원(최초 배송비가 무료인 경우 10,000원 부과)</td>
-									</tr>
-									<tr>
-										<td class="table_hr" colspan="2">
-											<hr>
-										</td>
-									</tr>
-									<tr>
-										<td>교환배송비</td>
-										<td>10,000원</td>
-									</tr>
-									<tr>
-										<td class="table_hr" colspan="2">
-											<hr>
-										</td>
-									</tr>
-									<tr>
-										<td>보내실 곳</td>
-										<td>(10008) 경기 김포시 하성면 하성로 721 (양택리) (주)노마드족</td>
-									</tr>
-									<tr>
-										<td class="table_hr" colspan="2">
-											<hr>
-										</td>
-									</tr>
-								</table>
-							</div> -->
+                    	<script>
+                    	                    	  
+
+                    	   $(".feed_btn").on('click', function(){
+                    		   $.ajax({
+									url : '',
+									traditional : true,
+									data : {
+										
+									},
+
+									success : function() {
+
+									}
+
+								});
+                    	     });
+                    	
+                    			   
+                    	   
+                    	   
+                    	   
+                    	</script>		
 							
 	      </div>
 		</section>
