@@ -87,7 +87,7 @@ ac(function() {
 										<li><a href="cate_search.bo?cate=소파">소파</a></li>
 										<li><a href="cate_search.bo?cate=거실수납장">거실/TV장</a></li>
 										<li><a href="cate_search.bo?cate=가구">거실/소파테이블</a></li>
-										<li><a href="cate_search.bo?cate=거실수납장">의자</a></li>
+										<li><a href="cate_search.bo?cate=의자">의자</a></li>
 									</ul></li>
 								<li><a href="#">침실가구</a>
 									<ul>

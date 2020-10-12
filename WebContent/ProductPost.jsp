@@ -92,17 +92,16 @@
 				<!--   <div id="mainsize"> -->
 					<div class="s_subimg">
 						<ul id="pr_imgs">
-							<!-- <li><img class="s_imgborder"
-								src="<%=request.getContextPath()%>/upload/<%=article.get(0).getPro_mainimg()%>"></li>-->
+						
 							<li><img class="s_imgborder"
-								src="img/ProductPost/sofar1.webp"></li>
+								src="<%=request.getContextPath()%>/upload/<%=article.get(0).getPro_mainimg()%>"></li>
 							<li><img class="s_imgborder"
-								src="img/ProductPost/sofar2.webp"></li>
+								src="<%=request.getContextPath()%>/upload/<%=article.get(0).getPro_subimg()%>"></li>
 						</ul>
 					</div>
 					<div id="showimg" class="s_mainimg">
 						<img
-							src="img/ProductPost/sofar1.webp">
+							src="<%=request.getContextPath()%>/upload/<%=article.get(0).getPro_mainimg()%>">
 					</div>
 					<div class="s_maintitle">
 						<div class="s_mainproduct">
@@ -427,7 +426,7 @@
 							<p>상품정보</p>
 						<div class="productimg">
 							<img class="pro_detail_img"
-								src="img/ProductPost/sofar_detail1.jpg">
+								src="<%=request.getContextPath()%>/upload/<%=article.get(0).getPro_detail_img()%>">
 						</div>
 						<div class="pr_info">
 							<table>
@@ -537,7 +536,7 @@
 					  </div>
 					</div>
 					  	<!-- ================review============== -->
-					 	<div id="review">
+				<!--   	<div id="review">
 							<div class="r_header">
 								<span class="r_title">리뷰</span>
 								<span class="r_count">1000</span>								
@@ -567,7 +566,8 @@
 							   <textarea class="feed_post"></textarea>
 							  </div>
 							</div>
-						</div>	
+						</div>
+						
                     	<script>
                     	                    	  
 
@@ -586,11 +586,9 @@
 								});
                     	     });
                     	
-                    			   
-                    	   
-                    	   
-                    	   
-                    	</script>		
+                    	</script> -->
+                    	
+                        		
 							
 	      </div>
 		</section>

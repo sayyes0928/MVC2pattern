@@ -80,7 +80,7 @@
                </div>
              </div>
              <div class="detail_post">
-                    게시물 내용      
+                   <%=tip_detail.get(0).getTip_post() %>
              </div>
              <div class="comment">
                 <div class="comment_title">

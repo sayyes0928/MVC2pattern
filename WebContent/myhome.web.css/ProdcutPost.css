@@ -13,7 +13,7 @@
   #s_wrap {
     width: 1082px;
     height: 100%;
-    margin: 0 auto;
+    margin: 0 auto 80px auto;
    
   }
   
@@ -199,6 +199,7 @@
     font-size: 20px;
     font-weight: bold;
     color: #fb9b24;
+    margin-right: 15px;
   }
 
   .s_button {
@@ -302,6 +303,7 @@
     
    width: 140px;
     margin-top: 80px;
+    margin-bottom: 40px;
     margin-left: 70px;
     font-weihgt: bold;
     font-size: 20px;
@@ -309,9 +311,9 @@
   }
 
   .productimg {
-    /* margin-top: 60px; */
+    
     width: 800px;
-    height: 7500px;
+    height: 100%;
     margin: 0 auto;
   }
 

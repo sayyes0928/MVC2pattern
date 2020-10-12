@@ -37,7 +37,7 @@ public class TipwriteAction implements Action {
 		tipdto = new TipDTO();
 		tipdto.setTip_nickname(us_id);
 		tipdto.setTip_title(multi.getParameter("write_title"));
-		tipdto.setTip_post(multi.getParameter("editordata"));
+		tipdto.setTip_post(multi.getParameter("tip_post"));
 		tipdto.setTip_coverimg(cover_imgname);
 		tipdto.setTip_us_id(us_id);
  
