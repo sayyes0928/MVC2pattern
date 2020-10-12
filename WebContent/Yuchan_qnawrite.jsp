@@ -89,6 +89,15 @@ function existingTag(text)
 
             
 </script>
+
+<script>
+var testpro = $('#cma_file').val();
+
+if(!testpro){
+	  alert("사진을 첨부해주세요!");
+    return;
+}
+</script>
 </head>
 <body>
 	<header>
