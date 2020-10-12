@@ -98,7 +98,12 @@
         	  var agree2 = document.myform.agree2.checked;
         	  var ID_Overlap = document.getElementById('ok').innerHTML;
         	  var NICK_Overlap = document.getElementById('ok2').innerHTML;
+              var testpro = $('#profile_img').val();
               
+              if(!testpro){
+            	  alert("프로필 사진을 첨부해주세요!");
+          	    return;
+              }
         	  
         	  if (id == "") {
         	    alert("아이디를 써주세요");
@@ -124,7 +129,10 @@
         	    alert("닉네임을 써주세요");
         	    return;
         	  }
-
+        	  
+        	 
+        	  
+        	
         	  if (year == "" || month == "" || day == "") {
         	    alert("생년월일을 써주세요");
         	    return;

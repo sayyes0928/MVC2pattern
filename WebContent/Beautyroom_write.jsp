@@ -137,6 +137,14 @@ $(function(){
 
 });
             function test(aaa){
+            	 var testpro = $('#cma_file').val();
+                 
+                 if(!testpro){
+               	  alert("사진을 첨부해주세요!");
+             	    return;
+                 }
+            	
+            	
             	var tagAll = "";
             	var tagList = document.getElementsByName("tagtest");    
 				 for (var i = 0; i < tagList.length; i++) {

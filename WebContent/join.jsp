@@ -18,6 +18,8 @@ function cancel(){
 }
 </script>
 
+
+
 </head>
 <body>
 	<form name="myform" action="join_Insert.bo" method="post" enctype="multipart/form-data" autocomplete="off">

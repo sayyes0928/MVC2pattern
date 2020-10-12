@@ -74,14 +74,15 @@
 			<h1 class="form-signin-heading">로그인</h1>
 			<input type="text" class="form-control" name="us_id"
 				placeholder="아이디를 입력해주세요" /> <input type="password"
-				class="form-control" name="us_pw" placeholder="비밀번호를 입력해주세요" /> <a
-				href="<%=apiURL%>"> <img height="50"
-				src="./img/naverLoginBtn.PNG" />
-			</a>
+				class="form-control" name="us_pw" placeholder="비밀번호를 입력해주세요" /> 
 			<div>
 				<a href="join.jsp" class="join_go">회원가입</a>
 			</div>
 			<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+			<a
+				href="<%=apiURL%>"> <img height="50"
+				src="./img/naver_login.PNG" />
+			</a>
 		</form>
 	</div>
 </body>
