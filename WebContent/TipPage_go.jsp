@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>gogo</title>
+<title>gogo1</title>
 </head>
 <body>
 <form action="tiplist.bo" method="post" >
