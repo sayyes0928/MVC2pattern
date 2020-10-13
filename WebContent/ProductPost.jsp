@@ -1,10 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="org.apache.catalina.ant.SessionsTask"%>
 <%@ page import="javax.websocket.Session"%>
 <%@ page import="java.util.*"%>
 <%@ page import="com.jachi.DTO.ProductinfoDTO"%>
-<%@page import="java.text.DecimalFormat"%>
+<%@page import="java.text.DecimalFormat" %>
 
 <%
 	ArrayList<ProductinfoDTO> article = (ArrayList<ProductinfoDTO>)request.getAttribute("article");
@@ -19,13 +18,10 @@
 <meta charset="UTF-8">
 <title>상품 구매페이지</title>
 
-<link rel="stylesheet" href="./myhome.web.css/ProdcutPost.css"
-	type="text/css">
-<link rel="stylesheet" type="text/css"
-	href="./myhome.web.css/scrapbook_1.css" />
+<link rel="stylesheet" href="./myhome.web.css/ProdcutPost.css" type="text/css">
+<link rel="stylesheet" type="text/css" href="./myhome.web.css/scrapbook_1.css" />
 
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script type="text/javascript" src="./myhome.web.js/ProductPost.js"></script>
 <script src="./myhome.web.js/teamTopnav.js"></script>
 
@@ -68,9 +64,9 @@
 	<form id="contentPage" action="#">
 		<!-- Header include -->
 		<jsp:include page="HeaderTestjsp.jsp"></jsp:include>
-
-		<section>
-			<div id="s_wrap">
+		
+        <section>
+           <div id="s_wrap">
 				<div id="s_menusize">
 					<div class="s_menu1">
 						<ul>
@@ -92,11 +88,11 @@
 						<li><a href="#">학생의자</a></li>
 					</ul>
 				</div>
-				<div id="pr_wrap">
-					<!--   <div id="mainsize"> -->
+		   <div id="pr_wrap">
+				<!--   <div id="mainsize"> -->
 					<div class="s_subimg">
 						<ul id="pr_imgs">
-
+						
 							<li><img class="s_imgborder"
 								src="<%=request.getContextPath()%>/upload/<%=article.get(0).getPro_mainimg()%>"></li>
 							<li><img class="s_imgborder"
@@ -105,68 +101,68 @@
 					</div>
 					<div id="showimg" class="s_mainimg">
 						<img
-							src="<%=request.getContextPath()%>/upload/<%=article.get(0).getPro_mainimg()%>"
-							id="pro_image">
+							src="<%=request.getContextPath()%>/upload/<%=article.get(0).getPro_mainimg()%>">
 					</div>
 					<div class="s_maintitle">
 						<div class="s_mainproduct">
 							<ul>
-								<li class="s_maintitlefont01">의자왕</li>
+							<!--  	<li class="s_maintitlefont01">의자왕</li> -->
 								<li id="product_name" class="s_maintitlefont02"><%=article.get(0).getPro_name()%></li>
-								<li class="s_maintitlefont01">3개 리뷰</li>
-								<li class="s_maintitlefont03">54%</li>
-								<li class="s_li_inline" id="pro_price"
-									value="<%= article.get(0).getPro_price()%>"><%=aaa.format(article.get(0).getPro_price())%>
-									원</li>
+							<!--  	<li class="s_maintitlefont01">3개 리뷰</li>  
+								<li class="s_maintitlefont03">54%</li> -->
 							</ul>
+							<div class="product_orderinfo">
+							    <span class="pro_price_label">상품가격 : </span>
+								<span id="pro_price" value="<%= article.get(0).getPro_price()%>"><%=aaa.format(article.get(0).getPro_price())%> 원</span>
+							</div>		
 						</div>
-
+						
 						<div class="product_orderbox">
-							<div class="s_combobox">
-								<ul>
-									<% String option1 = article.get(0).getPro_option1();
+						<div class="s_combobox">
+							<ul>
+						      <% String option1 = article.get(0).getPro_option1();
 							     String[] option_split1 = option1.split(",");
 						         if(!article.get(0).getPro_option1().equals(",")) { %>
-									<li><select class="Option1">
-											<%  for (int x=0; x<option_split1.length; x++) {  %>
-											<option value="<%=option_split1[x]%>"><%=option_split1[x]%></option>
-											<%
+								     <li><select class="Option1" >
+								       <%  for (int x=0; x<option_split1.length; x++) {  %>
+										    <option value="<%=option_split1[x]%>"><%=option_split1[x]%></option>
+									   <%
 										   }
 									   %>
 
-									</select></li>
-									<%
+								     </select></li>
+						       <%
 								   }
 							   %>
-								</ul>
-								<div id="buylist_cell1">
-									<% int price = article.get(0).getPro_price();
+							</ul>
+						 	<div id="buylist_cell1">
+						 	      <% int price = article.get(0).getPro_price();
 						 	         for(int i=0; i<option_split1.length; i++) {%>
-									<div class="buylist_section1">
-										<div class="buylist" name="<%= i%>"><%= option_split1[i]%></div>
-										<input type="hidden" value="<%= option_split1[i]%>"
-											class="buylistCart" /> <span class="buy_option"></span> <input
-											class="buylist_delete1" type="button" value="X"> <select
-											class="product_count" name="or_count">
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-											<option value="4">4</option>
-											<option value="5">5</option>
-											<option value="6">6</option>
-											<option value="7">7</option>
-											<option value="8">8</option>
-											<option value="9">9</option>
-											<option value="10">10+</option>
-										</select> <span class="count_price" id="pro_price"
-											value="<%=article.get(0).getPro_price()%>"><%=aaa.format(article.get(0).getPro_price())%>원</span>
-										<input class="ep_price" type="hidden" value="0">
-									</div>
-									<%} %>
+								<div class="buylist_section1">
+									<div class="buylist" name="<%= i%>" ><%= option_split1[i]%></div>
+									<input type="hidden" value="<%= option_split1[i]%>" class="buylistCart"/>
+									<span class="buy_option"></span> 
+									<input class="buylist_delete1" type="button" value="X">
+									<select class="product_count" name="or_count">
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+										<option value="7">7</option>
+										<option value="8">8</option>
+										<option value="9">9</option>
+										<option value="10">10+</option>
+									</select> 
+									<span class="count_price" id="pro_price" value="<%=article.get(0).getPro_price()%>"><%=aaa.format(article.get(0).getPro_price())%>원</span>
+									<input class="ep_price" type="hidden" value="0">
 								</div>
+								<%} %> 						
 							</div>
-
-							<script>
+						</div>
+						
+						<script>
 						
 						    /*	 $(".Option1").on('change',function(){
 						    		 $('.buylist').data('price'); //80000;
@@ -278,33 +274,32 @@
 						    	 }
 						    	 
 						</script>
-
-							<%
+							
+						<%
 							String pro_code = (String) request.getParameter("pro_num");
 						%>
-
-							<input type="hidden" value="<%= pro_code%>" name="pro_code"
-								id="pro_code">
-
-							<ul class="s_price">
+						
+						<input type="hidden" value="<%= pro_code%>" name="pro_code" id="pro_code">
+						
+					         <ul class="s_price">
 								<li class="price01">주문금액</li>
 								<li class="price02">0원</li>
 							</ul>
+					
+						<input class="buy_price" type="hidden" value="">
+						<div class="s_button">
+							<ul id="product_info">
 
-							<input class="buy_price" type="hidden" value="">
-							<div class="s_button">
-								<ul id="product_info">
-
-									<li><button class="m_button01" type="button"
-											onclick="cartList()">장바구니</button></li>
-									<li><button class="m_button02" type="button"
-											onclick="buy()">바로구매</button></li>
-								</ul>
-							</div>
+								<li><button class="m_button01" type="button"
+										onclick="cartList()">장바구니</button></li>
+								<li><button class="m_button02" type="button"
+										onclick="buy()">바로구매</button></li>
+							</ul>
 						</div>
-					</div>
-				</div>
-				<script>
+						</div>
+							</div>
+		       </div>
+						<script>
 							// 장바구니 및 구매 버튼 클릭시 발생 이벤트 
 							function cartList() {
 
@@ -319,9 +314,7 @@
 										.getElementsByClassName('product_count'); //by주영, 같은 클래스 값들을 배열로 변수에 담는다
 								var pro_price = document
 										.getElementById("pro_price").value;
-								var pro_img = document
-								.getElementById("pro_image").getAttribute("src");
-								
+
 								var userSelect = document
 										.getElementsByClassName("ep_price");
 								//by주영, 사용자가 옵션을 선택했을 경우, value 값이 변환되기 때문에 '0'이 아닐 경우에
@@ -340,7 +333,7 @@
 									}
 
 								}
-								console.log(pro_img);
+
 								console.log(option_arr);
 								console.log(count_arr);
 								console.log(pro_price);
@@ -353,12 +346,11 @@
 										'Pro_all' : option_arr,
 										'Pro_count' : count_arr,
 										'Pro_price' : pro_price,
-										'Pro_code' : pro_code,
-										'Pro_img' : pro_img
+										'Pro_code' : pro_code
 									},
 
 									success : function() {
-										alert("장바구니에 추가되었습니다");
+
 									}
 
 								});
@@ -378,8 +370,6 @@
 										.getElementsByClassName('product_count'); //by주영, 같은 클래스 값들을 배열로 변수에 담는다
 								var pro_price = document
 										.getElementById("pro_price").value;
-								var pro_img = document
-								.getElementById("pro_image").getAttribute("src");
 
 								var userSelect = document
 										.getElementsByClassName("ep_price");
@@ -412,8 +402,7 @@
 										'Pro_all' : option_arr,
 										'Pro_count' : count_arr,
 										'Pro_price' : pro_price,
-										'Pro_code' : pro_code,
-										'Pro_img' : pro_img
+										'Pro_code' : pro_code
 									},
 									success : function() {
 										location.href = 'ProductOrderPage.bo';
@@ -427,21 +416,6 @@
 								alert("서비스 진행중입니다.");
 							}
 						</script>
-<<<<<<< HEAD
-
-				<div id="r_wrap">
-					<ul class="s_infonav">
-						<li><a href="#product_info">상품정보</a></li>
-						<li>|</li>
-						<li><a href="#product_review">리뷰</a></li>
-						<li>|</li>
-						<li><a href="#product_inquiry">문의</a></li>
-						<li>|</li>
-						<li><a href="#product_delivery">배송/환불</a></li>
-					</ul>
-					<div class="productinfo_wrap">
-						<p>상품정보</p>
-=======
 					 	
 					 <div id="r_wrap">
 						<ul class="s_infonav">
@@ -455,7 +429,6 @@
 						</ul>
 						<div class="productinfo_wrap">
 							<p>상품정보</p>
->>>>>>> refs/remotes/1231231244/master
 						<div class="productimg">
 							<img class="pro_detail_img"
 								src="<%=request.getContextPath()%>/upload/<%=article.get(0).getPro_detail_img()%>">
@@ -511,7 +484,7 @@
 									<td>제조자,
 										<p>수입품의 경우 수입자를 함께 표기</p>
 									</td>
-									<td class="tablepadding">(주)의자왕</td>
+									<td class="tablepadding">상세페이지 참조</td>
 								</tr>
 								<tr>
 									<td class="table_hr" class="table_hr" colspan="2">
@@ -565,12 +538,8 @@
 								</tr>
 							</table>
 						</div>
+					  </div>
 					</div>
-<<<<<<< HEAD
-				</div>
-				
-			</div>
-=======
 			
                     	<div id="delivery_wrap">
                     	<div class="delivery">
@@ -646,10 +615,9 @@
 							</div> 		
 						</div>
 	      </div>
->>>>>>> refs/remotes/1231231244/master
 		</section>
 		<footer>
-			<jsp:include page="include_footer.jsp"></jsp:include>
+		 <jsp:include page="include_footer.jsp"></jsp:include>	
 		</footer>
 	</form>
 </body>
