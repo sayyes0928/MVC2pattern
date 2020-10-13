@@ -124,9 +124,9 @@
   }
 
   .s_mainproduct {
-    margin-top: 25px;
+    margin-top: 76px;
     width: 330px;
-    height: 132px;
+    height: 89px;
   }
   
   .s_mainproduct li {
@@ -147,11 +147,18 @@
     color: skyblue;
     display: inline;
   }
-
-  .s_li_inline {
-    display: inline;
+ .product_orderinfo{
+   width: 100%;
+   height: 30px;
+   margin-top: 17px;
+ }
+  #pro_price {
+    color: skyblue;
+    margin-left: 15px;
   }
-
+  .pro_price_label{
+    margin-left: 18px;
+  }
   .s_combobox {
     margin-top: 10px;
     width: 330px;

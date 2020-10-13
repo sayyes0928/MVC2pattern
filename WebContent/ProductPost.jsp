@@ -106,13 +106,15 @@
 					<div class="s_maintitle">
 						<div class="s_mainproduct">
 							<ul>
-								<li class="s_maintitlefont01">의자왕</li>
+							<!--  	<li class="s_maintitlefont01">의자왕</li> -->
 								<li id="product_name" class="s_maintitlefont02"><%=article.get(0).getPro_name()%></li>
-								<li class="s_maintitlefont01">3개 리뷰</li>
-								<li class="s_maintitlefont03">54%</li>
-								<li class="s_li_inline" id="pro_price" value="<%= article.get(0).getPro_price()%>"><%=aaa.format(article.get(0).getPro_price())%>
-									원</li>
+							<!--  	<li class="s_maintitlefont01">3개 리뷰</li>  
+								<li class="s_maintitlefont03">54%</li> -->
 							</ul>
+							<div class="product_orderinfo">
+							    <span class="pro_price_label">상품가격 : </span>
+								<span id="pro_price" value="<%= article.get(0).getPro_price()%>"><%=aaa.format(article.get(0).getPro_price())%> 원</span>
+							</div>		
 						</div>
 						
 						<div class="product_orderbox">
@@ -482,7 +484,7 @@
 									<td>제조자,
 										<p>수입품의 경우 수입자를 함께 표기</p>
 									</td>
-									<td class="tablepadding">(주)의자왕</td>
+									<td class="tablepadding">상세페이지 참조</td>
 								</tr>
 								<tr>
 									<td class="table_hr" class="table_hr" colspan="2">
