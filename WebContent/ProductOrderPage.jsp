@@ -62,7 +62,7 @@
 											String cart_arr[] = null;
 								%>
 								<div class="information">
-									<img src="<%=request.getContextPath()%>/upload/#">
+									<img src="<%= Cart.get(i)[4].toString()%>">
 									<div>
 
 										<div class="name"><%=proname%></div>

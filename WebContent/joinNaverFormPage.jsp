@@ -34,7 +34,7 @@
 		<div class="form-holder">
 			<input type="text" class="input" value=<%= userinfoDTO.getUs_name()%> name="name" readonly/>
 			<input type="email" class="input" value=<%= userinfoDTO.getUs_mail()%> name="us_mail" />
-			<input type="text" class="input" value=<%= userinfoDTO.getUs_nkname()%> name="nick" readonly />
+			<input type="text" class="input" value=<%= userinfoDTO.getUs_nkname()%> name="nick" />
 			<input type="hidden" class="input" value=<%= login%> name="id" />
 		</div>
 		<button class="submit-btn">Sign up</button>
