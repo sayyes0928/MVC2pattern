@@ -627,5 +627,4 @@
 		</footer>
 	</form>
 </body>
->>>>>>> refs/remotes/1231231244/master
 </html>
