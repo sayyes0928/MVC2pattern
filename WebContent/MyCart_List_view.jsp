@@ -117,9 +117,7 @@
 																class="product-small-item product-small-item--clickable"
 																href="/productions/430554/selling">
 																<div class="product-small-item__image">
-																	<img alt=""
-																		src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/159600313144145468.jpg?gif=1&amp;w=240&amp;h=240&amp;c=c&amp;webp=1"
-																		srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/159600313144145468.jpg?gif=1&amp;w=360&amp;h=360&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/159600313144145468.jpg?gif=1&amp;w=480&amp;h=480&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/159600313144145468.jpg?gif=1&amp;w=720&amp;h=720&amp;c=c&amp;webp=1 3x">
+																	<img src="<%= Cart.get(i)[4].toString()%>">
 																</div>
 																<div class="product-small-item__content">
 																	<h1 class="product-small-item__title"><%=Cart.get(i)[0]%></h1>

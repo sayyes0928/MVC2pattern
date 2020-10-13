@@ -572,10 +572,10 @@ ac(function() {
 
 					<div class="m_img">
 						<ul>
-
+ 
 
 							<%
-								for (int i = 0; i < article.size(); i++) {
+								for (int i = 0; i < article.size(); i++) { 
 							%>
 							<a href="korea.bo?pro_num=<%=article.get(i).getPro_code()%>">
 								<li>
