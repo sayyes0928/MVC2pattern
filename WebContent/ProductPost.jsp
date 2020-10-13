@@ -423,7 +423,11 @@
 								});
 
 							}
+							function review(){
+								alert("서비스 진행중입니다.");
+							}
 						</script>
+<<<<<<< HEAD
 
 				<div id="r_wrap">
 					<ul class="s_infonav">
@@ -437,6 +441,21 @@
 					</ul>
 					<div class="productinfo_wrap">
 						<p>상품정보</p>
+=======
+					 	
+					 <div id="r_wrap">
+						<ul class="s_infonav">
+							<li><a href="#product_info">상품정보</a></li>
+							<li>|</li>
+							<li><a href="#" onclick="review()">리뷰</a></li>
+							<li>|</li>
+							<li><a href="qna.bo">문의</a></li>
+							<li>|</li>
+							<li><a href="#delivery_wrap">배송/환불</a></li>
+						</ul>
+						<div class="productinfo_wrap">
+							<p>상품정보</p>
+>>>>>>> refs/remotes/1231231244/master
 						<div class="productimg">
 							<img class="pro_detail_img"
 								src="<%=request.getContextPath()%>/upload/<%=article.get(0).getPro_detail_img()%>">
@@ -547,9 +566,87 @@
 							</table>
 						</div>
 					</div>
+<<<<<<< HEAD
 				</div>
 				
 			</div>
+=======
+			
+                    	<div id="delivery_wrap">
+                    	<div class="delivery">
+								<div class="delivery_title01">배송</div>
+								<table id="delivery_table">
+									<tr>
+										<td class="td_size">배송</td>
+										<td>화물택배상품</td>
+									</tr>
+									<tr>
+										<td class="table_hr" colspan="2">
+											<hr>
+										</td>
+									</tr>
+									<tr>
+										<td>배송비</td>
+										<td>5000원</td>
+									</tr>
+									<tr>
+										<td class="table_hr" colspan="2">
+											<hr>
+										</td>
+									</tr>
+									<tr>
+										<td>도서산간 추가 배송비</td>
+										<td>배송불가 지역이 없습니다.</td>
+									</tr>
+									<tr>
+										<td class="table_hr" colspan="2">
+											<hr>
+										</td>
+									</tr>
+									<tr>
+										<td>비례 배송비</td>
+										<td>주문 상품 개수에 비례하여 배송비 부과</td>
+									</tr>
+									<tr>
+										<td class="table_hr" colspan="2">
+											<hr>
+										</td>
+									</tr>
+								</table>
+								<div class="delivery_title02">교환/환불</div>
+								<table id="delivery_table2">
+									<tr>
+										<td class="td_size">반품배송비</td>
+										<td>5,000원(최초 배송비가 무료인 경우 10,000원 부과)</td>
+									</tr>
+									<tr>
+										<td class="table_hr" colspan="2">
+											<hr>
+										</td>
+									</tr>
+									<tr>
+										<td>교환배송비</td>
+										<td>10,000원</td>
+									</tr>
+									<tr>
+										<td class="table_hr" colspan="2">
+											<hr>
+										</td>
+									</tr>
+									<tr>
+										<td>보내실 곳</td>
+										<td>(10008) 경기 김포시 하성면 하성로 721 (양택리) (주)노마드족</td>
+									</tr>
+									<tr>
+										<td class="table_hr" colspan="2">
+											<hr>
+										</td>
+									</tr>
+								</table>
+							</div> 		
+						</div>
+	      </div>
+>>>>>>> refs/remotes/1231231244/master
 		</section>
 		<footer>
 			<jsp:include page="include_footer.jsp"></jsp:include>
