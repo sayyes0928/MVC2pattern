@@ -572,7 +572,7 @@ ac(function() {
 
 					<div class="m_img">
 						<ul>
-
+ 
 
 							<%
 								for (int i = 0; i < article.size(); i++) { 
