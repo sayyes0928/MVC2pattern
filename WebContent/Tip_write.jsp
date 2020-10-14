@@ -81,6 +81,8 @@ String us_id = (String) session.getAttribute("us_id");
     	  if(!cover){
         	  alert("사진을 첨부해주세요!");
         	  $('#cover_img').focus();
+        	  
+        	  event.preventDefault();
       	    return;
           }
     	  
