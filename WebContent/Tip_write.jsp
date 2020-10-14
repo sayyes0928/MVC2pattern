@@ -12,16 +12,9 @@ String us_id = (String) session.getAttribute("us_id");
 
 <link rel="stylesheet" href="./myhome.web.css/Tip_write1.css"
 	type="text/css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
-<link
-	href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-	rel="stylesheet">
-<script
-	src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<link href="./summernote/summernote-bs4.css" rel="stylesheet">
-<script src="./summernote/summernote-bs4.js"></script>
+
 <script src="./myhome.web.js/Tip_write.js"></script>
 
 
@@ -74,13 +67,25 @@ String us_id = (String) session.getAttribute("us_id");
 
 
 				<div id="button_list">
-					<input id="button_insert" type="submit" value="등록하기"> <input
+					<input id="button_insert" type="submit" value="등록하기" onclick="out()"> <input
 						id="button_cancel" type="button" value="등록취소"
 						onclick="location.href='tiplist.bo'">
 				</div>
 			</div>
 
 		</section>
+		  <script>
+      function out() {
+    	  var cover = $('#cover_img').val();
+    	  
+    	  if(!cover){
+        	  alert("사진을 첨부해주세요!");
+        	  $('#cover_img').focus();
+      	    return;
+          }
+    	  
+      }
+      </script>
 		<!--  	<script>
 	
 	$(document).ready(function() {
