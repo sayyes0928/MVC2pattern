@@ -20,7 +20,7 @@ header{
 
 #s_fullsize {
   width: 1082px;
-  height: 1000px;
+  height: 100%;
   margin: 0 auto;
 }
 
@@ -355,7 +355,7 @@ body {
     height: 60px;
     width: 300px;
     margin-left: 500px;
-    top: 72%;
+    top: 67%;
     left: 59%;
     transform: translate(-50%, -50%);
 }

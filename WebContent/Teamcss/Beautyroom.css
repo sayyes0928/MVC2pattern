@@ -27,7 +27,9 @@ header{
 	-o-background-size: cover;
 	background-size: cover;
 }
-
+#ft{
+	clear:both;
+}
 #back_text{
 	width:700px;
 	height:100px;

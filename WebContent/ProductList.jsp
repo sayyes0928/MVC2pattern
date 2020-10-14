@@ -605,11 +605,12 @@ ac(function() {
 				</main>
 
 			</div>
+				<jsp:include page="include_footer.jsp"></jsp:include>
 		</section>
 
-		<footer>
-			<jsp:include page="include_footer.jsp"></jsp:include>
-		 </footer>
+		
+		
+		
 	</form>
 </body>
 

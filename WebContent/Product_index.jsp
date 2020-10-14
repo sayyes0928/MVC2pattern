@@ -88,10 +88,13 @@
 							%>
 						</ul>
 					</div>
+					
+		</div>
+		<div id="ft">
+		<jsp:include page="include_footer.jsp"></jsp:include>
 		</div>
 	
-	
 	</main>
-		<jsp:include page="include_footer.jsp"></jsp:include>
+		
 </body>
 </html>

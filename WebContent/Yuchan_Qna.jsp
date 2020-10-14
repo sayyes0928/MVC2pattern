@@ -309,10 +309,11 @@ qnajs(function() {
 					%>
 
 				</div>
+				
 			</div>
-
-		</section>
 <jsp:include page="include_footer.jsp"></jsp:include>
+		</section>
+
 
 	</form>
 </body>
