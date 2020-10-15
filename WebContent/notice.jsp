@@ -35,6 +35,7 @@ String us_id = (String) session.getAttribute("us_id"); //로그인 유무 확인
 		<div id="notice_size">
 			<div id="faq-title">공지사항</div>
 
+
 		<%if(notice.size()>0){ %>
 			<%for(int i = 0; i < notice.size(); i++){ %>
 			<div id="notice_card">
