@@ -35,7 +35,7 @@ String us_id = (String) session.getAttribute("us_id"); //로그인 유무 확인
 		<div id="notice_size">
 			<div id="faq-title">공지사항</div>
 
-
+		<%if(notice.size()>0){ %>
 			<%for(int i = 0; i < notice.size(); i++){ %>
 			<div id="notice_card">
 				<div class="faq-content">
@@ -45,6 +45,9 @@ String us_id = (String) session.getAttribute("us_id"); //로그인 유무 확인
 					</button>
 					<div class="answer" id="ans-<%=i%>"><%=notice.get(i).getNotice_post() %></div>
 				</div>
+				<%} %>
+				<%}else{ %>
+				등록된 공지사항이 없습니다
 				<%} %>
 
 
