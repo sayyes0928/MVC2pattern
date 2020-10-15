@@ -61,7 +61,7 @@
  	  <!-- header -->
 	  <jsp:include page="HeaderTestjsp.jsp"></jsp:include>
       <section>
-        
+        <div class="detail_coverimg"><img src="<%=request.getContextPath()%>/upload/<%=tip_detail.get(0).getTip_coverimg()%>"></div>
         <div id="detail">         
              <div class="detail_header">
                <div class="category">카테고리 예정 시공정보</div>
@@ -79,7 +79,6 @@
               
                </div>
              </div>
-             <div class="detail_coverimg"><img src="<%=request.getContextPath()%>/upload/<%=tip_detail.get(0).getTip_coverimg()%>"></div>
              <div class="detail_post">
                    <%=tip_detail.get(0).getTip_post() %>
              </div>
