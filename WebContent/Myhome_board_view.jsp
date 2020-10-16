@@ -225,7 +225,8 @@
 				<%if(us_nk != null){ %>
 				<%if(us_nk.equals(article.get(0).getpost_nickname())) {%>
 				<div id="modianddel">
-					<span><a href="Beautyroom_modfiy.jsp?bt_title=<%=article.get(0).getPost_title()%>&bt_posting=<%=article.get(0).getPost_posting()%>&bt_img=<%=article.get(0).getPost_pic()%>&bt_num=<%=article.get(0).getPost_num()%>&bt_pic=<%=userinfoDTO.get(0).getUs_pic()%>">수정</a></span><span><a href="bt_detail_delete.bo?dt_num=<%=article.get(0).getPost_num()%>">삭제</a></span>
+					<span><a href="Beautyroom_modfiy.jsp?bt_title=<%=article.get(0).getPost_title()%>&bt_posting=<%=article.get(0).getPost_posting()%>&bt_img=<%=article.get(0).getPost_pic()%>&bt_num=<%=article.get(0).getPost_num()%>&bt_pic=<%=userinfoDTO.get(0).getUs_pic()%>">수정</a></span>
+					<span><a href="bt_detail_delete.bo?dt_num=<%=article.get(0).getPost_num()%>" id="delbt">삭제</a></span>
 					</div>
 					<%}else{ %>
 					<%} }else { %>
