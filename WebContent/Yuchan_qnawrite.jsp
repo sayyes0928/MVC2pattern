@@ -91,11 +91,15 @@ function existingTag(text)
 </script>
 
 <script>
+
+function pic_check(formname){
 var testpro = $('#cma_file').val();
 
-if(!testpro){
-	  alert("사진을 첨부해주세요!");
-    return;
+		if(!testpro){
+			  alert("사진을 첨부해주세요!");
+		    return;
+		}
+		formname.submit();
 }
 </script>
 </head>
@@ -106,7 +110,7 @@ if(!testpro){
 	</header>
 	<main>
 	<form action="qna_write.bo" method="post"
-		enctype="multipart/form-data" autocomplete="off">
+		enctype="multipart/form-data" autocomplete="off" name="formname">
 		<div id="BT_writemainsize"> 
 			<div id="file_upsize">
 				<div class="filebox">
@@ -136,7 +140,7 @@ if(!testpro){
 
 <br>
 	
-			<input type="submit" value="등록완료" id="write_submit">
+			<input type="button" value="등록완료" id="write_submit" onclick='pic_check(formname)'>
 				
 		</div>
 
