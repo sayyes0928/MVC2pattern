@@ -16,7 +16,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>상품 구매페이지</title>
+<title>구매페이지</title>
 
 <link rel="stylesheet" href="./myhome.web.css/ProdcutPost.css" type="text/css">
 <link rel="stylesheet" type="text/css" href="./myhome.web.css/scrapbook_1.css" />
