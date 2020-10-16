@@ -20,7 +20,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>tip</title>
+<title>tipPage</title>
 
 <link rel="stylesheet" href="./myhome.web.css/tip.css" type="text/css">
 <link rel="stylesheet" type="text/css"
