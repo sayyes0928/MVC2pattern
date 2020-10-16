@@ -113,7 +113,7 @@
 							</ul>
 							<div class="product_orderinfo">
 							    <span class="pro_price_label">상품가격 : </span>
-								<span id="pro_price" value="<%= article.get(0).getPro_price()%>"><%=aaa.format(article.get(0).getPro_price())%> 원</span>
+								<span class="product_price" value="<%= article.get(0).getPro_price()%>"><%=aaa.format(article.get(0).getPro_price())%> 원</span>
 							</div>		
 						</div>
 						
