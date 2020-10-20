@@ -184,9 +184,9 @@
 		</main>
 		
 	</form>
-	<footer>
+	<div id="ft">
 			<jsp:include page="include_footer.jsp"></jsp:include>
-		</footer>
+		</div>
 </body>
 
 </html>

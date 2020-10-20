@@ -43,7 +43,7 @@
 			<div id="tip_banner"><div id="banner_text">TIP & INFORMATION</div></div>
 			<div id="s_wrap">
 				<div id="section_header">
-					<div id="page_title">집들이 Tip</div>
+					<div id="page_title">전문가 Tip</div>
 					<%if(us_id != null){%>					
 					 <input id="tipBT_write" type="button" value="글쓰기"
 						 onclick="location.href='Tip_write.jsp'">

@@ -605,11 +605,14 @@ ac(function() {
 				</main>
 
 			</div>
+			<div id="cate_foot">
+				<jsp:include page="include_footer.jsp"></jsp:include>
+			</div>
 		</section>
 
-		<footer>
-			<jsp:include page="include_footer.jsp"></jsp:include>
-		 </footer>
+		
+		
+		
 	</form>
 </body>
 

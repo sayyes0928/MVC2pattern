@@ -138,7 +138,7 @@
 #store_index_main{
 	clear:both;
 	width:1080px;
-	height:700px;
+	height:100%;
 	margin:0 auto;
 
 }
@@ -154,7 +154,9 @@
 	font-size:20pt;
 	font-weight: bold;
 }
-
+#ft{
+	clear:both;
+}
 
 
 #store_index_listall{

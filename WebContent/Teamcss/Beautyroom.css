@@ -28,6 +28,10 @@ header{
 	background-size: cover;
 }
 
+
+#ft{
+	clear:both;
+}
 #back_text{
 	width:700px;
 	height:100px;
@@ -60,7 +64,7 @@ main {
   font-family:"godo";
   margin: 0 auto;
   width: 1200px;
-  height: 1000px;
+  height: 100%;
   padding: 0;
 }
 
@@ -74,6 +78,7 @@ main {
 	font-family:"godo";
 	position:relative;
 	bottom:2%;
+	clear:both;
 }
 
 

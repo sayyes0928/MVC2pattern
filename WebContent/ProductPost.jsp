@@ -16,7 +16,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>상품 구매페이지</title>
+<title>구매페이지</title>
 
 <link rel="stylesheet" href="./myhome.web.css/ProdcutPost.css" type="text/css">
 <link rel="stylesheet" type="text/css" href="./myhome.web.css/scrapbook_1.css" />
@@ -113,7 +113,11 @@
 							</ul>
 							<div class="product_orderinfo">
 							    <span class="pro_price_label">상품가격 : </span>
+<<<<<<< HEAD
 								<span value="<%= article.get(0).getPro_price()%>"><%=aaa.format(article.get(0).getPro_price())%> 원</span>
+=======
+								<span class="product_price" value="<%= article.get(0).getPro_price()%>"><%=aaa.format(article.get(0).getPro_price())%> 원</span>
+>>>>>>> refs/remotes/1231231244/master
 							</div>		
 						</div>
 						

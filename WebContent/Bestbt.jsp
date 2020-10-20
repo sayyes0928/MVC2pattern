@@ -30,28 +30,45 @@ String us_id = (String) session.getAttribute("us_id"); //로그인 유무 확인
 			<div id="fir_nick"><%=userpost.get(0).getpost_nickname()%></div>
 		</div>
 		</a>
+		<%if(userpost.size()<2){ %>
 		
+		<%}else{ %>
 		<a href="Beautyroom_Detail.bo?board_num=<%=userpost.get(1).getPost_num()%>"><div id="secbt"  style="background-image: URL(<%=request.getContextPath()%>/upload/<%=userpost.get(1).getPost_pic()%>); background-repeat: no-repeat;">
 			<div id="sec_nick"><%=userpost.get(1).getpost_nickname()%></div>
 		</div>
 		</a>
+		<%} %>
 	</div>
 	<div id="namugi">
+	<%if(userpost.size()<3){ %>
+		
+		<%}else{ %>
 		<a href="Beautyroom_Detail.bo?board_num=<%=userpost.get(2).getPost_num()%>">
 		<div id="third" style="background-image: URL(<%=request.getContextPath()%>/upload/<%=userpost.get(2).getPost_pic()%>); background-repeat: no-repeat;">
 			<div id="third_nick"><%=userpost.get(2).getpost_nickname()%></div>
 		</div>
 		</a>
+		<%} %>
+		<%if(userpost.size()<4){ %>
+		
+		<%}else{ %>
 		<a href="Beautyroom_Detail.bo?board_num=<%=userpost.get(3).getPost_num()%>">
 		<div id="fourth" style="background-image: URL(<%=request.getContextPath()%>/upload/<%=userpost.get(3).getPost_pic()%>); background-repeat: no-repeat;">
 			<div id="fourth_nick"><%=userpost.get(3).getpost_nickname()%></div>
 		</div>
 		</a>
+		
+		<%} %>
+		<%if(userpost.size()<5){ %>
+		
+		<%}else{ %>
 		<a href="Beautyroom_Detail.bo?board_num=<%=userpost.get(4).getPost_num()%>">
 		<div id="fifth" style="background-image: URL(<%=request.getContextPath()%>/upload/<%=userpost.get(4).getPost_pic()%>); background-repeat: no-repeat;">
 			<div id="fifth_nick"><%=userpost.get(4).getpost_nickname()%></div>
 		</div>
 		</a>
+		
+		<%} %>
 	</div>
 	
 	

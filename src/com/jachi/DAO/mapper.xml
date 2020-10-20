@@ -263,6 +263,7 @@ insert into posting_reply values(default, #{posting_reply_us_id},#{posting_reply
 	limit #{startrow}, 8;
 </select>
 
+
 <select id="qna_comment_listall" parameterType="map" resultType="com.jachi.DTO.QnA_Comment">
 	select qc_num,qna_num as 'qcb_num',us_nkname as'qc_nickname',qc_date,qc_content,us_pic as 'qc_img' from qna_comment
 	join userinfo on userinfo.us_id=qna_comment.qc_nickname COLLATE utf8_general_ci join qna on qna.qna_num=qna_comment.qcb_num where qcb_num = #{qnanum}
