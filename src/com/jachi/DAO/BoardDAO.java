@@ -28,6 +28,7 @@ public class BoardDAO {
 	private static SqlSessionFactory sqlfactory;
 	private static SqlSession sqlsession;
 
+	
 	DataSource ds;
 	Connection con;
 	private static BoardDAO boardDAO;
