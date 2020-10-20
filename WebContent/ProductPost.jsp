@@ -291,17 +291,30 @@
 						<input class="buy_price" type="hidden" value="">
 						<div class="s_button">
 							<ul id="product_info">
-
+                               <%if(us_id != null) {%>
 								<li><button class="m_button01" type="button"
 										onclick="cartList()">장바구니</button></li>
 								<li><button class="m_button02" type="button"
 										onclick="buy()">바로구매</button></li>
+								<%}else { %>
+								 <li><button class="m_button01" type="button"
+										onclick="login()">장바구니</button></li>
+								<li><button class="m_button02" type="button"
+										onclick="login()">바로구매</button></li>
+								<%} %>
 							</ul>
+							
 						</div>
 						</div>
 							</div>
 		       </div>
 					<script>
+					
+					 function login(){
+			        	 alert("로그인이 필요합니다.");
+			        	 location.href = "LoginFormpage.bo"
+			         }
+					 
 							// 장바구니 및 구매 버튼 클릭시 발생 이벤트 
 							function cartList() {
 
