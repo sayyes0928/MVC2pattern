@@ -102,6 +102,15 @@ qnajs(function() {
 	}
 </script>
 
+<script>
+									$(document).ready(function(){
+										$('#del_bt').click(function(){
+											alert('게시물이 삭제되었습니다.');
+											
+										});
+									});
+									</script>
+
 
 
 
@@ -214,7 +223,9 @@ qnajs(function() {
  %> <span><a
 									href="Yuchan_qnamodify.jsp?qna_num=<%=userqna.get(i).getQna_num()%>&qna_title=<%=userqna.get(i).getQna_title()%>&qna_post=<%=userqna.get(i).getQna_post()%>&qna_pw=<%=userqna.get(i).getQna_pw()%>&qna_img=<%=userqna.get(i).getQna_img()%>">수정</a>
 									| <a
-									href="qna_delete.bo?qna_num=<%=userqna.get(i).getQna_num()%>">삭제</a></span>
+									href="qna_delete.bo?qna_num=<%=userqna.get(i).getQna_num()%>" id="del_bt">삭제</a></span>
+									
+								
 							</td>
 							<%
 								} else {
