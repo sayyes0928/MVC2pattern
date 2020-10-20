@@ -24,6 +24,7 @@ import com.jachi.DTO.BoardBean;
 
 public class BoardDAO {
 	
+	
 	private static SqlSessionFactory sqlfactory;
 	private static SqlSession sqlsession;
 
