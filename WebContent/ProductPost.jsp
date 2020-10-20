@@ -101,7 +101,7 @@
 					</div>
 					<div id="showimg" class="s_mainimg">
 						<img
-							src="<%=request.getContextPath()%>/upload/<%=article.get(0).getPro_mainimg()%>">
+							src="<%=request.getContextPath()%>/upload/<%=article.get(0).getPro_mainimg()%>" id="pro_image">
 					</div>
 					<div class="s_maintitle">
 						<div class="s_mainproduct">
@@ -113,7 +113,7 @@
 							</ul>
 							<div class="product_orderinfo">
 							    <span class="pro_price_label">상품가격 : </span>
-								<span id="pro_price" value="<%= article.get(0).getPro_price()%>"><%=aaa.format(article.get(0).getPro_price())%> 원</span>
+								<span value="<%= article.get(0).getPro_price()%>"><%=aaa.format(article.get(0).getPro_price())%> 원</span>
 							</div>		
 						</div>
 						
@@ -155,7 +155,8 @@
 										<option value="9">9</option>
 										<option value="10">10+</option>
 									</select> 
-									<span class="count_price" id="pro_price" value="<%=article.get(0).getPro_price()%>"><%=aaa.format(article.get(0).getPro_price())%>원</span>
+									<span class="count_price"><%=aaa.format(article.get(0).getPro_price())%>원</span>
+									<input id="pro_price" type="hidden" value="<%=article.get(0).getPro_price()%>">
 									<input class="ep_price" type="hidden" value="0">
 								</div>
 								<%} %> 						
@@ -340,6 +341,7 @@
 								console.log(count_arr);
 								console.log(pro_price);
 								console.log(pro_code);
+								console.log(pro_img);
 
 								$.ajax({
 									url : 'BasketPage.jsp',

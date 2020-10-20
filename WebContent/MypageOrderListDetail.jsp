@@ -111,13 +111,6 @@
 									</div>
 								</div>
 							</div>
-
-
-							<div class="order_delivery">
-								<div class="method">무료배송</div>
-								<span class="brand"> Scandinhome 배송 </span> <a class="phone"
-									href="tel:0260808802"> 02-6080-8802 </a>
-							</div>
 						</div>
 					</div>
 					<!-- finish detail_info -->
